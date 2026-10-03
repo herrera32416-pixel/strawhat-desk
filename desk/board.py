@@ -10,6 +10,7 @@ from .names import norm
 
 CT = ZoneInfo("America/Chicago")
 EV_PICK = 0.02     # pre-set: 2% EV vs fair at a real DK/Bovada price
+ML_PRICE_RANGE = (-300, 300)  # longshot/heavy-fav MLs: few reference books, fair is noise -> never PICK outside this
 MAX_PRICE_GAP = 0.06  # sanity: if our fair differs from the book's own no-vig by >6pp, treat as stale/odd -> pass
 BOOKN = {"draftkings": "DK", "bovada": "Bovada"}
 _D = {}
@@ -119,10 +120,12 @@ def pick(sides, mkt, center, nref, pin):
             best[s["side"]] = s
     top = max(best.values(), key=lambda s: s["ev"])
     gap = abs(top["model_pct"] - top["market_pct"])
-    decision = "PICK" if (top["ev"] >= EV_PICK and gap <= MAX_PRICE_GAP and nref >= 3) else "PASS"
+    in_range = mkt != "ml" or (ML_PRICE_RANGE[0] <= top["price"] <= ML_PRICE_RANGE[1])
+    decision = "PICK" if (top["ev"] >= EV_PICK and gap <= MAX_PRICE_GAP and nref >= 3 and in_range) else "PASS"
     reason = (f"EV {top['ev']*100:+.1f}% at {top['book']} vs fair from {nref} books" if decision == "PICK" else
               (f"best EV {top['ev']*100:+.1f}% < {EV_PICK*100:.0f}%" if top["ev"] < EV_PICK else
-               (f"fair-vs-book gap {gap*100:.1f}pp > {MAX_PRICE_GAP*100:.0f}pp (stale/odd line)" if gap > MAX_PRICE_GAP else "too few reference books")))
+               (f"fair-vs-book gap {gap*100:.1f}pp > {MAX_PRICE_GAP*100:.0f}pp (stale/odd line)" if gap > MAX_PRICE_GAP else
+                ("ML price outside -300..+300 (longshot guard)" if not in_range else "too few reference books"))))
     return dict(status="ok", decision=decision, reason=reason, best=top, sides=sides, n_ref_books=nref,
                 fair_center=None if center is None else round(center, 2), pinnacle_center=None if pin is None else round(pin, 2))
 

@@ -21,7 +21,7 @@
 <tr><td>Pinnacle-only anchor</td><td>same NFL set</td><td>Brier .2492 vs .2491</td><td>EV≥0: 50 bets, −2.32u; expected ROI vs the close −2.1%</td><td class="bad">Worse than the consensus anchor, so not used</td></tr>
 <tr><td><b>NFL teaser, ticket #1 rule</b> (top 6 spread legs per week by leg %)</td><td>nflverse closing lines, 2015–2026, 195 weeks, model fit on prior seasons only</td><td>Leg calibration: mean model .684 vs actual .691</td><td><b>+55u on 195 tickets (36 cashed), ROI +28%, [−6, +118]</b></td><td class="ok">Best result on the desk, but the CI still touches 0 and the band rules were chosen knowing the Wong literature</td></tr>
 <tr><td>NFL teasers, 5 per week</td><td>same</td><td>Tickets #2–5 use weaker legs</td><td>975 tickets, −118u, ROI −12%, [−234, +2]</td><td class="bad">Loses. Tickets #2–5 are shown for completeness and marked PASS when −EV</td></tr>
-<tr><td>CFB teasers</td><td>ESPN closes 2024–26</td><td>Legs top out around 71%</td><td>Top 6 per week: −8u on 36 tickets</td><td class="bad">Loses. CFB legs enter only if they beat the NFL leg floor</td></tr>
+<tr><td>CFB teasers</td><td>ESPN closes 2024–26</td><td>Legs top out around 71%</td><td>Top 6 per week: −8u on 36 tickets</td><td class="bad">Loses. A CFB leg needs at least 73.5% and must beat the NFL leg floor</td></tr>
 <tr><td>NFL props model</td><td>2025 full season (projection), plus real saved lines for 2026 wk2–3 (1,608 prop/book pairs)</td><td>MAE ≈ a naive average (rec yds 15.56 vs 15.49). Vs market: Brier .2664 vs .2479, LL .733 vs .689; fitted weight 0.00 [0, .23]</td><td>DK edge ≥5pp: 567 bets, −10.2u [−49, +30]</td><td class="bad">Does not beat the market. Props are tracked as paper leans</td></tr>
 </table>
 <p class="small">Teaser legs, NFL 2015–2026 closes, non-push win %:</p>
@@ -37,7 +37,7 @@
 <p class="small">Break-even for 6 legs at +600 is 72.3% per leg. The DK and Bovada 6-team, 6-point NFL price is +600 (ats.io DK table; bovada.lv help page). Ties reduce the ticket.</p>
 <p class="small">Multiple testing: about 40 cells were examined. At p&lt;.10, 4 would clear by chance.</p>
 <h2>Rules</h2>
-<ul><li><b>Board:</b> PICK when EV ≥ 2% vs fair, at least 3 reference books, and fair within 6pp of the book's own no-vig (guards against stale lines). Picks are logged the first time they show.</li>
+<ul><li><b>Board:</b> PICK when EV ≥ 2% vs fair, at least 3 reference books, fair within 6pp of the book's own no-vig (guards against stale lines), and for ML a price between −300 and +300. Picks are logged the first time they show.</li>
 <li><b>Props:</b> top 5 per game by model − market. Logged on game day (kick within 14h) as paper leans.</li>
 <li><b>Teasers:</b> 5 tickets × 6 legs × 6 pts. Each leg is used at most 2× across tickets, and a ticket never has two legs from one game. Ticket #1 is the backtested rule. A set is logged once per slate day (first leg within 14h).</li>
 <li><b>Grading:</b> ESPN finals and box scores. A player missing from the box score is VOID.</li></ul>

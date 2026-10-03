@@ -16,6 +16,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BANDS = os.path.join(ROOT, "data", "teaser_bands.json")
 T = 6.0
 K = 150
+CFB_MIN = 0.735
 
 
 def band(mkt, side, orig):
@@ -88,8 +89,10 @@ def candidate_legs(odds_by_sport, season, now, cfb_ok=True):
 def build(legs, n_tickets=5, cap=2):
     be = breakeven_leg(6, DK6[6])
     nfl = sorted([l for l in legs if l["sport"] == "nfl"], key=lambda l: -l["p_cond"])
+    # CFB teaser tickets lost in backtest (top-6/wk -8u on 36; Wong-only -13u), so a CFB leg must clear 73.5%
+    # (break-even 72.3% + margin) AND the 18th-best NFL leg to enter.
     floor = nfl[min(len(nfl) - 1, 17)]["p_cond"] if nfl else 1.0
-    pool = nfl + [l for l in legs if l["sport"] == "cfb" and l["p_cond"] >= floor]
+    pool = nfl + [l for l in legs if l["sport"] == "cfb" and l["p_cond"] >= max(floor, CFB_MIN)]
     pool.sort(key=lambda l: -l["p_cond"])
     use = collections.Counter(); tickets = []
     # ticket 1: the backtested rule (NFL spreads only, top 6, one per game)
