@@ -1,0 +1,8 @@
+band-shrunk (live) 2015-2020                            n=102 won= 19 units=  +29.0 roi=+0.284 90%CI [-13,76]
+band-shrunk (live) 2021-2026                            n= 93 won= 17 units=  +26.0 roi=+0.280 90%CI [-16,68]
+band-shrunk (live) 2015-2026                            n=195 won= 36 units=  +55.0 roi=+0.282 90%CI [-6,118]
+band-shrunk (live) 2015-2026 spreads+totals             n=195 won= 33 units=  +34.0 roi=+0.174 90%CI [-27,97]
+raw KEYS only 2015-2020                                 n=102 won= 19 units=  +29.0 roi=+0.284 90%CI [-13,73]
+raw KEYS only 2021-2026                                 n= 93 won= 13 units=   -2.0 roi=-0.022 90%CI [-37,40]
+raw KEYS only 2015-2026                                 n=195 won= 32 units=  +27.0 roi=+0.138 90%CI [-29,88]
+raw KEYS only 2015-2026 spreads+totals                  n=195 won= 30 units=  +15.0 roi=+0.077 90%CI [-41,78]

@@ -1,0 +1,5 @@
+n=3864 Brier keys(spread->ML) 0.2113 vs ML no-vig 0.2112; diff 90% CI [-0.0002,0.0004]
+mean |p_keys - q_ml| = 0.0099
+EV>=0.01: n=388 units -4.6 roi -0.012 90% CI [-46.8,38.9]
+EV>=0.02: n=253 units -22.3 roi -0.088 90% CI [-59.2,10.3]
+EV>=0.03: n=165 units -0.4 roi -0.003 90% CI [-30.6,31.2]
