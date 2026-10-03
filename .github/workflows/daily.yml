@@ -1,8 +1,11 @@
 name: strawhat-desk daily
 on:
   schedule:
-    - cron: "0 14 * * *"   # 9:00am CDT (until Nov 1)
-    - cron: "0 15 * * *"   # 9:00am CST (after Nov 1) - the guard below runs only the one that is 9am CT
+    # Off the top of the hour (GitHub drops/delays :00 jobs). Primary = first slot at/after 9am CT; the rest are backups.
+    - cron: "7 14 * * *"    # 9:07am CDT / 8:07am CST (CST: guard skips, too early)
+    - cron: "7 15 * * *"    # 10:07am CDT / 9:07am CST
+    - cron: "37 15 * * *"   # backup: 10:37am CDT / 9:37am CST
+    - cron: "37 16 * * *"   # backup: 11:37am CDT / 10:37am CST
   workflow_dispatch: {}
 permissions:
   contents: write
@@ -15,11 +18,24 @@ jobs:
     timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
-      - name: 9am CT guard (DST-safe)
+      - name: once-per-CT-day guard (DST-safe)
         id: guard
+        # Scheduled runs: go only if CT hour is 9-11 AND no scheduled run has completed today (stamp file on latest main).
+        # Manual runs always go and do not consume the day's scheduled slot. Credits are still capped by desk/toa.py (40/day).
         run: |
-          H=$(TZ=America/Chicago date +%H)
-          if [ "${{ github.event_name }}" = "schedule" ] && [ "$H" != "09" ]; then echo "go=no" >> $GITHUB_OUTPUT; else echo "go=yes" >> $GITHUB_OUTPUT; fi
+          H=$(TZ=America/Chicago date +%-H); D=$(TZ=America/Chicago date +%F)
+          git fetch -q origin "${{ github.event.repository.default_branch }}"
+          LAST=$(git show "origin/${{ github.event.repository.default_branch }}:data/last_scheduled_run_ct.txt" 2>/dev/null | tr -d '[:space:]' || true)
+          GO=yes
+          if [ "${{ github.event_name }}" = "schedule" ]; then
+            if [ "$H" -lt 9 ] || [ "$H" -gt 11 ]; then GO=no; echo "skip: CT hour $H outside 9-11"; fi
+            if [ "$LAST" = "$D" ]; then GO=no; echo "skip: scheduled run already done for $D"; fi
+          fi
+          echo "event=${{ github.event_name }} ct=$D h=$H last=$LAST go=$GO"
+          echo "go=$GO" >> $GITHUB_OUTPUT
+      - name: sync to latest main
+        if: steps.guard.outputs.go == 'yes'
+        run: git checkout -q -B "${{ github.event.repository.default_branch }}" "origin/${{ github.event.repository.default_branch }}"
       - uses: actions/setup-python@v5
         if: steps.guard.outputs.go == 'yes'
         with: { python-version: "3.12" }
@@ -41,6 +57,7 @@ jobs:
         run: |
           git config user.name "strawhat-desk-bot"
           git config user.email "actions@users.noreply.github.com"
+          if [ "${{ github.event_name }}" = "schedule" ]; then TZ=America/Chicago date +%F > data/last_scheduled_run_ct.txt; fi
           git add -A data docs
           git commit -m "daily desk $(TZ=America/Chicago date '+%Y-%m-%d %H:%M CT')" || echo "nothing to commit"
           git pull --rebase -q || true
