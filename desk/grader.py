@@ -71,23 +71,30 @@ def add_props(L, props, now, within_h=24):
     return n
 
 
-def add_teasers(L, teasers, now, within_h=14):
-    if not teasers:
-        return 0
-    first = min(dt.datetime.fromisoformat(l["kick_iso"]) for t in teasers for l in t["legs"])
-    if not (0 < (first - now).total_seconds() / 3600 <= within_h):
-        return 0
-    key = first.astimezone(CT).date().isoformat()
-    if any(i["tab"] == "teasers" and i.get("set_key") == key for i in L["items"]):
-        return 0
-    for t in teasers:
-        L["items"].append(dict(id=_id("teaser", key, t["n"]), tab="teasers", set_key=key, n=t["n"], name=t["name"], decision=t["decision"],
-                               logged_ct=now.isoformat(timespec="minutes"), kick_iso=max(l["kick_iso"] for l in t["legs"]),
-                               p_all_six=t["p_all_six"], ev=t["ev_per_unit"], price=600, stake_u=1.0, status="open",
-                               legs=[dict(sport=l["sport"], home=l["game"].split(" @ ")[1], away=l["game"].split(" @ ")[0], kick_iso=l["kick_iso"],
-                                          market=l["market"], side=l["side"], pick=l["pick"], orig_line=l["orig_line"], teased_line=l["teased_line"],
-                                          p=l["p_cond"], status="open") for l in t["legs"]]))
-    return len(teasers)
+def add_teasers(L, sets, now):
+    """Log each day set once, on the run whose CT date is the set's date (Sat 9am run -> Saturday CFB,
+    Sun 9am run -> Sunday NFL), before its first leg kicks. Keyed by set + date."""
+    n = 0
+    today = now.astimezone(CT).date().isoformat()
+    for sk, S in sets.items():
+        T = S["tickets"]
+        if not T or S["date"] != today:
+            continue
+        first = min(dt.datetime.fromisoformat(l["kick_iso"]) for t in T for l in t["legs"])
+        if first <= now:
+            continue
+        key = f"{sk}:{S['date']}"
+        if any(i["tab"] == "teasers" and i.get("set_key") == key for i in L["items"]):
+            continue
+        for t in T:
+            L["items"].append(dict(id=_id("teaser", key, t["n"]), tab="teasers", set=sk, set_label=S["label"], set_key=key, n=t["n"], name=t["name"],
+                                   decision=t["decision"], logged_ct=now.isoformat(timespec="minutes"), kick_iso=max(l["kick_iso"] for l in t["legs"]),
+                                   p_all_six=t["p_all_six"], ev=t["ev_per_unit"], price=600, stake_u=1.0, status="open",
+                                   legs=[dict(sport=l["sport"], home=l["game"].split(" @ ")[1], away=l["game"].split(" @ ")[0], kick_iso=l["kick_iso"],
+                                              market=l["market"], side=l["side"], pick=l["pick"], orig_line=l["orig_line"], teased_line=l["teased_line"],
+                                              p=l["p_cond"], status="open") for l in t["legs"]]))
+            n += 1
+    return n
 
 
 _SB = {}
@@ -180,16 +187,22 @@ def grade(L, now):
     return n
 
 
+def _rec(s):
+    w = sum(i["status"] == "W" for i in s); l = sum(i["status"] == "L" for i in s); p = sum(i["status"] in ("P", "VOID") for i in s)
+    u = round(sum(i.get("units", 0) for i in s), 2)
+    return dict(record=f"{w}-{l}-{p}", units=u, dollars=round(u * 20, 2), settled=len(s))
+
+
 def headline(L):
     out = {}
+    done = lambda its: [i for i in its if i["status"] in ("W", "L", "P", "VOID")]
     for tab in ("board", "props", "teasers"):
         its = [i for i in L["items"] if i["tab"] == tab]
-        s = [i for i in its if i["status"] in ("W", "L", "P", "VOID")]
-        w = sum(i["status"] == "W" for i in s); l = sum(i["status"] == "L" for i in s); p = sum(i["status"] in ("P", "VOID") for i in s)
-        u = round(sum(i.get("units", 0) for i in s), 2)
-        out[tab] = dict(record=f"{w}-{l}-{p}", units=u, dollars=round(u * 20, 2), open=len(its) - len(s), settled=len(s))
-        if tab == "teasers":
-            s1 = [i for i in s if i.get("n") == 1]
-            out[tab]["ticket1_rule"] = dict(record=f"{sum(i['status']=='W' for i in s1)}-{sum(i['status']=='L' for i in s1)}",
-                                            units=round(sum(i.get('units', 0) for i in s1), 2))
+        out[tab] = dict(_rec(done(its)), open=len(its) - len(done(its)))
+    for sk, lab in (("cfb_sat", "Saturday CFB"), ("nfl_sun", "Sunday NFL")):
+        its = [i for i in L["items"] if i["tab"] == "teasers" and i.get("set") == sk]
+        s = done(its)
+        out["teasers_" + sk] = dict(_rec(s), label=lab, open=len(its) - len(s),
+                                   ticket1=_rec([i for i in s if i.get("n") == 1]),
+                                   play_only=_rec([i for i in s if i.get("decision") == "PLAY"]))
     return out

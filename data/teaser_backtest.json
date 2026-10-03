@@ -1,0 +1,66 @@
+{
+ "nfl": {
+  "ticket1": {
+   "tickets": 193,
+   "cashed": 30,
+   "units": 11.0,
+   "roi": 0.057,
+   "ci90": [
+    -43.0,
+    69.0
+   ]
+  },
+  "all5": {
+   "tickets": 965,
+   "cashed": 121,
+   "units": -144.0,
+   "roi": -0.149,
+   "ci90": [
+    -258.0,
+    -25.0
+   ]
+  },
+  "play": {
+   "tickets": 159,
+   "cashed": 26,
+   "units": 17.0,
+   "roi": 0.107,
+   "ci90": [
+    -34.0,
+    73.0
+   ]
+  },
+  "weeks": 195,
+  "seasons": "2015-2026",
+  "day": "Sunday"
+ },
+ "cfb": {
+  "ticket1": {
+   "tickets": 35,
+   "cashed": 2,
+   "units": -21.0,
+   "roi": -0.6,
+   "ci90": [
+    -35.0,
+    -7.0
+   ]
+  },
+  "all5": {
+   "tickets": 175,
+   "cashed": 16,
+   "units": -63.0,
+   "roi": -0.36,
+   "ci90": [
+    -105.0,
+    -21.0
+   ]
+  },
+  "play": {
+   "tickets": 0
+  },
+  "weeks": 38,
+  "seasons": "2024-2026",
+  "day": "Saturday"
+ },
+ "_note": "Closing lines (nflverse for NFL; ESPN-listed close for CFB), walk-forward KEYS pmf + band shrink fit on prior seasons. Live uses 9am DK lines, so results will differ."
+}

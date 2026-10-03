@@ -12,7 +12,7 @@ function tab(id) {
 function head(meta, key) {
   const h = meta.headline[key] || {};
   let s = `<div class="hl"><b>${h.record || '0-0-0'}</b> · ${h.units >= 0 ? '+' : ''}${(h.units || 0).toFixed(2)}u ($${(h.dollars || 0).toFixed(0)}) · ${h.open || 0} open`;
-  if (key === 'teasers' && h.ticket1_rule) s += ` · ticket #1 rule: ${h.ticket1_rule.record}, ${h.ticket1_rule.units}u`;
+  if (h.ticket1) s += ` · ticket #1: ${h.ticket1.record}, ${h.ticket1.units}u · PLAY only: ${h.play_only.record}, ${h.play_only.units}u`;
   return s + `<span class="sub">1u = $20 · updated ${meta.generated_ct}</span></div>`;
 }
 function bestPer(sides) { const b = {}; for (const s of sides) if (!b[s.side] || s.ev > b[s.side].ev) b[s.side] = s; return b; }
@@ -53,30 +53,50 @@ function renderProps(d) {
   if (!d.games.length) h += '<p class="mut">No NFL games within the props window (54h) or no props pulled yet.</p>';
   el.innerHTML = h;
 }
+function btLine(b) {
+  if (!b || !b.ticket1) return '<span class="mut">No backtest available.</span>';
+  const f = (x, lab) => x && x.tickets ? `${lab}: ${x.cashed}-${x.tickets - x.cashed} (${x.tickets} tickets), <b>${x.units >= 0 ? '+' : ''}${x.units}u</b>, ROI ${x.roi >= 0 ? '+' : ''}${(100 * x.roi).toFixed(0)}%, 90% CI [${x.ci90[0]}, ${x.ci90[1]}]` : `${lab}: 0 tickets qualified`;
+  return `Backtest, ${b.day}-only games, ${b.seasons} (${b.weeks} slates), closing lines, walk-forward:<br>${f(b.ticket1, 'Ticket #1')}<br>${f(b.all5, 'All 5 tickets')}<br>${f(b.play, 'PLAY-labeled only')}`;
+}
+function setHead(meta, sk) {
+  const h = meta.headline['teasers_' + sk] || {}; const r = x => x ? `${x.record}, ${x.units >= 0 ? '+' : ''}${(x.units || 0).toFixed(2)}u` : '0-0-0, +0.00u';
+  return `<div class="hl"><b>Live ledger: ${h.record || '0-0-0'}</b> · ${h.units >= 0 ? '+' : ''}${(h.units || 0).toFixed(2)}u ($${(h.dollars || 0).toFixed(0)}) · ${h.open || 0} open · ticket #1: ${r(h.ticket1)} · PLAY only: ${r(h.play_only)}</div>`;
+}
 function renderTeasers(d) {
   const el = $('#teasers'); let h = head(d.meta, 'teasers');
-  h += `<p class="note">6 legs × 6 points. Payout +600 (DraftKings and Bovada NFL regular-season 6-team, 6-pt tables; ties reduce the ticket). Break-even: ticket 14.29%, per leg 72.3%. Leg % = KEYS distribution at the teased line, shrunk toward the leg's historical band rate (nflverse closes 2006–2025). Ticket #1 is the backtested rule; #2–#5 are shown because the desk shows 5, but the backtest says extra tickets built from weaker legs lose.</p>`;
-  for (const t of d.tickets) {
-    h += `<div class="card"><div class="gh"><b>Teaser ${t.n}</b> <span class="dec ${t.decision.startsWith('PLAY') ? 'PICK' : (t.decision.startsWith('LEAN') ? 'LEAN' : 'PASS')}">${t.decision}</span><span class="k">${t.name}</span></div>
-    <div class="small">All-6 prob <b>${pct(t.p_all_six)}</b> vs break-even ${pct(t.breakeven_ticket)} · cash prob incl. push reduction ${pct(t.p_cash_incl_push)} · EV ${sgn(t.ev_per_unit)}% per 1u</div><table><tr><th>Leg</th><th>Line → teased</th><th>Leg %</th></tr>`;
-    for (const l of t.legs) h += `<tr><td style="white-space:normal"><b>${l.pick}</b><br><small>${l.sport.toUpperCase()} · ${l.game} · ${l.kick_ct} · ${l.book}<br>${l.band}${l.p_band ? ' (hist ' + pct(l.p_band) + ')' : ''}</small></td><td>${l.market === 'spread' ? ln(l.orig_line) + ' → <b>' + ln(l.teased_line) + '</b>' : (l.side === 'over' ? 'O ' : 'U ') + l.orig_line + ' → <b>' + l.teased_line + '</b>'}</td><td>${pct(l.p_cond)}</td></tr>`;
-    h += `</table></div>`;
+  const order = ['cfb_sat', 'nfl_sun'];
+  h += `<div class="subnav">` + order.map(k => d.sets[k] ? `<button data-s="${k}">${d.sets[k].label} <small>${d.sets[k].date}</small></button>` : '').join('') + `</div>`;
+  h += `<p class="note">Each day: 5 teasers × 6 legs × 6 points, spreads and/or totals, one leg per game per ticket, each leg used at most 2× across the day's 5. Payout +600 (DraftKings/Bovada 6-team 6-pt; ties reduce the ticket). Break-even: ticket <b>14.29%</b>, per leg 72.3%. Leg % = KEYS distribution at the teased line, shrunk toward the leg's historical band rate. <b>PLAY</b> = model EV &gt; 0 at +600; otherwise <b>PASS</b>. Saturday CFB uses only Saturday CFB games; Sunday NFL uses only Sunday NFL games (Thursday/Monday excluded).</p>`;
+  for (const k of order) {
+    const S = d.sets[k]; if (!S) continue;
+    const np = S.tickets.filter(t => t.decision === 'PLAY').length;
+    h += `<div class="tset" id="set-${k}"><h2>${S.label} · ${S.date}</h2>${setHead(d.meta, k)}
+      <p class="small">${S.n_games} games, ${S.n_candidate_legs} candidate legs · <b>${np} of ${S.tickets.length} PLAY</b></p>
+      <div class="note ${S.sport === 'cfb' ? 'warn' : ''}">${S.sport === 'cfb' ? '<b>CFB teasers lost in the backtest.</b> These are the best 5 CFB tickets as requested; any ticket the model rates −EV is PASS. ' : ''}${btLine(S.backtest)}</div>`;
+    for (const t of S.tickets) {
+      h += `<div class="card"><div class="gh"><b>${S.label} #${t.n}</b> <span class="dec ${t.decision === 'PLAY' ? 'PICK' : 'PASS'}">${t.decision}</span><span class="k">${t.name}</span></div>
+      <div class="small">Combined (all 6) <b>${pct(t.p_all_six)}</b> vs break-even ${pct(t.breakeven_ticket)} (+600) · cash prob incl. push reduction ${pct(t.p_cash_incl_push)} · EV ${sgn(t.ev_per_unit)}% per 1u</div><table><tr><th>Leg</th><th>Line → teased</th><th>Leg %</th></tr>`;
+      for (const l of t.legs) h += `<tr><td style="white-space:normal"><b>${l.pick}</b><br><small>${l.sport.toUpperCase()} · ${l.game} · ${l.kick_ct} · ${l.book}${l.band ? '<br>' + l.band : ''}${l.p_band ? ' (hist ' + pct(l.p_band) + ')' : ''}</small></td><td>${l.market === 'spread' ? ln(l.orig_line) + ' → <b>' + ln(l.teased_line) + '</b>' : (String(l.side).toLowerCase() === 'over' ? 'O ' : 'U ') + l.orig_line + ' → <b>' + l.teased_line + '</b>'}</td><td>${pct(l.p_cond)}</td></tr>`;
+      h += `</table></div>`;
+    }
+    if (!S.tickets.length) h += `<p class="mut">Not enough ${S.label} games with current lines for a 6-leg teaser yet. ${S.sport === 'cfb' ? 'CFB odds are pulled only once a game is within 36h (credit cap), so this fills in Friday/Saturday morning.' : ''}</p>`;
+    h += `</div>`;
   }
-  if (!d.tickets.length) h += '<p class="mut">Not enough distinct games for a 6-leg teaser in the current window.</p>';
   el.innerHTML = h;
+  el.querySelectorAll('.subnav button').forEach(b => b.onclick = () => $('#set-' + b.dataset.s).scrollIntoView({behavior: 'smooth'}));
 }
 function renderLedger(d) {
   const el = $('#ledger'); const L = d.ledger.items.slice().sort((a, b) => (b.kick_iso || '').localeCompare(a.kick_iso || ''));
-  let h = '<div class="hls">' + ['board', 'props', 'teasers'].map(k => `<div><div class="cap">${k === 'board' ? 'Board picks' : k === 'props' ? 'NFL props (paper leans)' : 'Teasers'}</div>${head(d.meta, k)}</div>`).join('') + '</div>';
+  let h = '<div class="hls">' + ['board', 'props', 'teasers_cfb_sat', 'teasers_nfl_sun'].map(k => `<div><div class="cap">${({board: 'Board picks', props: 'NFL props (paper leans)', teasers_cfb_sat: 'Teasers · Saturday CFB', teasers_nfl_sun: 'Teasers · Sunday NFL'})[k]}</div>${head(d.meta, k)}</div>`).join('') + '</div>';
   h += `<table class="ledger"><tr><th>Tab</th><th>Kick</th><th>Bet</th><th>Price</th><th>Status</th><th>Units</th></tr>`;
   for (const i of L) {
     let bet = '';
     if (i.tab === 'board') bet = `${i.away} @ ${i.home}: ${i.market.toUpperCase()} ${i.pick}${i.line != null ? ' ' + ln(i.line, i.market !== 'total') : ''} <small>${i.book}</small>`;
     else if (i.tab === 'props') bet = `${i.player} ${i.market} ${i.side}${i.line != null ? ' ' + i.line : ''} <small>${i.book}</small>${i.actual != null ? ' <small>(actual ' + i.actual + ')</small>' : ''}`;
-    else bet = `Teaser ${i.n} (${i.decision}): ` + i.legs.map(l => `${l.pick} ${l.market === 'spread' ? ln(l.teased_line) : l.teased_line}${l.status !== 'open' ? '[' + l.status + ']' : ''}`).join(', ');
+    else bet = `${i.set_label || 'Teaser'} #${i.n} (${i.decision}): ` + i.legs.map(l => `${l.pick} ${l.market === 'spread' ? ln(l.teased_line) : l.teased_line}${l.status !== 'open' ? '[' + l.status + ']' : ''}`).join(', ');
     h += `<tr><td>${i.tab}</td><td class="small">${(i.kick_ct || i.set_key || '')}</td><td>${bet}</td><td>${am(i.price)}</td><td><span class="st ${i.status}">${i.status}</span></td><td>${i.units != null ? i.units.toFixed(2) : ''}</td></tr>`;
   }
-  if (!L.length) h += `<tr><td colspan=6 class="mut">No logged picks yet. Board picks are logged when first shown; props lock when kick is within 24h, teasers when the first leg is within 14h.</td></tr>`;
+  if (!L.length) h += `<tr><td colspan=6 class="mut">No logged picks yet. Board picks are logged when first shown; props lock when kick is within 24h, teaser sets on the morning run of their day (Saturday CFB on Saturday, Sunday NFL on Sunday).</td></tr>`;
   el.innerHTML = h + '</table>';
 }
 (async () => {

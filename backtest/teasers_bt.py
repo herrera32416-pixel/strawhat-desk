@@ -21,11 +21,17 @@ def nfl_games():
     for r in csv.DictReader(open("data/history/nfl_games.csv")):
         if r["result"] in ("", "NA") or int(r["season"]) < 2006 or r["game_type"] != "REG":
             continue
-        G.append(dict(season=int(r["season"]), wk=f"{r['season']}-{int(r['week']):02d}", game=r["game_id"],
+        G.append(dict(season=int(r["season"]), wk=f"{r['season']}-{int(r['week']):02d}", game=r["game_id"], dow=r["weekday"],
              sp=f(r["spread_line"]), hsp=f(r["home_spread_odds"]), asp=f(r["away_spread_odds"]),
              tot=f(r["total_line"]), o=f(r["over_odds"]), u=f(r["under_odds"]),
              margin=f(r["result"]), total=f(r["total"])))
     return G
+
+
+def _cfb_dow(iso):
+    import datetime as dt
+    from zoneinfo import ZoneInfo
+    return dt.datetime.fromisoformat(iso.replace("Z", "+00:00")).astimezone(ZoneInfo("America/Chicago")).strftime("%A")
 
 
 def cfb_games():
@@ -34,7 +40,7 @@ def cfb_games():
         for r in csv.DictReader(open(f"data/history/cfb_{y}.csv")):
             if r.get("completed") not in ("1", "True", "1.0") or f(r["close_spread"]) is None:
                 continue
-            G.append(dict(season=int(r["season"]), wk=f"{r['season']}-{int(r['week']):02d}", game=r["espn_id"],
+            G.append(dict(season=int(r["season"]), wk=f"{r['season']}-{int(r['week']):02d}", game=r["espn_id"], dow=_cfb_dow(r["date"]),
                  sp=-f(r["close_spread"]), hsp=f(r["close_h_sp_price"]), asp=f(r["close_a_sp_price"]),
                  tot=f(r["close_total"]), o=None, u=None,
                  margin=f(r["home_score"]) - f(r["away_score"]), total=f(r["home_score"]) + f(r["away_score"])))
@@ -62,7 +68,7 @@ def legs_for(G, sport):
                         res = "W" if g["margin"] > t else ("P" if g["margin"] == t else "L")
                     # side's original line in conventional notation (negative = favorite)
                     orig = -g["sp"] if side == "home" else g["sp"]
-                    L.append(dict(sport=sport, season=s, wk=g["wk"], game=g["game"], mkt="spread", side=side, orig=orig,
+                    L.append(dict(sport=sport, season=s, wk=g["wk"], game=g["game"], dow=g.get("dow"), mkt="spread", side=side, orig=orig,
                                   teased=orig + T, p_win=w, p_push=pu, res=res))
             if kind == "total" and g["tot"] is not None:
                 q = novig(g["o"], g["u"]) if g["o"] and g["u"] else 0.5
@@ -74,7 +80,7 @@ def legs_for(G, sport):
                         res = "W" if g["total"] < t else ("P" if g["total"] == t else "L")
                     else:
                         res = "W" if g["total"] > t else ("P" if g["total"] == t else "L")
-                    L.append(dict(sport=sport, season=s, wk=g["wk"], game=g["game"], mkt="total", side=side, orig=g["tot"],
+                    L.append(dict(sport=sport, season=s, wk=g["wk"], game=g["game"], dow=g.get("dow"), mkt="total", side=side, orig=g["tot"],
                                   teased=t, p_win=w, p_push=pu, res=res))
     return L
 

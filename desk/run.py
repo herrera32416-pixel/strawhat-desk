@@ -51,11 +51,12 @@ def main():
     notes.append(f"PROPS: {pnotes}")
     # TEASERS
     legs = teasers.candidate_legs(odds, season, now)
-    TZ, tmeta = teasers.build(legs)
-    notes.append(f"TEASERS: {len(TZ)} tickets from {len(legs)} candidate legs")
+    TS = teasers.build_days(legs, now)
+    notes.append("TEASERS: " + "; ".join(f"{S['label']} {S['date']}: {len(S['tickets'])} tickets from {S['n_candidate_legs']} legs, "
+                                          f"{sum(t['decision']=='PLAY' for t in S['tickets'])} PLAY" for S in TS.values()))
     # GRADER
     L = grader.load()
-    a = grader.add_board(L, B, nct); b = grader.add_props(L, P, nct); c = grader.add_teasers(L, TZ, nct)
+    a = grader.add_board(L, B, nct); b = grader.add_props(L, P, nct); c = grader.add_teasers(L, TS, now)
     gcount = grader.grade(L, now)
     grader.save(L)
     notes.append(f"GRADER: +{a} board, +{b} props, +{c} teasers logged; {gcount} settled")
@@ -71,8 +72,13 @@ def main():
                 headline=grader.headline(L), season=season)
     json.dump(dict(meta=meta, games=B), open(os.path.join(SITE_DATA, "board.json"), "w"))
     json.dump(dict(meta=meta, games=P), open(os.path.join(SITE_DATA, "props.json"), "w"))
-    json.dump(dict(meta=meta, tickets=TZ, n_candidate_legs=len(legs),
-                   candidate_legs=sorted(legs, key=lambda l: -l["p_cond"])[:40]), open(os.path.join(SITE_DATA, "teasers.json"), "w"))
+    try:
+        bt = json.load(open(os.path.join(ROOT, "data", "teaser_backtest.json")))
+    except Exception:
+        bt = {}
+    for S in TS.values():
+        S["backtest"] = bt.get(S["sport"])
+    json.dump(dict(meta=meta, sets=TS, backtest_note=bt.get("_note")), open(os.path.join(SITE_DATA, "teasers.json"), "w"))
     json.dump(dict(meta=meta, ledger=L), open(os.path.join(SITE_DATA, "ledger.json"), "w"))
     json.dump(meta, open(os.path.join(SITE_DATA, "meta.json"), "w"))
     print("\n".join(notes)); print(credits)
