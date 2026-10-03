@@ -1,0 +1,47 @@
+name: strawhat-desk daily
+on:
+  schedule:
+    - cron: "0 14 * * *"   # 9:00am CDT (until Nov 1)
+    - cron: "0 15 * * *"   # 9:00am CST (after Nov 1) - the guard below runs only the one that is 9am CT
+  workflow_dispatch: {}
+permissions:
+  contents: write
+concurrency:
+  group: strawhat-desk
+  cancel-in-progress: false
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - name: 9am CT guard (DST-safe)
+        id: guard
+        run: |
+          H=$(TZ=America/Chicago date +%H)
+          if [ "${{ github.event_name }}" = "schedule" ] && [ "$H" != "09" ]; then echo "go=no" >> $GITHUB_OUTPUT; else echo "go=yes" >> $GITHUB_OUTPUT; fi
+      - uses: actions/setup-python@v5
+        if: steps.guard.outputs.go == 'yes'
+        with: { python-version: "3.12" }
+      - name: deps + nflverse weekly player stats (free)
+        if: steps.guard.outputs.go == 'yes'
+        run: |
+          pip install -q numpy pandas
+          mkdir -p data/cache
+          for y in 2024 2025 2026; do curl -sfL -o data/cache/stats_player_week_$y.csv "https://github.com/nflverse/nflverse-data/releases/download/stats_player/stats_player_week_$y.csv"; done
+          curl -sfL -o data/history/nfl_games.csv https://raw.githubusercontent.com/nflverse/nfldata/master/data/games.csv || true
+      - name: run desk (LINES -> BOARD -> PROPS -> TEASERS -> GRADER -> PUBLISH)
+        if: steps.guard.outputs.go == 'yes'
+        env:
+          THE_ODDS_API_KEY: ${{ secrets.THE_ODDS_API_KEY }}
+          SH_DAILY_CAP: "40"
+        run: python -m desk.run
+      - name: commit
+        if: steps.guard.outputs.go == 'yes'
+        run: |
+          git config user.name "strawhat-desk-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add -A data docs
+          git commit -m "daily desk $(TZ=America/Chicago date '+%Y-%m-%d %H:%M CT')" || echo "nothing to commit"
+          git pull --rebase -q || true
+          git push

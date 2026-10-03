@@ -1,0 +1,52 @@
+sport,what,n,mean_p,actual,brier,record,win_pct_excl_push,mean_model_p,tickets_won,units,roi,units_ci90,mean_model_ticket_p,mean_model_ev
+nfl,"leg calibration (all teased legs, non-push)",11620,0.6839,0.6912,0.2133,,,,,,,,,
+nfl,band Wong dog +1.5..+2.5,473,,,,363-108-2,0.7707,0.7477,,,,,,
+nfl,band Wong fav -7.5..-8.5,246,,,,177-69-0,0.7195,0.7405,,,,,,
+nfl,band dog +3,426,,,,308-115-3,0.7281,0.7413,,,,,,
+nfl,band dog +3.5..+7,1172,,,,829-338-5,0.7104,0.679,,,,,,
+nfl,band dog > +7,665,,,,442-217-6,0.6707,0.6595,,,,,,
+nfl,band fav -1..-3,1103,,,,730-342-31,0.681,0.6589,,,,,,
+nfl,band fav -3.5..-7,1172,,,,808-352-12,0.6966,0.6923,,,,,,
+nfl,band fav < -8.5,419,,,,270-144-5,0.6522,0.6599,,,,,,
+nfl,band pk/other,212,,,,144-54-14,0.7273,0.7101,,,,,,
+nfl,band total over 41.5-47,1523,,,,999-498-26,0.6673,0.6724,,,,,,
+nfl,band total over <=41,516,,,,355-153-8,0.6988,0.7044,,,,,,
+nfl,band total over >47,905,,,,610-288-7,0.6793,0.6846,,,,,,
+nfl,band total under 41.5-47,1523,,,,1048-456-19,0.6968,0.6873,,,,,,
+nfl,band total under <=41,516,,,,344-163-9,0.6785,0.6564,,,,,,
+nfl,band total under >47,905,,,,605-291-9,0.6752,0.6732,,,,,,
+nfl,"model p bucket [0,0.65)",130,,,,,0.6923,,,,,,,
+nfl,"model p bucket [0.65,0.7)",9729,,,,,0.6843,,,,,,,
+nfl,"model p bucket [0.7,0.72)",625,,,,,0.7088,,,,,,,
+nfl,"model p bucket [0.72,0.74)",364,,,,,0.761,,,,,,,
+nfl,"model p bucket [0.74,0.76)",744,,,,,0.7298,,,,,,,
+nfl,"model p bucket [0.76,1)",28,,,,,0.75,,,,,,,
+nfl,strategy top6 1 ticket/wk spreads+totals,195,,,,,,,33,34.0,0.174,"[-27.0,97.0]",0.1664,0.143
+nfl,strategy top6 1 ticket/wk spreads only,195,,,,,,,36,55.0,0.282,"[-6.0,118.0]",0.1655,0.1372
+nfl,strategy 5 tickets/wk cap2 spreads+totals,975,,,,,,,125,-118.0,-0.121,"[-234.0,2.0]",0.1235,-0.1564
+nfl,"strategy Wong-only legs, 1 ticket/wk if >=6",33,,,,,,,6,7.0,0.212,"[-16.0,33.0]",0.1775,0.2355
+cfb,"leg calibration (all teased legs, non-push)",8524,0.6526,0.6574,0.225,,,,,,,,,
+cfb,band CFB Wong dog +1.5..+2.5,331,,,,236-95-0,0.713,0.7099,,,,,,
+cfb,band CFB Wong fav -7.5..-8.5,167,,,,123-44-0,0.7365,0.6991,,,,,,
+cfb,band CFB dog +3,23,,,,18-5-0,0.7826,0.6934,,,,,,
+cfb,band CFB dog +3.5..+7,462,,,,309-153-0,0.6688,0.6685,,,,,,
+cfb,band CFB dog > +7,1307,,,,822-485-0,0.6289,0.6453,,,,,,
+cfb,band CFB fav -1..-3,354,,,,228-126-0,0.6441,0.6452,,,,,,
+cfb,band CFB fav -3.5..-7,462,,,,311-151-0,0.6732,0.6564,,,,,,
+cfb,band CFB fav < -8.5,1140,,,,768-372-0,0.6737,0.6462,,,,,,
+cfb,band CFB pk/other,18,,,,14-4-0,0.7778,0.6624,,,,,,
+cfb,band CFB total over 41.5-47,345,,,,237-108-0,0.687,0.6861,,,,,,
+cfb,band CFB total over <=41,56,,,,45-11-0,0.8036,0.7039,,,,,,
+cfb,band CFB total over >47,1729,,,,1120-609-0,0.6478,0.659,,,,,,
+cfb,band CFB total under 41.5-47,345,,,,217-128-0,0.629,0.636,,,,,,
+cfb,band CFB total under <=41,56,,,,34-22-0,0.6071,0.645,,,,,,
+cfb,band CFB total under >47,1729,,,,1122-607-0,0.6489,0.6311,,,,,,
+cfb,"model p bucket [0,0.65)",4330,,,,,0.645,,,,,,,
+cfb,"model p bucket [0.65,0.7)",3780,,,,,0.6659,,,,,,,
+cfb,"model p bucket [0.7,0.72)",381,,,,,0.7087,,,,,,,
+cfb,"model p bucket [0.72,0.74)",32,,,,,0.7188,,,,,,,
+cfb,"model p bucket [0.74,0.76)",1,,,,,1.0,,,,,,,
+cfb,strategy top6 1 ticket/wk spreads+totals,36,,,,,,,4,-8.0,-0.222,"[-29.0,13.0]",0.1327,-0.0712
+cfb,strategy top6 1 ticket/wk spreads only,36,,,,,,,4,-8.0,-0.222,"[-29.0,13.0]",0.1319,-0.0767
+cfb,strategy 5 tickets/wk cap2 spreads+totals,180,,,,,,,22,-26.0,-0.144,"[-75.0,23.0]",0.1122,-0.2151
+cfb,"strategy Wong-only legs, 1 ticket/wk if >=6",34,,,,,,,3,-13.0,-0.382,"[-27.0,8.0]",0.1327,-0.0712

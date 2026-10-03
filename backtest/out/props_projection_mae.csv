@@ -1,0 +1,11 @@
+season,market,n,mae_model,mae_naive_ewma,mean_proj,mean_actual
+2025,passing_tds,690,0.86,0.89,1.2,1.21
+2025,passing_yards,1155,39.11,39.8,110.34,108.99
+2025,receiving_yards,5612,15.56,15.49,24.11,22.46
+2025,receptions,5422,1.2,1.22,2.17,2.11
+2025,rushing_yards,4133,10.11,10.24,16.12,15.67
+2026,passing_tds,113,0.92,0.91,1.25,1.43
+2026,passing_yards,183,38.58,39.0,118.37,123.94
+2026,receiving_yards,925,16.23,16.14,24.37,23.25
+2026,receptions,892,1.27,1.28,2.18,2.16
+2026,rushing_yards,698,9.3,9.33,16.0,14.83

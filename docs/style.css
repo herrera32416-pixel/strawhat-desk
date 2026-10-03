@@ -1,0 +1,17 @@
+*{box-sizing:border-box}body{margin:0;font:14px/1.4 -apple-system,system-ui,Segoe UI,Roboto,sans-serif;background:#0d1117;color:#e6edf3}
+header{padding:12px 14px 0;background:#161b22;position:sticky;top:0;z-index:5;border-bottom:1px solid #30363d}
+h1{font-size:18px;margin:0 0 8px}h1 small{color:#8b949e;font-weight:400;font-size:12px}
+nav{display:flex;gap:4px;overflow-x:auto}nav button{background:none;border:0;color:#8b949e;padding:8px 12px;font-size:14px;border-bottom:2px solid transparent;white-space:nowrap}
+nav button.on{color:#fff;border-color:#f78166}main{padding:12px;max-width:1000px;margin:auto}
+.card{background:#161b22;border:1px solid #30363d;border-radius:8px;padding:10px;margin:10px 0;overflow-x:auto}
+.gh{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-bottom:6px}.k{margin-left:auto;color:#8b949e;font-size:12px}
+table{border-collapse:collapse;width:100%;font-size:13px}th,td{padding:4px 6px;border-bottom:1px solid #21262d;text-align:left;white-space:nowrap}
+th{color:#8b949e;font-weight:500;font-size:12px}tr.pk td{background:#12351f}small,.small{font-size:11px;color:#8b949e}.mut{color:#8b949e}
+.tag{font-size:10px;padding:1px 5px;border-radius:4px;background:#1f6feb}.tag.cfb{background:#8957e5}
+.dec{font-size:11px;padding:2px 6px;border-radius:4px;background:#30363d}.dec.PICK{background:#238636}.dec.LEAN{background:#9e6a03}
+.hl{background:#0b2a4a;border:1px solid #1f6feb;border-radius:8px;padding:8px 10px;margin:6px 0}.hl .sub{display:block;font-size:11px;color:#8b949e}
+.hls{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:8px}.cap{font-size:12px;color:#8b949e}
+.note{color:#8b949e;font-size:12px}.filters{margin:6px 0}.st.W{color:#3fb950}.st.L{color:#f85149}.st.P,.st.VOID{color:#d29922}
+.ledger td:nth-child(3){white-space:normal}#foot{color:#8b949e;font-size:11px;padding:20px 12px;text-align:center}
+.method h2{font-size:16px;margin-top:22px}.method td,.method th{white-space:normal}.ok{color:#3fb950}.bad{color:#f85149}
+@media(max-width:600px){td,th{padding:3px 4px;font-size:12px}}
