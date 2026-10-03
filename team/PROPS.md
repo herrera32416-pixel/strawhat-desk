@@ -1,6 +1,6 @@
 # PROPS SOP
 **Purpose:** 5 NFL player props per game with line, price, model %, market % and edge.
-1. **Planner.** For NFL events within 54h, pull markets in priority order: rec yds, rush yds, pass yds, receptions, anytime TD. Markets are spread round-robin across events until today's BUDGET is used (1 credit per market per event, region `us`). Already-pulled markets are not re-pulled. Sunday games are typically covered by the Saturday and Sunday runs together.
+1. **Planner.** For NFL events within 54h, pull missing markets in priority order: rec yds, rush yds, pass yds, receptions, anytime TD. On game day (kick within 14h), also re-pull any market last pulled more than 12h ago. Markets are spread round-robin across events until today's BUDGET is used (1 credit per market per event, region `us`).
 2. **Projection** uses nflverse weekly player stats, pre-game only:
    - Team pass attempts and carries come from an OLS on the EWMA volume, the market's expected margin and the implied team total.
    - Share = EWMA target or carry share with a half-life of 4 games.

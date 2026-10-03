@@ -11,7 +11,11 @@ NFL = {"Arizona Cardinals":"ARI","Atlanta Falcons":"ATL","Baltimore Ravens":"BAL
 ALIAS = {"appalachianstatemountaineers":"appstatemountaineers","hawaiirainbowwarriors":"hawaiirainbowwarriors",
 "louisianaragincajuns":"louisianaragincajuns","southernmississippigoldeneagles":"southernmissgoldeneagles",
 "samhoustonstatebearkats":"samhoustonbearkats","umassminutemen":"massachusettsminutemen","sanjosestatespartans":"sanjosestatespartans",
-"citadelbulldogs":"thecitadelbulldogs","youngstownstpenguins":"youngstownstatepenguins","liusharks":"longislanduniversitysharks"}
+"citadelbulldogs":"thecitadelbulldogs","youngstownstpenguins":"youngstownstatepenguins","liusharks":"longislanduniversitysharks",
+"mcneesestatecowboys":"mcneesecowboys","nichollsstatecolonels":"nichollscolonels","gramblingstatetigers":"gramblingtigers",
+"gardnerwebbrunninbulldogs":"gardnerwebbrunninbulldogs","southernuniversityjaguars":"southernjaguars","williamandmarytribe":"williammarytribe",
+"stfrancispaedflash":"saintfrancisredflash","stfrancisparedflash":"saintfrancisredflash","houstonbaptisthuskies":"houstonchristianhuskies",
+"utriograndevalleyvaqueros":"utrgvvaqueros","southeasternlouisianalions":"selouisianalions"}
 
 def norm(s):
     s = unicodedata.normalize("NFKD", s).encode("ascii", "ignore").decode()

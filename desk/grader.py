@@ -49,7 +49,7 @@ def add_board(L, board, now):
     return n
 
 
-def add_props(L, props, now, within_h=14):
+def add_props(L, props, now, within_h=24):
     have = {i["id"] for i in L["items"]}
     n = 0
     for g in props:

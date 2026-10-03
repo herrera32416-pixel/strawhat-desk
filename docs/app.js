@@ -76,7 +76,7 @@ function renderLedger(d) {
     else bet = `Teaser ${i.n} (${i.decision}): ` + i.legs.map(l => `${l.pick} ${l.market === 'spread' ? ln(l.teased_line) : l.teased_line}${l.status !== 'open' ? '[' + l.status + ']' : ''}`).join(', ');
     h += `<tr><td>${i.tab}</td><td class="small">${(i.kick_ct || i.set_key || '')}</td><td>${bet}</td><td>${am(i.price)}</td><td><span class="st ${i.status}">${i.status}</span></td><td>${i.units != null ? i.units.toFixed(2) : ''}</td></tr>`;
   }
-  if (!L.length) h += `<tr><td colspan=6 class="mut">No logged picks yet. Board picks are logged when first shown; props and teasers are locked on game day (kick within 14h).</td></tr>`;
+  if (!L.length) h += `<tr><td colspan=6 class="mut">No logged picks yet. Board picks are logged when first shown; props lock when kick is within 24h, teasers when the first leg is within 14h.</td></tr>`;
   el.innerHTML = h + '</table>';
 }
 (async () => {

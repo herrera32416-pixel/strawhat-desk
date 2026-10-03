@@ -30,6 +30,19 @@ def plan_and_pull(nfl_events, now, budget_left):
     ev.sort(key=lambda e: e["commence_time"])
     have = {e["id"]: set((_load(e["id"]) or {}).get("markets_pulled", [])) for e in ev}
     want = {e["id"]: [m for m in PRIORITY if m not in have[e["id"]]] for e in ev}
+    # game-day refresh: for games kicking within 14h, re-pull markets last pulled more than 12h ago
+    for e in ev:
+        k = dt.datetime.fromisoformat(e["commence_time"].replace("Z", "+00:00"))
+        if (k - now).total_seconds() / 3600 > 14:
+            continue
+        j = _load(e["id"]) or {"pulls": []}
+        last = {}
+        for p in j["pulls"]:
+            for m in p["markets"]:
+                last[m] = p["pulled_ct"]
+        for m in PRIORITY:
+            if m in last and (now - dt.datetime.fromisoformat(last[m])).total_seconds() > 12 * 3600:
+                want[e["id"]].append(m)
     # how many markets per event can we afford this run?
     alloc = {e["id"]: [] for e in ev}
     left = budget_left

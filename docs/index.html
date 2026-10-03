@@ -38,7 +38,7 @@
 <p class="small">Multiple testing: about 40 cells were examined. At p&lt;.10, 4 would clear by chance.</p>
 <h2>Rules</h2>
 <ul><li><b>Board:</b> PICK when EV ≥ 2% vs fair, at least 3 reference books, fair within 6pp of the book's own no-vig (guards against stale lines), and for ML a price between −300 and +300. Picks are logged the first time they show.</li>
-<li><b>Props:</b> top 5 per game by model − market. Logged on game day (kick within 14h) as paper leans.</li>
+<li><b>Props:</b> top 5 per game by model − market. Logged once per game when kick is within 24h, as paper leans. Game-day runs refresh lines older than 12h when the budget allows.</li>
 <li><b>Teasers:</b> 5 tickets × 6 legs × 6 pts. Each leg is used at most 2× across tickets, and a ticket never has two legs from one game. Ticket #1 is the backtested rule. A set is logged once per slate day (first leg within 14h).</li>
 <li><b>Grading:</b> ESPN finals and box scores. A player missing from the box score is VOID.</li></ul>
 <h2>Credits</h2><p>The Odds API budget is a hard cap of 40 credits/day: odds cost 6 per sport (us+eu × ML/spread/total), and props cost 1 per market per game, round-robined across games within 54h of kick. The build used 1,240 credits for historical snapshots.</p>
