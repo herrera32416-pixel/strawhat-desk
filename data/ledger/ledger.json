@@ -1,1 +1,25 @@
-{"items": []}
+{
+ "items": [
+  {
+   "id": "7303192009e0",
+   "tab": "board",
+   "sport": "nfl",
+   "logged_ct": "2026-10-02T22:48-05:00",
+   "kick_iso": "2026-10-04T12:00:00-05:00",
+   "kick_ct": "Sun Oct 4 12:00 PM CT",
+   "home": "Cincinnati Bengals",
+   "away": "Jacksonville Jaguars",
+   "market": "ml",
+   "side": "away",
+   "pick": "Jacksonville Jaguars",
+   "line": null,
+   "price": 135,
+   "book": "Bovada",
+   "model_pct": 0.4343,
+   "market_pct": 0.4088,
+   "ev": 0.0207,
+   "stake_u": 1.0,
+   "status": "open"
+  }
+ ]
+}
