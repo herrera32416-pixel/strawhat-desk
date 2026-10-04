@@ -10,7 +10,8 @@ on:
     - cron: "27 16 * * 0,6"   # 11:27am CDT
     - cron: "27 17 * * 0,6"   # 11:27am CST
     - cron: "47 16 * * 0,6"   # backup 11:47am CDT
-    - cron: "47 17 * * 0,6"   # backup 11:47am CST
+    - cron: "47 17 * * 0,6"   # backup 11:47am CST / 12:47pm CDT (late-fire safety; window 11am-2pm CT)
+    - cron: "17 18 * * 0,6"   # backup 1:17pm CDT / 12:17pm CST
   workflow_dispatch:
     inputs:
       mode:
@@ -51,7 +52,7 @@ jobs:
               if [ "$H" -lt 9 ] || [ "$H" -gt 11 ]; then GO=no; echo "skip: CT hour $H outside 9-11"; fi
               if [ "$LAST" = "$D" ]; then GO=no; echo "skip: scheduled daily run already done for $D"; fi
             else
-              if [ "$H" != "11" ]; then GO=no; echo "skip: recheck slot not in 11am CT hour ($H)"; fi
+              if [ "$H" -lt 11 ] || [ "$H" -gt 14 ]; then GO=no; echo "skip: recheck slot outside 11am-2pm CT ($H)"; fi
               if [ "$LAST" != "$D" ]; then GO=no; echo "skip: no daily run yet today ($LAST)"; fi
               if [ "$LASTR" = "$D" ]; then GO=no; echo "skip: recheck already done for $D"; fi
             fi
@@ -83,7 +84,7 @@ jobs:
         run: |
           git config user.name "strawhat-desk-bot"
           git config user.email "actions@users.noreply.github.com"
-          if [ "${{ github.event_name }}" = "schedule" ]; then
+          if [ "${{ github.event_name }}" = "schedule" ] || [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
             if [ "${{ steps.guard.outputs.mode }}" = "recheck" ]; then TZ=America/Chicago date +%F > data/last_recheck_ct.txt; else TZ=America/Chicago date +%F > data/last_scheduled_run_ct.txt; fi
           fi
           git add -A data docs
