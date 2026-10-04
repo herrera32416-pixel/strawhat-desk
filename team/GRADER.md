@@ -6,3 +6,5 @@
   - Props are graded from the ESPN summary box score. A player absent from the box score is VOID (0u).
   - Teasers are graded leg by leg: any loss loses the ticket, and pushes reduce it per the DK table.
 - **Units:** 1u flat ($20). A win pays at the logged American price. Headline record and units are shown per tab, plus separate Saturday CFB and Sunday NFL teaser headlines (all tickets, ticket #1, PLAY-only).
+
+- **VOID (pulled before kickoff):** an item keeps its original stamp, price and fields. It gets `status=VOID`, `units=0`, `void_reason` and `voided_ct`. This happens when (a) the 11:30 recheck drops a board pick or a teaser leg/ticket, or (b) a rule change removes an open pick before kickoff (2026-10-03: open ML picks). VOIDs are excluded from W-L-P and units and shown as a separate count.

@@ -49,6 +49,18 @@ def add_board(L, board, now):
     return n
 
 
+def void_rule_changes(L, now):
+    """Rule change 2026-10-03: no ML picks. Open board ML items whose game has not kicked are pulled (VOID);
+    the original stamp is kept."""
+    n = 0
+    for it in L["items"]:
+        if it["tab"] == "board" and it["market"] == "ml" and it["status"] == "open" and dt.datetime.fromisoformat(it["kick_iso"]) > now:
+            it.update(status="VOID", units=0.0, void_reason="pulled before kickoff: ML is reference-only from 2026-10-03 (ML backtest EV>=2%: 253 bets -22.3u)",
+                      voided_ct=now.isoformat(timespec="minutes"))
+            n += 1
+    return n
+
+
 def add_props(L, props, now, within_h=24):
     have = {i["id"] for i in L["items"]}
     n = 0
@@ -188,9 +200,10 @@ def grade(L, now):
 
 
 def _rec(s):
-    w = sum(i["status"] == "W" for i in s); l = sum(i["status"] == "L" for i in s); p = sum(i["status"] in ("P", "VOID") for i in s)
+    v = sum(i["status"] == "VOID" for i in s); s = [i for i in s if i["status"] != "VOID"]
+    w = sum(i["status"] == "W" for i in s); l = sum(i["status"] == "L" for i in s); p = sum(i["status"] == "P" for i in s)
     u = round(sum(i.get("units", 0) for i in s), 2)
-    return dict(record=f"{w}-{l}-{p}", units=u, dollars=round(u * 20, 2), settled=len(s))
+    return dict(record=f"{w}-{l}-{p}", units=u, dollars=round(u * 20, 2), settled=len(s), void=v)
 
 
 def headline(L):

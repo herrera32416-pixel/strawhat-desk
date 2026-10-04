@@ -9,7 +9,9 @@ from .market import parse_event, novig, imp, TARGET
 from .names import norm
 
 CT = ZoneInfo("America/Chicago")
-EV_PICK = 0.02     # pre-set: 2% EV vs fair at a real DK/Bovada price
+EV_PICK = 0.03     # raised 2% -> 3% on 2026-10-03 (eval: Sat picks lost; see backtest/board_rules_bt.py)
+ML_PICKS = False   # 2026-10-03: ML is reference-only (ML backtest EV>=2%: 253 bets -22.3u, ROI -8.8%)
+MAX_ABS_SPREAD = 30  # no spread/total PICK when the game's |spread| >= 30 (blowout lines; Texas Southern +45.5 lost)
 ML_PRICE_RANGE = (-300, 300)  # longshot/heavy-fav MLs: few reference books, fair is noise -> never PICK outside this
 MAX_PRICE_GAP = 0.06  # sanity: if our fair differs from the book's own no-vig by >6pp, treat as stale/odd -> pass
 BOOKN = {"draftkings": "DK", "bovada": "Bovada"}
@@ -103,6 +105,14 @@ def game_row(e, sport, season):
                     sides.append(dict(book=BOOKN[bk], side=side, team=team, line=None, price=px, market_pct=round(mq, 4),
                                       model_pct=round(p, 4), push_pct=0.0, ev=round(ev(p, 0, 1 - p, px), 4)))
     row["markets"]["ml"] = pick(sides, "ml", None, len(qs), None)
+    # game spread = the DK/Bovada home line (largest |line| if they differ)
+    sl = [abs(books[bk]["spreads"][0]) for bk in TARGET if bk in books and "spreads" in books[bk]]
+    row["spread_abs"] = max(sl) if sl else (abs(cm) if cm is not None else None)
+    if row["spread_abs"] is not None and row["spread_abs"] >= MAX_ABS_SPREAD:
+        for mk in ("spread", "total"):
+            m = row["markets"][mk]
+            if m.get("decision") == "PICK":
+                m.update(decision="PASS", reason=f"|spread| {row['spread_abs']:g} >= {MAX_ABS_SPREAD} (blowout guard); was {m['reason']}")
     if cm is not None:
         row["fair_home_margin"] = round(cm, 2)
     if ct_ is not None:
@@ -122,6 +132,9 @@ def pick(sides, mkt, center, nref, pin):
     gap = abs(top["model_pct"] - top["market_pct"])
     in_range = mkt != "ml" or (ML_PRICE_RANGE[0] <= top["price"] <= ML_PRICE_RANGE[1])
     decision = "PICK" if (top["ev"] >= EV_PICK and gap <= MAX_PRICE_GAP and nref >= 3 and in_range) else "PASS"
+    if mkt == "ml" and not ML_PICKS:
+        return dict(status="ok", decision="REF", reason=f"reference only (no ML picks; best EV {top['ev']*100:+.1f}% at {top['book']})",
+                    best=top, sides=sides, n_ref_books=nref, fair_center=None, pinnacle_center=None)
     reason = (f"EV {top['ev']*100:+.1f}% at {top['book']} vs fair from {nref} books" if decision == "PICK" else
               (f"best EV {top['ev']*100:+.1f}% < {EV_PICK*100:.0f}%" if top["ev"] < EV_PICK else
                (f"fair-vs-book gap {gap*100:.1f}pp > {MAX_PRICE_GAP*100:.0f}pp (stale/odd line)" if gap > MAX_PRICE_GAP else

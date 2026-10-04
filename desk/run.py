@@ -40,9 +40,12 @@ def main():
         from . import props_run
         nfl_events = lines.events("nfl") if os.environ.get("THE_ODDS_API_KEY") else []
         today = nct.strftime("%Y-%m-%d")
-        left = toa.DAILY_CAP - toa.spent(today, "daily")
+        from . import recheck
+        reserve = recheck.COST * len(recheck.sports_for(now))  # keep credits for the ~11:30am CT pre-kick recheck
+        left = toa.DAILY_CAP - toa.spent(today, "daily") - reserve
+        pnotes.append(f"props budget {max(left, 0)} (reserve {reserve} for recheck)")
         if nfl_events and left > 0:
-            pnotes = props_run.plan_and_pull(nfl_events, now, left)
+            pnotes = pnotes + props_run.plan_and_pull(nfl_events, now, left)
         ctx = {g["toa_id"]: g for g in B if g["sport"] == "nfl"}
         win = [e for e in nfl_events if 0 < (dt.datetime.fromisoformat(e["commence_time"].replace("Z", "+00:00")) - now).total_seconds() / 3600 <= props_run.WINDOW_H]
         P = props_run.build(win, ctx, now)
@@ -56,6 +59,9 @@ def main():
                                           f"{sum(t['decision']=='PLAY' for t in S['tickets'])} PLAY" for S in TS.values()))
     # GRADER
     L = grader.load()
+    v = grader.void_rule_changes(L, now)
+    if v:
+        notes.append(f"GRADER: {v} open ML pick(s) VOID (ML reference-only rule)")
     a = grader.add_board(L, B, nct); b = grader.add_props(L, P, nct); c = grader.add_teasers(L, TS, now)
     gcount = grader.grade(L, now)
     grader.save(L)
@@ -81,6 +87,7 @@ def main():
     json.dump(dict(meta=meta, sets=TS, backtest_note=bt.get("_note")), open(os.path.join(SITE_DATA, "teasers.json"), "w"))
     json.dump(dict(meta=meta, ledger=L), open(os.path.join(SITE_DATA, "ledger.json"), "w"))
     json.dump(meta, open(os.path.join(SITE_DATA, "meta.json"), "w"))
+    json.dump({}, open(os.path.join(SITE_DATA, "recheck.json"), "w"))  # the 9am run starts a fresh day; recheck fills this
     print("\n".join(notes)); print(credits)
 
 

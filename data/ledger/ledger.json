@@ -19,7 +19,10 @@
    "market_pct": 0.4088,
    "ev": 0.0207,
    "stake_u": 1.0,
-   "status": "open"
+   "status": "VOID",
+   "units": 0.0,
+   "void_reason": "pulled before kickoff: ML is reference-only from 2026-10-03 (ML backtest EV>=2%: 253 bets -22.3u)",
+   "voided_ct": "2026-10-04T04:52+00:00"
   },
   {
    "id": "d712c10cc8b7",

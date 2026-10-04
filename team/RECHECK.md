@@ -1,0 +1,6 @@
+# RECHECK SOP (pre-kick, ~11:30am CT)
+**When:** Saturday (CFB) and Sunday (NFL). Crons 16:27/17:27 UTC with backups at 16:47/17:47; the guard runs only a slot in the 11am CT hour, after today's 9am run, once per day (`data/last_recheck_ct.txt`). Manual: `gh workflow run daily.yml -f mode=recheck`.
+1. Re-pull `/odds` (us+eu, h2h/spreads/totals) only for today's games that have not kicked, filtered by `eventIds`: 6 credits per sport, through the 40/day cap. The 9am run reserves these credits.
+2. Board: for each 9am PICK in those games, take the same side's best DK/Bovada price now. DROP if EV < 3% or the line moved strictly through a key number (NFL spread ±3/7/10/14; CFB spread ±3/7/10/14/17/21; NFL total 37/41/44/47/51). Otherwise KEPT. No new picks are added.
+3. Teasers: re-score each unstarted leg. DROP on a key-number move, if leg % falls below the 72.3% break-even (from at/above), or if it falls more than 1pp from 9am. A ticket with a dropped leg becomes VOID. A 9am PLAY ticket whose recomputed EV at +600 is ≤ 0 also becomes VOID. The NFL teaser construction rule is unchanged.
+4. Ledger: matching items get VOID with the reason; the original stamp is kept. The site shows a "Pre-kick recheck" box on Board and Teasers (9am vs now line, price, EV, action), plus per-leg notes. `docs/data/recheck.json` is cleared by the next 9am run.
