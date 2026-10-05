@@ -1,0 +1,53 @@
+{
+ "features": [
+  "tot_pass",
+  "tot_rush",
+  "tot_expl",
+  "tot_rz",
+  "tot_sack",
+  "tot_edpr",
+  "tot_pass_int"
+ ],
+ "model": {
+  "mu": [
+   -0.07204325072608242,
+   -0.03431719305739433,
+   0.22443321944228034,
+   1.1542639036409224,
+   0.1300519352427064,
+   3.1610483885584e-05,
+   -0.3285145042946937
+  ],
+  "sd": [
+   0.10410022821736667,
+   0.07579391142767915,
+   0.015848668532297754,
+   0.06660098767476802,
+   0.015239671827277285,
+   0.052510884594405664,
+   2.1867378503453083
+  ],
+  "b": [
+   -0.8994316861607121,
+   -0.1105366383354855,
+   0.003864223272178396,
+   -0.08201668466929994,
+   -0.1345109053072363,
+   -0.24878940239840544,
+   0.03130440714496236
+  ],
+  "y0": 0.9522259828169748,
+  "lam": 30.0
+ },
+ "lam": 30.0,
+ "n": 3841,
+ "seasons": [
+  2022,
+  2023,
+  2024,
+  2025,
+  2026
+ ],
+ "fitted": "2026-10-04",
+ "note": "WATCH lines: tracked paper leans that are NOT pre-registered and NEVER picks.\n\ncfb_totals_lam30: the CFB matchup total model with light fixed shrinkage (ridge lambda = 30 instead of the\nCV choice). It surfaced only as a sensitivity cell in backtest/matchup_cfb_bt.py (OOS 2024-25: |lean| >= 1.5\nwent 166-131, +19.9u at -110; one of ~12 sensitivity cells, so likely partly luck). We track it forward on\npaper to see whether it holds on new games. Fixed rule (2026-10-04): lean = model on the game's matchup\nfeatures; WATCH when |lean| >= 1.5 pts; side = over if lean > 0; line = ESPN/DraftKings total; the entry\nrefreshes until kickoff and freezes at kick; graded on ESPN finals at -110 (push = 0). Free data only."
+}

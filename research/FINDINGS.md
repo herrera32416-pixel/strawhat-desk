@@ -85,3 +85,12 @@ Opponent-adjusted unit ratings were built from nflverse pbp 2015–26: pass and 
   - Fails the pre-registered criteria → info only.
   - Lesson: a simulator built on the market can't beat the market unless its inputs carry information the market lacks. Here the inputs don't.
 - **KEYS finding:** the NFL margin pmf's `np.roll` mean correction is discontinuous for road favorites around 7 (4.3% vs ~14% on |margin| = 3 at a home line of +7). The sim uses the tilt correction. The board's NFL pmf is unchanged until a walk-forward test.
+
+## Addendum 2026-10-04 (c): NFL KEYS tilt fix — tested, not shipped; CFB totals watch line
+- Pre-registered fix (exponential tilt instead of `np.roll` for the NFL margin pmf), walk-forward 2015–25, scored on 83k alt-line cover events (±0.5…±7 around the close):
+  - Log loss 0.64768 → 0.64742 (CI −0.0001…+0.0006).
+  - Road-fav ~7 band: no gain (−0.0002). Home favs ≥ 10: −0.0011.
+  - Anchor fidelity 94.1% → 98.8%.
+  - Fails criteria 1, 2, 3 and 5. Board unchanged.
+  - The gain is real only for road favs ≥ 9 (+0.011, 102 games), which is a new, post-hoc hypothesis.
+- **Watch line** (site Sim tab): the CFB lightly-shrunk totals model (λ = 30), |lean| ≥ 1.5, tracked forward on paper at −110. It is not pre-registered and makes no picks. Its only evidence is the sensitivity cell (166-131, +19.9u, OOS 2024–25).

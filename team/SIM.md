@@ -22,3 +22,5 @@
 - "Sim only" (no matchup) is about equal to the market, as it should be.
 
 **Live:** `desk/run.py` → `desk/sim_run.py` → `docs/data/sim.json` → site **Sim** tab. It never changes a pick.
+
+**Watch line (`desk/watch.py`):** the CFB lightly-shrunk totals model (fixed λ = 30, fit 2026-10-04 on 2022–26 features → `data/matchup/cfb_watch_model.json`). An entry is made when |lean| ≥ 1.5 at the ESPN total; it refreshes until kick, freezes at kick, and is graded on ESPN finals at −110 (`data/watch/cfb_totals_watch.json` → `docs/data/watch.json`, Sim tab). It is labeled not pre-registered and is never a pick or ledger item.

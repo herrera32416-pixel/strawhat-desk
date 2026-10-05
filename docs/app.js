@@ -155,6 +155,14 @@ function renderSim(d) {
   };
   $('#simsp').onchange = draw; $('#simsort').onchange = draw; draw();
 }
+function renderWatch(w) {
+  if (!w || !w.items) return;
+  const r = w.record;
+  let h = `<div id="watch"><h2>Watch line: ${w.name}</h2><div class="note warn"><b>Not pre-registered and never a pick.</b> This came from one sensitivity cell in the CFB matchup backtest (${w.backtest}). It is tracked forward on paper only, to see if it holds. Rule: ${w.rule}</div>`;
+  h += `<div class="hl"><b>Paper record: ${r.w}-${r.l}-${r.p}</b> · ${r.units >= 0 ? '+' : ''}${r.units.toFixed(2)}u at −110 · ${r.open} open</div>`;
+  h += `<table class="ledger"><tr><th>Game</th><th>Kick</th><th>Watch</th><th>Lean</th><th>Status</th></tr>` + w.items.map(i => `<tr><td>${i.game}</td><td class="small">${i.gameday}</td><td>${i.side} ${i.line}</td><td>${i.lean > 0 ? '+' : ''}${i.lean}</td><td><span class="st ${i.status}">${i.status}</span>${i.final_total != null ? ' <small>(final ' + i.final_total + ')</small>' : ''}</td></tr>`).join('') + '</table></div>';
+  $('#sim').insertAdjacentHTML('beforeend', h);
+}
 function renderLedger(d) {
   const el = $('#ledger'); const L = d.ledger.items.slice().sort((a, b) => (b.kick_iso || '').localeCompare(a.kick_iso || ''));
   let h = splitCards(d.meta) + '<div class="hls">' + ['board', 'props', 'teasers_cfb_sat', 'teasers_nfl_sun'].map(k => `<div><div class="cap">${({board: 'Board picks', props: 'NFL props (paper leans)', teasers_cfb_sat: 'Teasers · Saturday CFB', teasers_nfl_sun: 'Teasers · Sunday NFL'})[k]}</div>${head(d.meta, k)}</div>`).join('') + '</div>';
@@ -178,6 +186,7 @@ function renderLedger(d) {
   renderBoard(b); renderProps(p); renderTeasers(t); renderLedger(l);
   try { renderMatchups(await J('matchups')); } catch (e) { renderMatchups(null); }
   try { renderSim(await J('sim')); } catch (e) { renderSim(null); }
+  try { renderWatch(await J('watch')); } catch (e) { }
   const c = b.meta.credits; $('#foot').innerHTML = `Generated ${b.meta.generated_ct} · Odds API credits today ${c.spent_today}/${c.daily_cap} · remaining ${c.remaining} · picks only, never bets placed`;
   document.querySelectorAll('nav button').forEach(x => x.onclick = () => tab(x.dataset.t));
   tab((location.hash || '#board').slice(1));

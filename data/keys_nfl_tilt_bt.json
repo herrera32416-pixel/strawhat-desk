@@ -1,0 +1,125 @@
+{
+ "n_games": 3028,
+ "n_events": 83439,
+ "logloss_old": 0.647679,
+ "logloss_new": 0.647418,
+ "improvement": 0.000262,
+ "improvement_ci90": [
+  -0.000109,
+  0.000642
+ ],
+ "bands": {
+  "-99..-10.5": {
+   "n_games": 226,
+   "old": 0.657606,
+   "new": 0.658663,
+   "improvement": -0.001058,
+   "ci90": [
+    -0.003419,
+    0.00139
+   ]
+  },
+  "-10..-7": {
+   "n_games": 398,
+   "old": 0.656108,
+   "new": 0.656284,
+   "improvement": -0.000176,
+   "ci90": [
+    -0.000377,
+    2.4e-05
+   ]
+  },
+  "-6.5..-3.5": {
+   "n_games": 653,
+   "old": 0.640079,
+   "new": 0.640104,
+   "improvement": -2.5e-05,
+   "ci90": [
+    -0.000144,
+    9.1e-05
+   ]
+  },
+  "-3..+0": {
+   "n_games": 614,
+   "old": 0.644168,
+   "new": 0.644216,
+   "improvement": -4.8e-05,
+   "ci90": [
+    -0.000225,
+    0.00013
+   ]
+  },
+  "+0.5..+3": {
+   "n_games": 522,
+   "old": 0.646647,
+   "new": 0.64663,
+   "improvement": 1.7e-05,
+   "ci90": [
+    -0.000169,
+    0.000203
+   ]
+  },
+  "+3.5..+5": {
+   "n_games": 231,
+   "old": 0.646126,
+   "new": 0.645964,
+   "improvement": 0.000162,
+   "ci90": [
+    -0.000113,
+    0.000428
+   ]
+  },
+  "+5.5..+8.5": {
+   "n_games": 282,
+   "old": 0.646098,
+   "new": 0.646292,
+   "improvement": -0.000194,
+   "ci90": [
+    -0.001811,
+    0.001348
+   ]
+  },
+  "+9..+99": {
+   "n_games": 102,
+   "old": 0.675555,
+   "new": 0.664244,
+   "improvement": 0.011311,
+   "ci90": [
+    0.002475,
+    0.019929
+   ]
+  }
+ },
+ "calibration": {
+  "old": {
+   "cover_abs_err": 0.01007,
+   "cover_bins_ece": 0.013,
+   "push_pred": 0.02985,
+   "push_actual": 0.03173,
+   "push_abs_err": 0.00188
+  },
+  "new": {
+   "cover_abs_err": 0.01049,
+   "cover_bins_ece": 0.01305,
+   "push_pred": 0.02974,
+   "push_actual": 0.03173,
+   "push_abs_err": 0.00198
+  }
+ },
+ "anchor_within_0.5pp": {
+  "old": 0.9412,
+  "new": 0.9878
+ },
+ "exact_margin_loglik": {
+  "old": -3.90377,
+  "new": -3.87272
+ },
+ "criteria": {
+  "c1_pooled_ll_ci_above_0": false,
+  "c2_road_fav_band_improves": false,
+  "c3_no_band_hurt": false,
+  "c4_calibration_not_worse": true,
+  "c5_anchor_fidelity_99pct": false
+ },
+ "passes": false
+}

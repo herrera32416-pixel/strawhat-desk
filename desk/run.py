@@ -99,6 +99,12 @@ def main():
         from . import sim_run
         SR = sim_run.run(now, nfl=MU, cfb=CU)
         notes.append(f"SIM: {len(SR['games'])} games x 1000 sims, {SR['status']}")
+        try:
+            from . import watch
+            WO = watch.update(CU, nct)
+            notes.append(f"WATCH (not pre-registered, no picks): CFB totals {WO['record']['w']}-{WO['record']['l']}-{WO['record']['p']}, {WO['record']['open']} open")
+        except Exception as ex:
+            notes.append("WATCH error: " + repr(ex)); traceback.print_exc()
     except Exception as ex:
         notes.append("MATCHUP/SIM error: " + repr(ex)); traceback.print_exc()
     # credits
