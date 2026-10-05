@@ -1,5 +1,5 @@
 """Daily orchestrator (GitHub Actions ~9:00am CT). Roles run in order:
-LINES -> BOARD -> TEASERS -> PROPS (budget after the recheck reserve) -> GRADER -> MATCHUP (info) -> PUBLISHER. Deterministic; no messages, no bets."""
+LINES -> BOARD -> TEASERS -> PROPS (budget after the recheck reserve) -> GRADER -> MATCHUP NFL+CFB (info) -> SIM (info) -> PUBLISHER. Deterministic; no messages, no bets."""
 import datetime as dt, json, os, sys, traceback
 from zoneinfo import ZoneInfo
 from . import toa, lines, board, teasers, grader, espn
@@ -81,10 +81,26 @@ def main():
             matchup_data.build([nfl_season])
         except Exception as ex:
             notes.append(f"MATCHUP: pbp refresh failed ({ex!r}); using committed team-game data")
-        MU = matchup.live(now)
+        MU = matchup.live(now, write=False)
         notes.append(f"MATCHUP: {len(MU['games'])} NFL games, {MU['status']}, data through {MU['data_through']}")
+        CU = {"games": []}
+        try:
+            from . import matchup_cfb
+            try:
+                matchup_cfb.build([nfl_season])
+            except Exception as ex:
+                notes.append(f"MATCHUP CFB: pbp refresh failed ({ex!r}); using committed data")
+            CU = matchup_cfb.live(now)
+            notes.append(f"MATCHUP CFB: {len(CU['games'])} FBS games, {CU['status']}")
+        except Exception as ex:
+            notes.append("MATCHUP CFB error: " + repr(ex)); traceback.print_exc()
+        MU["cfb"] = CU
+        json.dump(MU, open(os.path.join(SITE_DATA, "matchups.json"), "w"))
+        from . import sim_run
+        SR = sim_run.run(now, nfl=MU, cfb=CU)
+        notes.append(f"SIM: {len(SR['games'])} games x 1000 sims, {SR['status']}")
     except Exception as ex:
-        notes.append("MATCHUP error: " + repr(ex)); traceback.print_exc()
+        notes.append("MATCHUP/SIM error: " + repr(ex)); traceback.print_exc()
     # credits
     rows = toa.log_rows()
     today = nct.strftime("%Y-%m-%d")

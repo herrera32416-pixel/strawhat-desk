@@ -93,7 +93,7 @@ def _tilt(p, grid, gap):
 
 
 class Dist:
-    def __init__(self, kind, max_season=None, min_season=None, mix=0.15, sym=None):
+    def __init__(self, kind, max_season=None, min_season=None, mix=0.15, sym=None, tilt=None):
         self.kind = kind
         self.L, self.Y, _ = load_rows(kind, max_season, min_season)
         self.sig = SIG[kind]
@@ -104,6 +104,7 @@ class Dist:
         # pulled in home-favorite games and smeared their key numbers (walk-forward: 3.8% on
         # |margin|=3 at c=-10 vs 8.6% observed). See backtest/cfb_keys_buckets.py, team/KEYS.md.
         self.sym = (kind == "cfb_margin") if sym is None else sym
+        self.tilt = self.sym if tilt is None else tilt  # exponential-tilt mean correction (see _tilt)
         if self.sym:
             self.L = np.concatenate([self.L, -self.L])
             self.Y = np.concatenate([self.Y, -self.Y])
@@ -135,7 +136,7 @@ class Dist:
         emp /= emp.sum()
         # mean correction: move mass by integer shift of the weighted-mean gap (rounded)
         gap = c - float((self.L * w).sum() / w.sum())
-        if self.sym:
+        if self.tilt:
             emp = _tilt(emp, self.grid, gap)  # CFB: keep key numbers on their integers
         else:
             sh = int(round(gap))

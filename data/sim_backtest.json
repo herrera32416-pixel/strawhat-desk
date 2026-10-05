@@ -1,0 +1,286 @@
+{
+ "nfl": {
+  "oos": "2018-2025",
+  "spread_sim+matchup": {
+   "n": 2175,
+   "logloss_market": 0.69253,
+   "logloss_sim": 0.69313,
+   "ll_improvement": -0.0006,
+   "ll_improvement_ci90": [
+    -0.00123,
+    5e-05
+   ],
+   "brier_market": 0.24969,
+   "brier_sim": 0.24999,
+   "bets_gap>=3pp": {
+    "bets": 11,
+    "w": 2,
+    "l": 8,
+    "win_pct": 0.2,
+    "win_pct_ci90": [
+     0.0,
+     0.4
+    ],
+    "units": -6.18,
+    "seasons_positive": "0/6",
+    "by_season": {
+     "2020": -1.0,
+     "2021": -1.0,
+     "2022": -2.0,
+     "2023": -2.0,
+     "2024": -0.09,
+     "2025": -0.09
+    }
+   },
+   "criteria": {
+    "c1": false,
+    "c2": false,
+    "c3": false
+   },
+   "passes": false
+  },
+  "total_sim+matchup": {
+   "n": 2205,
+   "logloss_market": 0.69311,
+   "logloss_sim": 0.69364,
+   "ll_improvement": -0.00053,
+   "ll_improvement_ci90": [
+    -0.00127,
+    0.00023
+   ],
+   "brier_market": 0.24998,
+   "brier_sim": 0.25024,
+   "bets_gap>=3pp": {
+    "bets": 57,
+    "w": 25,
+    "l": 31,
+    "win_pct": 0.4464,
+    "win_pct_ci90": [
+     0.33929,
+     0.55357
+    ],
+    "units": -8.27,
+    "seasons_positive": "1/3",
+    "by_season": {
+     "2022": 0.91,
+     "2024": -5.45,
+     "2025": -3.73
+    }
+   },
+   "criteria": {
+    "c1": false,
+    "c2": false,
+    "c3": false
+   },
+   "passes": false
+  },
+  "spread_sim_only": {
+   "n": 2175,
+   "logloss_market": 0.69253,
+   "logloss_sim": 0.69297,
+   "ll_improvement": -0.00043,
+   "ll_improvement_ci90": [
+    -0.00086,
+    -0.0
+   ],
+   "brier_market": 0.24969,
+   "brier_sim": 0.24991,
+   "bets_gap>=3pp": {
+    "bets": 0,
+    "w": 0,
+    "l": 0,
+    "win_pct": 0.0,
+    "win_pct_ci90": [
+     0,
+     0
+    ],
+    "units": 0.0,
+    "seasons_positive": "0/0",
+    "by_season": {}
+   },
+   "criteria": {
+    "c1": false,
+    "c2": false,
+    "c3": false
+   },
+   "passes": false
+  },
+  "total_sim_only": {
+   "n": 2205,
+   "logloss_market": 0.69311,
+   "logloss_sim": 0.69294,
+   "ll_improvement": 0.00016,
+   "ll_improvement_ci90": [
+    -6e-05,
+    0.00039
+   ],
+   "brier_market": 0.24998,
+   "brier_sim": 0.2499,
+   "bets_gap>=3pp": {
+    "bets": 0,
+    "w": 0,
+    "l": 0,
+    "win_pct": 0.0,
+    "win_pct_ci90": [
+     0,
+     0
+    ],
+    "units": 0.0,
+    "seasons_positive": "0/0",
+    "by_season": {}
+   },
+   "criteria": {
+    "c1": false,
+    "c2": false,
+    "c3": false
+   },
+   "passes": false
+  },
+  "2026_to_date": {
+   "spread_sim+matchup": 0.69221
+  },
+  "mean_n_eff": 658.0,
+  "passes": false
+ },
+ "cfb": {
+  "oos": "2024-2025",
+  "spread_sim+matchup": {
+   "n": 1786,
+   "logloss_market": 0.69319,
+   "logloss_sim": 0.69356,
+   "ll_improvement": -0.00036,
+   "ll_improvement_ci90": [
+    -0.00104,
+    0.00035
+   ],
+   "brier_market": 0.25001,
+   "brier_sim": 0.25018,
+   "bets_gap>=3pp": {
+    "bets": 10,
+    "w": 6,
+    "l": 4,
+    "win_pct": 0.6,
+    "win_pct_ci90": [
+     0.4,
+     0.9
+    ],
+    "units": 1.45,
+    "seasons_positive": "1/2",
+    "by_season": {
+     "2024": -1.09,
+     "2025": 2.55
+    }
+   },
+   "criteria": {
+    "c1": false,
+    "c2": false,
+    "c3": false
+   },
+   "passes": false
+  },
+  "total_sim+matchup": {
+   "n": 1786,
+   "logloss_market": 0.69315,
+   "logloss_sim": 0.69251,
+   "ll_improvement": 0.00064,
+   "ll_improvement_ci90": [
+    2e-05,
+    0.00124
+   ],
+   "brier_market": 0.25,
+   "brier_sim": 0.24968,
+   "bets_gap>=3pp": {
+    "bets": 4,
+    "w": 3,
+    "l": 1,
+    "win_pct": 0.75,
+    "win_pct_ci90": [
+     0.25,
+     1.0
+    ],
+    "units": 1.73,
+    "seasons_positive": "1/1",
+    "by_season": {
+     "2025": 1.73
+    }
+   },
+   "criteria": {
+    "c1": true,
+    "c2": false,
+    "c3": false
+   },
+   "passes": false
+  },
+  "spread_sim_only": {
+   "n": 1786,
+   "logloss_market": 0.69319,
+   "logloss_sim": 0.6932,
+   "ll_improvement": -1e-05,
+   "ll_improvement_ci90": [
+    -0.00051,
+    0.00047
+   ],
+   "brier_market": 0.25001,
+   "brier_sim": 0.25001,
+   "bets_gap>=3pp": {
+    "bets": 8,
+    "w": 5,
+    "l": 3,
+    "win_pct": 0.625,
+    "win_pct_ci90": [
+     0.375,
+     0.875
+    ],
+    "units": 1.55,
+    "seasons_positive": "2/2",
+    "by_season": {
+     "2024": 0.91,
+     "2025": 0.64
+    }
+   },
+   "criteria": {
+    "c1": false,
+    "c2": false,
+    "c3": true
+   },
+   "passes": false
+  },
+  "total_sim_only": {
+   "n": 1786,
+   "logloss_market": 0.69315,
+   "logloss_sim": 0.69339,
+   "ll_improvement": -0.00024,
+   "ll_improvement_ci90": [
+    -0.00056,
+    8e-05
+   ],
+   "brier_market": 0.25,
+   "brier_sim": 0.25012,
+   "bets_gap>=3pp": {
+    "bets": 0,
+    "w": 0,
+    "l": 0,
+    "win_pct": 0.0,
+    "win_pct_ci90": [
+     0,
+     0
+    ],
+    "units": 0.0,
+    "seasons_positive": "0/0",
+    "by_season": {}
+   },
+   "criteria": {
+    "c1": false,
+    "c2": false,
+    "c3": false
+   },
+   "passes": false
+  },
+  "2026_to_date": {
+   "spread_sim+matchup": 0.69548
+  },
+  "mean_n_eff": 583.4,
+  "passes": false
+ },
+ "_criteria_text": "(written before the first run; also in team/SIM.md). The simulator may affect board picks\nfor a sport/market ONLY if, on that sport's pooled out-of-sample seasons (NFL 2018-2025, CFB 2024-2025):\n  (1) log loss of the sim's cover (or over) probability beats the de-vigged closing market, 90% bootstrap CI > 0; AND\n  (2) bets where |sim % - market %| >= 3pp, at -110, win with 90% CI lower bound above 52.38%; AND\n  (3) units at -110 positive in >= 6 of 8 NFL seasons / 2 of 2 CFB seasons."
+}

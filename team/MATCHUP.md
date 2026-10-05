@@ -13,5 +13,10 @@
 
 **Live:** `desk/run.py` → `matchup.live()` → `docs/data/matchups.json` → site **Matchups** tab (unit ranks, edges, style labels, similar-foe and common-opponent numbers, the model lean marked "info only", and the backtest line). `data/matchup/model.json` holds the live model and `influence=false`; the board never reads it. Turning on influence would need the criteria to pass on a re-run and a code change reviewed by Luis.
 
-**CFB:** not built. Public play-by-play exists (cfbfastR-data), but it was out of scope for this pass, and with 130+ FBS teams on about 12 games each, opponent adjustment is much noisier.
-Rebuild: `python -m desk.matchup_data --src DIR_WITH_PBP` · `python backtest/matchup_bt.py --rebuild` · `python backtest/matchup_bt.py --fit-final`.
+**CFB (added 2026-10-04, `desk/matchup_cfb.py`):** free cfbfastR play-by-play (sportsdataverse-data releases, 2021–26) → `data/matchup/cfb_team_games.csv.gz`, joined to the desk's ESPN closes by ESPN game id. Same units, features and walk-forward method, with stronger shrinkage (ridge penalty 12 games). FCS opponents are rated for connectivity, but ranks are among FBS teams only. There is no pressure/QB-hit data, so pass rush vs protection uses sack rate. Live lines come from the ESPN scoreboard (DraftKings), which is free.
+- Pre-registered CFB criteria (`backtest/matchup_cfb_bt.py`): pooled OOS 2024–25, the same (1) and (2) as NFL, and (3) units positive in both seasons.
+- **Result: fails → INFO ONLY.**
+  - Spread, 1,788 games: log loss 0.6939 vs market 0.6936 (CI −0.0008…+0.0002). CV picks the largest penalty (leans ~0.25 pt).
+  - Total, 1,786 games: 0.6927 vs 0.6932 (CI −0.0001…+0.0011); no bets reach 1.5 pts.
+  - Sensitivity, not used for the decision: the lightly-shrunk spread went 303-310, −34.5u. The lightly-shrunk CFB *total* went 166-131 (55.9%, CI 51.2–60.6%), +19.9u, positive in both seasons. That is one cell out of roughly a dozen sensitivity cells, and it wasn't pre-registered, so it is a **watch item** to re-test on 2026 data, not a signal.
+Rebuild: `python -m desk.matchup_data --src DIR_WITH_PBP` · `python backtest/matchup_bt.py --rebuild` · `python backtest/matchup_bt.py --fit-final` · CFB: `python -c "from desk import matchup_cfb as C; C.build(range(2021,2027), src=DIR)"` · `python backtest/matchup_cfb_bt.py --rebuild`.

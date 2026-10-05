@@ -48,7 +48,7 @@ def load_tg(games=None):
 
 
 # ---------------------------------------------------------------- ratings
-def ratings(tg, asof, season):
+def ratings(tg, asof, season, lam=None, prior_w=None, pool=None):
     """Opponent-adjusted ratings from games before `asof` (YYYY-MM-DD): metric = mu + O[off] + D[def] + h*home.
     O = offense unit effect, D = effect the defense has on opponents (sack_rate D > 0 = generates sacks)."""
     d = tg[(tg.game_date < asof) & (tg.season.isin([season, season - 1]))]
@@ -61,9 +61,9 @@ def ratings(tg, asof, season):
     X[:, 0] = 1; X[:, 1] = d.home.values
     X[np.arange(n), 2 + d.team.map(ix).values] = 1
     X[np.arange(n), 2 + T + d.opp.map(ix).values] = 1
-    sw = np.where(d.season.values == season, 1.0, PRIOR_W)
-    pen = np.r_[0, 0, np.full(2 * T, LAM)]
-    R = {"teams": teams, "mu": {}, "O": {}, "D": {}, "n_games": {}}
+    sw = np.where(d.season.values == season, 1.0, PRIOR_W if prior_w is None else prior_w)
+    pen = np.r_[0, 0, np.full(2 * T, LAM if lam is None else lam)]
+    R = {"teams": teams, "mu": {}, "O": {}, "D": {}, "n_games": {}, "pool": None if pool is None else set(pool) & set(teams)}
     for m in METRICS:
         y = d[m].values.astype(float)
         wc = d[WCOL[m]].values.astype(float)
@@ -80,9 +80,10 @@ def ratings(tg, asof, season):
     R["n_games"] = {t: int(cnt.get(t, 0)) for t in teams}
     # z-scores across teams for interactions / style / ranks
     R["zO"], R["zD"] = {}, {}
+    P = R["pool"] or set(teams)
     for m in METRICS:
         for k, src in (("zO", R["O"][m]), ("zD", R["D"][m])):
-            v = np.array(list(src.values())); s = v.std() or 1.0
+            v = np.array([x for t, x in src.items() if t in P]); s = v.std() or 1.0
             R[k][m] = {t: (x - v.mean()) / s for t, x in src.items()}
     return R
 
@@ -164,16 +165,19 @@ def features(R, CR, home, away, asof, season):
     f["tot_sack"] = e("sack_rate", home, away) + e("sack_rate", away, home)
     f["tot_edpr"] = O["ed_pass_rate"][home] + O["ed_pass_rate"][away]
     f["tot_pass_int"] = zO["pass_epa"][home] * zD["pass_epa"][away] + zO["pass_epa"][away] * zD["pass_epa"][home]
+    # simulator inputs (not residual-model features)
+    f["rz_home"], f["rz_away"], f["rz_mu"] = e("rz_td", home, away), e("rz_td", away, home), mu["rz_td"]
+    f["pace_z"] = (zO["ed_pass_rate"][home] + zO["ed_pass_rate"][away]) / 2
     return f
 
 
-def feature_table(games, tg, seasons):
+def feature_table(games, tg, seasons, **rk):
     """Walk-forward features for every completed game in `seasons` (ratings re-fit per game date)."""
     CR = cover_rows(games)
     G = games[games.season.isin(seasons) & games.result.notna() & games.spread_line.notna()].sort_values("gameday")
     rows = []
     for (season, date), gg in G.groupby(["season", "gameday"]):
-        R = ratings(tg, date, season)
+        R = ratings(tg, date, season, **rk)
         for _, g in gg.iterrows():
             f = features(R, CR, g.home_team, g.away_team, date, season)
             if f is None:
@@ -217,8 +221,8 @@ def choose_lam(df, cols, target, grid=(10, 30, 100, 300, 1000, 3000, 10000)):
 
 
 # ---------------------------------------------------------------- plain-English edges
-def _rank(d, t, high_good=True):
-    v = sorted(d.values(), reverse=high_good)
+def _rank(d, t, high_good=True, pool=None):
+    v = sorted([x for k, x in d.items() if pool is None or k in pool or k == t], reverse=high_good)
     return v.index(d[t]) + 1, len(v)
 
 
@@ -238,13 +242,13 @@ def edges(R, home, away):
             if m in ("press_rate",):
                 # offense: low pressure allowed is good; defense: high D (more pressure) is good
                 so, sd_ = -zO[m][off], zD[m][de]
-                ro, n = _rank(R["O"][m], off, high_good=False); rd, _ = _rank(R["D"][m], de, high_good=True)
+                ro, n = _rank(R["O"][m], off, False, R.get("pool")); rd, _ = _rank(R["D"][m], de, True, R.get("pool"))
                 # edge for DEFENSE when rush good (sd_>0) and OL bad (so<0)
                 score = sd_ - so
-                txt = f"{de} pass rush #{rd} vs {off} OL #{ro} of {n} in {desc}"
+                txt = f"{de} pass rush #{rd} vs {off} OL #{ro} of {n} in {R.get('press_desc', desc)}"
             else:
                 so, sd_ = zO[m][off], -zD[m][de]   # D high = allows more = bad defense
-                ro, n = _rank(R["O"][m], off, True); rd, _ = _rank(R["D"][m], de, high_good=False)
+                ro, n = _rank(R["O"][m], off, True, R.get("pool")); rd, _ = _rank(R["D"][m], de, False, R.get("pool"))
                 score = so - sd_
                 txt = f"{off} {olab} #{ro} vs {de} {dlab} #{rd} of {n} in {desc}"
             # only show real mismatches: one side clearly good and the other clearly bad
@@ -301,7 +305,11 @@ def live(now=None, write=True):
             similar=dict(home=round(f["sim_home"], 2), away=round(f["sim_away"], 2), n_home=round(f["sim_n_home"], 1), n_away=round(f["sim_n_away"], 1)),
             common_opponents=co_list, comopp_gap=round(f["comopp_gap"], 2),
             lean_spread_pts=None if lean_s is None else round(lean_s, 2), lean_total_pts=None if lean_t is None else round(lean_t, 2),
-            lean_text=lean_text(g, lean_s, lean_t)))
+            lean_text=lean_text(g, lean_s, lean_t), sport="nfl", line_src="nflverse schedule",
+            home_ml=None if pd.isna(g.home_moneyline) else float(g.home_moneyline), away_ml=None if pd.isna(g.away_moneyline) else float(g.away_moneyline),
+            home_spread_odds=None if pd.isna(g.home_spread_odds) else float(g.home_spread_odds), away_spread_odds=None if pd.isna(g.away_spread_odds) else float(g.away_spread_odds),
+            over_odds=None if pd.isna(g.over_odds) else float(g.over_odds), under_odds=None if pd.isna(g.under_odds) else float(g.under_odds),
+            features={k: round(float(v), 5) for k, v in f.items()}))
     res = dict(generated_ct=now.strftime("%a %b %-d %Y %-I:%M %p CT"), status=(M or {}).get("status", "INFO ONLY"),
                influence=bool((M or {}).get("influence", False)), backtest=(M or {}).get("backtest_summary"), games=out,
                data_through=str(tg.game_date.max()))
@@ -311,7 +319,7 @@ def live(now=None, write=True):
 
 
 def unit_ranks(R, t):
-    r = lambda d, hg: _rank(d, t, hg)[0]
+    r = lambda d, hg: _rank(d, t, hg, R.get("pool"))[0]
     return {"pass_off": r(R["O"]["pass_epa"], True), "rush_off": r(R["O"]["rush_epa"], True),
             "pass_prot": r(R["O"]["press_rate"], False), "pass_def": r(R["D"]["pass_epa"], False),
             "rush_def": r(R["D"]["rush_epa"], False), "pass_rush": r(R["D"]["press_rate"], True),

@@ -74,3 +74,14 @@ Opponent-adjusted unit ratings were built from nflverse pbp 2015–26: pass and 
 - Total: 0.6933 vs 0.6931 on 2,205 games.
 - Forcing light shrinkage makes it worse: ATS |lean| ≥ 1.5: 188-197, −26u; O/U 301-306, −32u.
 - **Conclusion:** the closing line already prices "elite pass rush vs weak OL", "run game vs run D" and common-opponent results. Shipped INFO ONLY (Matchups tab); it never changes a pick. This matches the desk-v1 finding that public ratings get ~0 weight on top of the market.
+
+## Addendum 2026-10-04 (b): CFB matchup layer and the game simulator
+- **CFB matchup** (cfbfastR pbp 2021–26, FBS, ridge penalty 12, walk-forward), OOS 2024–25 vs the ESPN close:
+  - Spread: log loss 0.6939 vs 0.6936 on 1,788 games. Total: 0.6927 vs 0.6932 (CI −0.0001…+0.0011). CV shrinks leans to ~0.25 pt. Fails → info only.
+  - Watch item: a lightly-shrunk total model went 166-131 (+19.9u, both seasons positive). It was not pre-registered and is one of ~12 sensitivity cells, so it needs 2026 confirmation.
+- **Simulator** (drive-level Monte Carlo anchored to the de-vigged market, shrunk matchup adjustments, raked to KEYS key-number pmfs; 1,000 sims/game, walk-forward):
+  - NFL 2018–25: spread 0.6931 vs market 0.6925; total 0.6936 vs 0.6931. Bets at a 3pp gap: 2-8 and 25-31.
+  - CFB 2024–25: spread 0.6936 vs 0.6932; total 0.6925 vs 0.6932 (CI just above 0) but only 4 bets.
+  - Fails the pre-registered criteria → info only.
+  - Lesson: a simulator built on the market can't beat the market unless its inputs carry information the market lacks. Here the inputs don't.
+- **KEYS finding:** the NFL margin pmf's `np.roll` mean correction is discontinuous for road favorites around 7 (4.3% vs ~14% on |margin| = 3 at a home line of +7). The sim uses the tilt correction. The board's NFL pmf is unchanged until a walk-forward test.

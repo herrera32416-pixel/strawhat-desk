@@ -78,7 +78,7 @@ jobs:
           mkdir -p data/cache
           for y in 2024 2025 2026; do curl -sfL -o data/cache/stats_player_week_$y.csv "https://github.com/nflverse/nflverse-data/releases/download/stats_player/stats_player_week_$y.csv"; done
           curl -sfL -o data/history/nfl_games.csv https://raw.githubusercontent.com/nflverse/nfldata/master/data/games.csv || true
-      - name: run desk (LINES -> BOARD -> TEASERS -> PROPS -> GRADER -> MATCHUP -> PUBLISH)
+      - name: run desk (LINES -> BOARD -> TEASERS -> PROPS -> GRADER -> MATCHUP -> SIM -> PUBLISH)
         if: steps.guard.outputs.go == 'yes'
         env:
           THE_ODDS_API_KEY: ${{ secrets.THE_ODDS_API_KEY }}

@@ -110,25 +110,50 @@ function renderTeasers(d) {
   el.innerHTML = h;
   el.querySelectorAll('.subnav button').forEach(b => b.onclick = () => $('#set-' + b.dataset.s).scrollIntoView({behavior: 'smooth'}));
 }
-function renderMatchups(d) {
-  const el = $('#matchups');
-  if (!d || !d.games) { el.innerHTML = '<p class="mut">Matchup data not generated yet.</p>'; return; }
+function mBlock(d, sport) {
   const bt = d.backtest || {};
-  let h = `<div class="note ${d.influence ? '' : 'warn'}"><b>${d.status}</b>: ${d.influence ? 'this layer passed its pre-registered test and can affect board picks.' : 'the matchup model did not beat the market out of sample, so it never changes a board pick. Leans are shown for transparency only.'}<br><small>Spread: ${bt.spread || '—'}<br>Total: ${bt.total || '—'}</small></div>`;
-  h += `<p class="note">Opponent-adjusted unit ratings from nflverse play-by-play (this season, plus last season at 35% weight; only games already played). Ranks are 1 = best. Pass protection / pass rush use pressure rate (sack or QB hit per dropback). Run and pass units use EPA per play. "Similar foes" = how each team did against the spread vs past opponents whose style resembles this week's opponent (shrunk toward 0). Common opponents = teams both have played this season or last. Data through ${d.data_through} · generated ${d.generated_ct}.</p>`;
+  let h = `<h2>${sport === 'nfl' ? 'NFL' : 'FBS (college)'}</h2><div class="note ${d.influence ? '' : 'warn'}"><b>${d.status || 'INFO ONLY'}</b>: ${d.influence ? 'passed its pre-registered test and can affect board picks.' : 'did not beat the closing line out of sample, so it never changes a board pick. Leans are shown for transparency only.'}<br><small>Spread: ${bt.spread || '—'}<br>Total: ${bt.total || '—'}</small></div>`;
+  h += `<p class="small mut">Data through ${d.data_through || '—'}${d.n_fbs ? ' · ranks among ' + d.n_fbs + ' FBS teams' : ''} · generated ${d.generated_ct || '—'}${sport === 'cfb' ? ' · lines: ESPN scoreboard (DraftKings) · pass rush/protection = sack rate (no pressure data in CFB play-by-play)' : ''}</p>`;
   const rk = (r, k) => r && r[k] ? '#' + r[k] : '—';
-  for (const g of d.games) {
+  for (const g of d.games || []) {
     const H = g.ranks[g.home], A = g.ranks[g.away];
-    h += `<div class="card"><div class="gh"><span class="tag nfl">NFL</span> <b>${g.game}</b><span class="k">${g.gameday} ${g.gametime || ''}${g.spread_line != null ? ' · line ' + g.home + ' ' + ln(-g.spread_line) : ''}${g.total_line != null ? ' · total ' + g.total_line : ''}</span></div>`;
+    h += `<div class="card"><div class="gh"><span class="tag ${sport}">${sport.toUpperCase()}</span> <b>${g.game}</b><span class="k">${g.gameday} ${g.gametime || ''}${g.spread_line != null ? ' · line ' + g.home + ' ' + ln(-g.spread_line) : ''}${g.total_line != null ? ' · total ' + g.total_line : ''}</span></div>`;
     h += `<div class="small">${g.away}: ${g.styles[g.away]} · ${g.home}: ${g.styles[g.home]}</div>`;
     h += `<table><tr><th>Unit</th><th>${g.away}</th><th>${g.home}</th></tr>` + [['Pass offense', 'pass_off'], ['Run offense', 'rush_off'], ['Pass protection', 'pass_prot'], ['Pass defense', 'pass_def'], ['Run defense', 'rush_def'], ['Pass rush', 'pass_rush']].map(([l, k]) => `<tr><td>${l}</td><td>${rk(A, k)}</td><td>${rk(H, k)}</td></tr>`).join('') + `<tr><td class="mut">games this season</td><td class="mut">${A.n_games}</td><td class="mut">${H.n_games}</td></tr></table>`;
     h += '<ul class="small">' + (g.edges.length ? g.edges.map(e => `<li>${e.text}</li>`).join('') : '<li class="mut">No clear unit mismatch (no unit pairing with one side top-tier and the other bottom-tier).</li>');
-    h += `<li>Similar foes: ${g.home} ${sgn(g.similar.home / 100).replace('%', '')} pts ATS vs teams styled like ${g.away} (weight ${g.similar.n_home}); ${g.away} ${sgn(g.similar.away / 100)} pts vs teams styled like ${g.home} (weight ${g.similar.n_away})</li>`;
-    h += `<li>Common opponents (${g.common_opponents.length}): ${g.common_opponents.join(', ') || 'none'}${g.common_opponents.length ? ' · shrunk ATS gap ' + sgn(g.comopp_gap / 100) + ' pts toward ' + (g.comopp_gap >= 0 ? g.home : g.away) : ''}</li>`;
+    h += `<li>Similar foes: ${g.home} ${sgn(g.similar.home / 100)} pts ATS vs teams styled like ${g.away} (weight ${g.similar.n_home}); ${g.away} ${sgn(g.similar.away / 100)} pts vs teams styled like ${g.home} (weight ${g.similar.n_away})</li>`;
+    h += `<li>Common opponents (${g.common_opponents.length}): ${g.common_opponents.slice(0, 12).join(', ') || 'none'}${g.common_opponents.length > 12 ? '…' : ''}${g.common_opponents.length ? ' · shrunk ATS gap ' + sgn(Math.abs(g.comopp_gap) / 100) + ' pts toward ' + (g.comopp_gap >= 0 ? g.home : g.away) : ''}</li>`;
     h += `<li><b>${g.lean_text}</b> <span class="mut">(info only)</span></li></ul></div>`;
   }
-  if (!d.games.length) h += '<p class="mut">No NFL games in the next 7 days.</p>';
+  if (!(d.games || []).length) h += '<p class="mut">No games with lines in the next 7 days.</p>';
+  return h;
+}
+function renderMatchups(d) {
+  const el = $('#matchups');
+  if (!d || !d.games) { el.innerHTML = '<p class="mut">Matchup data not generated yet.</p>'; return; }
+  let h = `<div class="subnav"><button onclick="document.getElementById('mu-nfl').scrollIntoView({behavior:'smooth'})">NFL</button><button onclick="document.getElementById('mu-cfb').scrollIntoView({behavior:'smooth'})">FBS</button></div>`;
+  h += `<p class="note">Opponent-adjusted unit ratings from free play-by-play (nflverse for NFL, cfbfastR for FBS): this season plus last season at 35% weight, games already played only. Ranks: 1 = best. Run and pass units use EPA per play. "Similar foes" = how each team did against the spread vs past opponents whose style resembles this week's opponent (shrunk toward 0). Common opponents = teams both have played this season or last.</p>`;
+  h += `<div id="mu-nfl">${mBlock(d, 'nfl')}</div><div id="mu-cfb">${d.cfb ? mBlock(d.cfb, 'cfb') : '<h2>FBS</h2><p class="mut">No FBS matchup data yet.</p>'}</div>`;
   el.innerHTML = h;
+}
+function renderSim(d) {
+  const el = $('#sim');
+  if (!d || !d.games) { el.innerHTML = '<p class="mut">Simulator output not generated yet.</p>'; return; }
+  const bt = d.backtest || {};
+  let h = `<div class="note warn"><b>${d.status}</b>: ${d.n_sims_per_game.toLocaleString()} simulations per game. The sim starts at the de-vigged market spread and total, applies shrunk matchup adjustments, plays each game drive by drive (TD/FG/no score), and is weighted to NFL/CFB key-number frequencies. <b>It never changes a pick</b>; it did not beat the closing line in its pre-registered backtest.<br><small>NFL: ${bt.nfl || '—'}<br>FBS: ${bt.cfb || '—'}</small></div>`;
+  h += `<p class="small mut">${d.lines_note} Δ = sim % − market % (de-vigged). With 1,000 sims (weighted n≈700), a Δ under about ±3.5pp is within simulation noise. Cover and over % exclude pushes. Generated ${d.generated_ct}.</p>`;
+  h += `<div class="filters"><select id="simsp"><option value="">NFL + FBS</option><option value="nfl">NFL</option><option value="cfb">FBS</option></select> <label>sort <select id="simsort"><option value="gap">biggest |Δ| first</option><option value="when">kickoff</option></select></label></div><div id="simt"></div>`;
+  el.innerHTML = h;
+  const pp = x => (100 * x).toFixed(1) + '%', dd = x => `<span class="${Math.abs(x) >= 0.035 ? 'b' : 'mut'}">${x >= 0 ? '+' : ''}${(100 * x).toFixed(1)}</span>`;
+  const draw = () => {
+    const sp = $('#simsp').value; let G = d.games.filter(g => !sp || g.sport === sp);
+    const gap = g => Math.max(Math.abs(g.d_cover), Math.abs(g.d_over), Math.abs(g.d_win));
+    G = $('#simsort').value === 'gap' ? G.slice().sort((a, b) => gap(b) - gap(a)) : G.slice().sort((a, b) => a.when.localeCompare(b.when));
+    let t = `<table class="ledger"><tr><th>Game</th><th>Line</th><th>${'Home win'}<br><small>sim / mkt / Δ</small></th><th>Home cover<br><small>sim / mkt / Δ</small></th><th>Over<br><small>sim / mkt / Δ</small></th><th>Median score<br><small>(10–90%)</small></th></tr>`;
+    for (const g of G) t += `<tr><td><span class="tag ${g.sport}">${g.sport.toUpperCase()}</span> ${g.game}<br><small class="mut">${g.when}</small></td><td>${g.home} ${ln(g.home_line)}<br><small>O/U ${g.total_line}</small></td><td>${pp(g.sim_home_win)} / ${pp(g.mkt_home_win)} / ${dd(g.d_win)}</td><td>${pp(g.sim_home_cover)} / ${pp(g.mkt_home_cover)} / ${dd(g.d_cover)}</td><td>${pp(g.sim_over)} / ${pp(g.mkt_over)} / ${dd(g.d_over)}</td><td>${g.away} ${g.away_pts_median} (${g.away_pts_10_90[0]}–${g.away_pts_10_90[1]})<br>${g.home} ${g.home_pts_median} (${g.home_pts_10_90[0]}–${g.home_pts_10_90[1]})</td></tr>`;
+    $('#simt').innerHTML = t + '</table>';
+  };
+  $('#simsp').onchange = draw; $('#simsort').onchange = draw; draw();
 }
 function renderLedger(d) {
   const el = $('#ledger'); const L = d.ledger.items.slice().sort((a, b) => (b.kick_iso || '').localeCompare(a.kick_iso || ''));
@@ -152,6 +177,7 @@ function renderLedger(d) {
   const [b, p, t, l] = await Promise.all(['board', 'props', 'teasers', 'ledger'].map(J));
   renderBoard(b); renderProps(p); renderTeasers(t); renderLedger(l);
   try { renderMatchups(await J('matchups')); } catch (e) { renderMatchups(null); }
+  try { renderSim(await J('sim')); } catch (e) { renderSim(null); }
   const c = b.meta.credits; $('#foot').innerHTML = `Generated ${b.meta.generated_ct} · Odds API credits today ${c.spent_today}/${c.daily_cap} · remaining ${c.remaining} · picks only, never bets placed`;
   document.querySelectorAll('nav button').forEach(x => x.onclick = () => tab(x.dataset.t));
   tab((location.hash || '#board').slice(1));

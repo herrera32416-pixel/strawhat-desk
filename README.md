@@ -14,5 +14,7 @@ python backtest/teasers_bt.py
 python backtest/teaser_split_bt.py     # current teaser rule vs previous, Sunday NFL / Saturday CFB
 python backtest/cfb_keys_buckets.py    # CFB key numbers by |spread| bucket
 python backtest/matchup_bt.py --rebuild  # NFL matchup layer vs the market (needs data/matchup/team_games.csv.gz)
+python backtest/matchup_cfb_bt.py --rebuild  # CFB matchup layer (cfbfastR pbp -> data/matchup/cfb_team_games.csv.gz)
+python backtest/sim_bt.py              # simulator, 1,000 sims/game, vs the closing line
 python backtest/props_bt.py && python backtest/props_market_bt.py && python backtest/props_shop_bt.py
 ```

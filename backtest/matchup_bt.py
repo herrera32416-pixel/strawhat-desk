@@ -41,8 +41,8 @@ def boot(x, n=4000):
     return [float(np.percentile(m, 5)), float(np.percentile(m, 95))]
 
 
-def run(kind, lam_fixed=None):
-    F = pd.read_csv(FEAT)
+def run(kind, lam_fixed=None, feat=None, test=None, train_min=2016, sport="nfl", oos=(2018, 2025), need_pos=6):
+    F = pd.read_csv(feat or FEAT)
     cols = M.SPREAD_F if kind == "spread" else M.TOTAL_F
     if kind == "spread":
         F["y"] = F.result - F.spread_line; F["line"] = F.spread_line
@@ -55,14 +55,14 @@ def run(kind, lam_fixed=None):
         F["win"] = np.where(F.total > F.total_line, 1, np.where(F.total < F.total_line, 0, -1))
     F = F.dropna(subset=cols + ["y"])
     out, preds, coefs = {}, [], {}
-    for s in TEST:
-        tr, te = F[(F.season < s) & (F.season >= 2016)], F[F.season == s].copy()
+    for s in (test or TEST):
+        tr, te = F[(F.season < s) & (F.season >= train_min)], F[F.season == s].copy()
         if not len(te):
             continue
         lam = lam_fixed or M.choose_lam(tr, cols, "y")
         mdl = M.fit_ridge(tr[cols].values, tr.y.values, lam)
         te["lean"] = M.predict(mdl, te[cols].values)
-        D = Dist("nfl_margin" if kind == "spread" else "nfl_total", max_season=s - 1)
+        D = Dist(f"{sport}_margin" if kind == "spread" else f"{sport}_total", max_season=s - 1)
         pm = []
         for c, l, pmk in zip(te.line, te.lean, te.p_mkt):
             base, adj = D.cond_over(c, c), D.cond_over(c + l, c)
@@ -72,9 +72,10 @@ def run(kind, lam_fixed=None):
         preds.append(te); coefs[s] = dict(lam=lam, b=dict(zip(cols, np.round(mdl["b"], 3).tolist())))
     P = pd.concat(preds)
     if not lam_fixed:
-        P.to_csv(os.path.join(ROOT, "backtest", "out", f"matchup_{kind}_preds.csv.gz"), index=False)
+        P.to_csv(os.path.join(ROOT, "backtest", "out", f"matchup_{'' if sport == 'nfl' else sport + '_'}{kind}_preds.csv.gz"), index=False)
     res = {}
-    for name, Q in (("oos_2018_2025", P[P.season <= 2025]), ("2026_to_date", P[P.season == 2026])):
+    oname = f"oos_{oos[0]}_{oos[1]}"
+    for name, Q in ((oname, P[(P.season >= oos[0]) & (P.season <= oos[1])]), ("2026_to_date", P[P.season == 2026])):
         Q = Q[Q.win >= 0]
         if not len(Q):
             continue
@@ -101,11 +102,11 @@ def run(kind, lam_fixed=None):
                                        seasons_positive=f"{sum(v > 0 for v in per.values())}/{len(per)}", by_season=per)
         r["ats_at_-110" if kind == "spread" else "ou_at_-110"] = bets
         res[name] = r
-    oos = res["oos_2018_2025"]; b15 = oos[("ats_at_-110" if kind == "spread" else "ou_at_-110")]["lean>=1.5"]
+    oos = res[oname]; b15 = oos[("ats_at_-110" if kind == "spread" else "ou_at_-110")]["lean>=1.5"]
     sp = b15["seasons_positive"].split("/")
     crit = dict(c1_logloss_ci_above_0=oos["ll_improvement_ci90"][0] > 0,
                 c2_win_ci_low_above_52_38=b15["win_pct_ci90"][0] > 0.5238,
-                c3_units_positive_6_of_8=int(sp[0]) >= 6)
+                c3_units_positive_in_enough_seasons=int(sp[0]) >= need_pos)
     res["criteria"] = crit; res["passes"] = all(crit.values()); res["coefs_by_test_season"] = coefs
     return res
 
