@@ -1,66 +1,184 @@
 {
  "nfl": {
-  "ticket1": {
-   "tickets": 193,
-   "cashed": 30,
-   "units": 11.0,
-   "roi": 0.057,
-   "ci90": [
-    -43.0,
-    69.0
-   ]
-  },
   "all5": {
    "tickets": 965,
-   "cashed": 121,
-   "units": -144.0,
-   "roi": -0.149,
+   "cashed": 135,
+   "units": -114.2,
+   "roi": -0.118,
    "ci90": [
-    -258.0,
-    -25.0
+    -222.6,
+    2.2
+   ]
+  },
+  "ticket1": {
+   "tickets": 153,
+   "cashed": 31,
+   "units": 1.2,
+   "roi": 0.008,
+   "ci90": [
+    -38.6,
+    46.0
+   ]
+  },
+  "ticket1_4leg": {
+   "tickets": 46,
+   "cashed": 12,
+   "units": -2.8,
+   "roi": -0.061,
+   "ci90": [
+    -20.8,
+    15.2
+   ]
+  },
+  "ticket1_ev_pos": {
+   "tickets": 153,
+   "cashed": 31,
+   "units": 1.2,
+   "roi": 0.008,
+   "ci90": [
+    -38.6,
+    46.0
    ]
   },
   "play": {
-   "tickets": 159,
-   "cashed": 26,
-   "units": 17.0,
-   "roi": 0.107,
+   "tickets": 153,
+   "cashed": 31,
+   "units": 1.2,
+   "roi": 0.008,
    "ci90": [
-    -34.0,
-    73.0
+    -38.6,
+    46.0
    ]
   },
-  "weeks": 195,
+  "research": {
+   "tickets": 812,
+   "cashed": 104,
+   "units": -115.4,
+   "roi": -0.142,
+   "ci90": [
+    -220.4,
+    -4.4
+   ]
+  },
+  "ticket1_5leg": {
+   "tickets": 44,
+   "cashed": 10,
+   "units": 6.0,
+   "roi": 0.136,
+   "ci90": [
+    -14.0,
+    31.0
+   ]
+  },
+  "ticket1_6leg": {
+   "tickets": 63,
+   "cashed": 9,
+   "units": -2.0,
+   "roi": -0.032,
+   "ci90": [
+    -32.0,
+    31.0
+   ]
+  },
+  "ticket1_sizes": {
+   "4": 46,
+   "5": 44,
+   "6": 63
+  },
+  "ticket1_leg_win_pct_excl_push": 0.7326,
+  "weeks": 196,
+  "weeks_without_ticket1": 43,
   "seasons": "2015-2026",
-  "day": "Sunday"
+  "day": "Sunday",
+  "previous_rule": {
+   "ticket1": {
+    "tickets": 193,
+    "cashed": 30,
+    "units": 11.0,
+    "roi": 0.057,
+    "ci90": [
+     -43.0,
+     69.0
+    ]
+   },
+   "all5": {
+    "tickets": 965,
+    "cashed": 121,
+    "units": -144.0,
+    "roi": -0.149,
+    "ci90": [
+     -258.0,
+     -25.0
+    ]
+   },
+   "play": {
+    "tickets": 159,
+    "cashed": 26,
+    "units": 17.0,
+    "roi": 0.107,
+    "ci90": [
+     -34.0,
+     73.0
+    ]
+   }
+  }
  },
  "cfb": {
-  "ticket1": {
-   "tickets": 35,
-   "cashed": 2,
-   "units": -21.0,
-   "roi": -0.6,
+  "all5": {
+   "tickets": 174,
+   "cashed": 19,
+   "units": -41.0,
+   "roi": -0.236,
    "ci90": [
-    -35.0,
-    -7.0
+    -90.0,
+    8.0
    ]
   },
-  "all5": {
-   "tickets": 175,
-   "cashed": 16,
-   "units": -63.0,
-   "roi": -0.36,
+  "research": {
+   "tickets": 174,
+   "cashed": 19,
+   "units": -41.0,
+   "roi": -0.236,
    "ci90": [
-    -105.0,
-    -21.0
+    -90.0,
+    8.0
    ]
   },
   "play": {
    "tickets": 0
   },
+  "ticket1_sizes": {},
+  "ticket1_leg_win_pct_excl_push": 0.0,
   "weeks": 38,
+  "weeks_without_ticket1": 38,
   "seasons": "2024-2026",
-  "day": "Saturday"
+  "day": "Saturday",
+  "previous_rule": {
+   "ticket1": {
+    "tickets": 35,
+    "cashed": 2,
+    "units": -21.0,
+    "roi": -0.6,
+    "ci90": [
+     -35.0,
+     -7.0
+    ]
+   },
+   "all5": {
+    "tickets": 175,
+    "cashed": 16,
+    "units": -63.0,
+    "roi": -0.36,
+    "ci90": [
+     -105.0,
+     -21.0
+    ]
+   },
+   "play": {
+    "tickets": 0
+   }
+  }
  },
- "_note": "Closing lines (nflverse for NFL; ESPN-listed close for CFB), walk-forward KEYS pmf + band shrink fit on prior seasons. Live uses 9am DK lines, so results will differ."
+ "_note": "Closing lines (nflverse for NFL; ESPN-listed close for CFB), walk-forward KEYS pmf + band shrink fit on prior seasons. Live uses 9am DK lines, so results will differ. Rules fixed before this run (Oct 4 2026 eval); not tuned to this backtest. CFB is research only (never PLAY) regardless of the numbers.",
+ "_rules": "spread legs only; Wong first; every leg >= 72.3%; 4-6 legs at +260/+400/+600; PLAY = NFL & EV > 0; tickets #2-5 research"
 }

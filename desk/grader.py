@@ -4,7 +4,7 @@ from zoneinfo import ZoneInfo
 from . import espn
 from .names import norm
 from .props import pname
-from .teaser_math import settle, dec
+from .teaser_math import settle, dec, DK6
 
 CT = ZoneInfo("America/Chicago")
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -44,7 +44,7 @@ def add_board(L, board, now):
             L["items"].append(dict(id=iid, tab="board", sport=g["sport"], logged_ct=now.isoformat(timespec="minutes"), kick_iso=g["kick_iso"],
                                    kick_ct=g["kick_ct"], home=g["home"], away=g["away"], market=mk, side=b["side"], pick=b["team"],
                                    line=b["line"], price=b["price"], book=b["book"], model_pct=b["model_pct"], market_pct=b["market_pct"],
-                                   ev=b["ev"], stake_u=1.0, status="open"))
+                                   ev=b["ev"], stake_u=1.0, status="open", kind="official"))
             n += 1
     return n
 
@@ -78,7 +78,7 @@ def add_props(L, props, now, within_h=24):
             L["items"].append(dict(id=iid, tab="props", sport="nfl", toa_id=g["toa_id"], logged_ct=now.isoformat(timespec="minutes"),
                                    kick_iso=g["kick_iso"], kick_ct=g["kick_ct"], home=home, away=away, player=r["player"],
                                    market=r["market"], side=r["side"], line=r["line"], price=r["price"], book=r["book"],
-                                   model_pct=r["model_pct"], market_pct=r["market_pct"], edge=r["edge"], stake_u=1.0, status="open"))
+                                   model_pct=r["model_pct"], market_pct=r["market_pct"], edge=r["edge"], stake_u=1.0, status="open", kind="research"))
             n += 1
     return n
 
@@ -101,10 +101,13 @@ def add_teasers(L, sets, now):
         for t in T:
             L["items"].append(dict(id=_id("teaser", key, t["n"]), tab="teasers", set=sk, set_label=S["label"], set_key=key, n=t["n"], name=t["name"],
                                    decision=t["decision"], logged_ct=now.isoformat(timespec="minutes"), kick_iso=max(l["kick_iso"] for l in t["legs"]),
-                                   p_all_six=t["p_all_six"], ev=t["ev_per_unit"], price=600, stake_u=1.0, status="open",
+                                   first_kick_iso=min(l["kick_iso"] for l in t["legs"]), n_legs=len(t["legs"]),
+                                   kind="official" if t["decision"] == "PLAY" else "research",
+                                   p_all_six=t["p_all_six"], ev=t["ev_per_unit"], price=t.get("price", DK6[len(t["legs"])]), stake_u=1.0, status="open",
                                    legs=[dict(sport=l["sport"], home=l["game"].split(" @ ")[1], away=l["game"].split(" @ ")[0], kick_iso=l["kick_iso"],
                                               market=l["market"], side=l["side"], pick=l["pick"], orig_line=l["orig_line"], teased_line=l["teased_line"],
-                                              p=l["p_cond"], status="open") for l in t["legs"]]))
+                                              p=l["p_cond"], p_win=l.get("p_win"), p_push=l.get("p_push"), band=l.get("band"),
+                                              status="open") for l in t["legs"]]))
             n += 1
     return n
 
@@ -142,12 +145,26 @@ def grade_side(market, side, line, g, flip):
 _BOX = {}
 
 
+def kind_of(it):
+    """official = board picks + PLAY teasers; research = props and PASS teaser tickets (older items lack the field)."""
+    if it.get("kind"):
+        return it["kind"]
+    if it["tab"] == "board":
+        return "official"
+    if it["tab"] == "teasers":
+        return "official" if it.get("decision") == "PLAY" else "research"
+    return "research"
+
+
 def grade(L, now):
+    """Settle from ESPN once a game is completed (no wall-clock delay). Teasers/parlays: each leg is graded as soon as
+    its own game is final, and the ticket is LOST the moment any leg loses (other legs may still be open)."""
     n = 0
+    started = lambda iso: dt.datetime.fromisoformat(iso) <= now
     for it in L["items"]:
         if it["status"] != "open":
             continue
-        if dt.datetime.fromisoformat(it["kick_iso"]) > now - dt.timedelta(hours=4):
+        if it["tab"] in ("board", "props") and not started(it["kick_iso"]):
             continue
         if it["tab"] == "board":
             g, flip = find_game(it["sport"], it["home"], it["away"], it["kick_iso"])
@@ -164,12 +181,13 @@ def grade(L, now):
             if g["id"] not in _BOX:
                 _BOX[g["id"]] = espn.box_players(espn.summary("nfl", g["id"]))
             st = _BOX[g["id"]].get(pname(it["player"]))
-            val = None if st is None else st.get(STAT_OF[it["market"]])
-            if it["market"] == "Anytime TD" and st is not None:
-                val = st.get("anytime_td", 0.0)
-            if val is None:
-                it.update(status="VOID", units=0.0, note="player not in ESPN box score (DNP?)", settled_ct=now.isoformat(timespec="minutes")); n += 1
+            if st is None:  # not in the box score at all -> did not play -> VOID (books' DNP rule)
+                it.update(status="VOID", units=0.0, note="player not in ESPN box score (DNP)", settled_ct=now.isoformat(timespec="minutes")); n += 1
                 continue
+            val = st.get(STAT_OF[it["market"]])
+            if val is None:  # played (appears in some box-score category) but no line in this one -> 0, graded (2026-10-04)
+                val = 0.0
+                it["note"] = "played, no stat line in this category -> graded as 0"
             if it["market"] == "Anytime TD":
                 r = "W" if val > 0 else "L"
             else:
@@ -177,24 +195,25 @@ def grade(L, now):
             it.update(status=r, actual=val, units=0.0 if r == "P" else (payout(it["price"]) if r == "W" else -1.0),
                       espn_id=g["id"], settled_ct=now.isoformat(timespec="minutes"))
             n += 1
-        elif it["tab"] == "teasers":
-            done = True
+        elif it["tab"] in ("teasers", "parlays"):
             for l in it["legs"]:
-                if l["status"] != "open":
+                if l["status"] != "open" or not started(l["kick_iso"]):
                     continue
-                if dt.datetime.fromisoformat(l["kick_iso"]) > now - dt.timedelta(hours=4):
-                    done = False; continue
                 g, flip = find_game(l["sport"], l["home"], l["away"], l["kick_iso"])
                 if not g or not g["completed"]:
-                    done = False; continue
-                mk = "spread" if l["market"] == "spread" else "total"
-                l["status"] = grade_side(mk, l["side"], l["teased_line"], g, flip)
+                    continue
+                mk = "spread" if l["market"] == "spread" else ("ml" if l["market"] == "ml" else "total")
+                line = l.get("teased_line", l.get("line"))
+                l["status"] = grade_side(mk, l["side"], line, g, flip)
                 l["final"] = f"{g['away_score']:.0f}-{g['home_score']:.0f}"
             res = [l["status"] for l in it["legs"]]
             if "L" in res:
-                it.update(status="L", units=-1.0, settled_ct=now.isoformat(timespec="minutes")); n += 1
-            elif done and "open" not in res:
-                u = settle(res)
+                open_legs = res.count("open")
+                it.update(status="L", units=-1.0, settled_ct=now.isoformat(timespec="minutes"),
+                          note=(f"lost early: a leg lost with {open_legs} leg(s) still open" if open_legs else it.get("note")))
+                n += 1
+            elif "open" not in res:
+                u = settle(res, DK6)
                 it.update(status="W" if u > 0 else "P", units=u, settled_ct=now.isoformat(timespec="minutes")); n += 1
     return n
 
@@ -206,12 +225,29 @@ def _rec(s):
     return dict(record=f"{w}-{l}-{p}", units=u, dollars=round(u * 20, 2), settled=len(s), void=v)
 
 
+def _exp(s):
+    """Expected wins on settled W/L items: model % vs market % (pushes excluded)."""
+    s = [i for i in s if i["status"] in ("W", "L") and i.get("model_pct") is not None and i.get("market_pct") is not None]
+    return dict(n=len(s), actual_w=sum(i["status"] == "W" for i in s), exp_w_model=round(sum(i["model_pct"] for i in s), 2),
+                exp_w_market=round(sum(i["market_pct"] for i in s), 2))
+
+
 def headline(L):
     out = {}
     done = lambda its: [i for i in its if i["status"] in ("W", "L", "P", "VOID")]
     for tab in ("board", "props", "teasers"):
         its = [i for i in L["items"] if i["tab"] == tab]
         out[tab] = dict(_rec(done(its)), open=len(its) - len(done(its)))
+    for k in ("official", "research"):
+        its = [i for i in L["items"] if kind_of(i) == k]
+        out[k] = dict(_rec(done(its)), open=len(its) - len(done(its)),
+                      label="Official plays (board picks + PLAY teasers)" if k == "official" else "Research (props + PASS teaser tickets)")
+    P = [i for i in L["items"] if i["tab"] == "props"]
+    atd = [i for i in P if i.get("market") == "Anytime TD"]; oth = [i for i in P if i.get("market") != "Anytime TD"]
+    out["props_atd"] = dict(_rec(done(atd)), open=len(atd) - len(done(atd)), label="Props: anytime TD (high variance)")
+    out["props_other"] = dict(_rec(done(oth)), open=len(oth) - len(done(oth)), label="Props: yards/receptions",
+                              expected=_exp(done(oth)))
+    out["props"]["expected_non_atd"] = _exp(done(oth))
     for sk, lab in (("cfb_sat", "Saturday CFB"), ("nfl_sun", "Sunday NFL")):
         its = [i for i in L["items"] if i["tab"] == "teasers" and i.get("set") == sk]
         s = done(its)

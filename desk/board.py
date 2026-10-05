@@ -13,6 +13,8 @@ EV_PICK = 0.03     # raised 2% -> 3% on 2026-10-03 (eval: Sat picks lost; see ba
 ML_PICKS = False   # 2026-10-03: ML is reference-only (ML backtest EV>=2%: 253 bets -22.3u, ROI -8.8%)
 MAX_ABS_SPREAD = 30  # no spread/total PICK when the game's |spread| >= 30 (blowout lines; Texas Southern +45.5 lost)
 ML_PRICE_RANGE = (-300, 300)  # longshot/heavy-fav MLs: few reference books, fair is noise -> never PICK outside this
+MAX_PT_GAP = 3.0  # 2026-10-04: no spread/total PICK when |fair center - the book's line| > 3 points (same 3 pts for totals):
+#                   a big gap vs a 20+ book consensus is far more often a stale/odd line than value
 MAX_PRICE_GAP = 0.06  # sanity: if our fair differs from the book's own no-vig by >6pp, treat as stale/odd -> pass
 BOOKN = {"draftkings": "DK", "bovada": "Bovada"}
 _D = {}
@@ -131,14 +133,21 @@ def pick(sides, mkt, center, nref, pin):
     top = max(best.values(), key=lambda s: s["ev"])
     gap = abs(top["model_pct"] - top["market_pct"])
     in_range = mkt != "ml" or (ML_PRICE_RANGE[0] <= top["price"] <= ML_PRICE_RANGE[1])
-    decision = "PICK" if (top["ev"] >= EV_PICK and gap <= MAX_PRICE_GAP and nref >= 3 and in_range) else "PASS"
+    pt_gap = None
+    if center is not None and top.get("line") is not None and mkt in ("spread", "total"):
+        book_c = top["line"] if mkt == "total" else (-top["line"] if top["side"] == "home" else top["line"])
+        pt_gap = round(abs(center - book_c), 2)
+        top = dict(top, pt_gap=pt_gap)
+    pt_ok = pt_gap is None or pt_gap <= MAX_PT_GAP
+    decision = "PICK" if (top["ev"] >= EV_PICK and gap <= MAX_PRICE_GAP and nref >= 3 and in_range and pt_ok) else "PASS"
     if mkt == "ml" and not ML_PICKS:
         return dict(status="ok", decision="REF", reason=f"reference only (no ML picks; best EV {top['ev']*100:+.1f}% at {top['book']})",
                     best=top, sides=sides, n_ref_books=nref, fair_center=None, pinnacle_center=None)
     reason = (f"EV {top['ev']*100:+.1f}% at {top['book']} vs fair from {nref} books" if decision == "PICK" else
               (f"best EV {top['ev']*100:+.1f}% < {EV_PICK*100:.0f}%" if top["ev"] < EV_PICK else
                (f"fair-vs-book gap {gap*100:.1f}pp > {MAX_PRICE_GAP*100:.0f}pp (stale/odd line)" if gap > MAX_PRICE_GAP else
-                ("ML price outside -300..+300 (longshot guard)" if not in_range else "too few reference books"))))
+               (f"fair {center:+.1f} vs book line differs by {pt_gap:.1f} pts > {MAX_PT_GAP:g} (stale/odd line guard)" if not pt_ok else
+                ("ML price outside -300..+300 (longshot guard)" if not in_range else "too few reference books")))))
     return dict(status="ok", decision=decision, reason=reason, best=top, sides=sides, n_ref_books=nref,
                 fair_center=None if center is None else round(center, 2), pinnacle_center=None if pin is None else round(pin, 2))
 

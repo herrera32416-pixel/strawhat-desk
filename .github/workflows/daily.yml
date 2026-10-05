@@ -6,16 +6,17 @@ on:
     - cron: "7 15 * * *"    # 10:07am CDT / 9:07am CST
     - cron: "37 15 * * *"   # backup: 10:37am CDT / 9:37am CST
     - cron: "37 16 * * *"   # backup: 11:37am CDT / 10:37am CST
-    # Pre-kick RECHECK, Sat (CFB) + Sun (NFL), ~11:30am CT: guard runs only the slots that land in the 11am CT hour.
-    - cron: "27 16 * * 0,6"   # 11:27am CDT
-    - cron: "27 17 * * 0,6"   # 11:27am CST
-    - cron: "47 16 * * 0,6"   # backup 11:47am CDT
-    - cron: "47 17 * * 0,6"   # backup 11:47am CST / 12:47pm CDT (late-fire safety; window 11am-2pm CT)
-    - cron: "17 18 * * 0,6"   # backup 1:17pm CDT / 12:17pm CST
+    # Pre-kick RECHECK (kickoff-driven, since 2026-10-04). Every recheck cron starts with "15,45"; each slot runs the
+    # stdlib planner (desk/recheck_plan.py, no credits) and only continues if an OPEN item kicks within 70 min and has
+    # not been rechecked yet. Sunday NFL: ~11:15am CT (noon), ~2:15pm (3:05/3:25), ~6:15pm (7:20), each + :45 backup.
+    - cron: "15,45 15-22 * * 0,6"  # Sat/Sun daytime: 10:15am-5:45pm CDT / 9:15am-4:45pm CST
+    - cron: "15,45 12-14 * * 0"    # Sun morning (international ~8:30am CT kicks): 7:15-9:45am CDT
+    - cron: "15,45 23 * * *"       # evenings (SNF/MNF/TNF, late CFB): 6:15/6:45pm CDT, 5:15/5:45pm CST
+    - cron: "15,45 0-3 * * *"      # evenings: 7:15-10:45pm CDT / 6:15-9:45pm CST
   workflow_dispatch:
     inputs:
       mode:
-        description: "daily (full 9am run) or recheck (pre-kick recheck)"
+        description: "daily (full 9am run) or recheck (pre-kick recheck; no-op unless something open kicks within 70 min)"
         default: daily
         type: choice
         options: [daily, recheck]
@@ -30,12 +31,17 @@ jobs:
     timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
-      - name: once-per-CT-day guard (DST-safe)
+      - name: sync to latest main
+        run: |
+          git fetch -q origin "${{ github.event.repository.default_branch }}"
+          git checkout -q -B "${{ github.event.repository.default_branch }}" "origin/${{ github.event.repository.default_branch }}"
+      - name: guard (daily once per CT day; recheck only when something open kicks within 70 min)
         id: guard
-        # mode: recheck crons are the "27/47 * * 0,6" entries; dispatch takes inputs.mode.
+        # mode: recheck crons are the "15,45 ..." entries; dispatch takes inputs.mode.
         # daily (scheduled): CT hour 9-11 and no scheduled daily run yet today (data/last_scheduled_run_ct.txt).
-        # recheck (scheduled): CT hour 11, today's daily run done, no recheck yet today (data/last_recheck_ct.txt).
-        # Manual runs always go. Credits are capped in desk/toa.py (40/day); the 9am run reserves 6/sport for the recheck.
+        # recheck (scheduled or manual): python3 -m desk.recheck_plan (stdlib, no credits) must say go=yes, i.e. an open
+        # official item / prop kicks within 70 min and was not rechecked yet (data/recheck_done.json).
+        # Credits are capped in desk/toa.py (40/day); the 9am run reserves 4 per recheck window of today's official items.
         run: |
           H=$(TZ=America/Chicago date +%-H); D=$(TZ=America/Chicago date +%F)
           BR="${{ github.event.repository.default_branch }}"
@@ -45,23 +51,21 @@ jobs:
           SCHED="${{ github.event.schedule }}"
           MODE=daily
           if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then MODE="${{ inputs.mode }}"; [ -z "$MODE" ] && MODE=daily; fi
-          case "$SCHED" in *"* * 0,6") MODE=recheck;; esac
+          case "$SCHED" in "15,45 "*) MODE=recheck;; esac
           GO=yes
           if [ "${{ github.event_name }}" = "schedule" ]; then
             if [ "$MODE" = "daily" ]; then
               if [ "$H" -lt 9 ] || [ "$H" -gt 11 ]; then GO=no; echo "skip: CT hour $H outside 9-11"; fi
               if [ "$LAST" = "$D" ]; then GO=no; echo "skip: scheduled daily run already done for $D"; fi
-            else
-              if [ "$H" -lt 11 ] || [ "$H" -gt 14 ]; then GO=no; echo "skip: recheck slot outside 11am-2pm CT ($H)"; fi
-              if [ "$LAST" != "$D" ]; then GO=no; echo "skip: no daily run yet today ($LAST)"; fi
-              if [ "$LASTR" = "$D" ]; then GO=no; echo "skip: recheck already done for $D"; fi
             fi
+          fi
+          if [ "$MODE" = "recheck" ]; then
+            P=$(python3 -m desk.recheck_plan 2>&1 || echo "go=no planner error")
+            echo "planner: $P"
+            case "$P" in *"go=yes"*) ;; *) GO=no;; esac
           fi
           echo "event=${{ github.event_name }} sched='$SCHED' mode=$MODE ct=$D h=$H last=$LAST lastr=$LASTR go=$GO"
           echo "go=$GO" >> $GITHUB_OUTPUT; echo "mode=$MODE" >> $GITHUB_OUTPUT
-      - name: sync to latest main
-        if: steps.guard.outputs.go == 'yes'
-        run: git checkout -q -B "${{ github.event.repository.default_branch }}" "origin/${{ github.event.repository.default_branch }}"
       - uses: actions/setup-python@v5
         if: steps.guard.outputs.go == 'yes'
         with: { python-version: "3.12" }
@@ -69,6 +73,7 @@ jobs:
         if: steps.guard.outputs.go == 'yes'
         run: |
           pip install -q numpy pandas
+          if [ "${{ steps.guard.outputs.mode }}" = "recheck" ]; then exit 0; fi
           mkdir -p data/cache
           for y in 2024 2025 2026; do curl -sfL -o data/cache/stats_player_week_$y.csv "https://github.com/nflverse/nflverse-data/releases/download/stats_player/stats_player_week_$y.csv"; done
           curl -sfL -o data/history/nfl_games.csv https://raw.githubusercontent.com/nflverse/nfldata/master/data/games.csv || true

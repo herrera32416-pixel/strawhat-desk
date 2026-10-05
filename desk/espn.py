@@ -53,6 +53,7 @@ def box_players(summ):
                 nm = pname(a["athlete"]["displayName"])
                 st = dict(zip(keys, a.get("stats", [])))
                 o = out.setdefault(nm, {"name": a["athlete"]["displayName"]})
+                o["_present"] = True  # appeared in the box score in ANY category (incl. defense/returns/kicking)
                 def num(k):
                     try:
                         return float(str(st.get(k, "")).replace(",", ""))
@@ -67,3 +68,47 @@ def box_players(summ):
     for o in out.values():
         o["anytime_td"] = 1.0 if ((o.get("rushing_tds") or 0) + (o.get("receiving_tds") or 0)) > 0 else 0.0
     return out
+
+
+# ---- injury report (ESPN summary "injuries"; free) ----
+OUT_STATUSES = {"out", "injured reserve", "ir", "suspended", "physically unable to perform", "pup", "non-football injury",
+                "reserve/covid-19", "inactive"}
+SKIP_AT_LOG = OUT_STATUSES | {"doubtful"}
+
+
+def injuries(summ):
+    """-> {pname: status_lower} from an ESPN summary (pre-game or live)."""
+    from .props import pname
+    out = {}
+    for tm in (summ or {}).get("injuries", []) or []:
+        for i in tm.get("injuries", []) or []:
+            nm = (i.get("athlete") or {}).get("displayName")
+            st = str(i.get("status") or (i.get("type") or {}).get("description") or "").strip().lower()
+            fs = str(((i.get("details") or {}).get("fantasyStatus") or {}).get("description") or "").strip().lower()
+            if nm:
+                out[pname(nm)] = "inactive" if fs == "inactive" and st not in OUT_STATUSES else st
+    return out
+
+
+def event_for(sport, home, away, kick_iso):
+    """ESPN event id for a game (by normalized team names on the kick date, CT and UTC)."""
+    import datetime as dt
+    from zoneinfo import ZoneInfo
+    from .names import norm
+    k = dt.datetime.fromisoformat(kick_iso)
+    for d in {k.astimezone(ZoneInfo("America/Chicago")).strftime("%Y%m%d"), k.astimezone(dt.timezone.utc).strftime("%Y%m%d")}:
+        for g in games(scoreboard(sport, d)):
+            if {norm(g["home"]), norm(g["away"])} == {norm(home), norm(away)}:
+                return g["id"]
+    return None
+
+
+_INJ = {}
+
+
+def injuries_for_game(sport, home, away, kick_iso):
+    key = (sport, home, away, kick_iso)
+    if key not in _INJ:
+        eid = event_for(sport, home, away, kick_iso)
+        _INJ[key] = injuries(summary(sport, eid)) if eid else None
+    return _INJ[key]

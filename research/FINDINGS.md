@@ -13,7 +13,7 @@ Compiled Fri Oct 2 2026 (CT) for Strawhat Desk. Web sources were read Oct 2 2026
 
 ## 2. Teasers
 - **Payout (verified).** The DK football teaser at 6 points pays 2:−120, 3:+160, 4:+260, 5:+400, 6:+600. Source: ats.io DK teaser table, read Oct 2 2026. The Bovada regular-season NFL table also lists 6-team 6-pt at +600 (bovada.lv/help/sports-faq/teaser-betting). On both books, ties reduce the ticket (DK: "if a pick is a tie, the pick is removed").
-- **Break-even.** A 6-leg ticket at +600 needs 1/7 = 14.29%, which is 72.3% per leg if legs are independent. A 2-team at −120 needs 73.9% per leg (nflanalytic.com).
+- **Break-even.** A 6-leg ticket at +600 needs 1/7 = 14.29%, which is 72.3% per leg if legs are independent. 5 legs at +400: 20.0% ticket, 72.48% per leg. 4 legs at +260: 27.78% ticket, 72.60% per leg. A 2-team at −120 needs 73.9% per leg (nflanalytic.com).
 - **Wong teasers.** Tease only through both 3 and 7: underdogs +1.5 to +2.5 up to +7.5/+8.5, and favorites −7.5 to −8.5 down to −1.5/−2.5.
   - nflanalytic.com, 1999–2025 closes: favorite legs 72.8% (493), dog legs 75.2% (904), fav −2.5/−3 62.8%, fav −10 64.8%, dog +7/+8 62.5%.
   - SportsGamblingPodcast/Reddit SDQL by season: +1.5 to +3 dogs at 74–80% in 2018–22; −7.5 to −9 favs at 71–89%.
@@ -22,7 +22,9 @@ Compiled Fri Oct 2 2026 (CT) for Strawhat Desk. Web sources were read Oct 2 2026
   - Wong dog 77.1% (363-108); Wong fav 72.0%; dog +3 72.8%; dog +3.5..+7 71.0%; fav −1..−3 68.1%; fav < −8.5 65.2%.
   - Totals legs run 66.7–69.9%. Totals have weak key numbers, so totals teasers rarely clear 72.3%.
   - CFB legs top out around 71% and lose as tickets.
-  - Picking the top-6 NFL spread legs each week by modeled probability made +55u on 195 tickets (90% CI [−6, +118]).
+  - **Correction (2026-10-04).** This line used to say "top-6 NFL spread legs each week made +55u on 195 tickets (90% CI [−6, +118])". That number is real but comes from `backtest/teaser_robust.py`, which picks from *every* game day of the week (Thu/Sun/Mon), so it can't be bet as one Sunday ticket. The bettable Sunday-only version (`backtest/teaser_split_bt.py`) made **+11u on 193 tickets** (30 cashed, ROI +6%, 90% CI [−43, +69]): no established edge.
+  - **Current rule (2026-10-04):** spread legs only, Wong first, every leg ≥ 72.3%, 4–6 legs at +260/+400/+600, never padded. Sunday NFL 2015–26 (196 Sundays): 153 tickets, 31 cashed, **+1.2u**, ROI +1%, 90% CI [−38.6, +46.0]; 43 Sundays had no ticket. By size: 4 legs 46 tickets, −2.8u; 5 legs 44, +6.0u; 6 legs 63, −2.0u. Legs won 73.3%. Rules were fixed from the Oct 4 eval before this run and were not tuned to it. Break-even, not an edge.
+  - CFB under the current rule: 0 tickets in 38 Saturdays (no Saturday had 4 spread legs ≥ 72.3%). CFB teasers are research only.
   - Forcing 5 tickets a week from weaker legs lost 118u.
   - **Lesson:** the edge, if any, lives only in the very best legs, and leg count must be earned.
 - Practical points: shop teaser prices, check push rules, and remember that books may price key-number teasers differently (DFF notes DK "prices may adjust according to the spreads").
@@ -62,3 +64,6 @@ Compiled Fri Oct 2 2026 (CT) for Strawhat Desk. Web sources were read Oct 2 2026
 - https://dailyfantasyfocus.com/how-to-do-teasers-on-draftkings-sportsbook/
 - nflverse: https://github.com/nflverse/nfldata (games.csv), https://github.com/nflverse/nflverse-data/releases (stats_player)
 - Box research reused: `/workspace/research/pro-models-2026-10/`, `/workspace/betbot-revamp/research/*/FINAL_REPORT.md`
+
+## Addendum 2026-10-04: CFB key numbers by spread size
+`backtest/cfb_keys_buckets.py` (FBS 2023–26, 3,043 games, walk-forward). The old KEYS CFB pmf under-predicted the share of margins landing on 3/7/10/14/17/21 in every |spread| bucket: 15 of 30 bucket×key cells had |z| > 2 (max 6.8), worst at 7.5–21 and for road favorites. Two causes: the kernel was home-signed (road favorites are rare, so the bandwidth widened into home-favorite games), and the mean correction `np.roll` moved all key-number mass off its integers whenever the neighbours' mean line sat ≥ 0.5 from c. Fix (CFB margin only): a sign-symmetric kernel plus an exponential tilt for the mean. Result: 4 of 30 cells |z| > 2 (max 2.4), mean log-lik −4.247 → −4.032. Separate bucket tables were not needed because the kernel is already conditional on the line. NFL keeps the old kernel (dense data; not re-tested here). With the new CFB pmf the CFB research teasers backtest at −41u on 174 (was −69u); still losing.

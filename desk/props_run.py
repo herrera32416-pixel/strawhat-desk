@@ -215,6 +215,16 @@ def build(nfl_events, game_ctx, now):
                                  market_basis=f"median no-vig of {len(refs)} books", edge=round(ps - q_, 4), raw_edge=round(p_ - q_, 4),
                                  ev_model=round(ps * dd - (1 - ps), 4), n_books=len(refs)))
         rows.sort(key=lambda r: -r["edge"])
+        # injury filter at log time (2026-10-04): skip players ESPN lists Out/Doubtful/IR/inactive (free ESPN summary)
+        kick_iso = dt.datetime.fromisoformat(e["commence_time"].replace("Z", "+00:00")).astimezone(CT).isoformat()
+        try:
+            from .espn import injuries_for_game, SKIP_AT_LOG
+            inj = injuries_for_game("nfl", e["home_team"], e["away_team"], kick_iso)
+        except Exception:
+            inj, SKIP_AT_LOG = None, set()
+        skipped = sorted({f"{r['player']} ({inj[pname(r['player'])]})" for r in rows
+                          if inj and inj.get(pname(r["player"])) in SKIP_AT_LOG})
+        rows = [r for r in rows if not (inj and inj.get(pname(r["player"])) in SKIP_AT_LOG)]
         seen, top = set(), []
         for r in rows:
             k = (r["player"], r["market"])
@@ -226,5 +236,6 @@ def build(nfl_events, game_ctx, now):
         kick = dt.datetime.fromisoformat(e["commence_time"].replace("Z", "+00:00")).astimezone(CT)
         out.append(dict(toa_id=e["id"], game=f"{e['away_team']} @ {e['home_team']}", kick_ct=kick.strftime("%a %b %-d %-I:%M %p CT"),
                         kick_iso=kick.isoformat(), markets_pulled=(_load(e["id"]) or {}).get("markets_pulled", []),
-                        n_candidates=len(rows), top=top))
+                        n_candidates=len(rows), top=top, injury_report="ok" if inj is not None else "unavailable",
+                        skipped_injured=skipped))
     return out

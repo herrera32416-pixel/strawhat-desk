@@ -70,14 +70,48 @@ def load_rows(kind, max_season=None, min_season=None):
     return L[m], Y[m], S[m]
 
 
+def _tilt(p, grid, gap):
+    """Exponentially tilt pmf p so its mean moves by `gap` without moving mass off its
+    integers (np.roll by round(gap) shifted every key number by 1 whenever the neighbour
+    lines' mean sat >=0.5 from c, which in sparse CFB regions erased key-number mass)."""
+    if abs(gap) < 1e-6:
+        return p
+    m0 = float((p * grid).sum()); target = m0 + gap
+    x = grid - m0
+    def mean(t):
+        w = p * np.exp(np.clip(t * x, -50, 50)); w /= w.sum()
+        return float((w * grid).sum()), w
+    lo, hi = (0.0, 1.0) if gap > 0 else (-1.0, 0.0)
+    for _ in range(60):
+        mid = (lo + hi) / 2
+        mm, w = mean(mid)
+        if mm < target:
+            lo = mid
+        else:
+            hi = mid
+    return mean((lo + hi) / 2)[1]
+
+
 class Dist:
-    def __init__(self, kind, max_season=None, min_season=None, mix=0.15):
+    def __init__(self, kind, max_season=None, min_season=None, mix=0.15, sym=None):
         self.kind = kind
         self.L, self.Y, _ = load_rows(kind, max_season, min_season)
         self.sig = SIG[kind]
         self.mix = mix
-        lo = int(self.Y.min()) - 40 if kind.endswith("margin") else 0
-        hi = int(self.Y.max()) + 40
+        # CFB margins: make the kernel sign-symmetric (every game also enters mirrored as
+        # (-line, -margin)), i.e. key numbers are learned by |spread| size, not by home/away.
+        # Away favorites are rare in CFB, so the home-signed kernel at c<0 widened until it
+        # pulled in home-favorite games and smeared their key numbers (walk-forward: 3.8% on
+        # |margin|=3 at c=-10 vs 8.6% observed). See backtest/cfb_keys_buckets.py, team/KEYS.md.
+        self.sym = (kind == "cfb_margin") if sym is None else sym
+        if self.sym:
+            self.L = np.concatenate([self.L, -self.L])
+            self.Y = np.concatenate([self.Y, -self.Y])
+        if kind.endswith("margin"):
+            m = int(max(abs(self.Y.min()), abs(self.Y.max()))) + 40
+            lo, hi = -m, m
+        else:
+            lo, hi = 0, int(self.Y.max()) + 40
         self.grid = np.arange(lo, hi + 1)
         self._cache = {}
 
@@ -89,6 +123,8 @@ class Dist:
         while True:
             w = np.exp(-0.5 * ((self.L - c) / bw) ** 2)
             neff = w.sum() ** 2 / max((w ** 2).sum(), 1e-12)
+            if self.sym:
+                neff /= 2  # mirrored copies are not new games
             if neff >= NMIN or bw > 8:
                 break
             bw *= 1.25
@@ -99,9 +135,12 @@ class Dist:
         emp /= emp.sum()
         # mean correction: move mass by integer shift of the weighted-mean gap (rounded)
         gap = c - float((self.L * w).sum() / w.sum())
-        sh = int(round(gap))
-        if sh:
-            emp = np.roll(emp, sh)
+        if self.sym:
+            emp = _tilt(emp, self.grid, gap)  # CFB: keep key numbers on their integers
+        else:
+            sh = int(round(gap))
+            if sh:
+                emp = np.roll(emp, sh)
         z = (self.grid + 0.5 - c) / self.sig
         zc = (self.grid - 0.5 - c) / self.sig
         nrm = 0.5 * (np.vectorize(math.erf)(z / math.sqrt(2)) - np.vectorize(math.erf)(zc / math.sqrt(2)))
