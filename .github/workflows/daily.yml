@@ -74,10 +74,11 @@ jobs:
         run: |
           pip install -q numpy pandas
           if [ "${{ steps.guard.outputs.mode }}" = "recheck" ]; then exit 0; fi
+          pip install -q pyarrow   # MATCHUP: current-season nflverse play-by-play (parquet)
           mkdir -p data/cache
           for y in 2024 2025 2026; do curl -sfL -o data/cache/stats_player_week_$y.csv "https://github.com/nflverse/nflverse-data/releases/download/stats_player/stats_player_week_$y.csv"; done
           curl -sfL -o data/history/nfl_games.csv https://raw.githubusercontent.com/nflverse/nfldata/master/data/games.csv || true
-      - name: run desk (LINES -> BOARD -> PROPS -> TEASERS -> GRADER -> PUBLISH)
+      - name: run desk (LINES -> BOARD -> TEASERS -> PROPS -> GRADER -> MATCHUP -> PUBLISH)
         if: steps.guard.outputs.go == 'yes'
         env:
           THE_ODDS_API_KEY: ${{ secrets.THE_ODDS_API_KEY }}

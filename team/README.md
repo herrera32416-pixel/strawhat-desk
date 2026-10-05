@@ -12,4 +12,5 @@ Each role is one deterministic module. `desk/run.py` runs them in order in GitHu
 | GRADER | `desk/grader.py`, `desk/espn.py` | [GRADER.md](GRADER.md) | `data/ledger/ledger.json` |
 | PUBLISHER | `desk/run.py`, `docs/` | [PUBLISHER.md](PUBLISHER.md) | GitHub Pages site |
 | BUDGET | `desk/toa.py` | [BUDGET.md](BUDGET.md) | `data/credits.jsonl` |
+| MATCHUP (info only) | `desk/matchup_data.py`, `desk/matchup.py` | [MATCHUP.md](MATCHUP.md) | `data/matchup/*`, `docs/data/matchups.json` |
 | RECHECK | `desk/recheck_plan.py`, `desk/recheck.py` | [RECHECK.md](RECHECK.md) | `docs/data/recheck.json`, `data/recheck_done.json` |

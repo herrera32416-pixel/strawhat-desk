@@ -13,5 +13,6 @@ python backtest/sharp_ev.py            # ANCHOR=consensus|pinnacle|mix
 python backtest/teasers_bt.py
 python backtest/teaser_split_bt.py     # current teaser rule vs previous, Sunday NFL / Saturday CFB
 python backtest/cfb_keys_buckets.py    # CFB key numbers by |spread| bucket
+python backtest/matchup_bt.py --rebuild  # NFL matchup layer vs the market (needs data/matchup/team_games.csv.gz)
 python backtest/props_bt.py && python backtest/props_market_bt.py && python backtest/props_shop_bt.py
 ```
