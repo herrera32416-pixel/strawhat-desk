@@ -94,3 +94,18 @@ Opponent-adjusted unit ratings were built from nflverse pbp 2015–26: pass and 
   - Fails criteria 1, 2, 3 and 5. Board unchanged.
   - The gain is real only for road favs ≥ 9 (+0.011, 102 games), which is a new, post-hoc hypothesis.
 - **Watch line** (site Sim tab): the CFB lightly-shrunk totals model (λ = 30), |lean| ≥ 1.5, tracked forward on paper at −110. It is not pre-registered and makes no picks. Its only evidence is the sensitivity cell (166-131, +19.9u, OOS 2024–25).
+
+## Addendum 2026-10-04: NBA and NHL matchup layers + market-anchored sims (INFO ONLY)
+The NFL method, applied to two more sports. Walk-forward opponent-adjusted unit ratings feed strength×weakness, style-similar-foe and common-opponent features. A ridge on the residual vs the close is CV-shrunk and applied as a shift to a market-anchored simulator (1,000 sims/game on the site). Pass criteria were committed before any run (`research/PREREG_NBA_NHL.md`). Market = the ESPN-listed pregame close (one book: DraftKings / ESPN BET), de-vigged. That is a softer benchmark than a sharp consensus close, so even a pass would need live CLV.
+- **NHL** (MoneyPuck xG + NHL API goalie logs; lines 2021-26 from desk-v1; OOS 2022-23 → 2025-26):
+  - ML: 5,248 games, log loss .66176 vs .66206 (Δ CI −.00049…+.00106). Edge ≥ 3pp: 425 bets, +26.2u, ROI +6.2% [−4.4%, +16.8%], positive in 2 of 4 seasons.
+  - Puck line: worse than the market (.65495 vs .65424).
+  - Totals: .68916 vs .68877, 110 bets −10.4u (2023-24 totals are missing in the source).
+  - Verdict: fails → info only. The ML result is worth watching live, but its CI includes zero.
+  - The market-only Poisson/EN/OT sim prices the puck line worse than DK's own puck-line price (.65547 vs .65424, CI excludes 0). It is a consistent converter, not a sharper one.
+- **NBA** (ESPN box scores + ESPN core odds 2020-26; OOS 2022-23 → 2025-26):
+  - Spread: 4,879 games, .69236 vs .69273 (Δ CI −.00036…+.00112). |lean| ≥ 1.5: 95 bets 48-47, −3.2u.
+  - Total: .69271 vs .69281, 120 bets −1.7u.
+  - ML from spread: worse than the ML market, 863 bets −26.9u.
+  - CV keeps the leans around 0.5 pt (SD). Fails → info only.
+- **Same lesson as NFL/CFB:** unit-vs-unit matchups, rest, goalie form, pace clashes, similar-style foes and common opponents are already in the closing number. These layers explain games; they don't beat the line.

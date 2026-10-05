@@ -54,6 +54,10 @@ def main():
         kicks += [min(dt.datetime.fromisoformat(l["kick_iso"]) for l in t["legs"]) for S in TS.values() for t in S["tickets"]
                   if t["decision"] == "PLAY" and S["date"] == d0.isoformat()]
         reserve = recheck.reserve_credits(kicks)
+        try:  # NBA/NHL (info-only) daily line pull: leave 4 credits per sport with a game within 36h (desk/pro_lines.py)
+            from . import pro_lines; reserve += pro_lines.reserve_for_pro(now)
+        except Exception:
+            reserve += 4
         left = toa.DAILY_CAP - toa.spent(today, "daily") - reserve
         pnotes.append(f"props budget {max(left, 0)} (reserve {reserve} for pre-kick rechecks)")
         if nfl_events and left > 0:

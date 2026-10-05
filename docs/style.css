@@ -18,3 +18,4 @@ th{color:#8b949e;font-weight:500;font-size:12px}tr.pk td{background:#12351f}smal
 
 .subnav{display:flex;gap:6px;margin:8px 0}.subnav button{flex:1;padding:8px;border:1px solid #888;border-radius:6px;background:#f4f4f4;font-weight:600}.tset h2{margin:18px 0 6px;font-size:1.15em;border-bottom:2px solid #333}.note.warn{background:#fff1f0;border-left:3px solid #c0392b;padding:6px}
 .dec.REF{background:#1f6feb}.dec.DROPPED,.dec.VOID{background:#8b1d1d}
+.tag.nhl{background:#0e7490}.tag.nba{background:#c2410c}.subnav.pro button{background:#21262d;color:#e6edf3;border-color:#30363d}.subnav.pro button.on{background:#1f6feb}

@@ -1,0 +1,51 @@
+name: strawhat-desk NBA+NHL (info only)
+on:
+  schedule:
+    # Once per CT day, midday (NHL lines settle; NHL puck drops are mostly 6pm CT+). Primary + one backup; off :00.
+    - cron: "53 16 * * *"   # 11:53am CDT / 10:53am CST
+    - cron: "23 18 * * *"   # backup: 1:23pm CDT / 12:23pm CST
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: strawhat-desk     # same group as daily.yml, so runs never overlap or race on pushes / credits.jsonl
+  cancel-in-progress: false
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - name: sync to latest main
+        run: |
+          git fetch -q origin "${{ github.event.repository.default_branch }}"
+          git checkout -q -B "${{ github.event.repository.default_branch }}" "origin/${{ github.event.repository.default_branch }}"
+      - name: guard (scheduled = once per CT day)
+        id: guard
+        run: |
+          D=$(TZ=America/Chicago date +%F); LAST=$(cat data/pro_last_run_ct.txt 2>/dev/null | tr -d '[:space:]' || true)
+          GO=yes
+          if [ "${{ github.event_name }}" = "schedule" ] && [ "$LAST" = "$D" ]; then GO=no; echo "skip: already ran $D"; fi
+          echo "go=$GO" >> $GITHUB_OUTPUT
+      - uses: actions/setup-python@v5
+        if: steps.guard.outputs.go == 'yes'
+        with: { python-version: "3.12" }
+      - name: run NHL + NBA (free data; <= 4 Odds API credits per sport per day, never into the recheck reserve)
+        if: steps.guard.outputs.go == 'yes'
+        env:
+          THE_ODDS_API_KEY: ${{ secrets.THE_ODDS_API_KEY }}
+          SH_DAILY_CAP: "40"
+          NBA_CACHE: /tmp/nba_cache
+        run: |
+          pip install -q numpy pandas scipy
+          python -m desk.pro_run
+      - name: commit
+        if: steps.guard.outputs.go == 'yes'
+        run: |
+          git config user.name "strawhat-desk-bot"
+          git config user.email "actions@users.noreply.github.com"
+          TZ=America/Chicago date +%F > data/pro_last_run_ct.txt
+          git add data/nhl data/nba data/raw/odds data/credits.jsonl data/pro_last_run_ct.txt docs/data/nhl.json docs/data/nba.json
+          git commit -m "nba+nhl desk $(TZ=America/Chicago date '+%Y-%m-%d %H:%M CT')" || echo "nothing to commit"
+          git pull --rebase -q || true
+          git push
