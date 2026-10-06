@@ -3046,8 +3046,11 @@
    "market_pct": 0.1569,
    "edge": 0.0977,
    "stake_u": 1.0,
-   "status": "open",
-   "kind": "research"
+   "status": "VOID",
+   "kind": "research",
+   "units": 0.0,
+   "note": "player not in ESPN box score (DNP)",
+   "settled_ct": "2026-10-06T20:51+00:00"
   },
   {
    "id": "a60862af232c",
@@ -3069,8 +3072,12 @@
    "market_pct": 0.1127,
    "edge": 0.0605,
    "stake_u": 1.0,
-   "status": "open",
-   "kind": "research"
+   "status": "L",
+   "kind": "research",
+   "actual": 0.0,
+   "units": -1.0,
+   "espn_id": "401872979",
+   "settled_ct": "2026-10-06T20:51+00:00"
   },
   {
    "id": "ce8e35461697",
@@ -3092,8 +3099,12 @@
    "market_pct": 0.3232,
    "edge": 0.0436,
    "stake_u": 1.0,
-   "status": "open",
-   "kind": "research"
+   "status": "L",
+   "kind": "research",
+   "actual": 223.0,
+   "units": -1.0,
+   "espn_id": "401872979",
+   "settled_ct": "2026-10-06T20:51+00:00"
   },
   {
    "id": "89e6767f2ff0",
@@ -3115,8 +3126,12 @@
    "market_pct": 0.3026,
    "edge": 0.0382,
    "stake_u": 1.0,
-   "status": "open",
-   "kind": "research"
+   "status": "L",
+   "kind": "research",
+   "actual": 96.0,
+   "units": -1.0,
+   "espn_id": "401872979",
+   "settled_ct": "2026-10-06T20:51+00:00"
   },
   {
    "id": "b27be9829882",
@@ -3138,8 +3153,12 @@
    "market_pct": 0.2846,
    "edge": 0.0344,
    "stake_u": 1.0,
-   "status": "open",
-   "kind": "research"
+   "status": "L",
+   "kind": "research",
+   "actual": 145.0,
+   "units": -1.0,
+   "espn_id": "401872979",
+   "settled_ct": "2026-10-06T20:51+00:00"
   }
  ]
 }
