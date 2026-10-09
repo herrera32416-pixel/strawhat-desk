@@ -45,8 +45,11 @@ def sports_for(now):  # kept for backward compatibility (old callers); recheck i
 
 
 def pull(sport, ids, stamp):
+    ids = [i for i in ids if i and not str(i).startswith("espn-")]  # ESPN-fallback games have no Odds API id
+    if not ids:
+        return []
     d, row = toa.get(f"/v4/sports/{lines.SPORTS[sport]}/odds",
-                     {"regions": "us,eu", "markets": "spreads,totals", "oddsFormat": "american", "eventIds": ",".join(ids)},
+                     {"regions": toa.REGIONS, "markets": "spreads,totals", "oddsFormat": "american", "eventIds": ",".join(ids)},
                      COST, f"recheck odds {sport}")
     os.makedirs(os.path.join(lines.RAW, "odds"), exist_ok=True)
     p = os.path.join(lines.RAW, "odds", f"recheck_{sport}_{stamp}.json.gz")

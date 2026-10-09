@@ -6,13 +6,13 @@ data/credits.jsonl, shared 40/day cap). Rules:
 - otherwise fall back to the latest saved file (data/raw/odds/<sport>_*.json.gz). Never invents a price."""
 import datetime as dt, glob, gzip, json, os, statistics
 from zoneinfo import ZoneInfo
-from . import toa, market
+from . import toa, market, espn_odds
 
 CT = ZoneInfo("America/Chicago")
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 RAW = os.path.join(ROOT, "data", "raw", "odds")
 KEYS = {"nhl": ("icehockey_nhl", "h2h,totals"), "nba": ("basketball_nba", "spreads,totals")}
-COST = 4
+COST = 2 * len(toa.REGIONS.split(","))  # free tier: us only = 2 credits
 RECHECK_RESERVE = 12
 
 
@@ -23,23 +23,35 @@ def spent_label(prefix, day):
 def pull(sport, now=None):
     now = now or dt.datetime.now(dt.timezone.utc)
     day = now.astimezone(CT).strftime("%Y-%m-%d")
-    if not os.environ.get("THE_ODDS_API_KEY"):
-        return "no key"
     if spent_label(f"{sport}_odds", day) > 0:
         return "already pulled today"
-    if toa.spent(day, "daily") + COST > toa.DAILY_CAP:
-        return f"skipped: daily cap (spent {toa.spent(day, 'daily')}/{toa.DAILY_CAP}); using latest saved lines"
     key, mk = KEYS[sport]
-    ev, _ = toa.get(f"/v4/sports/{key}/events", {}, 0, f"{sport}_events")
-    soon = [e for e in ev if 0 < (dt.datetime.fromisoformat(e["commence_time"].replace("Z", "+00:00")) - now).total_seconds() / 3600 <= 36]
-    if not soon:
-        return "no game within 36h (events call is free)"
-    data, row = toa.get(f"/v4/sports/{key}/odds", dict(regions="us,eu", markets=mk, oddsFormat="american"), COST, f"{sport}_odds")
+    try:
+        if not os.environ.get("THE_ODDS_API_KEY"):
+            raise toa.BudgetError("no key")
+        ev, _ = toa.get(f"/v4/sports/{key}/events", {}, 0, f"{sport}_events")
+        soon = [e for e in ev if 0 < (dt.datetime.fromisoformat(e["commence_time"].replace("Z", "+00:00")) - now).total_seconds() / 3600 <= 36]
+        if not soon:
+            return "no game within 36h (events call is free)"
+        data, row = toa.get(f"/v4/sports/{key}/odds", dict(regions=toa.REGIONS, markets=mk, oddsFormat="american"), COST, f"{sport}_odds")
+    except toa.BudgetError as e:
+        data, row = [], {"skipped": str(e)}
+    try:
+        data, st = espn_odds.merge(data, espn_odds.fetch(sport.upper(), 2, now))
+        row = {**(row or {}), "espn_fallback": st}
+    except Exception:  # noqa: BLE001
+        pass
+    if not data:
+        return f"no lines (Odds API: {row.get('skipped', 'empty')}; ESPN empty)"
     os.makedirs(RAW, exist_ok=True)
     stamp = now.astimezone(CT).strftime("%Y%m%d_%H%M")
     json.dump(dict(pulled_ct=now.astimezone(CT).strftime("%a %b %-d %-I:%M %p CT"), credits=row, data=data),
               gzip.open(os.path.join(RAW, f"{sport}_{stamp}.json.gz"), "wt"))
     return f"pulled {len(data)} events ({row.get('last')} credits)"
+
+
+def latest_today(sport, day):
+    return bool(glob.glob(os.path.join(RAW, f"{sport}_{day.replace('-', '')}_*.json.gz")))
 
 
 def latest(sport):

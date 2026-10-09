@@ -14,8 +14,9 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 LEDGER = os.path.join(ROOT, "data", "ledger", "ledger.json")
 DONE = os.path.join(ROOT, "data", "recheck_done.json")
 WINDOW_MIN = 70     # crons fire at :15/:45; 70 min puts the noon-kick recheck at ~11:15 CT (backup 11:45)
-COST = 4            # us+eu x spreads,totals (ML is reference-only, so h2h is not re-pulled)
-MAX_WINDOWS = 3     # at most 3 odds rechecks reserved per day (e.g. Sun 12:00 / 3:05-3:25 / 7:20 CT) = 12 credits
+import os as _os
+COST = 2 * len(_os.environ.get("SH_REGIONS", "us").split(","))  # regions x spreads,totals (free tier: us only = 2)
+MAX_WINDOWS = int(_os.environ.get("SH_MAX_RECHECKS", "1"))  # free tier: 1/day (was 3)     # at most 3 odds rechecks reserved per day (e.g. Sun 12:00 / 3:05-3:25 / 7:20 CT) = 12 credits
 
 
 def _t(iso):

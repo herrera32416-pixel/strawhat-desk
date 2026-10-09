@@ -2,7 +2,7 @@
 Free calls (0 credits): /events. Paid: /odds us+eu x h2h,spreads,totals = 6 credits per sport."""
 import datetime as dt, json, os, gzip
 from zoneinfo import ZoneInfo
-from . import toa
+from . import toa, espn_odds
 
 CT = ZoneInfo("America/Chicago")
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -21,10 +21,22 @@ def events(sport):
 
 def pull_odds(sport, stamp):
     d, row = toa.get(f"/v4/sports/{SPORTS[sport]}/odds",
-                     {"regions": "us,eu", "markets": "h2h,spreads,totals", "oddsFormat": "american"}, 6, f"odds {sport}")
+                     {"regions": toa.REGIONS, "markets": "h2h,spreads,totals", "oddsFormat": "american"},
+                     3 * len(toa.REGIONS.split(",")), f"odds {sport}")
+    return save(sport, stamp, d, row)
+
+
+def save(sport, stamp, d, row):
+    """Odds API events (may be empty) + ESPN fallback for missing games/markets (tagged line_sources)."""
+    st = {}
+    try:
+        d, st = espn_odds.merge(d or [], espn_odds.fetch(sport.upper(), 8 if sport == "nfl" else 2))
+    except Exception as e:  # noqa: BLE001
+        st = {"error": str(e)[:100]}
     os.makedirs(os.path.join(RAW, "odds"), exist_ok=True)
     p = os.path.join(RAW, "odds", f"{sport}_{stamp}.json.gz")
-    json.dump({"pulled_ct": dt.datetime.now(CT).isoformat(timespec="seconds"), "credits": row, "data": d}, gzip.open(p, "wt"))
+    json.dump({"pulled_ct": dt.datetime.now(CT).isoformat(timespec="seconds"), "credits": row, "espn_fallback": st,
+               "data": d}, gzip.open(p, "wt"))
     return d, p
 
 
@@ -45,14 +57,14 @@ def run(stamp):
     pulled = {}
     for sport in ("nfl", "cfb"):
         ev = events(sport)
-        horizon = 8 * 24 if sport == "nfl" else 36
+        horizon = 36  # free tier: pay only when a game is within 36h (was 8 days for NFL); ESPN fills the rest
         soon = [e for e in ev if 0 < (dt.datetime.fromisoformat(e["commence_time"].replace("Z", "+00:00")) - now_utc()).total_seconds() / 3600 <= horizon]
-        if not soon:
-            pulled[sport] = "skipped (no games in window)"
-            continue
         try:
+            if not soon:
+                raise toa.BudgetError("no games within 36h")
             d, p = pull_odds(sport, stamp)
             pulled[sport] = p
         except toa.BudgetError as e:
-            pulled[sport] = f"skipped: {e}"
+            _, p = save(sport, stamp, [], None)
+            pulled[sport] = f"Odds API skipped ({e}); ESPN fallback saved {p}"
     return pulled

@@ -20,7 +20,7 @@ def main():
     notes = []
     start_remaining = None
     # LINES
-    pulled = lines.run(stamp) if os.environ.get("THE_ODDS_API_KEY") else {"nfl": "no key", "cfb": "no key"}
+    pulled = lines.run(stamp) if os.environ.get("THE_ODDS_API_KEY") else {sp: "no key; ESPN fallback " + lines.save(sp, stamp, [], None)[1] for sp in ("nfl", "cfb")}
     notes.append(f"LINES: {pulled}")
     odds, asof = {}, {}
     for sp in ("nfl", "cfb"):
@@ -55,7 +55,9 @@ def main():
             reserve += 4
         left = toa.DAILY_CAP - toa.spent(today, "daily") - reserve
         pnotes.append(f"props budget {max(left, 0)} (reserve {reserve} for pre-kick rechecks)")
-        if nfl_events and left > 0:
+        if os.environ.get("SH_PROPS", "0") != "1":  # free tier: player props off (each event costs credits)
+            pnotes.append("props off on the Odds API free tier (set SH_PROPS=1 to re-enable)")
+        elif nfl_events and left > 0:
             pnotes = pnotes + props_run.plan_and_pull(nfl_events, now, left)
         ctx = {g["toa_id"]: g for g in B if g["sport"] == "nfl"}
         win = [e for e in nfl_events if 0 < (dt.datetime.fromisoformat(e["commence_time"].replace("Z", "+00:00")) - now).total_seconds() / 3600 <= props_run.WINDOW_H]
