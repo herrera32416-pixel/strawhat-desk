@@ -1,11 +1,11 @@
 """RECHECK planner (stdlib only, no credits): decides whether a pre-kick recheck has work to do right now.
 Used by the workflow guard (cheap, before installing deps) and by desk/recheck.py.
 
-A recheck target is an OPEN ledger item whose kick (teasers: the ticket's FIRST leg, because a ticket is placed before
-its first leg kicks) is within WINDOW_MIN minutes and that has not been rechecked yet (data/recheck_done.json):
-- official odds targets: board picks and PLAY teaser tickets -> line re-pull (COST credits per sport, eventIds filter);
+A recheck target is an OPEN ledger item whose kick is within WINDOW_MIN minutes and that has not been rechecked yet
+(data/recheck_done.json):
+- official odds targets: board picks -> line re-pull (COST credits per sport, eventIds filter);
 - props targets: open props -> free ESPN injury report (void players newly Out).
-Research teaser tickets (PASS) are not rechecked."""
+Teasers/parlays were retired 2026-10-08 and are never rechecked."""
 import datetime as dt, json, os, sys
 from zoneinfo import ZoneInfo
 
@@ -63,7 +63,7 @@ def plan(now=None, ledger=None):
             continue
         if it["tab"] == "props":
             props.append(it)
-        elif kind_of(it) == "official" and it["tab"] in ("board", "teasers"):
+        elif kind_of(it) == "official" and it["tab"] == "board":
             odds.append(it)
     return dict(odds=odds, props=props, go=bool(odds or props),
                 why=f"{len(odds)} official item(s) and {len(props)} prop(s) kick within {WINDOW_MIN} min" if (odds or props)

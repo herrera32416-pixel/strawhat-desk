@@ -1,4 +1,6 @@
-# TEASERS SOP
+# TEASERS SOP (RETIRED 2026-10-08)
+**Status: RETIRED.** Luis removed teasers and parlays on Oct 8 2026. `desk/teasers.py` was deleted, `desk/run.py` no longer builds or logs teaser sets, the recheck no longer touches them and the site has no Teasers tab. Past tickets stay in `data/ledger/ledger.json` and are still settled by the GRADER. The text below is kept for history only; do not run it.
+
 **Purpose:** two day sets of 6-point teasers from DK spreads (Bovada line if DK is missing): one rule ticket plus up to 4 research tickets.
 - **Saturday CFB**: only FBS games kicking on the coming Saturday (CT date). Research only: never PLAY.
 - **Sunday NFL**: only NFL games kicking on the coming Sunday (CT date). Thursday and Monday games are excluded.

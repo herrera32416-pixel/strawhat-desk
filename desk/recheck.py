@@ -2,20 +2,17 @@
 Scheduled crons fire every 30 min on game days (:15/:45); desk/recheck_plan.py decides whether anything OPEN kicks
 within 70 min and has not been rechecked yet. Typical Sunday: ~11:15am CT (noon games), ~2:15pm (3:05/3:25),
 ~6:15pm (7:20 SNF), each with a :45 backup. Per pass:
-- Official items (board picks, PLAY teaser tickets): re-pull lines for the affected games only (eventIds filter;
+- Official items (board picks): re-pull lines for the affected games only (eventIds filter;
   us+eu x spreads,totals = 4 credits per sport, under the 40/day cap; the 9am run reserves them).
   * Board pick DROPPED if EV (same side, best of DK/Bovada) < 3%, the line moved through a key number, or the fair line
     now differs from the book line by > 3 points.
-  * Teaser ticket (checked before its FIRST leg kicks, re-scoring all its unstarted legs) VOID if a leg moved through a
-    key number, fell below the ticket-size break-even (72.6/72.5/72.3% for 4/5/6 legs) or fell > 1pp, or if the
-    recomputed ticket EV at its payout is no longer > 0.
+  * Teasers/parlays were retired 2026-10-08 (none are produced, so none are rechecked).
 - Props (research): free ESPN injury report for the game; a prop on a player now listed Out/IR/inactive is VOID.
 No new picks are added at recheck. The ledger keeps the original stamp; pulled items are VOID with void_reason/voided_ct.
 Rechecked item ids are stored in data/recheck_done.json (per CT day) so backups don't repeat work or spend credits."""
 import datetime as dt, json, os, gzip, sys
 from zoneinfo import ZoneInfo
-from . import toa, lines, board, teasers, grader, espn
-from .teaser_math import DK6, breakeven_leg, ticket_prob
+from . import toa, lines, board, grader, espn
 from .recheck_plan import plan, load_done, DONE, COST, WINDOW_MIN, MAX_WINDOWS, windows
 from .names import norm
 
@@ -83,8 +80,8 @@ def run(now=None, dry=False):
     print(P["why"])
     if not P["go"] or dry:
         return None
-    Bj = _load("board", {"meta": {}, "games": []}); Tj = _load("teasers", {"meta": {}, "sets": {}})
-    rep = dict(ran_ct=nct.strftime("%a %b %-d %-I:%M %p CT"), window_min=WINDOW_MIN, sports={}, board_changes=[], teaser_changes=[],
+    Bj = _load("board", {"meta": {}, "games": []})
+    rep = dict(ran_ct=nct.strftime("%a %b %-d %-I:%M %p CT"), window_min=WINDOW_MIN, sports={}, board_changes=[],
                props_changes=[], notes=[P["why"]])
     voided = 0
     done = load_done(now)
@@ -114,7 +111,6 @@ def run(now=None, dry=False):
             for e in data:
                 if dt.datetime.fromisoformat(e["commence_time"].replace("Z", "+00:00")) > now:
                     r = board.game_row(e, sp, season); rows[(norm(r["home"]), norm(r["away"]))] = r
-        nlegs = {(norm(l["game"]), l["market"], l["side"]): l for l in teasers.candidate_legs(fresh, season, now)} if fresh else {}
         for it in P["odds"]:
             if it["tab"] == "board":
                 nr = rows.get((norm(it["home"]), norm(it["away"])))
@@ -146,45 +142,6 @@ def run(now=None, dry=False):
                     it.update(status="VOID", units=0.0, void_reason=f"pulled before kickoff at recheck: {why}",
                               voided_ct=now.isoformat(timespec="minutes")); voided += 1
                 done["items"].append(it["id"])
-            else:  # PLAY teaser ticket
-                sp = it["legs"][0]["sport"]
-                if sp not in fresh:
-                    continue
-                k_n = len(it["legs"]); be = breakeven_leg(k_n)
-                dropped, pr = [], []
-                for l in it["legs"]:
-                    if dt.datetime.fromisoformat(l["kick_iso"]) <= now:
-                        pr.append((l.get("p_win") or l["p"], l.get("p_push") or 0.0)); continue
-                    nl = nlegs.get((norm(f"{l['away']} @ {l['home']}"), l["market"], l["side"]))
-                    kk = through_key(sp, l["market"], l["orig_line"], nl["orig_line"] if nl else None)
-                    p0 = l["p"]
-                    why = ("no line at recheck" if nl is None else
-                           f"line moved through key {kk:g} ({l['orig_line']:+g} -> {nl['orig_line']:+g})" if kk is not None else
-                           f"leg % {p0*100:.1f} -> {nl['p_cond']*100:.1f}, below break-even {be*100:.1f}" if nl["p_cond"] < be else
-                           f"leg % fell {p0*100:.1f} -> {nl['p_cond']*100:.1f} (>1pp)" if nl["p_cond"] < p0 - 0.01 else None)
-                    l["recheck"] = dict(line_now=nl and nl["orig_line"], p_now=nl and round(float(nl["p_cond"]), 4),
-                                        action="DROPPED" if why else "KEPT", reason=why)
-                    if why:
-                        dropped.append(f"{l['pick']} {l['orig_line']:+g}: {why}")
-                    pr.append((nl["p_win"], nl["p_push"]) if nl else (l["p"], 0.0))
-                ev_now = None
-                if not dropped:
-                    _, ev_now = ticket_prob(pr)
-                    if ev_now <= 0:
-                        dropped.append(f"ticket EV {it['ev']*100:+.1f}% -> {ev_now*100:+.1f}% at {DK6[k_n]:+d} (no longer > 0)")
-                rep["teaser_changes"].append(dict(set=it.get("set_label"), n=it["n"], action="VOID" if dropped else "KEPT",
-                                                  dropped=dropped, ev_now=None if ev_now is None else round(ev_now, 4)))
-                for S in Tj.get("sets", {}).values():
-                    if f"{S['key']}:{S['date']}" == it.get("set_key"):
-                        for t in S["tickets"]:
-                            if t["n"] == it["n"]:
-                                t["ev_recheck"] = None if ev_now is None else round(ev_now, 4)
-                                if dropped:
-                                    t["decision_9am"] = t["decision"]; t["decision"] = "VOID"
-                if dropped:
-                    it.update(status="VOID", units=0.0, void_reason="pulled before kickoff at recheck: " + "; ".join(dropped),
-                              voided_ct=now.isoformat(timespec="minutes")); voided += 1
-                done["items"].append(it["id"])
     # ---------- props: injury report (free) ----------
     for it in P["props"]:
         inj = espn.injuries_for_game("nfl", it["home"], it["away"], it["kick_iso"])
@@ -207,7 +164,7 @@ def run(now=None, dry=False):
     meta = dict(Bj.get("meta") or {})
     meta["headline"] = grader.headline(L); meta["recheck"] = rep; meta["recheck_passes"] = passes
     meta["credits"] = dict(meta.get("credits", {}), spent_today=toa.spent(today, "daily"))
-    for name, obj in (("board", Bj), ("teasers", Tj)):
+    for name, obj in (("board", Bj),):
         obj["meta"] = meta; json.dump(obj, open(os.path.join(SITE_DATA, f"{name}.json"), "w"))
     p = os.path.join(SITE_DATA, "props.json")
     if os.path.exists(p):

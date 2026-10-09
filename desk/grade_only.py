@@ -1,5 +1,5 @@
 """Credit-free regrade: settle the ledger from ESPN and refresh the site's ledger + headline only.
-Touches no odds (0 Odds API credits) and leaves the board/props/teasers content as published.
+Touches no odds (0 Odds API credits) and leaves the board/props content as published.
 Usage: python -m desk.grade_only"""
 import json, os, datetime as dt
 from zoneinfo import ZoneInfo
@@ -17,7 +17,7 @@ def main():
     n = grader.grade(L, now)
     grader.save(L)
     hl = grader.headline(L)
-    for f in ("board", "props", "teasers", "ledger", "meta"):
+    for f in ("board", "props", "ledger", "meta"):
         p = os.path.join(DOCS, f + ".json")
         if not os.path.exists(p):
             continue

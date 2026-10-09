@@ -83,38 +83,6 @@ def add_props(L, props, now, within_h=24):
     return n
 
 
-def add_teasers(L, sets, now):
-    """Log each day set once, on the run whose CT date is the set's date (Sat 9am run -> Saturday CFB,
-    Sun 9am run -> Sunday NFL), before its first leg kicks. Keyed by set + date."""
-    n = 0
-    today = now.astimezone(CT).date().isoformat()
-    for sk, S in sets.items():
-        T = S["tickets"]
-        if not T or S["date"] != today:
-            continue
-        first = min(dt.datetime.fromisoformat(l["kick_iso"]) for t in T for l in t["legs"])
-        if first <= now:
-            continue
-        key = f"{sk}:{S['date']}"
-        if any(i["tab"] == "teasers" and i.get("set_key") == key for i in L["items"]):
-            continue
-        for t in T:
-            L["items"].append(dict(id=_id("teaser", key, t["n"]), tab="teasers", set=sk, set_label=S["label"], set_key=key, n=t["n"], name=t["name"],
-                                   decision=t["decision"], logged_ct=now.isoformat(timespec="minutes"), kick_iso=max(l["kick_iso"] for l in t["legs"]),
-                                   first_kick_iso=min(l["kick_iso"] for l in t["legs"]), n_legs=len(t["legs"]),
-                                   kind="official" if t["decision"] == "PLAY" else "research",
-                                   p_all_six=t["p_all_six"], ev=t["ev_per_unit"], price=t.get("price", DK6[len(t["legs"])]), stake_u=1.0, status="open",
-                                   legs=[dict(sport=l["sport"], home=l["game"].split(" @ ")[1], away=l["game"].split(" @ ")[0], kick_iso=l["kick_iso"],
-                                              market=l["market"], side=l["side"], pick=l["pick"], orig_line=l["orig_line"], teased_line=l["teased_line"],
-                                              p=l["p_cond"], p_win=l.get("p_win"), p_push=l.get("p_push"), band=l.get("band"),
-                                              status="open") for l in t["legs"]]))
-            n += 1
-    return n
-
-
-_SB = {}
-
-
 def find_game(sport, home, away, kick_iso):
     k = dt.datetime.fromisoformat(kick_iso)
     dates = {k.astimezone(CT).strftime("%Y%m%d"), k.astimezone(dt.timezone.utc).strftime("%Y%m%d")}
@@ -146,7 +114,8 @@ _BOX = {}
 
 
 def kind_of(it):
-    """official = board picks + PLAY teasers; research = props and PASS teaser tickets (older items lack the field)."""
+    """official = board picks (+ historical PLAY teasers); research = props (+ historical PASS teaser tickets).
+    Teasers/parlays retired 2026-10-08: none are added anymore; old ones stay in the ledger and keep their kind."""
     if it.get("kind"):
         return it["kind"]
     if it["tab"] == "board":
@@ -241,7 +210,7 @@ def headline(L):
     for k in ("official", "research"):
         its = [i for i in L["items"] if kind_of(i) == k]
         out[k] = dict(_rec(done(its)), open=len(its) - len(done(its)),
-                      label="Official plays (board picks + PLAY teasers)" if k == "official" else "Research (props + PASS teaser tickets)")
+                      label="Official plays (board picks; history incl. retired teasers)" if k == "official" else "Research (props; history incl. retired teaser tickets)")
     P = [i for i in L["items"] if i["tab"] == "props"]
     atd = [i for i in P if i.get("market") == "Anytime TD"]; oth = [i for i in P if i.get("market") != "Anytime TD"]
     out["props_atd"] = dict(_rec(done(atd)), open=len(atd) - len(done(atd)), label="Props: anytime TD (high variance)")

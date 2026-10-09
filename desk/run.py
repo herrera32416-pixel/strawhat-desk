@@ -1,8 +1,10 @@
 """Daily orchestrator (GitHub Actions ~9:00am CT). Roles run in order:
-LINES -> BOARD -> TEASERS -> PROPS (budget after the recheck reserve) -> GRADER -> MATCHUP NFL+CFB (info) -> SIM (info) -> PUBLISHER. Deterministic; no messages, no bets."""
+LINES -> BOARD -> PROPS (budget after the recheck reserve) -> GRADER -> MATCHUP NFL+CFB (info) -> SIM (info) -> PUBLISHER. Deterministic; no messages, no bets.
+Teasers and parlays were removed on 2026-10-08 (Luis): nothing builds, logs or publishes them anymore. Historical
+teaser tickets stay in data/ledger/ledger.json and are still settled by grader.grade()."""
 import datetime as dt, json, os, sys, traceback
 from zoneinfo import ZoneInfo
-from . import toa, lines, board, teasers, grader, espn
+from . import toa, lines, board, grader, espn
 from .names import norm
 
 CT = ZoneInfo("America/Chicago")
@@ -34,11 +36,6 @@ def main():
     B = board.build(odds, fbs or None, season, now)
     notes.append(f"BOARD: {len(B)} games ({sum(g['sport']=='nfl' for g in B)} NFL, {sum(g['sport']=='cfb' for g in B)} FBS), "
                  f"{sum(m.get('decision')=='PICK' for g in B for m in g['markets'].values())} picks")
-    # TEASERS
-    legs = teasers.candidate_legs(odds, season, now)
-    TS = teasers.build_days(legs, now)
-    notes.append("TEASERS: " + "; ".join(f"{S['label']} {S['date']}: {len(S['tickets'])} tickets from {S['n_candidate_legs']} legs, "
-                                          f"{sum(t['decision']=='PLAY' for t in S['tickets'])} PLAY" for S in TS.values()))
     # PROPS
     P, pnotes = [], []
     try:
@@ -51,8 +48,6 @@ def main():
         kd = lambda iso: dt.datetime.fromisoformat(iso).astimezone(CT).date() == d0
         kicks = [dt.datetime.fromisoformat(g["kick_iso"]) for g in B if kd(g["kick_iso"]) and any(m.get("decision") == "PICK" for m in g["markets"].values())]
         kicks += [dt.datetime.fromisoformat(i["kick_iso"]) for i in grader.load()["items"] if i["tab"] == "board" and i["status"] == "open" and kd(i["kick_iso"])]
-        kicks += [min(dt.datetime.fromisoformat(l["kick_iso"]) for l in t["legs"]) for S in TS.values() for t in S["tickets"]
-                  if t["decision"] == "PLAY" and S["date"] == d0.isoformat()]
         reserve = recheck.reserve_credits(kicks)
         try:  # NBA/NHL (info-only) daily line pull: leave 4 credits per sport with a game within 36h (desk/pro_lines.py)
             from . import pro_lines; reserve += pro_lines.reserve_for_pro(now)
@@ -73,10 +68,10 @@ def main():
     v = grader.void_rule_changes(L, now)
     if v:
         notes.append(f"GRADER: {v} open ML pick(s) VOID (ML reference-only rule)")
-    a = grader.add_board(L, B, nct); b = grader.add_props(L, P, nct); c = grader.add_teasers(L, TS, now)
+    a = grader.add_board(L, B, nct); b = grader.add_props(L, P, nct)
     gcount = grader.grade(L, now)
     grader.save(L)
-    notes.append(f"GRADER: +{a} board, +{b} props, +{c} teasers logged; {gcount} settled")
+    notes.append(f"GRADER: +{a} board, +{b} props logged; {gcount} settled")
     # MATCHUP (NFL, INFO ONLY unless data/matchup/model.json says otherwise; free nflverse pbp, 0 Odds API credits)
     try:
         from . import matchup, matchup_data
@@ -123,13 +118,9 @@ def main():
                 headline=grader.headline(L), season=season)
     json.dump(dict(meta=meta, games=B), open(os.path.join(SITE_DATA, "board.json"), "w"))
     json.dump(dict(meta=meta, games=P), open(os.path.join(SITE_DATA, "props.json"), "w"))
-    try:
-        bt = json.load(open(os.path.join(ROOT, "data", "teaser_backtest.json")))
-    except Exception:
-        bt = {}
-    for S in TS.values():
-        S["backtest"] = bt.get(S["sport"])
-    json.dump(dict(meta=meta, sets=TS, backtest_note=bt.get("_note")), open(os.path.join(SITE_DATA, "teasers.json"), "w"))
+    stale = os.path.join(SITE_DATA, "teasers.json")  # teasers retired 2026-10-08: never republish the old tab data
+    if os.path.exists(stale):
+        os.remove(stale)
     json.dump(dict(meta=meta, ledger=L), open(os.path.join(SITE_DATA, "ledger.json"), "w"))
     json.dump(meta, open(os.path.join(SITE_DATA, "meta.json"), "w"))
     json.dump({}, open(os.path.join(SITE_DATA, "recheck.json"), "w"))  # the 9am run starts a fresh day; recheck fills this
