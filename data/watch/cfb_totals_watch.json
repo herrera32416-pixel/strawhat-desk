@@ -9,21 +9,23 @@
    "side": "under",
    "lean": -2.13,
    "price": -110,
-   "status": "open",
+   "status": "L",
    "updated_ct": "2026-10-08T14:53-05:00",
-   "logged_ct": "2026-10-04T20:45-05:00"
+   "logged_ct": "2026-10-04T20:45-05:00",
+   "final_total": 105.0,
+   "units": -1.0
   },
   {
    "espn_id": "401856718",
    "game": "Ole Miss @ Vanderbilt",
    "kick_iso": "2026-10-10T14:30:00-05:00",
    "gameday": "2026-10-10",
-   "line": 55.5,
+   "line": 54.5,
    "side": "under",
    "lean": -2.24,
    "price": -110,
    "status": "open",
-   "updated_ct": "2026-10-08T14:53-05:00",
+   "updated_ct": "2026-10-09T14:31-05:00",
    "logged_ct": "2026-10-04T20:45-05:00"
   },
   {
@@ -36,7 +38,7 @@
    "lean": -1.55,
    "price": -110,
    "status": "open",
-   "updated_ct": "2026-10-08T14:53-05:00",
+   "updated_ct": "2026-10-09T14:31-05:00",
    "logged_ct": "2026-10-04T20:45-05:00"
   },
   {
@@ -49,7 +51,7 @@
    "lean": -1.84,
    "price": -110,
    "status": "open",
-   "updated_ct": "2026-10-08T14:53-05:00",
+   "updated_ct": "2026-10-09T14:31-05:00",
    "logged_ct": "2026-10-04T20:45-05:00"
   },
   {
@@ -62,7 +64,7 @@
    "lean": -1.73,
    "price": -110,
    "status": "open",
-   "updated_ct": "2026-10-08T14:53-05:00",
+   "updated_ct": "2026-10-09T14:31-05:00",
    "logged_ct": "2026-10-04T20:45-05:00"
   },
   {
@@ -75,7 +77,7 @@
    "lean": 1.53,
    "price": -110,
    "status": "open",
-   "updated_ct": "2026-10-08T14:53-05:00",
+   "updated_ct": "2026-10-09T14:31-05:00",
    "logged_ct": "2026-10-04T20:45-05:00"
   },
   {
@@ -83,12 +85,12 @@
    "game": "Louisiana @ Louisiana Tech",
    "kick_iso": "2026-10-10T18:30:00-05:00",
    "gameday": "2026-10-10",
-   "line": 47.5,
+   "line": 48.5,
    "side": "over",
    "lean": 1.61,
    "price": -110,
    "status": "open",
-   "updated_ct": "2026-10-08T14:53-05:00",
+   "updated_ct": "2026-10-09T14:31-05:00",
    "logged_ct": "2026-10-04T20:45-05:00"
   }
  ]
