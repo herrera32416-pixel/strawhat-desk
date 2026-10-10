@@ -1,0 +1,124 @@
+name: v1 board (merged desk — the ONE odds pipeline + grader)
+
+# Once a day, on GitHub's servers (independent of the Grok Bot box). PAPER ONLY — no real bets.
+# 1) Grade open PAPER picks from ESPN's free public scoreboard (0 Odds API credits).
+# 2) FREE TIER since 2026-10-09 (500 credits/mo shared with Strawhat Desk): Odds API only for NFL/CFB/NHL and only
+#    when the free /events check shows a game within 30-36h (3 credits each, ~3-9/day, ~170/mo). MLB + any game or
+#    market the Odds API lacks come from ESPN public scoreboard odds, tagged per line (no double counting).
+#    Quota from x-requests-* headers is logged to data/odds_quota.jsonl.
+#    -> data/today.json board + PAPER side per game (u3 market-heavy blend, ESPN FPI, free),
+#    today's PAPER picks stamped to data/paper_ledger.json, page data in data/paper.json.
+# Main-sourced card for today is never overwritten (merge appends missing NFL/CFB games only).
+# 9:15am CT is before the earliest CFB/NFL kicks (11am CT Sat CFB, 12pm CT Sun NFL, 8:30am CT London).
+on:
+  schedule:
+    # 9:15am CT. Cron is UTC and has no DST:
+    #   CDT (UTC-5, ~Mar 8 - Nov 1 2026): 14:15 UTC  <- active now
+    #   CST (UTC-6, after Nov 1 2026):   15:15 UTC  -> change to "15 15 * * *" on Nov 1
+    #                                                  (or leave it: runs 8:15am CST)
+    # GitHub may start scheduled runs several minutes late -- or drop them (Sun Oct 4 2026: 9:15 never fired,
+    # run by hand 10:06am CT). 2026-10-04: two backup triggers off the top of the hour, all behind the
+    # once-per-day guard (scripts/run_guard.py + data/run_stamp.json), so the board is built exactly once per CT day.
+    #   9:15am CDT primary, 9:23am CDT backup, 9:41am CDT backup  (after Nov 1: 15:15/15:23/15:41 UTC)
+    - cron: "15 14 * * *"
+    - cron: "23 14 * * *"
+    - cron: "41 14 * * *"
+    # Afternoon catch. Oct 6 2026 the 9:15/9:23/9:41 slots did not fire; the board only existed because of a
+    # manual dispatch at 10:14am CT. These are no-ops (0 credits) if today's stamp is already on main.
+    #   12:15pm / 2:15pm / 3:15pm CDT  (after Nov 1: 18:15/20:15/21:15 UTC = 12:15/2:15/3:15pm CST)
+    - cron: "15 17 * * *"
+    - cron: "15 19 * * *"
+    - cron: "15 20 * * *"
+  workflow_dispatch:
+    inputs:
+      force:
+        description: "Call the API even if today's auto board already exists (uses up to 9 credits)"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write   # commit data/
+  pages: write      # request a Pages build (GITHUB_TOKEN pushes don't trigger legacy builds)
+
+concurrency:
+  group: strawhat-desk
+  cancel-in-progress: false
+
+jobs:
+  board:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: v1
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      # Once-per-day guard: every trigger checks today's CT stamp first; a stamped day = no-op (0 credits).
+      # workflow_dispatch with force=true bypasses it.
+      - name: Once-per-day guard
+        id: guard
+        run: |
+          if [ "${{ github.event.inputs.force }}" = "true" ]; then
+            echo "force=true -> guard bypassed"; echo "run=true" >> "$GITHUB_OUTPUT"
+          else
+            python scripts/run_guard.py check
+          fi
+
+      - name: Grade open PAPER picks (ESPN finals, free)
+        if: ${{ steps.guard.outputs.run == 'true' }}
+        run: python scripts/paper_model.py grade
+
+      - name: Starting-goalie check (DailyFaceoff, free)
+        if: ${{ steps.guard.outputs.run == 'true' }}
+        continue-on-error: true
+        run: python scripts/nhl_goalies.py
+
+      - name: Build auto board + PAPER picks (1 Odds API call per sport, no retries)
+        id: board
+        if: ${{ steps.guard.outputs.run == 'true' }}
+        env:
+          THE_ODDS_API_KEY: ${{ secrets.THE_ODDS_API_KEY }}
+        run: |
+          if [ "${{ github.event.inputs.force }}" = "true" ]; then
+            python scripts/auto_board.py --force
+          else
+            python scripts/auto_board.py
+          fi
+
+      # Written only when the board step succeeded; committed with data/ below. If the push fails the stamp
+      # never reaches main, so the next backup trigger retries.
+      - name: Stamp today's successful run
+        if: ${{ steps.guard.outputs.run == 'true' && steps.board.outcome == 'success' }}
+        run: python scripts/run_guard.py stamp
+
+      - name: Commit + push data/ only if changed
+        id: push
+        if: ${{ !cancelled() && steps.guard.outputs.run == 'true' }}
+        run: |
+          if mkdir -p ../docs/data/v1 && cp data/today.json data/paper.json data/paper_ledger.json ../docs/data/v1/
+          if git diff --quiet -- data/ ../docs/data/v1 && [ -z "$(git ls-files --others --exclude-standard -- data/ ../docs/data/v1)" ]; then
+            echo "No data change."
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/ ../docs/data/v1
+          git commit -m "auto board + paper $(TZ=America/Chicago date +%F) CT"
+          # box publisher may have pushed meanwhile; rebase data-only commit, never force
+          git pull --rebase origin main
+          git push origin HEAD:main
+          echo "changed=true" >> "$GITHUB_OUTPUT"
+
+      - name: Request Pages build (legacy branch source)
+        if: ${{ !cancelled() && steps.push.outputs.changed == 'true' }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh api -X POST "repos/${{ github.repository }}/pages/builds" || \
+            echo "::warning::Pages build request failed — site may stay stale until the next push from the box"

@@ -129,7 +129,7 @@ function renderWatch(w) {
 }
 function renderLedger(d) {
   const el = $('#ledger'); const L = d.ledger.items.filter(i => i.tab !== 'teasers' && i.tab !== 'parlays').sort((a, b) => (b.kick_iso || '').localeCompare(a.kick_iso || ''));
-  let h = splitCards(d.meta) + '<div class="hls">' + ['board', 'props'].map(k => `<div><div class="cap">${({board: 'Board picks', props: 'NFL props (paper leans)'})[k]}</div>${head(d.meta, k)}</div>`).join('') + '</div>';
+  let h = '<div id="ledger-v1"></div>' + splitCards(d.meta) + '<div class="hls">' + ['board', 'props'].map(k => `<div><div class="cap">${({board: 'Board picks', props: 'NFL props (paper leans)'})[k]}</div>${head(d.meta, k)}</div>`).join('') + '</div>';
   const ret = d.ledger.items.filter(i => i.tab === 'teasers' || i.tab === 'parlays');
   if (ret.length) h += `<p class="small mut">Teasers and parlays were retired on Oct 8 2026 and are no longer produced. ${ret.length} past ticket(s) stay in the data file and in the official/research totals above, but are not listed here.</p>`;
   h += `<div class="filters"><select id="kindf"><option value="">official + research</option><option value="official">official plays only</option><option value="research">research only</option></select></div><table class="ledger"><tr><th>Tab</th><th>Kind</th><th>Kick</th><th>Bet</th><th>Price</th><th>Status</th><th>Units</th></tr>`;
@@ -148,11 +148,11 @@ function renderLedger(d) {
 }
 (async () => {
   const [b, p, l] = await Promise.all(['board', 'props', 'ledger'].map(J));
-  renderBoard(b); renderProps(p); renderLedger(l);
+  /* Board tab is rendered by v1.js (merged desk) */ renderProps(p); renderLedger(l);
   try { renderMatchups(await J('matchups')); } catch (e) { renderMatchups(null); }
   try { renderSim(await J('sim')); } catch (e) { renderSim(null); }
   try { renderWatch(await J('watch')); } catch (e) { }
-  const c = b.meta.credits; $('#foot').innerHTML = `Generated ${b.meta.generated_ct} · Odds API credits today ${c.spent_today}/${c.daily_cap} · remaining ${c.remaining} · picks only, never bets placed`;
+  $('#foot').innerHTML = `One desk · PAPER ONLY · straight bets only · odds: Odds API free tier (budgeted) + ESPN · never bets placed`;
   document.querySelectorAll('nav button').forEach(x => x.onclick = () => tab(x.dataset.t));
   tab((location.hash || '#board').slice(1));
 })();

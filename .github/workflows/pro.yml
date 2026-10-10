@@ -33,7 +33,8 @@ jobs:
       - name: run NHL + NBA (free data; <= 4 Odds API credits per sport per day, never into the recheck reserve)
         if: steps.guard.outputs.go == 'yes'
         env:
-          THE_ODDS_API_KEY: ${{ secrets.THE_ODDS_API_KEY }}
+          # MERGED 2026-10-09: no Odds API key here. The one odds pipeline is v1-board.yml (budgeted free tier + ESPN); this job uses ESPN only.
+          THE_ODDS_API_KEY: ""
           SH_DAILY_CAP: "10"
           NBA_CACHE: /tmp/nba_cache
         run: |

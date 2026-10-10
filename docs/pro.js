@@ -31,7 +31,7 @@
   }
   function nhl(d) {
     const el = document.getElementById('nhl'); if (!el) return;
-    if (!d) { el.innerHTML = '<p class="note">NHL data not published yet.</p>'; return; }
+    if (!d) { el.innerHTML = '<div id="nhl-v1"></div><p class="note">NHL sim data not published yet.</p>'; return; }
     let h = `<div class="hl"><b>NHL · INFO ONLY</b> · market-anchored sim (de-vigged ML + total → regulation Poisson + empty net + OT/shootout), 1,000 sims per game. Never a pick.<span class="sub">updated ${d.generated_ct} · odds ${d.odds_asof || '—'} (${d.odds_file || 'none'})</span></div>`;
     h += sub('nhl');
     const games = (d.games || []).filter(g => !g.no_line);
@@ -52,7 +52,7 @@
         <div class="small">Expected goals ${g.away} ${sm.exp_a.toFixed(2)} – ${g.home} ${sm.exp_h.toFixed(2)} · 80% ranges: ${g.away} ${rng(mc.away_goals)}, ${g.home} ${rng(mc.home_goals)}, total ${rng(mc.total)} · most common: ${sm.top_scores.map(t => t.score + ' ' + P(t.share)).join(', ')} (${g.home}-${g.away}) · matchup lean ${S(g.lean.goal_diff, 3)} goals diff, ${S(g.lean.total, 3)} total (shrunk) · market: ${mk.src_ml}, ${mk.n_books} books</div></div>`;
     }
     for (const g of (d.games || []).filter(g => g.no_line)) m += `<div class="card small">${g.away} @ ${g.home} · ${g.start_ct} · ${g.note}</div>`;
-    el.innerHTML = h + m + '</div>' + s + '</div>' + btBox('nhl', d.backtest, d.status);
+    el.innerHTML = '<div id="nhl-v1"></div>' + h + m + '</div>' + s + '</div>' + btBox('nhl', d.backtest, d.status);
     wire(el);
   }
   function nba(d) {

@@ -90,7 +90,8 @@ jobs:
       - name: run desk (LINES -> BOARD -> PROPS -> GRADER -> MATCHUP -> SIM -> PUBLISH)
         if: steps.guard.outputs.go == 'yes'
         env:
-          THE_ODDS_API_KEY: ${{ secrets.THE_ODDS_API_KEY }}
+          # MERGED 2026-10-09: no Odds API key here. The one odds pipeline is v1-board.yml (budgeted free tier + ESPN); this job uses ESPN only.
+          THE_ODDS_API_KEY: ""
           SH_DAILY_CAP: "10"
         run: |
           if [ "${{ steps.guard.outputs.mode }}" = "recheck" ]; then python -m desk.recheck; else python -m desk.run; fi

@@ -70,7 +70,9 @@ def main():
     v = grader.void_rule_changes(L, now)
     if v:
         notes.append(f"GRADER: {v} open ML pick(s) VOID (ML reference-only rule)")
-    a = grader.add_board(L, B, nct); b = grader.add_props(L, P, nct)
+    # MERGED 2026-10-09: the single grader/scorecard is the v1 PAPER ledger (v1/data/paper_ledger.json).
+    # This ledger is history only: no new board/prop rows are logged; open legacy rows still settle below.
+    a = b = 0
     gcount = grader.grade(L, now)
     grader.save(L)
     notes.append(f"GRADER: +{a} board, +{b} props logged; {gcount} settled")
