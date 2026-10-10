@@ -90,9 +90,15 @@ jobs:
       - name: run desk (LINES -> BOARD -> PROPS -> GRADER -> MATCHUP -> SIM -> PUBLISH)
         if: steps.guard.outputs.go == 'yes'
         env:
-          # MERGED 2026-10-09: no Odds API key here. The one odds pipeline is v1-board.yml (budgeted free tier + ESPN); this job uses ESPN only.
-          THE_ODDS_API_KEY: ""
-          SH_DAILY_CAP: "10"
+          # PAID Odds API plan (Oct 2026). REVERT to free tier when Luis cancels next month:
+          # SH_DAILY_CAP "10", SH_MONTHLY_CAP "220", SH_REGIONS "us", SH_PROPS "0", SH_MAX_RECHECKS "1".
+          THE_ODDS_API_KEY: ${{ secrets.THE_ODDS_API_KEY }}
+          SH_DAILY_CAP: "40"
+          SH_MONTHLY_CAP: "1200"
+          SH_MIN_REMAINING: "60"
+          SH_REGIONS: "us,eu"
+          SH_PROPS: "1"
+          SH_MAX_RECHECKS: "3"
         run: |
           if [ "${{ steps.guard.outputs.mode }}" = "recheck" ]; then python -m desk.recheck; else python -m desk.run; fi
       - name: commit

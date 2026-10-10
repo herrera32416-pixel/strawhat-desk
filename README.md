@@ -19,3 +19,10 @@ python backtest/sim_bt.py              # simulator, 1,000 sims/game, vs the clos
 python backtest/nhl_bt.py && python backtest/nba_bt.py   # NBA/NHL layers vs the close (data/nhl, data/nba committed)
 python backtest/props_bt.py && python backtest/props_market_bt.py && python backtest/props_shop_bt.py
 ```
+
+## Odds API budget (paid plan, October 2026)
+Luis's paid Odds API plan is active for October 2026 only. Strawhat jobs (`daily.yml`, `pro.yml`) again use the key with
+SH_DAILY_CAP=40, SH_MONTHLY_CAP=1200, SH_MIN_REMAINING=60 (floor guard), SH_REGIONS=us,eu, SH_PROPS=1 (NFL props on),
+SH_MAX_RECHECKS=3 (pre-kick rechecks). Every call is still logged to data/credits.jsonl (x-requests-* headers).
+**REVERT when he cancels next month:** SH_DAILY_CAP=10, SH_MONTHLY_CAP=220, SH_REGIONS=us, SH_PROPS=0, SH_MAX_RECHECKS=1
+(keep SH_MIN_REMAINING=60). Same note is in desk/toa.py.

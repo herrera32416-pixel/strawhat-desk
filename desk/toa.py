@@ -11,13 +11,16 @@ CT = ZoneInfo("America/Chicago")
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 LOG = os.path.join(ROOT, "data", "credits.jsonl")
 BASE = "https://api.the-odds-api.com"
-# FREE TIER since 2026-10-09 (paid plan payment failed 10/8): 500 credits/month shared with DESK (desk-v1, same key).
+# PAID PLAN again since 2026-10-09 22:32 CT (Luis's payment went through; paid for October only).
+# >>> REVERT NEXT MONTH when Luis cancels: set SH_DAILY_CAP=10, SH_MONTHLY_CAP=220, SH_MIN_REMAINING=60,
+# >>> SH_REGIONS=us, SH_PROPS=0, SH_MAX_RECHECKS=1 (workflow env in .github/workflows/daily.yml + pro.yml) <<<
+# (Free tier was 500 credits/month shared with the v1 pipeline, same key.)
 # Strawhat budget: <= SH_DAILY_CAP per CT day and <= SH_MONTHLY_CAP per CT month, and never below SH_MIN_REMAINING
 # credits left on the key (last x-requests-remaining header seen). Anything refused falls back to ESPN odds (tagged).
-DAILY_CAP = int(os.environ.get("SH_DAILY_CAP", "10"))
-MONTHLY_CAP = int(os.environ.get("SH_MONTHLY_CAP", "220"))
-MIN_REMAINING = int(os.environ.get("SH_MIN_REMAINING", "40"))
-REGIONS = os.environ.get("SH_REGIONS", "us")  # free tier: us only (1 credit per market); was "us,eu"
+DAILY_CAP = int(os.environ.get("SH_DAILY_CAP", "40"))
+MONTHLY_CAP = int(os.environ.get("SH_MONTHLY_CAP", "1200"))
+MIN_REMAINING = int(os.environ.get("SH_MIN_REMAINING", "60"))
+REGIONS = os.environ.get("SH_REGIONS", "us,eu")  # paid plan; free tier: "us"
 PROJECT_CAP = int(os.environ.get("SH_PROJECT_CAP", "1500"))
 
 

@@ -55,7 +55,7 @@ def main():
             reserve += 4
         left = toa.DAILY_CAP - toa.spent(today, "daily") - reserve
         pnotes.append(f"props budget {max(left, 0)} (reserve {reserve} for pre-kick rechecks)")
-        if os.environ.get("SH_PROPS", "0") != "1":  # free tier: player props off (each event costs credits)
+        if os.environ.get("SH_PROPS", "1") != "1":  # SH_PROPS=0 on the free tier: player props off (each event costs credits)
             pnotes.append("props off on the Odds API free tier (set SH_PROPS=1 to re-enable)")
         elif nfl_events and left > 0:
             pnotes = pnotes + props_run.plan_and_pull(nfl_events, now, left)
