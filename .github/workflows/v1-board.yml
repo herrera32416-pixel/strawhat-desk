@@ -20,15 +20,22 @@ on:
     # run by hand 10:06am CT). 2026-10-04: two backup triggers off the top of the hour, all behind the
     # once-per-day guard (scripts/run_guard.py + data/run_stamp.json), so the board is built exactly once per CT day.
     #   9:15am CDT primary, 9:23am CDT backup, 9:41am CDT backup  (after Nov 1: 15:15/15:23/15:41 UTC)
-    - cron: "15 14 * * *"
+    # DST-proof since 2026-10-10: both the CDT and CST UTC slots are listed; the CT-clock guard below skips any
+    # delivery before 9:15am CT, so after Nov 1 the 14:xx slots (8:xx CST) no-op and the 15:xx slots take over.
+    - cron: "15 14 * * *"   # 9:15 CDT
     - cron: "23 14 * * *"
     - cron: "41 14 * * *"
+    - cron: "15 15 * * *"   # 9:15 CST (10:15 CDT backup)
+    - cron: "23 15 * * *"
+    - cron: "41 15 * * *"
     # Afternoon catch. Oct 6 2026 the 9:15/9:23/9:41 slots did not fire; the board only existed because of a
     # manual dispatch at 10:14am CT. These are no-ops (0 credits) if today's stamp is already on main.
     #   12:15pm / 2:15pm / 3:15pm CDT  (after Nov 1: 18:15/20:15/21:15 UTC = 12:15/2:15/3:15pm CST)
-    - cron: "15 17 * * *"
+    - cron: "15 17 * * *"   # noon fallback CDT (11:15 CST)
+    - cron: "15 18 * * *"   # noon fallback CST (1:15 CDT)
     - cron: "15 19 * * *"
     - cron: "15 20 * * *"
+    - cron: "15 21 * * *"
   workflow_dispatch:
     inputs:
       force:
@@ -63,8 +70,11 @@ jobs:
       - name: Once-per-day guard
         id: guard
         run: |
+          HM=$(TZ=America/Chicago date +%-H%M)
           if [ "${{ github.event.inputs.force }}" = "true" ]; then
             echo "force=true -> guard bypassed"; echo "run=true" >> "$GITHUB_OUTPUT"
+          elif [ "${{ github.event_name }}" = "schedule" ] && { [ "$HM" -lt 915 ] || [ "$HM" -gt 1900 ]; }; then
+            echo "skip: CT time $HM outside 9:15-19:00 (DST-shifted slot)"; echo "run=false" >> "$GITHUB_OUTPUT"
           else
             python scripts/run_guard.py check
           fi
@@ -100,7 +110,9 @@ jobs:
         id: push
         if: ${{ !cancelled() && steps.guard.outputs.run == 'true' }}
         run: |
-          if mkdir -p ../docs/data/v1 && cp data/today.json data/paper.json data/paper_ledger.json ../docs/data/v1/
+          # FIX 2026-10-10: this line was 'if mkdir ... && cp ...' with no then/fi -> bash syntax error (exit 2) on every run since the Oct 9 merge,
+          # so data/ + the run stamp never reached main and Pages never updated.
+          mkdir -p ../docs/data/v1 && cp data/today.json data/paper.json data/paper_ledger.json ../docs/data/v1/
           if git diff --quiet -- data/ ../docs/data/v1 && [ -z "$(git ls-files --others --exclude-standard -- data/ ../docs/data/v1)" ]; then
             echo "No data change."
             echo "changed=false" >> "$GITHUB_OUTPUT"

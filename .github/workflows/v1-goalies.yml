@@ -9,6 +9,11 @@ on:
     - cron: "30 21 * * *"
     - cron: "45 22 * * *"
     - cron: "15 0 * * *"
+    # CST equivalents (after Nov 1). Goalie checks are free and idempotent, so the extra slots are harmless in CDT.
+    - cron: "30 17 * * *"
+    - cron: "30 22 * * *"
+    - cron: "45 23 * * *"
+    - cron: "15 1 * * *"
   workflow_dispatch:
 
 permissions:
@@ -36,7 +41,8 @@ jobs:
       - name: Commit + push data/ only if changed
         id: push
         run: |
-          if mkdir -p ../docs/data/v1 && cp data/today.json data/paper.json data/paper_ledger.json ../docs/data/v1/
+          # FIX 2026-10-10: was 'if mkdir ... && cp ...' (no then/fi) -> syntax error on every run since Oct 9.
+          mkdir -p ../docs/data/v1 && cp data/today.json data/paper.json data/paper_ledger.json ../docs/data/v1/
           if git diff --quiet -- data/ ../docs/data/v1 && [ -z "$(git ls-files --others --exclude-standard -- data/ ../docs/data/v1)" ]; then
             echo "changed=false" >> "$GITHUB_OUTPUT"; exit 0
           fi

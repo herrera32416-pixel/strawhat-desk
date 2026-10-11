@@ -6,6 +6,7 @@ on:
     - cron: "23 18 * * *"   # backup: 1:23pm CDT / 12:23pm CST
   workflow_dispatch:
 permissions:
+  pages: write
   contents: write
 concurrency:
   group: strawhat-desk     # same group as daily.yml, so runs never overlap or race on pushes / credits.jsonl
@@ -56,3 +57,8 @@ jobs:
           git commit -m "nba+nhl desk $(TZ=America/Chicago date '+%Y-%m-%d %H:%M CT')" || echo "nothing to commit"
           git pull --rebase -q || true
           git push
+      - name: request Pages build
+        if: steps.guard.outputs.go == 'yes'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh api -X POST "repos/${{ github.repository }}/pages/builds" || echo "::warning::Pages build request failed"

@@ -1,0 +1,50 @@
+name: sim-model NFL weekly refresh + paper grading (PAPER ONLY)
+# Runs on GitHub, no Grok Bot box. Code + outputs live on the sim-model branch; this file must sit on main for
+# schedules to fire. Sunday: rebuild ratings/sim for the next unplayed nflverse week, read the newest desk odds
+# file already on main (0 Odds API credits), fresh ESPN QB injuries + Open-Meteo forecast -> picks + paper log.
+# Mon/Tue: grade paper picks vs nflverse finals. Gate stays OFF (sim-model/config/gate.json).
+on:
+  schedule:
+    - cron: "40 13 * * 0"   # Sun 8:40 CDT / 7:40 CST
+    - cron: "40 15 * * 0"   # Sun 10:40 CDT / 9:40 CST (after the desk's morning odds pull)
+    - cron: "10 16 * * 2"   # Tue grade (after MNF)
+    - cron: "10 16 * * 3"   # Wed grade backup
+  workflow_dispatch:
+    inputs:
+      mode: { description: "picks | grade", default: picks, type: choice, options: [picks, grade] }
+permissions:
+  contents: write
+concurrency:
+  group: sim-model
+  cancel-in-progress: false
+jobs:
+  sim:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+        with: { ref: sim-model, path: branch }
+      - uses: actions/checkout@v4
+        with: { ref: main, path: desk }
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - name: run
+        working-directory: branch/sim-model
+        env:
+          DESK_REPO: ${{ github.workspace }}/desk
+        run: |
+          pip install -q pandas pyarrow scikit-learn scipy requests
+          MODE="${{ inputs.mode }}"; [ -z "$MODE" ] && { case "${{ github.event.schedule }}" in *" * * 0") MODE=picks;; *) MODE=grade;; esac; }
+          echo "mode=$MODE"
+          if [ "$MODE" = picks ]; then
+            for y in $(seq 2012 2026); do curl -sfL -o data/nfl/pbp_$y.parquet https://github.com/nflverse/nflverse-data/releases/download/pbp/play_by_play_$y.parquet & done; wait
+            bash run_sunday.sh
+          fi
+          bash grade_paper.sh
+      - name: commit picks + paper log to sim-model
+        working-directory: branch
+        run: |
+          git config user.name "strawhat-desk-bot"; git config user.email "actions@users.noreply.github.com"
+          git add sim-model/out/picks sim-model/out/paper sim-model/out/nfl_v2_preds.parquet sim-model/data/odds 2>/dev/null || true
+          git commit -m "sim-model paper refresh $(TZ=America/Chicago date '+%F %H:%M') CT" || { echo nothing; exit 0; }
+          git pull --rebase -q origin sim-model && git push origin HEAD:sim-model

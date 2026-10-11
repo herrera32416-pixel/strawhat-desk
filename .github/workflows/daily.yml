@@ -2,8 +2,8 @@ name: strawhat-desk daily
 on:
   schedule:
     # Off the top of the hour (GitHub drops/delays :00 jobs). Primary = first slot at/after 9am CT; the rest are backups.
-    - cron: "7 14 * * *"    # 9:07am CDT / 8:07am CST (CST: guard skips, too early)
-    - cron: "7 15 * * *"    # 10:07am CDT / 9:07am CST
+    - cron: "15 14 * * *"   # 9:15am CDT / 8:15am CST (CST: guard skips, too early)
+    - cron: "15 15 * * *"   # 10:15am CDT / 9:15am CST
     - cron: "37 15 * * *"   # backup: 10:37am CDT / 9:37am CST
     - cron: "37 16 * * *"   # backup: 11:37am CDT / 10:37am CST
     # Catch dropped 9-11am slots (GitHub sometimes fires none of them; Oct 5 2026 missed all four).
@@ -29,6 +29,7 @@ on:
         options: [daily, recheck]
 permissions:
   contents: write
+  pages: write   # request a legacy Pages build after pushing (GITHUB_TOKEN pushes may not trigger one)
 concurrency:
   group: strawhat-desk
   cancel-in-progress: false
@@ -64,7 +65,8 @@ jobs:
           GO=yes
           if [ "${{ github.event_name }}" = "schedule" ]; then
             if [ "$MODE" = "daily" ]; then
-              if [ "$H" -lt 9 ] || [ "$H" -gt 18 ]; then GO=no; echo "skip: CT hour $H outside 9-18"; fi
+              HM=$(TZ=America/Chicago date +%-H%M)
+              if [ "$HM" -lt 915 ] || [ "$H" -gt 18 ]; then GO=no; echo "skip: CT time $HM outside 9:15-18:59"; fi
               if [ "$LAST" = "$D" ]; then GO=no; echo "skip: scheduled daily run already done for $D"; fi
             fi
           fi
@@ -113,3 +115,8 @@ jobs:
           git commit -m "${{ steps.guard.outputs.mode }} desk $(TZ=America/Chicago date '+%Y-%m-%d %H:%M CT')" || echo "nothing to commit"
           git pull --rebase -q || true
           git push
+      - name: request Pages build
+        if: steps.guard.outputs.go == 'yes'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh api -X POST "repos/${{ github.repository }}/pages/builds" || echo "::warning::Pages build request failed"

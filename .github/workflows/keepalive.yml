@@ -1,0 +1,45 @@
+name: keepalive + noon fallback
+# Runs purely on GitHub (no Grok Bot box).
+# 1) Keepalive: GitHub disables scheduled workflows after 60 days without repo activity. Weekly, re-enable every
+#    workflow; if the last commit on main is older than 40 days, push an empty commit to reset the clock.
+# 2) Noon fallback (daily, ~12:20 CT in both CDT and CST): if today's v1 board stamp or daily desk run is missing
+#    on main (GitHub dropped/delayed the morning crons), dispatch them. Their own once-per-day guards prevent doubles.
+on:
+  schedule:
+    - cron: "20 17 * * *"   # 12:20 CDT / 11:20 CST
+    - cron: "20 18 * * *"   # 1:20 CDT / 12:20 CST
+    - cron: "50 19 * * *"   # late catch
+  workflow_dispatch:
+permissions:
+  contents: write
+  actions: write
+jobs:
+  keepalive:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 1 }
+      - name: re-enable all workflows + empty commit if repo idle 40+ days
+        env: { GH_TOKEN: "${{ github.token }}" }
+        run: |
+          for id in $(gh api "repos/${{ github.repository }}/actions/workflows" -q '.workflows[]|select(.state!="active")|.id'); do
+            echo "re-enabling workflow $id"; gh api -X PUT "repos/${{ github.repository }}/actions/workflows/$id/enable" || true
+          done
+          AGE=$(( ( $(date +%s) - $(git log -1 --format=%ct) ) / 86400 ))
+          echo "last commit age: $AGE days"
+          if [ "$AGE" -ge 40 ]; then
+            git config user.name "strawhat-desk-bot"; git config user.email "actions@users.noreply.github.com"
+            git commit --allow-empty -m "keepalive $(date -u +%F)" && git push
+          fi
+      - name: noon fallback
+        env: { GH_TOKEN: "${{ github.token }}" }
+        run: |
+          D=$(TZ=America/Chicago date +%F); HM=$(TZ=America/Chicago date +%-H%M)
+          if [ "${{ github.event_name }}" = "schedule" ] && [ "$HM" -lt 1200 ]; then echo "before noon CT ($HM): skip"; exit 0; fi
+          STAMP=$(git show HEAD:v1/data/run_stamp.json 2>/dev/null | python3 -c 'import json,sys;print(json.load(sys.stdin).get("date_ct",""))' 2>/dev/null || true)
+          DAILY=$(git show HEAD:data/last_scheduled_run_ct.txt 2>/dev/null | tr -d '[:space:]' || true)
+          echo "today=$D v1_stamp=$STAMP daily_last=$DAILY"
+          [ "$STAMP" != "$D" ] && { echo "v1 board missing -> dispatch"; gh workflow run v1-board.yml -R "${{ github.repository }}"; }
+          [ "$DAILY" != "$D" ] && { echo "daily desk missing -> dispatch"; gh workflow run daily.yml -R "${{ github.repository }}" -f mode=daily; }
+          true
