@@ -76,3 +76,51 @@ Paper ROI at edge ≥4 pts, $20 flat (v2 Normal): ML −9.3%, spread −3.0%, to
 - **CFB v2:** the CFB calibration result is from the v1 sims, 2024–26. The total stretch removed the +4 pt bias and the totals log loss reached 0.6929 vs 0.6931 for the market. ROI at edge ≥4 was +4.2% on few bets: 2024 +15.7%, 2025 −0.3%, 2026 +7.7%. That doesn't pass, because 2025 lost.
 - **Play-level sim:** not started.
 - **News-delta:** built into the slate picks as QB-change and wind flags vs the line. It has no backtest yet, because historical line timestamps around news aren't on the box.
+
+# v3, Oct 10 2026 ~11:10pm CT
+
+## NFL: predict the closing-line error directly (`src/nfl_residual.py`, walk-forward 2017–2025; ridge α=50, retrained before each season on all prior seasons)
+y = actual − close. Spread features: sim-vs-close gap, QB-change adjustment, rest, divisional, neutral, big favorite, dome. Totals features: sim gap, wind, 15+ mph wind, cold, dome, turf, QB change.
+
+| NFL 2017–25 | Log loss | Market | Margin/total MAE vs close | ROI at edge ≥4 ($20 flat) | Seasons beating close LL / profitable |
+|---|---|---|---|---|---|
+| v2 spread | 0.7109 | 0.6925 | 10.22 vs 9.85 | −1.8% | 0 / 5 of 9 |
+| v3 spread (line error) | 0.6952 | 0.6925 | 9.89 vs 9.85 | −3.9% | 0 / 4 of 9 |
+| v2 total | 0.7096 | 0.6930 | 10.80 vs 10.51 | −3.3% | 2 / 3 of 9 |
+| **v3 total (line error)** | **0.69289** | 0.69300 | **10.50 vs 10.51** | **+5.1% (681 bets, +$691)** | **4 (2018, 22, 23, 25) / 7 of 9 (2017 flat, 2024 −5.5%)** |
+
+By season, v3 total at edge ≥4: 2017 0.0% (116 bets), 2018 +13.0% (35), 2019 +3.5% (59), 2020 +3.7% (63), 2021 +2.9% (88), 2022 +20.1% (72), 2023 +6.8% (77), 2024 −5.5% (95), 2025 +11.3% (76). Regressing (actual − close) on (model − close) gives t = 2.75.
+
+**Ablation (important):** the signal is **not** from the sim.
+- Sim gap only: log loss 0.6936, −8.4%.
+- Environment only (wind, cold, dome, turf, QB change): log loss **0.6925**, +3.4%.
+- No weather (sim gap, dome, turf, QB change): +4.1% on only 413 bets.
+- Learned coefficients: wind about −0.2 pts/mph, dome −0.7, turf +0.8, QB change −0.9.
+
+**Caveat:** the wind and temperature used are the *recorded game* conditions from nflverse, not the pregame forecast. That's mild lookahead.
+
+**Gate:** the v3 NFL totals line-error model meets the written numbers (beats the close in ≥2 seasons, profitable overall). I am **not** flipping the switch:
+1. Its edge depends partly on weather that wasn't the pregame forecast.
+2. The sim isn't the source of the edge.
+3. Flipping `gate.json` is a desk-rule change that needs Luis's yes.
+
+Required next: rerun it with Open-Meteo *historical-forecast* data (archived forecasts, 2022+) for all open-air stadiums, then forward-paper it for 4+ weeks.
+
+## CFB step 2 (done): Open-Meteo archive kickoff weather (4,854 games, 179 venues geocoded via ESPN venue → Open-Meteo), travel miles (away team's home venue → site), elevation, indoor flag, returning offensive production (share of last season's pass/rush/rec yards on this season's roster, 2024+)
+Walk-forward test seasons 2024–2026 (only 2023 + earlier available to train for 2024). Total prices assumed −110.
+
+| CFB | Log loss | Market | MAE vs close | ROI at edge ≥4 | By season (LL vs market / ROI) |
+|---|---|---|---|---|---|
+| v2 total (stretch + Platt, from Round 2) | 0.6929 | 0.6931 | 12.89 vs 12.52 | +4.2% | 2024 +15.7%, 2025 −0.3%, 2026 +7.7% |
+| v3 total, sim gap + weather/altitude/returning | 0.6983 | 0.6932 | 12.62 vs 12.52 | −3.5% | 2024 better / +4.0%; 2025 worse / −8.3%; 2026 worse / −9.1% |
+| v3 total, environment only | 0.6983 | 0.6932 | 12.61 | −4.2% | — |
+| v3 total, sim gap only | 0.6948 | 0.6932 | 12.55 | −1.9% | 2024 +5.4%, 2025 −7.6%, 2026 +2.3% |
+| v3 spread, sim gap + travel/altitude/returning | 0.6945 | 0.6933 | 11.79 vs 11.76 | +0.3% (266 bets) | 2024 +4.3%, 2025 −3.0%, 2026 −27% (8 bets) |
+
+The step-2 environment did **not** help CFB. 2025 hurts every variant. **No CFB market passes**; v2 totals is still the closest.
+
+## Play-level sim
+Not started this round. The line-error results suggest the payoff is in pregame information (forecast weather, QB news), not finer simulation.
+
+## Picks rerun (Sunday morning)
+`bash /workspace/sim-model/run_sunday.sh` pulls the newest desk Odds API file from strawhat-desk origin/main (no credits spent), fresh ESPN QB injuries and a fresh Open-Meteo forecast. It rewrites `out/picks/nfl_2026_w6.json` + `.md`. Each total also carries the v3 line-error over %, labeled research/paper.

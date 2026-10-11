@@ -14,6 +14,9 @@ Status (Oct 10 2026, ~11pm CT): v2 NFL done (see RESULTS.md); still does not bea
 
 Run: `PYTHONPATH=src LEAGUE=nfl python3 src/build_features.py && PYTHONPATH=src LEAGUE=nfl python3 src/sim_eval.py && PYTHONPATH=src python3 src/report.py out/nfl_sim_preds.parquet NFL out/nfl_results_v1.json`
 
+## Sunday rerun (one command)
+`bash /workspace/sim-model/run_sunday.sh [nflverse_week=5] [out=out/picks/nfl_2026_w6.json]`: newest desk odds file (no credits) + fresh ESPN QB injuries + Open-Meteo forecast -> picks JSON + markdown.
+
 ## Board hookup (behind a flag)
 `picks.py` JSON is the board contract: `games[].markets[] = {market, pick, price, model_pct, market_pct, blend_pct, edge_pts, tier, status}`. A market becomes `live` only when `config/gate.json` has `SIM_LIVE=true` and that market `passed=true`. The gate rule is written in the file. Flipping it is a desk-rule change and needs Luis's yes.
 

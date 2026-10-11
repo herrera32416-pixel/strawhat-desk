@@ -12,7 +12,7 @@ G=pd.read_csv('data/nfl/games.csv').set_index('game_id')
 od=json.load(gzip.open(ODDS)); TEAM={'ARI':'Arizona Cardinals','ATL':'Atlanta Falcons','BAL':'Baltimore Ravens','BUF':'Buffalo Bills','CAR':'Carolina Panthers','CHI':'Chicago Bears','CIN':'Cincinnati Bengals','CLE':'Cleveland Browns','DAL':'Dallas Cowboys','DEN':'Denver Broncos','DET':'Detroit Lions','GB':'Green Bay Packers','HOU':'Houston Texans','IND':'Indianapolis Colts','JAX':'Jacksonville Jaguars','KC':'Kansas City Chiefs','LV':'Las Vegas Raiders','LAC':'Los Angeles Chargers','LA':'Los Angeles Rams','MIA':'Miami Dolphins','MIN':'Minnesota Vikings','NE':'New England Patriots','NO':'New Orleans Saints','NYG':'New York Giants','NYJ':'New York Jets','PHI':'Philadelphia Eagles','PIT':'Pittsburgh Steelers','SF':'San Francisco 49ers','SEA':'Seattle Seahawks','TB':'Tampa Bay Buccaneers','TEN':'Tennessee Titans','WAS':'Washington Commanders'}
 # open-air stadium coordinates (public venue locations); domes/closed roofs get no wind flag
 OPEN={'JAX':(30.324,-81.637),'GB':(44.501,-88.062),'MIA':(25.958,-80.239),'NE':(42.091,-71.264),'NYJ':(40.813,-74.074),'PIT':(40.447,-80.016),'TEN':(36.166,-86.771),'WAS':(38.908,-76.864),'SEA':(47.595,-122.332),'DAL':None,'ARI':None,'ATL':None,'NO':None,'LAC':None,'LA':None}
-inj=json.load(open('data/espn_nfl_injuries_20261010.json'))
+inj=json.load(open(sys.argv[4] if len(sys.argv)>4 else 'data/espn_nfl_injuries_20261010.json'))
 qbnote={}
 for t in inj.get('injuries',[]):
     for i in t.get('injuries',[]):
@@ -29,6 +29,12 @@ def mnote(gid,home,away):
         de=f[f'{o}_o_deep']-FX[f'{o}_o_deep'].mean(); dx=f[f'{d}_d_pass_expl']-FX[f'{d}_d_pass_expl'].mean()
         notes.append((abs(de)*2+abs(dx)*2, f"{ot} deep-pass rate {100*f[f'{o}_o_deep']:.0f}% vs {dt} explosive-pass allowed {100*f[f'{d}_d_pass_expl']:.1f}%"))
     return max(notes)[1]+' (descriptive; matchup layer did not improve backtests, so it is not in the numbers)'
+# v3 line-error totals model (research; fit on all played games <2026): total - close ~ env features
+from sklearn.linear_model import Ridge
+FV=pd.read_parquet('out/nfl_features_v2.parquet')[['game_id','h_qbadj','a_qbadj','wind_f','cold','dome','turf']]
+TD=hist.merge(FV,on='game_id'); TD['gap_t']=TD.sim_total-TD.total_line; TD['qbchg']=((TD.h_qbadj.abs()>.02)|(TD.a_qbadj.abs()>.02)).astype(int); TD['wind15']=(TD.wind_f>=15).astype(int)
+XT=['gap_t','wind_f','wind15','cold','dome','turf','qbchg']; TT=TD[(TD.season<2026)&TD.result.notna()]
+RT=Ridge(alpha=50).fit(TT[XT],TT.total-TT.total_line); RSD=float(np.std(TT.total-TT.total_line-RT.predict(TT[XT])))
 games=[]
 for _,r in P.sort_values(['game_id']).iterrows():
     g=G.loc[r.game_id]; H,A=TEAM[r.home],TEAM[r.away]
@@ -54,6 +60,10 @@ for _,r in P.sort_values(['game_id']).iterrows():
         h=pd.DataFrame(j['hourly']); h['time']=pd.to_datetime(h.time,utc=True); w=h[(h.time>=kt.floor('h'))&(h.time<=kt+pd.Timedelta(hours=3))]
         wx={'wind_mph':round(w.wind_speed_10m.mean(),1),'gust_mph':round(w.wind_gusts_10m.max(),1),'temp_f':round(w.temperature_2m.mean()),'precip_prob':int(w.precipitation_probability.max())}
         if wx['wind_mph']>=15: flags.append(f"WIND-UNDER: forecast {wx['wind_mph']} mph (15+ mph unders hit 57% in our 2015-25 sample; paper only)")
+    fr=FV.set_index('game_id').loc[r.game_id]; wind=(wx or {}).get('wind_mph',0.0) if fr.dome==0 else 0.0
+    xv=pd.DataFrame([{'gap_t':t2-ov['point'],'wind_f':wind,'wind15':int(wind>=15),'cold':max(0,50-(wx or {}).get('temp_f',60)) if fr.dome==0 else 0,'dome':fr.dome,'turf':fr.turf,'qbchg':int(abs(r.home_qbadj)>.02 or abs(r.away_qbadj)>.02)}])
+    pe=float(RT.predict(xv[XT])[0]); po3=float(1-norm.cdf((-pe)/RSD))
+    out[2]['v3_line_error_model']={'pred_total_minus_line':round(pe,2),'over_pct':round(100*po3,1),'note':'research model (walk-forward +5.1% ROI on totals 2017-25 but trained on recorded, not forecast, weather) - paper'}
     for t,full,qa in ((r.home,H,r.home_qbadj),(r.away,A,r.away_qbadj)):
         if abs(qa)>0.02:
             gap=(m2-(-hs['point'])) if t==r.home else ((-hs['point'])-m2)

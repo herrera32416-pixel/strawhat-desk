@@ -1,0 +1,11 @@
+/workspace/sim-model/src/cfb_env.py:11: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  home_venue=g.dropna(subset=['venue_id'])[g.neutral!=1].groupby('home_team').venue_id.agg(lambda x:x.mode().iloc[0])
+venues 179 geocoded 179
+               count        mean
+travel_mi     4155.0  686.729714
+elev          4811.0  295.045729
+wx_temp       4854.0   67.234497
+wx_wind       4854.0    6.670885
+wx_precip     4854.0    0.015321
+home_ret_off  2239.0    0.428425
+away_ret_off  2235.0    0.431051

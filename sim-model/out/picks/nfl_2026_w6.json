@@ -57,7 +57,12 @@
      "market_pct": 50.0,
      "gap_pts": 8.3,
      "tier": "A",
-     "status": "paper"
+     "status": "paper",
+     "v3_line_error_model": {
+      "pred_total_minus_line": 1.54,
+      "over_pct": 54.7,
+      "note": "research model (walk-forward +5.1% ROI on totals 2017-25 but trained on recorded, not forecast, weather) - paper"
+     }
     }
    ],
    "weather": null,
@@ -115,7 +120,12 @@
      "market_pct": 48.3,
      "gap_pts": 2.3,
      "tier": "C",
-     "status": "paper"
+     "status": "paper",
+     "v3_line_error_model": {
+      "pred_total_minus_line": 1.76,
+      "over_pct": 55.3,
+      "note": "research model (walk-forward +5.1% ROI on totals 2017-25 but trained on recorded, not forecast, weather) - paper"
+     }
     }
    ],
    "weather": null,
@@ -173,7 +183,12 @@
      "market_pct": 50.4,
      "gap_pts": 4.0,
      "tier": "C",
-     "status": "paper"
+     "status": "paper",
+     "v3_line_error_model": {
+      "pred_total_minus_line": -1.0,
+      "over_pct": 47.0,
+      "note": "research model (walk-forward +5.1% ROI on totals 2017-25 but trained on recorded, not forecast, weather) - paper"
+     }
     }
    ],
    "weather": {
@@ -234,7 +249,12 @@
      "market_pct": 50.4,
      "gap_pts": 5.5,
      "tier": "B",
-     "status": "paper"
+     "status": "paper",
+     "v3_line_error_model": {
+      "pred_total_minus_line": -0.2,
+      "over_pct": 49.4,
+      "note": "research model (walk-forward +5.1% ROI on totals 2017-25 but trained on recorded, not forecast, weather) - paper"
+     }
     }
    ],
    "weather": {
@@ -297,7 +317,12 @@
      "market_pct": 50.4,
      "gap_pts": 6.1,
      "tier": "B",
-     "status": "paper"
+     "status": "paper",
+     "v3_line_error_model": {
+      "pred_total_minus_line": -0.02,
+      "over_pct": 49.9,
+      "note": "research model (walk-forward +5.1% ROI on totals 2017-25 but trained on recorded, not forecast, weather) - paper"
+     }
     }
    ],
    "weather": {
@@ -360,7 +385,12 @@
      "market_pct": 51.1,
      "gap_pts": 4.4,
      "tier": "C",
-     "status": "paper"
+     "status": "paper",
+     "v3_line_error_model": {
+      "pred_total_minus_line": 1.78,
+      "over_pct": 55.4,
+      "note": "research model (walk-forward +5.1% ROI on totals 2017-25 but trained on recorded, not forecast, weather) - paper"
+     }
     }
    ],
    "weather": null,
@@ -416,7 +446,12 @@
      "market_pct": 48.9,
      "gap_pts": 10.5,
      "tier": "A",
-     "status": "paper"
+     "status": "paper",
+     "v3_line_error_model": {
+      "pred_total_minus_line": 1.58,
+      "over_pct": 54.8,
+      "note": "research model (walk-forward +5.1% ROI on totals 2017-25 but trained on recorded, not forecast, weather) - paper"
+     }
     }
    ],
    "weather": null,
@@ -472,7 +507,12 @@
      "market_pct": 48.9,
      "gap_pts": 9.4,
      "tier": "A",
-     "status": "paper"
+     "status": "paper",
+     "v3_line_error_model": {
+      "pred_total_minus_line": -0.15,
+      "over_pct": 49.5,
+      "note": "research model (walk-forward +5.1% ROI on totals 2017-25 but trained on recorded, not forecast, weather) - paper"
+     }
     }
    ],
    "weather": {
@@ -533,14 +573,19 @@
      "market_pct": 49.6,
      "gap_pts": 8.8,
      "tier": "A",
-     "status": "paper"
+     "status": "paper",
+     "v3_line_error_model": {
+      "pred_total_minus_line": -0.74,
+      "over_pct": 47.8,
+      "note": "research model (walk-forward +5.1% ROI on totals 2017-25 but trained on recorded, not forecast, weather) - paper"
+     }
     }
    ],
    "weather": {
     "wind_mph": 11.8,
     "gust_mph": 23.0,
     "temp_f": 60,
-    "precip_prob": 79
+    "precip_prob": 68
    },
    "news_delta_flags": [],
    "matchup_note": "IND run success 46% vs PIT run D allowing 40% (descriptive; matchup layer did not improve backtests, so it is not in the numbers)"
@@ -594,7 +639,12 @@
      "market_pct": 51.1,
      "gap_pts": 2.4,
      "tier": "C",
-     "status": "paper"
+     "status": "paper",
+     "v3_line_error_model": {
+      "pred_total_minus_line": 0.73,
+      "over_pct": 52.2,
+      "note": "research model (walk-forward +5.1% ROI on totals 2017-25 but trained on recorded, not forecast, weather) - paper"
+     }
     }
    ],
    "weather": {
@@ -655,7 +705,12 @@
      "market_pct": 50.4,
      "gap_pts": 2.4,
      "tier": "C",
-     "status": "paper"
+     "status": "paper",
+     "v3_line_error_model": {
+      "pred_total_minus_line": 1.77,
+      "over_pct": 55.4,
+      "note": "research model (walk-forward +5.1% ROI on totals 2017-25 but trained on recorded, not forecast, weather) - paper"
+     }
     }
    ],
    "weather": null,
@@ -713,14 +768,19 @@
      "market_pct": 51.1,
      "gap_pts": 9.0,
      "tier": "A",
-     "status": "paper"
+     "status": "paper",
+     "v3_line_error_model": {
+      "pred_total_minus_line": -1.68,
+      "over_pct": 44.9,
+      "note": "research model (walk-forward +5.1% ROI on totals 2017-25 but trained on recorded, not forecast, weather) - paper"
+     }
     }
    ],
    "weather": {
     "wind_mph": 11.9,
     "gust_mph": 36.2,
     "temp_f": 65,
-    "precip_prob": 65
+    "precip_prob": 74
    },
    "news_delta_flags": [
     "QB-CHANGE WAS: starter Jayden Daniels vs recent starter (QB adj +0.15 EPA/db). Sim vs line on WAS's side: +2.0 pts"
@@ -776,14 +836,19 @@
      "market_pct": 50.4,
      "gap_pts": 7.4,
      "tier": "B",
-     "status": "paper"
+     "status": "paper",
+     "v3_line_error_model": {
+      "pred_total_minus_line": -0.22,
+      "over_pct": 49.3,
+      "note": "research model (walk-forward +5.1% ROI on totals 2017-25 but trained on recorded, not forecast, weather) - paper"
+     }
     }
    ],
    "weather": {
     "wind_mph": 9.2,
     "gust_mph": 20.1,
     "temp_f": 75,
-    "precip_prob": 40
+    "precip_prob": 45
    },
    "news_delta_flags": [],
    "matchup_note": "JAX run success 43% vs PHI run D allowing 41% (descriptive; matchup layer did not improve backtests, so it is not in the numbers)"
@@ -837,7 +902,12 @@
      "market_pct": 51.1,
      "gap_pts": 9.0,
      "tier": "A",
-     "status": "paper"
+     "status": "paper",
+     "v3_line_error_model": {
+      "pred_total_minus_line": -0.19,
+      "over_pct": 49.4,
+      "note": "research model (walk-forward +5.1% ROI on totals 2017-25 but trained on recorded, not forecast, weather) - paper"
+     }
     }
    ],
    "weather": {
