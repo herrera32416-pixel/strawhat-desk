@@ -1123,12 +1123,18 @@
               "goalie": "Logan Thompson",
               "status": "Confirmed",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-10-11T15:26:13-05:00",
+              "seen_time_ct": "2026-10-11T16:00:46-05:00",
               "file": "nhl_goalie_log.jsonl"
             },
-            "away": null
+            "away": {
+              "goalie": "Joey Daccord",
+              "status": "Confirmed",
+              "source": "dailyfaceoff",
+              "seen_time_ct": "2026-10-11T16:00:46-05:00",
+              "file": "nhl_goalie_log.jsonl"
+            }
           },
-          "goalie_flag": "GOALIE UNCONFIRMED (away) — model uses the recent-starter mix / likely starter; re-check before puck drop",
+          "goalie_flag": "",
           "fair": {
             "lam_home": 3.503,
             "lam_away": 2.452,
@@ -1136,15 +1142,15 @@
             "source": "Poisson + draw inflation 1.50 + empty-net overlay + OT/SO (P home 0.524), solved to the market no-vig ML and total"
           },
           "nhl_model": {
-            "reg_goals_home": 3.36,
+            "reg_goals_home": 3.35,
             "reg_goals_away": 2.75,
             "reg_tie_pct": 21.9,
             "b2b_home": 0,
             "b2b_away": 0,
             "goalie_home": "Logan Thompson (Confirmed)",
-            "goalie_away": "recent-starter mix (no log entry)",
+            "goalie_away": "Joey Daccord (Confirmed)",
             "gsax_pg_home": 0.19,
-            "gsax_pg_away": 0.04
+            "gsax_pg_away": 0.05
           },
           "markets": {
             "ml": {
@@ -1159,13 +1165,13 @@
                   "price_american": 180,
                   "book": "DraftKings",
                   "novig_pct": 34.3,
-                  "model_pct": 40.9,
+                  "model_pct": 41.0,
                   "implied_pct": 35.7,
                   "edge_pp": 5.2,
-                  "gap_pp": 6.6,
+                  "gap_pp": 6.7,
                   "strong": false,
-                  "_edge": 5.176047796299282,
-                  "_gap": 6.637856130145531,
+                  "_edge": 5.249905823999263,
+                  "_gap": 6.711714157845511,
                   "fair_pct": 34.3,
                   "blend_pct": 34.3,
                   "_bedge": -1.4618083338462484
@@ -1177,13 +1183,13 @@
                   "price_american": -218,
                   "book": "DraftKings",
                   "novig_pct": 65.7,
-                  "model_pct": 59.1,
+                  "model_pct": 59.0,
                   "implied_pct": 68.6,
-                  "edge_pp": -9.4,
-                  "gap_pp": -6.6,
+                  "edge_pp": -9.5,
+                  "gap_pp": -6.7,
                   "strong": false,
-                  "_edge": -9.443792630081848,
-                  "_gap": -6.637856130145536,
+                  "_edge": -9.517650657781829,
+                  "_gap": -6.711714157845517,
                   "fair_pct": 65.7,
                   "blend_pct": 65.7,
                   "_bedge": -2.8059364999363123
@@ -1205,11 +1211,11 @@
                   "novig_pct": 56.3,
                   "model_pct": 60.9,
                   "implied_pct": 58.7,
-                  "edge_pp": 2.2,
-                  "gap_pp": 4.5,
+                  "edge_pp": 2.3,
+                  "gap_pp": 4.6,
                   "strong": false,
-                  "_edge": 2.179023917915901,
-                  "_gap": 4.50750351912278,
+                  "_edge": 2.2632118144420676,
+                  "_gap": 4.591691415648946,
                   "fair_pct": 53.6,
                   "blend_pct": 56.3,
                   "_bedge": -2.3284796012068787
@@ -1223,11 +1229,11 @@
                   "novig_pct": 43.7,
                   "model_pct": 39.1,
                   "implied_pct": 45.5,
-                  "edge_pp": -6.3,
-                  "gap_pp": -4.5,
+                  "edge_pp": -6.4,
+                  "gap_pp": -4.6,
                   "strong": false,
-                  "_edge": -6.311255322874581,
-                  "_gap": -4.50750351912278,
+                  "_edge": -6.3954432194007484,
+                  "_gap": -4.591691415648946,
                   "fair_pct": 46.4,
                   "blend_pct": 43.7,
                   "_bedge": -1.8037518037518019
@@ -1247,13 +1253,13 @@
                   "price_american": -105,
                   "book": "DraftKings",
                   "novig_pct": 48.9,
-                  "model_pct": 46.8,
+                  "model_pct": 46.7,
                   "implied_pct": 51.2,
-                  "edge_pp": -4.4,
-                  "gap_pp": -2.1,
+                  "edge_pp": -4.5,
+                  "gap_pp": -2.2,
                   "strong": false,
-                  "_edge": -4.389720323980267,
-                  "_gap": -2.0867845102234273,
+                  "_edge": -4.47682714423292,
+                  "_gap": -2.1738913304760796,
                   "fair_pct": 48.9,
                   "blend_pct": 48.9,
                   "_bedge": -2.3029358137568403
@@ -1265,13 +1271,13 @@
                   "price_american": -115,
                   "book": "DraftKings",
                   "novig_pct": 51.1,
-                  "model_pct": 53.2,
+                  "model_pct": 53.3,
                   "implied_pct": 53.5,
-                  "edge_pp": -0.3,
-                  "gap_pp": 2.1,
+                  "edge_pp": -0.2,
+                  "gap_pp": 2.2,
                   "strong": false,
-                  "_edge": -0.3181639641649414,
-                  "_gap": 2.086784510223416,
+                  "_edge": -0.23105714391228327,
+                  "_gap": 2.1738913304760743,
                   "fair_pct": 51.1,
                   "blend_pct": 51.1,
                   "_bedge": -2.4049484743883576
@@ -1279,7 +1285,7 @@
               ]
             }
           },
-          "refreshed_ct": "2026-10-11T15:26:13-05:00"
+          "refreshed_ct": "2026-10-11T16:00:46-05:00"
         }
       },
       {
@@ -1395,14 +1401,14 @@
               "goalie": "Dylan Garand",
               "status": "Confirmed",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-10-11T15:26:13-05:00",
+              "seen_time_ct": "2026-10-11T16:00:46-05:00",
               "file": "nhl_goalie_log.jsonl"
             },
             "away": {
               "goalie": "Kevin Lankinen",
               "status": "Likely",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-10-11T15:26:13-05:00",
+              "seen_time_ct": "2026-10-11T16:00:46-05:00",
               "file": "nhl_goalie_log.jsonl"
             }
           },
@@ -1557,7 +1563,7 @@
               ]
             }
           },
-          "refreshed_ct": "2026-10-11T15:26:13-05:00"
+          "refreshed_ct": "2026-10-11T16:00:46-05:00"
         }
       },
       {
@@ -1823,7 +1829,7 @@
               ]
             }
           },
-          "refreshed_ct": "2026-10-11T15:26:13-05:00"
+          "refreshed_ct": "2026-10-11T16:00:46-05:00"
         }
       },
       {
@@ -2578,7 +2584,7 @@
               ]
             }
           },
-          "refreshed_ct": "2026-10-11T15:26:13-05:00"
+          "refreshed_ct": "2026-10-11T16:00:46-05:00"
         }
       },
       {
@@ -2844,7 +2850,7 @@
               ]
             }
           },
-          "refreshed_ct": "2026-10-11T15:26:13-05:00"
+          "refreshed_ct": "2026-10-11T16:00:46-05:00"
         }
       },
       {
@@ -3322,7 +3328,7 @@
               ]
             }
           },
-          "refreshed_ct": "2026-10-11T15:26:13-05:00"
+          "refreshed_ct": "2026-10-11T16:00:46-05:00"
         }
       },
       {
