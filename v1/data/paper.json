@@ -1,8 +1,8 @@
 {
   "schema": "desk-paper/v1",
   "label": "PAPER ONLY — no real bets",
-  "slate_date_ct": "2026-10-10",
-  "generated_at_ct": "2026-10-10T23:13:36-05:00",
+  "slate_date_ct": "2026-10-11",
+  "generated_at_ct": "2026-10-11T13:53:02-05:00",
   "model": {
     "name": "market + w·(FPI − market); NFL w=0 since 2026-10-04 (FPI history may be post-game, refit pending), CFB 0",
     "source": "betbot-revamp/research/upgrades-2026-10 u3_blend open|blend:fpi mean weekly weight; FINAL_REPORT 2026-10-02: every sport stays on paper",
@@ -35,64 +35,64 @@
   },
   "stats": {
     "NFL": {
-      "games": 15,
-      "espn_matched": 15,
-      "with_fpi": 15,
-      "paper": 0,
-      "hold": 0,
-      "pass": 15,
-      "blank": 0,
-      "paper_picks": 0
-    },
-    "CFB": {
       "games": 5,
       "espn_matched": 5,
       "with_fpi": 5,
       "paper": 0,
       "hold": 0,
+      "pass": 5,
+      "blank": 0,
+      "paper_picks": 0
+    },
+    "CFB": {
+      "games": 58,
+      "espn_matched": 58,
+      "with_fpi": 58,
+      "paper": 0,
+      "hold": 0,
       "pass": 0,
-      "blank": 5,
+      "blank": 58,
       "paper_picks": 0
     },
     "NHL": {
-      "games": 3,
-      "espn_matched": 3,
+      "games": 6,
+      "espn_matched": 6,
       "with_fpi": 0,
       "paper": 0,
       "hold": 0,
-      "pass": 3,
+      "pass": 6,
       "blank": 0,
       "paper_picks": 0,
       "nhl_model": {
-        "last_final": "2026-10-09",
-        "season_games": 69,
+        "last_final": "2026-10-10",
+        "season_games": 83,
         "w": {
           "ml": 0.0,
           "pl": 0.0,
           "tot": 0.0
         },
         "notes": [
-          "4 new finals appended",
-          "2 new MoneyPuck xG games",
-          "xG coverage {'games_2023plus': 4005, 'with_xg': 4003}"
+          "14 new finals appended",
+          "16 new MoneyPuck xG games",
+          "xG coverage {'games_2023plus': 4019, 'with_xg': 4019}"
         ],
-        "home": 0.027,
-        "b2b_off": -0.067,
-        "b2b_def": 0.015,
-        "goalie_coef": -0.145,
+        "home": 0.024,
+        "b2b_off": -0.068,
+        "b2b_def": 0.013,
+        "goalie_coef": -0.12,
         "model": "NHL xG model v1 (2023+ only, 0.5 xG + 0.5 goals, goalie, b2b) — research only"
       },
-      "with_model": 3,
-      "goalies_shown": 0,
-      "with_fair": 3
+      "with_model": 6,
+      "goalies_shown": 3,
+      "with_fair": 6
     },
     "MLB": {
-      "games": 1,
-      "espn_matched": 1,
+      "games": 2,
+      "espn_matched": 2,
       "with_fpi": 0,
       "paper": 0,
       "hold": 0,
-      "pass": 1,
+      "pass": 2,
       "blank": 0,
       "paper_picks": 0
     }
@@ -154,762 +154,6 @@
   "board": [
     {
       "sport": "NFL",
-      "matchup": "Philadelphia Eagles at Jacksonville Jaguars",
-      "kick_utc": "2026-10-11T13:30:00Z",
-      "kick_ct": "Sun 10/11 8:30 AM CT",
-      "event_id": "phi-jax",
-      "espn_event_id": "401872981",
-      "status": "PASS",
-      "best": {
-        "side": "away",
-        "label": "Philadelphia Eagles ML",
-        "line": null,
-        "price_american": 320,
-        "book": "DraftKings",
-        "novig_pct": 22.8,
-        "model_pct": 22.8,
-        "implied_pct": 23.8,
-        "edge_pp": -1.0,
-        "gap_pp": 0.0,
-        "strong": false,
-        "_edge": -0.9600614439324084,
-        "_gap": 0.0,
-        "market": "ml",
-        "team": "Philadelphia Eagles",
-        "selection": "Philadelphia Eagles ML"
-      },
-      "picks": [],
-      "by_market": {
-        "ml": {
-          "status": "PASS",
-          "note": "edge -1.0pp < 3pp",
-          "best": {
-            "side": "away",
-            "label": "Philadelphia Eagles ML",
-            "line": null,
-            "price_american": 320,
-            "book": "DraftKings",
-            "novig_pct": 22.8,
-            "model_pct": 22.8,
-            "implied_pct": 23.8,
-            "edge_pp": -1.0,
-            "gap_pp": 0.0,
-            "strong": false,
-            "_edge": -0.9600614439324084,
-            "_gap": 0.0,
-            "market": "ml",
-            "team": "Philadelphia Eagles",
-            "selection": "Philadelphia Eagles ML"
-          }
-        },
-        "spread": {
-          "status": "PASS",
-          "note": "edge -1.3pp < 3pp",
-          "best": {
-            "side": "home",
-            "label": "Jacksonville Jaguars -7.5",
-            "line": -7.5,
-            "price_american": -112,
-            "book": "DraftKings",
-            "novig_pct": 50.4,
-            "model_pct": 51.6,
-            "implied_pct": 52.8,
-            "edge_pp": -1.3,
-            "gap_pp": 1.1,
-            "strong": false,
-            "_edge": -1.259955434901372,
-            "_gap": 1.1372578373470277,
-            "market": "spread",
-            "team": "Jacksonville Jaguars",
-            "selection": "Jacksonville Jaguars -7.5"
-          }
-        },
-        "total": {
-          "status": "BLANK",
-          "note": "MODEL blank: no free projected total (ESPN predictor has win % and point diff only)"
-        }
-      },
-      "note": "edge -1.0pp < 3pp",
-      "fpi_home_margin": 6.53,
-      "mkt_home_margin": 8.0,
-      "blend_home_margin": 8.0,
-      "stamped": false,
-      "stamped_markets": []
-    },
-    {
-      "sport": "NFL",
-      "matchup": "Chicago Bears at Green Bay Packers",
-      "kick_utc": "2026-10-11T17:00:00Z",
-      "kick_ct": "Sun 10/11 12:00 PM CT",
-      "event_id": "chi-gb",
-      "espn_event_id": "401872990",
-      "status": "PASS",
-      "best": {
-        "side": "home",
-        "label": "Green Bay Packers ML",
-        "line": null,
-        "price_american": 110,
-        "book": "Bovada",
-        "novig_pct": 45.7,
-        "model_pct": 47.4,
-        "implied_pct": 47.6,
-        "edge_pp": -0.2,
-        "gap_pp": 1.7,
-        "strong": false,
-        "_edge": -0.2277061452195972,
-        "_gap": 1.665695350567581,
-        "market": "ml",
-        "team": "Green Bay Packers",
-        "selection": "Green Bay Packers ML"
-      },
-      "picks": [],
-      "by_market": {
-        "ml": {
-          "status": "PASS",
-          "note": "edge -0.2pp < 3pp",
-          "best": {
-            "side": "home",
-            "label": "Green Bay Packers ML",
-            "line": null,
-            "price_american": 110,
-            "book": "Bovada",
-            "novig_pct": 45.7,
-            "model_pct": 47.4,
-            "implied_pct": 47.6,
-            "edge_pp": -0.2,
-            "gap_pp": 1.7,
-            "strong": false,
-            "_edge": -0.2277061452195972,
-            "_gap": 1.665695350567581,
-            "market": "ml",
-            "team": "Green Bay Packers",
-            "selection": "Green Bay Packers ML"
-          }
-        },
-        "spread": {
-          "status": "PASS",
-          "note": "edge -2.4pp < 3pp",
-          "best": {
-            "side": "home",
-            "label": "Green Bay Packers +1.5",
-            "line": 1.5,
-            "price_american": -110,
-            "book": "DraftKings",
-            "novig_pct": 50.0,
-            "model_pct": 50.0,
-            "implied_pct": 52.4,
-            "edge_pp": -2.4,
-            "gap_pp": 0.0,
-            "strong": false,
-            "_edge": -2.3809523809523836,
-            "_gap": 0.0,
-            "market": "spread",
-            "team": "Green Bay Packers",
-            "selection": "Green Bay Packers +1.5"
-          }
-        },
-        "total": {
-          "status": "BLANK",
-          "note": "MODEL blank: no free projected total (ESPN predictor has win % and point diff only)"
-        }
-      },
-      "note": "edge -0.2pp < 3pp",
-      "fpi_home_margin": -1.9,
-      "mkt_home_margin": -1.5,
-      "blend_home_margin": -1.5,
-      "stamped": false,
-      "stamped_markets": []
-    },
-    {
-      "sport": "NFL",
-      "matchup": "Cincinnati Bengals at Miami Dolphins",
-      "kick_utc": "2026-10-11T17:00:00Z",
-      "kick_ct": "Sun 10/11 12:00 PM CT",
-      "event_id": "cin-mia",
-      "espn_event_id": "401872982",
-      "status": "PASS",
-      "best": {
-        "side": "home",
-        "label": "Miami Dolphins ML",
-        "line": null,
-        "price_american": 280,
-        "book": "DraftKings",
-        "novig_pct": 25.2,
-        "model_pct": 25.2,
-        "implied_pct": 26.3,
-        "edge_pp": -1.1,
-        "gap_pp": 0.0,
-        "strong": false,
-        "_edge": -1.094059983662038,
-        "_gap": 0.0,
-        "market": "ml",
-        "team": "Miami Dolphins",
-        "selection": "Miami Dolphins ML"
-      },
-      "picks": [],
-      "by_market": {
-        "ml": {
-          "status": "PASS",
-          "note": "edge -1.1pp < 3pp",
-          "best": {
-            "side": "home",
-            "label": "Miami Dolphins ML",
-            "line": null,
-            "price_american": 280,
-            "book": "DraftKings",
-            "novig_pct": 25.2,
-            "model_pct": 25.2,
-            "implied_pct": 26.3,
-            "edge_pp": -1.1,
-            "gap_pp": 0.0,
-            "strong": false,
-            "_edge": -1.094059983662038,
-            "_gap": 0.0,
-            "market": "ml",
-            "team": "Miami Dolphins",
-            "selection": "Miami Dolphins ML"
-          }
-        },
-        "spread": {
-          "status": "PASS",
-          "note": "edge -1.2pp < 3pp",
-          "best": {
-            "side": "home",
-            "label": "Miami Dolphins +7",
-            "line": 7.0,
-            "price_american": -105,
-            "book": "Bovada",
-            "novig_pct": 48.9,
-            "model_pct": 50.0,
-            "implied_pct": 51.2,
-            "edge_pp": -1.2,
-            "gap_pp": 1.1,
-            "strong": false,
-            "_edge": -1.2195121951219523,
-            "_gap": 1.0834236186348878,
-            "market": "spread",
-            "team": "Miami Dolphins",
-            "selection": "Miami Dolphins +7"
-          }
-        },
-        "total": {
-          "status": "BLANK",
-          "note": "MODEL blank: no free projected total (ESPN predictor has win % and point diff only)"
-        }
-      },
-      "note": "edge -1.1pp < 3pp",
-      "fpi_home_margin": -9.21,
-      "mkt_home_margin": -7.0,
-      "blend_home_margin": -7.0,
-      "stamped": false,
-      "stamped_markets": []
-    },
-    {
-      "sport": "NFL",
-      "matchup": "Cleveland Browns at New York Jets",
-      "kick_utc": "2026-10-11T17:00:00Z",
-      "kick_ct": "Sun 10/11 12:00 PM CT",
-      "event_id": "cle-nyj",
-      "espn_event_id": "401872983",
-      "status": "PASS",
-      "best": {
-        "side": "away",
-        "label": "Cleveland Browns ML",
-        "line": null,
-        "price_american": 120,
-        "book": "Bovada",
-        "novig_pct": 43.8,
-        "model_pct": 44.9,
-        "implied_pct": 45.5,
-        "edge_pp": -0.6,
-        "gap_pp": 1.1,
-        "strong": false,
-        "_edge": -0.5986569262003527,
-        "_gap": 1.060268090388905,
-        "market": "ml",
-        "team": "Cleveland Browns",
-        "selection": "Cleveland Browns ML"
-      },
-      "picks": [],
-      "by_market": {
-        "ml": {
-          "status": "PASS",
-          "note": "edge -0.6pp < 3pp",
-          "best": {
-            "side": "away",
-            "label": "Cleveland Browns ML",
-            "line": null,
-            "price_american": 120,
-            "book": "Bovada",
-            "novig_pct": 43.8,
-            "model_pct": 44.9,
-            "implied_pct": 45.5,
-            "edge_pp": -0.6,
-            "gap_pp": 1.1,
-            "strong": false,
-            "_edge": -0.5986569262003527,
-            "_gap": 1.060268090388905,
-            "market": "ml",
-            "team": "Cleveland Browns",
-            "selection": "Cleveland Browns ML"
-          }
-        },
-        "spread": {
-          "status": "PASS",
-          "note": "edge -2.4pp < 3pp",
-          "best": {
-            "side": "home",
-            "label": "New York Jets -2.5",
-            "line": -2.5,
-            "price_american": -110,
-            "book": "DraftKings",
-            "novig_pct": 50.0,
-            "model_pct": 50.0,
-            "implied_pct": 52.4,
-            "edge_pp": -2.4,
-            "gap_pp": 0.0,
-            "strong": false,
-            "_edge": -2.3809523809523836,
-            "_gap": 0.0,
-            "market": "spread",
-            "team": "New York Jets",
-            "selection": "New York Jets -2.5"
-          }
-        },
-        "total": {
-          "status": "BLANK",
-          "note": "MODEL blank: no free projected total (ESPN predictor has win % and point diff only)"
-        }
-      },
-      "note": "edge -0.6pp < 3pp",
-      "fpi_home_margin": 1.25,
-      "mkt_home_margin": 2.5,
-      "blend_home_margin": 2.5,
-      "stamped": false,
-      "stamped_markets": []
-    },
-    {
-      "sport": "NFL",
-      "matchup": "Houston Texans at Tennessee Titans",
-      "kick_utc": "2026-10-11T17:00:00Z",
-      "kick_ct": "Sun 10/11 12:00 PM CT",
-      "event_id": "hou-ten",
-      "espn_event_id": "401872984",
-      "status": "PASS",
-      "best": {
-        "side": "home",
-        "label": "Tennessee Titans ML",
-        "line": null,
-        "price_american": 295,
-        "book": "Bovada",
-        "novig_pct": 24.1,
-        "model_pct": 25.6,
-        "implied_pct": 25.3,
-        "edge_pp": 0.3,
-        "gap_pp": 1.5,
-        "strong": false,
-        "_edge": 0.27664279409223,
-        "_gap": 1.461111295022663,
-        "market": "ml",
-        "team": "Tennessee Titans",
-        "selection": "Tennessee Titans ML"
-      },
-      "picks": [],
-      "by_market": {
-        "ml": {
-          "status": "PASS",
-          "note": "edge +0.3pp < 3pp",
-          "best": {
-            "side": "home",
-            "label": "Tennessee Titans ML",
-            "line": null,
-            "price_american": 295,
-            "book": "Bovada",
-            "novig_pct": 24.1,
-            "model_pct": 25.6,
-            "implied_pct": 25.3,
-            "edge_pp": 0.3,
-            "gap_pp": 1.5,
-            "strong": false,
-            "_edge": 0.27664279409223,
-            "_gap": 1.461111295022663,
-            "market": "ml",
-            "team": "Tennessee Titans",
-            "selection": "Tennessee Titans ML"
-          }
-        },
-        "spread": {
-          "status": "PASS",
-          "note": "edge -1.9pp < 3pp",
-          "best": {
-            "side": "away",
-            "label": "Houston Texans -7",
-            "line": -7.0,
-            "price_american": -108,
-            "book": "DraftKings",
-            "novig_pct": 49.6,
-            "model_pct": 50.0,
-            "implied_pct": 51.9,
-            "edge_pp": -1.9,
-            "gap_pp": 0.4,
-            "strong": false,
-            "_edge": -1.9230769230769273,
-            "_gap": 0.43297540699688275,
-            "market": "spread",
-            "team": "Houston Texans",
-            "selection": "Houston Texans -7"
-          }
-        },
-        "total": {
-          "status": "BLANK",
-          "note": "MODEL blank: no free projected total (ESPN predictor has win % and point diff only)"
-        }
-      },
-      "note": "edge +0.3pp < 3pp",
-      "fpi_home_margin": -4.51,
-      "mkt_home_margin": -7.0,
-      "blend_home_margin": -7.0,
-      "stamped": false,
-      "stamped_markets": []
-    },
-    {
-      "sport": "NFL",
-      "matchup": "Indianapolis Colts at Pittsburgh Steelers",
-      "kick_utc": "2026-10-11T17:00:00Z",
-      "kick_ct": "Sun 10/11 12:00 PM CT",
-      "event_id": "ind-pit",
-      "espn_event_id": "401872985",
-      "status": "PASS",
-      "best": {
-        "side": "away",
-        "label": "Indianapolis Colts ML",
-        "line": null,
-        "price_american": 130,
-        "book": "Bovada",
-        "novig_pct": 42.0,
-        "model_pct": 43.7,
-        "implied_pct": 43.5,
-        "edge_pp": 0.2,
-        "gap_pp": 1.6,
-        "strong": false,
-        "_edge": 0.17253278122843496,
-        "_gap": 1.6339869281045694,
-        "market": "ml",
-        "team": "Indianapolis Colts",
-        "selection": "Indianapolis Colts ML"
-      },
-      "picks": [],
-      "by_market": {
-        "ml": {
-          "status": "PASS",
-          "note": "edge +0.2pp < 3pp",
-          "best": {
-            "side": "away",
-            "label": "Indianapolis Colts ML",
-            "line": null,
-            "price_american": 130,
-            "book": "Bovada",
-            "novig_pct": 42.0,
-            "model_pct": 43.7,
-            "implied_pct": 43.5,
-            "edge_pp": 0.2,
-            "gap_pp": 1.6,
-            "strong": false,
-            "_edge": 0.17253278122843496,
-            "_gap": 1.6339869281045694,
-            "market": "ml",
-            "team": "Indianapolis Colts",
-            "selection": "Indianapolis Colts ML"
-          }
-        },
-        "spread": {
-          "status": "PASS",
-          "note": "edge -0.5pp < 3pp",
-          "best": {
-            "side": "away",
-            "label": "Indianapolis Colts +2.5",
-            "line": 2.5,
-            "price_american": -102,
-            "book": "DraftKings",
-            "novig_pct": 48.3,
-            "model_pct": 50.0,
-            "implied_pct": 50.5,
-            "edge_pp": -0.5,
-            "gap_pp": 1.7,
-            "strong": false,
-            "_edge": -0.4950495049504955,
-            "_gap": 1.7364125716270107,
-            "market": "spread",
-            "team": "Indianapolis Colts",
-            "selection": "Indianapolis Colts +2.5"
-          }
-        },
-        "total": {
-          "status": "BLANK",
-          "note": "MODEL blank: no free projected total (ESPN predictor has win % and point diff only)"
-        }
-      },
-      "note": "edge +0.2pp < 3pp",
-      "fpi_home_margin": -0.11,
-      "mkt_home_margin": 2.5,
-      "blend_home_margin": 2.5,
-      "stamped": false,
-      "stamped_markets": []
-    },
-    {
-      "sport": "NFL",
-      "matchup": "Las Vegas Raiders at New England Patriots",
-      "kick_utc": "2026-10-11T17:00:00Z",
-      "kick_ct": "Sun 10/11 12:00 PM CT",
-      "event_id": "lv-ne",
-      "espn_event_id": "401872986",
-      "status": "PASS",
-      "best": {
-        "side": "home",
-        "label": "New England Patriots -3.5",
-        "line": -3.5,
-        "price_american": -105,
-        "book": "Bovada",
-        "novig_pct": 48.9,
-        "model_pct": 50.0,
-        "implied_pct": 51.2,
-        "edge_pp": -1.2,
-        "gap_pp": 1.1,
-        "strong": false,
-        "_edge": -1.2195121951219523,
-        "_gap": 1.0834236186348878,
-        "market": "spread",
-        "team": "New England Patriots",
-        "selection": "New England Patriots -3.5"
-      },
-      "picks": [],
-      "by_market": {
-        "ml": {
-          "status": "PASS",
-          "note": "edge -1.6pp < 3pp",
-          "best": {
-            "side": "away",
-            "label": "Las Vegas Raiders ML",
-            "line": null,
-            "price_american": 160,
-            "book": "DraftKings",
-            "novig_pct": 36.9,
-            "model_pct": 36.9,
-            "implied_pct": 38.5,
-            "edge_pp": -1.6,
-            "gap_pp": 0.0,
-            "strong": false,
-            "_edge": -1.5555728396982216,
-            "_gap": 0.0,
-            "market": "ml",
-            "team": "Las Vegas Raiders",
-            "selection": "Las Vegas Raiders ML"
-          }
-        },
-        "spread": {
-          "status": "PASS",
-          "note": "edge -1.2pp < 3pp",
-          "best": {
-            "side": "home",
-            "label": "New England Patriots -3.5",
-            "line": -3.5,
-            "price_american": -105,
-            "book": "Bovada",
-            "novig_pct": 48.9,
-            "model_pct": 50.0,
-            "implied_pct": 51.2,
-            "edge_pp": -1.2,
-            "gap_pp": 1.1,
-            "strong": false,
-            "_edge": -1.2195121951219523,
-            "_gap": 1.0834236186348878,
-            "market": "spread",
-            "team": "New England Patriots",
-            "selection": "New England Patriots -3.5"
-          }
-        },
-        "total": {
-          "status": "BLANK",
-          "note": "MODEL blank: no free projected total (ESPN predictor has win % and point diff only)"
-        }
-      },
-      "note": "edge -1.2pp < 3pp",
-      "fpi_home_margin": 3.51,
-      "mkt_home_margin": 3.5,
-      "blend_home_margin": 3.5,
-      "stamped": false,
-      "stamped_markets": []
-    },
-    {
-      "sport": "NFL",
-      "matchup": "Minnesota Vikings at New Orleans Saints",
-      "kick_utc": "2026-10-11T17:00:00Z",
-      "kick_ct": "Sun 10/11 12:00 PM CT",
-      "event_id": "min-no",
-      "espn_event_id": "401872987",
-      "status": "PASS",
-      "best": {
-        "side": "home",
-        "label": "New Orleans Saints ML",
-        "line": null,
-        "price_american": 115,
-        "book": "Bovada",
-        "novig_pct": 44.7,
-        "model_pct": 45.7,
-        "implied_pct": 46.5,
-        "edge_pp": -0.8,
-        "gap_pp": 1.0,
-        "strong": false,
-        "_edge": -0.7859817837163052,
-        "_gap": 0.9850464088387356,
-        "market": "ml",
-        "team": "New Orleans Saints",
-        "selection": "New Orleans Saints ML"
-      },
-      "picks": [],
-      "by_market": {
-        "ml": {
-          "status": "PASS",
-          "note": "edge -0.8pp < 3pp",
-          "best": {
-            "side": "home",
-            "label": "New Orleans Saints ML",
-            "line": null,
-            "price_american": 115,
-            "book": "Bovada",
-            "novig_pct": 44.7,
-            "model_pct": 45.7,
-            "implied_pct": 46.5,
-            "edge_pp": -0.8,
-            "gap_pp": 1.0,
-            "strong": false,
-            "_edge": -0.7859817837163052,
-            "_gap": 0.9850464088387356,
-            "market": "ml",
-            "team": "New Orleans Saints",
-            "selection": "New Orleans Saints ML"
-          }
-        },
-        "spread": {
-          "status": "PASS",
-          "note": "edge -0.8pp < 3pp",
-          "best": {
-            "side": "away",
-            "label": "Minnesota Vikings -2",
-            "line": -2.0,
-            "price_american": -110,
-            "book": "Bovada",
-            "novig_pct": 50.0,
-            "model_pct": 51.6,
-            "implied_pct": 52.4,
-            "edge_pp": -0.8,
-            "gap_pp": 1.6,
-            "strong": false,
-            "_edge": -0.8107191366084732,
-            "_gap": 1.5702332443439104,
-            "market": "spread",
-            "team": "Minnesota Vikings",
-            "selection": "Minnesota Vikings -2"
-          }
-        },
-        "total": {
-          "status": "BLANK",
-          "note": "MODEL blank: no free projected total (ESPN predictor has win % and point diff only)"
-        }
-      },
-      "note": "edge -0.8pp < 3pp",
-      "fpi_home_margin": -1.35,
-      "mkt_home_margin": -2.5,
-      "blend_home_margin": -2.5,
-      "stamped": false,
-      "stamped_markets": []
-    },
-    {
-      "sport": "NFL",
-      "matchup": "New York Giants at Washington Commanders",
-      "kick_utc": "2026-10-11T17:00:00Z",
-      "kick_ct": "Sun 10/11 12:00 PM CT",
-      "event_id": "nyg-wsh",
-      "espn_event_id": "401872988",
-      "status": "PASS",
-      "best": {
-        "side": "away",
-        "label": "New York Giants ML",
-        "line": null,
-        "price_american": 160,
-        "book": "Bovada",
-        "novig_pct": 37.2,
-        "model_pct": 39.1,
-        "implied_pct": 38.5,
-        "edge_pp": 0.6,
-        "gap_pp": 1.9,
-        "strong": false,
-        "_edge": 0.6148380926356001,
-        "_gap": 1.870110235636202,
-        "market": "ml",
-        "team": "New York Giants",
-        "selection": "New York Giants ML"
-      },
-      "picks": [],
-      "by_market": {
-        "ml": {
-          "status": "PASS",
-          "note": "edge +0.6pp < 3pp",
-          "best": {
-            "side": "away",
-            "label": "New York Giants ML",
-            "line": null,
-            "price_american": 160,
-            "book": "Bovada",
-            "novig_pct": 37.2,
-            "model_pct": 39.1,
-            "implied_pct": 38.5,
-            "edge_pp": 0.6,
-            "gap_pp": 1.9,
-            "strong": false,
-            "_edge": 0.6148380926356001,
-            "_gap": 1.870110235636202,
-            "market": "ml",
-            "team": "New York Giants",
-            "selection": "New York Giants ML"
-          }
-        },
-        "spread": {
-          "status": "PASS",
-          "note": "edge -1.2pp < 3pp",
-          "best": {
-            "side": "home",
-            "label": "Washington Commanders -3.5",
-            "line": -3.5,
-            "price_american": -105,
-            "book": "Bovada",
-            "novig_pct": 48.9,
-            "model_pct": 50.0,
-            "implied_pct": 51.2,
-            "edge_pp": -1.2,
-            "gap_pp": 1.1,
-            "strong": false,
-            "_edge": -1.2195121951219523,
-            "_gap": 1.0834236186348878,
-            "market": "spread",
-            "team": "Washington Commanders",
-            "selection": "Washington Commanders -3.5"
-          }
-        },
-        "total": {
-          "status": "BLANK",
-          "note": "MODEL blank: no free projected total (ESPN predictor has win % and point diff only)"
-        }
-      },
-      "note": "edge +0.6pp < 3pp",
-      "fpi_home_margin": 5.77,
-      "mkt_home_margin": 3.5,
-      "blend_home_margin": 3.5,
-      "stamped": false,
-      "stamped_markets": []
-    },
-    {
-      "sport": "NFL",
       "matchup": "Denver Broncos at Los Angeles Chargers",
       "kick_utc": "2026-10-11T20:05:00Z",
       "kick_ct": "Sun 10/11 3:05 PM CT",
@@ -920,16 +164,16 @@
         "side": "home",
         "label": "Los Angeles Chargers ML",
         "line": null,
-        "price_american": 165,
-        "book": "Bovada",
-        "novig_pct": 36.3,
+        "price_american": 160,
+        "book": "DraftKings",
+        "novig_pct": 36.9,
         "model_pct": 36.9,
-        "implied_pct": 37.7,
-        "edge_pp": -0.8,
-        "gap_pp": 0.6,
+        "implied_pct": 38.5,
+        "edge_pp": -1.6,
+        "gap_pp": 0.0,
         "strong": false,
-        "_edge": -0.8298834347635231,
-        "_gap": 0.5647275559332587,
+        "_edge": -1.5555728396982105,
+        "_gap": 5.551115123125783e-15,
         "market": "ml",
         "team": "Los Angeles Chargers",
         "selection": "Los Angeles Chargers ML"
@@ -938,21 +182,21 @@
       "by_market": {
         "ml": {
           "status": "PASS",
-          "note": "edge -0.8pp < 3pp",
+          "note": "edge -1.6pp < 3pp",
           "best": {
             "side": "home",
             "label": "Los Angeles Chargers ML",
             "line": null,
-            "price_american": 165,
-            "book": "Bovada",
-            "novig_pct": 36.3,
+            "price_american": 160,
+            "book": "DraftKings",
+            "novig_pct": 36.9,
             "model_pct": 36.9,
-            "implied_pct": 37.7,
-            "edge_pp": -0.8,
-            "gap_pp": 0.6,
+            "implied_pct": 38.5,
+            "edge_pp": -1.6,
+            "gap_pp": 0.0,
             "strong": false,
-            "_edge": -0.8298834347635231,
-            "_gap": 0.5647275559332587,
+            "_edge": -1.5555728396982105,
+            "_gap": 5.551115123125783e-15,
             "market": "ml",
             "team": "Los Angeles Chargers",
             "selection": "Los Angeles Chargers ML"
@@ -985,7 +229,7 @@
           "note": "MODEL blank: no free projected total (ESPN predictor has win % and point diff only)"
         }
       },
-      "note": "edge -0.8pp < 3pp",
+      "note": "edge -1.6pp < 3pp",
       "fpi_home_margin": -0.1,
       "mkt_home_margin": -3.5,
       "blend_home_margin": -3.5,
@@ -1001,22 +245,22 @@
       "espn_event_id": "401872991",
       "status": "PASS",
       "best": {
-        "side": "away",
-        "label": "Detroit Lions -5",
-        "line": -5.0,
-        "price_american": -110,
-        "book": "Bovada",
-        "novig_pct": 50.0,
-        "model_pct": 51.6,
-        "implied_pct": 52.4,
-        "edge_pp": -0.8,
-        "gap_pp": 1.6,
+        "side": "home",
+        "label": "Arizona Cardinals ML",
+        "line": null,
+        "price_american": 215,
+        "book": "DraftKings",
+        "novig_pct": 30.4,
+        "model_pct": 30.4,
+        "implied_pct": 31.7,
+        "edge_pp": -1.3,
+        "gap_pp": 0.0,
         "strong": false,
-        "_edge": -0.8107191366084732,
-        "_gap": 1.5702332443439104,
-        "market": "spread",
-        "team": "Detroit Lions",
-        "selection": "Detroit Lions -5"
+        "_edge": -1.3230269533666017,
+        "_gap": 5.551115123125783e-15,
+        "market": "ml",
+        "team": "Arizona Cardinals",
+        "selection": "Arizona Cardinals ML"
       },
       "picks": [],
       "by_market": {
@@ -1027,16 +271,16 @@
             "side": "home",
             "label": "Arizona Cardinals ML",
             "line": null,
-            "price_american": 210,
+            "price_american": 215,
             "book": "DraftKings",
-            "novig_pct": 30.9,
-            "model_pct": 30.9,
-            "implied_pct": 32.3,
+            "novig_pct": 30.4,
+            "model_pct": 30.4,
+            "implied_pct": 31.7,
             "edge_pp": -1.3,
             "gap_pp": 0.0,
             "strong": false,
-            "_edge": -1.3373528215358366,
-            "_gap": 0.0,
+            "_edge": -1.3230269533666017,
+            "_gap": 5.551115123125783e-15,
             "market": "ml",
             "team": "Arizona Cardinals",
             "selection": "Arizona Cardinals ML"
@@ -1044,24 +288,24 @@
         },
         "spread": {
           "status": "PASS",
-          "note": "edge -0.8pp < 3pp",
+          "note": "edge -1.9pp < 3pp",
           "best": {
             "side": "away",
-            "label": "Detroit Lions -5",
-            "line": -5.0,
-            "price_american": -110,
-            "book": "Bovada",
-            "novig_pct": 50.0,
-            "model_pct": 51.6,
-            "implied_pct": 52.4,
-            "edge_pp": -0.8,
-            "gap_pp": 1.6,
+            "label": "Detroit Lions -5.5",
+            "line": -5.5,
+            "price_american": -108,
+            "book": "DraftKings",
+            "novig_pct": 49.6,
+            "model_pct": 50.0,
+            "implied_pct": 51.9,
+            "edge_pp": -1.9,
+            "gap_pp": 0.4,
             "strong": false,
-            "_edge": -0.8107191366084732,
-            "_gap": 1.5702332443439104,
+            "_edge": -1.9230769230769273,
+            "_gap": 0.43297540699688275,
             "market": "spread",
             "team": "Detroit Lions",
-            "selection": "Detroit Lions -5"
+            "selection": "Detroit Lions -5.5"
           }
         },
         "total": {
@@ -1069,7 +313,7 @@
           "note": "MODEL blank: no free projected total (ESPN predictor has win % and point diff only)"
         }
       },
-      "note": "edge -0.8pp < 3pp",
+      "note": "edge -1.3pp < 3pp",
       "fpi_home_margin": -5.31,
       "mkt_home_margin": -5.5,
       "blend_home_margin": -5.5,
@@ -1088,16 +332,16 @@
         "side": "away",
         "label": "San Francisco 49ers ML",
         "line": null,
-        "price_american": 150,
-        "book": "Bovada",
-        "novig_pct": 38.6,
-        "model_pct": 40.7,
-        "implied_pct": 40.0,
-        "edge_pp": 0.7,
-        "gap_pp": 2.1,
+        "price_american": 140,
+        "book": "DraftKings",
+        "novig_pct": 40.0,
+        "model_pct": 40.0,
+        "implied_pct": 41.7,
+        "edge_pp": -1.6,
+        "gap_pp": 0.0,
         "strong": false,
-        "_edge": 0.6630245840576032,
-        "_gap": 2.066533355987432,
+        "_edge": -1.6305438490869018,
+        "_gap": 0.0,
         "market": "ml",
         "team": "San Francisco 49ers",
         "selection": "San Francisco 49ers ML"
@@ -1106,21 +350,21 @@
       "by_market": {
         "ml": {
           "status": "PASS",
-          "note": "edge +0.7pp < 3pp",
+          "note": "edge -1.6pp < 3pp",
           "best": {
             "side": "away",
             "label": "San Francisco 49ers ML",
             "line": null,
-            "price_american": 150,
-            "book": "Bovada",
-            "novig_pct": 38.6,
-            "model_pct": 40.7,
-            "implied_pct": 40.0,
-            "edge_pp": 0.7,
-            "gap_pp": 2.1,
+            "price_american": 140,
+            "book": "DraftKings",
+            "novig_pct": 40.0,
+            "model_pct": 40.0,
+            "implied_pct": 41.7,
+            "edge_pp": -1.6,
+            "gap_pp": 0.0,
             "strong": false,
-            "_edge": 0.6630245840576032,
-            "_gap": 2.066533355987432,
+            "_edge": -1.6305438490869018,
+            "_gap": 0.0,
             "market": "ml",
             "team": "San Francisco 49ers",
             "selection": "San Francisco 49ers ML"
@@ -1128,24 +372,24 @@
         },
         "spread": {
           "status": "PASS",
-          "note": "edge +0.0pp < 3pp",
+          "note": "edge -2.4pp < 3pp",
           "best": {
-            "side": "away",
-            "label": "San Francisco 49ers +3",
-            "line": 3.0,
-            "price_american": 100,
-            "book": "Bovada",
-            "novig_pct": 47.8,
+            "side": "home",
+            "label": "Seattle Seahawks -3",
+            "line": -3.0,
+            "price_american": -110,
+            "book": "DraftKings",
+            "novig_pct": 50.0,
             "model_pct": 50.0,
-            "implied_pct": 50.0,
-            "edge_pp": 0.0,
-            "gap_pp": 2.2,
+            "implied_pct": 52.4,
+            "edge_pp": -2.4,
+            "gap_pp": 0.0,
             "strong": false,
-            "_edge": 0.0,
-            "_gap": 2.1739130434782594,
+            "_edge": -2.3809523809523836,
+            "_gap": 0.0,
             "market": "spread",
-            "team": "San Francisco 49ers",
-            "selection": "San Francisco 49ers +3"
+            "team": "Seattle Seahawks",
+            "selection": "Seattle Seahawks -3"
           }
         },
         "total": {
@@ -1153,7 +397,7 @@
           "note": "MODEL blank: no free projected total (ESPN predictor has win % and point diff only)"
         }
       },
-      "note": "edge +0.7pp < 3pp",
+      "note": "edge -1.6pp < 3pp",
       "fpi_home_margin": -1.59,
       "mkt_home_margin": 3.0,
       "blend_home_margin": 3.0,
@@ -1296,42 +540,42 @@
       "espn_event_id": "401872993",
       "status": "PASS",
       "best": {
-        "side": "home",
-        "label": "Atlanta Falcons -3.5",
-        "line": -3.5,
+        "side": "away",
+        "label": "Baltimore Ravens +3",
+        "line": 3.0,
         "price_american": 100,
-        "book": "Bovada",
+        "book": "DraftKings",
         "novig_pct": 47.8,
-        "model_pct": 50.0,
+        "model_pct": 48.4,
         "implied_pct": 50.0,
-        "edge_pp": 0.0,
-        "gap_pp": 2.2,
+        "edge_pp": -1.6,
+        "gap_pp": 0.6,
         "strong": false,
-        "_edge": 0.0,
-        "_gap": 2.1739130434782594,
+        "_edge": -1.5702332443439104,
+        "_gap": 0.603679799134349,
         "market": "spread",
-        "team": "Atlanta Falcons",
-        "selection": "Atlanta Falcons -3.5"
+        "team": "Baltimore Ravens",
+        "selection": "Baltimore Ravens +3"
       },
       "picks": [],
       "by_market": {
         "ml": {
           "status": "PASS",
-          "note": "edge -0.1pp < 3pp",
+          "note": "edge -1.7pp < 3pp",
           "best": {
             "side": "away",
             "label": "Baltimore Ravens ML",
             "line": null,
-            "price_american": 155,
-            "book": "Bovada",
-            "novig_pct": 37.9,
+            "price_american": 145,
+            "book": "DraftKings",
+            "novig_pct": 39.1,
             "model_pct": 39.1,
-            "implied_pct": 39.2,
-            "edge_pp": -0.1,
-            "gap_pp": 1.2,
+            "implied_pct": 40.8,
+            "edge_pp": -1.7,
+            "gap_pp": 0.0,
             "strong": false,
-            "_edge": -0.13930972033573963,
-            "_gap": 1.1873373119548503,
+            "_edge": -1.739949976438182,
+            "_gap": 0.0,
             "market": "ml",
             "team": "Baltimore Ravens",
             "selection": "Baltimore Ravens ML"
@@ -1339,24 +583,24 @@
         },
         "spread": {
           "status": "PASS",
-          "note": "edge +0.0pp < 3pp",
+          "note": "edge -1.6pp < 3pp",
           "best": {
-            "side": "home",
-            "label": "Atlanta Falcons -3.5",
-            "line": -3.5,
+            "side": "away",
+            "label": "Baltimore Ravens +3",
+            "line": 3.0,
             "price_american": 100,
-            "book": "Bovada",
+            "book": "DraftKings",
             "novig_pct": 47.8,
-            "model_pct": 50.0,
+            "model_pct": 48.4,
             "implied_pct": 50.0,
-            "edge_pp": 0.0,
-            "gap_pp": 2.2,
+            "edge_pp": -1.6,
+            "gap_pp": 0.6,
             "strong": false,
-            "_edge": 0.0,
-            "_gap": 2.1739130434782594,
+            "_edge": -1.5702332443439104,
+            "_gap": 0.603679799134349,
             "market": "spread",
-            "team": "Atlanta Falcons",
-            "selection": "Atlanta Falcons -3.5"
+            "team": "Baltimore Ravens",
+            "selection": "Baltimore Ravens +3"
           }
         },
         "total": {
@@ -1364,10 +608,137 @@
           "note": "MODEL blank: no free projected total (ESPN predictor has win % and point diff only)"
         }
       },
-      "note": "edge +0.0pp < 3pp",
+      "note": "edge -1.6pp < 3pp",
       "fpi_home_margin": 2.61,
       "mkt_home_margin": 3.5,
       "blend_home_margin": 3.5,
+      "stamped": false,
+      "stamped_markets": []
+    },
+    {
+      "sport": "NHL",
+      "matchup": "Florida Panthers at Buffalo Sabres",
+      "kick_utc": "2026-10-12T17:10:00Z",
+      "kick_ct": "Mon 10/12 12:10 PM CT",
+      "event_id": "nhl-e85cb8fcbbddd2332b24db4bfe564345",
+      "espn_event_id": "401892485",
+      "status": "PASS",
+      "best": null,
+      "picks": [],
+      "by_market": {
+        "ml": {
+          "status": "PASS",
+          "note": "w=0 (walk-forward CI includes 0): model shown, not used"
+        },
+        "spread": {
+          "status": "PASS",
+          "note": "w=0 (walk-forward CI includes 0): model shown, not used"
+        },
+        "total": {
+          "status": "PASS",
+          "note": "w=0 (walk-forward CI includes 0): model shown, not used"
+        }
+      },
+      "note": "raw NHL model shown; w=0 on every market (walk-forward CI includes 0) — market only, no stamps",
+      "fpi_home_margin": null,
+      "mkt_home_margin": null,
+      "blend_home_margin": null,
+      "stamped": false,
+      "stamped_markets": []
+    },
+    {
+      "sport": "NHL",
+      "matchup": "Ottawa Senators at New Jersey Devils",
+      "kick_utc": "2026-10-12T23:10:00Z",
+      "kick_ct": "Mon 10/12 6:10 PM CT",
+      "event_id": "nhl-bddca6412454c40a2860b4e2e3e85968",
+      "espn_event_id": "401892486",
+      "status": "PASS",
+      "best": null,
+      "picks": [],
+      "by_market": {
+        "ml": {
+          "status": "PASS",
+          "note": "w=0 (walk-forward CI includes 0): model shown, not used"
+        },
+        "spread": {
+          "status": "PASS",
+          "note": "w=0 (walk-forward CI includes 0): model shown, not used"
+        },
+        "total": {
+          "status": "PASS",
+          "note": "w=0 (walk-forward CI includes 0): model shown, not used"
+        }
+      },
+      "note": "raw NHL model shown; w=0 on every market (walk-forward CI includes 0) — market only, no stamps",
+      "fpi_home_margin": null,
+      "mkt_home_margin": null,
+      "blend_home_margin": null,
+      "stamped": false,
+      "stamped_markets": []
+    },
+    {
+      "sport": "MLB",
+      "matchup": "Cleveland Guardians at Tampa Bay Rays",
+      "kick_utc": "2026-10-13T00:00:00Z",
+      "kick_ct": "Mon 10/12 7:00 PM CT",
+      "event_id": "mlb-espn-401908023",
+      "espn_event_id": "401908023",
+      "status": "PASS",
+      "best": null,
+      "picks": [],
+      "by_market": {
+        "ml": {
+          "status": "PASS",
+          "note": "market only (w = 0) — no stamps",
+          "best": null
+        },
+        "spread": {
+          "status": "PASS",
+          "note": "market only (w = 0) — no stamps",
+          "best": null
+        },
+        "total": {
+          "status": "PASS",
+          "note": "market only (w = 0) — no stamps",
+          "best": null
+        }
+      },
+      "note": "MLB market only: fitted w = 0 — MODEL blank, no paper stamps",
+      "fpi_home_margin": null,
+      "mkt_home_margin": null,
+      "blend_home_margin": null,
+      "stamped": false,
+      "stamped_markets": []
+    },
+    {
+      "sport": "NHL",
+      "matchup": "Vegas Golden Knights at Minnesota Wild",
+      "kick_utc": "2026-10-13T00:10:00Z",
+      "kick_ct": "Mon 10/12 7:10 PM CT",
+      "event_id": "nhl-fcf3af0dc532d226597dc5a8a2d55f78",
+      "espn_event_id": "401892487",
+      "status": "PASS",
+      "best": null,
+      "picks": [],
+      "by_market": {
+        "ml": {
+          "status": "PASS",
+          "note": "w=0 (walk-forward CI includes 0): model shown, not used"
+        },
+        "spread": {
+          "status": "PASS",
+          "note": "w=0 (walk-forward CI includes 0): model shown, not used"
+        },
+        "total": {
+          "status": "PASS",
+          "note": "w=0 (walk-forward CI includes 0): model shown, not used"
+        }
+      },
+      "note": "raw NHL model shown; w=0 on every market (walk-forward CI includes 0) — market only, no stamps",
+      "fpi_home_margin": null,
+      "mkt_home_margin": null,
+      "blend_home_margin": null,
       "stamped": false,
       "stamped_markets": []
     },
@@ -1380,42 +751,42 @@
       "espn_event_id": "401872994",
       "status": "PASS",
       "best": {
-        "side": "home",
-        "label": "Los Angeles Rams -3.5",
-        "line": -3.5,
+        "side": "away",
+        "label": "Buffalo Bills +3",
+        "line": 3.0,
         "price_american": 100,
-        "book": "Bovada",
+        "book": "DraftKings",
         "novig_pct": 47.8,
-        "model_pct": 50.0,
+        "model_pct": 48.4,
         "implied_pct": 50.0,
-        "edge_pp": 0.0,
-        "gap_pp": 2.2,
+        "edge_pp": -1.6,
+        "gap_pp": 0.6,
         "strong": false,
-        "_edge": 0.0,
-        "_gap": 2.1739130434782594,
+        "_edge": -1.5702332443439104,
+        "_gap": 0.603679799134349,
         "market": "spread",
-        "team": "Los Angeles Rams",
-        "selection": "Los Angeles Rams -3.5"
+        "team": "Buffalo Bills",
+        "selection": "Buffalo Bills +3"
       },
       "picks": [],
       "by_market": {
         "ml": {
           "status": "PASS",
-          "note": "edge -0.9pp < 3pp",
+          "note": "edge -1.7pp < 3pp",
           "best": {
             "side": "away",
             "label": "Buffalo Bills ML",
             "line": null,
-            "price_american": 155,
-            "book": "Bovada",
-            "novig_pct": 37.9,
-            "model_pct": 38.4,
-            "implied_pct": 39.2,
-            "edge_pp": -0.9,
-            "gap_pp": 0.5,
+            "price_american": 145,
+            "book": "DraftKings",
+            "novig_pct": 39.1,
+            "model_pct": 39.1,
+            "implied_pct": 40.8,
+            "edge_pp": -1.7,
+            "gap_pp": 0.0,
             "strong": false,
-            "_edge": -0.8595218909481617,
-            "_gap": 0.4671251413424282,
+            "_edge": -1.739949976438182,
+            "_gap": 0.0,
             "market": "ml",
             "team": "Buffalo Bills",
             "selection": "Buffalo Bills ML"
@@ -1423,24 +794,24 @@
         },
         "spread": {
           "status": "PASS",
-          "note": "edge +0.0pp < 3pp",
+          "note": "edge -1.6pp < 3pp",
           "best": {
-            "side": "home",
-            "label": "Los Angeles Rams -3.5",
-            "line": -3.5,
+            "side": "away",
+            "label": "Buffalo Bills +3",
+            "line": 3.0,
             "price_american": 100,
-            "book": "Bovada",
+            "book": "DraftKings",
             "novig_pct": 47.8,
-            "model_pct": 50.0,
+            "model_pct": 48.4,
             "implied_pct": 50.0,
-            "edge_pp": 0.0,
-            "gap_pp": 2.2,
+            "edge_pp": -1.6,
+            "gap_pp": 0.6,
             "strong": false,
-            "_edge": 0.0,
-            "_gap": 2.1739130434782594,
+            "_edge": -1.5702332443439104,
+            "_gap": 0.603679799134349,
             "market": "spread",
-            "team": "Los Angeles Rams",
-            "selection": "Los Angeles Rams -3.5"
+            "team": "Buffalo Bills",
+            "selection": "Buffalo Bills +3"
           }
         },
         "total": {
@@ -1448,7 +819,7 @@
           "note": "MODEL blank: no free projected total (ESPN predictor has win % and point diff only)"
         }
       },
-      "note": "edge +0.0pp < 3pp",
+      "note": "edge -1.6pp < 3pp",
       "fpi_home_margin": 2.28,
       "mkt_home_margin": 3.5,
       "blend_home_margin": 3.5,
@@ -1480,9 +851,9 @@
         }
       },
       "note": "no DraftKings/Betr/Bovada price returned",
-      "fpi_home_margin": -5.27,
-      "mkt_home_margin": -1.5,
-      "blend_home_margin": -1.5,
+      "fpi_home_margin": -4.68,
+      "mkt_home_margin": -2.5,
+      "blend_home_margin": -2.5,
       "stamped": false,
       "stamped_markets": []
     },
@@ -1511,7 +882,7 @@
         }
       },
       "note": "no DraftKings/Betr/Bovada price returned",
-      "fpi_home_margin": 3.33,
+      "fpi_home_margin": 3.1,
       "mkt_home_margin": 3.0,
       "blend_home_margin": 3.0,
       "stamped": false,
@@ -1542,7 +913,7 @@
         }
       },
       "note": "no DraftKings/Betr/Bovada price returned",
-      "fpi_home_margin": -3.62,
+      "fpi_home_margin": -4.01,
       "mkt_home_margin": -3.0,
       "blend_home_margin": -3.0,
       "stamped": false,
@@ -1573,9 +944,71 @@
         }
       },
       "note": "no DraftKings/Betr/Bovada price returned",
-      "fpi_home_margin": 1.64,
+      "fpi_home_margin": 1.62,
       "mkt_home_margin": -1.5,
       "blend_home_margin": -1.5,
+      "stamped": false,
+      "stamped_markets": []
+    },
+    {
+      "sport": "CFB",
+      "matchup": "East Carolina Pirates at UAB Blazers",
+      "kick_utc": "2026-10-15T23:30:00Z",
+      "kick_ct": "Thu 10/15 6:30 PM CT",
+      "event_id": "cfb-espn-401862800",
+      "espn_event_id": "401862800",
+      "status": "BLANK",
+      "best": null,
+      "picks": [],
+      "by_market": {
+        "ml": {
+          "status": "BLANK",
+          "note": "no DraftKings/Betr/Bovada price returned"
+        },
+        "spread": {
+          "status": "BLANK",
+          "note": "no DraftKings/Betr/Bovada price returned"
+        },
+        "total": {
+          "status": "BLANK",
+          "note": "MODEL blank: no free projected total (ESPN predictor has win % and point diff only)"
+        }
+      },
+      "note": "no DraftKings/Betr/Bovada price returned",
+      "fpi_home_margin": -8.84,
+      "mkt_home_margin": -5.5,
+      "blend_home_margin": -5.5,
+      "stamped": false,
+      "stamped_markets": []
+    },
+    {
+      "sport": "CFB",
+      "matchup": "Georgia Southern Eagles at Old Dominion Monarchs",
+      "kick_utc": "2026-10-15T23:30:00Z",
+      "kick_ct": "Thu 10/15 6:30 PM CT",
+      "event_id": "cfb-espn-401869950",
+      "espn_event_id": "401869950",
+      "status": "BLANK",
+      "best": null,
+      "picks": [],
+      "by_market": {
+        "ml": {
+          "status": "BLANK",
+          "note": "no DraftKings/Betr/Bovada price returned"
+        },
+        "spread": {
+          "status": "BLANK",
+          "note": "no DraftKings/Betr/Bovada price returned"
+        },
+        "total": {
+          "status": "BLANK",
+          "note": "MODEL blank: no free projected total (ESPN predictor has win % and point diff only)"
+        }
+      },
+      "note": "no DraftKings/Betr/Bovada price returned",
+      "fpi_home_margin": -6.17,
+      "mkt_home_margin": -4.0,
+      "blend_home_margin": -4.0,
       "stamped": false,
       "stamped_markets": []
     },
@@ -1604,93 +1037,1577 @@
         }
       },
       "note": "no DraftKings/Betr/Bovada price returned",
-      "fpi_home_margin": 10.8,
+      "fpi_home_margin": 9.53,
       "mkt_home_margin": 11.5,
       "blend_home_margin": 11.5,
       "stamped": false,
       "stamped_markets": []
     },
     {
-      "sport": "NFL",
-      "matchup": "Seattle Seahawks at Denver Broncos",
-      "kick_utc": "2026-10-16T00:15:00Z",
-      "kick_ct": "Thu 10/15 7:15 PM CT",
-      "event_id": "sea-den",
-      "espn_event_id": "401872995",
-      "status": "PASS",
-      "best": {
-        "side": "away",
-        "label": "Seattle Seahawks -1.5",
-        "line": -1.5,
-        "price_american": -110,
-        "book": "DraftKings",
-        "novig_pct": 50.0,
-        "model_pct": 51.6,
-        "implied_pct": 52.4,
-        "edge_pp": -0.8,
-        "gap_pp": 1.6,
-        "strong": false,
-        "_edge": -0.8107191366084732,
-        "_gap": 1.5702332443439104,
-        "market": "spread",
-        "team": "Seattle Seahawks",
-        "selection": "Seattle Seahawks -1.5"
-      },
+      "sport": "CFB",
+      "matchup": "Memphis Tigers at Tulane Green Wave",
+      "kick_utc": "2026-10-16T23:30:00Z",
+      "kick_ct": "Fri 10/16 6:30 PM CT",
+      "event_id": "cfb-espn-401862801",
+      "espn_event_id": "401862801",
+      "status": "BLANK",
+      "best": null,
       "picks": [],
       "by_market": {
         "ml": {
-          "status": "PASS",
-          "note": "edge -2.1pp < 3pp",
-          "best": {
-            "side": "home",
-            "label": "Denver Broncos ML",
-            "line": null,
-            "price_american": 102,
-            "book": "DraftKings",
-            "novig_pct": 47.4,
-            "model_pct": 47.4,
-            "implied_pct": 49.5,
-            "edge_pp": -2.1,
-            "gap_pp": 0.0,
-            "strong": false,
-            "_edge": -2.1136090212214853,
-            "_gap": 0.0,
-            "market": "ml",
-            "team": "Denver Broncos",
-            "selection": "Denver Broncos ML"
-          }
+          "status": "BLANK",
+          "note": "no DraftKings/Betr/Bovada price returned"
         },
         "spread": {
-          "status": "PASS",
-          "note": "edge -0.8pp < 3pp",
-          "best": {
-            "side": "away",
-            "label": "Seattle Seahawks -1.5",
-            "line": -1.5,
-            "price_american": -110,
-            "book": "DraftKings",
-            "novig_pct": 50.0,
-            "model_pct": 51.6,
-            "implied_pct": 52.4,
-            "edge_pp": -0.8,
-            "gap_pp": 1.6,
-            "strong": false,
-            "_edge": -0.8107191366084732,
-            "_gap": 1.5702332443439104,
-            "market": "spread",
-            "team": "Seattle Seahawks",
-            "selection": "Seattle Seahawks -1.5"
-          }
+          "status": "BLANK",
+          "note": "no DraftKings/Betr/Bovada price returned"
         },
         "total": {
           "status": "BLANK",
           "note": "MODEL blank: no free projected total (ESPN predictor has win % and point diff only)"
         }
       },
-      "note": "edge -0.8pp < 3pp",
-      "fpi_home_margin": -1.46,
-      "mkt_home_margin": -2.0,
-      "blend_home_margin": -2.0,
+      "note": "no DraftKings/Betr/Bovada price returned",
+      "fpi_home_margin": -5.82,
+      "mkt_home_margin": -6.5,
+      "blend_home_margin": -6.5,
+      "stamped": false,
+      "stamped_markets": []
+    },
+    {
+      "sport": "CFB",
+      "matchup": "Washington Huskies at Purdue Boilermakers",
+      "kick_utc": "2026-10-17T00:00:00Z",
+      "kick_ct": "Fri 10/16 7:00 PM CT",
+      "event_id": "cfb-espn-401858493",
+      "espn_event_id": "401858493",
+      "status": "BLANK",
+      "best": null,
+      "picks": [],
+      "by_market": {
+        "ml": {
+          "status": "BLANK",
+          "note": "no DraftKings/Betr/Bovada price returned"
+        },
+        "spread": {
+          "status": "BLANK",
+          "note": "no DraftKings/Betr/Bovada price returned"
+        },
+        "total": {
+          "status": "BLANK",
+          "note": "MODEL blank: no free projected total (ESPN predictor has win % and point diff only)"
+        }
+      },
+      "note": "no DraftKings/Betr/Bovada price returned",
+      "fpi_home_margin": 3.55,
+      "mkt_home_margin": 3.0,
+      "blend_home_margin": 3.0,
+      "stamped": false,
+      "stamped_markets": []
+    },
+    {
+      "sport": "CFB",
+      "matchup": "App State Mountaineers at Coastal Carolina Chanticleers",
+      "kick_utc": "2026-10-17T00:00:00Z",
+      "kick_ct": "Fri 10/16 7:00 PM CT",
+      "event_id": "cfb-espn-401869844",
+      "espn_event_id": "401869844",
+      "status": "BLANK",
+      "best": null,
+      "picks": [],
+      "by_market": {
+        "ml": {
+          "status": "BLANK",
+          "note": "no DraftKings/Betr/Bovada price returned"
+        },
+        "spread": {
+          "status": "BLANK",
+          "note": "no DraftKings/Betr/Bovada price returned"
+        },
+        "total": {
+          "status": "BLANK",
+          "note": "MODEL blank: no free projected total (ESPN predictor has win % and point diff only)"
+        }
+      },
+      "note": "no DraftKings/Betr/Bovada price returned",
+      "fpi_home_margin": -1.15,
+      "mkt_home_margin": -1.5,
+      "blend_home_margin": -1.5,
+      "stamped": false,
+      "stamped_markets": []
+    },
+    {
+      "sport": "CFB",
+      "matchup": "Mississippi State Bulldogs at LSU Tigers",
+      "kick_utc": "2026-10-17T16:00:00Z",
+      "kick_ct": "Sat 10/17 11:00 AM CT",
+      "event_id": "cfb-espn-401856720",
+      "espn_event_id": "401856720",
+      "status": "BLANK",
+      "best": null,
+      "picks": [],
+      "by_market": {
+        "ml": {
+          "status": "BLANK",
+          "note": "no DraftKings/Betr/Bovada price returned"
+        },
+        "spread": {
+          "status": "BLANK",
+          "note": "no DraftKings/Betr/Bovada price returned"
+        },
+        "total": {
+          "status": "BLANK",
+          "note": "MODEL blank: no free projected total (ESPN predictor has win % and point diff only)"
+        }
+      },
+      "note": "no DraftKings/Betr/Bovada price returned",
+      "fpi_home_margin": 10.21,
+      "mkt_home_margin": 10.5,
+      "blend_home_margin": 10.5,
+      "stamped": false,
+      "stamped_markets": []
+    },
+    {
+      "sport": "CFB",
+      "matchup": "Florida Gators at Texas Longhorns",
+      "kick_utc": "2026-10-17T16:00:00Z",
+      "kick_ct": "Sat 10/17 11:00 AM CT",
+      "event_id": "cfb-espn-401856724",
+      "espn_event_id": "401856724",
+      "status": "BLANK",
+      "best": null,
+      "picks": [],
+      "by_market": {
+        "ml": {
+          "status": "BLANK",
+          "note": "no DraftKings/Betr/Bovada price returned"
+        },
+        "spread": {
+          "status": "BLANK",
+          "note": "no DraftKings/Betr/Bovada price returned"
+        },
+        "total": {
+          "status": "BLANK",
+          "note": "MODEL blank: no free projected total (ESPN predictor has win % and point diff only)"
+        }
+      },
+      "note": "no DraftKings/Betr/Bovada price returned",
+      "fpi_home_margin": 16.59,
+      "mkt_home_margin": 10.0,
+      "blend_home_margin": 10.0,
+      "stamped": false,
+      "stamped_markets": []
+    },
+    {
+      "sport": "CFB",
+      "matchup": "Cincinnati Bearcats at West Virginia Mountaineers",
+      "kick_utc": "2026-10-17T16:00:00Z",
+      "kick_ct": "Sat 10/17 11:00 AM CT",
+      "event_id": "cfb-espn-401856829",
+      "espn_event_id": "401856829",
+      "status": "BLANK",
+      "best": null,
+      "picks": [],
+      "by_market": {
+        "ml": {
+          "status": "BLANK",
+          "note": "no DraftKings/Betr/Bovada price returned"
+        },
+        "spread": {
+          "status": "BLANK",
+          "note": "no DraftKings/Betr/Bovada price returned"
+        },
+        "total": {
+          "status": "BLANK",
+          "note": "MODEL blank: no free projected total (ESPN predictor has win % and point diff only)"
+        }
+      },
+      "note": "no DraftKings/Betr/Bovada price returned",
+      "fpi_home_margin": -3.25,
+      "mkt_home_margin": 1.5,
+      "blend_home_margin": 1.5,
+      "stamped": false,
+      "stamped_markets": []
+    },
+    {
+      "sport": "CFB",
+      "matchup": "Kansas Jayhawks at Kansas State Wildcats",
+      "kick_utc": "2026-10-17T16:00:00Z",
+      "kick_ct": "Sat 10/17 11:00 AM CT",
+      "event_id": "cfb-espn-401856830",
+      "espn_event_id": "401856830",
+      "status": "BLANK",
+      "best": null,
+      "picks": [],
+      "by_market": {
+        "ml": {
+          "status": "BLANK",
+          "note": "no DraftKings/Betr/Bovada price returned"
+        },
+        "spread": {
+          "status": "BLANK",
+          "note": "no DraftKings/Betr/Bovada price returned"
+        },
+        "total": {
+          "status": "BLANK",
+          "note": "MODEL blank: no free projected total (ESPN predictor has win % and point diff only)"
+        }
+      },
+      "note": "no DraftKings/Betr/Bovada price returned",
+      "fpi_home_margin": 3.97,
+      "mkt_home_margin": 6.5,
+      "blend_home_margin": 6.5,
+      "stamped": false,
+      "stamped_markets": []
+    },
+    {
+      "sport": "CFB",
+      "matchup": "Pittsburgh Panthers at Boston College Eagles",
+      "kick_utc": "2026-10-17T16:00:00Z",
+      "kick_ct": "Sat 10/17 11:00 AM CT",
+      "event_id": "cfb-espn-401858267",
+      "espn_event_id": "401858267",
+      "status": "BLANK",
+      "best": null,
+      "picks": [],
+      "by_market": {
+        "ml": {
+          "status": "BLANK",
+          "note": "no DraftKings/Betr/Bovada price returned"
+        },
+        "spread": {
+          "status": "BLANK",
+          "note": "no DraftKings/Betr/Bovada price returned"
+        },
+        "total": {
+          "status": "BLANK",
+          "note": "MODEL blank: no free projected total (ESPN predictor has win % and point diff only)"
+        }
+      },
+      "note": "no DraftKings/Betr/Bovada price returned",
+      "fpi_home_margin": -14.0,
+      "mkt_home_margin": -6.5,
+      "blend_home_margin": -6.5,
+      "stamped": false,
+      "stamped_markets": []
+    },
+    {
+      "sport": "CFB",
+      "matchup": "Virginia Cavaliers at SMU Mustangs",
+      "kick_utc": "2026-10-17T16:00:00Z",
+      "kick_ct": "Sat 10/17 11:00 AM CT",
+      "event_id": "cfb-espn-401858268",
+      "espn_event_id": "401858268",
+      "status": "BLANK",
+      "best": null,
+      "picks": [],
+      "by_market": {
+        "ml": {
+          "status": "BLANK",
+          "note": "no DraftKings/Betr/Bovada price returned"
+        },
+        "spread": {
+          "status": "BLANK",
+          "note": "no DraftKings/Betr/Bovada price returned"
+        },
+        "total": {
+          "status": "BLANK",
+          "note": "MODEL blank: no free projected total (ESPN predictor has win % and point diff only)"
+        }
+      },
+      "note": "no DraftKings/Betr/Bovada price returned",
+      "fpi_home_margin": 6.67,
+      "mkt_home_margin": 8.5,
+      "blend_home_margin": 8.5,
+      "stamped": false,
+      "stamped_markets": []
+    },
+    {
+      "sport": "CFB",
+      "matchup": "Ohio State Buckeyes at Indiana Hoosiers",
+      "kick_utc": "2026-10-17T16:00:00Z",
+      "kick_ct": "Sat 10/17 11:00 AM CT",
+      "event_id": "cfb-espn-401858488",
+      "espn_event_id": "401858488",
+      "status": "BLANK",
+      "best": null,
+      "picks": [],
+      "by_market": {
+        "ml": {
+          "status": "BLANK",
+          "note": "no DraftKings/Betr/Bovada price returned"
+        },
+        "spread": {
+          "status": "BLANK",
+          "note": "no DraftKings/Betr/Bovada price returned"
+        },
+        "total": {
+          "status": "BLANK",
+          "note": "MODEL blank: no free projected total (ESPN predictor has win % and point diff only)"
+        }
+      },
+      "note": "no DraftKings/Betr/Bovada price returned",
+      "fpi_home_margin": -0.74,
+      "mkt_home_margin": -4.0,
+      "blend_home_margin": -4.0,
+      "stamped": false,
+      "stamped_markets": []
+    },
+    {
+      "sport": "CFB",
+      "matchup": "Northwestern Wildcats at Michigan State Spartans",
+      "kick_utc": "2026-10-17T16:00:00Z",
+      "kick_ct": "Sat 10/17 11:00 AM CT",
+      "event_id": "cfb-espn-401858491",
+      "espn_event_id": "401858491",
+      "status": "BLANK",
+      "best": null,
+      "picks": [],
+      "by_market": {
+        "ml": {
+          "status": "BLANK",
+          "note": "no DraftKings/Betr/Bovada price returned"
+        },
+        "spread": {
+          "status": "BLANK",
+          "note": "no DraftKings/Betr/Bovada price returned"
+        },
+        "total": {
+          "status": "BLANK",
+          "note": "MODEL blank: no free projected total (ESPN predictor has win % and point diff only)"
+        }
+      },
+      "note": "no DraftKings/Betr/Bovada price returned",
+      "fpi_home_margin": -11.24,
+      "mkt_home_margin": -9.5,
+      "blend_home_margin": -9.5,
+      "stamped": false,
+      "stamped_markets": []
+    },
+    {
+      "sport": "CFB",
+      "matchup": "Florida Atlantic Owls at Army Black Knights",
+      "kick_utc": "2026-10-17T16:00:00Z",
+      "kick_ct": "Sat 10/17 11:00 AM CT",
+      "event_id": "cfb-espn-401862802",
+      "espn_event_id": "401862802",
+      "status": "BLANK",
+      "best": null,
+      "picks": [],
+      "by_market": {
+        "ml": {
+          "status": "BLANK",
+          "note": "no DraftKings/Betr/Bovada price returned"
+        },
+        "spread": {
+          "status": "BLANK",
+          "note": "no DraftKings/Betr/Bovada price returned"
+        },
+        "total": {
+          "status": "BLANK",
+          "note": "MODEL blank: no free projected total (ESPN predictor has win % and point diff only)"
+        }
+      },
+      "note": "no DraftKings/Betr/Bovada price returned",
+      "fpi_home_margin": 6.69,
+      "mkt_home_margin": 3.0,
+      "blend_home_margin": 3.0,
+      "stamped": false,
+      "stamped_markets": []
+    },
+    {
+      "sport": "CFB",
+      "matchup": "Ball State Cardinals at Bowling Green Falcons",
+      "kick_utc": "2026-10-17T16:00:00Z",
+      "kick_ct": "Sat 10/17 11:00 AM CT",
+      "event_id": "cfb-espn-401866441",
+      "espn_event_id": "401866441",
+      "status": "BLANK",
+      "best": null,
+      "picks": [],
+      "by_market": {
+        "ml": {
+          "status": "BLANK",
+          "note": "no DraftKings/Betr/Bovada price returned"
+        },
+        "spread": {
+          "status": "BLANK",
+          "note": "no DraftKings/Betr/Bovada price returned"
+        },
+        "total": {
+          "status": "BLANK",
+          "note": "MODEL blank: no free projected total (ESPN predictor has win % and point diff only)"
+        }
+      },
+      "note": "no DraftKings/Betr/Bovada price returned",
+      "fpi_home_margin": 7.08,
+      "mkt_home_margin": 7.5,
+      "blend_home_margin": 7.5,
+      "stamped": false,
+      "stamped_markets": []
+    },
+    {
+      "sport": "CFB",
+      "matchup": "Georgia State Panthers at James Madison Dukes",
+      "kick_utc": "2026-10-17T16:00:00Z",
+      "kick_ct": "Sat 10/17 11:00 AM CT",
+      "event_id": "cfb-espn-401869957",
+      "espn_event_id": "401869957",
+      "status": "BLANK",
+      "best": null,
+      "picks": [],
+      "by_market": {
+        "ml": {
+          "status": "BLANK",
+          "note": "no DraftKings/Betr/Bovada price returned"
+        },
+        "spread": {
+          "status": "BLANK",
+          "note": "no DraftKings/Betr/Bovada price returned"
+        },
+        "total": {
+          "status": "BLANK",
+          "note": "MODEL blank: no free projected total (ESPN predictor has win % and point diff only)"
+        }
+      },
+      "note": "no DraftKings/Betr/Bovada price returned",
+      "fpi_home_margin": 10.25,
+      "mkt_home_margin": 11.5,
+      "blend_home_margin": 11.5,
+      "stamped": false,
+      "stamped_markets": []
+    },
+    {
+      "sport": "CFB",
+      "matchup": "Rutgers Scarlet Knights at Maryland Terrapins",
+      "kick_utc": "2026-10-17T16:30:00Z",
+      "kick_ct": "Sat 10/17 11:30 AM CT",
+      "event_id": "cfb-espn-401858489",
+      "espn_event_id": "401858489",
+      "status": "BLANK",
+      "best": null,
+      "picks": [],
+      "by_market": {
+        "ml": {
+          "status": "BLANK",
+          "note": "no DraftKings/Betr/Bovada price returned"
+        },
+        "spread": {
+          "status": "BLANK",
+          "note": "no DraftKings/Betr/Bovada price returned"
+        },
+        "total": {
+          "status": "BLANK",
+          "note": "MODEL blank: no free projected total (ESPN predictor has win % and point diff only)"
+        }
+      },
+      "note": "no DraftKings/Betr/Bovada price returned",
+      "fpi_home_margin": 3.69,
+      "mkt_home_margin": 4.5,
+      "blend_home_margin": 4.5,
+      "stamped": false,
+      "stamped_markets": []
+    },
+    {
+      "sport": "CFB",
+      "matchup": "Charlotte 49ers at Temple Owls",
+      "kick_utc": "2026-10-17T17:00:00Z",
+      "kick_ct": "Sat 10/17 12:00 PM CT",
+      "event_id": "cfb-espn-401862803",
+      "espn_event_id": "401862803",
+      "status": "BLANK",
+      "best": null,
+      "picks": [],
+      "by_market": {
+        "ml": {
+          "status": "BLANK",
+          "note": "no DraftKings/Betr/Bovada price returned"
+        },
+        "spread": {
+          "status": "BLANK",
+          "note": "no DraftKings/Betr/Bovada price returned"
+        },
+        "total": {
+          "status": "BLANK",
+          "note": "MODEL blank: no free projected total (ESPN predictor has win % and point diff only)"
+        }
+      },
+      "note": "no DraftKings/Betr/Bovada price returned",
+      "fpi_home_margin": 21.22,
+      "mkt_home_margin": 23.5,
+      "blend_home_margin": 23.5,
+      "stamped": false,
+      "stamped_markets": []
+    },
+    {
+      "sport": "CFB",
+      "matchup": "Massachusetts Minutemen at Buffalo Bulls",
+      "kick_utc": "2026-10-17T17:00:00Z",
+      "kick_ct": "Sat 10/17 12:00 PM CT",
+      "event_id": "cfb-espn-401866442",
+      "espn_event_id": "401866442",
+      "status": "BLANK",
+      "best": null,
+      "picks": [],
+      "by_market": {
+        "ml": {
+          "status": "BLANK",
+          "note": "no DraftKings/Betr/Bovada price returned"
+        },
+        "spread": {
+          "status": "BLANK",
+          "note": "no DraftKings/Betr/Bovada price returned"
+        },
+        "total": {
+          "status": "BLANK",
+          "note": "MODEL blank: no free projected total (ESPN predictor has win % and point diff only)"
+        }
+      },
+      "note": "no DraftKings/Betr/Bovada price returned",
+      "fpi_home_margin": 3.05,
+      "mkt_home_margin": 3.5,
+      "blend_home_margin": 3.5,
+      "stamped": false,
+      "stamped_markets": []
+    },
+    {
+      "sport": "CFB",
+      "matchup": "Western Michigan Broncos at Central Michigan Chippewas",
+      "kick_utc": "2026-10-17T17:30:00Z",
+      "kick_ct": "Sat 10/17 12:30 PM CT",
+      "event_id": "cfb-espn-401866443",
+      "espn_event_id": "401866443",
+      "status": "BLANK",
+      "best": null,
+      "picks": [],
+      "by_market": {
+        "ml": {
+          "status": "BLANK",
+          "note": "no DraftKings/Betr/Bovada price returned"
+        },
+        "spread": {
+          "status": "BLANK",
+          "note": "no DraftKings/Betr/Bovada price returned"
+        },
+        "total": {
+          "status": "BLANK",
+          "note": "MODEL blank: no free projected total (ESPN predictor has win % and point diff only)"
+        }
+      },
+      "note": "no DraftKings/Betr/Bovada price returned",
+      "fpi_home_margin": -11.16,
+      "mkt_home_margin": -7.0,
+      "blend_home_margin": -7.0,
+      "stamped": false,
+      "stamped_markets": []
+    },
+    {
+      "sport": "CFB",
+      "matchup": "Auburn Tigers at Georgia Bulldogs",
+      "kick_utc": "2026-10-17T19:30:00Z",
+      "kick_ct": "Sat 10/17 2:30 PM CT",
+      "event_id": "cfb-espn-401856719",
+      "espn_event_id": "401856719",
+      "status": "BLANK",
+      "best": null,
+      "picks": [],
+      "by_market": {
+        "ml": {
+          "status": "BLANK",
+          "note": "no DraftKings/Betr/Bovada price returned"
+        },
+        "spread": {
+          "status": "BLANK",
+          "note": "no DraftKings/Betr/Bovada price returned"
+        },
+        "total": {
+          "status": "BLANK",
+          "note": "MODEL blank: no free projected total (ESPN predictor has win % and point diff only)"
+        }
+      },
+      "note": "no DraftKings/Betr/Bovada price returned",
+      "fpi_home_margin": 19.03,
+      "mkt_home_margin": 18.5,
+      "blend_home_margin": 18.5,
+      "stamped": false,
+      "stamped_markets": []
+    },
+    {
+      "sport": "CFB",
+      "matchup": "Missouri Tigers at Ole Miss Rebels",
+      "kick_utc": "2026-10-17T19:30:00Z",
+      "kick_ct": "Sat 10/17 2:30 PM CT",
+      "event_id": "cfb-espn-401856721",
+      "espn_event_id": "401856721",
+      "status": "BLANK",
+      "best": null,
+      "picks": [],
+      "by_market": {
+        "ml": {
+          "status": "BLANK",
+          "note": "no DraftKings/Betr/Bovada price returned"
+        },
+        "spread": {
+          "status": "BLANK",
+          "note": "no DraftKings/Betr/Bovada price returned"
+        },
+        "total": {
+          "status": "BLANK",
+          "note": "MODEL blank: no free projected total (ESPN predictor has win % and point diff only)"
+        }
+      },
+      "note": "no DraftKings/Betr/Bovada price returned",
+      "fpi_home_margin": 2.9,
+      "mkt_home_margin": 6.0,
+      "blend_home_margin": 6.0,
+      "stamped": false,
+      "stamped_markets": []
+    },
+    {
+      "sport": "CFB",
+      "matchup": "Alabama Crimson Tide at Tennessee Volunteers",
+      "kick_utc": "2026-10-17T19:30:00Z",
+      "kick_ct": "Sat 10/17 2:30 PM CT",
+      "event_id": "cfb-espn-401856723",
+      "espn_event_id": "401856723",
+      "status": "BLANK",
+      "best": null,
+      "picks": [],
+      "by_market": {
+        "ml": {
+          "status": "BLANK",
+          "note": "no DraftKings/Betr/Bovada price returned"
+        },
+        "spread": {
+          "status": "BLANK",
+          "note": "no DraftKings/Betr/Bovada price returned"
+        },
+        "total": {
+          "status": "BLANK",
+          "note": "MODEL blank: no free projected total (ESPN predictor has win % and point diff only)"
+        }
+      },
+      "note": "no DraftKings/Betr/Bovada price returned",
+      "fpi_home_margin": -7.72,
+      "mkt_home_margin": -7.0,
+      "blend_home_margin": -7.0,
+      "stamped": false,
+      "stamped_markets": []
+    },
+    {
+      "sport": "CFB",
+      "matchup": "Arizona State Sun Devils at Texas Tech Red Raiders",
+      "kick_utc": "2026-10-17T19:30:00Z",
+      "kick_ct": "Sat 10/17 2:30 PM CT",
+      "event_id": "cfb-espn-401856828",
+      "espn_event_id": "401856828",
+      "status": "BLANK",
+      "best": null,
+      "picks": [],
+      "by_market": {
+        "ml": {
+          "status": "BLANK",
+          "note": "no DraftKings/Betr/Bovada price returned"
+        },
+        "spread": {
+          "status": "BLANK",
+          "note": "no DraftKings/Betr/Bovada price returned"
+        },
+        "total": {
+          "status": "BLANK",
+          "note": "MODEL blank: no free projected total (ESPN predictor has win % and point diff only)"
+        }
+      },
+      "note": "no DraftKings/Betr/Bovada price returned",
+      "fpi_home_margin": 23.67,
+      "mkt_home_margin": 13.5,
+      "blend_home_margin": 13.5,
+      "stamped": false,
+      "stamped_markets": []
+    },
+    {
+      "sport": "CFB",
+      "matchup": "Georgia Tech Yellow Jackets at Virginia Tech Hokies",
+      "kick_utc": "2026-10-17T19:30:00Z",
+      "kick_ct": "Sat 10/17 2:30 PM CT",
+      "event_id": "cfb-espn-401858264",
+      "espn_event_id": "401858264",
+      "status": "BLANK",
+      "best": null,
+      "picks": [],
+      "by_market": {
+        "ml": {
+          "status": "BLANK",
+          "note": "no DraftKings/Betr/Bovada price returned"
+        },
+        "spread": {
+          "status": "BLANK",
+          "note": "no DraftKings/Betr/Bovada price returned"
+        },
+        "total": {
+          "status": "BLANK",
+          "note": "MODEL blank: no free projected total (ESPN predictor has win % and point diff only)"
+        }
+      },
+      "note": "no DraftKings/Betr/Bovada price returned",
+      "fpi_home_margin": 8.77,
+      "mkt_home_margin": 9.5,
+      "blend_home_margin": 9.5,
+      "stamped": false,
+      "stamped_markets": []
+    },
+    {
+      "sport": "CFB",
+      "matchup": "North Carolina Tar Heels at Duke Blue Devils",
+      "kick_utc": "2026-10-17T19:30:00Z",
+      "kick_ct": "Sat 10/17 2:30 PM CT",
+      "event_id": "cfb-espn-401858266",
+      "espn_event_id": "401858266",
+      "status": "BLANK",
+      "best": null,
+      "picks": [],
+      "by_market": {
+        "ml": {
+          "status": "BLANK",
+          "note": "no DraftKings/Betr/Bovada price returned"
+        },
+        "spread": {
+          "status": "BLANK",
+          "note": "no DraftKings/Betr/Bovada price returned"
+        },
+        "total": {
+          "status": "BLANK",
+          "note": "MODEL blank: no free projected total (ESPN predictor has win % and point diff only)"
+        }
+      },
+      "note": "no DraftKings/Betr/Bovada price returned",
+      "fpi_home_margin": 1.33,
+      "mkt_home_margin": 3.5,
+      "blend_home_margin": 3.5,
+      "stamped": false,
+      "stamped_markets": []
+    },
+    {
+      "sport": "CFB",
+      "matchup": "Penn State Nittany Lions at Michigan Wolverines",
+      "kick_utc": "2026-10-17T19:30:00Z",
+      "kick_ct": "Sat 10/17 2:30 PM CT",
+      "event_id": "cfb-espn-401858490",
+      "espn_event_id": "401858490",
+      "status": "BLANK",
+      "best": null,
+      "picks": [],
+      "by_market": {
+        "ml": {
+          "status": "BLANK",
+          "note": "no DraftKings/Betr/Bovada price returned"
+        },
+        "spread": {
+          "status": "BLANK",
+          "note": "no DraftKings/Betr/Bovada price returned"
+        },
+        "total": {
+          "status": "BLANK",
+          "note": "MODEL blank: no free projected total (ESPN predictor has win % and point diff only)"
+        }
+      },
+      "note": "no DraftKings/Betr/Bovada price returned",
+      "fpi_home_margin": 1.76,
+      "mkt_home_margin": 6.5,
+      "blend_home_margin": 6.5,
+      "stamped": false,
+      "stamped_markets": []
+    },
+    {
+      "sport": "CFB",
+      "matchup": "Northern Illinois Huskies at Wyoming Cowboys",
+      "kick_utc": "2026-10-17T19:30:00Z",
+      "kick_ct": "Sat 10/17 2:30 PM CT",
+      "event_id": "cfb-espn-401864522",
+      "espn_event_id": "401864522",
+      "status": "BLANK",
+      "best": null,
+      "picks": [],
+      "by_market": {
+        "ml": {
+          "status": "BLANK",
+          "note": "no DraftKings/Betr/Bovada price returned"
+        },
+        "spread": {
+          "status": "BLANK",
+          "note": "no DraftKings/Betr/Bovada price returned"
+        },
+        "total": {
+          "status": "BLANK",
+          "note": "MODEL blank: no free projected total (ESPN predictor has win % and point diff only)"
+        }
+      },
+      "note": "no DraftKings/Betr/Bovada price returned",
+      "fpi_home_margin": 4.81,
+      "mkt_home_margin": 7.0,
+      "blend_home_margin": 7.0,
+      "stamped": false,
+      "stamped_markets": []
+    },
+    {
+      "sport": "CFB",
+      "matchup": "UNLV Rebels at Air Force Falcons",
+      "kick_utc": "2026-10-17T19:30:00Z",
+      "kick_ct": "Sat 10/17 2:30 PM CT",
+      "event_id": "cfb-espn-401864524",
+      "espn_event_id": "401864524",
+      "status": "BLANK",
+      "best": null,
+      "picks": [],
+      "by_market": {
+        "ml": {
+          "status": "BLANK",
+          "note": "no DraftKings/Betr/Bovada price returned"
+        },
+        "spread": {
+          "status": "BLANK",
+          "note": "no DraftKings/Betr/Bovada price returned"
+        },
+        "total": {
+          "status": "BLANK",
+          "note": "MODEL blank: no free projected total (ESPN predictor has win % and point diff only)"
+        }
+      },
+      "note": "no DraftKings/Betr/Bovada price returned",
+      "fpi_home_margin": -0.55,
+      "mkt_home_margin": -2.5,
+      "blend_home_margin": -2.5,
+      "stamped": false,
+      "stamped_markets": []
+    },
+    {
+      "sport": "CFB",
+      "matchup": "Toledo Rockets at Eastern Michigan Eagles",
+      "kick_utc": "2026-10-17T19:30:00Z",
+      "kick_ct": "Sat 10/17 2:30 PM CT",
+      "event_id": "cfb-espn-401866444",
+      "espn_event_id": "401866444",
+      "status": "BLANK",
+      "best": null,
+      "picks": [],
+      "by_market": {
+        "ml": {
+          "status": "BLANK",
+          "note": "no DraftKings/Betr/Bovada price returned"
+        },
+        "spread": {
+          "status": "BLANK",
+          "note": "no DraftKings/Betr/Bovada price returned"
+        },
+        "total": {
+          "status": "BLANK",
+          "note": "MODEL blank: no free projected total (ESPN predictor has win % and point diff only)"
+        }
+      },
+      "note": "no DraftKings/Betr/Bovada price returned",
+      "fpi_home_margin": -9.6,
+      "mkt_home_margin": -4.5,
+      "blend_home_margin": -4.5,
+      "stamped": false,
+      "stamped_markets": []
+    },
+    {
+      "sport": "CFB",
+      "matchup": "Akron Zips at Miami (OH) RedHawks",
+      "kick_utc": "2026-10-17T19:30:00Z",
+      "kick_ct": "Sat 10/17 2:30 PM CT",
+      "event_id": "cfb-espn-401866478",
+      "espn_event_id": "401866478",
+      "status": "BLANK",
+      "best": null,
+      "picks": [],
+      "by_market": {
+        "ml": {
+          "status": "BLANK",
+          "note": "no DraftKings/Betr/Bovada price returned"
+        },
+        "spread": {
+          "status": "BLANK",
+          "note": "no DraftKings/Betr/Bovada price returned"
+        },
+        "total": {
+          "status": "BLANK",
+          "note": "MODEL blank: no free projected total (ESPN predictor has win % and point diff only)"
+        }
+      },
+      "note": "no DraftKings/Betr/Bovada price returned",
+      "fpi_home_margin": 13.62,
+      "mkt_home_margin": 10.0,
+      "blend_home_margin": 10.0,
+      "stamped": false,
+      "stamped_markets": []
+    },
+    {
+      "sport": "CFB",
+      "matchup": "Tulsa Golden Hurricane at Rice Owls",
+      "kick_utc": "2026-10-17T20:30:00Z",
+      "kick_ct": "Sat 10/17 3:30 PM CT",
+      "event_id": "cfb-espn-401862805",
+      "espn_event_id": "401862805",
+      "status": "BLANK",
+      "best": null,
+      "picks": [],
+      "by_market": {
+        "ml": {
+          "status": "BLANK",
+          "note": "no DraftKings/Betr/Bovada price returned"
+        },
+        "spread": {
+          "status": "BLANK",
+          "note": "no DraftKings/Betr/Bovada price returned"
+        },
+        "total": {
+          "status": "BLANK",
+          "note": "MODEL blank: no free projected total (ESPN predictor has win % and point diff only)"
+        }
+      },
+      "note": "no DraftKings/Betr/Bovada price returned",
+      "fpi_home_margin": -6.32,
+      "mkt_home_margin": -3.5,
+      "blend_home_margin": -3.5,
+      "stamped": false,
+      "stamped_markets": []
+    },
+    {
+      "sport": "CFB",
+      "matchup": "Troy Trojans at Louisiana Ragin' Cajuns",
+      "kick_utc": "2026-10-17T21:00:00Z",
+      "kick_ct": "Sat 10/17 4:00 PM CT",
+      "event_id": "cfb-espn-401869966",
+      "espn_event_id": "401869966",
+      "status": "BLANK",
+      "best": null,
+      "picks": [],
+      "by_market": {
+        "ml": {
+          "status": "BLANK",
+          "note": "no DraftKings/Betr/Bovada price returned"
+        },
+        "spread": {
+          "status": "BLANK",
+          "note": "no DraftKings/Betr/Bovada price returned"
+        },
+        "total": {
+          "status": "BLANK",
+          "note": "MODEL blank: no free projected total (ESPN predictor has win % and point diff only)"
+        }
+      },
+      "note": "no DraftKings/Betr/Bovada price returned",
+      "fpi_home_margin": 3.18,
+      "mkt_home_margin": 5.5,
+      "blend_home_margin": 5.5,
+      "stamped": false,
+      "stamped_markets": []
+    },
+    {
+      "sport": "CFB",
+      "matchup": "Washington State Cougars at Oregon State Beavers",
+      "kick_utc": "2026-10-17T22:00:00Z",
+      "kick_ct": "Sat 10/17 5:00 PM CT",
+      "event_id": "cfb-espn-401860903",
+      "espn_event_id": "401860903",
+      "status": "BLANK",
+      "best": null,
+      "picks": [],
+      "by_market": {
+        "ml": {
+          "status": "BLANK",
+          "note": "no DraftKings/Betr/Bovada price returned"
+        },
+        "spread": {
+          "status": "BLANK",
+          "note": "no DraftKings/Betr/Bovada price returned"
+        },
+        "total": {
+          "status": "BLANK",
+          "note": "MODEL blank: no free projected total (ESPN predictor has win % and point diff only)"
+        }
+      },
+      "note": "no DraftKings/Betr/Bovada price returned",
+      "fpi_home_margin": 18.2,
+      "mkt_home_margin": 16.5,
+      "blend_home_margin": 16.5,
+      "stamped": false,
+      "stamped_markets": []
+    },
+    {
+      "sport": "CFB",
+      "matchup": "Arkansas Razorbacks at Vanderbilt Commodores",
+      "kick_utc": "2026-10-17T23:00:00Z",
+      "kick_ct": "Sat 10/17 6:00 PM CT",
+      "event_id": "cfb-espn-401856726",
+      "espn_event_id": "401856726",
+      "status": "BLANK",
+      "best": null,
+      "picks": [],
+      "by_market": {
+        "ml": {
+          "status": "BLANK",
+          "note": "no DraftKings/Betr/Bovada price returned"
+        },
+        "spread": {
+          "status": "BLANK",
+          "note": "no DraftKings/Betr/Bovada price returned"
+        },
+        "total": {
+          "status": "BLANK",
+          "note": "MODEL blank: no free projected total (ESPN predictor has win % and point diff only)"
+        }
+      },
+      "note": "no DraftKings/Betr/Bovada price returned",
+      "fpi_home_margin": 2.36,
+      "mkt_home_margin": 6.5,
+      "blend_home_margin": 6.5,
+      "stamped": false,
+      "stamped_markets": []
+    },
+    {
+      "sport": "CFB",
+      "matchup": "TCU Horned Frogs at Baylor Bears",
+      "kick_utc": "2026-10-17T23:00:00Z",
+      "kick_ct": "Sat 10/17 6:00 PM CT",
+      "event_id": "cfb-espn-401856832",
+      "espn_event_id": "401856832",
+      "status": "BLANK",
+      "best": null,
+      "picks": [],
+      "by_market": {
+        "ml": {
+          "status": "BLANK",
+          "note": "no DraftKings/Betr/Bovada price returned"
+        },
+        "spread": {
+          "status": "BLANK",
+          "note": "no DraftKings/Betr/Bovada price returned"
+        },
+        "total": {
+          "status": "BLANK",
+          "note": "MODEL blank: no free projected total (ESPN predictor has win % and point diff only)"
+        }
+      },
+      "note": "no DraftKings/Betr/Bovada price returned",
+      "fpi_home_margin": 6.77,
+      "mkt_home_margin": 6.5,
+      "blend_home_margin": 6.5,
+      "stamped": false,
+      "stamped_markets": []
+    },
+    {
+      "sport": "CFB",
+      "matchup": "Florida State Seminoles at Miami Hurricanes",
+      "kick_utc": "2026-10-17T23:00:00Z",
+      "kick_ct": "Sat 10/17 6:00 PM CT",
+      "event_id": "cfb-espn-401858263",
+      "espn_event_id": "401858263",
+      "status": "BLANK",
+      "best": null,
+      "picks": [],
+      "by_market": {
+        "ml": {
+          "status": "BLANK",
+          "note": "no DraftKings/Betr/Bovada price returned"
+        },
+        "spread": {
+          "status": "BLANK",
+          "note": "no DraftKings/Betr/Bovada price returned"
+        },
+        "total": {
+          "status": "BLANK",
+          "note": "MODEL blank: no free projected total (ESPN predictor has win % and point diff only)"
+        }
+      },
+      "note": "no DraftKings/Betr/Bovada price returned",
+      "fpi_home_margin": 23.72,
+      "mkt_home_margin": 21.0,
+      "blend_home_margin": 21.0,
+      "stamped": false,
+      "stamped_markets": []
+    },
+    {
+      "sport": "CFB",
+      "matchup": "Kent State Golden Flashes at South Florida Bulls",
+      "kick_utc": "2026-10-17T23:00:00Z",
+      "kick_ct": "Sat 10/17 6:00 PM CT",
+      "event_id": "cfb-espn-401862806",
+      "espn_event_id": "401862806",
+      "status": "BLANK",
+      "best": null,
+      "picks": [],
+      "by_market": {
+        "ml": {
+          "status": "BLANK",
+          "note": "no DraftKings/Betr/Bovada price returned"
+        },
+        "spread": {
+          "status": "BLANK",
+          "note": "no DraftKings/Betr/Bovada price returned"
+        },
+        "total": {
+          "status": "BLANK",
+          "note": "MODEL blank: no free projected total (ESPN predictor has win % and point diff only)"
+        }
+      },
+      "note": "no DraftKings/Betr/Bovada price returned",
+      "fpi_home_margin": 23.3,
+      "mkt_home_margin": 19.5,
+      "blend_home_margin": 19.5,
+      "stamped": false,
+      "stamped_markets": []
+    },
+    {
+      "sport": "CFB",
+      "matchup": "Nevada Wolf Pack at North Dakota State Bison",
+      "kick_utc": "2026-10-17T23:00:00Z",
+      "kick_ct": "Sat 10/17 6:00 PM CT",
+      "event_id": "cfb-espn-401864520",
+      "espn_event_id": "401864520",
+      "status": "BLANK",
+      "best": null,
+      "picks": [],
+      "by_market": {
+        "ml": {
+          "status": "BLANK",
+          "note": "no DraftKings/Betr/Bovada price returned"
+        },
+        "spread": {
+          "status": "BLANK",
+          "note": "no DraftKings/Betr/Bovada price returned"
+        },
+        "total": {
+          "status": "BLANK",
+          "note": "MODEL blank: no free projected total (ESPN predictor has win % and point diff only)"
+        }
+      },
+      "note": "no DraftKings/Betr/Bovada price returned",
+      "fpi_home_margin": 12.39,
+      "mkt_home_margin": 15.5,
+      "blend_home_margin": 15.5,
+      "stamped": false,
+      "stamped_markets": []
+    },
+    {
+      "sport": "CFB",
+      "matchup": "Arkansas State Red Wolves at Southern Miss Golden Eagles",
+      "kick_utc": "2026-10-17T23:00:00Z",
+      "kick_ct": "Sat 10/17 6:00 PM CT",
+      "event_id": "cfb-espn-401869934",
+      "espn_event_id": "401869934",
+      "status": "BLANK",
+      "best": null,
+      "picks": [],
+      "by_market": {
+        "ml": {
+          "status": "BLANK",
+          "note": "no DraftKings/Betr/Bovada price returned"
+        },
+        "spread": {
+          "status": "BLANK",
+          "note": "no DraftKings/Betr/Bovada price returned"
+        },
+        "total": {
+          "status": "BLANK",
+          "note": "MODEL blank: no free projected total (ESPN predictor has win % and point diff only)"
+        }
+      },
+      "note": "no DraftKings/Betr/Bovada price returned",
+      "fpi_home_margin": -1.32,
+      "mkt_home_margin": -7.0,
+      "blend_home_margin": -7.0,
+      "stamped": false,
+      "stamped_markets": []
+    },
+    {
+      "sport": "CFB",
+      "matchup": "Kentucky Wildcats at Oklahoma Sooners",
+      "kick_utc": "2026-10-17T23:30:00Z",
+      "kick_ct": "Sat 10/17 6:30 PM CT",
+      "event_id": "cfb-espn-401856722",
+      "espn_event_id": "401856722",
+      "status": "BLANK",
+      "best": null,
+      "picks": [],
+      "by_market": {
+        "ml": {
+          "status": "BLANK",
+          "note": "no DraftKings/Betr/Bovada price returned"
+        },
+        "spread": {
+          "status": "BLANK",
+          "note": "no DraftKings/Betr/Bovada price returned"
+        },
+        "total": {
+          "status": "BLANK",
+          "note": "MODEL blank: no free projected total (ESPN predictor has win % and point diff only)"
+        }
+      },
+      "note": "no DraftKings/Betr/Bovada price returned",
+      "fpi_home_margin": 6.37,
+      "mkt_home_margin": 6.5,
+      "blend_home_margin": 6.5,
+      "stamped": false,
+      "stamped_markets": []
+    },
+    {
+      "sport": "CFB",
+      "matchup": "Notre Dame Fighting Irish at BYU Cougars",
+      "kick_utc": "2026-10-17T23:30:00Z",
+      "kick_ct": "Sat 10/17 6:30 PM CT",
+      "event_id": "cfb-espn-401856809",
+      "espn_event_id": "401856809",
+      "status": "BLANK",
+      "best": null,
+      "picks": [],
+      "by_market": {
+        "ml": {
+          "status": "BLANK",
+          "note": "no DraftKings/Betr/Bovada price returned"
+        },
+        "spread": {
+          "status": "BLANK",
+          "note": "no DraftKings/Betr/Bovada price returned"
+        },
+        "total": {
+          "status": "BLANK",
+          "note": "MODEL blank: no free projected total (ESPN predictor has win % and point diff only)"
+        }
+      },
+      "note": "no DraftKings/Betr/Bovada price returned",
+      "fpi_home_margin": -10.88,
+      "mkt_home_margin": -11.5,
+      "blend_home_margin": -11.5,
+      "stamped": false,
+      "stamped_markets": []
+    },
+    {
+      "sport": "CFB",
+      "matchup": "Oklahoma State Cowboys at Houston Cougars",
+      "kick_utc": "2026-10-17T23:30:00Z",
+      "kick_ct": "Sat 10/17 6:30 PM CT",
+      "event_id": "cfb-espn-401856831",
+      "espn_event_id": "401856831",
+      "status": "BLANK",
+      "best": null,
+      "picks": [],
+      "by_market": {
+        "ml": {
+          "status": "BLANK",
+          "note": "no DraftKings/Betr/Bovada price returned"
+        },
+        "spread": {
+          "status": "BLANK",
+          "note": "no DraftKings/Betr/Bovada price returned"
+        },
+        "total": {
+          "status": "BLANK",
+          "note": "MODEL blank: no free projected total (ESPN predictor has win % and point diff only)"
+        }
+      },
+      "note": "no DraftKings/Betr/Bovada price returned",
+      "fpi_home_margin": 9.3,
+      "mkt_home_margin": 4.5,
+      "blend_home_margin": 4.5,
+      "stamped": false,
+      "stamped_markets": []
+    },
+    {
+      "sport": "CFB",
+      "matchup": "Louisville Cardinals at Syracuse Orange",
+      "kick_utc": "2026-10-17T23:30:00Z",
+      "kick_ct": "Sat 10/17 6:30 PM CT",
+      "event_id": "cfb-espn-401858265",
+      "espn_event_id": "401858265",
+      "status": "BLANK",
+      "best": null,
+      "picks": [],
+      "by_market": {
+        "ml": {
+          "status": "BLANK",
+          "note": "no DraftKings/Betr/Bovada price returned"
+        },
+        "spread": {
+          "status": "BLANK",
+          "note": "no DraftKings/Betr/Bovada price returned"
+        },
+        "total": {
+          "status": "BLANK",
+          "note": "MODEL blank: no free projected total (ESPN predictor has win % and point diff only)"
+        }
+      },
+      "note": "no DraftKings/Betr/Bovada price returned",
+      "fpi_home_margin": -9.8,
+      "mkt_home_margin": -12.5,
+      "blend_home_margin": -12.5,
+      "stamped": false,
+      "stamped_markets": []
+    },
+    {
+      "sport": "CFB",
+      "matchup": "Wisconsin Badgers at UCLA Bruins",
+      "kick_utc": "2026-10-17T23:30:00Z",
+      "kick_ct": "Sat 10/17 6:30 PM CT",
+      "event_id": "cfb-espn-401858494",
+      "espn_event_id": "401858494",
+      "status": "BLANK",
+      "best": null,
+      "picks": [],
+      "by_market": {
+        "ml": {
+          "status": "BLANK",
+          "note": "no DraftKings/Betr/Bovada price returned"
+        },
+        "spread": {
+          "status": "BLANK",
+          "note": "no DraftKings/Betr/Bovada price returned"
+        },
+        "total": {
+          "status": "BLANK",
+          "note": "MODEL blank: no free projected total (ESPN predictor has win % and point diff only)"
+        }
+      },
+      "note": "no DraftKings/Betr/Bovada price returned",
+      "fpi_home_margin": 2.61,
+      "mkt_home_margin": 3.0,
+      "blend_home_margin": 3.0,
+      "stamped": false,
+      "stamped_markets": []
+    },
+    {
+      "sport": "CFB",
+      "matchup": "Navy Midshipmen at UTSA Roadrunners",
+      "kick_utc": "2026-10-18T00:00:00Z",
+      "kick_ct": "Sat 10/17 7:00 PM CT",
+      "event_id": "cfb-espn-401862804",
+      "espn_event_id": "401862804",
+      "status": "BLANK",
+      "best": null,
+      "picks": [],
+      "by_market": {
+        "ml": {
+          "status": "BLANK",
+          "note": "no DraftKings/Betr/Bovada price returned"
+        },
+        "spread": {
+          "status": "BLANK",
+          "note": "no DraftKings/Betr/Bovada price returned"
+        },
+        "total": {
+          "status": "BLANK",
+          "note": "MODEL blank: no free projected total (ESPN predictor has win % and point diff only)"
+        }
+      },
+      "note": "no DraftKings/Betr/Bovada price returned",
+      "fpi_home_margin": 9.08,
+      "mkt_home_margin": 6.5,
+      "blend_home_margin": 6.5,
+      "stamped": false,
+      "stamped_markets": []
+    },
+    {
+      "sport": "CFB",
+      "matchup": "Louisiana Tech Bulldogs at UL Monroe Warhawks",
+      "kick_utc": "2026-10-18T00:00:00Z",
+      "kick_ct": "Sat 10/17 7:00 PM CT",
+      "event_id": "cfb-espn-401871091",
+      "espn_event_id": "401871091",
+      "status": "BLANK",
+      "best": null,
+      "picks": [],
+      "by_market": {
+        "ml": {
+          "status": "BLANK",
+          "note": "no DraftKings/Betr/Bovada price returned"
+        },
+        "spread": {
+          "status": "BLANK",
+          "note": "no DraftKings/Betr/Bovada price returned"
+        },
+        "total": {
+          "status": "BLANK",
+          "note": "MODEL blank: no free projected total (ESPN predictor has win % and point diff only)"
+        }
+      },
+      "note": "no DraftKings/Betr/Bovada price returned",
+      "fpi_home_margin": -17.82,
+      "mkt_home_margin": -14.5,
+      "blend_home_margin": -14.5,
+      "stamped": false,
+      "stamped_markets": []
+    },
+    {
+      "sport": "CFB",
+      "matchup": "San José State Spartans at UTEP Miners",
+      "kick_utc": "2026-10-18T01:00:00Z",
+      "kick_ct": "Sat 10/17 8:00 PM CT",
+      "event_id": "cfb-espn-401864523",
+      "espn_event_id": "401864523",
+      "status": "BLANK",
+      "best": null,
+      "picks": [],
+      "by_market": {},
+      "note": "no consensus spread — MODEL blank",
+      "fpi_home_margin": -8.81,
+      "mkt_home_margin": null,
+      "blend_home_margin": null,
+      "stamped": false,
+      "stamped_markets": []
+    },
+    {
+      "sport": "CFB",
+      "matchup": "Ohio Bobcats at Sacramento State Hornets",
+      "kick_utc": "2026-10-18T02:00:00Z",
+      "kick_ct": "Sat 10/17 9:00 PM CT",
+      "event_id": "cfb-espn-401866445",
+      "espn_event_id": "401866445",
+      "status": "BLANK",
+      "best": null,
+      "picks": [],
+      "by_market": {
+        "ml": {
+          "status": "BLANK",
+          "note": "no DraftKings/Betr/Bovada price returned"
+        },
+        "spread": {
+          "status": "BLANK",
+          "note": "no DraftKings/Betr/Bovada price returned"
+        },
+        "total": {
+          "status": "BLANK",
+          "note": "MODEL blank: no free projected total (ESPN predictor has win % and point diff only)"
+        }
+      },
+      "note": "no DraftKings/Betr/Bovada price returned",
+      "fpi_home_margin": -16.91,
+      "mkt_home_margin": -14.0,
+      "blend_home_margin": -14.0,
+      "stamped": false,
+      "stamped_markets": []
+    },
+    {
+      "sport": "CFB",
+      "matchup": "Utah Utes at Colorado Buffaloes",
+      "kick_utc": "2026-10-18T02:15:00Z",
+      "kick_ct": "Sat 10/17 9:15 PM CT",
+      "event_id": "cfb-espn-401856833",
+      "espn_event_id": "401856833",
+      "status": "BLANK",
+      "best": null,
+      "picks": [],
+      "by_market": {
+        "ml": {
+          "status": "BLANK",
+          "note": "no DraftKings/Betr/Bovada price returned"
+        },
+        "spread": {
+          "status": "BLANK",
+          "note": "no DraftKings/Betr/Bovada price returned"
+        },
+        "total": {
+          "status": "BLANK",
+          "note": "MODEL blank: no free projected total (ESPN predictor has win % and point diff only)"
+        }
+      },
+      "note": "no DraftKings/Betr/Bovada price returned",
+      "fpi_home_margin": -16.71,
+      "mkt_home_margin": -16.5,
+      "blend_home_margin": -16.5,
+      "stamped": false,
+      "stamped_markets": []
+    },
+    {
+      "sport": "CFB",
+      "matchup": "Wake Forest Demon Deacons at California Golden Bears",
+      "kick_utc": "2026-10-18T02:30:00Z",
+      "kick_ct": "Sat 10/17 9:30 PM CT",
+      "event_id": "cfb-espn-401858269",
+      "espn_event_id": "401858269",
+      "status": "BLANK",
+      "best": null,
+      "picks": [],
+      "by_market": {
+        "ml": {
+          "status": "BLANK",
+          "note": "no DraftKings/Betr/Bovada price returned"
+        },
+        "spread": {
+          "status": "BLANK",
+          "note": "no DraftKings/Betr/Bovada price returned"
+        },
+        "total": {
+          "status": "BLANK",
+          "note": "MODEL blank: no free projected total (ESPN predictor has win % and point diff only)"
+        }
+      },
+      "note": "no DraftKings/Betr/Bovada price returned",
+      "fpi_home_margin": -11.73,
+      "mkt_home_margin": -9.5,
+      "blend_home_margin": -9.5,
+      "stamped": false,
+      "stamped_markets": []
+    },
+    {
+      "sport": "CFB",
+      "matchup": "New Mexico Lobos at Hawai'i Rainbow Warriors",
+      "kick_utc": "2026-10-18T02:30:00Z",
+      "kick_ct": "Sat 10/17 9:30 PM CT",
+      "event_id": "cfb-espn-401864521",
+      "espn_event_id": "401864521",
+      "status": "BLANK",
+      "best": null,
+      "picks": [],
+      "by_market": {
+        "ml": {
+          "status": "BLANK",
+          "note": "no DraftKings/Betr/Bovada price returned"
+        },
+        "spread": {
+          "status": "BLANK",
+          "note": "no DraftKings/Betr/Bovada price returned"
+        },
+        "total": {
+          "status": "BLANK",
+          "note": "MODEL blank: no free projected total (ESPN predictor has win % and point diff only)"
+        }
+      },
+      "note": "no DraftKings/Betr/Bovada price returned",
+      "fpi_home_margin": -18.51,
+      "mkt_home_margin": -14.5,
+      "blend_home_margin": -14.5,
+      "stamped": false,
+      "stamped_markets": []
+    },
+    {
+      "sport": "CFB",
+      "matchup": "Nebraska Cornhuskers at Oregon Ducks",
+      "kick_utc": "2026-10-18T03:00:00Z",
+      "kick_ct": "Sat 10/17 10:00 PM CT",
+      "event_id": "cfb-espn-401858492",
+      "espn_event_id": "401858492",
+      "status": "BLANK",
+      "best": null,
+      "picks": [],
+      "by_market": {
+        "ml": {
+          "status": "BLANK",
+          "note": "no DraftKings/Betr/Bovada price returned"
+        },
+        "spread": {
+          "status": "BLANK",
+          "note": "no DraftKings/Betr/Bovada price returned"
+        },
+        "total": {
+          "status": "BLANK",
+          "note": "MODEL blank: no free projected total (ESPN predictor has win % and point diff only)"
+        }
+      },
+      "note": "no DraftKings/Betr/Bovada price returned",
+      "fpi_home_margin": 5.65,
+      "mkt_home_margin": 6.5,
+      "blend_home_margin": 6.5,
       "stamped": false,
       "stamped_markets": []
     }
@@ -1698,30 +2615,30 @@
   "credits": {
     "calls": 2,
     "credits_this_run": 6,
-    "x-requests-remaining": "13837",
-    "x-requests-used": "6163",
+    "x-requests-remaining": "13747",
+    "x-requests-used": "6253",
     "NFL_x-requests-last": "3",
     "CFB_x-requests-last": null,
     "NHL_x-requests-last": "3",
     "espn": {
       "NFL": {
-        "odds_api_games": 26,
+        "odds_api_games": 13,
         "espn_games_added": 0,
         "espn_markets_filled": 0
       },
       "CFB": {
         "odds_api_games": 0,
-        "espn_games_added": 5,
+        "espn_games_added": 58,
         "espn_markets_filled": 0
       },
       "NHL": {
-        "odds_api_games": 5,
+        "odds_api_games": 6,
         "espn_games_added": 0,
         "espn_markets_filled": 0
       },
       "MLB": {
         "odds_api_games": 0,
-        "espn_games_added": 1,
+        "espn_games_added": 2,
         "espn_markets_filled": 0
       }
     }
