@@ -60,6 +60,7 @@ jobs:
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
+        with: { ref: main }   # latest main at job start (a queued run must not build on a stale dispatch SHA)
 
       - uses: actions/setup-python@v5
         with:
@@ -123,7 +124,7 @@ jobs:
           git add data/ ../docs/data/v1
           git commit -m "auto board + paper $(TZ=America/Chicago date +%F) CT"
           # box publisher may have pushed meanwhile; rebase data-only commit, never force
-          git pull --rebase origin main
+          git pull --rebase -X theirs origin main   # data-only commit: on a data conflict keep this run's fresh files
           git push origin HEAD:main
           echo "changed=true" >> "$GITHUB_OUTPUT"
 

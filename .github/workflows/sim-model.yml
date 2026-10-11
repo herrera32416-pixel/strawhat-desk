@@ -45,6 +45,6 @@ jobs:
         working-directory: branch
         run: |
           git config user.name "strawhat-desk-bot"; git config user.email "actions@users.noreply.github.com"
-          git add sim-model/out/picks sim-model/out/paper sim-model/out/nfl_v2_preds.parquet sim-model/data/odds 2>/dev/null || true
+          git add -A sim-model   # .gitignore keeps the big pbp/feature parquet files out
           git commit -m "sim-model paper refresh $(TZ=America/Chicago date '+%F %H:%M') CT" || { echo nothing; exit 0; }
-          git pull --rebase -q origin sim-model && git push origin HEAD:sim-model
+          git pull --rebase -X theirs -q origin sim-model && git push origin HEAD:sim-model

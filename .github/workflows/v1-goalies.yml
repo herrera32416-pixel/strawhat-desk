@@ -33,6 +33,7 @@ jobs:
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
+        with: { ref: main }   # latest main at job start (a queued run must not build on a stale dispatch SHA)
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
@@ -50,7 +51,7 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data/ ../docs/data/v1
           git commit -m "nhl goalie refresh $(TZ=America/Chicago date '+%F %H:%M') CT"
-          git pull --rebase origin main
+          git pull --rebase -X theirs origin main   # data-only commit: on a data conflict keep this run's fresh files
           git push origin HEAD:main
           echo "changed=true" >> "$GITHUB_OUTPUT"
       - name: Request Pages build
