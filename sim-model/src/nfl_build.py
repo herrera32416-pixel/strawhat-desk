@@ -4,7 +4,7 @@ cols=['game_id','season','week','season_type','posteam','defteam','fixed_drive',
 'qb_dropback','passer_player_id','passer_player_name','yards_gained','down','fourth_down_converted','fourth_down_failed','ydstogo','yardline_100',
 'field_goal_result','kick_distance','interception','fumble_lost','wp','half_seconds_remaining','drive_start_yard_line','penalty']
 rows=[];qbrows=[]
-for y in range(2012,2026):
+for y in range(2012,2027):
     d=pd.read_parquet(f'data/nfl/pbp_{y}.parquet',columns=cols)
     d=d[d.season_type.isin(['REG','POST'])&d.posteam.notna()]
     sc=d[d.play_type.isin(['pass','run'])]

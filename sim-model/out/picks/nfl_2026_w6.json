@@ -1,0 +1,855 @@
+{
+ "league": "nfl",
+ "slate": "Sun Oct 11 + Mon Oct 12 2026 (nflverse week 5)",
+ "sim_version": "v2 (less shrinkage, walk-forward margin/total stretch; Normal probs)",
+ "sim_live": false,
+ "lines": "2026-10-10T13:31:50-05:00 desk Odds API pull (no new credits spent); Bovada not in that pull, DraftKings used",
+ "note": "PAPER. v2 still loses to the closing line in walk-forward tests; tier = size of sim-vs-market gap, NOT proven edge.",
+ "games": [
+  {
+   "game_id": "2026_05_BAL_ATL",
+   "kickoff_utc": "2026-10-12T00:20:00Z",
+   "away": "BAL",
+   "home": "ATL",
+   "book": "draftkings",
+   "qbs": {
+    "away": "Tyler Huntley",
+    "home": "Michael Penix Jr.",
+    "espn_qb_injuries": {
+     "BAL": [
+      "Lamar Jackson Out"
+     ],
+     "ATL": []
+    }
+   },
+   "sim": {
+    "home_pts": 24.4,
+    "away_pts": 21.9,
+    "margin": 2.5,
+    "total": 46.3
+   },
+   "markets": [
+    {
+     "market": "ml",
+     "pick": "BAL ML",
+     "price": 150,
+     "sim_pct": 42.5,
+     "market_pct": 38.4,
+     "gap_pts": 4.2,
+     "tier": "C",
+     "status": "paper"
+    },
+    {
+     "market": "spread",
+     "pick": "BAL +3",
+     "price": 102,
+     "sim_pct": 51.6,
+     "market_pct": 47.4,
+     "gap_pts": 4.2,
+     "tier": "C",
+     "status": "paper"
+    },
+    {
+     "market": "total",
+     "pick": "Over 43.5",
+     "price": -110,
+     "sim_pct": 58.3,
+     "market_pct": 50.0,
+     "gap_pts": 8.3,
+     "tier": "A",
+     "status": "paper"
+    }
+   ],
+   "weather": null,
+   "news_delta_flags": [
+    "QB-CHANGE BAL: starter Tyler Huntley vs recent starter (QB adj -0.19 EPA/db). Sim vs line on BAL's side: +0.5 pts"
+   ],
+   "matchup_note": "ATL run success 46% vs BAL run D allowing 39% (descriptive; matchup layer did not improve backtests, so it is not in the numbers)"
+  },
+  {
+   "game_id": "2026_05_BUF_LA",
+   "kickoff_utc": "2026-10-13T00:15:00Z",
+   "away": "BUF",
+   "home": "LA",
+   "book": "draftkings",
+   "qbs": {
+    "away": "Josh Allen",
+    "home": "Matthew Stafford",
+    "espn_qb_injuries": {
+     "BUF": [],
+     "LA": []
+    }
+   },
+   "sim": {
+    "home_pts": 27.7,
+    "away_pts": 26.6,
+    "margin": 1.1,
+    "total": 54.3
+   },
+   "markets": [
+    {
+     "market": "ml",
+     "pick": "BUF ML",
+     "price": 145,
+     "sim_pct": 46.7,
+     "market_pct": 39.1,
+     "gap_pts": 7.7,
+     "tier": "B",
+     "status": "paper"
+    },
+    {
+     "market": "spread",
+     "pick": "BUF +3",
+     "price": 100,
+     "sim_pct": 55.9,
+     "market_pct": 47.8,
+     "gap_pts": 8.0,
+     "tier": "A",
+     "status": "paper"
+    },
+    {
+     "market": "total",
+     "pick": "Under 54.5",
+     "price": -102,
+     "sim_pct": 50.6,
+     "market_pct": 48.3,
+     "gap_pts": 2.3,
+     "tier": "C",
+     "status": "paper"
+    }
+   ],
+   "weather": null,
+   "news_delta_flags": [],
+   "matchup_note": "LA run success 46% vs BUF run D allowing 45% (descriptive; matchup layer did not improve backtests, so it is not in the numbers)"
+  },
+  {
+   "game_id": "2026_05_CHI_GB",
+   "kickoff_utc": "2026-10-11T17:00:00Z",
+   "away": "CHI",
+   "home": "GB",
+   "book": "draftkings",
+   "qbs": {
+    "away": "Tyson Bagent",
+    "home": "Jordan Love",
+    "espn_qb_injuries": {
+     "CHI": [
+      "Caleb Williams Questionable"
+     ],
+     "GB": []
+    }
+   },
+   "sim": {
+    "home_pts": 21.9,
+    "away_pts": 26.1,
+    "margin": -4.2,
+    "total": 48.0
+   },
+   "markets": [
+    {
+     "market": "ml",
+     "pick": "CHI ML",
+     "price": -125,
+     "sim_pct": 62.5,
+     "market_pct": 53.2,
+     "gap_pts": 9.2,
+     "tier": "A",
+     "status": "paper"
+    },
+    {
+     "market": "spread",
+     "pick": "CHI -1.5",
+     "price": -115,
+     "sim_pct": 58.0,
+     "market_pct": 51.1,
+     "gap_pts": 7.0,
+     "tier": "B",
+     "status": "paper"
+    },
+    {
+     "market": "total",
+     "pick": "Over 46.5",
+     "price": -112,
+     "sim_pct": 54.4,
+     "market_pct": 50.4,
+     "gap_pts": 4.0,
+     "tier": "C",
+     "status": "paper"
+    }
+   ],
+   "weather": {
+    "wind_mph": 13.0,
+    "gust_mph": 22.8,
+    "temp_f": 75,
+    "precip_prob": 0
+   },
+   "news_delta_flags": [],
+   "matchup_note": "GB run success 40% vs CHI run D allowing 45% (descriptive; matchup layer did not improve backtests, so it is not in the numbers)"
+  },
+  {
+   "game_id": "2026_05_CIN_MIA",
+   "kickoff_utc": "2026-10-11T17:00:00Z",
+   "away": "CIN",
+   "home": "MIA",
+   "book": "draftkings",
+   "qbs": {
+    "away": "Joe Burrow",
+    "home": "Malik Willis",
+    "espn_qb_injuries": {
+     "CIN": [],
+     "MIA": []
+    }
+   },
+   "sim": {
+    "home_pts": 19.6,
+    "away_pts": 25.9,
+    "margin": -6.3,
+    "total": 45.5
+   },
+   "markets": [
+    {
+     "market": "ml",
+     "pick": "MIA ML",
+     "price": 280,
+     "sim_pct": 31.5,
+     "market_pct": 25.2,
+     "gap_pts": 6.3,
+     "tier": "B",
+     "status": "paper"
+    },
+    {
+     "market": "spread",
+     "pick": "MIA +7",
+     "price": -112,
+     "sim_pct": 52.1,
+     "market_pct": 50.4,
+     "gap_pts": 1.7,
+     "tier": "none",
+     "status": "paper"
+    },
+    {
+     "market": "total",
+     "pick": "Over 43.5",
+     "price": -112,
+     "sim_pct": 56.0,
+     "market_pct": 50.4,
+     "gap_pts": 5.5,
+     "tier": "B",
+     "status": "paper"
+    }
+   ],
+   "weather": {
+    "wind_mph": 9.1,
+    "gust_mph": 14.1,
+    "temp_f": 90,
+    "precip_prob": 8
+   },
+   "news_delta_flags": [],
+   "matchup_note": "MIA deep-pass rate 15% vs CIN explosive-pass allowed 9.7% (descriptive; matchup layer did not improve backtests, so it is not in the numbers)"
+  },
+  {
+   "game_id": "2026_05_CLE_NYJ",
+   "kickoff_utc": "2026-10-11T17:00:00Z",
+   "away": "CLE",
+   "home": "NYJ",
+   "book": "draftkings",
+   "qbs": {
+    "away": "Deshaun Watson",
+    "home": "Geno Smith",
+    "espn_qb_injuries": {
+     "CLE": [
+      "Dillon Gabriel Injured Reserve"
+     ],
+     "NYJ": []
+    }
+   },
+   "sim": {
+    "home_pts": 21.7,
+    "away_pts": 20.0,
+    "margin": 1.7,
+    "total": 41.7
+   },
+   "markets": [
+    {
+     "market": "ml",
+     "pick": "CLE ML",
+     "price": 114,
+     "sim_pct": 45.0,
+     "market_pct": 44.9,
+     "gap_pts": 0.1,
+     "tier": "none",
+     "status": "paper"
+    },
+    {
+     "market": "spread",
+     "pick": "CLE +2.5",
+     "price": -110,
+     "sim_pct": 52.6,
+     "market_pct": 50.0,
+     "gap_pts": 2.6,
+     "tier": "C",
+     "status": "paper"
+    },
+    {
+     "market": "total",
+     "pick": "Over 39.5",
+     "price": -112,
+     "sim_pct": 56.5,
+     "market_pct": 50.4,
+     "gap_pts": 6.1,
+     "tier": "B",
+     "status": "paper"
+    }
+   ],
+   "weather": {
+    "wind_mph": 12.3,
+    "gust_mph": 28.9,
+    "temp_f": 64,
+    "precip_prob": 85
+   },
+   "news_delta_flags": [],
+   "matchup_note": "CLE run success 34% vs NYJ run D allowing 43% (descriptive; matchup layer did not improve backtests, so it is not in the numbers)"
+  },
+  {
+   "game_id": "2026_05_DEN_LAC",
+   "kickoff_utc": "2026-10-11T20:05:00Z",
+   "away": "DEN",
+   "home": "LAC",
+   "book": "draftkings",
+   "qbs": {
+    "away": "Bo Nix",
+    "home": "Justin Herbert",
+    "espn_qb_injuries": {
+     "DEN": [],
+     "LAC": [
+      "Trey Lance Injured Reserve"
+     ]
+    }
+   },
+   "sim": {
+    "home_pts": 20.6,
+    "away_pts": 22.8,
+    "margin": -2.3,
+    "total": 43.4
+   },
+   "markets": [
+    {
+     "market": "ml",
+     "pick": "LAC ML",
+     "price": 160,
+     "sim_pct": 43.2,
+     "market_pct": 36.9,
+     "gap_pts": 6.3,
+     "tier": "B",
+     "status": "paper"
+    },
+    {
+     "market": "spread",
+     "pick": "LAC +3.5",
+     "price": -112,
+     "sim_pct": 53.8,
+     "market_pct": 50.4,
+     "gap_pts": 3.4,
+     "tier": "C",
+     "status": "paper"
+    },
+    {
+     "market": "total",
+     "pick": "Over 41.5",
+     "price": -115,
+     "sim_pct": 55.5,
+     "market_pct": 51.1,
+     "gap_pts": 4.4,
+     "tier": "C",
+     "status": "paper"
+    }
+   ],
+   "weather": null,
+   "news_delta_flags": [],
+   "matchup_note": "LAC deep-pass rate 13% vs DEN explosive-pass allowed 6.6% (descriptive; matchup layer did not improve backtests, so it is not in the numbers)"
+  },
+  {
+   "game_id": "2026_05_DET_ARI",
+   "kickoff_utc": "2026-10-11T20:25:00Z",
+   "away": "DET",
+   "home": "ARI",
+   "book": "draftkings",
+   "qbs": {
+    "away": "Jared Goff",
+    "home": "Jacoby Brissett",
+    "espn_qb_injuries": {
+     "DET": [],
+     "ARI": []
+    }
+   },
+   "sim": {
+    "home_pts": 24.0,
+    "away_pts": 27.3,
+    "margin": -3.3,
+    "total": 51.3
+   },
+   "markets": [
+    {
+     "market": "ml",
+     "pick": "ARI ML",
+     "price": 205,
+     "sim_pct": 40.2,
+     "market_pct": 31.5,
+     "gap_pts": 8.7,
+     "tier": "A",
+     "status": "paper"
+    },
+    {
+     "market": "spread",
+     "pick": "ARI +5.5",
+     "price": -110,
+     "sim_pct": 56.8,
+     "market_pct": 50.0,
+     "gap_pts": 6.8,
+     "tier": "B",
+     "status": "paper"
+    },
+    {
+     "market": "total",
+     "pick": "Under 54.5",
+     "price": -105,
+     "sim_pct": 59.4,
+     "market_pct": 48.9,
+     "gap_pts": 10.5,
+     "tier": "A",
+     "status": "paper"
+    }
+   ],
+   "weather": null,
+   "news_delta_flags": [],
+   "matchup_note": "DET deep-pass rate 8% vs ARI explosive-pass allowed 10.6% (descriptive; matchup layer did not improve backtests, so it is not in the numbers)"
+  },
+  {
+   "game_id": "2026_05_HOU_TEN",
+   "kickoff_utc": "2026-10-11T17:00:00Z",
+   "away": "HOU",
+   "home": "TEN",
+   "book": "draftkings",
+   "qbs": {
+    "away": "C.J. Stroud",
+    "home": "Cam Ward",
+    "espn_qb_injuries": {
+     "HOU": [],
+     "TEN": []
+    }
+   },
+   "sim": {
+    "home_pts": 17.9,
+    "away_pts": 23.5,
+    "margin": -5.6,
+    "total": 41.3
+   },
+   "markets": [
+    {
+     "market": "ml",
+     "pick": "TEN ML",
+     "price": 280,
+     "sim_pct": 33.4,
+     "market_pct": 25.2,
+     "gap_pts": 8.2,
+     "tier": "A",
+     "status": "paper"
+    },
+    {
+     "market": "spread",
+     "pick": "TEN +7",
+     "price": -110,
+     "sim_pct": 54.3,
+     "market_pct": 50.0,
+     "gap_pts": 4.3,
+     "tier": "C",
+     "status": "paper"
+    },
+    {
+     "market": "total",
+     "pick": "Over 38.5",
+     "price": -105,
+     "sim_pct": 58.3,
+     "market_pct": 48.9,
+     "gap_pts": 9.4,
+     "tier": "A",
+     "status": "paper"
+    }
+   ],
+   "weather": {
+    "wind_mph": 8.9,
+    "gust_mph": 19.7,
+    "temp_f": 68,
+    "precip_prob": 3
+   },
+   "news_delta_flags": [],
+   "matchup_note": "HOU run success 32% vs TEN run D allowing 39% (descriptive; matchup layer did not improve backtests, so it is not in the numbers)"
+  },
+  {
+   "game_id": "2026_05_IND_PIT",
+   "kickoff_utc": "2026-10-11T17:00:00Z",
+   "away": "IND",
+   "home": "PIT",
+   "book": "draftkings",
+   "qbs": {
+    "away": "Daniel Jones",
+    "home": "Aaron Rodgers",
+    "espn_qb_injuries": {
+     "IND": [],
+     "PIT": []
+    }
+   },
+   "sim": {
+    "home_pts": 23.0,
+    "away_pts": 23.3,
+    "margin": -0.3,
+    "total": 46.4
+   },
+   "markets": [
+    {
+     "market": "ml",
+     "pick": "IND ML",
+     "price": 124,
+     "sim_pct": 51.0,
+     "market_pct": 42.8,
+     "gap_pts": 8.2,
+     "tier": "A",
+     "status": "paper"
+    },
+    {
+     "market": "spread",
+     "pick": "IND +3",
+     "price": -118,
+     "sim_pct": 60.0,
+     "market_pct": 51.7,
+     "gap_pts": 8.3,
+     "tier": "A",
+     "status": "paper"
+    },
+    {
+     "market": "total",
+     "pick": "Over 43.5",
+     "price": -108,
+     "sim_pct": 58.4,
+     "market_pct": 49.6,
+     "gap_pts": 8.8,
+     "tier": "A",
+     "status": "paper"
+    }
+   ],
+   "weather": {
+    "wind_mph": 11.8,
+    "gust_mph": 23.0,
+    "temp_f": 60,
+    "precip_prob": 79
+   },
+   "news_delta_flags": [],
+   "matchup_note": "IND run success 46% vs PIT run D allowing 40% (descriptive; matchup layer did not improve backtests, so it is not in the numbers)"
+  },
+  {
+   "game_id": "2026_05_LV_NE",
+   "kickoff_utc": "2026-10-11T17:00:00Z",
+   "away": "LV",
+   "home": "NE",
+   "book": "draftkings",
+   "qbs": {
+    "away": "Kirk Cousins",
+    "home": "Drake Maye",
+    "espn_qb_injuries": {
+     "LV": [],
+     "NE": []
+    }
+   },
+   "sim": {
+    "home_pts": 25.1,
+    "away_pts": 19.2,
+    "margin": 5.8,
+    "total": 44.3
+   },
+   "markets": [
+    {
+     "market": "ml",
+     "pick": "NE ML",
+     "price": -192,
+     "sim_pct": 67.3,
+     "market_pct": 63.1,
+     "gap_pts": 4.2,
+     "tier": "C",
+     "status": "paper"
+    },
+    {
+     "market": "spread",
+     "pick": "NE -3.5",
+     "price": -108,
+     "sim_pct": 57.1,
+     "market_pct": 49.6,
+     "gap_pts": 7.5,
+     "tier": "B",
+     "status": "paper"
+    },
+    {
+     "market": "total",
+     "pick": "Under 45.5",
+     "price": -115,
+     "sim_pct": 53.5,
+     "market_pct": 51.1,
+     "gap_pts": 2.4,
+     "tier": "C",
+     "status": "paper"
+    }
+   ],
+   "weather": {
+    "wind_mph": 8.4,
+    "gust_mph": 16.8,
+    "temp_f": 63,
+    "precip_prob": 8
+   },
+   "news_delta_flags": [],
+   "matchup_note": "NE deep-pass rate 14% vs LV explosive-pass allowed 7.7% (descriptive; matchup layer did not improve backtests, so it is not in the numbers)"
+  },
+  {
+   "game_id": "2026_05_MIN_NO",
+   "kickoff_utc": "2026-10-11T17:00:00Z",
+   "away": "MIN",
+   "home": "NO",
+   "book": "draftkings",
+   "qbs": {
+    "away": "Kyler Murray",
+    "home": "Tyler Shough",
+    "espn_qb_injuries": {
+     "MIN": [],
+     "NO": []
+    }
+   },
+   "sim": {
+    "home_pts": 20.6,
+    "away_pts": 21.9,
+    "margin": -1.4,
+    "total": 42.5
+   },
+   "markets": [
+    {
+     "market": "ml",
+     "pick": "NO ML",
+     "price": 120,
+     "sim_pct": 45.9,
+     "market_pct": 43.7,
+     "gap_pts": 2.2,
+     "tier": "C",
+     "status": "paper"
+    },
+    {
+     "market": "spread",
+     "pick": "NO +2.5",
+     "price": -110,
+     "sim_pct": 53.5,
+     "market_pct": 50.0,
+     "gap_pts": 3.5,
+     "tier": "C",
+     "status": "paper"
+    },
+    {
+     "market": "total",
+     "pick": "Over 41.5",
+     "price": -112,
+     "sim_pct": 52.8,
+     "market_pct": 50.4,
+     "gap_pts": 2.4,
+     "tier": "C",
+     "status": "paper"
+    }
+   ],
+   "weather": null,
+   "news_delta_flags": [],
+   "matchup_note": "MIN run success 37% vs NO run D allowing 46% (descriptive; matchup layer did not improve backtests, so it is not in the numbers)"
+  },
+  {
+   "game_id": "2026_05_NYG_WAS",
+   "kickoff_utc": "2026-10-11T17:00:00Z",
+   "away": "NYG",
+   "home": "WAS",
+   "book": "draftkings",
+   "qbs": {
+    "away": "Jameis Winston",
+    "home": "Jayden Daniels",
+    "espn_qb_injuries": {
+     "NYG": [],
+     "WAS": [
+      "Marcus Mariota Out"
+     ]
+    }
+   },
+   "sim": {
+    "home_pts": 25.2,
+    "away_pts": 19.7,
+    "margin": 5.5,
+    "total": 44.9
+   },
+   "markets": [
+    {
+     "market": "ml",
+     "pick": "WAS ML",
+     "price": -170,
+     "sim_pct": 66.2,
+     "market_pct": 60.4,
+     "gap_pts": 5.8,
+     "tier": "B",
+     "status": "paper"
+    },
+    {
+     "market": "spread",
+     "pick": "WAS -3.5",
+     "price": -110,
+     "sim_pct": 56.0,
+     "market_pct": 50.0,
+     "gap_pts": 6.0,
+     "tier": "B",
+     "status": "paper"
+    },
+    {
+     "market": "total",
+     "pick": "Over 41.5",
+     "price": -115,
+     "sim_pct": 60.0,
+     "market_pct": 51.1,
+     "gap_pts": 9.0,
+     "tier": "A",
+     "status": "paper"
+    }
+   ],
+   "weather": {
+    "wind_mph": 11.9,
+    "gust_mph": 36.2,
+    "temp_f": 65,
+    "precip_prob": 65
+   },
+   "news_delta_flags": [
+    "QB-CHANGE WAS: starter Jayden Daniels vs recent starter (QB adj +0.15 EPA/db). Sim vs line on WAS's side: +2.0 pts"
+   ],
+   "matchup_note": "WAS deep-pass rate 15% vs NYG explosive-pass allowed 7.5% (descriptive; matchup layer did not improve backtests, so it is not in the numbers)"
+  },
+  {
+   "game_id": "2026_05_PHI_JAX",
+   "kickoff_utc": "2026-10-11T13:30:00Z",
+   "away": "PHI",
+   "home": "JAX",
+   "book": "draftkings",
+   "qbs": {
+    "away": "Jalen Hurts",
+    "home": "Trevor Lawrence",
+    "espn_qb_injuries": {
+     "PHI": [],
+     "JAX": []
+    }
+   },
+   "sim": {
+    "home_pts": 27.3,
+    "away_pts": 16.8,
+    "margin": 10.5,
+    "total": 44.2
+   },
+   "markets": [
+    {
+     "market": "ml",
+     "pick": "JAX ML",
+     "price": -395,
+     "sim_pct": 78.9,
+     "market_pct": 76.6,
+     "gap_pts": 2.3,
+     "tier": "C",
+     "status": "paper"
+    },
+    {
+     "market": "spread",
+     "pick": "JAX -7.5",
+     "price": -108,
+     "sim_pct": 59.0,
+     "market_pct": 49.6,
+     "gap_pts": 9.5,
+     "tier": "A",
+     "status": "paper"
+    },
+    {
+     "market": "total",
+     "pick": "Over 41.5",
+     "price": -112,
+     "sim_pct": 57.9,
+     "market_pct": 50.4,
+     "gap_pts": 7.4,
+     "tier": "B",
+     "status": "paper"
+    }
+   ],
+   "weather": {
+    "wind_mph": 9.2,
+    "gust_mph": 20.1,
+    "temp_f": 75,
+    "precip_prob": 40
+   },
+   "news_delta_flags": [],
+   "matchup_note": "JAX run success 43% vs PHI run D allowing 41% (descriptive; matchup layer did not improve backtests, so it is not in the numbers)"
+  },
+  {
+   "game_id": "2026_05_SF_SEA",
+   "kickoff_utc": "2026-10-11T20:25:00Z",
+   "away": "SF",
+   "home": "SEA",
+   "book": "draftkings",
+   "qbs": {
+    "away": "Brock Purdy",
+    "home": "Drew Lock",
+    "espn_qb_injuries": {
+     "SF": [],
+     "SEA": []
+    }
+   },
+   "sim": {
+    "home_pts": 24.3,
+    "away_pts": 24.7,
+    "margin": -0.4,
+    "total": 49.0
+   },
+   "markets": [
+    {
+     "market": "ml",
+     "pick": "SF ML",
+     "price": 136,
+     "sim_pct": 51.3,
+     "market_pct": 40.7,
+     "gap_pts": 10.6,
+     "tier": "A",
+     "status": "paper"
+    },
+    {
+     "market": "spread",
+     "pick": "SF +3",
+     "price": -110,
+     "sim_pct": 60.3,
+     "market_pct": 50.0,
+     "gap_pts": 10.3,
+     "tier": "A",
+     "status": "paper"
+    },
+    {
+     "market": "total",
+     "pick": "Over 45.5",
+     "price": -115,
+     "sim_pct": 60.1,
+     "market_pct": 51.1,
+     "gap_pts": 9.0,
+     "tier": "A",
+     "status": "paper"
+    }
+   ],
+   "weather": {
+    "wind_mph": 8.6,
+    "gust_mph": 18.1,
+    "temp_f": 59,
+    "precip_prob": 0
+   },
+   "news_delta_flags": [
+    "QB-CHANGE SEA: starter Drew Lock vs recent starter (QB adj -0.05 EPA/db). Sim vs line on SEA's side: -3.4 pts -> line may not fully reflect it"
+   ],
+   "matchup_note": "SEA run success 37% vs SF run D allowing 47% (descriptive; matchup layer did not improve backtests, so it is not in the numbers)"
+  }
+ ]
+}

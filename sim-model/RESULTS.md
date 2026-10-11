@@ -42,3 +42,37 @@ Correlation of the sim with the close: NFL margin 0.83, total 0.74; CFB margin 0
 3. Add Open-Meteo weather for CFB, travel distance, returning production and injury-report starters (pregame snapshots only).
 4. Add a game-day news layer (confirmed QB/weather vs line) — historically the most realistic edge.
 5. Keep the gate at false until a market beats the close in ≥2 out-of-sample seasons with positive tier ROI.
+
+# v2: NFL first, Oct 10 2026 ~11pm CT (same walk-forward rules; table on the common NFL 2016–2025 test set)
+Changes kept: (a) **less shrinkage** (rating prior k 3→1, decay .93→.95, carryover .7→.8, ridge α 5→0.5); (b) **a walk-forward margin/total stretch** fit only on prior seasons' out-of-sample sim output (NFL margin ≈1.5–1.8×sim − 2.5; totals ≈1.0×); (c) Normal(sd from prior residuals) probabilities. A Platt layer was also tested. It flattens spread/total probabilities to ~49%, which means the sim's spread/total disagreement carries almost no information. I kept the Normal probabilities for display.
+
+| NFL | Log loss v1 → v2 | Market | MAE v1 → v2 | Close |
+|---|---|---|---|---|
+| ML | 0.6442 → **0.6338** | 0.6086 | — | — |
+| Spread | 0.7138 → 0.7119 (Platt 0.6943) | 0.6927 | margin 10.26 → **10.15** | 9.78 |
+| Total | 0.7047 → 0.7098 (Platt 0.6943) | 0.6930 | total 10.68 → 10.72 | 10.44 |
+
+v2 log loss minus market, by season (positive = worse than the market). **ML:** worse in 2016–2025, every season. **Spread:** better in 2018, 2019 and 2024 (−0.002 each). **Total:** better in 2020, 2022 and 2023 (−0.001 to −0.003). None of these is significant.
+Paper ROI at edge ≥4 pts, $20 flat (v2 Normal): ML −9.3%, spread −3.0%, total −3.5%. Positive seasons: ML 2/10, spread 4/10, total 3/10.
+**Gate check: no NFL market passes.** None beats the close in ≥2 seasons *and* is profitable overall. `SIM_LIVE` stays false.
+
+## Matchup layer (tested, NOT kept)
+- **Inputs:**
+  - nflverse PBP for pass rate over expected, early-down pass rate, deep-pass rate, sack rate, run/pass success and run/pass explosive rate.
+  - nflverse participation (FTN/NGS, 2016–2025) for pressure rate, blitz rate (5+ rushers) and man-coverage rate.
+  - Play-action isn't in the free data.
+- **Model:** these were added as opponent-adjusted ratings, plus 9 offense×defense interaction terms (pressure×pressure-allowed, sack×sack, blitz×pass success, man×deep rate, run×run, pass×pass, deep×explosive allowed, PROE and early-down pass rate × the defense's pass-run split).
+- **Result (walk-forward, 2015–2025):**
+
+| | ML log loss | Spread log loss | Total log loss | Margin MAE | Total MAE |
+|---|---|---|---|---|---|
+| With matchup | 0.6344 | 0.7110 | 0.7124 | 10.154 | 10.776 |
+| Without | 0.6340 | 0.7116 | 0.7109 | 10.145 | 10.745 |
+
+**No improvement, so it's dropped from the numbers.** The code stays behind `MATCHUP=1`. The picks file uses it only for a descriptive one-line note.
+
+## Not done this round
+- **CFB step 2** (Open-Meteo kickoff weather, travel distance, returning production): `src/cfb_env.py` is written, but its first run was interrupted when Luis moved NFL first. Not run yet.
+- **CFB v2:** the CFB calibration result is from the v1 sims, 2024–26. The total stretch removed the +4 pt bias and the totals log loss reached 0.6929 vs 0.6931 for the market. ROI at edge ≥4 was +4.2% on few bets: 2024 +15.7%, 2025 −0.3%, 2026 +7.7%. That doesn't pass, because 2025 lost.
+- **Play-level sim:** not started.
+- **News-delta:** built into the slate picks as QB-change and wind flags vs the line. It has no backtest yet, because historical line timestamps around news aren't on the box.

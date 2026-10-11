@@ -1,6 +1,6 @@
 # sim-model: independent drive-level football simulator (PAPER ONLY)
 
-Status (Oct 10 2026, 11pm CT): v1 built and walk-forward tested. **It does not beat the closing line**, so `config/gate.json` keeps `SIM_LIVE=false`. It is not wired to the live desk board.
+Status (Oct 10 2026, ~11pm CT): v2 NFL done (see RESULTS.md); still does not beat the close, SIM_LIVE=false. Slate picks: `src/nfl_slate_picks.py` -> `out/picks/nfl_2026_w6.json` + `.md` (paper).
 
 ## Pipeline
 | Step | Script | Output |

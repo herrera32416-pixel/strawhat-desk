@@ -6,18 +6,25 @@ from sklearn.linear_model import Ridge
 rng=np.random.default_rng(7); NS=10000
 tg=pd.read_parquet(f'data/{L}_team_games.parquet'); qb=pd.read_parquet(f'data/{L}_qb_games.parquet')
 G=pd.read_csv('data/nfl/games.csv') if L=='nfl' else pd.read_csv('data/cfb_games.csv')
-G=G[(G.season>=2012)&(G.season<=2025)&G.result.notna()].copy() if L=='nfl' else G[G.game_id.isin(tg.game_id)].copy()
+G=G[(G.season>=2012)&(G.season<=2026)&(G.result.notna()|((G.season==2026)&(G.week==int(os.environ.get('UPCOMING_WEEK',5)))))].copy() if L=='nfl' else G[G.game_id.isin(tg.game_id)].copy()
 G['gt']=G.game_type.map(lambda t:0 if t=='REG' else 1); G=G.sort_values(['season','gameday','gametime'])
 G['wk']=G.season*100+G.week
 tg['td_r']=tg.td/tg.drives; tg['fg_r']=tg.fg/tg.drives; tg['tov_r']=tg.tov/tg.drives
 tg['rz_r']=(tg.rz_td+1.2)/(tg.rz_trips+2); tg['go_r']=(tg.fd_go+.5)/(tg.fd_n+1.5); tg['fg_pct']=(tg.fgm+4)/(tg.fga+5)
 M=['epa','sr','expl','td_r','fg_r','tov_r','rz_r','drives','pass_rate']
+MU=['proe','ed_pass','deep','sack_r','run_sr','pass_sr','run_expl','pass_expl','press','blitz','man']
+if os.environ.get('MATCHUP')=='1' and L=='nfl':
+    T=pd.read_parquet('data/nfl_matchup_games.parquet')
+    for c in MU: T[c]=T[c].fillna(T[c].mean())   # missing participation seasons -> constant league mean
+    tg=tg.merge(T,on=['game_id','posteam'],how='left')
+    for c in MU: tg[c]=tg[c].fillna(T[c].mean())
+    M=M+MU
 opp=tg[['game_id','posteam']+M].rename(columns={'posteam':'defteam',**{m:'d_'+m for m in M}})
 tg=tg.merge(opp,on=['game_id','defteam'])
 obs=pd.DataFrame({'game_id':tg.game_id,'team':tg.posteam,'opp':tg.defteam,
    **{'off_'+m:tg[m] for m in M},**{'def_'+m:tg['d_'+m] for m in M}})
 obs=obs.merge(G[['game_id','wk','season']],on='game_id')
-R=Ratings(M,decay=0.93,prior_k=3.0,carry=0.7)
+R=Ratings(M,decay=float(os.environ.get('DECAY',0.93)),prior_k=float(os.environ.get('PK',3.0)),carry=float(os.environ.get('CARRY',0.7)))
 ST=Ratings(['go_r','fg_pct'],decay=0.95,prior_k=6,carry=0.8)
 st_obs=pd.DataFrame({'game_id':tg.game_id,'team':tg.posteam,'opp':tg.defteam,'off_go_r':tg.go_r,'def_go_r':tg.go_r,'off_fg_pct':tg.fg_pct,'def_fg_pct':tg.fg_pct}).merge(G[['game_id','wk']],on='game_id')
 # QB ratings: shrunk dropback EPA, decayed
@@ -40,7 +47,7 @@ for wk,g in G.groupby('wk',sort=True):
             base=team_qb.get(t); row[f'{side}_qbadj']=(qrate(qid)-qrate(base)) if (base is not None and isinstance(qid,str)) else 0.0
             row[f'{side}_n']=w
         feats.append(row)
-    R.update_week(obs[obs.wk==wk]); ST.update_week(st_obs[st_obs.wk==wk])
+    if (obs.wk==wk).any(): R.update_week(obs[obs.wk==wk]); ST.update_week(st_obs[st_obs.wk==wk])
     for _,q in qb[qb.wk==wk].iterrows():
         qsum[q.passer_player_id]=qsum.get(q.passer_player_id,0)+q.qepa*q.db; qn[q.passer_player_id]=qn.get(q.passer_player_id,0)+q.db
     lead=qb[qb.wk==wk].sort_values('db').groupby('posteam').tail(1)
@@ -54,4 +61,4 @@ F['wind_f']=np.where(F.dome==1,0,F.wind.fillna(F.wind.median())); F['cold']=np.w
 F['alt']=F.home_team.isin(['DEN','Air Force','Wyoming','Colorado','Colorado State','New Mexico','Utah','BYU','Utah State','UNLV','Nevada']).astype(int) if L=='cfb' else (F.home_team=='DEN').astype(int); F['turf']=F.surface.fillna('').str.contains('turf|astro|sport|field',case=False).astype(int)
 F['neutral']=(F.location=='Neutral').astype(int); F['div']=F.div_game
 F['wind_f']=F.wind_f.fillna(0);F['cold']=F.cold.fillna(0)
-F.to_parquet(f'out/{L}_features.parquet'); print('features',F.shape)
+F.to_parquet(f'out/{L}_features{os.environ.get("TAG","")}.parquet'); print('features',F.shape)
