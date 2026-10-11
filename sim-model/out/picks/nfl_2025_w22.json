@@ -1,0 +1,55 @@
+{
+ "league": "nfl",
+ "season": 2025,
+ "week": 22,
+ "sim_live": false,
+ "note": "PAPER: sim has not beaten the closing line in walk-forward tests. Tier = size of sim-vs-market disagreement, not proven edge.",
+ "games": [
+  {
+   "game_id": "2025_22_SEA_NE",
+   "away": "SEA",
+   "home": "NE",
+   "sim": {
+    "home_pts": 23.0,
+    "away_pts": 22.8,
+    "margin": 0.1,
+    "total": 45.8
+   },
+   "markets": [
+    {
+     "market": "ml",
+     "pick": "NE ML",
+     "price": 195.0,
+     "model_pct": 50.8,
+     "market_pct": 32.5,
+     "blend_pct": 32.5,
+     "edge_pts": 18.3,
+     "tier": "A",
+     "status": "paper"
+    },
+    {
+     "market": "spread",
+     "pick": "NE +4.5",
+     "price": -105.0,
+     "model_pct": 64.1,
+     "market_pct": 48.9,
+     "blend_pct": 48.9,
+     "edge_pts": 15.1,
+     "tier": "A",
+     "status": "paper"
+    },
+    {
+     "market": "total",
+     "pick": "Under 45.5",
+     "price": -115.0,
+     "model_pct": 51.5,
+     "market_pct": 51.1,
+     "blend_pct": 51.1,
+     "edge_pts": 0.4,
+     "tier": "none",
+     "status": "paper"
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,4 @@
+data/nfl/pbp_*.parquet
+data/*.parquet
+out/*_features.parquet
+__pycache__/

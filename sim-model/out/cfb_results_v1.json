@@ -1,0 +1,261 @@
+{
+ "league": "CFB",
+ "n_games": 2617,
+ "seasons": [
+  2023,
+  2024,
+  2025,
+  2026
+ ],
+ "ml": {
+  "n": 2434,
+  "sim_logloss": 0.5869531769167796,
+  "market_logloss": 0.5179653926163846,
+  "sim_brier": 0.20177238686113394,
+  "market_brier": 0.17369137712295374,
+  "blend_logloss": {
+   "w_sim=0": 0.51797,
+   "w_sim=0.1": 0.51895,
+   "w_sim=0.2": 0.52105,
+   "w_sim=0.3": 0.52434,
+   "w_sim=0.5": 0.53479,
+   "w_sim=0.7": 0.55092,
+   "w_sim=1": 0.58695
+  },
+  "roi_sim_all": {
+   "edge>=0.02": {
+    "bets": 2170,
+    "pnl_usd": -5773.25,
+    "roi_pct": -13.3
+   },
+   "edge>=0.04": {
+    "bets": 1946,
+    "pnl_usd": -5102.29,
+    "roi_pct": -13.11
+   },
+   "edge>=0.06": {
+    "bets": 1718,
+    "pnl_usd": -4300.82,
+    "roi_pct": -12.52
+   },
+   "edge>=0.08": {
+    "bets": 1510,
+    "pnl_usd": -4273.18,
+    "roi_pct": -14.15
+   }
+  },
+  "roi_blend30_all": {
+   "edge>=0.01": {
+    "bets": 2005,
+    "pnl_usd": -4825.4,
+    "roi_pct": -12.03
+   },
+   "edge>=0.02": {
+    "bets": 1591,
+    "pnl_usd": -3642.89,
+    "roi_pct": -11.45
+   },
+   "edge>=0.03": {
+    "bets": 1205,
+    "pnl_usd": -2355.72,
+    "roi_pct": -9.77
+   }
+  },
+  "roi_sim_by_season_edge>=0.04": {
+   "2023": {
+    "bets": 577,
+    "pnl_usd": -2324.74,
+    "roi_pct": -20.15
+   },
+   "2024": {
+    "bets": 607,
+    "pnl_usd": -691.29,
+    "roi_pct": -5.69
+   },
+   "2025": {
+    "bets": 621,
+    "pnl_usd": -868.51,
+    "roi_pct": -6.99
+   },
+   "2026": {
+    "bets": 141,
+    "pnl_usd": -1217.75,
+    "roi_pct": -43.18
+   }
+  }
+ },
+ "spread": {
+  "n": 2615,
+  "sim_logloss": 0.7933897178733285,
+  "market_logloss": 0.6930523006621511,
+  "sim_brier": 0.28671775318881876,
+  "market_brier": 0.24994282293832665,
+  "blend_logloss": {
+   "w_sim=0": 0.69305,
+   "w_sim=0.1": 0.69448,
+   "w_sim=0.2": 0.69811,
+   "w_sim=0.3": 0.70389,
+   "w_sim=0.5": 0.72138,
+   "w_sim=0.7": 0.74587,
+   "w_sim=1": 0.79339
+  },
+  "roi_sim_all": {
+   "edge>=0.02": {
+    "bets": 2424,
+    "pnl_usd": -2721.89,
+    "roi_pct": -5.61
+   },
+   "edge>=0.04": {
+    "bets": 2204,
+    "pnl_usd": -2405.67,
+    "roi_pct": -5.46
+   },
+   "edge>=0.06": {
+    "bets": 1991,
+    "pnl_usd": -2241.47,
+    "roi_pct": -5.63
+   },
+   "edge>=0.08": {
+    "bets": 1786,
+    "pnl_usd": -1935.75,
+    "roi_pct": -5.42
+   }
+  },
+  "roi_blend30_all": {
+   "edge>=0.01": {
+    "bets": 2281,
+    "pnl_usd": -2492.52,
+    "roi_pct": -5.46
+   },
+   "edge>=0.02": {
+    "bets": 1923,
+    "pnl_usd": -1796.18,
+    "roi_pct": -4.67
+   },
+   "edge>=0.03": {
+    "bets": 1603,
+    "pnl_usd": -1637.95,
+    "roi_pct": -5.11
+   }
+  },
+  "roi_sim_by_season_edge>=0.04": {
+   "2023": {
+    "bets": 674,
+    "pnl_usd": -1161.93,
+    "roi_pct": -8.62
+   },
+   "2024": {
+    "bets": 658,
+    "pnl_usd": -460.96,
+    "roi_pct": -3.5
+   },
+   "2025": {
+    "bets": 707,
+    "pnl_usd": -616.45,
+    "roi_pct": -4.36
+   },
+   "2026": {
+    "bets": 165,
+    "pnl_usd": -166.33,
+    "roi_pct": -5.04
+   }
+  }
+ },
+ "total": {
+  "n": 2617,
+  "sim_logloss": 0.717755341006693,
+  "market_logloss": 0.6931471805599453,
+  "sim_brier": 0.2610204856577346,
+  "market_brier": 0.25,
+  "blend_logloss": {
+   "w_sim=0": 0.69315,
+   "w_sim=0.1": 0.69239,
+   "w_sim=0.2": 0.69238,
+   "w_sim=0.3": 0.6931,
+   "w_sim=0.5": 0.69671,
+   "w_sim=0.7": 0.70314,
+   "w_sim=1": 0.71776
+  },
+  "roi_sim_all": {
+   "edge>=0.02": {
+    "bets": 2329,
+    "pnl_usd": -838.18,
+    "roi_pct": -1.8
+   },
+   "edge>=0.04": {
+    "bets": 2068,
+    "pnl_usd": -581.82,
+    "roi_pct": -1.41
+   },
+   "edge>=0.06": {
+    "bets": 1773,
+    "pnl_usd": -218.18,
+    "roi_pct": -0.62
+   },
+   "edge>=0.08": {
+    "bets": 1512,
+    "pnl_usd": -267.27,
+    "roi_pct": -0.88
+   }
+  },
+  "roi_blend30_all": {
+   "edge>=0.01": {
+    "bets": 2164,
+    "pnl_usd": -516.36,
+    "roi_pct": -1.19
+   },
+   "edge>=0.02": {
+    "bets": 1688,
+    "pnl_usd": -427.27,
+    "roi_pct": -1.27
+   },
+   "edge>=0.03": {
+    "bets": 1274,
+    "pnl_usd": 101.82,
+    "roi_pct": 0.4
+   }
+  },
+  "roi_sim_by_season_edge>=0.04": {
+   "2023": {
+    "bets": 638,
+    "pnl_usd": 183.64,
+    "roi_pct": 1.44
+   },
+   "2024": {
+    "bets": 599,
+    "pnl_usd": 276.36,
+    "roi_pct": 2.31
+   },
+   "2025": {
+    "bets": 662,
+    "pnl_usd": -983.64,
+    "roi_pct": -7.43
+   },
+   "2026": {
+    "bets": 169,
+    "pnl_usd": -58.18,
+    "roi_pct": -1.72
+   }
+  }
+ },
+ "mae": {
+  "margin_sim": 14.10954333205961,
+  "margin_close": 11.880206343141001,
+  "total_sim": 13.236830225448987,
+  "total_close": 12.522735957202904,
+  "sim_vs_close_margin_mae": 7.529122621322125,
+  "sim_vs_close_total_mae": 5.443497707298433,
+  "corr_sim_close_margin": 0.7818897578736425,
+  "corr_sim_close_total": 0.7145713120921392
+ },
+ "beyond_close_margin": {
+  "slope": 0.0112,
+  "t": 0.38,
+  "note": "slope>0 with t>2 would mean the sim knows something the close does not"
+ },
+ "beyond_close_total": {
+  "slope": 0.1626,
+  "t": 2.59,
+  "note": "slope>0 with t>2 would mean the sim knows something the close does not"
+ }
+}

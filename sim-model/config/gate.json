@@ -1,0 +1,6 @@
+{
+ "SIM_LIVE": false,
+ "_rule": "A market flips to passed only if, over >=2 out-of-sample seasons, sim (or blend) beats closing no-vig log loss AND flat-1u ROI at its tier threshold is >0 in a majority of seasons. Changing this file is a desk-rule change and needs Luis's yes.",
+ "nfl": {"ml": {"passed": false, "blend_w_sim": 0.0}, "spread": {"passed": false, "blend_w_sim": 0.0}, "total": {"passed": false, "blend_w_sim": 0.1}},
+ "cfb": {"ml": {"passed": false, "blend_w_sim": 0.0}, "spread": {"passed": false, "blend_w_sim": 0.0}, "total": {"passed": false, "blend_w_sim": 0.15}}
+}
