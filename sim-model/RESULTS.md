@@ -124,3 +124,33 @@ Not started this round. The line-error results suggest the payoff is in pregame 
 
 ## Picks rerun (Sunday morning)
 `bash /workspace/sim-model/run_sunday.sh` pulls the newest desk Odds API file from strawhat-desk origin/main (no credits spent), fresh ESPN QB injuries and a fresh Open-Meteo forecast. It rewrites `out/picks/nfl_2026_w6.json` + `.md`. Each total also carries the v3 line-error over %, labeled research/paper.
+
+# v3.1: NFL totals line-error model with archived pregame FORECASTS, Oct 10 2026 ~11:05pm CT
+**Data:** Open-Meteo historical-forecast API (stored weather-model forecast runs) at kickoff to +3h for every open-air, non-neutral NFL home game, 2022–2026. That's 909 games, with forecasts for 777. Neutral-site outdoor games get the median wind. Dome/retractable roofs get 0. Forecast wind correlates 0.67 with nflverse's recorded wind. Seasons before 2022 still train on recorded weather, which is the only weather data for those years.
+**Test:** same walk-forward setup (ridge α=50, retrained before each season), test seasons 2022–2025, $20 flat at the closing prices.
+
+| Variant (2022–25) | Log loss | Close | ROI at edge ≥2 | ROI at ≥4 | By season at ≥4 (log loss vs close / bets / ROI) |
+|---|---|---|---|---|---|
+| Recorded weather (old v3) | 0.69095 | 0.6932 | +5.3% (689) | +7.2% (320) | 2022 better / 72 / +20.1%; 2023 better / 77 / +6.8%; 2024 worse / 95 / −5.5%; 2025 better / 76 / +11.3% |
+| **Forecast weather (v3.1)** | **0.69046** | 0.6932 | **+5.8% (691)** | +4.2% (329) | 2022 better / 66 / +4.5%; 2023 better / 73 / −3.1%; 2024 worse / 101 / −5.6%; 2025 better / 89 / +21.1% |
+| Forecast, environment only (no sim) | 0.69068 | 0.6932 | +5.1% | +1.3% | 2022 +4.5%, 2023 −3.1%, 2024 −4.5%, 2025 +7.7% |
+| No weather | 0.69186 | 0.6932 | +4.2% (489) | +7.8% (222) | — |
+
+**Verdict:** it holds with forecasts. Log loss beats the close overall and in 3 of 4 seasons, and it's profitable at both thresholds. Profitable seasons at ≥4 drop to 2 of 4, though.
+- **Not statistically significant:** ~330–690 bets at a +4–6% return is within about 1 standard error of break-even.
+- **Where the edge comes from:** mostly the environment features (wind, dome, turf, QB change), not the sim.
+- **Gate stays OFF.** Next is forward paper tracking.
+
+## Forward paper tracking (set up)
+- **Logging:** `run_sunday.sh` now does the full weekly refresh:
+  1. pulls fresh nflverse schedule and play-by-play
+  2. rebuilds ratings and the sim for the next unplayed week
+  3. pulls the newest desk odds file (no credits)
+  4. pulls ESPN QB injuries and the Open-Meteo forecast
+  5. writes picks
+  6. logs each game's v3.1 totals pick to `out/paper/v3_totals_log.csv`
+
+  The latest *pre-kickoff* snapshot is kept, and rows are never written after kickoff. A logged row counts as a paper bet when the edge is ≥2 pts.
+- **Grading:** `grade_paper.sh` grades against nflverse finals at the logged price, $20 flat, and writes `out/paper/v3_totals_summary.md`.
+- **Scheduling:** the box has no cron daemon, so `scheduler.sh` runs as a background loop. It runs `run_sunday.sh` Sundays 8:30–12:00 CT and grades every ~6h. It stops if the box restarts; relaunch with `nohup bash /workspace/sim-model/scheduler.sh > out/paper/scheduler.log 2>&1 &`. Thursday/Saturday games are only logged if a run happens before their kickoff.
+- **First logged slate:** Oct 11–12 (nflverse week 5), 14 games, 10 paper bets at ≥2 pts.

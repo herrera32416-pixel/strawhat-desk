@@ -23,19 +23,19 @@
     }
    },
    "sim": {
-    "home_pts": 24.4,
-    "away_pts": 21.9,
-    "margin": 2.5,
-    "total": 46.3
+    "home_pts": 24.7,
+    "away_pts": 22.0,
+    "margin": 2.7,
+    "total": 46.8
    },
    "markets": [
     {
      "market": "ml",
      "pick": "BAL ML",
      "price": 150,
-     "sim_pct": 42.5,
+     "sim_pct": 41.8,
      "market_pct": 38.4,
-     "gap_pts": 4.2,
+     "gap_pts": 3.4,
      "tier": "C",
      "status": "paper"
     },
@@ -43,9 +43,9 @@
      "market": "spread",
      "pick": "BAL +3",
      "price": 102,
-     "sim_pct": 51.6,
+     "sim_pct": 50.9,
      "market_pct": 47.4,
-     "gap_pts": 4.2,
+     "gap_pts": 3.5,
      "tier": "C",
      "status": "paper"
     },
@@ -53,21 +53,23 @@
      "market": "total",
      "pick": "Over 43.5",
      "price": -110,
-     "sim_pct": 58.3,
+     "sim_pct": 59.6,
      "market_pct": 50.0,
-     "gap_pts": 8.3,
+     "gap_pts": 9.6,
      "tier": "A",
      "status": "paper",
      "v3_line_error_model": {
-      "pred_total_minus_line": 1.54,
-      "over_pct": 54.7,
-      "note": "research model (walk-forward +5.1% ROI on totals 2017-25 but trained on recorded, not forecast, weather) - paper"
+      "over_price": -110,
+      "under_price": -110,
+      "pred_total_minus_line": 1.93,
+      "over_pct": 55.8,
+      "note": "v3.1 research model (trained with archived forecasts 2022+; forecast-weather walk-forward 2022-25: LL 0.6905 vs close 0.6932, +4.2% ROI at 4+ pts) - paper"
      }
     }
    ],
    "weather": null,
    "news_delta_flags": [
-    "QB-CHANGE BAL: starter Tyler Huntley vs recent starter (QB adj -0.19 EPA/db). Sim vs line on BAL's side: +0.5 pts"
+    "QB-CHANGE BAL: starter Tyler Huntley vs recent starter (QB adj -0.19 EPA/db). Sim vs line on BAL's side: +0.3 pts"
    ],
    "matchup_note": "ATL run success 46% vs BAL run D allowing 39% (descriptive; matchup layer did not improve backtests, so it is not in the numbers)"
   },
@@ -87,18 +89,18 @@
    },
    "sim": {
     "home_pts": 27.7,
-    "away_pts": 26.6,
-    "margin": 1.1,
-    "total": 54.3
+    "away_pts": 26.0,
+    "margin": 1.7,
+    "total": 53.7
    },
    "markets": [
     {
      "market": "ml",
      "pick": "BUF ML",
      "price": 145,
-     "sim_pct": 46.7,
+     "sim_pct": 44.9,
      "market_pct": 39.1,
-     "gap_pts": 7.7,
+     "gap_pts": 5.8,
      "tier": "B",
      "status": "paper"
     },
@@ -106,25 +108,27 @@
      "market": "spread",
      "pick": "BUF +3",
      "price": 100,
-     "sim_pct": 55.9,
+     "sim_pct": 54.0,
      "market_pct": 47.8,
-     "gap_pts": 8.0,
-     "tier": "A",
+     "gap_pts": 6.2,
+     "tier": "B",
      "status": "paper"
     },
     {
      "market": "total",
      "pick": "Under 54.5",
      "price": -102,
-     "sim_pct": 50.6,
+     "sim_pct": 52.3,
      "market_pct": 48.3,
-     "gap_pts": 2.3,
+     "gap_pts": 4.0,
      "tier": "C",
      "status": "paper",
      "v3_line_error_model": {
-      "pred_total_minus_line": 1.76,
-      "over_pct": 55.3,
-      "note": "research model (walk-forward +5.1% ROI on totals 2017-25 but trained on recorded, not forecast, weather) - paper"
+      "over_price": -118,
+      "under_price": -102,
+      "pred_total_minus_line": 1.77,
+      "over_pct": 55.4,
+      "note": "v3.1 research model (trained with archived forecasts 2022+; forecast-weather walk-forward 2022-25: LL 0.6905 vs close 0.6932, +4.2% ROI at 4+ pts) - paper"
      }
     }
    ],
@@ -149,45 +153,47 @@
     }
    },
    "sim": {
-    "home_pts": 21.9,
-    "away_pts": 26.1,
-    "margin": -4.2,
-    "total": 48.0
+    "home_pts": 22.3,
+    "away_pts": 25.5,
+    "margin": -3.2,
+    "total": 47.8
    },
    "markets": [
     {
      "market": "ml",
      "pick": "CHI ML",
      "price": -125,
-     "sim_pct": 62.5,
+     "sim_pct": 59.6,
      "market_pct": 53.2,
-     "gap_pts": 9.2,
-     "tier": "A",
+     "gap_pts": 6.4,
+     "tier": "B",
      "status": "paper"
     },
     {
      "market": "spread",
      "pick": "CHI -1.5",
      "price": -115,
-     "sim_pct": 58.0,
+     "sim_pct": 55.1,
      "market_pct": 51.1,
-     "gap_pts": 7.0,
-     "tier": "B",
+     "gap_pts": 4.0,
+     "tier": "C",
      "status": "paper"
     },
     {
      "market": "total",
      "pick": "Over 46.5",
      "price": -112,
-     "sim_pct": 54.4,
+     "sim_pct": 53.8,
      "market_pct": 50.4,
-     "gap_pts": 4.0,
+     "gap_pts": 3.4,
      "tier": "C",
      "status": "paper",
      "v3_line_error_model": {
-      "pred_total_minus_line": -1.0,
-      "over_pct": 47.0,
-      "note": "research model (walk-forward +5.1% ROI on totals 2017-25 but trained on recorded, not forecast, weather) - paper"
+      "over_price": -112,
+      "under_price": -108,
+      "pred_total_minus_line": -1.42,
+      "over_pct": 45.7,
+      "note": "v3.1 research model (trained with archived forecasts 2022+; forecast-weather walk-forward 2022-25: LL 0.6905 vs close 0.6932, +4.2% ROI at 4+ pts) - paper"
      }
     }
    ],
@@ -215,19 +221,19 @@
     }
    },
    "sim": {
-    "home_pts": 19.6,
-    "away_pts": 25.9,
-    "margin": -6.3,
-    "total": 45.5
+    "home_pts": 20.0,
+    "away_pts": 25.8,
+    "margin": -5.9,
+    "total": 45.8
    },
    "markets": [
     {
      "market": "ml",
      "pick": "MIA ML",
      "price": 280,
-     "sim_pct": 31.5,
+     "sim_pct": 32.6,
      "market_pct": 25.2,
-     "gap_pts": 6.3,
+     "gap_pts": 7.4,
      "tier": "B",
      "status": "paper"
     },
@@ -235,25 +241,27 @@
      "market": "spread",
      "pick": "MIA +7",
      "price": -112,
-     "sim_pct": 52.1,
+     "sim_pct": 53.4,
      "market_pct": 50.4,
-     "gap_pts": 1.7,
-     "tier": "none",
+     "gap_pts": 3.0,
+     "tier": "C",
      "status": "paper"
     },
     {
      "market": "total",
      "pick": "Over 43.5",
      "price": -112,
-     "sim_pct": 56.0,
+     "sim_pct": 56.7,
      "market_pct": 50.4,
-     "gap_pts": 5.5,
+     "gap_pts": 6.3,
      "tier": "B",
      "status": "paper",
      "v3_line_error_model": {
-      "pred_total_minus_line": -0.2,
-      "over_pct": 49.4,
-      "note": "research model (walk-forward +5.1% ROI on totals 2017-25 but trained on recorded, not forecast, weather) - paper"
+      "over_price": -112,
+      "under_price": -108,
+      "pred_total_minus_line": -0.38,
+      "over_pct": 48.8,
+      "note": "v3.1 research model (trained with archived forecasts 2022+; forecast-weather walk-forward 2022-25: LL 0.6905 vs close 0.6932, +4.2% ROI at 4+ pts) - paper"
      }
     }
    ],
@@ -261,7 +269,7 @@
     "wind_mph": 9.1,
     "gust_mph": 14.1,
     "temp_f": 90,
-    "precip_prob": 8
+    "precip_prob": 3
    },
    "news_delta_flags": [],
    "matchup_note": "MIA deep-pass rate 15% vs CIN explosive-pass allowed 9.7% (descriptive; matchup layer did not improve backtests, so it is not in the numbers)"
@@ -283,19 +291,19 @@
     }
    },
    "sim": {
-    "home_pts": 21.7,
-    "away_pts": 20.0,
-    "margin": 1.7,
-    "total": 41.7
+    "home_pts": 21.8,
+    "away_pts": 19.8,
+    "margin": 2.0,
+    "total": 41.6
    },
    "markets": [
     {
      "market": "ml",
-     "pick": "CLE ML",
-     "price": 114,
-     "sim_pct": 45.0,
-     "market_pct": 44.9,
-     "gap_pts": 0.1,
+     "pick": "NYJ ML",
+     "price": -135,
+     "sim_pct": 56.0,
+     "market_pct": 55.1,
+     "gap_pts": 0.9,
      "tier": "none",
      "status": "paper"
     },
@@ -303,25 +311,27 @@
      "market": "spread",
      "pick": "CLE +2.5",
      "price": -110,
-     "sim_pct": 52.6,
+     "sim_pct": 51.6,
      "market_pct": 50.0,
-     "gap_pts": 2.6,
-     "tier": "C",
+     "gap_pts": 1.6,
+     "tier": "none",
      "status": "paper"
     },
     {
      "market": "total",
      "pick": "Over 39.5",
      "price": -112,
-     "sim_pct": 56.5,
+     "sim_pct": 56.3,
      "market_pct": 50.4,
-     "gap_pts": 6.1,
+     "gap_pts": 5.8,
      "tier": "B",
      "status": "paper",
      "v3_line_error_model": {
-      "pred_total_minus_line": -0.02,
-      "over_pct": 49.9,
-      "note": "research model (walk-forward +5.1% ROI on totals 2017-25 but trained on recorded, not forecast, weather) - paper"
+      "over_price": -112,
+      "under_price": -108,
+      "pred_total_minus_line": -0.39,
+      "over_pct": 48.8,
+      "note": "v3.1 research model (trained with archived forecasts 2022+; forecast-weather walk-forward 2022-25: LL 0.6905 vs close 0.6932, +4.2% ROI at 4+ pts) - paper"
      }
     }
    ],
@@ -351,45 +361,47 @@
     }
    },
    "sim": {
-    "home_pts": 20.6,
-    "away_pts": 22.8,
-    "margin": -2.3,
-    "total": 43.4
+    "home_pts": 21.2,
+    "away_pts": 22.5,
+    "margin": -1.3,
+    "total": 43.7
    },
    "markets": [
     {
      "market": "ml",
      "pick": "LAC ML",
      "price": 160,
-     "sim_pct": 43.2,
+     "sim_pct": 46.1,
      "market_pct": 36.9,
-     "gap_pts": 6.3,
-     "tier": "B",
+     "gap_pts": 9.2,
+     "tier": "A",
      "status": "paper"
     },
     {
      "market": "spread",
      "pick": "LAC +3.5",
      "price": -112,
-     "sim_pct": 53.8,
+     "sim_pct": 56.8,
      "market_pct": 50.4,
-     "gap_pts": 3.4,
-     "tier": "C",
+     "gap_pts": 6.3,
+     "tier": "B",
      "status": "paper"
     },
     {
      "market": "total",
      "pick": "Over 41.5",
      "price": -115,
-     "sim_pct": 55.5,
+     "sim_pct": 56.4,
      "market_pct": 51.1,
-     "gap_pts": 4.4,
-     "tier": "C",
+     "gap_pts": 5.3,
+     "tier": "B",
      "status": "paper",
      "v3_line_error_model": {
-      "pred_total_minus_line": 1.78,
-      "over_pct": 55.4,
-      "note": "research model (walk-forward +5.1% ROI on totals 2017-25 but trained on recorded, not forecast, weather) - paper"
+      "over_price": -115,
+      "under_price": -105,
+      "pred_total_minus_line": 1.82,
+      "over_pct": 55.5,
+      "note": "v3.1 research model (trained with archived forecasts 2022+; forecast-weather walk-forward 2022-25: LL 0.6905 vs close 0.6932, +4.2% ROI at 4+ pts) - paper"
      }
     }
    ],
@@ -412,19 +424,19 @@
     }
    },
    "sim": {
-    "home_pts": 24.0,
-    "away_pts": 27.3,
-    "margin": -3.3,
-    "total": 51.3
+    "home_pts": 23.9,
+    "away_pts": 26.2,
+    "margin": -2.3,
+    "total": 50.1
    },
    "markets": [
     {
      "market": "ml",
      "pick": "ARI ML",
      "price": 205,
-     "sim_pct": 40.2,
+     "sim_pct": 43.0,
      "market_pct": 31.5,
-     "gap_pts": 8.7,
+     "gap_pts": 11.6,
      "tier": "A",
      "status": "paper"
     },
@@ -432,25 +444,27 @@
      "market": "spread",
      "pick": "ARI +5.5",
      "price": -110,
-     "sim_pct": 56.8,
+     "sim_pct": 59.7,
      "market_pct": 50.0,
-     "gap_pts": 6.8,
-     "tier": "B",
+     "gap_pts": 9.7,
+     "tier": "A",
      "status": "paper"
     },
     {
      "market": "total",
      "pick": "Under 54.5",
      "price": -105,
-     "sim_pct": 59.4,
+     "sim_pct": 62.8,
      "market_pct": 48.9,
-     "gap_pts": 10.5,
+     "gap_pts": 13.9,
      "tier": "A",
      "status": "paper",
      "v3_line_error_model": {
-      "pred_total_minus_line": 1.58,
-      "over_pct": 54.8,
-      "note": "research model (walk-forward +5.1% ROI on totals 2017-25 but trained on recorded, not forecast, weather) - paper"
+      "over_price": -115,
+      "under_price": -105,
+      "pred_total_minus_line": 1.92,
+      "over_pct": 55.8,
+      "note": "v3.1 research model (trained with archived forecasts 2022+; forecast-weather walk-forward 2022-25: LL 0.6905 vs close 0.6932, +4.2% ROI at 4+ pts) - paper"
      }
     }
    ],
@@ -473,19 +487,19 @@
     }
    },
    "sim": {
-    "home_pts": 17.9,
-    "away_pts": 23.5,
-    "margin": -5.6,
-    "total": 41.3
+    "home_pts": 18.1,
+    "away_pts": 22.9,
+    "margin": -4.8,
+    "total": 41.0
    },
    "markets": [
     {
      "market": "ml",
      "pick": "TEN ML",
      "price": 280,
-     "sim_pct": 33.4,
+     "sim_pct": 35.5,
      "market_pct": 25.2,
-     "gap_pts": 8.2,
+     "gap_pts": 10.3,
      "tier": "A",
      "status": "paper"
     },
@@ -493,25 +507,27 @@
      "market": "spread",
      "pick": "TEN +7",
      "price": -110,
-     "sim_pct": 54.3,
+     "sim_pct": 56.5,
      "market_pct": 50.0,
-     "gap_pts": 4.3,
-     "tier": "C",
+     "gap_pts": 6.5,
+     "tier": "B",
      "status": "paper"
     },
     {
      "market": "total",
      "pick": "Over 38.5",
      "price": -105,
-     "sim_pct": 58.3,
+     "sim_pct": 57.4,
      "market_pct": 48.9,
-     "gap_pts": 9.4,
+     "gap_pts": 8.5,
      "tier": "A",
      "status": "paper",
      "v3_line_error_model": {
-      "pred_total_minus_line": -0.15,
-      "over_pct": 49.5,
-      "note": "research model (walk-forward +5.1% ROI on totals 2017-25 but trained on recorded, not forecast, weather) - paper"
+      "over_price": -105,
+      "under_price": -115,
+      "pred_total_minus_line": -0.32,
+      "over_pct": 49.0,
+      "note": "v3.1 research model (trained with archived forecasts 2022+; forecast-weather walk-forward 2022-25: LL 0.6905 vs close 0.6932, +4.2% ROI at 4+ pts) - paper"
      }
     }
    ],
@@ -539,45 +555,47 @@
     }
    },
    "sim": {
-    "home_pts": 23.0,
-    "away_pts": 23.3,
-    "margin": -0.3,
-    "total": 46.4
+    "home_pts": 24.1,
+    "away_pts": 23.1,
+    "margin": 1.1,
+    "total": 47.2
    },
    "markets": [
     {
      "market": "ml",
      "pick": "IND ML",
      "price": 124,
-     "sim_pct": 51.0,
+     "sim_pct": 46.8,
      "market_pct": 42.8,
-     "gap_pts": 8.2,
-     "tier": "A",
+     "gap_pts": 4.0,
+     "tier": "C",
      "status": "paper"
     },
     {
      "market": "spread",
      "pick": "IND +3",
      "price": -118,
-     "sim_pct": 60.0,
+     "sim_pct": 55.9,
      "market_pct": 51.7,
-     "gap_pts": 8.3,
-     "tier": "A",
+     "gap_pts": 4.2,
+     "tier": "C",
      "status": "paper"
     },
     {
      "market": "total",
      "pick": "Over 43.5",
      "price": -108,
-     "sim_pct": 58.4,
+     "sim_pct": 60.8,
      "market_pct": 49.6,
-     "gap_pts": 8.8,
+     "gap_pts": 11.3,
      "tier": "A",
      "status": "paper",
      "v3_line_error_model": {
-      "pred_total_minus_line": -0.74,
-      "over_pct": 47.8,
-      "note": "research model (walk-forward +5.1% ROI on totals 2017-25 but trained on recorded, not forecast, weather) - paper"
+      "over_price": -108,
+      "under_price": -112,
+      "pred_total_minus_line": -1.07,
+      "over_pct": 46.8,
+      "note": "v3.1 research model (trained with archived forecasts 2022+; forecast-weather walk-forward 2022-25: LL 0.6905 vs close 0.6932, +4.2% ROI at 4+ pts) - paper"
      }
     }
    ],
@@ -605,45 +623,47 @@
     }
    },
    "sim": {
-    "home_pts": 25.1,
-    "away_pts": 19.2,
-    "margin": 5.8,
-    "total": 44.3
+    "home_pts": 25.7,
+    "away_pts": 18.8,
+    "margin": 6.9,
+    "total": 44.5
    },
    "markets": [
     {
      "market": "ml",
      "pick": "NE ML",
      "price": -192,
-     "sim_pct": 67.3,
+     "sim_pct": 70.0,
      "market_pct": 63.1,
-     "gap_pts": 4.2,
-     "tier": "C",
+     "gap_pts": 6.9,
+     "tier": "B",
      "status": "paper"
     },
     {
      "market": "spread",
      "pick": "NE -3.5",
      "price": -108,
-     "sim_pct": 57.1,
+     "sim_pct": 60.1,
      "market_pct": 49.6,
-     "gap_pts": 7.5,
-     "tier": "B",
+     "gap_pts": 10.6,
+     "tier": "A",
      "status": "paper"
     },
     {
      "market": "total",
      "pick": "Under 45.5",
      "price": -115,
-     "sim_pct": 53.5,
+     "sim_pct": 53.0,
      "market_pct": 51.1,
-     "gap_pts": 2.4,
-     "tier": "C",
+     "gap_pts": 1.9,
+     "tier": "none",
      "status": "paper",
      "v3_line_error_model": {
-      "pred_total_minus_line": 0.73,
-      "over_pct": 52.2,
-      "note": "research model (walk-forward +5.1% ROI on totals 2017-25 but trained on recorded, not forecast, weather) - paper"
+      "over_price": -105,
+      "under_price": -115,
+      "pred_total_minus_line": 0.59,
+      "over_pct": 51.8,
+      "note": "v3.1 research model (trained with archived forecasts 2022+; forecast-weather walk-forward 2022-25: LL 0.6905 vs close 0.6932, +4.2% ROI at 4+ pts) - paper"
      }
     }
    ],
@@ -671,29 +691,29 @@
     }
    },
    "sim": {
-    "home_pts": 20.6,
-    "away_pts": 21.9,
-    "margin": -1.4,
-    "total": 42.5
+    "home_pts": 20.4,
+    "away_pts": 22.1,
+    "margin": -1.7,
+    "total": 42.4
    },
    "markets": [
     {
      "market": "ml",
      "pick": "NO ML",
      "price": 120,
-     "sim_pct": 45.9,
+     "sim_pct": 44.8,
      "market_pct": 43.7,
-     "gap_pts": 2.2,
-     "tier": "C",
+     "gap_pts": 1.2,
+     "tier": "none",
      "status": "paper"
     },
     {
      "market": "spread",
      "pick": "NO +2.5",
      "price": -110,
-     "sim_pct": 53.5,
+     "sim_pct": 52.5,
      "market_pct": 50.0,
-     "gap_pts": 3.5,
+     "gap_pts": 2.5,
      "tier": "C",
      "status": "paper"
     },
@@ -707,9 +727,11 @@
      "tier": "C",
      "status": "paper",
      "v3_line_error_model": {
-      "pred_total_minus_line": 1.77,
+      "over_price": -112,
+      "under_price": -108,
+      "pred_total_minus_line": 1.8,
       "over_pct": 55.4,
-      "note": "research model (walk-forward +5.1% ROI on totals 2017-25 but trained on recorded, not forecast, weather) - paper"
+      "note": "v3.1 research model (trained with archived forecasts 2022+; forecast-weather walk-forward 2022-25: LL 0.6905 vs close 0.6932, +4.2% ROI at 4+ pts) - paper"
      }
     }
    ],
@@ -734,45 +756,47 @@
     }
    },
    "sim": {
-    "home_pts": 25.2,
-    "away_pts": 19.7,
-    "margin": 5.5,
-    "total": 44.9
+    "home_pts": 25.8,
+    "away_pts": 19.1,
+    "margin": 6.7,
+    "total": 45.0
    },
    "markets": [
     {
      "market": "ml",
      "pick": "WAS ML",
      "price": -170,
-     "sim_pct": 66.2,
+     "sim_pct": 69.5,
      "market_pct": 60.4,
-     "gap_pts": 5.8,
-     "tier": "B",
+     "gap_pts": 9.2,
+     "tier": "A",
      "status": "paper"
     },
     {
      "market": "spread",
      "pick": "WAS -3.5",
      "price": -110,
-     "sim_pct": 56.0,
+     "sim_pct": 59.6,
      "market_pct": 50.0,
-     "gap_pts": 6.0,
-     "tier": "B",
+     "gap_pts": 9.6,
+     "tier": "A",
      "status": "paper"
     },
     {
      "market": "total",
      "pick": "Over 41.5",
      "price": -115,
-     "sim_pct": 60.0,
+     "sim_pct": 60.1,
      "market_pct": 51.1,
      "gap_pts": 9.0,
      "tier": "A",
      "status": "paper",
      "v3_line_error_model": {
-      "pred_total_minus_line": -1.68,
-      "over_pct": 44.9,
-      "note": "research model (walk-forward +5.1% ROI on totals 2017-25 but trained on recorded, not forecast, weather) - paper"
+      "over_price": -115,
+      "under_price": -105,
+      "pred_total_minus_line": -2.04,
+      "over_pct": 43.8,
+      "note": "v3.1 research model (trained with archived forecasts 2022+; forecast-weather walk-forward 2022-25: LL 0.6905 vs close 0.6932, +4.2% ROI at 4+ pts) - paper"
      }
     }
    ],
@@ -783,7 +807,7 @@
     "precip_prob": 74
    },
    "news_delta_flags": [
-    "QB-CHANGE WAS: starter Jayden Daniels vs recent starter (QB adj +0.15 EPA/db). Sim vs line on WAS's side: +2.0 pts"
+    "QB-CHANGE WAS: starter Jayden Daniels vs recent starter (QB adj +0.15 EPA/db). Sim vs line on WAS's side: +3.2 pts"
    ],
    "matchup_note": "WAS deep-pass rate 15% vs NYG explosive-pass allowed 7.5% (descriptive; matchup layer did not improve backtests, so it is not in the numbers)"
   },
@@ -802,19 +826,19 @@
     }
    },
    "sim": {
-    "home_pts": 27.3,
-    "away_pts": 16.8,
-    "margin": 10.5,
-    "total": 44.2
+    "home_pts": 27.6,
+    "away_pts": 17.1,
+    "margin": 10.6,
+    "total": 44.7
    },
    "markets": [
     {
      "market": "ml",
      "pick": "JAX ML",
      "price": -395,
-     "sim_pct": 78.9,
+     "sim_pct": 79.0,
      "market_pct": 76.6,
-     "gap_pts": 2.3,
+     "gap_pts": 2.4,
      "tier": "C",
      "status": "paper"
     },
@@ -822,9 +846,9 @@
      "market": "spread",
      "pick": "JAX -7.5",
      "price": -108,
-     "sim_pct": 59.0,
+     "sim_pct": 59.2,
      "market_pct": 49.6,
-     "gap_pts": 9.5,
+     "gap_pts": 9.7,
      "tier": "A",
      "status": "paper"
     },
@@ -832,15 +856,17 @@
      "market": "total",
      "pick": "Over 41.5",
      "price": -112,
-     "sim_pct": 57.9,
+     "sim_pct": 59.2,
      "market_pct": 50.4,
-     "gap_pts": 7.4,
-     "tier": "B",
+     "gap_pts": 8.8,
+     "tier": "A",
      "status": "paper",
      "v3_line_error_model": {
-      "pred_total_minus_line": -0.22,
-      "over_pct": 49.3,
-      "note": "research model (walk-forward +5.1% ROI on totals 2017-25 but trained on recorded, not forecast, weather) - paper"
+      "over_price": -112,
+      "under_price": -108,
+      "pred_total_minus_line": -0.39,
+      "over_pct": 48.8,
+      "note": "v3.1 research model (trained with archived forecasts 2022+; forecast-weather walk-forward 2022-25: LL 0.6905 vs close 0.6932, +4.2% ROI at 4+ pts) - paper"
      }
     }
    ],
@@ -868,19 +894,19 @@
     }
    },
    "sim": {
-    "home_pts": 24.3,
-    "away_pts": 24.7,
-    "margin": -0.4,
-    "total": 49.0
+    "home_pts": 24.6,
+    "away_pts": 24.3,
+    "margin": 0.3,
+    "total": 48.9
    },
    "markets": [
     {
      "market": "ml",
      "pick": "SF ML",
      "price": 136,
-     "sim_pct": 51.3,
+     "sim_pct": 49.2,
      "market_pct": 40.7,
-     "gap_pts": 10.6,
+     "gap_pts": 8.5,
      "tier": "A",
      "status": "paper"
     },
@@ -888,9 +914,9 @@
      "market": "spread",
      "pick": "SF +3",
      "price": -110,
-     "sim_pct": 60.3,
+     "sim_pct": 58.3,
      "market_pct": 50.0,
-     "gap_pts": 10.3,
+     "gap_pts": 8.3,
      "tier": "A",
      "status": "paper"
     },
@@ -898,15 +924,17 @@
      "market": "total",
      "pick": "Over 45.5",
      "price": -115,
-     "sim_pct": 60.1,
+     "sim_pct": 59.9,
      "market_pct": 51.1,
-     "gap_pts": 9.0,
+     "gap_pts": 8.8,
      "tier": "A",
      "status": "paper",
      "v3_line_error_model": {
-      "pred_total_minus_line": -0.19,
-      "over_pct": 49.4,
-      "note": "research model (walk-forward +5.1% ROI on totals 2017-25 but trained on recorded, not forecast, weather) - paper"
+      "over_price": -115,
+      "under_price": -105,
+      "pred_total_minus_line": -0.33,
+      "over_pct": 49.0,
+      "note": "v3.1 research model (trained with archived forecasts 2022+; forecast-weather walk-forward 2022-25: LL 0.6905 vs close 0.6932, +4.2% ROI at 4+ pts) - paper"
      }
     }
    ],
@@ -917,7 +945,7 @@
     "precip_prob": 0
    },
    "news_delta_flags": [
-    "QB-CHANGE SEA: starter Drew Lock vs recent starter (QB adj -0.05 EPA/db). Sim vs line on SEA's side: -3.4 pts -> line may not fully reflect it"
+    "QB-CHANGE SEA: starter Drew Lock vs recent starter (QB adj -0.05 EPA/db). Sim vs line on SEA's side: -2.7 pts -> line may not fully reflect it"
    ],
    "matchup_note": "SEA run success 37% vs SF run D allowing 47% (descriptive; matchup layer did not improve backtests, so it is not in the numbers)"
   }

@@ -32,7 +32,11 @@ def mnote(gid,home,away):
 # v3 line-error totals model (research; fit on all played games <2026): total - close ~ env features
 from sklearn.linear_model import Ridge
 FV=pd.read_parquet('out/nfl_features_v2.parquet')[['game_id','h_qbadj','a_qbadj','wind_f','cold','dome','turf']]
-TD=hist.merge(FV,on='game_id'); TD['gap_t']=TD.sim_total-TD.total_line; TD['qbchg']=((TD.h_qbadj.abs()>.02)|(TD.a_qbadj.abs()>.02)).astype(int); TD['wind15']=(TD.wind_f>=15).astype(int)
+TD=hist.merge(FV,on='game_id').merge(pd.read_parquet('data/nfl_hist_forecast.parquet')[['game_id','fc_wind','fc_temp']],on='game_id',how='left')
+_mw=TD.wind_f.median()
+TD['wind_f']=np.where(TD.dome==1,0,np.where(TD.season>=2022,TD.fc_wind.fillna(_mw),TD.wind_f))   # archived forecasts for 2022+ (v3.1)
+TD['cold']=np.where(TD.dome==1,0,np.where(TD.season>=2022,(50-TD.fc_temp.fillna(60)).clip(0,None),TD.cold))
+TD['gap_t']=TD.sim_total-TD.total_line; TD['qbchg']=((TD.h_qbadj.abs()>.02)|(TD.a_qbadj.abs()>.02)).astype(int); TD['wind15']=(TD.wind_f>=15).astype(int)
 XT=['gap_t','wind_f','wind15','cold','dome','turf','qbchg']; TT=TD[(TD.season<2026)&TD.result.notna()]
 RT=Ridge(alpha=50).fit(TT[XT],TT.total-TT.total_line); RSD=float(np.std(TT.total-TT.total_line-RT.predict(TT[XT])))
 games=[]
@@ -63,7 +67,7 @@ for _,r in P.sort_values(['game_id']).iterrows():
     fr=FV.set_index('game_id').loc[r.game_id]; wind=(wx or {}).get('wind_mph',0.0) if fr.dome==0 else 0.0
     xv=pd.DataFrame([{'gap_t':t2-ov['point'],'wind_f':wind,'wind15':int(wind>=15),'cold':max(0,50-(wx or {}).get('temp_f',60)) if fr.dome==0 else 0,'dome':fr.dome,'turf':fr.turf,'qbchg':int(abs(r.home_qbadj)>.02 or abs(r.away_qbadj)>.02)}])
     pe=float(RT.predict(xv[XT])[0]); po3=float(1-norm.cdf((-pe)/RSD))
-    out[2]['v3_line_error_model']={'pred_total_minus_line':round(pe,2),'over_pct':round(100*po3,1),'note':'research model (walk-forward +5.1% ROI on totals 2017-25 but trained on recorded, not forecast, weather) - paper'}
+    out[2]['v3_line_error_model']={'over_price':ov['price'],'under_price':un['price'],'pred_total_minus_line':round(pe,2),'over_pct':round(100*po3,1),'note':'v3.1 research model (trained with archived forecasts 2022+; forecast-weather walk-forward 2022-25: LL 0.6905 vs close 0.6932, +4.2% ROI at 4+ pts) - paper'}
     for t,full,qa in ((r.home,H,r.home_qbadj),(r.away,A,r.away_qbadj)):
         if abs(qa)>0.02:
             gap=(m2-(-hs['point'])) if t==r.home else ((-hs['point'])-m2)

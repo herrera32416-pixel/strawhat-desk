@@ -1,0 +1,190 @@
+{
+ "recorded_weather": {
+  "ll": 0.69095,
+  "mkt_ll": 0.6932,
+  "roi": {
+   "edge>=0.02": {
+    "bets": 689,
+    "pnl_usd": 725.43,
+    "roi_pct": 5.26
+   },
+   "edge>=0.04": {
+    "bets": 320,
+    "pnl_usd": 460.71,
+    "roi_pct": 7.2
+   },
+   "edge>=0.06": {
+    "bets": 68,
+    "pnl_usd": 148.76,
+    "roi_pct": 10.94
+   }
+  },
+  "by_season": {
+   "2022": {
+    "ll_minus_mkt": -0.0056,
+    "bets": 72,
+    "pnl_usd": 288.84,
+    "roi_pct": 20.06
+   },
+   "2023": {
+    "ll_minus_mkt": -0.0047,
+    "bets": 77,
+    "pnl_usd": 104.17,
+    "roi_pct": 6.76
+   },
+   "2024": {
+    "ll_minus_mkt": 0.0039,
+    "bets": 95,
+    "pnl_usd": -104.48,
+    "roi_pct": -5.5
+   },
+   "2025": {
+    "ll_minus_mkt": -0.0026,
+    "bets": 76,
+    "pnl_usd": 172.2,
+    "roi_pct": 11.33
+   }
+  }
+ },
+ "forecast_weather": {
+  "ll": 0.69046,
+  "mkt_ll": 0.6932,
+  "roi": {
+   "edge>=0.02": {
+    "bets": 691,
+    "pnl_usd": 798.4,
+    "roi_pct": 5.78
+   },
+   "edge>=0.04": {
+    "bets": 329,
+    "pnl_usd": 277.41,
+    "roi_pct": 4.22
+   },
+   "edge>=0.06": {
+    "bets": 52,
+    "pnl_usd": 44.78,
+    "roi_pct": 4.31
+   }
+  },
+  "by_season": {
+   "2022": {
+    "ll_minus_mkt": -0.0038,
+    "bets": 66,
+    "pnl_usd": 59.36,
+    "roi_pct": 4.5
+   },
+   "2023": {
+    "ll_minus_mkt": -0.0042,
+    "bets": 73,
+    "pnl_usd": -45.14,
+    "roi_pct": -3.09
+   },
+   "2024": {
+    "ll_minus_mkt": 0.0034,
+    "bets": 101,
+    "pnl_usd": -112.37,
+    "roi_pct": -5.56
+   },
+   "2025": {
+    "ll_minus_mkt": -0.0063,
+    "bets": 89,
+    "pnl_usd": 375.56,
+    "roi_pct": 21.1
+   }
+  }
+ },
+ "forecast_env_only": {
+  "ll": 0.69068,
+  "mkt_ll": 0.6932,
+  "roi": {
+   "edge>=0.02": {
+    "bets": 703,
+    "pnl_usd": 711.28,
+    "roi_pct": 5.06
+   },
+   "edge>=0.04": {
+    "bets": 333,
+    "pnl_usd": 82.97,
+    "roi_pct": 1.25
+   },
+   "edge>=0.06": {
+    "bets": 52,
+    "pnl_usd": 7.93,
+    "roi_pct": 0.76
+   }
+  },
+  "by_season": {
+   "2022": {
+    "ll_minus_mkt": -0.0027,
+    "bets": 66,
+    "pnl_usd": 59.53,
+    "roi_pct": 4.51
+   },
+   "2023": {
+    "ll_minus_mkt": -0.0042,
+    "bets": 73,
+    "pnl_usd": -44.53,
+    "roi_pct": -3.05
+   },
+   "2024": {
+    "ll_minus_mkt": 0.003,
+    "bets": 94,
+    "pnl_usd": -85.34,
+    "roi_pct": -4.54
+   },
+   "2025": {
+    "ll_minus_mkt": -0.0063,
+    "bets": 100,
+    "pnl_usd": 153.31,
+    "roi_pct": 7.67
+   }
+  }
+ },
+ "no_weather": {
+  "ll": 0.69186,
+  "mkt_ll": 0.6932,
+  "roi": {
+   "edge>=0.02": {
+    "bets": 489,
+    "pnl_usd": 408.03,
+    "roi_pct": 4.17
+   },
+   "edge>=0.04": {
+    "bets": 222,
+    "pnl_usd": 348.31,
+    "roi_pct": 7.84
+   },
+   "edge>=0.06": {
+    "bets": 5,
+    "pnl_usd": 60.22,
+    "roi_pct": 60.22
+   }
+  },
+  "by_season": {
+   "2022": {
+    "ll_minus_mkt": -0.004,
+    "bets": 34,
+    "pnl_usd": 234.46,
+    "roi_pct": 34.48
+   },
+   "2023": {
+    "ll_minus_mkt": -0.0016,
+    "bets": 63,
+    "pnl_usd": 42.72,
+    "roi_pct": 3.39
+   },
+   "2024": {
+    "ll_minus_mkt": 0.0,
+    "bets": 85,
+    "pnl_usd": -16.93,
+    "roi_pct": -1.0
+   },
+   "2025": {
+    "ll_minus_mkt": 0.0002,
+    "bets": 40,
+    "pnl_usd": 88.05,
+    "roi_pct": 11.01
+   }
+  }
+ }
+}
