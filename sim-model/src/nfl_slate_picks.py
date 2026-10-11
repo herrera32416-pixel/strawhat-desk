@@ -7,7 +7,8 @@ ODDS=sys.argv[1]; WEEK=int(sys.argv[2]); OUT=sys.argv[3]
 P=pd.read_parquet('out/nfl_v2_preds.parquet'); P=P[(P.season==2026)&(P.week==WEEK)]
 hist=P0=pd.read_parquet('out/nfl_v2_preds.parquet'); tr=hist[(hist.season<2026)&hist.result.notna()]
 sdm=float(np.std(tr.result-tr.sim_margin)); sdt=float(np.std(tr.total-tr.sim_total))
-FX=pd.read_parquet('out/nfl_features_v2mx.parquet').set_index('game_id')
+import os
+FX=pd.read_parquet('out/nfl_features_v2mx.parquet').set_index('game_id') if os.path.exists('out/nfl_features_v2mx.parquet') else None
 G=pd.read_csv('data/nfl/games.csv').set_index('game_id')
 od=json.load(gzip.open(ODDS)); TEAM={'ARI':'Arizona Cardinals','ATL':'Atlanta Falcons','BAL':'Baltimore Ravens','BUF':'Buffalo Bills','CAR':'Carolina Panthers','CHI':'Chicago Bears','CIN':'Cincinnati Bengals','CLE':'Cleveland Browns','DAL':'Dallas Cowboys','DEN':'Denver Broncos','DET':'Detroit Lions','GB':'Green Bay Packers','HOU':'Houston Texans','IND':'Indianapolis Colts','JAX':'Jacksonville Jaguars','KC':'Kansas City Chiefs','LV':'Las Vegas Raiders','LAC':'Los Angeles Chargers','LA':'Los Angeles Rams','MIA':'Miami Dolphins','MIN':'Minnesota Vikings','NE':'New England Patriots','NO':'New Orleans Saints','NYG':'New York Giants','NYJ':'New York Jets','PHI':'Philadelphia Eagles','PIT':'Pittsburgh Steelers','SF':'San Francisco 49ers','SEA':'Seattle Seahawks','TB':'Tampa Bay Buccaneers','TEN':'Tennessee Titans','WAS':'Washington Commanders'}
 # open-air stadium coordinates (public venue locations); domes/closed roofs get no wind flag
@@ -20,6 +21,7 @@ for t in inj.get('injuries',[]):
         if a.get('position',{}).get('abbreviation')=='QB' and i.get('status')!='Active': qbnote.setdefault(t['displayName'],[]).append(f"{a.get('displayName')} {i.get('status')}")
 def tier(e): e=abs(e); return 'A' if e>=8 else 'B' if e>=5 else 'C' if e>=2 else 'none'
 def mnote(gid,home,away):
+    if FX is None or gid not in FX.index: return 'matchup note unavailable (tendency features not built in this run)'
     f=FX.loc[gid]; notes=[]
     for o,d,ot,dt in (('h','a',home,away),('a','h',away,home)):
         sp=f[f'{o}_o_sack_r']-FX[f'{o}_o_sack_r'].mean(); pr=f[f'{d}_d_press']-FX[f'{d}_d_press'].mean()

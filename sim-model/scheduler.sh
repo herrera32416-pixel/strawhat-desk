@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# No cron daemon on the box: a light loop instead. Sundays 08:30 CT refresh picks + log paper; grade every 6h (idempotent).
+# DEPRECATED 2026-10-10: replaced by .github/workflows/sim-model.yml on main (runs on GitHub, no box). Kept for manual use only.
 # Start: nohup bash /workspace/sim-model/scheduler.sh >/workspace/sim-model/out/paper/scheduler.log 2>&1 &
 cd "$(dirname "$0")"
 last_sun=""
