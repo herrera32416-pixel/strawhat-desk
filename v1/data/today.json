@@ -1123,7 +1123,7 @@
               "goalie": "Logan Thompson",
               "status": "Confirmed",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-10-11T13:53:01-05:00",
+              "seen_time_ct": "2026-10-11T15:26:13-05:00",
               "file": "nhl_goalie_log.jsonl"
             },
             "away": null
@@ -1278,7 +1278,8 @@
                 }
               ]
             }
-          }
+          },
+          "refreshed_ct": "2026-10-11T15:26:13-05:00"
         }
       },
       {
@@ -1394,14 +1395,14 @@
               "goalie": "Dylan Garand",
               "status": "Confirmed",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-10-11T13:53:01-05:00",
+              "seen_time_ct": "2026-10-11T15:26:13-05:00",
               "file": "nhl_goalie_log.jsonl"
             },
             "away": {
               "goalie": "Kevin Lankinen",
               "status": "Likely",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-10-11T13:53:01-05:00",
+              "seen_time_ct": "2026-10-11T15:26:13-05:00",
               "file": "nhl_goalie_log.jsonl"
             }
           },
@@ -1555,7 +1556,8 @@
                 }
               ]
             }
-          }
+          },
+          "refreshed_ct": "2026-10-11T15:26:13-05:00"
         }
       },
       {
@@ -1820,7 +1822,8 @@
                 }
               ]
             }
-          }
+          },
+          "refreshed_ct": "2026-10-11T15:26:13-05:00"
         }
       },
       {
@@ -2574,7 +2577,8 @@
                 }
               ]
             }
-          }
+          },
+          "refreshed_ct": "2026-10-11T15:26:13-05:00"
         }
       },
       {
@@ -2839,7 +2843,8 @@
                 }
               ]
             }
-          }
+          },
+          "refreshed_ct": "2026-10-11T15:26:13-05:00"
         }
       },
       {
@@ -3316,7 +3321,8 @@
                 }
               ]
             }
-          }
+          },
+          "refreshed_ct": "2026-10-11T15:26:13-05:00"
         }
       },
       {
