@@ -61,5 +61,9 @@
     "edge_lt_pp": 1.5,
     "model_within_pp_of_50": 2.0
   },
-  "daily_max_bets_applies_to": "A only"
+  "daily_max_bets_applies_to": "A only",
+  "market_only": {
+    "_doc": "edge source = best price vs consensus no-vig; model% = consensus no-vig. Model-% floors calibrated for a real model are dropped; edge floors kept.",
+    "drop_model_floors": true
+  }
 }

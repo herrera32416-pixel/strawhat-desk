@@ -532,6 +532,12 @@ def main(argv: list[str] | None = None) -> int:
         except Exception as e:  # ESPN down etc. -> board still publishes, paper blank
             print(f"[auto_board] {sport} paper model error: {type(e).__name__}: {e}", file=sys.stderr)
             paper_stats[sport] = {"games": len(rows), "error": str(e)[:200]}
+        for r in rows:  # MARKET-ONLY edge source for the A/B/C grader (paper_model weights are 0)
+            try:
+                r["market_edge"] = paper_model.market_edge(sport, r, by_toa.get(r.get("toa_event_id") or ""))
+            except Exception as e:  # noqa: BLE001
+                r["market_edge"] = {}
+                print(f"[auto_board] market_edge error {r.get('matchup')}: {e}", file=sys.stderr)
         rows_by_sport[sport] = rows
         with_ou = sum(1 for r in rows if r.get("market_over_pct") is not None)
         print(f"[auto_board] {sport} games in window: {len(rows)} · market O/U %: {with_ou}/{len(rows)} · "
@@ -562,7 +568,7 @@ def main(argv: list[str] | None = None) -> int:
             "sport": r["sport"], "matchup": r["matchup"], "kick_utc": r["kick_utc"], "kick_ct": r["kick_ct"],
             "event_id": r["event_id"], "espn_event_id": r.get("espn_event_id"), "status": b.get("status"),
             "best": b.get("best"), "picks": b.get("picks") or [], "by_market": b.get("by_market"),
-            "note": b.get("note"), "fpi_home_margin": b.get("fpi_home_margin"),
+            "note": b.get("note"), "market_edge": r.get("market_edge"), "fpi_home_margin": b.get("fpi_home_margin"),
             "mkt_home_margin": b.get("mkt_home_margin"), "blend_home_margin": b.get("blend_home_margin"),
             "stamped": any(paper_model.pick_id(r["sport"], r, m) in stamped_ids for m in ("ml", "spread", "total")),
             "stamped_markets": [m for m in ("ml", "spread", "total")

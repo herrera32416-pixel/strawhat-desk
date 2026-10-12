@@ -24,6 +24,13 @@ def _check_one(c, cfg):
     return _check_one_skip(dict(c, _skip=()), cfg)
 
 
+def _mf(c, cfg, v):
+    """Model-% floor; dropped for market-only candidates (model% there is just the consensus no-vig)."""
+    if c.get("source") == "market_only" and cfg.get("market_only", {}).get("drop_model_floors"):
+        return float("-inf")
+    return v
+
+
 def _r(f):
     _RULES.append(f); return f
 
@@ -83,14 +90,14 @@ def r_cfb_key(c, cfg):
 @_r
 def r_cfb_fav(c, cfg):
     k = cfg["cfb"]
-    if _norm(c)[0] == "CFB" and _is_fav(c) and (c["edge_pp"] < k["fav_edge_min_pp"] or c["model_pct"] < k["fav_model_min_pct"]):
+    if _norm(c)[0] == "CFB" and _is_fav(c) and (c["edge_pp"] < k["fav_edge_min_pp"] or c["model_pct"] < _mf(c, cfg, k["fav_model_min_pct"])):
         return f"CFB favorite needs edge>={k['fav_edge_min_pp']} & model>={k['fav_model_min_pct']} (dogs-first)"
 
 
 @_r
 def r_nfl(c, cfg):
     k = cfg["nfl"]
-    if _norm(c)[0] == "NFL" and (c["edge_pp"] < k["edge_min_pp"] or c["model_pct"] < k["model_min_pct"]):
+    if _norm(c)[0] == "NFL" and (c["edge_pp"] < k["edge_min_pp"] or c["model_pct"] < _mf(c, cfg, k["model_min_pct"])):
         return f"NFL needs edge>={k['edge_min_pp']} & model>={k['model_min_pct']}"
 
 
@@ -112,7 +119,7 @@ def r_mlb_f5(c, cfg):
 def r_mlb_plus(c, cfg):
     sp, mkt = _norm(c)[:2]; k = cfg["mlb"]
     if sp == "MLB" and mkt == "ml" and c["price_american"] > 0 and \
-            (c["model_pct"] < k["plus_ml_model_min_pct"] or c["edge_pp"] < k["plus_ml_edge_min_pp"]):
+            (c["model_pct"] < _mf(c, cfg, k["plus_ml_model_min_pct"]) or c["edge_pp"] < k["plus_ml_edge_min_pp"]):
         return f"MLB plus-money ML needs model>={k['plus_ml_model_min_pct']} & edge>={k['plus_ml_edge_min_pp']}"
 
 
@@ -120,7 +127,7 @@ def r_mlb_plus(c, cfg):
 def r_mlb_under(c, cfg):
     sp, mkt, _, side = _norm(c)[:4]; k = cfg["mlb"]
     if sp == "MLB" and "total" in mkt and side == "under" and \
-            (c["edge_pp"] < k["under_edge_min_pp"] or c["model_pct"] < k["under_model_min_pct"]):
+            (c["edge_pp"] < k["under_edge_min_pp"] or c["model_pct"] < _mf(c, cfg, k["under_model_min_pct"])):
         return "MLB thin under dropped"
 
 
@@ -186,7 +193,11 @@ def check(c, cfg):
 def is_coinflip(c, cfg):
     k = cfg.get("grade_c", {})
     e, m = c.get("edge_pp"), c.get("model_pct")
-    return e is None or m is None or e < k.get("edge_lt_pp", 1.5) or abs(m - 50) < k.get("model_within_pp_of_50", 2.0)
+    if e is None or m is None or e < k.get("edge_lt_pp", 1.5):
+        return True
+    if c.get("source") == "market_only":  # market % near 50 is normal for spreads/totals; edge alone decides
+        return False
+    return abs(m - 50) < k.get("model_within_pp_of_50", 2.0)
 
 
 def grade_day(cands, cfg=None, already_a=0, already_a_units=0.0):

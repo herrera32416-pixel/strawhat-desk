@@ -1,0 +1,40 @@
+name: v1 board early waiter (fallback for dropped 9:15 crons)
+# WHY (2026-10-12): GitHub dropped every v1-board schedule slot 9:15-10:41am CT on Oct 4, Oct 6 and Oct 12
+# (no run was even created; scheduled events are best-effort and are shed under load, worst near :00/:15).
+# Overnight/early-morning slots do fire (goalies 1:00/2:20am CT ran today). So this workflow starts EARLY,
+# from several off-peak slots, waits on the runner until 9:16am CT, then dispatches v1-board.yml
+# (workflow_dispatch is not shed). v1-board's once-per-day guard makes extra dispatches no-ops (0 credits).
+on:
+  schedule:
+    - cron: "37 10 * * *"   # 5:37 CDT / 4:37 CST
+    - cron: "52 11 * * *"   # 6:52 CDT / 5:52 CST
+    - cron: "7 13 * * *"    # 8:07 CDT / 7:07 CST
+    - cron: "33 13 * * *"   # 8:33 CDT / 7:33 CST
+  workflow_dispatch:
+permissions:
+  actions: write
+  contents: read
+concurrency:
+  group: v1-board-waiter
+  cancel-in-progress: false   # first waiter wins; later ones queue, then see the stamp and exit
+jobs:
+  wait-and-dispatch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 330
+    steps:
+      - uses: actions/checkout@v4
+        with: { ref: main, fetch-depth: 1 }
+      - name: wait until 9:16am CT, then dispatch v1-board if today's stamp is missing
+        env: { GH_TOKEN: "${{ github.token }}" }
+        run: |
+          target=$(TZ=America/Chicago date -d "today 09:16" +%s); now=$(date +%s)
+          if [ "$now" -lt "$target" ]; then echo "sleeping $(( (target-now)/60 )) min until 9:16 CT"; sleep $(( target-now )); fi
+          for attempt in 1 2 3; do
+            git fetch -q origin main
+            D=$(TZ=America/Chicago date +%F)
+            STAMP=$(git show origin/main:v1/data/run_stamp.json 2>/dev/null | python3 -c 'import json,sys;print(json.load(sys.stdin).get("date_ct",""))' 2>/dev/null || true)
+            echo "today=$D stamp=$STAMP"
+            [ "$STAMP" = "$D" ] && { echo "board already built today"; exit 0; }
+            gh workflow run v1-board.yml -R "${{ github.repository }}" && echo "dispatched v1-board (attempt $attempt)"
+            sleep 600   # give it 10 min, then re-check and re-dispatch if still missing
+          done

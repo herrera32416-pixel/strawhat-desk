@@ -395,6 +395,70 @@ def stamp_candidates(row: dict, quotes: dict, mp) -> dict[str, list[dict]]:
     return c
 
 
+def market_edge(sport: str, row: dict, ev: dict | None) -> dict:
+    """MARKET-ONLY edge source (Luis 2026-10-12; paper_model weights are 0): per market and side,
+    edge = consensus no-vig % (row market_*_pct, median across posted books) - implied % of the best price.
+    Best price = best DraftKings/Betr/Bovada quote at the consensus line; fallback = the row's best of all posted books
+    (also at the consensus line). Prices are only ever taken from the feed; nothing is invented. A single-book market
+    (e.g. MLB via ESPN = DraftKings only) cannot show an edge vs its own no-vig and is reported as such."""
+    quotes = book_quotes(ev or {}, row) if ev else {}
+    home, away = row["home"], row["away"]
+    specs = {
+        "ml": [("home", f"{home} ML", None, row.get("market_home_ml_pct"), row.get("ml_home_price"), row.get("ml_home_book"), 0),
+               ("away", f"{away} ML", None, row.get("market_away_ml_pct"), row.get("ml_away_price"), row.get("ml_away_book"), 1)],
+        "spread": [("home", f"{home} {fmt_line(row['spread_home_line'])}" if row.get("spread_home_line") is not None else None,
+                    row.get("spread_home_line"), row.get("market_home_cover_pct"), row.get("spread_home_price"), row.get("spread_home_book"), 1),
+                   ("away", f"{away} {fmt_line(row['spread_away_line'])}" if row.get("spread_away_line") is not None else None,
+                    row.get("spread_away_line"), row.get("market_away_cover_pct"), row.get("spread_away_price"), row.get("spread_away_book"), 2)],
+        "total": [("over", f"Over {row['total_line']:g}" if row.get("total_line") is not None else None, row.get("total_line"),
+                   row.get("market_over_pct"), row.get("over_price"), row.get("over_book"), 1),
+                  ("under", f"Under {row['total_line']:g}" if row.get("total_line") is not None else None, row.get("total_line"),
+                   row.get("market_under_pct"), row.get("under_price"), row.get("under_book"), 2)],
+    }
+    nbooks = {"ml": row.get("ml_books"), "spread": row.get("spread_books"), "total": row.get("totals_books")}
+    out = {}
+    for mk, sides in specs.items():
+        cand = []
+        for side, label, line, nv, fb_price, fb_book, qi in sides:
+            if nv is None or label is None:
+                continue
+            best = None  # (price, book, source)
+            for book, q in quotes.items():
+                if not q.get("sop"):
+                    continue
+                t = q.get(mk)
+                if not t:
+                    continue
+                if mk == "ml":
+                    pr = t[qi]
+                else:
+                    ql = t[0] if mk == "total" else (t[0] if side == "home" else -t[0])
+                    if line is None or abs(ql - float(line)) > 1e-9:
+                        continue
+                    pr = t[qi]
+                if best is None or dec(pr) > dec(best[0]):
+                    best = (pr, book, "SOP book (DraftKings/Betr/Bovada)")
+            if best is None and fb_price is not None:
+                best = (fb_price, fb_book, f"best of {nbooks[mk] or '?'} posted book(s)")
+            if best is None:
+                continue
+            e = nv - 100 * implied(best[0])
+            cand.append({"market": mk, "side": side, "label": label, "selection": label, "line": line,
+                         "price_american": int(best[0]), "book": best[1], "price_source": best[2],
+                         "novig_pct": r1(nv), "model_pct": r1(nv), "implied_pct": r1(100 * implied(best[0])),
+                         "edge_pp": r1(e), "_edge": e, "gap_pp": 0.0, "source": "market_only",
+                         "team": home_or_away(row, side) if side in ("home", "away") else None,
+                         "n_books": nbooks[mk]})
+        if not cand:
+            out[mk] = {"status": "BLANK", "note": "no consensus / price", "best": None}
+            continue
+        b = max(cand, key=lambda x: x["_edge"])
+        note = (f"single book ({b['book']}) - no market edge possible" if (nbooks[mk] or 0) <= 1
+                else f"best {b['price_american']:+d} {b['book']} vs consensus no-vig {b['novig_pct']}% ({nbooks[mk]} books)")
+        out[mk] = {"status": "EDGE" if b["_edge"] > 0 else "PASS", "note": note, "best": b, "sides": cand}
+    return out
+
+
 def blend_row(sport: str, row: dict, ev: dict, fpi_home) -> dict:
     """Paper block for one game: three markets for display + per-market stamp decision."""
     quotes = book_quotes(ev, row)
@@ -700,7 +764,8 @@ def stamp_today(ledger: dict, rows_by_sport: dict[str, list[dict]], now_ct: date
             early_tomorrow = kc.date() == now_ct.date() + timedelta(days=1) and kc.hour * 60 + kc.minute < EARLY_CUTOFF_MIN
             if kc.date() != now_ct.date() and not early_tomorrow:
                 continue
-            for mk, bm in (blk.get("by_market") or {}).items():
+            src_by = r.get("market_edge") or blk.get("by_market") or {}
+            for mk, bm in src_by.items():
                 pk = (bm or {}).get("best")
                 if not pk or pk.get("edge_pp") is None or pk["edge_pp"] <= 0:
                     continue  # no positive edge = not even a lean; board shows it ungraded
@@ -721,7 +786,8 @@ def stamp_today(ledger: dict, rows_by_sport: dict[str, list[dict]], now_ct: date
                     "fpi_home_margin": blk.get("fpi_home_margin"), "mkt_home_margin": blk.get("mkt_home_margin"),
                     "blend_home_margin": blk.get("blend_home_margin"), "w_fpi": blk.get("w_fpi"), "sigma": blk.get("sigma"),
                     "units": 1, "stake_usd": UNIT_USD, "status": "open", "result": None, "score": None,
-                    "pnl_units": None, "pnl_usd": None, "source": "market_blend",
+                    "pnl_units": None, "pnl_usd": None, "source": pk.get("source") or "market_blend",
+                    "price_source": pk.get("price_source"), "n_books": pk.get("n_books"),
                     "close_price_american": None, "close_line": None, "clv_pp": None,
                 })
                 have.add(pid)
@@ -731,6 +797,9 @@ def stamp_today(ledger: dict, rows_by_sport: dict[str, list[dict]], now_ct: date
         bm = ((r.get("paper") or {}).get("by_market") or {}).get(c["market"])
         if bm is not None:
             bm["grade"], bm["grade_reasons"] = c["grade"], c["grade_reasons"]
+        me = (r.get("market_edge") or {}).get(c["market"])
+        if me is not None:
+            me["grade"], me["grade_reasons"] = c["grade"], c["grade_reasons"]
         c["label"] = "OFFICIAL A" if c["grade"] == "A" else f"TRACK {c['grade']}"
     ledger.setdefault("picks", []).extend(new)
     return new
