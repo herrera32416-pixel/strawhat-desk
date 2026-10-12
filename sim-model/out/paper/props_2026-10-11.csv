@@ -1,0 +1,57 @@
+game,player,team,mkt,side,line,price,book,model,market,flag,actual,res,pnl
+CHI@GB,Tyson Bagent,CHI,Pass Yds,Under,222.5,-112,DK,59.1,50.0,,87.0,W,17.86
+CHI@GB,Jahdae Walker,CHI,Anytime TD,Yes,,1200,DK,15.3,8.0,,0.0,L,-20.0
+CHI@GB,Tyson Bagent,CHI,Rush Yds,Under,10.5,-118,DK,58.2,51.0,,17.0,L,-20.0
+CHI@GB,D'Andre Swift,CHI,Rush Yds,Under,84.5,-111,DK,55.2,49.9,,43.0,W,18.02
+CIN@MIA,Ollie Gordon II,MIA,Receptions,Under,1.5,-114,DK,52.5,46.3,,0.0,W,17.54
+CIN@MIA,Ollie Gordon II,MIA,Rush Yds,Under,42.5,-111,DK,55.6,49.6,,88.0,L,-20.0
+CIN@MIA,Malik Willis,MIA,Rush Yds,Under,33.5,-114,DK,55.0,50.2,,74.0,L,-20.0
+CIN@MIA,Malik Washington,MIA,Receptions,Under,4.5,-105,DK,52.3,48.4,,6.0,L,-20.0
+CLE@NYJ,Jaleel McLaughlin,CLE,Anytime TD,Yes,,1700,DK,13.9,5.8,,0.0,L,-20.0
+CLE@NYJ,Braelon Allen,NYJ,Rush Yds,Under,72.5,-113,DK,58.0,50.2,,116.0,L,-20.0
+CLE@NYJ,Jerry Jeudy,CLE,Receptions,Over,1.5,100,DK,53.5,46.9,,3.0,W,20.0
+CLE@NYJ,Harold Fannin Jr.,CLE,Anytime TD,Yes,,245,DK,35.9,30.1,,0.0,L,-20.0
+HOU@TEN,Xavier Hutchinson,HOU,Receptions,Over,1.5,144,DK,50.0,42.1,,4.0,W,28.8
+HOU@TEN,Calvin Ridley,TEN,Rec Yds,Over,8.5,-111,DK,57.1,50.0,,33.0,W,18.02
+HOU@TEN,Xavier Hutchinson,HOU,Rec Yds,Over,14.5,-114,DK,56.3,50.0,,65.0,W,17.54
+HOU@TEN,Wan'Dale Robinson,TEN,Anytime TD,Yes,,475,DK,23.1,18.0,,0.0,L,-20.0
+IND@PIT,Josh Downs,IND,Receptions,Under,4.5,113,DK,48.6,44.2,,3.0,W,22.6
+IND@PIT,Roman Wilson,PIT,Rec Yds,Under,41.5,-115,DK,54.1,50.0,,0.0,W,17.39
+IND@PIT,Josh Downs,IND,Rec Yds,Under,56.5,-113,DK,53.7,50.0,,47.0,W,17.7
+IND@PIT,Daniel Jones,IND,Rush Yds,Under,9.5,-115,DK,54.0,50.6,,4.0,W,17.39
+LV@NE,Efton Chism III,NE,Rec Yds,Under,25.5,-115,DK,57.5,50.6,,57.0,L,-20.0
+LV@NE,Efton Chism III,NE,Receptions,Under,1.5,140,DK,46.2,40.1,,5.0,L,-20.0
+LV@NE,Cody White,LV,Anytime TD,Yes,,475,DK,23.7,17.6,,0.0,L,-20.0
+LV@NE,Cody White,LV,Rec Yds,Under,22.5,-114,DK,55.1,50.0,,44.0,L,-20.0
+MIN@NO,Noah Fant,NO,Anytime TD,Yes,,800,DK,20.5,11.8,,0.0,L,-20.0
+MIN@NO,Kyler Murray,MIN,Pass Yds,Under,213.5,-111,DK,55.4,49.8,,229.0,L,-20.0
+MIN@NO,Kyler Murray,MIN,Rush Yds,Under,17.5,-111,DK,54.8,50.0,,51.0,L,-20.0
+MIN@NO,Justin Jefferson,MIN,Rec Yds,Under,57.5,205,Bovada,35.3,30.8,,79.0,L,-20.0
+NYG@WAS,Devin Singletary,NYG,Anytime TD,Yes,,1000,DK,16.7,10.0,,,VOID (DNP/not in box),0.0
+NYG@WAS,Chig Okonkwo,WAS,Rec Yds,Under,25.5,-116,DK,55.9,50.8,,60.0,L,-20.0
+NYG@WAS,Jacory Croskey-Merritt,WAS,Rec Yds,Under,5.5,-102,DK,52.4,48.2,,0.0,W,19.61
+NYG@WAS,Antonio Williams,WAS,Rec Yds,Under,41.5,-150,Bovada,60.2,56.3,,31.0,W,13.33
+DEN@LAC,Tre Harris,LAC,Rec Yds,Under,40.5,150,Bovada,43.8,37.5,,,VOID (DNP/not in box),0.0
+DEN@LAC,Nate Adkins,DEN,Anytime TD,Yes,,1600,DK,11.6,6.9,,,VOID (DNP/not in box),0.0
+DEN@LAC,Oronde Gadsden II,LAC,Rec Yds,Under,39.5,-145,Bovada,59.1,55.4,,,VOID (DNP/not in box),0.0
+DEN@LAC,Jaylen Waddle,DEN,Receptions,Under,4.5,109,DK,49.0,45.5,,2.0,W,21.8
+DET@ARI,Sione Vaki,DET,Rush Yds,Under,7.5,-117,DK,56.5,50.9,,11.0,L,-20.0
+DET@ARI,Bam Knight,ARI,Anytime TD,Yes,,1600,Bovada,11.6,6.2,,0.0,L,-20.0
+DET@ARI,Tyler Allgeier,ARI,Rush Yds,Under,28.5,-115,DK,53.5,50.8,,7.0,W,17.39
+DET@ARI,Michael Wilson,ARI,Receptions,Under,6.5,-114,DK,52.7,50.0,,4.0,W,17.54
+SF@SEA,George Holani,SEA,Receptions,Under,1.5,117,DK,49.4,44.1,[Questionable],4.0,L,-20.0
+SF@SEA,George Holani,SEA,Rush Yds,Under,20.5,-113,DK,55.6,50.8,[Questionable],7.0,W,17.7
+SF@SEA,Sam Darnold,SEA,Pass Yds,Under,204.5,185,Bovada,37.7,32.9,,195.0,W,37.0
+SF@SEA,Emanuel Wilson,SEA,Rush Yds,Under,64.5,-114,DK,54.6,50.3,,61.0,W,17.54
+BAL@ATL,Tyler Huntley,BAL,Pass Yds,Under,143.5,190,Bovada,41.6,32.3,,,open,
+BAL@ATL,Tyler Huntley,BAL,Rush Yds,Under,28.5,-108,DK,56.6,49.9,,,open,
+BAL@ATL,Justice Hill,BAL,Rush Yds,Under,11.5,-115,DK,54.6,50.0,,,open,
+BAL@ATL,Michael Penix Jr.,ATL,Pass Yds,Under,188.5,185,Bovada,36.8,32.9,,,open,
+BUF@LA,Dalton Kincaid,BUF,Rec Yds,Under,54.5,-111,DK,54.5,49.8,,,open,
+BUF@LA,Jordan Whittington,LA,Rec Yds,Under,5.5,-108,DK,52.7,49.1,,,open,
+BUF@LA,Josh Allen,BUF,Rush Yds,Under,37.5,-109,DK,52.7,49.2,,,open,
+BUF@LA,Keon Coleman,BUF,Rec Yds,Under,38.5,-113,DK,53.2,50.2,,,open,
+PHI@JAX,Will Shipley,PHI,Rush Yds,Under,33.5,-109,DK,58.1,49.4,8:02 list,6.0,W,18.35
+PHI@JAX,Will Shipley,PHI,Receptions,Under,2.5,-117,DK,58.0,51.0,8:02 list,1.0,W,17.09
+PHI@JAX,Dallas Goedert,PHI,Anytime TD,Yes,,320,DK,30.2,23.8,8:02 list,0.0,L,-20.0
+PHI@JAX,Bhayshul Tuten,JAX,Rush Yds,Under,65.5,-110,DK,55.4,50.0,8:02 list,72.0,L,-20.0
