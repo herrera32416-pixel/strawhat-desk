@@ -542,6 +542,8 @@ def main(argv: list[str] | None = None) -> int:
     led_path = data_dir / "paper_ledger.json"
     ledger = paper_model.load_ledger(led_path)
     new = paper_model.stamp_today(ledger, rows_by_sport, now_ct)
+    ncl = paper_model.record_closing(ledger, rows_by_sport, now_ct)
+    print(f"[auto_board] closing-line snapshot updated on {ncl} open pick(s)")
     psum = paper_model.summarize(ledger, now_ct)
     for p in new:
         print(f"[auto_board] PAPER stamp {p['id']}: {p['selection']} {p['price_american']:+d} {p['book']} "

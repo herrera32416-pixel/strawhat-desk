@@ -31,6 +31,22 @@ def payout(price):
 
 
 def add_board(L, board, now):
+    """Board PICKs pass the official-book gate (desk/official_rules.py) before logging."""
+    from . import official_rules
+    cfg = official_rules.load()
+    day = now.date().isoformat()
+    today = [i for i in L["items"] if i.get("kind") == "official" and str(i.get("logged_ct", ""))[:10] == day]
+    cands = []
+    for g in board:
+        for mk, m in g["markets"].items():
+            if m.get("decision") != "PICK":
+                continue
+            b = m["best"]
+            mp = b["model_pct"] * (100 if b["model_pct"] <= 1 else 1)
+            cands.append(dict(sport=g["sport"], market=mk, side=b["side"], line=b.get("line"), price_american=b["price"],
+                              model_pct=mp, edge_pp=mp - 100 * (1 / dec(b["price"])), id=(g["toa_id"], mk, b["side"])))
+    kept, _ = official_rules.apply_day(cands, cfg, len(today))
+    allowed = {c["id"] for c in kept}
     have = {i["id"] for i in L["items"]}
     n = 0
     for g in board:
@@ -38,6 +54,8 @@ def add_board(L, board, now):
             if m.get("decision") != "PICK":
                 continue
             b = m["best"]
+            if (g["toa_id"], mk, b["side"]) not in allowed:
+                continue
             iid = _id("board", g["toa_id"], mk, b["side"])
             if iid in have:
                 continue

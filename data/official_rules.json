@@ -1,0 +1,17 @@
+{
+  "_doc": "Official-book gate (Luis approved 2026-10-12: back to what worked Aug31-Sep11). Enforced in code by desk/official_rules.py. Market-based clearing; sim is info only.",
+  "version": "2026-10-12",
+  "unit_usd": 20,
+  "daily_max_bets": 5,
+  "daily_min_target": 2,
+  "daily_max_units": 5.0,
+  "edge_min_pp": 3.0,
+  "blocked_sources": ["sim", "nfl_sim", "nhl_sim", "nba_sim", "sim_run"],
+  "blocked_markets": ["teaser", "parlay", "anytime_td", "atd", "prop_anytime_td"],
+  "longshot_ml_max_plus": 250,
+  "cfb": {"fav_edge_min_pp": 5.0, "fav_model_min_pct": 70.0, "key_numbers": [3, 7, 10], "key_band": 0.5},
+  "nfl": {"edge_min_pp": 5.0, "model_min_pct": 70.0},
+  "mlb": {"f5_price_floor": -200, "plus_ml_model_min_pct": 65.0, "plus_ml_edge_min_pp": 8.0,
+          "under_edge_min_pp": 8.0, "under_model_min_pct": 70.0, "allowed_markets": ["f5", "f5_ml", "f5_spread", "f5_total", "ml", "total"]},
+  "closing_line": "required on every official bet: close_price_american/close_line captured from the last pre-kick board, clv_pp computed at grade"
+}

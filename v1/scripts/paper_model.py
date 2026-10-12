@@ -46,6 +46,8 @@ from zoneinfo import ZoneInfo
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import nhl_model  # noqa: E402
+sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
+from desk import official_rules  # noqa: E402  (official-book gate, data/official_rules.json)
 
 CT = ZoneInfo("America/Chicago")
 UTC = timezone.utc
@@ -687,7 +689,7 @@ def pick_id(sport: str, row: dict, market: str = "") -> str:
 def stamp_today(ledger: dict, rows_by_sport: dict[str, list[dict]], now_ct: datetime) -> list[dict]:
     """Stamp PAPER picks (one per market per game) for games kicking later today (CT). Never re-priced."""
     have = {p["id"] for p in ledger.get("picks") or []}
-    new = []
+    cands = []
     for sport, rows in rows_by_sport.items():
         for r in rows:
             blk = r.get("paper") or {}
@@ -702,7 +704,7 @@ def stamp_today(ledger: dict, rows_by_sport: dict[str, list[dict]], now_ct: date
                 pid = pick_id(sport, r, pk["market"])
                 if pid in have:
                     continue
-                new.append({
+                cands.append({
                     "id": pid, "label": "PAPER", "sport": sport, "slate_date_ct": now_ct.date().isoformat(),
                     "stamped_at_ct": now_ct.isoformat(timespec="seconds"), "kick_utc": r["kick_utc"],
                     "kick_ct": r.get("kick_ct"), "matchup": r.get("matchup"), "away": r["away"], "home": r["home"],
@@ -715,11 +717,52 @@ def stamp_today(ledger: dict, rows_by_sport: dict[str, list[dict]], now_ct: date
                     "fpi_home_margin": blk.get("fpi_home_margin"), "mkt_home_margin": blk.get("mkt_home_margin"),
                     "blend_home_margin": blk.get("blend_home_margin"), "w_fpi": blk.get("w_fpi"), "sigma": blk.get("sigma"),
                     "units": 1, "stake_usd": UNIT_USD, "status": "open", "result": None, "score": None,
-                    "pnl_units": None, "pnl_usd": None,
+                    "pnl_units": None, "pnl_usd": None, "source": "market_blend",
+                    "close_price_american": None, "close_line": None, "clv_pp": None,
                 })
                 have.add(pid)
+    new = gate_official(ledger, cands, now_ct)
     ledger.setdefault("picks", []).extend(new)
     return new
+
+
+def gate_official(ledger: dict, cands: list[dict], now_ct: datetime, cfg=None) -> list[dict]:
+    """Official-book filters + daily cap (desk/official_rules.py). Rejections are kept in ledger['rejected']."""
+    cfg = cfg or official_rules.load()
+    day = now_ct.date().isoformat()
+    today = [p for p in ledger.get("picks") or [] if p.get("slate_date_ct") == day and p.get("status") != "void"]
+    kept, rej = official_rules.apply_day(cands, cfg, len(today), sum(float(p.get("units") or 1) for p in today))
+    log_ = ledger.setdefault("rejected", [])
+    seen = {(x["id"], x["reason"]) for x in log_}
+    for c, why in rej:
+        if (c["id"], why) not in seen:
+            log_.append({"id": c["id"], "slate_date_ct": day, "selection": c.get("selection"),
+                         "price_american": c.get("price_american"), "edge_pp": c.get("edge_pp"), "reason": why})
+    for c in kept:
+        c["rules_version"] = cfg.get("version")
+    return kept
+
+
+def record_closing(ledger: dict, rows_by_sport: dict[str, list[dict]], now_ct: datetime) -> int:
+    """Every run before kick: overwrite close_* with the current board price for the stamped side/market.
+    The last pre-kick snapshot is the closing line."""
+    idx = {}
+    for sport, rows in rows_by_sport.items():
+        for r in rows:
+            for mk, m in ((r.get("paper") or {}).get("markets") or {}).items():
+                for sd in m.get("sides") or []:
+                    idx[(pick_id(sport, r, mk), sd["side"])] = sd
+    n = 0
+    for p in ledger.get("picks") or []:
+        if p.get("status") != "open" or kick_ct(p["kick_utc"]) <= now_ct:
+            continue
+        sd = idx.get((p["id"], p["side"]))
+        if sd and sd.get("price_american") is not None:
+            p["close_price_american"], p["close_line"] = sd["price_american"], sd.get("line")
+            p["close_captured_ct"] = now_ct.isoformat(timespec="seconds")
+            p["clv_pp"] = official_rules.clv_pp(p["price_american"], sd["price_american"])
+            n += 1
+    return n
 
 
 def settle(p: dict, ev: dict):
@@ -771,6 +814,8 @@ def grade(ledger: dict, now_ct: datetime) -> list[dict]:
             p["result"], p["pnl_units"], p["score"] = s
             p["pnl_usd"] = round(p["pnl_units"] * UNIT_USD, 2)
             p["status"] = "graded"
+            if p.get("close_price_american") is None:
+                p["close_note"] = "closing line not captured before kick"
             p["graded_at_ct"] = now_ct.isoformat(timespec="seconds")
             p["score_source"] = f"ESPN scoreboard event {ev['id']} ({ev['status']})"
             graded.append(p)
