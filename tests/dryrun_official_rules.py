@@ -24,3 +24,9 @@ led={'picks':[{'slate_date_ct':'2026-10-12','units':1,'status':'open'}]*4}
 now=datetime(2026,10,12,9,15,tzinfo=ZoneInfo('America/Chicago'))
 print('with 4 stamped today ->',[c['id'] for c in pm.gate_official(led,C,now,cfg)])
 print('clv', o.clv_pp(-110,-125), o.clv_pp(+150,+130))
+
+print("\n=== A/B/C grades (cap applies to A only) ===")
+import copy
+G = o.grade_day(copy.deepcopy(C), cfg)
+for g in "ABC":
+    print(g, [(c["id"], "; ".join(c["grade_reasons"]) or "all pass") for c in G if c["grade"] == g])

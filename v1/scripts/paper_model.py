@@ -700,7 +700,11 @@ def stamp_today(ledger: dict, rows_by_sport: dict[str, list[dict]], now_ct: date
             early_tomorrow = kc.date() == now_ct.date() + timedelta(days=1) and kc.hour * 60 + kc.minute < EARLY_CUTOFF_MIN
             if kc.date() != now_ct.date() and not early_tomorrow:
                 continue
-            for pk in blk.get("picks") or []:
+            for mk, bm in (blk.get("by_market") or {}).items():
+                pk = (bm or {}).get("best")
+                if not pk or pk.get("edge_pp") is None or pk["edge_pp"] <= 0:
+                    continue  # no positive edge = not even a lean; board shows it ungraded
+                pk = {**pk, "market": pk.get("market") or mk}
                 pid = pick_id(sport, r, pk["market"])
                 if pid in have:
                     continue
@@ -710,10 +714,10 @@ def stamp_today(ledger: dict, rows_by_sport: dict[str, list[dict]], now_ct: date
                     "kick_ct": r.get("kick_ct"), "matchup": r.get("matchup"), "away": r["away"], "home": r["home"],
                     "espn_event_id": r.get("espn_event_id"), "espn_home_id": r.get("espn_home_id"),
                     "espn_away_id": r.get("espn_away_id"), "toa_event_id": r.get("toa_event_id"),
-                    "market": pk["market"], "side": pk["side"], "team": pk.get("team"), "selection": pk["selection"],
-                    "line": pk["line"], "price_american": pk["price_american"], "book": pk["book"],
-                    "model_pct": pk["model_pct"], "novig_pct": pk["novig_pct"], "implied_pct": pk["implied_pct"],
-                    "edge_pp": pk["edge_pp"], "gap_pp": pk["gap_pp"],
+                    "market": pk["market"], "_row": r, "side": pk.get("side"), "team": pk.get("team"), "selection": pk.get("selection"),
+                    "line": pk.get("line"), "price_american": pk.get("price_american"), "book": pk.get("book"),
+                    "model_pct": pk.get("model_pct"), "novig_pct": pk.get("novig_pct"), "implied_pct": pk.get("implied_pct"),
+                    "edge_pp": pk.get("edge_pp"), "gap_pp": pk.get("gap_pp"),
                     "fpi_home_margin": blk.get("fpi_home_margin"), "mkt_home_margin": blk.get("mkt_home_margin"),
                     "blend_home_margin": blk.get("blend_home_margin"), "w_fpi": blk.get("w_fpi"), "sigma": blk.get("sigma"),
                     "units": 1, "stake_usd": UNIT_USD, "status": "open", "result": None, "score": None,
@@ -722,25 +726,27 @@ def stamp_today(ledger: dict, rows_by_sport: dict[str, list[dict]], now_ct: date
                 })
                 have.add(pid)
     new = gate_official(ledger, cands, now_ct)
+    for c in new:  # grade on the board (desk shows A/B/C per market)
+        r = c.pop("_row")
+        bm = ((r.get("paper") or {}).get("by_market") or {}).get(c["market"])
+        if bm is not None:
+            bm["grade"], bm["grade_reasons"] = c["grade"], c["grade_reasons"]
+        c["label"] = "OFFICIAL A" if c["grade"] == "A" else f"TRACK {c['grade']}"
     ledger.setdefault("picks", []).extend(new)
     return new
 
 
 def gate_official(ledger: dict, cands: list[dict], now_ct: datetime, cfg=None) -> list[dict]:
-    """Official-book filters + daily cap (desk/official_rules.py). Rejections are kept in ledger['rejected']."""
+    """Grade every candidate A/B/C (desk/official_rules.py). The 2-5/day cap applies to A only.
+    All grades are stamped so W-L is tracked per grade; only A is the bettable card."""
     cfg = cfg or official_rules.load()
     day = now_ct.date().isoformat()
-    today = [p for p in ledger.get("picks") or [] if p.get("slate_date_ct") == day and p.get("status") != "void"]
-    kept, rej = official_rules.apply_day(cands, cfg, len(today), sum(float(p.get("units") or 1) for p in today))
-    log_ = ledger.setdefault("rejected", [])
-    seen = {(x["id"], x["reason"]) for x in log_}
-    for c, why in rej:
-        if (c["id"], why) not in seen:
-            log_.append({"id": c["id"], "slate_date_ct": day, "selection": c.get("selection"),
-                         "price_american": c.get("price_american"), "edge_pp": c.get("edge_pp"), "reason": why})
-    for c in kept:
+    a_today = [p for p in ledger.get("picks") or [] if p.get("slate_date_ct") == day
+               and p.get("grade") == "A" and p.get("status") != "void"]
+    official_rules.grade_day(cands, cfg, len(a_today), sum(float(p.get("units") or 1) for p in a_today))
+    for c in cands:
         c["rules_version"] = cfg.get("version")
-    return kept
+    return cands
 
 
 def record_closing(ledger: dict, rows_by_sport: dict[str, list[dict]], now_ct: datetime) -> int:
@@ -842,6 +848,10 @@ def summarize(ledger: dict, now_ct: datetime) -> dict:
                 "open": sum(p.get("status") == "open" for p in ps)}
 
     s = block(picks)
+    s["by_grade"] = {g: block([p for p in picks if p.get("grade") == g]) for g in ("A", "B", "C")}
+    s["by_grade"]["pre_grades"] = block([p for p in picks if not p.get("grade")])
+    s["by_grade"]["A"]["by_sport"] = {sp: block([p for p in picks if p.get("grade") == "A" and p["sport"] == sp])
+                                      for sp in ("NFL", "CFB", "NHL", "MLB")}
     s["by_sport"] = {sp: block([p for p in picks if p["sport"] == sp]) for sp in ("NFL", "CFB", "NHL", "MLB")}
     s["unit_usd"] = UNIT_USD
     s["label"] = "PAPER — no real bets"

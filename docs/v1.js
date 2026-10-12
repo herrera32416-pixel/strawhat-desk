@@ -16,7 +16,7 @@
     const pm = (g.paper && g.paper.markets) || {}, bm = (g.paper && g.paper.by_market) || {};
     let out = '';
     for (const [k, lab] of [['ml', 'ML'], ['spread', g.sport === 'NHL' ? 'Puck line' : g.sport === 'MLB' ? 'Run line' : 'Spread'], ['total', 'O/U']]) {
-      const m = pm[k], st = (bm[k] || {}).status || 'PASS', note = (bm[k] || {}).note || (m && m.note) || '';
+      const m = pm[k], st = (bm[k] || {}).status || 'PASS', gr = (bm[k] || {}).grade, note = ((bm[k] || {}).note || (m && m.note) || '') + (gr ? ' · grade ' + gr + ((bm[k].grade_reasons || []).length ? ': ' + bm[k].grade_reasons.join('; ') : '') : '');
       let sides = m && m.sides && m.sides.length ? m.sides : null;
       if (!sides) { // market-only fallback from the row (ESPN/odds consensus)
         sides = k === 'ml' ? [{ label: last(g.away) + ' ML', price_american: g.ml_away_price, book: g.ml_away_book, novig_pct: g.market_away_ml_pct }, { label: last(g.home) + ' ML', price_american: g.ml_home_price, book: g.ml_home_book, novig_pct: g.market_home_ml_pct }]
@@ -27,7 +27,7 @@
       sides.slice(0, 2).forEach((s, i) => {
         const nm = String(s.label || '').replace(g.away, last(g.away)).replace(g.home, last(g.home)).replace(/^Over /, 'O ').replace(/^Under /, 'U ');
         const pick = st === 'PAPER' && g.paper.best && g.paper.best.label === s.label;
-        out += `<tr class="${pick ? 'pk' : ''}">${i === 0 ? `<td rowspan=2>${lab}</td>` : ''}<td>${nm}</td><td>${A(s.price_american)} <small>${s.book || ''}</small></td><td>${P(s.novig_pct)}</td><td>${P(s.model_pct)}</td><td>${s.model_pct == null ? '—' : E(s.edge_pp)}</td>${i === 0 ? `<td rowspan=2><span class="dec ${st === 'PAPER' ? 'PICK' : st}" title="${note}">${st}</span></td>` : ''}</tr>`;
+        out += `<tr class="${pick ? 'pk' : ''}">${i === 0 ? `<td rowspan=2>${lab}</td>` : ''}<td>${nm}</td><td>${A(s.price_american)} <small>${s.book || ''}</small></td><td>${P(s.novig_pct)}</td><td>${P(s.model_pct)}</td><td>${s.model_pct == null ? '—' : E(s.edge_pp)}</td>${i === 0 ? `<td rowspan=2><span class="dec ${st === 'PAPER' ? 'PICK' : st}" title="${note}">${st}</span>${gr ? ` <span class="grade g${gr}" title="${note}">${gr}</span>` : ''}</td>` : ''}</tr>`;
       });
     }
     return out;
@@ -47,7 +47,7 @@
   function board(d, pl) {
     const el = $('#board'), R = rows(d), s = pl.summary || {};
     const nP = R.filter(g => g.paper && g.paper.status === 'PAPER').length;
-    let h = `<div class="hl"><b>PAPER ONLY</b> · straight bets only (no teasers, no parlays) · ${R.length} games · ${nP} paper play(s)<span class="sub">1u = $20 · updated ${String(d.generated_at_ct || '').replace('T', ' ').slice(0, 16)} CT</span></div>`;
+    let h = `<div class="hl"><b>PAPER ONLY</b> · straight bets only (no teasers, no parlays) · ${R.length} games · ${nP} paper play(s) · <span class="grade gA">A</span> = bettable card (2-5/day) · <span class="grade gB">B</span> misses one rule · <span class="grade gC">C</span> lean, board only<span class="sub">1u = $20 · updated ${String(d.generated_at_ct || '').replace('T', ' ').slice(0, 16)} CT</span></div>`;
     h += `<p class="note">One desk: lines from The Odds API free tier (only when a game is within ~36h) with ESPN filling gaps, tagged per line. Every game shows ML / spread / total, each with market no-vig % and its own model % (blank stays blank = no model). Sorted by start time (CT). A play needs ≥ 3pp edge at a real DraftKings / Betr / Bovada price.</p>`;
     h += `<div class="filters"><label><input type="checkbox" id="v1only"> paper plays only (${nP})</label> <select id="v1sp"><option value="">All sports</option>${[...new Set(R.map(g => g.sport))].map(x => `<option>${x}</option>`).join('')}</select></div><div id="v1games"></div>`;
     el.innerHTML = h;
@@ -64,7 +64,9 @@
     const t = s.total || s.all || s;
     when('#ledger-v1', el => {
       let h = `<div class="cap">Scorecard (the one grader · PAPER)</div><div class="hl"><b>${t.record || ((t.w ?? t.wins ?? 0) + '-' + (t.l ?? t.losses ?? 0) + '-' + (t.p ?? t.pushes ?? 0))}</b> · ${t.units != null ? (t.units >= 0 ? '+' : '') + Number(t.units).toFixed(2) + 'u' : ''} · ${P2.length} paper pick(s)<span class="sub">updated ${String(pl.updated_at_ct || '').replace('T', ' ').slice(0, 16)} CT</span></div>`;
-      h += `<table class="ledger"><tr><th>Sport</th><th>Kick</th><th>Bet</th><th>Price</th><th>Result</th><th>Units</th></tr>` + P2.map(i => `<tr><td>${i.sport}</td><td class="small">${i.kick_ct}</td><td>${i.matchup}: ${i.selection} <small>${i.book}</small></td><td>${A(i.price_american)}</td><td><span class="st ${i.result || i.status || 'open'}">${i.result || i.status || 'open'}</span></td><td>${i.units_won != null ? Number(i.units_won).toFixed(2) : (i.pnl_units != null ? Number(i.pnl_units).toFixed(2) : '')}</td></tr>`).join('') + '</table>';
+      const bg = s.by_grade || {};
+      h += `<div class="hl">` + [['A', 'A · bettable card'], ['B', 'B · misses one rule'], ['C', 'C · lean / board only'], ['pre_grades', 'before grades (pre 10/12)']].map(([k, lab]) => { const x = bg[k]; return x ? `<span class="grade g${k[0]}">${k === 'pre_grades' ? '—' : k}</span> ${lab}: <b>${x.record}</b> ${(x.units >= 0 ? '+' : '') + Number(x.units).toFixed(2)}u ($${Number(x.usd).toFixed(2)}) · open ${x.open}` : ''; }).join('<br>') + `</div>`;
+      h += `<table class="ledger"><tr><th>Gr</th><th>Sport</th><th>Kick</th><th>Bet</th><th>Price</th><th>Result</th><th>Units</th></tr>` + P2.map(i => `<tr><td>${i.grade ? `<span class="grade g${i.grade}">${i.grade}</span>` : '—'}</td><td>${i.sport}</td><td class="small">${i.kick_ct}</td><td>${i.matchup}: ${i.selection} <small>${i.book}</small></td><td>${A(i.price_american)}</td><td><span class="st ${i.result || i.status || 'open'}">${i.result || i.status || 'open'}</span></td><td>${i.units_won != null ? Number(i.units_won).toFixed(2) : (i.pnl_units != null ? Number(i.pnl_units).toFixed(2) : '')}</td></tr>`).join('') + '</table>';
       h += `<div class="cap" style="margin-top:18px">History · Strawhat ledger through Oct 9 2026 (no new rows; includes the retired teaser record)</div>`;
       el.innerHTML = h;
     });
