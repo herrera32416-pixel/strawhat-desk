@@ -23,7 +23,7 @@ def log(f):
         old=pd.read_csv(LOG); old=old[~old.game_id.isin(new.game_id)]; new=pd.concat([old,new])  # latest PRE-kickoff snapshot wins; post-kickoff rows are never touched
     new.to_csv(LOG,index=False); print('logged',len(rows),'->',LOG)
 def grade():
-    L=pd.read_csv(LOG); G=pd.read_csv(io.StringIO(requests.get('https://github.com/nflverse/nfldata/raw/master/data/games.csv',timeout=60).text)).set_index('game_id')
+    L=pd.read_csv(LOG,dtype={'result':str}); L['result']=L.result.fillna(''); G=pd.read_csv(io.StringIO(requests.get('https://github.com/nflverse/nfldata/raw/master/data/games.csv',timeout=60).text)).set_index('game_id')
     for i,r in L.iterrows():
         if isinstance(r.result,str) and r.result in ('win','loss','push'): continue
         if r.game_id not in G.index or pd.isna(G.loc[r.game_id,'total']): continue
