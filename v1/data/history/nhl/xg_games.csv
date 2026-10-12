@@ -4018,3 +4018,6 @@ espn_id,date_et,home,away,xg_home,xg_away,src
 2026020083,2026-10-10,VGK,LAK,2.647,1.855,"moneypuck flurryScoreVenueAdj xG, all sit."
 2026020069,2026-10-09,WPG,ANA,2.183,3.857,"moneypuck flurryScoreVenueAdj xG, all sit."
 2026020067,2026-10-09,WSH,NYR,4.221,2.738,"moneypuck flurryScoreVenueAdj xG, all sit."
+2026020085,2026-10-11,NYR,VAN,3.519,1.61,"moneypuck flurryScoreVenueAdj xG, all sit."
+2026020086,2026-10-11,PHI,CAR,1.492,3.412,"moneypuck flurryScoreVenueAdj xG, all sit."
+2026020084,2026-10-11,WSH,SEA,3.035,4.611,"moneypuck flurryScoreVenueAdj xG, all sit."
