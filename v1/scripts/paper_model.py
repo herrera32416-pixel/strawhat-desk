@@ -657,14 +657,49 @@ def nhl_block(row: dict, ev: dict, goalies: dict, lm=None) -> dict:
     return blk
 
 
-def mlb_block(row: dict, ev: dict) -> dict:
-    """ML / run line / O-U: market no-vig % only (fitted w = 0 -> no MODEL %, no edges, never stamped)."""
+def mlb_block(row: dict, ev: dict, mm=None) -> dict:
+    """ML / run line / O-U: market no-vig % + MODEL % from the Colab MLB v1.1 Poisson (scripts/mlb_model.py).
+    PAPER / INFO ONLY: the model never stamps and never feeds the A/B/C grade (market_edge stays market-only).
+    Model blank whenever it cannot produce a number (no probable starter, unknown pitcher, odd run line)."""
     mk = three_markets("MLB", row, book_quotes(ev, row), None)
-    return {"label": "PAPER", "model": "none (market only, MODEL blank; fitted w = 0)",
-            "status": "PASS" if mk else "BLANK", "pick": None, "best": None, "picks": [],
-            "by_market": {k: {"status": "PASS", "note": "market only (w = 0) — no stamps", "best": None} for k in mk},
-            "w": 0.0, "markets": mk,
-            "note": "MLB market only: fitted w = 0 — MODEL blank, no paper stamps" if mk else "no market lines"}
+    blk = {"label": "PAPER", "model": (mm.model_name if mm else "Colab MLB v1.1 — unavailable this run"),
+           "status": "PASS" if mk else "BLANK", "pick": None, "best": None, "picks": [],
+           "by_market": {k: {"status": "PASS", "note": "model % = info only (paper) — grades are market-only", "best": None}
+                         for k in mk},
+           "w": 0.0, "markets": mk, "info_only": True,
+           "note": "MLB model % is paper/info only; A/B/C grades use the market edge" if mk else "no market lines"}
+    if not mm or not mk:
+        if mk and not mm:
+            blk["note"] = "MODEL blank: MLB model unavailable this run"
+        return blk
+    try:
+        L = mk["spread"]["line_home"] if "spread" in mk else None
+        T = mk["total"]["line"] if "total" in mk else None
+        pr = mm.predict(row["home"], row["away"], row["kick_utc"], home_line=L, total=T)
+    except Exception as e:  # noqa: BLE001 — never block the board
+        blk["note"] = f"MODEL blank: MLB model error ({type(e).__name__})"
+        return blk
+    if pr.get("status") != "ok":
+        blk["note"] = f"MODEL blank: {pr.get('reason')}"
+        return blk
+    blk["mlb_model"] = {k: pr.get(k) for k in ("game_pk", "runs_home", "runs_away", "home_pitcher", "away_pitcher", "park")}
+    blk["mlb_model"]["tie9_pct"] = r1(100 * pr["tie9"])
+    first = {"ml": 1 - pr["ml_home"], "spread": None if pr.get("pl_home") is None else 1 - pr["pl_home"],
+             "total": pr.get("over")}
+    for k, m in mk.items():
+        p0 = first.get(k)
+        if p0 is None:
+            continue
+        new = []
+        for sd, pm in ((m["sides"][0], p0), (m["sides"][1], 1 - p0)):
+            nv = None if sd.get("novig_pct") is None else sd["novig_pct"] / 100
+            nd = side_dict(sd["side"], sd["label"], sd["line"], sd["price_american"], sd["book"], nv, pm)
+            nd["novig_pct"] = sd["novig_pct"]
+            new.append(nd)
+        m["sides"] = new
+        m["stampable"] = False
+        m["note"] = "MODEL = Colab MLB v1.1 Poisson — paper/info only, never stamps"
+    return blk
 
 
 def attach_paper(sport: str, rows: list[dict], events_by_toa: dict[str, dict], now_ct: datetime,
@@ -690,8 +725,19 @@ def attach_paper(sport: str, rows: list[dict], events_by_toa: dict[str, dict], n
             matched.append((r, ev, sw))
     stats["espn_matched"] = len(matched)
     if sport == "MLB":
+        mm = None
+        try:
+            import mlb_model  # 2026-10-12: Colab MLB v1.1 Poisson model % (paper/info only, never graded/stamped)
+            days = sorted({kick_ct(r["kick_utc"]).date().isoformat() for r in rows if r.get("kick_utc")} |
+                          {(kick_ct(r["kick_utc"]) - timedelta(hours=6)).date().isoformat() for r in rows if r.get("kick_utc")})
+            mm = mlb_model.MLBLive(days, now_ct.year)
+            stats["mlb_model"] = {"model": mm.model_name, "notes": mm.notes, "as_of": mm.as_of,
+                                  "schedule_games": len(mm.games)}
+            log(f"MLB model: {stats['mlb_model']}")
+        except Exception as e:  # noqa: BLE001 — never block the board; MODEL stays blank
+            log(f"MLB model unavailable: {e}")
         for r in rows:
-            r["paper"] = mlb_block(r, events_by_toa.get(r.get("toa_event_id") or "", {}))
+            r["paper"] = mlb_block(r, events_by_toa.get(r.get("toa_event_id") or "", {}), mm)
             st = r["paper"]["status"].lower()
             stats[st] = stats.get(st, 0) + 1
         return stats
@@ -928,7 +974,9 @@ def summarize(ledger: dict, now_ct: datetime) -> dict:
     ledger["updated_at_ct"] = now_ct.isoformat(timespec="seconds")
     ledger["model"] = {"name": MODEL_NAME, "source": MODEL_SRC,
                        "params": {k: ({"w_fpi": v["w"], "w_market": round(1 - v["w"], 3), "sigma": v["sigma"]}
-                                      if v["w"] is not None else {"model": "none (market only, MODEL blank)"})
+                                      if v["w"] is not None else {"model": {"NHL": "NHL xG ratings model -> Poisson (research/info only, w=0)",
+                                                                     "MLB": "Colab MLB v1.1 Poisson (paper/info only, w=0)"}
+                                                             .get(k, "none (market only, MODEL blank)")})
                                   for k, v in MODEL.items()},
                        "rules": {"edge_min_pp": EDGE_MIN, "gap_hold_pp": GAP_MAX, "unit_usd": UNIT_USD,
                                  "books": "DraftKings / Betr / Bovada as returned by The Odds API",

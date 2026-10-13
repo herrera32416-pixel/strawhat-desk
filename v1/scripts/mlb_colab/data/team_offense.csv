@@ -1,0 +1,31 @@
+team,runs_per_game,offense_index,wrc_plus,source,as_of,season,games,runs
+Milwaukee Brewers,5.135802,,,mlb_stats_api_team_hitting,2026-10-12,2026,162,832
+Tampa Bay Rays,4.54321,,,mlb_stats_api_team_hitting,2026-10-12,2026,162,736
+Los Angeles Dodgers,4.944444,,,mlb_stats_api_team_hitting,2026-10-12,2026,162,801
+Colorado Rockies,4.641975,,,mlb_stats_api_team_hitting,2026-10-12,2026,162,752
+Pittsburgh Pirates,4.734568,,,mlb_stats_api_team_hitting,2026-10-12,2026,162,767
+Chicago Cubs,5.246914,,,mlb_stats_api_team_hitting,2026-10-12,2026,162,850
+Miami Marlins,4.41358,,,mlb_stats_api_team_hitting,2026-10-12,2026,162,715
+Kansas City Royals,4.259259,,,mlb_stats_api_team_hitting,2026-10-12,2026,162,690
+Toronto Blue Jays,4.0,,,mlb_stats_api_team_hitting,2026-10-12,2026,162,648
+Atlanta Braves,4.580247,,,mlb_stats_api_team_hitting,2026-10-12,2026,162,742
+Arizona Diamondbacks,4.561728,,,mlb_stats_api_team_hitting,2026-10-12,2026,162,739
+Washington Nationals,5.067901,,,mlb_stats_api_team_hitting,2026-10-12,2026,162,821
+Boston Red Sox,4.253086,,,mlb_stats_api_team_hitting,2026-10-12,2026,162,689
+Athletics,4.314815,,,mlb_stats_api_team_hitting,2026-10-12,2026,162,699
+San Francisco Giants,4.12963,,,mlb_stats_api_team_hitting,2026-10-12,2026,162,669
+Minnesota Twins,4.561728,,,mlb_stats_api_team_hitting,2026-10-12,2026,162,739
+San Diego Padres,4.45679,,,mlb_stats_api_team_hitting,2026-10-12,2026,162,722
+Houston Astros,4.530864,,,mlb_stats_api_team_hitting,2026-10-12,2026,162,734
+Texas Rangers,4.154321,,,mlb_stats_api_team_hitting,2026-10-12,2026,162,673
+Detroit Tigers,4.462963,,,mlb_stats_api_team_hitting,2026-10-12,2026,162,723
+Philadelphia Phillies,4.401235,,,mlb_stats_api_team_hitting,2026-10-12,2026,162,713
+St. Louis Cardinals,4.444444,,,mlb_stats_api_team_hitting,2026-10-12,2026,162,720
+New York Mets,4.314815,,,mlb_stats_api_team_hitting,2026-10-12,2026,162,699
+Cleveland Guardians,4.185185,,,mlb_stats_api_team_hitting,2026-10-12,2026,162,678
+Chicago White Sox,4.790123,,,mlb_stats_api_team_hitting,2026-10-12,2026,162,776
+New York Yankees,4.590062,,,mlb_stats_api_team_hitting,2026-10-12,2026,161,739
+Los Angeles Angels,4.04321,,,mlb_stats_api_team_hitting,2026-10-12,2026,162,655
+Baltimore Orioles,4.459627,,,mlb_stats_api_team_hitting,2026-10-12,2026,161,718
+Seattle Mariners,4.098765,,,mlb_stats_api_team_hitting,2026-10-12,2026,162,664
+Cincinnati Reds,4.111111,,,mlb_stats_api_team_hitting,2026-10-12,2026,162,666

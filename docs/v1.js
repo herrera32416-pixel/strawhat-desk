@@ -33,12 +33,14 @@
     return out;
   }
   function goalieLine(g) {
+    if (g.sport === 'MLB') { const mm = g.paper && g.paper.mlb_model;
+      return `<div class="small mut"><b>Paper / info only · MLB Colab v1.1 Poisson model</b> — model % never sets the A/B/C grade${mm ? ` · exp. runs ${last(g.away)} ${mm.runs_away} – ${last(g.home)} ${mm.runs_home} · SP ${mm.away_pitcher} vs ${mm.home_pitcher} · park ${mm.park}` : ` · ${(g.paper && g.paper.note) || 'model blank'}`}</div>`; }
     const gl = g.paper && g.paper.goalies; if (g.sport !== 'NHL') return '';
     const f = (s, t) => { const x = gl && gl[s]; return `${last(t)}: ${x ? `${x.goalie} (${x.status})` : '—'}`; };
     const conf = gl && gl.home && gl.away && /confirm/i.test(gl.home.status) && /confirm/i.test(gl.away.status);
     let h = `<div class="small">${conf ? '' : '⚠ '}Goalies · ${f('away', g.away)} · ${f('home', g.home)}${conf ? '' : ' · not both confirmed'}</div>`;
     const nm = g.paper.nhl_model, w = g.paper.w || {};
-    if (nm) h += `<div class="small mut"><b>Research only · NHL xG model</b> reg goals ${last(g.away)} ${nm.reg_goals_away} – ${last(g.home)} ${nm.reg_goals_home} · reg tie ${nm.reg_tie_pct}% · GSAx/gm ${E(nm.gsax_pg_away)} / ${E(nm.gsax_pg_home)} · w ML ${w.ml ?? 0} PL ${w.pl ?? 0} O/U ${w.tot ?? 0} (0 = shown, not used)</div>`;
+    if (nm) h += `<div class="small mut"><b>Paper / info only · NHL xG model</b> — model % never sets the A/B/C grade · reg goals ${last(g.away)} ${nm.reg_goals_away} – ${last(g.home)} ${nm.reg_goals_home} · reg tie ${nm.reg_tie_pct}% · GSAx/gm ${E(nm.gsax_pg_away)} / ${E(nm.gsax_pg_home)} · w ML ${w.ml ?? 0} PL ${w.pl ?? 0} O/U ${w.tot ?? 0} (0 = shown, not used)</div>`;
     return h;
   }
   function card(g) {
