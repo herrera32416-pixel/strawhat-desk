@@ -110,12 +110,12 @@
    "game": "Colorado State @ Texas State",
    "kick_iso": "2026-10-15T19:00:00-05:00",
    "gameday": "2026-10-15",
-   "line": 71.5,
+   "line": 69.5,
    "side": "under",
    "lean": -2.26,
    "price": -110,
    "status": "open",
-   "updated_ct": "2026-10-12T17:09-05:00",
+   "updated_ct": "2026-10-13T15:43-05:00",
    "logged_ct": "2026-10-10T13:31-05:00"
   },
   {
@@ -123,12 +123,12 @@
    "game": "Ohio State @ Indiana",
    "kick_iso": "2026-10-17T11:00:00-05:00",
    "gameday": "2026-10-17",
-   "line": 50.5,
+   "line": 51.5,
    "side": "under",
    "lean": -1.53,
    "price": -110,
    "status": "open",
-   "updated_ct": "2026-10-12T17:09-05:00",
+   "updated_ct": "2026-10-13T15:43-05:00",
    "logged_ct": "2026-10-11T08:02-05:00"
   },
   {
@@ -141,7 +141,7 @@
    "lean": -1.81,
    "price": -110,
    "status": "open",
-   "updated_ct": "2026-10-12T17:09-05:00",
+   "updated_ct": "2026-10-13T15:43-05:00",
    "logged_ct": "2026-10-12T17:09-05:00"
   },
   {
@@ -154,7 +154,7 @@
    "lean": 1.97,
    "price": -110,
    "status": "open",
-   "updated_ct": "2026-10-12T17:09-05:00",
+   "updated_ct": "2026-10-13T15:43-05:00",
    "logged_ct": "2026-10-12T17:09-05:00"
   },
   {
@@ -167,7 +167,7 @@
    "lean": -1.82,
    "price": -110,
    "status": "open",
-   "updated_ct": "2026-10-12T17:09-05:00",
+   "updated_ct": "2026-10-13T15:43-05:00",
    "logged_ct": "2026-10-12T17:09-05:00"
   },
   {
@@ -175,12 +175,12 @@
    "game": "Wisconsin @ UCLA",
    "kick_iso": "2026-10-17T18:30:00-05:00",
    "gameday": "2026-10-17",
-   "line": 45.5,
+   "line": 43.5,
    "side": "over",
    "lean": 1.57,
    "price": -110,
    "status": "open",
-   "updated_ct": "2026-10-12T17:09-05:00",
+   "updated_ct": "2026-10-13T15:43-05:00",
    "logged_ct": "2026-10-12T17:09-05:00"
   }
  ]
