@@ -459,6 +459,48 @@ def market_edge(sport: str, row: dict, ev: dict | None) -> dict:
     return out
 
 
+def add_fpi_pct(sport: str, markets: dict, fpi_home) -> None:
+    """INFO ONLY (2026-10-14): unweighted ESPN FPI margin -> probability (w=1, same sigma), per side as fpi_pct.
+    Display column only; model_pct / edge / stamping keep the configured w (NFL w=0)."""
+    if fpi_home is None or sport not in MODEL:
+        return
+    sig = MODEL[sport]["sigma"]
+    for k, m in markets.items():
+        if k == "total":
+            continue
+        for sd in m.get("sides") or []:
+            if k == "ml":
+                ph = ND.cdf(fpi_home / sig)
+            elif sd.get("line") is None:
+                continue
+            else:
+                Lh = sd["line"] if sd["side"] == "home" else -sd["line"]
+                ph = 1 - ND.cdf((-Lh - fpi_home) / sig)
+            sd["fpi_pct"] = r1(100 * (ph if sd["side"] == "home" else 1 - ph))
+
+
+def board_model_view(sport: str, market_edge: dict | None, markets: dict | None) -> dict:
+    """paper.json board copy of market_edge with model_pct = the sport's own model % (NHL xG, MLB Colab,
+    NFL/CFB blend) instead of the no-vig copy. Display only: the ledger stamps already ran on market_edge."""
+    out = json.loads(json.dumps(market_edge or {}))
+    for k, me in out.items():
+        msides = {sd.get("side"): sd for sd in ((markets or {}).get(k) or {}).get("sides") or []}
+        for sd in (me.get("sides") or []) + ([me["best"]] if me.get("best") else []):
+            src = msides.get(sd.get("side"))
+            mp = None
+            if src is not None and src.get("model_pct") is not None and (sd.get("line") is None or src.get("line") is None
+                                                                          or abs(float(src["line"]) - float(sd["line"])) < 1e-9):
+                mp = src["model_pct"]
+            sd["market_pct"] = sd.get("novig_pct")
+            sd["model_pct"] = mp
+            sd["model_gap_pp"] = None if mp is None or sd.get("novig_pct") is None else r1(mp - sd["novig_pct"])
+            sd["model_source"] = {"NHL": "NHL xG ratings model (w=0, info)", "MLB": "Colab MLB v1.1 Poisson (info)",
+                                  }.get(sport, "market + w·(FPI − market) blend") if mp is not None else None
+            if src is not None and src.get("fpi_pct") is not None:
+                sd["fpi_pct"] = src["fpi_pct"]
+    return out
+
+
 def blend_row(sport: str, row: dict, ev: dict, fpi_home) -> dict:
     """Paper block for one game: three markets for display + per-market stamp decision."""
     quotes = book_quotes(ev, row)
@@ -470,6 +512,7 @@ def blend_row(sport: str, row: dict, ev: dict, fpi_home) -> dict:
            "sigma": cfg["sigma"], "fpi_home_margin": None if fpi_home is None else round(fpi_home, 2),
            "status": "PASS", "pick": None, "best": None, "picks": [], "by_market": {}, "note": ""}
     blk["markets"] = three_markets(sport, row, quotes, mp)
+    add_fpi_pct(sport, blk["markets"], fpi_home)  # INFO ONLY: unweighted FPI %, never used by the rules
     if mp:
         blk["mkt_home_margin"] = round(mp["A"], 2)
         blk["blend_home_margin"] = round(mp["pred"], 2)

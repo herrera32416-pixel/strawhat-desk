@@ -22,12 +22,12 @@
         sides = k === 'ml' ? [{ label: last(g.away) + ' ML', price_american: g.ml_away_price, book: g.ml_away_book, novig_pct: g.market_away_ml_pct }, { label: last(g.home) + ' ML', price_american: g.ml_home_price, book: g.ml_home_book, novig_pct: g.market_home_ml_pct }]
           : k === 'spread' ? [{ label: last(g.away) + ' ' + L(g.spread_away_line), price_american: g.spread_away_price, book: g.spread_away_book, novig_pct: g.market_away_cover_pct }, { label: last(g.home) + ' ' + L(g.spread_home_line), price_american: g.spread_home_price, book: g.spread_home_book, novig_pct: g.market_home_cover_pct }]
           : [{ label: 'O ' + (g.total_line ?? ''), price_american: g.over_price, book: g.over_book, novig_pct: g.market_over_pct }, { label: 'U ' + (g.total_line ?? ''), price_american: g.under_price, book: g.under_book, novig_pct: g.market_under_pct }];
-        if (sides.every(s => s.price_american == null && s.novig_pct == null)) { out += `<tr><td>${lab}</td><td colspan=6 class="mut">no line</td></tr>`; continue; }
+        if (sides.every(s => s.price_american == null && s.novig_pct == null)) { out += `<tr><td>${lab}</td><td colspan=${g.sport === 'NFL' ? 7 : 6} class="mut">no line</td></tr>`; continue; }
       }
       sides.slice(0, 2).forEach((s, i) => {
         const nm = String(s.label || '').replace(g.away, last(g.away)).replace(g.home, last(g.home)).replace(/^Over /, 'O ').replace(/^Under /, 'U ');
         const pick = st === 'PAPER' && g.paper.best && g.paper.best.label === s.label;
-        out += `<tr class="${pick ? 'pk' : ''}">${i === 0 ? `<td rowspan=2>${lab}</td>` : ''}<td>${nm}</td><td>${A(s.price_american)} <small>${s.book || ''}</small></td><td>${P(s.novig_pct)}</td><td>${P(s.model_pct)}</td><td>${s.model_pct == null ? '—' : E(s.edge_pp)}</td>${i === 0 ? `<td rowspan=2><span class="dec ${st === 'PAPER' ? 'PICK' : st}" title="${note}">${st}</span>${gr ? ` <span class="grade g${gr}" title="${note}">${gr}</span>` : ''}</td>` : ''}</tr>`;
+        out += `<tr class="${pick ? 'pk' : ''}">${i === 0 ? `<td rowspan=2>${lab}</td>` : ''}<td>${nm}</td><td>${A(s.price_american)} <small>${s.book || ''}</small></td><td>${P(s.novig_pct)}</td><td>${P(s.model_pct)}</td>${g.sport === 'NFL' ? `<td class="mut" title="info only: unweighted ESPN FPI line as a probability; picks use w=0">${P(s.fpi_pct)}</td>` : ''}<td>${s.model_pct == null ? '—' : E(s.edge_pp)}</td>${i === 0 ? `<td rowspan=2><span class="dec ${st === 'PAPER' ? 'PICK' : st}" title="${note}">${st}</span>${gr ? ` <span class="grade g${gr}" title="${note}">${gr}</span>` : ''}</td>` : ''}</tr>`;
       });
     }
     return out;
@@ -44,7 +44,7 @@
     return h;
   }
   function card(g) {
-    return `<div class="card"><div class="gh"><span class="tag ${g.sport_raw}">${g.sport}</span> <b>${g.away} @ ${g.home}</b><span class="k">${g.kick_ct}</span></div><table><tr><th>Mkt</th><th>Side</th><th>Price</th><th>Mkt % (no-vig)</th><th>Model %</th><th>Edge pp</th><th></th></tr>${mktRows(g)}</table>${goalieLine(g)}</div>`;
+    return `<div class="card"><div class="gh"><span class="tag ${g.sport_raw}">${g.sport}</span> <b>${g.away} @ ${g.home}</b><span class="k">${g.kick_ct}</span></div><table><tr><th>Mkt</th><th>Side</th><th>Price</th><th>Mkt % (no-vig)</th><th>Model %</th>${g.sport === 'NFL' ? '<th title="info only, not used for picks (w=0)">FPI % (info)</th>' : ''}<th>Edge pp</th><th></th></tr>${mktRows(g)}</table>${goalieLine(g)}</div>`;
   }
   function board(d, pl) {
     const el = $('#board'), R = rows(d), s = pl.summary || {};

@@ -575,7 +575,8 @@ def main(argv: list[str] | None = None) -> int:
             "sport": r["sport"], "matchup": r["matchup"], "kick_utc": r["kick_utc"], "kick_ct": r["kick_ct"],
             "event_id": r["event_id"], "espn_event_id": r.get("espn_event_id"), "status": b.get("status"),
             "best": b.get("best"), "picks": b.get("picks") or [], "by_market": b.get("by_market"),
-            "note": b.get("note"), "market_edge": r.get("market_edge"), "fpi_home_margin": b.get("fpi_home_margin"),
+            "note": b.get("note"), "market_edge": paper_model.board_model_view(r["sport"], r.get("market_edge"), b.get("markets")),
+            "fpi_home_margin": b.get("fpi_home_margin"),
             "mkt_home_margin": b.get("mkt_home_margin"), "blend_home_margin": b.get("blend_home_margin"),
             "stamped": any(paper_model.pick_id(r["sport"], r, m) in stamped_ids for m in ("ml", "spread", "total")),
             "stamped_markets": [m for m in ("ml", "spread", "total")
