@@ -36,6 +36,13 @@ on:
     - cron: "15 17 * * *"   # noon fallback CDT (11:15 CST)
     - cron: "15 18 * * *"   # noon fallback CST (1:15 CDT)
     - cron: "15 19 * * *"
+    # Extra staggered catch slots (2026-10-13: the waiter's 5:37am slot was delivered at 12:44pm). No-op once stamped.
+    - cron: "47 16 * * *"   # 11:47 CDT
+    - cron: "7 18 * * *"    # 1:07 CDT
+    - cron: "37 19 * * *"   # 2:37 CDT
+    - cron: "52 20 * * *"   # 3:52 CDT
+    - cron: "17 22 * * *"   # 5:17 CDT
+    - cron: "33 23 * * *"   # 6:33 CDT
     - cron: "15 20 * * *"
     - cron: "15 21 * * *"
   workflow_dispatch:
@@ -122,17 +129,19 @@ jobs:
           # FIX 2026-10-10: this line was 'if mkdir ... && cp ...' with no then/fi -> bash syntax error (exit 2) on every run since the Oct 9 merge,
           # so data/ + the run stamp never reached main and Pages never updated.
           mkdir -p ../docs/data/v1 && cp data/today.json data/paper.json data/paper_ledger.json ../docs/data/v1/ && { [ ! -f data/model_log.json ] || cp data/model_log.json ../docs/data/v1/; }
-          if git diff --quiet -- data/ ../docs/data/v1 && [ -z "$(git ls-files --others --exclude-standard -- data/ ../docs/data/v1)" ]; then
+          if git diff --quiet -- data/ ../docs/data/v1 scripts/mlb_colab/data/ && [ -z "$(git ls-files --others --exclude-standard -- data/ ../docs/data/v1)" ]; then
             echo "No data change."
             echo "changed=false" >> "$GITHUB_OUTPUT"
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/ ../docs/data/v1
+          # FIX 2026-10-13: scripts/mlb_model.py (commit 32d4f48) refreshes tracked CSVs in scripts/mlb_colab/data/;
+          # left unstaged, they made the rebase pull exit 128 on every Oct 13 run. Commit them; stash anything else.
+          git add data/ ../docs/data/v1 scripts/mlb_colab/data/
           git commit -m "auto board + paper $(TZ=America/Chicago date +%F) CT"
           # box publisher may have pushed meanwhile; rebase data-only commit, never force
-          git pull --rebase -X theirs origin main   # data-only commit: on a data conflict keep this run's fresh files
+          git pull --rebase --autostash -X theirs origin main   # data-only commit: on a data conflict keep this run's fresh files
           git push origin HEAD:main
           echo "changed=true" >> "$GITHUB_OUTPUT"
 
