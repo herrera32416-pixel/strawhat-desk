@@ -1,0 +1,51 @@
+name: research archive (injuries, lineups, odds, props)
+# RESEARCH ONLY (approved by Luis 2026-10-14). Never read by the live board/picks.
+# Saves timestamped snapshots to data/archive/YYYY-MM-DD/ (CT date). Script: archive/archive_snapshot.py.
+# Stages ONLY data/archive/, separate concurrency group, push retried -> cannot break the board push.
+# Odds API budget (own log data/archive/credits.jsonl): <=200 credits/CT day, <=4000/month, and never lets the key
+# drop below 3000 remaining (leaves the live desk's headroom). >>> NOVEMBER (free tier): set ARCH_ODDS "0" <<<
+# Schedule (CDT; cron is UTC): 8:10am, 11:40am, 3:10pm, 6:10pm, 9:40pm CT. CST after Nov 1 = 1h earlier.
+on:
+  schedule:
+    - cron: "10 13 * * *"
+    - cron: "40 16 * * *"
+    - cron: "10 20 * * *"
+    - cron: "10 23 * * *"
+    - cron: "40 2 * * *"
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: strawhat-archive
+  cancel-in-progress: false
+jobs:
+  archive:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with: { ref: main }
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - name: snapshot (failures logged to runs.jsonl, never fatal)
+        continue-on-error: true
+        env:
+          THE_ODDS_API_KEY: ${{ secrets.THE_ODDS_API_KEY }}
+          ARCH_ODDS: "1"
+          ARCH_PROPS: "1"
+          ARCH_DAILY_CAP: "200"
+          ARCH_MONTHLY_CAP: "4000"
+          ARCH_MIN_REMAINING: "3000"
+        run: python archive/archive_snapshot.py
+      - name: commit data/archive only
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/archive
+          if git diff --cached --quiet; then echo "nothing to commit"; exit 0; fi
+          git commit -q -m "archive $(TZ=America/Chicago date '+%F %H:%M') CT"
+          for i in 1 2 3 4 5; do
+            git pull --rebase -q origin main && git push -q origin HEAD:main && exit 0
+            git rebase --abort 2>/dev/null || true; sleep $((i*10))
+          done
+          echo "::warning::archive push failed after 5 tries"; exit 0
