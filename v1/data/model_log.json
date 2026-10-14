@@ -316,6 +316,111 @@
     }
    ],
    "status": "open"
+  },
+  {
+   "id": "mlb-401908025-ml",
+   "sport": "MLB",
+   "market": "ml",
+   "logged_at_ct": "2026-10-14T09:41:51-05:00",
+   "slate_date_ct": "2026-10-15",
+   "kick_utc": "2026-10-15T22:00:00Z",
+   "matchup": "Tampa Bay Rays at Cleveland Guardians",
+   "away": "Tampa Bay Rays",
+   "home": "Cleveland Guardians",
+   "espn_event_id": "401908025",
+   "espn_home_id": "5",
+   "model": "Colab MLB v1.1 (Savant xERA starter + bullpen RA9 + park + opp offense -> Poisson) — PAPER / INFO ONLY, not used for grades",
+   "sides": [
+    {
+     "side": "away",
+     "label": "Tampa Bay Rays ML",
+     "line": null,
+     "price_american": 109,
+     "book": "DraftKings (via ESPN)",
+     "novig_pct": 45.7,
+     "model_pct": null
+    },
+    {
+     "side": "home",
+     "label": "Cleveland Guardians ML",
+     "line": null,
+     "price_american": -132,
+     "book": "DraftKings (via ESPN)",
+     "novig_pct": 54.3,
+     "model_pct": null
+    }
+   ],
+   "status": "open"
+  },
+  {
+   "id": "mlb-401908025-spread",
+   "sport": "MLB",
+   "market": "spread",
+   "logged_at_ct": "2026-10-14T09:41:51-05:00",
+   "slate_date_ct": "2026-10-15",
+   "kick_utc": "2026-10-15T22:00:00Z",
+   "matchup": "Tampa Bay Rays at Cleveland Guardians",
+   "away": "Tampa Bay Rays",
+   "home": "Cleveland Guardians",
+   "espn_event_id": "401908025",
+   "espn_home_id": "5",
+   "model": "Colab MLB v1.1 (Savant xERA starter + bullpen RA9 + park + opp offense -> Poisson) — PAPER / INFO ONLY, not used for grades",
+   "sides": [
+    {
+     "side": "away",
+     "label": "Tampa Bay Rays +1.5",
+     "line": 1.5,
+     "price_american": -208,
+     "book": "DraftKings (via ESPN)",
+     "novig_pct": 64.6,
+     "model_pct": null
+    },
+    {
+     "side": "home",
+     "label": "Cleveland Guardians -1.5",
+     "line": -1.5,
+     "price_american": 170,
+     "book": "DraftKings (via ESPN)",
+     "novig_pct": 35.4,
+     "model_pct": null
+    }
+   ],
+   "status": "open"
+  },
+  {
+   "id": "mlb-401908025-total",
+   "sport": "MLB",
+   "market": "total",
+   "logged_at_ct": "2026-10-14T09:41:51-05:00",
+   "slate_date_ct": "2026-10-15",
+   "kick_utc": "2026-10-15T22:00:00Z",
+   "matchup": "Tampa Bay Rays at Cleveland Guardians",
+   "away": "Tampa Bay Rays",
+   "home": "Cleveland Guardians",
+   "espn_event_id": "401908025",
+   "espn_home_id": "5",
+   "model": "Colab MLB v1.1 (Savant xERA starter + bullpen RA9 + park + opp offense -> Poisson) — PAPER / INFO ONLY, not used for grades",
+   "sides": [
+    {
+     "side": "over",
+     "label": "Over 6.5",
+     "line": 6.5,
+     "price_american": -122,
+     "book": "DraftKings (via ESPN)",
+     "novig_pct": 52.5,
+     "model_pct": null
+    },
+    {
+     "side": "under",
+     "label": "Under 6.5",
+     "line": 6.5,
+     "price_american": 101,
+     "book": "DraftKings (via ESPN)",
+     "novig_pct": 47.5,
+     "model_pct": null
+    }
+   ],
+   "status": "open"
   }
  ],
  "summary": {}
