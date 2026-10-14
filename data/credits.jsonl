@@ -206,3 +206,5 @@
 {"time_ct": "2026-10-14T13:40:09-05:00", "day_ct": "2026-10-14", "kind": "daily", "label": "events cfb", "path": "/v4/sports/americanfootball_ncaaf/events", "status": 200, "est": 0, "last": "0", "used": "6623", "remaining": "13377"}
 {"time_ct": "2026-10-14T13:40:10-05:00", "day_ct": "2026-10-14", "kind": "daily", "label": "odds cfb", "path": "/v4/sports/americanfootball_ncaaf/odds", "status": 200, "est": 6, "last": "6", "used": "6629", "remaining": "13371"}
 {"time_ct": "2026-10-14T13:40:12-05:00", "day_ct": "2026-10-14", "kind": "daily", "label": "events nfl", "path": "/v4/sports/americanfootball_nfl/events", "status": 200, "est": 0, "last": "0", "used": "6629", "remaining": "13371"}
+{"time_ct": "2026-10-14T15:22:01-05:00", "day_ct": "2026-10-14", "kind": "daily", "label": "nhl_events", "path": "/v4/sports/icehockey_nhl/events", "status": 200, "est": 0, "last": "0", "used": "6647", "remaining": "13353"}
+{"time_ct": "2026-10-14T15:22:01-05:00", "day_ct": "2026-10-14", "kind": "daily", "label": "nhl_odds", "path": "/v4/sports/icehockey_nhl/odds", "status": 200, "est": 4, "last": "4", "used": "6651", "remaining": "13349"}
