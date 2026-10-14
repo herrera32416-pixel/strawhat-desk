@@ -1,0 +1,322 @@
+{
+ "schema": "desk-model-log/v1",
+ "label": "PAPER / INFO ONLY — model % vs results, not bets",
+ "entries": [
+  {
+   "id": "nhl-401892504-ml",
+   "sport": "NHL",
+   "market": "ml",
+   "logged_at_ct": "2026-10-13T22:38:36-05:00",
+   "slate_date_ct": "2026-10-14",
+   "kick_utc": "2026-10-14T23:40:00Z",
+   "matchup": "Montréal Canadiens at Washington Capitals",
+   "away": "Montréal Canadiens",
+   "home": "Washington Capitals",
+   "espn_event_id": "401892504",
+   "espn_home_id": "23",
+   "model": "NHL xG model v1 (2023+ only, 0.5 xG + 0.5 goals, goalie, b2b) — research only",
+   "sides": [
+    {
+     "side": "away",
+     "label": "Montréal Canadiens ML",
+     "line": null,
+     "price_american": 110,
+     "book": "DraftKings",
+     "novig_pct": 45.7,
+     "model_pct": 45.7
+    },
+    {
+     "side": "home",
+     "label": "Washington Capitals ML",
+     "line": null,
+     "price_american": -130,
+     "book": "DraftKings",
+     "novig_pct": 54.3,
+     "model_pct": 54.3
+    }
+   ],
+   "status": "open"
+  },
+  {
+   "id": "nhl-401892504-spread",
+   "sport": "NHL",
+   "market": "spread",
+   "logged_at_ct": "2026-10-13T22:38:36-05:00",
+   "slate_date_ct": "2026-10-14",
+   "kick_utc": "2026-10-14T23:40:00Z",
+   "matchup": "Montréal Canadiens at Washington Capitals",
+   "away": "Montréal Canadiens",
+   "home": "Washington Capitals",
+   "espn_event_id": "401892504",
+   "espn_home_id": "23",
+   "model": "NHL xG model v1 (2023+ only, 0.5 xG + 0.5 goals, goalie, b2b) — research only",
+   "sides": [
+    {
+     "side": "away",
+     "label": "Montréal Canadiens +1.5",
+     "line": 1.5,
+     "price_american": -225,
+     "book": "DraftKings",
+     "novig_pct": 66.4,
+     "model_pct": 65.1
+    },
+    {
+     "side": "home",
+     "label": "Washington Capitals -1.5",
+     "line": -1.5,
+     "price_american": 185,
+     "book": "DraftKings",
+     "novig_pct": 33.6,
+     "model_pct": 34.9
+    }
+   ],
+   "status": "open"
+  },
+  {
+   "id": "nhl-401892504-total",
+   "sport": "NHL",
+   "market": "total",
+   "logged_at_ct": "2026-10-13T22:38:36-05:00",
+   "slate_date_ct": "2026-10-14",
+   "kick_utc": "2026-10-14T23:40:00Z",
+   "matchup": "Montréal Canadiens at Washington Capitals",
+   "away": "Montréal Canadiens",
+   "home": "Washington Capitals",
+   "espn_event_id": "401892504",
+   "espn_home_id": "23",
+   "model": "NHL xG model v1 (2023+ only, 0.5 xG + 0.5 goals, goalie, b2b) — research only",
+   "sides": [
+    {
+     "side": "over",
+     "label": "Over 6.5",
+     "line": 6.5,
+     "price_american": -115,
+     "book": "DraftKings",
+     "novig_pct": 51.1,
+     "model_pct": 52.2
+    },
+    {
+     "side": "under",
+     "label": "Under 6.5",
+     "line": 6.5,
+     "price_american": -105,
+     "book": "DraftKings",
+     "novig_pct": 48.9,
+     "model_pct": 47.8
+    }
+   ],
+   "status": "open"
+  },
+  {
+   "id": "nhl-401892505-ml",
+   "sport": "NHL",
+   "market": "ml",
+   "logged_at_ct": "2026-10-13T22:38:36-05:00",
+   "slate_date_ct": "2026-10-14",
+   "kick_utc": "2026-10-15T00:40:00Z",
+   "matchup": "Dallas Stars at Colorado Avalanche",
+   "away": "Dallas Stars",
+   "home": "Colorado Avalanche",
+   "espn_event_id": "401892505",
+   "espn_home_id": "17",
+   "model": "NHL xG model v1 (2023+ only, 0.5 xG + 0.5 goals, goalie, b2b) — research only",
+   "sides": [
+    {
+     "side": "away",
+     "label": "Dallas Stars ML",
+     "line": null,
+     "price_american": 120,
+     "book": "DraftKings",
+     "novig_pct": 43.7,
+     "model_pct": 44.2
+    },
+    {
+     "side": "home",
+     "label": "Colorado Avalanche ML",
+     "line": null,
+     "price_american": -142,
+     "book": "DraftKings",
+     "novig_pct": 56.3,
+     "model_pct": 55.8
+    }
+   ],
+   "status": "open"
+  },
+  {
+   "id": "nhl-401892505-spread",
+   "sport": "NHL",
+   "market": "spread",
+   "logged_at_ct": "2026-10-13T22:38:36-05:00",
+   "slate_date_ct": "2026-10-14",
+   "kick_utc": "2026-10-15T00:40:00Z",
+   "matchup": "Dallas Stars at Colorado Avalanche",
+   "away": "Dallas Stars",
+   "home": "Colorado Avalanche",
+   "espn_event_id": "401892505",
+   "espn_home_id": "17",
+   "model": "NHL xG model v1 (2023+ only, 0.5 xG + 0.5 goals, goalie, b2b) — research only",
+   "sides": [
+    {
+     "side": "away",
+     "label": "Dallas Stars +1.5",
+     "line": 1.5,
+     "price_american": -198,
+     "book": "DraftKings",
+     "novig_pct": 63.7,
+     "model_pct": 64.7
+    },
+    {
+     "side": "home",
+     "label": "Colorado Avalanche -1.5",
+     "line": -1.5,
+     "price_american": 164,
+     "book": "DraftKings",
+     "novig_pct": 36.3,
+     "model_pct": 35.3
+    }
+   ],
+   "status": "open"
+  },
+  {
+   "id": "nhl-401892505-total",
+   "sport": "NHL",
+   "market": "total",
+   "logged_at_ct": "2026-10-13T22:38:36-05:00",
+   "slate_date_ct": "2026-10-14",
+   "kick_utc": "2026-10-15T00:40:00Z",
+   "matchup": "Dallas Stars at Colorado Avalanche",
+   "away": "Dallas Stars",
+   "home": "Colorado Avalanche",
+   "espn_event_id": "401892505",
+   "espn_home_id": "17",
+   "model": "NHL xG model v1 (2023+ only, 0.5 xG + 0.5 goals, goalie, b2b) — research only",
+   "sides": [
+    {
+     "side": "over",
+     "label": "Over 5.5",
+     "line": 5.5,
+     "price_american": -135,
+     "book": "DraftKings",
+     "novig_pct": 55.1,
+     "model_pct": 53.2
+    },
+    {
+     "side": "under",
+     "label": "Under 5.5",
+     "line": 5.5,
+     "price_american": 114,
+     "book": "DraftKings",
+     "novig_pct": 44.9,
+     "model_pct": 46.8
+    }
+   ],
+   "status": "open"
+  },
+  {
+   "id": "mlb-401908032-ml",
+   "sport": "MLB",
+   "market": "ml",
+   "logged_at_ct": "2026-10-13T22:38:36-05:00",
+   "slate_date_ct": "2026-10-14",
+   "kick_utc": "2026-10-15T00:00:00Z",
+   "matchup": "Milwaukee Brewers at Los Angeles Dodgers",
+   "away": "Milwaukee Brewers",
+   "home": "Los Angeles Dodgers",
+   "espn_event_id": "401908032",
+   "espn_home_id": "19",
+   "model": "Colab MLB v1.1 (Savant xERA starter + bullpen RA9 + park + opp offense -> Poisson) — PAPER / INFO ONLY, not used for grades",
+   "sides": [
+    {
+     "side": "away",
+     "label": "Milwaukee Brewers ML",
+     "line": null,
+     "price_american": 148,
+     "book": "DraftKings (via ESPN)",
+     "novig_pct": 38.5,
+     "model_pct": 34.1
+    },
+    {
+     "side": "home",
+     "label": "Los Angeles Dodgers ML",
+     "line": null,
+     "price_american": -180,
+     "book": "DraftKings (via ESPN)",
+     "novig_pct": 61.5,
+     "model_pct": 65.9
+    }
+   ],
+   "status": "open"
+  },
+  {
+   "id": "mlb-401908032-spread",
+   "sport": "MLB",
+   "market": "spread",
+   "logged_at_ct": "2026-10-13T22:38:36-05:00",
+   "slate_date_ct": "2026-10-14",
+   "kick_utc": "2026-10-15T00:00:00Z",
+   "matchup": "Milwaukee Brewers at Los Angeles Dodgers",
+   "away": "Milwaukee Brewers",
+   "home": "Los Angeles Dodgers",
+   "espn_event_id": "401908032",
+   "espn_home_id": "19",
+   "model": "Colab MLB v1.1 (Savant xERA starter + bullpen RA9 + park + opp offense -> Poisson) — PAPER / INFO ONLY, not used for grades",
+   "sides": [
+    {
+     "side": "away",
+     "label": "Milwaukee Brewers +1.5",
+     "line": 1.5,
+     "price_american": -156,
+     "book": "DraftKings (via ESPN)",
+     "novig_pct": 58.3,
+     "model_pct": 55.5
+    },
+    {
+     "side": "home",
+     "label": "Los Angeles Dodgers -1.5",
+     "line": -1.5,
+     "price_american": 129,
+     "book": "DraftKings (via ESPN)",
+     "novig_pct": 41.7,
+     "model_pct": 44.5
+    }
+   ],
+   "status": "open"
+  },
+  {
+   "id": "mlb-401908032-total",
+   "sport": "MLB",
+   "market": "total",
+   "logged_at_ct": "2026-10-13T22:38:36-05:00",
+   "slate_date_ct": "2026-10-14",
+   "kick_utc": "2026-10-15T00:00:00Z",
+   "matchup": "Milwaukee Brewers at Los Angeles Dodgers",
+   "away": "Milwaukee Brewers",
+   "home": "Los Angeles Dodgers",
+   "espn_event_id": "401908032",
+   "espn_home_id": "19",
+   "model": "Colab MLB v1.1 (Savant xERA starter + bullpen RA9 + park + opp offense -> Poisson) — PAPER / INFO ONLY, not used for grades",
+   "sides": [
+    {
+     "side": "over",
+     "label": "Over 7.5",
+     "line": 7.5,
+     "price_american": -106,
+     "book": "DraftKings (via ESPN)",
+     "novig_pct": 49.1,
+     "model_pct": 50.1
+    },
+    {
+     "side": "under",
+     "label": "Under 7.5",
+     "line": 7.5,
+     "price_american": -114,
+     "book": "DraftKings (via ESPN)",
+     "novig_pct": 50.9,
+     "model_pct": 49.9
+    }
+   ],
+   "status": "open"
+  }
+ ],
+ "summary": {}
+}
