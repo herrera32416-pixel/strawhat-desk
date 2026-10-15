@@ -2227,14 +2227,14 @@
               "goalie": "Scott Wedgewood",
               "status": "Likely",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-10-14T15:49:46-05:00",
+              "seen_time_ct": "2026-10-14T19:00:15-05:00",
               "file": "nhl_goalie_log.jsonl"
             },
             "away": {
               "goalie": "Casey DeSmith",
               "status": "Confirmed",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-10-14T15:49:46-05:00",
+              "seen_time_ct": "2026-10-14T19:00:15-05:00",
               "file": "nhl_goalie_log.jsonl"
             }
           },
@@ -2389,7 +2389,7 @@
               ]
             }
           },
-          "refreshed_ct": "2026-10-14T15:49:46-05:00"
+          "refreshed_ct": "2026-10-14T19:00:15-05:00"
         },
         "market_edge": {
           "ml": {
