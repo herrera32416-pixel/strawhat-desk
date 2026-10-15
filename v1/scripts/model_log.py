@@ -4,7 +4,12 @@
   python scripts/model_log.py grade      # settle logged games from ESPN finals (free)
   (logging is called from auto_board.py right after the board is built)
 
-data/model_log.json: one entry per game x market, first pre-game snapshot of the day only (never re-priced):
+  python scripts/model_log.py check [paper.json] [model_log.json]   # exit 1 if log != board for today's games
+  python scripts/model_log.py backfill [paper.json] [model_log.json] # upsert log from a published paper.json
+
+data/model_log.json: one entry per game x market, upserted from the SAME numbers each board build publishes
+in paper.json (board[].market_edge). The last pre-game snapshot wins; earlier values are kept in
+entry["snapshots"] with their snapshot_at_ct. Graded entries are never touched. Then:
   model % and market no-vig % for side 0 (away / over) and side 1 (home / under), the line, then after the
   final: winning side, whether the model side (>50%) won, and Brier scores for model vs market.
 Blank model % stays null and is skipped in grading. Never invents numbers.
@@ -65,6 +70,94 @@ def log_rows(rows_by_sport: dict, now_ct: datetime, path: Path = PATH) -> int:
                 n += 1
     save(d, path)
     return n
+
+
+SIDE_ORDER = {"ml": ("away", "home"), "spread": ("away", "home"), "total": ("over", "under")}
+
+
+def _board_sides(g: dict, mk: str):
+    me = (g.get("market_edge") or {}).get(mk) or {}
+    by = {sd.get("side"): sd for sd in me.get("sides") or []}
+    order = SIDE_ORDER.get(mk)
+    if not order or any(k not in by for k in order):
+        return None
+    return [{"side": k, "label": by[k].get("label"), "line": by[k].get("line"),
+             "price_american": by[k].get("price_american"), "book": by[k].get("book"),
+             "novig_pct": by[k].get("novig_pct"), "model_pct": by[k].get("model_pct")} for k in order]
+
+
+def sync_from_board(board: list, rows_by_sport: dict | None, now_ct: datetime, path: Path = PATH,
+                    snapshot_ct: str | None = None) -> dict:
+    """Upsert log entries from the published paper.json board (game x market). Only pre-game, non-graded
+    entries are (re)written; a changed snapshot pushes the old values into entry['snapshots']."""
+    d = load(path)
+    idx = {e["id"]: e for e in d["entries"]}
+    meta = {str(r.get("espn_event_id")): r for rs in (rows_by_sport or {}).values() for r in rs or []}
+    snap = snapshot_ct or now_ct.isoformat(timespec="seconds")
+    cnt = {"new": 0, "updated": 0, "same": 0, "skipped": 0}
+    for g in board or []:
+        sport = g.get("sport")
+        if sport not in SPORTS or not g.get("kick_utc") or not g.get("espn_event_id"):
+            continue
+        if PM.kick_ct(g["kick_utc"]) <= now_ct:
+            cnt["skipped"] += 1
+            continue
+        r = meta.get(str(g["espn_event_id"])) or {}
+        for mk in ("ml", "spread", "total"):
+            sides = _board_sides(g, mk)
+            if not sides:
+                continue
+            eid = f"{sport.lower()}-{g['espn_event_id']}-{mk}"
+            e = idx.get(eid)
+            if e is not None and e.get("status") != "open":
+                cnt["skipped"] += 1
+                continue
+            if e is not None and e.get("sides") == sides:
+                cnt["same"] += 1
+                continue
+            away, home = (g.get("matchup") or " at ").split(" at ", 1) if " at " in (g.get("matchup") or "") else (None, None)
+            new = {"id": eid, "sport": sport, "market": mk, "logged_at_ct": (e or {}).get("logged_at_ct") or snap,
+                   "snapshot_at_ct": snap, "source": "paper.json board",
+                   "slate_date_ct": PM.kick_ct(g["kick_utc"]).date().isoformat(), "kick_utc": g["kick_utc"],
+                   "matchup": g.get("matchup"), "away": r.get("away") or (e or {}).get("away") or away,
+                   "home": r.get("home") or (e or {}).get("home") or home,
+                   "espn_event_id": str(g["espn_event_id"]),
+                   "espn_home_id": r.get("espn_home_id") or (e or {}).get("espn_home_id"),
+                   "model": ((r.get("paper") or {}).get("model")) or (e or {}).get("model"),
+                   "sides": sides, "status": "open", "snapshots": list((e or {}).get("snapshots") or [])}
+            if e is not None:
+                new["snapshots"].append({"snapshot_at_ct": e.get("snapshot_at_ct") or e.get("logged_at_ct"), "sides": e["sides"]})
+                e.clear(); e.update(new); cnt["updated"] += 1
+            else:
+                d["entries"].append(new); idx[eid] = new; cnt["new"] += 1
+    save(d, path)
+    return cnt
+
+
+def check_board(paper: dict, log: dict, slate_date: str | None = None) -> list:
+    """Mismatches between paper.json board and the log for the board's slate (pre-game/open entries)."""
+    slate = slate_date or paper.get("slate_date_ct")
+    idx = {e["id"]: e for e in log.get("entries", [])}
+    bad = []
+    for g in paper.get("board") or []:
+        if g.get("sport") not in SPORTS or not g.get("espn_event_id") or not g.get("kick_utc"):
+            continue
+        if PM.kick_ct(g["kick_utc"]).date().isoformat() != slate:
+            continue
+        for mk in ("ml", "spread", "total"):
+            sides = _board_sides(g, mk)
+            if not sides:
+                continue
+            eid = f"{g['sport'].lower()}-{g['espn_event_id']}-{mk}"
+            e = idx.get(eid)
+            if e is None:
+                bad.append(f"{eid}: missing from model_log")
+                continue
+            for a, b in zip(sides, e.get("sides") or []):
+                for k in ("side", "line", "novig_pct", "model_pct", "price_american"):
+                    if a.get(k) != b.get(k):
+                        bad.append(f"{eid} {a['side']} {k}: board {a.get(k)} vs log {b.get(k)}")
+    return bad
 
 
 def _outcome(e: dict, ev: dict):
@@ -150,7 +243,20 @@ def summarize(d: dict) -> dict:
 
 
 if __name__ == "__main__":
-    if sys.argv[1:] == ["grade"]:
+    a = sys.argv[1:]
+    if a and a[0] in ("check", "backfill"):
+        pp = Path(a[1]) if len(a) > 1 else PATH.parent / "paper.json"
+        lp = Path(a[2]) if len(a) > 2 else PATH
+        paper = json.loads(pp.read_text(encoding="utf-8"))
+        if a[0] == "backfill":
+            gen = datetime.fromisoformat(paper["generated_at_ct"])
+            print(f"[model_log] backfill {sync_from_board(paper['board'], None, gen, lp, paper['generated_at_ct'])}")
+        bad = check_board(paper, load(lp))
+        print("[model_log] check:", "OK" if not bad else f"{len(bad)} mismatch(es)")
+        for b in bad:
+            print("  ", b)
+        sys.exit(1 if bad else 0)
+    if a == ["grade"]:
         now = datetime.now(PM.CT) if hasattr(PM, "CT") else datetime.now().astimezone()
         print(f"[model_log] graded {grade(now)}")
     else:

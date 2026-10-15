@@ -544,13 +544,6 @@ def main(argv: list[str] | None = None) -> int:
               f"paper {paper_stats[sport]}")
     rows = sorted([r for rs in rows_by_sport.values() for r in rs], key=lambda r: (r["kick_utc"], r["event_id"]))
 
-    # ---- NHL + MLB model % log (paper/info only) for later grading vs results
-    try:
-        import model_log
-        print(f"[auto_board] model log: {model_log.log_rows(rows_by_sport, now_ct, data_dir / 'model_log.json')} new entries")
-    except Exception as e:  # noqa: BLE001 — never block the board
-        print(f"[auto_board] model log error: {type(e).__name__}: {e}", file=sys.stderr)
-
     # ---- paper ledger: stamp today's PAPER picks (once per game, before kick)
     led_path = data_dir / "paper_ledger.json"
     ledger = paper_model.load_ledger(led_path)
@@ -608,6 +601,20 @@ def main(argv: list[str] | None = None) -> int:
         today_path.write_text(blob, encoding="utf-8")
     paper_model.write_json(led_path, ledger)
     paper_model.write_json(data_dir / "paper.json", paper_doc)
+
+    # ---- NHL + MLB model % log: upsert from the SAME numbers just published in paper.json, then verify.
+    import model_log
+    try:
+        print(f"[auto_board] model log sync: {model_log.sync_from_board(board, rows_by_sport, now_ct, data_dir / 'model_log.json')}")
+    except Exception as e:  # noqa: BLE001
+        print(f"[auto_board] model log error: {type(e).__name__}: {e}", file=sys.stderr)
+    bad = model_log.check_board(paper_doc, model_log.load(data_dir / "model_log.json"))
+    if bad:
+        print(f"[auto_board] FAIL: model_log disagrees with paper.json for today's games ({len(bad)}):", file=sys.stderr)
+        for b in bad[:20]:
+            print("   ", b, file=sys.stderr)
+        return 3
+    print("[auto_board] model log check: board and log agree for today's games")
     return 0
 
 

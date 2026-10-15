@@ -116,6 +116,10 @@ jobs:
             python scripts/auto_board.py
           fi
 
+      - name: Check model_log matches paper.json for today's games
+        if: ${{ steps.guard.outputs.run == 'true' && steps.board.outcome == 'success' }}
+        run: python scripts/model_log.py check data/paper.json data/model_log.json
+
       # Written only when the board step succeeded; committed with data/ below. If the push fails the stamp
       # never reaches main, so the next backup trigger retries.
       - name: Stamp today's successful run
