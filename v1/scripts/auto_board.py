@@ -532,6 +532,12 @@ def main(argv: list[str] | None = None) -> int:
         except Exception as e:  # ESPN down etc. -> board still publishes, paper blank
             print(f"[auto_board] {sport} paper model error: {type(e).__name__}: {e}", file=sys.stderr)
             paper_stats[sport] = {"games": len(rows), "error": str(e)[:200]}
+        try:  # display-only calibration + higher-% lean flag (never used by stamps/grades)
+            import model_calib
+            for r in rows:
+                model_calib.calibrate_markets(sport, (r.get("paper") or {}).get("markets"))
+        except Exception as e:  # noqa: BLE001
+            print(f"[auto_board] {sport} model_calib error: {type(e).__name__}: {e}", file=sys.stderr)
         for r in rows:  # MARKET-ONLY edge source for the A/B/C grader (paper_model weights are 0)
             try:
                 r["market_edge"] = paper_model.market_edge(sport, r, by_toa.get(r.get("toa_event_id") or ""))
