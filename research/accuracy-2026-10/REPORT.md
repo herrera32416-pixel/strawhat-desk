@@ -32,3 +32,12 @@ Live board replay: NHL .566 → .593 with weight 0. All sports, higher % with no
 - A 55% threshold for a 'strong' tier: live .661 on 274 plays, history .55–.65. Small sample.
 - Refresh after late news (goalie/pitcher): the stale log was fixed in f0e0260. No point-in-time history exists to test it.
 Caveats: the live sample covers 11 days, and CFB/NHL games repeat across snapshots. The gain is about +2pp on NHL hit rate (history 57.8 vs 55.9 over 1,937 games), and the 52% cut is what removes most of the losses.
+
+## Round 2 (Oct 14 11:30 PM CT): signals on top of the market no-vig % (sig.py, signals_results.txt)
+Keep rule: walk-forward held-out log loss AND Brier AND higher-side hit rate all better than the market.
+- NHL ML (5,248 held-out games): nothing passes. n7 dLL −0.46 and away-B2B −0.40 improve log loss, but the hit rate is flat or down. Goalie form/quality/workload/backup, splits, form, travel and the xG gap are all ≥ market. Fav-longshot calibration makes it worse.
+- Line movement open→close: NHL (1,312) and MLB (4,861) add ~0. 'Bet with the move' hit .543 vs the favorite's .569 (NHL) and .543 vs .563 (MLB). Dropped.
+- MLB: umpire on totals (.521→.526, dLL −0.08) and bullpen load are noise-level 'passes' after ~90 total tests. Not shipped.
+- NFL totals wind: dLL −0.43 but hit .498→.494. Not shipped.
+- Thresholds: history supports 52% for totals too (NHL tot 52-55% .530, MLB .539). 54% adds nothing reliable.
+Shipped: ★★ strong tier at ≥55% (bab4d51). No signal shipped.

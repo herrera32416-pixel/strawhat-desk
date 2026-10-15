@@ -1,0 +1,46 @@
+== NHL ML (base = closing no-vig)
+n7                                     n= 5248 dLL=-0.46 dBrier=-0.22 hit 0.602->0.601 seasons better 4/4 
+rest                                   n= 5248 dLL=-0.40 dBrier=-0.17 hit 0.602->0.599 seasons better 3/4 
+b2b                                    n= 5248 dLL=-0.37 dBrier=-0.14 hit 0.602->0.599 seasons better 3/4 
+b2b_h                                  n= 5248 dLL=+0.62 dBrier=+0.31 hit 0.602->0.599 seasons better 0/4 
+b2b_a                                  n= 5248 dLL=-0.40 dBrier=-0.18 hit 0.602->0.602 seasons better 4/4 
+gw3                                    n= 5166 dLL=+0.28 dBrier=+0.14 hit 0.601->0.598 seasons better 1/4 
+gw7                                    n= 5166 dLL=+0.33 dBrier=+0.17 hit 0.601->0.598 seasons better 1/4 
+gb2b                                   n= 5166 dLL=+0.12 dBrier=+0.05 hit 0.601->0.600 seasons better 2/4 
+ghot                                   n= 5166 dLL=-0.08 dBrier=-0.04 hit 0.601->0.601 seasons better 3/4 KEEP?
+gqual                                  n= 5166 dLL=+0.39 dBrier=+0.19 hit 0.601->0.599 seasons better 1/4 
+gshare                                 n= 5166 dLL=+0.22 dBrier=+0.10 hit 0.601->0.601 seasons better 1/4 
+backup_h                               n= 5248 dLL=+0.36 dBrier=+0.16 hit 0.602->0.600 seasons better 2/4 
+form                                   n= 4264 dLL=+0.06 dBrier=+0.02 hit 0.602->0.600 seasons better 1/4 
+split                                  n= 4019 dLL=+0.11 dBrier=+0.05 hit 0.605->0.603 seasons better 2/4 
+split_h                                n= 4107 dLL=+0.03 dBrier=+0.01 hit 0.603->0.603 seasons better 2/4 
+road                                   n= 5248 dLL=+0.19 dBrier=+0.09 hit 0.602->0.601 seasons better 1/4 
+tz                                     n= 5248 dLL=+0.17 dBrier=+0.09 hit 0.602->0.600 seasons better 2/4 
+dist                                   n= 5248 dLL=+0.29 dBrier=+0.13 hit 0.602->0.600 seasons better 1/4 
+calibration a+b·logit(q)               n= 5248 dLL=+0.88 dBrier=+0.39 hit 0.602->0.600 seasons better 0/4 
+xG model gap (5v5/score-adj proxy)     n= 1925 dLL=+0.64 dBrier=+0.31 hit 0.579->0.580 seasons better 0/2 
+== NHL ML movement (open->close), n with open=2647
+line movement (close-open)             n= 1312 dLL=+0.12 dBrier=+0.07 hit 0.553->0.556 seasons better 0/1 
+calibration (fav-longshot)             n= 1312 dLL=+2.72 dBrier=+1.31 hit 0.553->0.550 seasons better 0/1 
+   bet WITH movement (>~2pp): n=1365 hit 0.543; fav hit same games 0.569
+totals calibration                     n= 3914 dLL=+1.10 dBrier=+0.58 hit 0.529->0.525 seasons better 0/4 
+== MLB ML movement (open->close), n with open=7251
+line movement (close-open)             n= 4861 dLL=-0.00 dBrier=-0.00 hit 0.563->0.567 seasons better 1/2 KEEP?
+calibration (fav-longshot)             n= 7266 dLL=+0.39 dBrier=+0.19 hit 0.567->0.567 seasons better 1/3 
+   bet WITH movement (>~2pp): n=3598 hit 0.543; fav hit same games 0.563
+totals calibration                     n= 7157 dLL=+0.12 dBrier=+0.06 hit 0.521->0.519 seasons better 1/3 
+== MLB ML
+platoon                                n= 7260 dLL=+0.02 dBrier=+0.01 hit 0.566->0.567 seasons better 0/3 
+sp_rest                                n= 6080 dLL=+0.04 dBrier=+0.02 hit 0.565->0.565 seasons better 0/3 
+pen3                                   n= 7270 dLL=-0.00 dBrier=-0.01 hit 0.567->0.567 seasons better 2/3 KEEP?
+ump_runs                               n= 7033 dLL=+0.14 dBrier=+0.07 hit 0.567->0.567 seasons better 2/3 
+dan                                    n= 7270 dLL=+0.08 dBrier=+0.04 hit 0.567->0.566 seasons better 0/3 
+tzc                                    n= 7270 dLL=+0.29 dBrier=+0.14 hit 0.567->0.565 seasons better 1/3 
+== MLB totals
+ump_runs                               n= 6926 dLL=-0.08 dBrier=-0.04 hit 0.521->0.526 seasons better 2/3 KEEP?
+temp                                   n= 5890 dLL=+0.00 dBrier=+0.00 hit 0.519->0.517 seasons better 2/3 
+wind_out                               n= 7158 dLL=-0.02 dBrier=-0.01 hit 0.521->0.524 seasons better 1/3 KEEP?
+pen3_sum                               n= 7158 dLL=+0.06 dBrier=+0.03 hit 0.521->0.518 seasons better 1/3 
+== NFL totals
+wind                                   n= 4737 dLL=-0.43 dBrier=-0.21 hit 0.498->0.494 seasons better 12/18 
+cold                                   n= 4737 dLL=+0.84 dBrier=+0.39 hit 0.498->0.498 seasons better 6/18 
