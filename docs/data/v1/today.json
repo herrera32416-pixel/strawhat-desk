@@ -2225,20 +2225,20 @@
           "goalies": {
             "home": {
               "goalie": "Scott Wedgewood",
-              "status": "Likely",
+              "status": "Confirmed",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-10-14T19:00:15-05:00",
+              "seen_time_ct": "2026-10-14T19:38:07-05:00",
               "file": "nhl_goalie_log.jsonl"
             },
             "away": {
               "goalie": "Casey DeSmith",
               "status": "Confirmed",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-10-14T19:00:15-05:00",
+              "seen_time_ct": "2026-10-14T19:38:07-05:00",
               "file": "nhl_goalie_log.jsonl"
             }
           },
-          "goalie_flag": "GOALIE UNCONFIRMED (home) — model uses the recent-starter mix / likely starter; re-check before puck drop",
+          "goalie_flag": "",
           "fair": {
             "lam_home": 2.956,
             "lam_away": 2.655,
@@ -2251,7 +2251,7 @@
             "reg_tie_pct": 23.5,
             "b2b_home": 1,
             "b2b_away": 1,
-            "goalie_home": "Scott Wedgewood (Likely)",
+            "goalie_home": "Scott Wedgewood (Confirmed)",
             "goalie_away": "Casey DeSmith (Confirmed)",
             "gsax_pg_home": 0.21,
             "gsax_pg_away": 0.1
@@ -2389,7 +2389,7 @@
               ]
             }
           },
-          "refreshed_ct": "2026-10-14T19:00:15-05:00"
+          "refreshed_ct": "2026-10-14T19:38:07-05:00"
         },
         "market_edge": {
           "ml": {
