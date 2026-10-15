@@ -12,6 +12,13 @@
   const rows = d => [...(d.card.clears || []), ...(d.card.fills || []), ...(d.card.holds || [])]
     .filter((r, i, a) => a.findIndex(x => x.event_id === r.event_id) === i)
     .sort((a, b) => String(a.kick_utc).localeCompare(String(b.kick_utc)));
+  function BE(s) { // break-even (fair) American price from model %; green if listed price beats it, gray if not
+    const p = s.model_pct / 100; if (!(p > 0 && p < 1)) return '';
+    const be = p >= 0.5 ? -Math.round(100 * p / (1 - p)) : Math.round(100 * (1 - p) / p);
+    const pr = Number(s.price_american), imp = pr < 0 ? -pr / (100 - pr) : 100 / (pr + 100);
+    const ok = isFinite(pr) && pr !== 0 && imp < p;
+    return ` <small style="color:${ok ? '#1a7f37' : '#888'}" title="break-even price at model ${s.model_pct}%; listed ${pr > 0 ? '+' : ''}${pr} is ${ok ? 'better' : 'not better'}">BE ${be > 0 ? '+' : ''}${be}</small>`;
+  }
   function mktRows(g) {
     const pm = (g.paper && g.paper.markets) || {}, bm = (g.paper && g.paper.by_market) || {};
     let out = '';
@@ -27,7 +34,7 @@
       sides.slice(0, 2).forEach((s, i) => {
         const nm = String(s.label || '').replace(g.away, last(g.away)).replace(g.home, last(g.home)).replace(/^Over /, 'O ').replace(/^Under /, 'U ');
         const pick = st === 'PAPER' && g.paper.best && g.paper.best.label === s.label;
-        out += `<tr class="${pick ? 'pk' : ''}">${i === 0 ? `<td rowspan=2>${lab}</td>` : ''}<td>${nm}</td><td>${A(s.price_american)} <small>${s.book || ''}</small></td><td>${P(s.novig_pct)}</td><td title="${s.model_raw_pct != null ? 'raw model ' + s.model_raw_pct + '% (calibrated to market)' : ''}">${P(s.model_pct)}${m && m.lean && m.lean.label === s.label ? (m.lean.strong ? ' <b title="strong: higher model %, ≥55%">★★</b>' : m.lean.play ? ' <b title="higher model %, ≥52%">★</b>' : ' <small class="mut" title="${m.lean.why}">~</small>') : ''}</td>${g.sport === 'NFL' ? `<td class="mut" title="info only: unweighted ESPN FPI line as a probability; picks use w=0">${P(s.fpi_pct)}</td>` : ''}<td>${s.model_pct == null ? '—' : E(s.edge_pp)}</td>${i === 0 ? `<td rowspan=2><span class="dec ${st === 'PAPER' ? 'PICK' : st}" title="${note}">${st}</span>${gr ? ` <span class="grade g${gr}" title="${note}">${gr}</span>` : ''}</td>` : ''}</tr>`;
+        out += `<tr class="${pick ? 'pk' : ''}">${i === 0 ? `<td rowspan=2>${lab}</td>` : ''}<td>${nm}</td><td>${A(s.price_american)} <small>${s.book || ''}</small></td><td>${P(s.novig_pct)}</td><td title="${s.model_raw_pct != null ? 'raw model ' + s.model_raw_pct + '% (calibrated to market)' : ''}">${P(s.model_pct)}${m && m.lean && m.lean.label === s.label ? (m.lean.strong ? ' <b title="strong: higher model %, ≥55%">★★</b>' + BE(s) : m.lean.play ? ' <b title="higher model %, ≥52%">★</b>' + BE(s) : ' <small class="mut" title="${m.lean.why}">~</small>') : ''}</td>${g.sport === 'NFL' ? `<td class="mut" title="info only: unweighted ESPN FPI line as a probability; picks use w=0">${P(s.fpi_pct)}</td>` : ''}<td>${s.model_pct == null ? '—' : E(s.edge_pp)}</td>${i === 0 ? `<td rowspan=2><span class="dec ${st === 'PAPER' ? 'PICK' : st}" title="${note}">${st}</span>${gr ? ` <span class="grade g${gr}" title="${note}">${gr}</span>` : ''}</td>` : ''}</tr>`;
       });
     }
     return out;
