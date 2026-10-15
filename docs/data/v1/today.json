@@ -838,12 +838,18 @@
               "goalie": "Nico Daws",
               "status": "Likely",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-10-15T10:17:18-05:00",
+              "seen_time_ct": "2026-10-15T14:56:41-05:00",
               "file": "nhl_goalie_log.jsonl"
             },
-            "away": null
+            "away": {
+              "goalie": "Dylan Garand",
+              "status": "Confirmed",
+              "source": "dailyfaceoff",
+              "seen_time_ct": "2026-10-15T14:56:41-05:00",
+              "file": "nhl_goalie_log.jsonl"
+            }
           },
-          "goalie_flag": "GOALIE UNCONFIRMED (away, home) — model uses the recent-starter mix / likely starter; re-check before puck drop",
+          "goalie_flag": "GOALIE UNCONFIRMED (home) — model uses the recent-starter mix / likely starter; re-check before puck drop",
           "fair": {
             "lam_home": 3.026,
             "lam_away": 2.643,
@@ -851,15 +857,15 @@
             "source": "Poisson + draw inflation 1.50 + empty-net overlay + OT/SO (P home 0.524), solved to the market no-vig ML and total"
           },
           "nhl_model": {
-            "reg_goals_home": 2.78,
+            "reg_goals_home": 2.81,
             "reg_goals_away": 3.06,
-            "reg_tie_pct": 22.8,
+            "reg_tie_pct": 22.7,
             "b2b_home": 0,
             "b2b_away": 0,
             "goalie_home": "Nico Daws (Likely)",
-            "goalie_away": "recent-starter mix (no log entry)",
+            "goalie_away": "Dylan Garand (Confirmed)",
             "gsax_pg_home": -0.04,
-            "gsax_pg_away": 0.18
+            "gsax_pg_away": 0.13
           },
           "markets": {
             "ml": {
@@ -874,17 +880,16 @@
                   "price_american": 120,
                   "book": "DraftKings",
                   "novig_pct": 43.7,
-                  "model_pct": 43.7,
+                  "model_pct": 53.1,
                   "implied_pct": 45.5,
-                  "edge_pp": 8.0,
-                  "gap_pp": 9.8,
+                  "edge_pp": 7.7,
+                  "gap_pp": 9.5,
                   "strong": false,
-                  "_edge": 8.013928977359003,
-                  "_gap": 9.81768078111081,
+                  "_edge": 7.6786441039701945,
+                  "_gap": 9.482395907722003,
                   "fair_pct": 43.7,
                   "blend_pct": 43.7,
-                  "_bedge": -1.8037518037518019,
-                  "model_raw_pct": 53.5
+                  "_bedge": -1.8037518037518019
                 },
                 {
                   "side": "home",
@@ -893,28 +898,18 @@
                   "price_american": -142,
                   "book": "DraftKings",
                   "novig_pct": 56.3,
-                  "model_pct": 56.3,
+                  "model_pct": 46.9,
                   "implied_pct": 58.7,
-                  "edge_pp": -12.1,
-                  "gap_pp": -9.8,
+                  "edge_pp": -11.8,
+                  "gap_pp": -9.5,
                   "strong": false,
-                  "_edge": -12.146160382317683,
-                  "_gap": -9.817680781110806,
+                  "_edge": -11.810875508928875,
+                  "_gap": -9.482395907721997,
                   "fair_pct": 56.3,
                   "blend_pct": 56.3,
-                  "_bedge": -2.3284796012068787,
-                  "model_raw_pct": 46.5
+                  "_bedge": -2.3284796012068787
                 }
-              ],
-              "calibration": "NHL model weight 0.0 vs market (walk-forward 2026-10-14)",
-              "lean": {
-                "side": "home",
-                "label": "New Jersey Devils ML",
-                "pct": 56.3,
-                "play": true,
-                "strong": true,
-                "why": ">= 52%"
-              }
+              ]
             },
             "spread": {
               "novig_source": "DraftKings pair",
@@ -929,17 +924,16 @@
                   "price_american": -218,
                   "book": "DraftKings",
                   "novig_pct": 65.7,
-                  "model_pct": 65.7,
+                  "model_pct": 72.7,
                   "implied_pct": 68.6,
-                  "edge_pp": 4.5,
-                  "gap_pp": 7.3,
+                  "edge_pp": 4.2,
+                  "gap_pp": 7.0,
                   "strong": false,
-                  "_edge": 4.514577161704214,
-                  "_gap": 7.320513661640526,
+                  "_edge": 4.189689888686853,
+                  "_gap": 6.995626388623166,
                   "fair_pct": 63.9,
                   "blend_pct": 65.7,
-                  "_bedge": -2.8059364999363123,
-                  "model_raw_pct": 73.1
+                  "_bedge": -2.8059364999363123
                 },
                 {
                   "side": "home",
@@ -948,28 +942,18 @@
                   "price_american": 180,
                   "book": "DraftKings",
                   "novig_pct": 34.3,
-                  "model_pct": 34.3,
+                  "model_pct": 27.3,
                   "implied_pct": 35.7,
-                  "edge_pp": -8.8,
-                  "gap_pp": -7.3,
+                  "edge_pp": -8.5,
+                  "gap_pp": -7.0,
                   "strong": false,
-                  "_edge": -8.78232199548678,
-                  "_gap": -7.320513661640526,
+                  "_edge": -8.45743472246942,
+                  "_gap": -6.995626388623166,
                   "fair_pct": 36.1,
                   "blend_pct": 34.3,
-                  "_bedge": -1.4618083338462484,
-                  "model_raw_pct": 26.9
+                  "_bedge": -1.4618083338462484
                 }
-              ],
-              "calibration": "NHL model weight 0.0 vs market (walk-forward 2026-10-14)",
-              "lean": {
-                "side": "away",
-                "label": "New York Rangers +1.5",
-                "pct": 65.7,
-                "play": true,
-                "strong": true,
-                "why": ">= 52%"
-              }
+              ]
             },
             "total": {
               "novig_source": "DraftKings pair",
@@ -984,17 +968,16 @@
                   "price_american": 114,
                   "book": "DraftKings",
                   "novig_pct": 44.9,
-                  "model_pct": 44.9,
+                  "model_pct": 43.2,
                   "implied_pct": 46.7,
-                  "edge_pp": -3.9,
-                  "gap_pp": -2.0,
+                  "edge_pp": -3.5,
+                  "gap_pp": -1.6,
                   "strong": false,
-                  "_edge": -3.8900011575817905,
-                  "_gap": -2.016917723310069,
+                  "_edge": -3.4996115650666737,
+                  "_gap": -1.626528130794952,
                   "fair_pct": 44.9,
                   "blend_pct": 44.9,
-                  "_bedge": -1.8730834342717273,
-                  "model_raw_pct": 42.8
+                  "_bedge": -1.8730834342717273
                 },
                 {
                   "side": "under",
@@ -1003,30 +986,21 @@
                   "price_american": -135,
                   "book": "DraftKings",
                   "novig_pct": 55.1,
-                  "model_pct": 55.1,
+                  "model_pct": 56.8,
                   "implied_pct": 57.4,
-                  "edge_pp": -0.3,
-                  "gap_pp": 2.0,
+                  "edge_pp": -0.7,
+                  "gap_pp": 1.6,
                   "strong": false,
-                  "_edge": -0.28577931567332904,
-                  "_gap": 2.0169177233100744,
+                  "_edge": -0.6761689081884459,
+                  "_gap": 1.6265281307949575,
                   "fair_pct": 55.1,
                   "blend_pct": 55.1,
-                  "_bedge": -2.3026970389834034,
-                  "model_raw_pct": 57.2
+                  "_bedge": -2.3026970389834034
                 }
-              ],
-              "calibration": "NHL model weight 0.0 vs market (walk-forward 2026-10-14)",
-              "lean": {
-                "side": "under",
-                "label": "Under 6.5",
-                "pct": 55.1,
-                "play": true,
-                "strong": true,
-                "why": ">= 52%"
-              }
+              ]
             }
-          }
+          },
+          "refreshed_ct": "2026-10-15T14:56:41-05:00"
         },
         "market_edge": {
           "ml": {
@@ -1333,10 +1307,16 @@
               "goalie": "Sergei Bobrovsky",
               "status": "Likely",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-10-15T10:17:18-05:00",
+              "seen_time_ct": "2026-10-15T14:56:41-05:00",
               "file": "nhl_goalie_log.jsonl"
             },
-            "away": null
+            "away": {
+              "goalie": "Ukko-Pekka Luukkonen",
+              "status": "Likely",
+              "source": "dailyfaceoff",
+              "seen_time_ct": "2026-10-15T14:56:41-05:00",
+              "file": "nhl_goalie_log.jsonl"
+            }
           },
           "goalie_flag": "GOALIE UNCONFIRMED (away, home) — model uses the recent-starter mix / likely starter; re-check before puck drop",
           "fair": {
@@ -1352,9 +1332,9 @@
             "b2b_home": 0,
             "b2b_away": 0,
             "goalie_home": "Sergei Bobrovsky (Likely)",
-            "goalie_away": "recent-starter mix (no log entry)",
+            "goalie_away": "Ukko-Pekka Luukkonen (Likely)",
             "gsax_pg_home": -0.06,
-            "gsax_pg_away": -0.01
+            "gsax_pg_away": -0.02
           },
           "markets": {
             "ml": {
@@ -1369,17 +1349,16 @@
                   "price_american": -102,
                   "book": "DraftKings",
                   "novig_pct": 48.3,
-                  "model_pct": 48.3,
+                  "model_pct": 55.8,
                   "implied_pct": 50.5,
                   "edge_pp": 5.3,
-                  "gap_pp": 7.6,
+                  "gap_pp": 7.5,
                   "strong": false,
-                  "_edge": 5.339482731355938,
-                  "_gap": 7.570944807933455,
+                  "_edge": 5.3070012605854195,
+                  "_gap": 7.538463337162938,
                   "fair_pct": 48.3,
                   "blend_pct": 48.3,
-                  "_bedge": -2.2314620765775173,
-                  "model_raw_pct": 55.8
+                  "_bedge": -2.2314620765775173
                 },
                 {
                   "side": "home",
@@ -1388,28 +1367,18 @@
                   "price_american": -118,
                   "book": "DraftKings",
                   "novig_pct": 51.7,
-                  "model_pct": 51.7,
+                  "model_pct": 44.2,
                   "implied_pct": 54.1,
-                  "edge_pp": -10.0,
-                  "gap_pp": -7.6,
+                  "edge_pp": -9.9,
+                  "gap_pp": -7.5,
                   "strong": false,
-                  "_edge": -9.962972603278908,
-                  "_gap": -7.570944807933455,
+                  "_edge": -9.93049113250839,
+                  "_gap": -7.538463337162938,
                   "fair_pct": 51.7,
                   "blend_pct": 51.7,
-                  "_bedge": -2.3920277953454416,
-                  "model_raw_pct": 44.2
+                  "_bedge": -2.3920277953454416
                 }
-              ],
-              "calibration": "NHL model weight 0.0 vs market (walk-forward 2026-10-14)",
-              "lean": {
-                "side": "home",
-                "label": "Toronto Maple Leafs ML",
-                "pct": 51.7,
-                "play": false,
-                "strong": false,
-                "why": "< 52% = coin flip, no play"
-              }
+              ]
             },
             "spread": {
               "novig_source": "DraftKings pair",
@@ -1424,17 +1393,16 @@
                   "price_american": -245,
                   "book": "DraftKings",
                   "novig_pct": 68.1,
-                  "model_pct": 68.1,
+                  "model_pct": 74.1,
                   "implied_pct": 71.0,
                   "edge_pp": 3.1,
                   "gap_pp": 6.0,
                   "strong": false,
-                  "_edge": 3.0894543619115034,
-                  "_gap": 6.048391559979138,
+                  "_edge": 3.058975454693025,
+                  "_gap": 6.01791265276066,
                   "fair_pct": 67.6,
                   "blend_pct": 68.1,
-                  "_bedge": -2.958937198067635,
-                  "model_raw_pct": 74.1
+                  "_bedge": -2.958937198067635
                 },
                 {
                   "side": "home",
@@ -1443,28 +1411,18 @@
                   "price_american": 200,
                   "book": "DraftKings",
                   "novig_pct": 31.9,
-                  "model_pct": 31.9,
+                  "model_pct": 25.9,
                   "implied_pct": 33.3,
                   "edge_pp": -7.4,
                   "gap_pp": -6.0,
                   "strong": false,
-                  "_edge": -7.4372804488680275,
-                  "_gap": -6.048391559979138,
+                  "_edge": -7.406801541649549,
+                  "_gap": -6.01791265276066,
                   "fair_pct": 32.4,
                   "blend_pct": 31.9,
-                  "_bedge": -1.3888888888888895,
-                  "model_raw_pct": 25.9
+                  "_bedge": -1.3888888888888895
                 }
-              ],
-              "calibration": "NHL model weight 0.0 vs market (walk-forward 2026-10-14)",
-              "lean": {
-                "side": "away",
-                "label": "Buffalo Sabres +1.5",
-                "pct": 68.1,
-                "play": true,
-                "strong": true,
-                "why": ">= 52%"
-              }
+              ]
             },
             "total": {
               "novig_source": "DraftKings pair",
@@ -1479,17 +1437,16 @@
                   "price_american": -122,
                   "book": "DraftKings",
                   "novig_pct": 52.6,
-                  "model_pct": 52.6,
+                  "model_pct": 54.2,
                   "implied_pct": 55.0,
-                  "edge_pp": -0.8,
+                  "edge_pp": -0.7,
                   "gap_pp": 1.6,
                   "strong": false,
-                  "_edge": -0.7813574590847305,
-                  "_gap": 1.5649389696982596,
+                  "_edge": -0.7440941870815121,
+                  "_gap": 1.602202241701478,
                   "fair_pct": 52.6,
                   "blend_pct": 52.6,
-                  "_bedge": -2.34629642878299,
-                  "model_raw_pct": 54.2
+                  "_bedge": -2.34629642878299
                 },
                 {
                   "side": "under",
@@ -1498,30 +1455,21 @@
                   "price_american": 102,
                   "book": "DraftKings",
                   "novig_pct": 47.4,
-                  "model_pct": 47.4,
+                  "model_pct": 45.8,
                   "implied_pct": 49.5,
                   "edge_pp": -3.7,
                   "gap_pp": -1.6,
                   "strong": false,
-                  "_edge": -3.678547990919734,
-                  "_gap": -1.5649389696982596,
+                  "_edge": -3.7158112629229523,
+                  "_gap": -1.602202241701478,
                   "fair_pct": 47.4,
                   "blend_pct": 47.4,
-                  "_bedge": -2.1136090212214684,
-                  "model_raw_pct": 45.8
+                  "_bedge": -2.1136090212214684
                 }
-              ],
-              "calibration": "NHL model weight 0.0 vs market (walk-forward 2026-10-14)",
-              "lean": {
-                "side": "over",
-                "label": "Over 6.5",
-                "pct": 52.6,
-                "play": true,
-                "strong": false,
-                "why": ">= 52%"
-              }
+              ]
             }
-          }
+          },
+          "refreshed_ct": "2026-10-15T14:56:41-05:00"
         },
         "market_edge": {
           "ml": {
@@ -1826,14 +1774,20 @@
           "goalies": {
             "home": {
               "goalie": "Linus Ullmark",
-              "status": "Likely",
+              "status": "Confirmed",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-10-15T10:17:18-05:00",
+              "seen_time_ct": "2026-10-15T14:56:41-05:00",
               "file": "nhl_goalie_log.jsonl"
             },
-            "away": null
+            "away": {
+              "goalie": "Semyon Varlamov",
+              "status": "Confirmed",
+              "source": "dailyfaceoff",
+              "seen_time_ct": "2026-10-15T14:56:41-05:00",
+              "file": "nhl_goalie_log.jsonl"
+            }
           },
-          "goalie_flag": "GOALIE UNCONFIRMED (away, home) — model uses the recent-starter mix / likely starter; re-check before puck drop",
+          "goalie_flag": "",
           "fair": {
             "lam_home": 2.893,
             "lam_away": 2.393,
@@ -1841,15 +1795,15 @@
             "source": "Poisson + draw inflation 1.50 + empty-net overlay + OT/SO (P home 0.524), solved to the market no-vig ML and total"
           },
           "nhl_model": {
-            "reg_goals_home": 3.19,
+            "reg_goals_home": 3.26,
             "reg_goals_away": 2.57,
-            "reg_tie_pct": 22.5,
+            "reg_tie_pct": 22.2,
             "b2b_home": 0,
             "b2b_away": 0,
-            "goalie_home": "Linus Ullmark (Likely)",
-            "goalie_away": "recent-starter mix (no log entry)",
+            "goalie_home": "Linus Ullmark (Confirmed)",
+            "goalie_away": "Semyon Varlamov (Confirmed)",
             "gsax_pg_home": 0.13,
-            "gsax_pg_away": 0.17
+            "gsax_pg_away": 0.05
           },
           "markets": {
             "ml": {
@@ -1864,17 +1818,16 @@
                   "price_american": 130,
                   "book": "DraftKings",
                   "novig_pct": 41.7,
-                  "model_pct": 41.7,
+                  "model_pct": 39.6,
                   "implied_pct": 43.5,
-                  "edge_pp": -3.0,
-                  "gap_pp": -1.2,
+                  "edge_pp": -3.9,
+                  "gap_pp": -2.1,
                   "strong": false,
-                  "_edge": -3.019384035997713,
-                  "_gap": -1.2418590617718273,
+                  "_edge": -3.91878070976715,
+                  "_gap": -2.1412557355412645,
                   "fair_pct": 41.7,
                   "blend_pct": 41.7,
-                  "_bedge": -1.7775249742258803,
-                  "model_raw_pct": 40.5
+                  "_bedge": -1.7775249742258803
                 },
                 {
                   "side": "home",
@@ -1883,28 +1836,18 @@
                   "price_american": -155,
                   "book": "DraftKings",
                   "novig_pct": 58.3,
-                  "model_pct": 58.3,
+                  "model_pct": 60.4,
                   "implied_pct": 60.8,
-                  "edge_pp": -1.2,
-                  "gap_pp": 1.2,
+                  "edge_pp": -0.3,
+                  "gap_pp": 2.1,
                   "strong": false,
-                  "_edge": -1.2431905590576942,
-                  "_gap": 1.2418590617718328,
+                  "_edge": -0.34379388528825716,
+                  "_gap": 2.14125573554127,
                   "fair_pct": 58.3,
                   "blend_pct": 58.3,
-                  "_bedge": -2.485049620829527,
-                  "model_raw_pct": 59.5
+                  "_bedge": -2.485049620829527
                 }
-              ],
-              "calibration": "NHL model weight 0.0 vs market (walk-forward 2026-10-14)",
-              "lean": {
-                "side": "home",
-                "label": "Ottawa Senators ML",
-                "pct": 58.3,
-                "play": true,
-                "strong": true,
-                "why": ">= 52%"
-              }
+              ]
             },
             "spread": {
               "novig_source": "DraftKings pair",
@@ -1919,17 +1862,16 @@
                   "price_american": -205,
                   "book": "DraftKings",
                   "novig_pct": 64.5,
-                  "model_pct": 64.5,
+                  "model_pct": 60.0,
                   "implied_pct": 67.2,
-                  "edge_pp": -6.2,
-                  "gap_pp": -3.5,
+                  "edge_pp": -7.3,
+                  "gap_pp": -4.5,
                   "strong": false,
-                  "_edge": -6.221078486774278,
-                  "_gap": -3.480881612699216,
+                  "_edge": -7.262855127558854,
+                  "_gap": -4.522658253483791,
                   "fair_pct": 62.5,
                   "blend_pct": 64.5,
-                  "_bedge": -2.7401968740750626,
-                  "model_raw_pct": 61.0
+                  "_bedge": -2.7401968740750626
                 },
                 {
                   "side": "home",
@@ -1938,28 +1880,18 @@
                   "price_american": 170,
                   "book": "DraftKings",
                   "novig_pct": 35.5,
-                  "model_pct": 35.5,
+                  "model_pct": 40.0,
                   "implied_pct": 37.0,
-                  "edge_pp": 2.0,
-                  "gap_pp": 3.5,
+                  "edge_pp": 3.0,
+                  "gap_pp": 4.5,
                   "strong": false,
-                  "_edge": 1.970926695638886,
-                  "_gap": 3.480881612699216,
+                  "_edge": 3.012703336423461,
+                  "_gap": 4.522658253483791,
                   "fair_pct": 37.5,
                   "blend_pct": 35.5,
-                  "_bedge": -1.50995491706033,
-                  "model_raw_pct": 39.0
+                  "_bedge": -1.50995491706033
                 }
-              ],
-              "calibration": "NHL model weight 0.0 vs market (walk-forward 2026-10-14)",
-              "lean": {
-                "side": "away",
-                "label": "New York Islanders +1.5",
-                "pct": 64.5,
-                "play": true,
-                "strong": true,
-                "why": ">= 52%"
-              }
+              ]
             },
             "total": {
               "novig_source": "DraftKings pair",
@@ -1974,17 +1906,16 @@
                   "price_american": -108,
                   "book": "DraftKings",
                   "novig_pct": 49.6,
-                  "model_pct": 49.6,
+                  "model_pct": 53.5,
                   "implied_pct": 51.9,
-                  "edge_pp": 0.5,
-                  "gap_pp": 2.8,
+                  "edge_pp": 1.6,
+                  "gap_pp": 3.9,
                   "strong": false,
-                  "_edge": 0.4544088174071592,
-                  "_gap": 2.8104611474809693,
+                  "_edge": 1.5563857266021053,
+                  "_gap": 3.9124380566759154,
                   "fair_pct": 49.6,
                   "blend_pct": 49.6,
-                  "_bedge": -2.35605233007381,
-                  "model_raw_pct": 52.4
+                  "_bedge": -2.35605233007381
                 },
                 {
                   "side": "under",
@@ -1993,30 +1924,21 @@
                   "price_american": -112,
                   "book": "DraftKings",
                   "novig_pct": 50.4,
-                  "model_pct": 50.4,
+                  "model_pct": 46.5,
                   "implied_pct": 52.8,
-                  "edge_pp": -5.2,
-                  "gap_pp": -2.8,
+                  "edge_pp": -6.3,
+                  "gap_pp": -3.9,
                   "strong": false,
-                  "_edge": -5.2076744197293685,
-                  "_gap": -2.8104611474809693,
+                  "_edge": -6.309651328924315,
+                  "_gap": -3.9124380566759154,
                   "fair_pct": 50.4,
                   "blend_pct": 50.4,
-                  "_bedge": -2.3972132722483996,
-                  "model_raw_pct": 47.6
+                  "_bedge": -2.3972132722483996
                 }
-              ],
-              "calibration": "NHL model weight 0.0 vs market (walk-forward 2026-10-14)",
-              "lean": {
-                "side": "under",
-                "label": "Under 5.5",
-                "pct": 50.4,
-                "play": false,
-                "strong": false,
-                "why": "< 52% = coin flip, no play"
-              }
+              ]
             }
-          }
+          },
+          "refreshed_ct": "2026-10-15T14:56:41-05:00"
         },
         "market_edge": {
           "ml": {
@@ -2323,7 +2245,7 @@
               "goalie": "Andrei Vasilevskiy",
               "status": "Likely",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-10-15T10:17:18-05:00",
+              "seen_time_ct": "2026-10-15T14:56:41-05:00",
               "file": "nhl_goalie_log.jsonl"
             },
             "away": null
@@ -2359,17 +2281,16 @@
                   "price_american": 220,
                   "book": "DraftKings",
                   "novig_pct": 30.0,
-                  "model_pct": 30.0,
+                  "model_pct": 39.9,
                   "implied_pct": 31.2,
                   "edge_pp": 8.6,
                   "gap_pp": 9.9,
                   "strong": false,
-                  "_edge": 8.607926332458781,
-                  "_gap": 9.874133787888283,
+                  "_edge": 8.607926332458792,
+                  "_gap": 9.874133787888296,
                   "fair_pct": 30.0,
                   "blend_pct": 30.0,
-                  "_bedge": -1.2662074554295022,
-                  "model_raw_pct": 39.9
+                  "_bedge": -1.2662074554295022
                 },
                 {
                   "side": "home",
@@ -2378,28 +2299,18 @@
                   "price_american": -270,
                   "book": "DraftKings",
                   "novig_pct": 70.0,
-                  "model_pct": 70.0,
+                  "model_pct": 60.1,
                   "implied_pct": 73.0,
                   "edge_pp": -12.8,
                   "gap_pp": -9.9,
                   "strong": false,
-                  "_edge": -12.830899305431753,
-                  "_gap": -9.874133787888283,
+                  "_edge": -12.830899305431764,
+                  "_gap": -9.874133787888296,
                   "fair_pct": 70.0,
                   "blend_pct": 70.0,
-                  "_bedge": -2.9567655175434693,
-                  "model_raw_pct": 60.1
+                  "_bedge": -2.9567655175434693
                 }
-              ],
-              "calibration": "NHL model weight 0.0 vs market (walk-forward 2026-10-14)",
-              "lean": {
-                "side": "home",
-                "label": "Tampa Bay Lightning ML",
-                "pct": 70.0,
-                "play": true,
-                "strong": true,
-                "why": ">= 52%"
-              }
+              ]
             },
             "spread": {
               "novig_source": "DraftKings pair",
@@ -2414,7 +2325,7 @@
                   "price_american": -115,
                   "book": "DraftKings",
                   "novig_pct": 51.1,
-                  "model_pct": 51.1,
+                  "model_pct": 59.9,
                   "implied_pct": 53.5,
                   "edge_pp": 6.4,
                   "gap_pp": 8.8,
@@ -2423,8 +2334,7 @@
                   "_gap": 8.785355435565256,
                   "fair_pct": 48.9,
                   "blend_pct": 51.1,
-                  "_bedge": -2.4049484743883687,
-                  "model_raw_pct": 59.9
+                  "_bedge": -2.4049484743883687
                 },
                 {
                   "side": "home",
@@ -2433,7 +2343,7 @@
                   "price_american": -105,
                   "book": "DraftKings",
                   "novig_pct": 48.9,
-                  "model_pct": 48.9,
+                  "model_pct": 40.1,
                   "implied_pct": 51.2,
                   "edge_pp": -11.1,
                   "gap_pp": -8.8,
@@ -2442,19 +2352,9 @@
                   "_gap": -8.785355435565256,
                   "fair_pct": 51.1,
                   "blend_pct": 48.9,
-                  "_bedge": -2.3029358137568288,
-                  "model_raw_pct": 40.1
+                  "_bedge": -2.3029358137568288
                 }
-              ],
-              "calibration": "NHL model weight 0.0 vs market (walk-forward 2026-10-14)",
-              "lean": {
-                "side": "away",
-                "label": "Seattle Kraken +1.5",
-                "pct": 51.1,
-                "play": false,
-                "strong": false,
-                "why": "< 52% = coin flip, no play"
-              }
+              ]
             },
             "total": {
               "novig_source": "DraftKings pair",
@@ -2469,7 +2369,7 @@
                   "price_american": 110,
                   "book": "DraftKings",
                   "novig_pct": 45.7,
-                  "model_pct": 45.7,
+                  "model_pct": 46.1,
                   "implied_pct": 47.6,
                   "edge_pp": -1.6,
                   "gap_pp": 0.3,
@@ -2478,8 +2378,7 @@
                   "_gap": 0.32751632846748646,
                   "fair_pct": 45.7,
                   "blend_pct": 45.7,
-                  "_bedge": -1.893401495787178,
-                  "model_raw_pct": 46.1
+                  "_bedge": -1.893401495787178
                 },
                 {
                   "side": "under",
@@ -2488,7 +2387,7 @@
                   "price_american": -130,
                   "book": "DraftKings",
                   "novig_pct": 54.3,
-                  "model_pct": 54.3,
+                  "model_pct": 53.9,
                   "implied_pct": 56.5,
                   "edge_pp": -2.6,
                   "gap_pp": -0.3,
@@ -2497,21 +2396,12 @@
                   "_gap": -0.3275163284674809,
                   "fair_pct": 54.3,
                   "blend_pct": 54.3,
-                  "_bedge": -2.247385253695222,
-                  "model_raw_pct": 53.9
+                  "_bedge": -2.247385253695222
                 }
-              ],
-              "calibration": "NHL model weight 0.0 vs market (walk-forward 2026-10-14)",
-              "lean": {
-                "side": "under",
-                "label": "Under 6.5",
-                "pct": 54.3,
-                "play": true,
-                "strong": false,
-                "why": ">= 52%"
-              }
+              ]
             }
-          }
+          },
+          "refreshed_ct": "2026-10-15T14:56:41-05:00"
         },
         "market_edge": {
           "ml": {
@@ -2818,12 +2708,18 @@
               "goalie": "Akira Schmid",
               "status": "Confirmed",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-10-15T10:17:18-05:00",
+              "seen_time_ct": "2026-10-15T14:56:41-05:00",
               "file": "nhl_goalie_log.jsonl"
             },
-            "away": null
+            "away": {
+              "goalie": "Leevi Merilainen",
+              "status": "Confirmed",
+              "source": "dailyfaceoff",
+              "seen_time_ct": "2026-10-15T14:56:41-05:00",
+              "file": "nhl_goalie_log.jsonl"
+            }
           },
-          "goalie_flag": "GOALIE UNCONFIRMED (away) — model uses the recent-starter mix / likely starter; re-check before puck drop",
+          "goalie_flag": "",
           "fair": {
             "lam_home": 3.646,
             "lam_away": 2.158,
@@ -2831,15 +2727,15 @@
             "source": "Poisson + draw inflation 1.50 + empty-net overlay + OT/SO (P home 0.524), solved to the market no-vig ML and total"
           },
           "nhl_model": {
-            "reg_goals_home": 3.67,
+            "reg_goals_home": 3.58,
             "reg_goals_away": 2.75,
-            "reg_tie_pct": 20.7,
+            "reg_tie_pct": 21.0,
             "b2b_home": 0,
             "b2b_away": 0,
             "goalie_home": "Akira Schmid (Confirmed)",
-            "goalie_away": "recent-starter mix (no log entry)",
+            "goalie_away": "Leevi Merilainen (Confirmed)",
             "gsax_pg_home": -0.04,
-            "gsax_pg_away": -0.19
+            "gsax_pg_away": -0.06
           },
           "markets": {
             "ml": {
@@ -2854,17 +2750,16 @@
                   "price_american": 240,
                   "book": "DraftKings",
                   "novig_pct": 28.2,
-                  "model_pct": 28.2,
+                  "model_pct": 38.0,
                   "implied_pct": 29.4,
-                  "edge_pp": 7.6,
-                  "gap_pp": 8.8,
+                  "edge_pp": 8.6,
+                  "gap_pp": 9.8,
                   "strong": false,
-                  "_edge": 7.57380256738856,
-                  "_gap": 8.782619427465926,
+                  "_edge": 8.589381407836132,
+                  "_gap": 9.798198267913499,
                   "fair_pct": 28.2,
                   "blend_pct": 28.2,
-                  "_bedge": -1.2088168600773663,
-                  "model_raw_pct": 37.0
+                  "_bedge": -1.2088168600773663
                 },
                 {
                   "side": "home",
@@ -2873,28 +2768,18 @@
                   "price_american": -298,
                   "book": "DraftKings",
                   "novig_pct": 71.8,
-                  "model_pct": 71.8,
+                  "model_pct": 62.0,
                   "implied_pct": 74.9,
-                  "edge_pp": -11.9,
-                  "gap_pp": -8.8,
+                  "edge_pp": -12.9,
+                  "gap_pp": -9.8,
                   "strong": false,
-                  "_edge": -11.859939132567398,
-                  "_gap": -8.78261942746592,
+                  "_edge": -12.875517973014972,
+                  "_gap": -9.798198267913493,
                   "fair_pct": 71.8,
                   "blend_pct": 71.8,
-                  "_bedge": -3.077319705101478,
-                  "model_raw_pct": 63.0
+                  "_bedge": -3.077319705101478
                 }
-              ],
-              "calibration": "NHL model weight 0.0 vs market (walk-forward 2026-10-14)",
-              "lean": {
-                "side": "home",
-                "label": "Florida Panthers ML",
-                "pct": 71.8,
-                "play": true,
-                "strong": true,
-                "why": ">= 52%"
-              }
+              ]
             },
             "spread": {
               "novig_source": "DraftKings pair",
@@ -2909,17 +2794,16 @@
                   "price_american": -105,
                   "book": "DraftKings",
                   "novig_pct": 48.9,
-                  "model_pct": 48.9,
+                  "model_pct": 57.5,
                   "implied_pct": 51.2,
-                  "edge_pp": 5.1,
-                  "gap_pp": 7.4,
+                  "edge_pp": 6.3,
+                  "gap_pp": 8.6,
                   "strong": false,
-                  "_edge": 5.059179405833413,
-                  "_gap": 7.362115219590254,
+                  "_edge": 6.264942449685618,
+                  "_gap": 8.567878263442458,
                   "fair_pct": 46.8,
                   "blend_pct": 48.9,
-                  "_bedge": -2.3029358137568403,
-                  "model_raw_pct": 56.3
+                  "_bedge": -2.3029358137568403
                 },
                 {
                   "side": "home",
@@ -2928,28 +2812,18 @@
                   "price_american": -115,
                   "book": "DraftKings",
                   "novig_pct": 51.1,
-                  "model_pct": 51.1,
+                  "model_pct": 42.5,
                   "implied_pct": 53.5,
-                  "edge_pp": -9.8,
-                  "gap_pp": -7.4,
+                  "edge_pp": -11.0,
+                  "gap_pp": -8.6,
                   "strong": false,
-                  "_edge": -9.767063693978617,
-                  "_gap": -7.36211521959026,
+                  "_edge": -10.972826737830822,
+                  "_gap": -8.567878263442463,
                   "fair_pct": 53.2,
                   "blend_pct": 51.1,
-                  "_bedge": -2.4049484743883576,
-                  "model_raw_pct": 43.7
+                  "_bedge": -2.4049484743883576
                 }
-              ],
-              "calibration": "NHL model weight 0.0 vs market (walk-forward 2026-10-14)",
-              "lean": {
-                "side": "home",
-                "label": "Florida Panthers -1.5",
-                "pct": 51.1,
-                "play": false,
-                "strong": false,
-                "why": "< 52% = coin flip, no play"
-              }
+              ]
             },
             "total": {
               "novig_source": "DraftKings pair",
@@ -2964,17 +2838,16 @@
                   "price_american": 110,
                   "book": "DraftKings",
                   "novig_pct": 45.7,
-                  "model_pct": 45.7,
+                  "model_pct": 50.5,
                   "implied_pct": 47.6,
-                  "edge_pp": 4.1,
-                  "gap_pp": 6.0,
+                  "edge_pp": 2.8,
+                  "gap_pp": 4.7,
                   "strong": false,
-                  "_edge": 4.060188789752206,
-                  "_gap": 5.953590285539384,
+                  "_edge": 2.8453611045345606,
+                  "_gap": 4.7387626003217385,
                   "fair_pct": 45.7,
                   "blend_pct": 45.7,
-                  "_bedge": -1.893401495787178,
-                  "model_raw_pct": 51.7
+                  "_bedge": -1.893401495787178
                 },
                 {
                   "side": "under",
@@ -2983,30 +2856,21 @@
                   "price_american": -130,
                   "book": "DraftKings",
                   "novig_pct": 54.3,
-                  "model_pct": 54.3,
+                  "model_pct": 49.5,
                   "implied_pct": 56.5,
-                  "edge_pp": -8.2,
-                  "gap_pp": -6.0,
+                  "edge_pp": -7.0,
+                  "gap_pp": -4.7,
                   "strong": false,
-                  "_edge": -8.200975539234602,
-                  "_gap": -5.953590285539379,
+                  "_edge": -6.986147854016956,
+                  "_gap": -4.738762600321733,
                   "fair_pct": 54.3,
                   "blend_pct": 54.3,
-                  "_bedge": -2.247385253695222,
-                  "model_raw_pct": 48.3
+                  "_bedge": -2.247385253695222
                 }
-              ],
-              "calibration": "NHL model weight 0.0 vs market (walk-forward 2026-10-14)",
-              "lean": {
-                "side": "under",
-                "label": "Under 6.5",
-                "pct": 54.3,
-                "play": true,
-                "strong": false,
-                "why": ">= 52%"
-              }
+              ]
             }
-          }
+          },
+          "refreshed_ct": "2026-10-15T14:56:41-05:00"
         },
         "market_edge": {
           "ml": {
@@ -4335,7 +4199,7 @@
               "goalie": "Daniil Tarasov",
               "status": "Confirmed",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-10-15T10:17:18-05:00",
+              "seen_time_ct": "2026-10-15T14:56:41-05:00",
               "file": "nhl_goalie_log.jsonl"
             },
             "away": null
@@ -4371,17 +4235,16 @@
                   "price_american": 120,
                   "book": "DraftKings",
                   "novig_pct": 43.7,
-                  "model_pct": 43.7,
+                  "model_pct": 48.1,
                   "implied_pct": 45.5,
                   "edge_pp": 2.7,
                   "gap_pp": 4.5,
                   "strong": false,
-                  "_edge": 2.6759341588175225,
-                  "_gap": 4.47968596256933,
+                  "_edge": 2.6759341588175554,
+                  "_gap": 4.479685962569363,
                   "fair_pct": 43.7,
                   "blend_pct": 43.7,
-                  "_bedge": -1.8037518037518019,
-                  "model_raw_pct": 48.1
+                  "_bedge": -1.8037518037518019
                 },
                 {
                   "side": "home",
@@ -4390,28 +4253,18 @@
                   "price_american": -142,
                   "book": "DraftKings",
                   "novig_pct": 56.3,
-                  "model_pct": 56.3,
+                  "model_pct": 51.9,
                   "implied_pct": 58.7,
                   "edge_pp": -6.8,
                   "gap_pp": -4.5,
                   "strong": false,
-                  "_edge": -6.808165563776203,
-                  "_gap": -4.479685962569324,
+                  "_edge": -6.808165563776236,
+                  "_gap": -4.4796859625693575,
                   "fair_pct": 56.3,
                   "blend_pct": 56.3,
-                  "_bedge": -2.3284796012068787,
-                  "model_raw_pct": 51.9
+                  "_bedge": -2.3284796012068787
                 }
-              ],
-              "calibration": "NHL model weight 0.0 vs market (walk-forward 2026-10-14)",
-              "lean": {
-                "side": "home",
-                "label": "Detroit Red Wings ML",
-                "pct": 56.3,
-                "play": true,
-                "strong": true,
-                "why": ">= 52%"
-              }
+              ]
             },
             "spread": {
               "novig_source": "DraftKings pair",
@@ -4426,17 +4279,16 @@
                   "price_american": -225,
                   "book": "DraftKings",
                   "novig_pct": 66.4,
-                  "model_pct": 66.4,
+                  "model_pct": 68.8,
                   "implied_pct": 69.2,
                   "edge_pp": -0.4,
                   "gap_pp": 2.4,
                   "strong": false,
-                  "_edge": -0.4338838159885672,
-                  "_gap": 2.432072995634482,
+                  "_edge": -0.433883815988545,
+                  "_gap": 2.4320729956345044,
                   "fair_pct": 64.3,
                   "blend_pct": 66.4,
-                  "_bedge": -2.8659568116230494,
-                  "model_raw_pct": 68.8
+                  "_bedge": -2.8659568116230494
                 },
                 {
                   "side": "home",
@@ -4445,28 +4297,18 @@
                   "price_american": 185,
                   "book": "DraftKings",
                   "novig_pct": 33.6,
-                  "model_pct": 33.6,
+                  "model_pct": 31.2,
                   "implied_pct": 35.1,
                   "edge_pp": -3.9,
                   "gap_pp": -2.4,
                   "strong": false,
-                  "_edge": -3.884604713026274,
-                  "_gap": -2.432072995634482,
+                  "_edge": -3.884604713026296,
+                  "_gap": -2.4320729956345044,
                   "fair_pct": 35.7,
                   "blend_pct": 33.6,
-                  "_bedge": -1.4525317173917918,
-                  "model_raw_pct": 31.2
+                  "_bedge": -1.4525317173917918
                 }
-              ],
-              "calibration": "NHL model weight 0.0 vs market (walk-forward 2026-10-14)",
-              "lean": {
-                "side": "away",
-                "label": "Philadelphia Flyers +1.5",
-                "pct": 66.4,
-                "play": true,
-                "strong": true,
-                "why": ">= 52%"
-              }
+              ]
             },
             "total": {
               "novig_source": "DraftKings pair",
@@ -4481,17 +4323,16 @@
                   "price_american": -120,
                   "book": "DraftKings",
                   "novig_pct": 52.2,
-                  "model_pct": 52.2,
+                  "model_pct": 49.0,
                   "implied_pct": 54.5,
                   "edge_pp": -5.6,
                   "gap_pp": -3.2,
                   "strong": false,
-                  "_edge": -5.554839348378082,
-                  "_gap": -3.1832978464018002,
+                  "_edge": -5.55483934837806,
+                  "_gap": -3.183297846401778,
                   "fair_pct": 52.2,
                   "blend_pct": 52.2,
-                  "_bedge": -2.371541501976282,
-                  "model_raw_pct": 49.0
+                  "_bedge": -2.371541501976282
                 },
                 {
                   "side": "under",
@@ -4500,30 +4341,21 @@
                   "price_american": 100,
                   "book": "DraftKings",
                   "novig_pct": 47.8,
-                  "model_pct": 47.8,
+                  "model_pct": 51.0,
                   "implied_pct": 50.0,
                   "edge_pp": 1.0,
                   "gap_pp": 3.2,
                   "strong": false,
-                  "_edge": 1.0093848029235408,
-                  "_gap": 3.1832978464018002,
+                  "_edge": 1.0093848029235186,
+                  "_gap": 3.183297846401778,
                   "fair_pct": 47.8,
                   "blend_pct": 47.8,
-                  "_bedge": -2.1739130434782594,
-                  "model_raw_pct": 51.0
+                  "_bedge": -2.1739130434782594
                 }
-              ],
-              "calibration": "NHL model weight 0.0 vs market (walk-forward 2026-10-14)",
-              "lean": {
-                "side": "over",
-                "label": "Over 5.5",
-                "pct": 52.2,
-                "play": true,
-                "strong": false,
-                "why": ">= 52%"
-              }
+              ]
             }
-          }
+          },
+          "refreshed_ct": "2026-10-15T14:56:41-05:00"
         },
         "market_edge": {
           "ml": {
@@ -5728,10 +5560,22 @@
           },
           "note": "raw NHL model shown; w=0 on every market (walk-forward CI includes 0) — market only, no stamps",
           "goalies": {
-            "home": null,
-            "away": null
+            "home": {
+              "goalie": "Juuse Saros",
+              "status": "Likely",
+              "source": "dailyfaceoff",
+              "seen_time_ct": "2026-10-15T14:56:41-05:00",
+              "file": "nhl_goalie_log.jsonl"
+            },
+            "away": {
+              "goalie": "Alex Nedeljkovic",
+              "status": "Confirmed",
+              "source": "dailyfaceoff",
+              "seen_time_ct": "2026-10-15T14:56:41-05:00",
+              "file": "nhl_goalie_log.jsonl"
+            }
           },
-          "goalie_flag": "GOALIE UNCONFIRMED (away, home) — model uses the recent-starter mix / likely starter; re-check before puck drop",
+          "goalie_flag": "GOALIE UNCONFIRMED (home) — model uses the recent-starter mix / likely starter; re-check before puck drop",
           "fair": {
             "lam_home": 3.105,
             "lam_away": 2.717,
@@ -5739,15 +5583,15 @@
             "source": "Poisson + draw inflation 1.50 + empty-net overlay + OT/SO (P home 0.524), solved to the market no-vig ML and total"
           },
           "nhl_model": {
-            "reg_goals_home": 3.3,
+            "reg_goals_home": 3.21,
             "reg_goals_away": 2.84,
-            "reg_tie_pct": 22.0,
+            "reg_tie_pct": 22.3,
             "b2b_home": 0,
             "b2b_away": 0,
-            "goalie_home": "recent-starter mix (no log entry)",
-            "goalie_away": "recent-starter mix (no log entry)",
+            "goalie_home": "Juuse Saros (Likely)",
+            "goalie_away": "Alex Nedeljkovic (Confirmed)",
             "gsax_pg_home": 0.0,
-            "gsax_pg_away": -0.18
+            "gsax_pg_away": -0.02
           },
           "markets": {
             "ml": {
@@ -5762,17 +5606,16 @@
                   "price_american": 120,
                   "book": "DraftKings",
                   "novig_pct": 43.7,
-                  "model_pct": 43.7,
+                  "model_pct": 44.2,
                   "implied_pct": 45.5,
-                  "edge_pp": -2.5,
-                  "gap_pp": -0.7,
+                  "edge_pp": -1.2,
+                  "gap_pp": 0.6,
                   "strong": false,
-                  "_edge": -2.489490287148893,
-                  "_gap": -0.6857384833970859,
+                  "_edge": -1.218077998456707,
+                  "_gap": 0.5856738052951005,
                   "fair_pct": 43.7,
                   "blend_pct": 43.7,
-                  "_bedge": -1.8037518037518019,
-                  "model_raw_pct": 43.0
+                  "_bedge": -1.8037518037518019
                 },
                 {
                   "side": "home",
@@ -5781,28 +5624,18 @@
                   "price_american": -142,
                   "book": "DraftKings",
                   "novig_pct": 56.3,
-                  "model_pct": 56.3,
+                  "model_pct": 55.8,
                   "implied_pct": 58.7,
-                  "edge_pp": -1.6,
-                  "gap_pp": 0.7,
+                  "edge_pp": -2.9,
+                  "gap_pp": -0.6,
                   "strong": false,
-                  "_edge": -1.6427411178097873,
-                  "_gap": 0.6857384833970914,
+                  "_edge": -2.9141534065019736,
+                  "_gap": -0.5856738052950949,
                   "fair_pct": 56.3,
                   "blend_pct": 56.3,
-                  "_bedge": -2.3284796012068787,
-                  "model_raw_pct": 57.0
+                  "_bedge": -2.3284796012068787
                 }
-              ],
-              "calibration": "NHL model weight 0.0 vs market (walk-forward 2026-10-14)",
-              "lean": {
-                "side": "home",
-                "label": "Nashville Predators ML",
-                "pct": 56.3,
-                "play": true,
-                "strong": true,
-                "why": ">= 52%"
-              }
+              ]
             },
             "spread": {
               "novig_source": "DraftKings pair",
@@ -5817,17 +5650,16 @@
                   "price_american": -218,
                   "book": "DraftKings",
                   "novig_pct": 65.7,
-                  "model_pct": 65.7,
+                  "model_pct": 64.3,
                   "implied_pct": 68.6,
-                  "edge_pp": -5.7,
-                  "gap_pp": -2.9,
+                  "edge_pp": -4.3,
+                  "gap_pp": -1.5,
                   "strong": false,
-                  "_edge": -5.6823687350982315,
-                  "_gap": -2.8764322351619187,
+                  "_edge": -4.28220583747353,
+                  "_gap": -1.4762693375372171,
                   "fair_pct": 63.6,
                   "blend_pct": 65.7,
-                  "_bedge": -2.8059364999363123,
-                  "model_raw_pct": 62.9
+                  "_bedge": -2.8059364999363123
                 },
                 {
                   "side": "home",
@@ -5836,28 +5668,18 @@
                   "price_american": 180,
                   "book": "DraftKings",
                   "novig_pct": 34.3,
-                  "model_pct": 34.3,
+                  "model_pct": 35.7,
                   "implied_pct": 35.7,
-                  "edge_pp": 1.4,
-                  "gap_pp": 2.9,
+                  "edge_pp": 0.0,
+                  "gap_pp": 1.5,
                   "strong": false,
-                  "_edge": 1.4146239013156647,
-                  "_gap": 2.8764322351619187,
+                  "_edge": 0.014461003690963148,
+                  "_gap": 1.4762693375372171,
                   "fair_pct": 36.4,
                   "blend_pct": 34.3,
-                  "_bedge": -1.4618083338462484,
-                  "model_raw_pct": 37.1
+                  "_bedge": -1.4618083338462484
                 }
-              ],
-              "calibration": "NHL model weight 0.0 vs market (walk-forward 2026-10-14)",
-              "lean": {
-                "side": "away",
-                "label": "San Jose Sharks +1.5",
-                "pct": 65.7,
-                "play": true,
-                "strong": true,
-                "why": ">= 52%"
-              }
+              ]
             },
             "total": {
               "novig_source": "DraftKings pair",
@@ -5872,17 +5694,16 @@
                   "price_american": 102,
                   "book": "DraftKings",
                   "novig_pct": 47.4,
-                  "model_pct": 47.4,
+                  "model_pct": 46.2,
                   "implied_pct": 49.5,
-                  "edge_pp": -1.8,
-                  "gap_pp": 0.3,
+                  "edge_pp": -3.3,
+                  "gap_pp": -1.2,
                   "strong": false,
-                  "_edge": -1.8352720000473943,
-                  "_gap": 0.278337021174091,
+                  "_edge": -3.3231768976693274,
+                  "_gap": -1.2095678764478424,
                   "fair_pct": 47.4,
                   "blend_pct": 47.4,
-                  "_bedge": -2.1136090212214906,
-                  "model_raw_pct": 47.7
+                  "_bedge": -2.1136090212214906
                 },
                 {
                   "side": "under",
@@ -5891,30 +5712,21 @@
                   "price_american": -122,
                   "book": "DraftKings",
                   "novig_pct": 52.6,
-                  "model_pct": 52.6,
+                  "model_pct": 53.8,
                   "implied_pct": 55.0,
-                  "edge_pp": -2.6,
-                  "gap_pp": -0.3,
+                  "edge_pp": -1.1,
+                  "gap_pp": 1.2,
                   "strong": false,
-                  "_edge": -2.62463344995707,
-                  "_gap": -0.278337021174091,
+                  "_edge": -1.1367285523351423,
+                  "_gap": 1.2095678764478368,
                   "fair_pct": 52.6,
                   "blend_pct": 52.6,
-                  "_bedge": -2.346296428782979,
-                  "model_raw_pct": 52.3
+                  "_bedge": -2.346296428782979
                 }
-              ],
-              "calibration": "NHL model weight 0.0 vs market (walk-forward 2026-10-14)",
-              "lean": {
-                "side": "under",
-                "label": "Under 6.5",
-                "pct": 52.6,
-                "play": true,
-                "strong": false,
-                "why": ">= 52%"
-              }
+              ]
             }
-          }
+          },
+          "refreshed_ct": "2026-10-15T14:56:41-05:00"
         },
         "market_edge": {
           "ml": {
@@ -6217,10 +6029,16 @@
           },
           "note": "raw NHL model shown; w=0 on every market (walk-forward CI includes 0) — market only, no stamps",
           "goalies": {
-            "home": null,
+            "home": {
+              "goalie": "Jesper Wallstedt",
+              "status": "Confirmed",
+              "source": "dailyfaceoff",
+              "seen_time_ct": "2026-10-15T14:56:41-05:00",
+              "file": "nhl_goalie_log.jsonl"
+            },
             "away": null
           },
-          "goalie_flag": "GOALIE UNCONFIRMED (away, home) — model uses the recent-starter mix / likely starter; re-check before puck drop",
+          "goalie_flag": "GOALIE UNCONFIRMED (away) — model uses the recent-starter mix / likely starter; re-check before puck drop",
           "fair": {
             "lam_home": 2.997,
             "lam_away": 2.616,
@@ -6229,13 +6047,13 @@
           },
           "nhl_model": {
             "reg_goals_home": 2.99,
-            "reg_goals_away": 2.72,
+            "reg_goals_away": 2.69,
             "reg_tie_pct": 23.1,
             "b2b_home": 0,
             "b2b_away": 0,
-            "goalie_home": "recent-starter mix (no log entry)",
+            "goalie_home": "Jesper Wallstedt (Confirmed)",
             "goalie_away": "recent-starter mix (no log entry)",
-            "gsax_pg_home": 0.14,
+            "gsax_pg_home": 0.19,
             "gsax_pg_away": 0.07
           },
           "markets": {
@@ -6251,17 +6069,16 @@
                   "price_american": 120,
                   "book": "DraftKings",
                   "novig_pct": 43.7,
-                  "model_pct": 43.7,
+                  "model_pct": 45.1,
                   "implied_pct": 45.5,
-                  "edge_pp": -0.0,
-                  "gap_pp": 1.8,
+                  "edge_pp": -0.4,
+                  "gap_pp": 1.4,
                   "strong": false,
-                  "_edge": -0.027050724417948535,
-                  "_gap": 1.776701079333859,
+                  "_edge": -0.3594081823440287,
+                  "_gap": 1.4443436214077787,
                   "fair_pct": 43.7,
                   "blend_pct": 43.7,
-                  "_bedge": -1.8037518037518019,
-                  "model_raw_pct": 45.4
+                  "_bedge": -1.8037518037518019
                 },
                 {
                   "side": "home",
@@ -6270,28 +6087,18 @@
                   "price_american": -142,
                   "book": "DraftKings",
                   "novig_pct": 56.3,
-                  "model_pct": 56.3,
+                  "model_pct": 54.9,
                   "implied_pct": 58.7,
-                  "edge_pp": -4.1,
-                  "gap_pp": -1.8,
+                  "edge_pp": -3.8,
+                  "gap_pp": -1.4,
                   "strong": false,
-                  "_edge": -4.105180680540732,
-                  "_gap": -1.7767010793338534,
+                  "_edge": -3.772823222614652,
+                  "_gap": -1.4443436214077732,
                   "fair_pct": 56.3,
                   "blend_pct": 56.3,
-                  "_bedge": -2.3284796012068787,
-                  "model_raw_pct": 54.6
+                  "_bedge": -2.3284796012068787
                 }
-              ],
-              "calibration": "NHL model weight 0.0 vs market (walk-forward 2026-10-14)",
-              "lean": {
-                "side": "home",
-                "label": "Minnesota Wild ML",
-                "pct": 56.3,
-                "play": true,
-                "strong": true,
-                "why": ">= 52%"
-              }
+              ]
             },
             "spread": {
               "novig_source": "DraftKings pair",
@@ -6308,15 +6115,14 @@
                   "novig_pct": 65.7,
                   "model_pct": 65.7,
                   "implied_pct": 68.6,
-                  "edge_pp": -2.6,
-                  "gap_pp": 0.2,
+                  "edge_pp": -2.8,
+                  "gap_pp": -0.0,
                   "strong": false,
-                  "_edge": -2.560576176448881,
-                  "_gap": 0.2453603234874313,
+                  "_edge": -2.840245753444892,
+                  "_gap": -0.03430925350857983,
                   "fair_pct": 64.0,
                   "blend_pct": 65.7,
-                  "_bedge": -2.8059364999363123,
-                  "model_raw_pct": 66.0
+                  "_bedge": -2.8059364999363123
                 },
                 {
                   "side": "home",
@@ -6327,26 +6133,16 @@
                   "novig_pct": 34.3,
                   "model_pct": 34.3,
                   "implied_pct": 35.7,
-                  "edge_pp": -1.7,
-                  "gap_pp": -0.2,
+                  "edge_pp": -1.4,
+                  "gap_pp": 0.0,
                   "strong": false,
-                  "_edge": -1.7071686573336853,
-                  "_gap": -0.2453603234874313,
+                  "_edge": -1.4274990803376741,
+                  "_gap": 0.03430925350857983,
                   "fair_pct": 36.0,
                   "blend_pct": 34.3,
-                  "_bedge": -1.4618083338462484,
-                  "model_raw_pct": 34.0
+                  "_bedge": -1.4618083338462484
                 }
-              ],
-              "calibration": "NHL model weight 0.0 vs market (walk-forward 2026-10-14)",
-              "lean": {
-                "side": "away",
-                "label": "St Louis Blues +1.5",
-                "pct": 65.7,
-                "play": true,
-                "strong": true,
-                "why": ">= 52%"
-              }
+              ]
             },
             "total": {
               "novig_source": "DraftKings pair",
@@ -6361,17 +6157,16 @@
                   "price_american": -135,
                   "book": "DraftKings",
                   "novig_pct": 55.1,
-                  "model_pct": 55.1,
+                  "model_pct": 51.2,
                   "implied_pct": 57.4,
-                  "edge_pp": -5.8,
-                  "gap_pp": -3.5,
+                  "edge_pp": -6.2,
+                  "gap_pp": -3.9,
                   "strong": false,
-                  "_edge": -5.838168336330218,
-                  "_gap": -3.535471297346815,
+                  "_edge": -6.222847362781891,
+                  "_gap": -3.920150323798488,
                   "fair_pct": 55.1,
                   "blend_pct": 55.1,
-                  "_bedge": -2.3026970389834034,
-                  "model_raw_pct": 51.6
+                  "_bedge": -2.3026970389834034
                 },
                 {
                   "side": "under",
@@ -6380,30 +6175,21 @@
                   "price_american": 114,
                   "book": "DraftKings",
                   "novig_pct": 44.9,
-                  "model_pct": 44.9,
+                  "model_pct": 48.8,
                   "implied_pct": 46.7,
-                  "edge_pp": 1.7,
-                  "gap_pp": 3.5,
+                  "edge_pp": 2.0,
+                  "gap_pp": 3.9,
                   "strong": false,
-                  "_edge": 1.6623878630750932,
-                  "_gap": 3.535471297346815,
+                  "_edge": 2.047066889526766,
+                  "_gap": 3.920150323798488,
                   "fair_pct": 44.9,
                   "blend_pct": 44.9,
-                  "_bedge": -1.8730834342717273,
-                  "model_raw_pct": 48.4
+                  "_bedge": -1.8730834342717273
                 }
-              ],
-              "calibration": "NHL model weight 0.0 vs market (walk-forward 2026-10-14)",
-              "lean": {
-                "side": "over",
-                "label": "Over 5.5",
-                "pct": 55.1,
-                "play": true,
-                "strong": true,
-                "why": ">= 52%"
-              }
+              ]
             }
-          }
+          },
+          "refreshed_ct": "2026-10-15T14:56:41-05:00"
         },
         "market_edge": {
           "ml": {
@@ -6706,10 +6492,22 @@
           },
           "note": "raw NHL model shown; w=0 on every market (walk-forward CI includes 0) — market only, no stamps",
           "goalies": {
-            "home": null,
-            "away": null
+            "home": {
+              "goalie": "Spencer Knight",
+              "status": "Confirmed",
+              "source": "dailyfaceoff",
+              "seen_time_ct": "2026-10-15T14:56:41-05:00",
+              "file": "nhl_goalie_log.jsonl"
+            },
+            "away": {
+              "goalie": "Stuart Skinner",
+              "status": "Likely",
+              "source": "dailyfaceoff",
+              "seen_time_ct": "2026-10-15T14:56:41-05:00",
+              "file": "nhl_goalie_log.jsonl"
+            }
           },
-          "goalie_flag": "GOALIE UNCONFIRMED (away, home) — model uses the recent-starter mix / likely starter; re-check before puck drop",
+          "goalie_flag": "GOALIE UNCONFIRMED (away) — model uses the recent-starter mix / likely starter; re-check before puck drop",
           "fair": {
             "lam_home": 2.671,
             "lam_away": 3.047,
@@ -6718,14 +6516,14 @@
           },
           "nhl_model": {
             "reg_goals_home": 2.67,
-            "reg_goals_away": 3.15,
-            "reg_tie_pct": 22.6,
+            "reg_goals_away": 3.12,
+            "reg_tie_pct": 22.7,
             "b2b_home": 0,
             "b2b_away": 0,
-            "goalie_home": "recent-starter mix (no log entry)",
-            "goalie_away": "recent-starter mix (no log entry)",
-            "gsax_pg_home": -0.04,
-            "gsax_pg_away": -0.02
+            "goalie_home": "Spencer Knight (Confirmed)",
+            "goalie_away": "Stuart Skinner (Likely)",
+            "gsax_pg_home": 0.01,
+            "gsax_pg_away": -0.03
           },
           "markets": {
             "ml": {
@@ -6740,17 +6538,16 @@
                   "price_american": -135,
                   "book": "DraftKings",
                   "novig_pct": 55.1,
-                  "model_pct": 55.1,
+                  "model_pct": 56.0,
                   "implied_pct": 57.4,
-                  "edge_pp": -1.0,
-                  "gap_pp": 1.3,
+                  "edge_pp": -1.5,
+                  "gap_pp": 0.8,
                   "strong": false,
-                  "_edge": -1.0217811183966585,
-                  "_gap": 1.2809159205867449,
+                  "_edge": -1.4750577381930308,
+                  "_gap": 0.8276393007903726,
                   "fair_pct": 55.1,
                   "blend_pct": 55.1,
-                  "_bedge": -2.3026970389834034,
-                  "model_raw_pct": 56.4
+                  "_bedge": -2.3026970389834034
                 },
                 {
                   "side": "home",
@@ -6759,28 +6556,18 @@
                   "price_american": 114,
                   "book": "DraftKings",
                   "novig_pct": 44.9,
-                  "model_pct": 44.9,
+                  "model_pct": 44.0,
                   "implied_pct": 46.7,
-                  "edge_pp": -3.2,
-                  "gap_pp": -1.3,
+                  "edge_pp": -2.7,
+                  "gap_pp": -0.8,
                   "strong": false,
-                  "_edge": -3.153999354858467,
-                  "_gap": -1.2809159205867449,
+                  "_edge": -2.7007227350620946,
+                  "_gap": -0.8276393007903726,
                   "fair_pct": 44.9,
                   "blend_pct": 44.9,
-                  "_bedge": -1.8730834342717273,
-                  "model_raw_pct": 43.6
+                  "_bedge": -1.8730834342717273
                 }
-              ],
-              "calibration": "NHL model weight 0.0 vs market (walk-forward 2026-10-14)",
-              "lean": {
-                "side": "away",
-                "label": "Winnipeg Jets ML",
-                "pct": 55.1,
-                "play": true,
-                "strong": true,
-                "why": ">= 52%"
-              }
+              ]
             },
             "spread": {
               "novig_source": "DraftKings pair",
@@ -6795,17 +6582,16 @@
                   "price_american": 190,
                   "book": "DraftKings",
                   "novig_pct": 33.1,
-                  "model_pct": 33.1,
+                  "model_pct": 36.6,
                   "implied_pct": 34.5,
-                  "edge_pp": 2.6,
-                  "gap_pp": 4.0,
+                  "edge_pp": 2.1,
+                  "gap_pp": 3.5,
                   "strong": false,
-                  "_edge": 2.5896654086584037,
-                  "_gap": 3.9731261356670156,
+                  "_edge": 2.103462620872043,
+                  "_gap": 3.486923347880655,
                   "fair_pct": 36.1,
                   "blend_pct": 33.1,
-                  "_bedge": -1.383460727008612,
-                  "model_raw_pct": 37.1
+                  "_bedge": -1.383460727008612
                 },
                 {
                   "side": "home",
@@ -6814,28 +6600,18 @@
                   "price_american": -230,
                   "book": "DraftKings",
                   "novig_pct": 66.9,
-                  "model_pct": 66.9,
+                  "model_pct": 63.4,
                   "implied_pct": 69.7,
-                  "edge_pp": -6.8,
-                  "gap_pp": -4.0,
+                  "edge_pp": -6.3,
+                  "gap_pp": -3.5,
                   "strong": false,
-                  "_edge": -6.769393726317762,
-                  "_gap": -3.9731261356670156,
+                  "_edge": -6.283190938531402,
+                  "_gap": -3.486923347880655,
                   "fair_pct": 63.9,
                   "blend_pct": 66.9,
-                  "_bedge": -2.7962675906507473,
-                  "model_raw_pct": 62.9
+                  "_bedge": -2.7962675906507473
                 }
-              ],
-              "calibration": "NHL model weight 0.0 vs market (walk-forward 2026-10-14)",
-              "lean": {
-                "side": "home",
-                "label": "Chicago Blackhawks +1.5",
-                "pct": 66.9,
-                "play": true,
-                "strong": true,
-                "why": ">= 52%"
-              }
+              ]
             },
             "total": {
               "novig_source": "DraftKings pair",
@@ -6850,17 +6626,16 @@
                   "price_american": 110,
                   "book": "DraftKings",
                   "novig_pct": 45.7,
-                  "model_pct": 45.7,
+                  "model_pct": 41.8,
                   "implied_pct": 47.6,
-                  "edge_pp": -5.4,
-                  "gap_pp": -3.5,
+                  "edge_pp": -5.8,
+                  "gap_pp": -3.9,
                   "strong": false,
-                  "_edge": -5.40869781409028,
-                  "_gap": -3.5152963183031014,
+                  "_edge": -5.784407299723987,
+                  "_gap": -3.891005803936809,
                   "fair_pct": 45.7,
                   "blend_pct": 45.7,
-                  "_bedge": -1.893401495787178,
-                  "model_raw_pct": 42.2
+                  "_bedge": -1.893401495787178
                 },
                 {
                   "side": "under",
@@ -6869,30 +6644,21 @@
                   "price_american": -130,
                   "book": "DraftKings",
                   "novig_pct": 54.3,
-                  "model_pct": 54.3,
+                  "model_pct": 58.2,
                   "implied_pct": 56.5,
-                  "edge_pp": 1.3,
-                  "gap_pp": 3.5,
+                  "edge_pp": 1.6,
+                  "gap_pp": 3.9,
                   "strong": false,
-                  "_edge": 1.267911064607885,
-                  "_gap": 3.515296318303107,
+                  "_edge": 1.643620550241598,
+                  "_gap": 3.89100580393682,
                   "fair_pct": 54.3,
                   "blend_pct": 54.3,
-                  "_bedge": -2.247385253695222,
-                  "model_raw_pct": 57.8
+                  "_bedge": -2.247385253695222
                 }
-              ],
-              "calibration": "NHL model weight 0.0 vs market (walk-forward 2026-10-14)",
-              "lean": {
-                "side": "under",
-                "label": "Under 6.5",
-                "pct": 54.3,
-                "play": true,
-                "strong": false,
-                "why": ">= 52%"
-              }
+              ]
             }
-          }
+          },
+          "refreshed_ct": "2026-10-15T14:56:41-05:00"
         },
         "market_edge": {
           "ml": {
@@ -7708,10 +7474,22 @@
           },
           "note": "raw NHL model shown; w=0 on every market (walk-forward CI includes 0) — market only, no stamps",
           "goalies": {
-            "home": null,
-            "away": null
+            "home": {
+              "goalie": "Devon Levi",
+              "status": "Confirmed",
+              "source": "dailyfaceoff",
+              "seen_time_ct": "2026-10-15T14:56:41-05:00",
+              "file": "nhl_goalie_log.jsonl"
+            },
+            "away": {
+              "goalie": "Karel Vejmelka",
+              "status": "Confirmed",
+              "source": "dailyfaceoff",
+              "seen_time_ct": "2026-10-15T14:56:41-05:00",
+              "file": "nhl_goalie_log.jsonl"
+            }
           },
-          "goalie_flag": "GOALIE UNCONFIRMED (away, home) — model uses the recent-starter mix / likely starter; re-check before puck drop",
+          "goalie_flag": "",
           "fair": {
             "lam_home": 3.113,
             "lam_away": 2.972,
@@ -7720,13 +7498,13 @@
           },
           "nhl_model": {
             "reg_goals_home": 3.22,
-            "reg_goals_away": 3.15,
+            "reg_goals_away": 3.14,
             "reg_tie_pct": 21.9,
             "b2b_home": 0,
             "b2b_away": 0,
-            "goalie_home": "recent-starter mix (no log entry)",
-            "goalie_away": "recent-starter mix (no log entry)",
-            "gsax_pg_home": -0.04,
+            "goalie_home": "Devon Levi (Confirmed)",
+            "goalie_away": "Karel Vejmelka (Confirmed)",
+            "gsax_pg_home": -0.01,
             "gsax_pg_away": -0.01
           },
           "markets": {
@@ -7742,17 +7520,16 @@
                   "price_american": 102,
                   "book": "DraftKings",
                   "novig_pct": 47.4,
-                  "model_pct": 47.4,
+                  "model_pct": 48.3,
                   "implied_pct": 49.5,
-                  "edge_pp": -1.0,
-                  "gap_pp": 1.1,
+                  "edge_pp": -1.2,
+                  "gap_pp": 0.9,
                   "strong": false,
-                  "_edge": -1.012703673200377,
-                  "_gap": 1.1009053480211084,
+                  "_edge": -1.1887936136766308,
+                  "_gap": 0.9248154075448545,
                   "fair_pct": 47.4,
                   "blend_pct": 47.4,
-                  "_bedge": -2.1136090212214906,
-                  "model_raw_pct": 48.5
+                  "_bedge": -2.1136090212214906
                 },
                 {
                   "side": "home",
@@ -7761,28 +7538,18 @@
                   "price_american": -122,
                   "book": "DraftKings",
                   "novig_pct": 52.6,
-                  "model_pct": 52.6,
+                  "model_pct": 51.7,
                   "implied_pct": 55.0,
-                  "edge_pp": -3.4,
-                  "gap_pp": -1.1,
+                  "edge_pp": -3.3,
+                  "gap_pp": -0.9,
                   "strong": false,
-                  "_edge": -3.4472017768040875,
-                  "_gap": -1.1009053480211084,
+                  "_edge": -3.2711118363278335,
+                  "_gap": -0.9248154075448545,
                   "fair_pct": 52.6,
                   "blend_pct": 52.6,
-                  "_bedge": -2.346296428782979,
-                  "model_raw_pct": 51.5
+                  "_bedge": -2.346296428782979
                 }
-              ],
-              "calibration": "NHL model weight 0.0 vs market (walk-forward 2026-10-14)",
-              "lean": {
-                "side": "home",
-                "label": "Edmonton Oilers ML",
-                "pct": 52.6,
-                "play": true,
-                "strong": false,
-                "why": ">= 52%"
-              }
+              ]
             },
             "spread": {
               "novig_source": "DraftKings pair",
@@ -7797,17 +7564,16 @@
                   "price_american": -238,
                   "book": "DraftKings",
                   "novig_pct": 67.5,
-                  "model_pct": 67.5,
+                  "model_pct": 67.7,
                   "implied_pct": 70.4,
-                  "edge_pp": -2.6,
-                  "gap_pp": 0.3,
+                  "edge_pp": -2.7,
+                  "gap_pp": 0.2,
                   "strong": false,
-                  "_edge": -2.5791844290555033,
-                  "_gap": 0.33189205482833106,
+                  "_edge": -2.715959062432327,
+                  "_gap": 0.19511742145150723,
                   "fair_pct": 66.8,
                   "blend_pct": 67.5,
-                  "_bedge": -2.9110764838838343,
-                  "model_raw_pct": 67.8
+                  "_bedge": -2.9110764838838343
                 },
                 {
                   "side": "home",
@@ -7816,28 +7582,18 @@
                   "price_american": 195,
                   "book": "DraftKings",
                   "novig_pct": 32.5,
-                  "model_pct": 32.5,
+                  "model_pct": 32.3,
                   "implied_pct": 33.9,
-                  "edge_pp": -1.7,
-                  "gap_pp": -0.3,
+                  "edge_pp": -1.6,
+                  "gap_pp": -0.2,
                   "strong": false,
-                  "_edge": -1.733321839122215,
-                  "_gap": -0.33189205482833106,
+                  "_edge": -1.596547205745391,
+                  "_gap": -0.19511742145150723,
                   "fair_pct": 33.2,
                   "blend_pct": 32.5,
-                  "_bedge": -1.4014297842938839,
-                  "model_raw_pct": 32.2
+                  "_bedge": -1.4014297842938839
                 }
-              ],
-              "calibration": "NHL model weight 0.0 vs market (walk-forward 2026-10-14)",
-              "lean": {
-                "side": "away",
-                "label": "Utah Mammoth +1.5",
-                "pct": 67.5,
-                "play": true,
-                "strong": true,
-                "why": ">= 52%"
-              }
+              ]
             },
             "total": {
               "novig_source": "DraftKings pair",
@@ -7852,17 +7608,16 @@
                   "price_american": -118,
                   "book": "DraftKings",
                   "novig_pct": 51.7,
-                  "model_pct": 51.7,
+                  "model_pct": 51.1,
                   "implied_pct": 54.1,
-                  "edge_pp": -2.7,
-                  "gap_pp": -0.3,
+                  "edge_pp": -3.0,
+                  "gap_pp": -0.6,
                   "strong": false,
-                  "_edge": -2.6819872150126933,
-                  "_gap": -0.2899594196672295,
+                  "_edge": -2.9795294278272433,
+                  "_gap": -0.5875016324817794,
                   "fair_pct": 51.7,
                   "blend_pct": 51.7,
-                  "_bedge": -2.392027795345475,
-                  "model_raw_pct": 51.4
+                  "_bedge": -2.392027795345475
                 },
                 {
                   "side": "under",
@@ -7871,30 +7626,21 @@
                   "price_american": -102,
                   "book": "DraftKings",
                   "novig_pct": 48.3,
-                  "model_pct": 48.3,
+                  "model_pct": 48.9,
                   "implied_pct": 50.5,
-                  "edge_pp": -1.9,
-                  "gap_pp": 0.3,
+                  "edge_pp": -1.6,
+                  "gap_pp": 0.6,
                   "strong": false,
-                  "_edge": -1.9415026569102767,
-                  "_gap": 0.2899594196672295,
+                  "_edge": -1.6439604440957267,
+                  "_gap": 0.5875016324817794,
                   "fair_pct": 48.3,
                   "blend_pct": 48.3,
-                  "_bedge": -2.231462076577506,
-                  "model_raw_pct": 48.6
+                  "_bedge": -2.231462076577506
                 }
-              ],
-              "calibration": "NHL model weight 0.0 vs market (walk-forward 2026-10-14)",
-              "lean": {
-                "side": "over",
-                "label": "Over 6.5",
-                "pct": 51.7,
-                "play": false,
-                "strong": false,
-                "why": "< 52% = coin flip, no play"
-              }
+              ]
             }
-          }
+          },
+          "refreshed_ct": "2026-10-15T14:56:41-05:00"
         },
         "market_edge": {
           "ml": {
@@ -8197,10 +7943,22 @@
           },
           "note": "raw NHL model shown; w=0 on every market (walk-forward CI includes 0) — market only, no stamps",
           "goalies": {
-            "home": null,
-            "away": null
+            "home": {
+              "goalie": "Carter Hart",
+              "status": "Confirmed",
+              "source": "dailyfaceoff",
+              "seen_time_ct": "2026-10-15T14:56:41-05:00",
+              "file": "nhl_goalie_log.jsonl"
+            },
+            "away": {
+              "goalie": "Dustin Wolf",
+              "status": "Confirmed",
+              "source": "dailyfaceoff",
+              "seen_time_ct": "2026-10-15T14:56:41-05:00",
+              "file": "nhl_goalie_log.jsonl"
+            }
           },
-          "goalie_flag": "GOALIE UNCONFIRMED (away, home) — model uses the recent-starter mix / likely starter; re-check before puck drop",
+          "goalie_flag": "",
           "fair": {
             "lam_home": 3.719,
             "lam_away": 2.16,
@@ -8209,13 +7967,13 @@
           },
           "nhl_model": {
             "reg_goals_home": 3.47,
-            "reg_goals_away": 2.42,
+            "reg_goals_away": 2.41,
             "reg_tie_pct": 21.2,
             "b2b_home": 0,
             "b2b_away": 0,
-            "goalie_home": "recent-starter mix (no log entry)",
-            "goalie_away": "recent-starter mix (no log entry)",
-            "gsax_pg_home": -0.01,
+            "goalie_home": "Carter Hart (Confirmed)",
+            "goalie_away": "Dustin Wolf (Confirmed)",
+            "gsax_pg_home": 0.02,
             "gsax_pg_away": -0.01
           },
           "markets": {
@@ -8231,17 +7989,16 @@
                   "price_american": 250,
                   "book": "DraftKings",
                   "novig_pct": 27.4,
-                  "model_pct": 27.4,
+                  "model_pct": 34.5,
                   "implied_pct": 28.6,
-                  "edge_pp": 6.1,
-                  "gap_pp": 7.2,
+                  "edge_pp": 5.9,
+                  "gap_pp": 7.1,
                   "strong": false,
-                  "_edge": 6.08023359889679,
-                  "_gap": 7.226913006445762,
+                  "_edge": 5.938760544109012,
+                  "_gap": 7.0854399516579845,
                   "fair_pct": 27.4,
                   "blend_pct": 27.4,
-                  "_bedge": -1.1466794075489728,
-                  "model_raw_pct": 34.7
+                  "_bedge": -1.1466794075489728
                 },
                 {
                   "side": "home",
@@ -8250,28 +8007,18 @@
                   "price_american": -310,
                   "book": "DraftKings",
                   "novig_pct": 72.6,
-                  "model_pct": 72.6,
+                  "model_pct": 65.5,
                   "implied_pct": 75.6,
-                  "edge_pp": -10.3,
-                  "gap_pp": -7.2,
+                  "edge_pp": -10.1,
+                  "gap_pp": -7.1,
                   "strong": false,
-                  "_edge": -10.261418267886334,
-                  "_gap": -7.2269130064457565,
+                  "_edge": -10.119945213098557,
+                  "_gap": -7.085439951657979,
                   "fair_pct": 72.6,
                   "blend_pct": 72.6,
-                  "_bedge": -3.0345052614405787,
-                  "model_raw_pct": 65.3
+                  "_bedge": -3.0345052614405787
                 }
-              ],
-              "calibration": "NHL model weight 0.0 vs market (walk-forward 2026-10-14)",
-              "lean": {
-                "side": "home",
-                "label": "Vegas Golden Knights ML",
-                "pct": 72.6,
-                "play": true,
-                "strong": true,
-                "why": ">= 52%"
-              }
+              ]
             },
             "spread": {
               "novig_source": "DraftKings pair",
@@ -8286,17 +8033,16 @@
                   "price_american": 105,
                   "book": "DraftKings",
                   "novig_pct": 46.8,
-                  "model_pct": 46.8,
+                  "model_pct": 54.5,
                   "implied_pct": 48.8,
-                  "edge_pp": 5.8,
-                  "gap_pp": 7.9,
+                  "edge_pp": 5.7,
+                  "gap_pp": 7.7,
                   "strong": false,
-                  "_edge": 5.830208038811224,
-                  "_gap": 7.85744909044252,
+                  "_edge": 5.692435007757934,
+                  "_gap": 7.71967605938923,
                   "fair_pct": 45.7,
                   "blend_pct": 46.8,
-                  "_bedge": -2.027241051631301,
-                  "model_raw_pct": 54.6
+                  "_bedge": -2.027241051631301
                 },
                 {
                   "side": "home",
@@ -8305,28 +8051,18 @@
                   "price_american": -125,
                   "book": "DraftKings",
                   "novig_pct": 53.2,
-                  "model_pct": 53.2,
+                  "model_pct": 45.5,
                   "implied_pct": 55.6,
-                  "edge_pp": -10.2,
-                  "gap_pp": -7.9,
+                  "edge_pp": -10.0,
+                  "gap_pp": -7.7,
                   "strong": false,
-                  "_edge": -10.16625139924483,
-                  "_gap": -7.857449090442525,
+                  "_edge": -10.02847836819154,
+                  "_gap": -7.7196760593892355,
                   "fair_pct": 54.3,
                   "blend_pct": 53.2,
-                  "_bedge": -2.3088023088023046,
-                  "model_raw_pct": 45.4
+                  "_bedge": -2.3088023088023046
                 }
-              ],
-              "calibration": "NHL model weight 0.0 vs market (walk-forward 2026-10-14)",
-              "lean": {
-                "side": "home",
-                "label": "Vegas Golden Knights -1.5",
-                "pct": 53.2,
-                "play": true,
-                "strong": false,
-                "why": ">= 52%"
-              }
+              ]
             },
             "total": {
               "novig_source": "DraftKings pair",
@@ -8341,17 +8077,16 @@
                   "price_american": 105,
                   "book": "DraftKings",
                   "novig_pct": 46.8,
-                  "model_pct": 46.8,
+                  "model_pct": 42.5,
                   "implied_pct": 48.8,
-                  "edge_pp": -6.1,
-                  "gap_pp": -4.1,
+                  "edge_pp": -6.3,
+                  "gap_pp": -4.3,
                   "strong": false,
-                  "_edge": -6.086484146081794,
-                  "_gap": -4.0592430944504985,
+                  "_edge": -6.278604871084253,
+                  "_gap": -4.251363819452958,
                   "fair_pct": 46.8,
                   "blend_pct": 46.8,
-                  "_bedge": -2.027241051631301,
-                  "model_raw_pct": 42.7
+                  "_bedge": -2.027241051631301
                 },
                 {
                   "side": "under",
@@ -8360,30 +8095,21 @@
                   "price_american": -125,
                   "book": "DraftKings",
                   "novig_pct": 53.2,
-                  "model_pct": 53.2,
+                  "model_pct": 57.5,
                   "implied_pct": 55.6,
-                  "edge_pp": 1.8,
-                  "gap_pp": 4.1,
+                  "edge_pp": 1.9,
+                  "gap_pp": 4.3,
                   "strong": false,
-                  "_edge": 1.7504407856481885,
-                  "_gap": 4.059243094450493,
+                  "_edge": 1.9425615106506422,
+                  "_gap": 4.251363819452947,
                   "fair_pct": 53.2,
                   "blend_pct": 53.2,
-                  "_bedge": -2.3088023088023046,
-                  "model_raw_pct": 57.3
+                  "_bedge": -2.3088023088023046
                 }
-              ],
-              "calibration": "NHL model weight 0.0 vs market (walk-forward 2026-10-14)",
-              "lean": {
-                "side": "under",
-                "label": "Under 6.5",
-                "pct": 53.2,
-                "play": true,
-                "strong": false,
-                "why": ">= 52%"
-              }
+              ]
             }
-          }
+          },
+          "refreshed_ct": "2026-10-15T14:56:41-05:00"
         },
         "market_edge": {
           "ml": {
