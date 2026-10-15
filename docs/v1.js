@@ -42,6 +42,9 @@
   function goalieLine(g) {
     if (g.sport === 'MLB') { const mm = g.paper && g.paper.mlb_model;
       return `<div class="small mut"><b>Paper / info only · MLB Colab v1.1 Poisson model</b> — model % never sets the A/B/C grade${mm ? ` · exp. runs ${last(g.away)} ${mm.runs_away} – ${last(g.home)} ${mm.runs_home} · SP ${mm.away_pitcher} vs ${mm.home_pitcher} · park ${mm.park}` : ` · ${(g.paper && g.paper.note) || 'model blank'}`}</div>`; }
+    if ((g.sport === 'NFL' || g.sport === 'CFB') && g.qb_status) { const q = g.qb_status;
+      const f = (s, t) => { const x = q[s]; if (!x) return `${last(t)}: —`; return `${last(t)}: ${x.qb1 ? x.qb1 + ' ' : ''}${x.flag ? '<b style="color:#b42318">' + (x.injured ? x.injured.join(', ') : x.status) + '</b>' : '<span class="mut">' + x.status + '</span>'}`; };
+      return `<div class="small">${(q.away && q.away.flag) || (q.home && q.home.flag) ? '⚠ ' : ''}QB · ${f('away', g.away)} · ${f('home', g.home)} <span class="mut">(flag only, as of ${String(q.as_of_ct || '').slice(5, 16).replace('T', ' ')} CT)</span></div>`; }
     const gl = g.paper && g.paper.goalies; if (g.sport !== 'NHL') return '';
     const f = (s, t) => { const x = gl && gl[s]; return `${last(t)}: ${x ? `${x.goalie} (${x.status})` : '—'}`; };
     const conf = gl && gl.home && gl.away && /confirm/i.test(gl.home.status) && /confirm/i.test(gl.away.status);

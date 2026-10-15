@@ -532,6 +532,13 @@ def main(argv: list[str] | None = None) -> int:
         except Exception as e:  # ESPN down etc. -> board still publishes, paper blank
             print(f"[auto_board] {sport} paper model error: {type(e).__name__}: {e}", file=sys.stderr)
             paper_stats[sport] = {"games": len(rows), "error": str(e)[:200]}
+        if sport in ("NFL", "CFB"):  # starting-QB flag (display only) + pre-kick status log
+            try:
+                import qb_status
+                pre = [r for r in rows if r.get("kick_utc") and paper_model.kick_ct(r["kick_utc"]) > now_ct]
+                print(f"[auto_board] {sport} QB flags: {qb_status.attach(sport, pre, now_ct, data_dir / 'qb_log.jsonl')}")
+            except Exception as e:  # noqa: BLE001
+                print(f"[auto_board] {sport} qb_status error: {type(e).__name__}: {e}", file=sys.stderr)
         try:  # display-only calibration + higher-% lean flag (never used by stamps/grades)
             import model_calib
             for r in rows:
@@ -574,7 +581,7 @@ def main(argv: list[str] | None = None) -> int:
             "sport": r["sport"], "matchup": r["matchup"], "kick_utc": r["kick_utc"], "kick_ct": r["kick_ct"],
             "event_id": r["event_id"], "espn_event_id": r.get("espn_event_id"), "status": b.get("status"),
             "best": b.get("best"), "picks": b.get("picks") or [], "by_market": b.get("by_market"),
-            "note": b.get("note"), "market_edge": paper_model.board_model_view(r["sport"], r.get("market_edge"), b.get("markets")),
+            "note": b.get("note"), "qb_status": r.get("qb_status"), "market_edge": paper_model.board_model_view(r["sport"], r.get("market_edge"), b.get("markets")),
             "fpi_home_margin": b.get("fpi_home_margin"),
             "mkt_home_margin": b.get("mkt_home_margin"), "blend_home_margin": b.get("blend_home_margin"),
             "stamped": any(paper_model.pick_id(r["sport"], r, m) in stamped_ids for m in ("ml", "spread", "total")),

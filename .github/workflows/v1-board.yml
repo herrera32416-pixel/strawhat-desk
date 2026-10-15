@@ -45,6 +45,11 @@ on:
     - cron: "33 23 * * *"   # 6:33 CDT
     - cron: "15 20 * * *"
     - cron: "15 21 * * *"
+    # 2026-10-15: Saturday CFB line refresh, 1:30pm CT (before the 2:30pm/6-7pm kick windows; the 9:15 build
+    # already covers 11am kicks). Forced rebuild (up to ~9 Odds API credits, ~4 Saturdays/mo); guard below only lets
+    # the slot through on Saturday 13:25-14:00 CT. CDT slot 18:30 UTC, CST slot 19:30 UTC.
+    - cron: "30 18 * * 6"
+    - cron: "30 19 * * 6"
   workflow_dispatch:
     inputs:
       force:
@@ -81,8 +86,15 @@ jobs:
         id: guard
         run: |
           HM=$(TZ=America/Chicago date +%-H%M)
+          DOW=$(TZ=America/Chicago date +%u)
           if [ "${{ github.event.inputs.force }}" = "true" ]; then
-            echo "force=true -> guard bypassed"; echo "run=true" >> "$GITHUB_OUTPUT"
+            echo "force=true -> guard bypassed"; echo "run=true" >> "$GITHUB_OUTPUT"; echo "force=true" >> "$GITHUB_OUTPUT"
+          elif [ "${{ github.event_name }}" = "schedule" ] && [ "${{ github.event.schedule }}" = "30 18 * * 6" -o "${{ github.event.schedule }}" = "30 19 * * 6" ]; then
+            if [ "$DOW" = "6" ] && [ "$HM" -ge 1325 ] && [ "$HM" -le 1400 ]; then
+              echo "Saturday CFB line refresh ($HM CT)"; echo "run=true" >> "$GITHUB_OUTPUT"; echo "force=true" >> "$GITHUB_OUTPUT"
+            else
+              echo "skip: Saturday refresh slot at $HM CT (DST-shifted)"; echo "run=false" >> "$GITHUB_OUTPUT"
+            fi
           elif [ "${{ github.event_name }}" = "schedule" ] && { [ "$HM" -lt 915 ] || [ "$HM" -gt 1900 ]; }; then
             echo "skip: CT time $HM outside 9:15-19:00 (DST-shifted slot)"; echo "run=false" >> "$GITHUB_OUTPUT"
           else
@@ -110,7 +122,7 @@ jobs:
         env:
           THE_ODDS_API_KEY: ${{ secrets.THE_ODDS_API_KEY }}
         run: |
-          if [ "${{ github.event.inputs.force }}" = "true" ]; then
+          if [ "${{ steps.guard.outputs.force }}" = "true" ]; then
             python scripts/auto_board.py --force
           else
             python scripts/auto_board.py

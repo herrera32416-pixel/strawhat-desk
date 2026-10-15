@@ -1,0 +1,23 @@
+NFL QB change (starter differs from team prior start), home minus away; base = closing no-vig ML; walk-forward by season 2006-2025
+{0.0: 4360, 1.0: 515, -1.0: 484}
+qb_change                                  n= 5139 dLL=+0.25 dBrier=+0.12 hit 0.666->0.667 seasons 10/20 last-fit [-0.118] 
+2007 266 brier mkt 0.2034 adj 0.2037 hit mkt 0.684 adj 0.684
+2008 193 brier mkt 0.2082 adj 0.2056 hit mkt 0.663 adj 0.668
+2009 253 brier mkt 0.1984 adj 0.2002 hit mkt 0.696 adj 0.688
+2010 267 brier mkt 0.2209 adj 0.2221 hit mkt 0.655 adj 0.652
+2011 267 brier mkt 0.2038 adj 0.2035 hit mkt 0.667 adj 0.663
+2012 266 brier mkt 0.2087 adj 0.2081 hit mkt 0.647 adj 0.654
+2013 266 brier mkt 0.2027 adj 0.2011 hit mkt 0.711 adj 0.707
+2014 266 brier mkt 0.2066 adj 0.2083 hit mkt 0.669 adj 0.677
+2015 267 brier mkt 0.2287 adj 0.2305 hit mkt 0.622 adj 0.622
+2016 265 brier mkt 0.2170 adj 0.2169 hit mkt 0.645 adj 0.649
+2017 266 brier mkt 0.2031 adj 0.2020 hit mkt 0.703 adj 0.703
+2018 265 brier mkt 0.2124 adj 0.2139 hit mkt 0.664 adj 0.664
+2019 266 brier mkt 0.2141 adj 0.2144 hit mkt 0.643 adj 0.639
+2020 268 brier mkt 0.2019 adj 0.2015 hit mkt 0.675 adj 0.679
+2021 284 brier mkt 0.2177 adj 0.2175 hit mkt 0.623 adj 0.627
+2022 282 brier mkt 0.2093 adj 0.2089 hit mkt 0.660 adj 0.667
+2023 285 brier mkt 0.2186 adj 0.2193 hit mkt 0.677 adj 0.677
+2024 285 brier mkt 0.2010 adj 0.2003 hit mkt 0.705 adj 0.705
+2025 284 brier mkt 0.2109 adj 0.2110 hit mkt 0.662 adj 0.655
+2026 78 brier mkt 0.2289 adj 0.2305 hit mkt 0.641 adj 0.628
