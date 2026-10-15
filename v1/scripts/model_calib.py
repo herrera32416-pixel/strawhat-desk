@@ -14,6 +14,7 @@ import math
 
 W_MODEL = {"NHL": 0.0}          # logit-space weight on (model - market); sport missing = leave model % as is
 PLAY_MIN_PCT = 52.0
+STRONG_MIN_PCT = 55.0   # Luis OK 2026-10-14: strong tier (★★); live .661 on 274, history .55-.65
 
 
 def _lg(p: float) -> float:
@@ -45,4 +46,5 @@ def lean(sides: list) -> dict | None:
     hi = a if a["model_pct"] > b["model_pct"] else b
     ok = hi["model_pct"] >= PLAY_MIN_PCT
     return {"side": hi.get("side"), "label": hi.get("label"), "pct": hi["model_pct"], "play": ok,
+            "strong": hi["model_pct"] >= STRONG_MIN_PCT,
             "why": f">= {PLAY_MIN_PCT:g}%" if ok else f"< {PLAY_MIN_PCT:g}% = coin flip, no play"}
