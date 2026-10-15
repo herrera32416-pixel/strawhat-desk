@@ -13,6 +13,7 @@ from __future__ import annotations
 import math
 
 W_MODEL = {"NHL": 0.0}          # logit-space weight on (model - market); sport missing = leave model % as is
+MARKET_ONLY = ("NFL", "CFB")
 PLAY_MIN_PCT = 52.0
 STRONG_MIN_PCT = 55.0   # Luis OK 2026-10-14: strong tier (★★); live .661 on 274, history .55-.65
 
@@ -27,6 +28,11 @@ def calibrate_markets(sport: str, markets: dict | None) -> None:
     w = W_MODEL.get(sport)
     for m in (markets or {}).values():
         sides = m.get("sides") or []
+        if sport in MARKET_ONLY:  # FPI weight 0: model % = market no-vig % (fills blank spreads/totals)
+            for s in sides:
+                if s.get("model_pct") is None and s.get("novig_pct") is not None:
+                    s["model_pct"] = s["novig_pct"]
+                    s["model_source"] = "market no-vig (FPI w=0)"
         if w is not None and len(sides) == 2 and all(s.get("model_pct") is not None and s.get("novig_pct") is not None
                                                       for s in sides):
             for s in sides:

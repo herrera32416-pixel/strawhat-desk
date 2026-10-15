@@ -1,0 +1,26 @@
+== CFB ML
+fav-longshot calibration                   n= 2754 dLL=-0.96 dBrier=-0.16 hit 0.749->0.751 seasons 2/4 last-fit [0.077 0.047] KEEP
+home-dog flag                              n= 2754 dLL=+0.44 dBrier=+0.14 hit 0.749->0.748 seasons 1/4 last-fit [0.036] 
+FPI minus spread                           n= 2751 dLL=+0.10 dBrier=-0.00 hit 0.749->0.751 seasons 3/4 last-fit [0.011] 
+== CFB spread (base no-vig price)
+k3                                         n= 2999 dLL=+0.23 dBrier=+0.12 hit 0.502->0.492 seasons 0/4 last-fit [-0.05] 
+hfav                                       n= 2999 dLL=+0.28 dBrier=+0.14 hit 0.502->0.505 seasons 1/4 last-fit [-0.004] 
+big                                        n= 2999 dLL=+0.02 dBrier=+0.01 hit 0.502->0.505 seasons 3/4 last-fit [0.041] 
+fz                                         n= 2996 dLL=+0.59 dBrier=+0.29 hit 0.501->0.502 seasons 0/4 last-fit [0.001] 
+calibration                                n= 2999 dLL=-0.05 dBrier=-0.02 hit 0.502->0.506 seasons 3/4 last-fit [-0.193  0.017] KEEP
+== CFB totals (base 50%)  over rate 0.512
+total moved down open->close               n= 2130 dLL=+1.28 dBrier=+0.64 hit 0.510->0.481 seasons 0/3 last-fit [0.014] 
+spread line move (open->close)             n= 2128 dLL=+0.64 dBrier=+0.34 hit 0.501->0.493 seasons 1/3 last-fit [-0.008] 
+== NFL ML
+fav-longshot calibration                   n=  854 dLL=+0.77 dBrier=+0.30 hit 0.681->0.681 seasons 1/3 last-fit [0.149 0.004] 
+home-dog flag                              n=  854 dLL=+0.73 dBrier=+0.35 hit 0.681->0.683 seasons 0/3 last-fit [-0.133] 
+FPI minus spread                           n=  569 dLL=-3.21 dBrier=-0.68 hit 0.684->0.687 seasons 1/2 last-fit [-0.062] KEEP
+== NFL spread (base no-vig price)
+k3                                         n=  836 dLL=+2.94 dBrier=+1.46 hit 0.526->0.514 seasons 1/3 last-fit [-0.069] 
+hfav                                       n=  836 dLL=+1.68 dBrier=+0.84 hit 0.526->0.498 seasons 0/3 last-fit [0.01] 
+big                                        n=  836 dLL=+0.00 dBrier=+0.00 hit 0.526->0.526 seasons 0/3 last-fit [0.] 
+fz                                         n=  565 dLL=+1.61 dBrier=+0.80 hit 0.517->0.490 seasons 1/2 last-fit [-0.036] 
+calibration                                n=  836 dLL=+0.51 dBrier=+0.25 hit 0.526->0.518 seasons 1/3 last-fit [0.047 0.015] 
+== NFL totals (base 50%)  over rate 0.492
+total moved down open->close               n=  248 dLL=-2.09 dBrier=-1.04 hit 0.516->0.528 seasons 1/1 last-fit [0.094] KEEP
+spread line move (open->close)             n=  732 dLL=+2.69 dBrier=+1.32 hit 0.529->0.508 seasons 2/3 last-fit [-0.026] 

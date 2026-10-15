@@ -491,6 +491,9 @@ def board_model_view(sport: str, market_edge: dict | None, markets: dict | None)
             if src is not None and src.get("model_pct") is not None and (sd.get("line") is None or src.get("line") is None
                                                                           or abs(float(src["line"]) - float(sd["line"])) < 1e-9):
                 mp = src["model_pct"]
+            if mp is None and MODEL.get(sport, {}).get("w") == 0.0 and sd.get("novig_pct") is not None:
+                mp = sd["novig_pct"]  # FIX 2026-10-15: w=0 => model % IS the no-vig % at this line (was blank when
+                #                       the best-book line differed from consensus, and on every NFL/CFB total)
             sd["market_pct"] = sd.get("novig_pct")
             sd["model_pct"] = mp
             sd["model_gap_pp"] = None if mp is None or sd.get("novig_pct") is None else r1(mp - sd["novig_pct"])
