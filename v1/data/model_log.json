@@ -1667,8 +1667,13 @@
      "model_pct": null
     }
    ],
-   "status": "open",
-   "snapshots": []
+   "status": "graded",
+   "snapshots": [],
+   "score": "Milwaukee Brewers 6 - Los Angeles Dodgers 4",
+   "graded_at_ct": "2026-10-16T09:58:57-05:00",
+   "winner": "Milwaukee Brewers ML",
+   "novig_brier": 0.3411,
+   "novig_side_won": false
   },
   {
    "id": "mlb-401908033-spread",
@@ -1705,8 +1710,13 @@
      "model_pct": null
     }
    ],
-   "status": "open",
-   "snapshots": []
+   "status": "graded",
+   "snapshots": [],
+   "score": "Milwaukee Brewers 6 - Los Angeles Dodgers 4",
+   "graded_at_ct": "2026-10-16T09:58:57-05:00",
+   "winner": "Milwaukee Brewers +1.5",
+   "novig_brier": 0.1608,
+   "novig_side_won": true
   },
   {
    "id": "mlb-401908033-total",
@@ -1743,8 +1753,13 @@
      "model_pct": null
     }
    ],
-   "status": "open",
-   "snapshots": []
+   "status": "graded",
+   "snapshots": [],
+   "score": "Milwaukee Brewers 6 - Los Angeles Dodgers 4",
+   "graded_at_ct": "2026-10-16T09:58:57-05:00",
+   "winner": "Over 7.5",
+   "novig_brier": 0.245,
+   "novig_side_won": true
   },
   {
    "id": "nhl-401892513-ml",
@@ -1781,8 +1796,15 @@
      "model_pct": 56.3
     }
    ],
-   "status": "open",
-   "snapshots": []
+   "status": "graded",
+   "snapshots": [],
+   "score": "San Jose Sharks 3 - Nashville Predators 2",
+   "graded_at_ct": "2026-10-16T09:58:57-05:00",
+   "winner": "San Jose Sharks ML",
+   "model_brier": 0.317,
+   "model_side_won": false,
+   "novig_brier": 0.3102,
+   "novig_side_won": false
   },
   {
    "id": "nhl-401892513-spread",
@@ -1819,8 +1841,15 @@
      "model_pct": 34.3
     }
    ],
-   "status": "open",
-   "snapshots": []
+   "status": "graded",
+   "snapshots": [],
+   "score": "San Jose Sharks 3 - Nashville Predators 2",
+   "graded_at_ct": "2026-10-16T09:58:57-05:00",
+   "winner": "San Jose Sharks +1.5",
+   "model_brier": 0.1176,
+   "model_side_won": true,
+   "novig_brier": 0.1197,
+   "novig_side_won": true
   },
   {
    "id": "nhl-401892513-total",
@@ -1857,8 +1886,15 @@
      "model_pct": 52.6
     }
    ],
-   "status": "open",
-   "snapshots": []
+   "status": "graded",
+   "snapshots": [],
+   "score": "San Jose Sharks 3 - Nashville Predators 2",
+   "graded_at_ct": "2026-10-16T09:58:57-05:00",
+   "winner": "Under 6.5",
+   "model_brier": 0.2247,
+   "model_side_won": true,
+   "novig_brier": 0.2237,
+   "novig_side_won": true
   },
   {
    "id": "nhl-401892514-ml",
@@ -1895,8 +1931,15 @@
      "model_pct": 56.3
     }
    ],
-   "status": "open",
-   "snapshots": []
+   "status": "graded",
+   "snapshots": [],
+   "score": "St Louis Blues 4 - Minnesota Wild 5",
+   "graded_at_ct": "2026-10-16T09:58:57-05:00",
+   "winner": "Minnesota Wild ML",
+   "model_brier": 0.191,
+   "model_side_won": true,
+   "novig_brier": 0.191,
+   "novig_side_won": true
   },
   {
    "id": "nhl-401892514-spread",
@@ -1933,8 +1976,15 @@
      "model_pct": 34.3
     }
    ],
-   "status": "open",
-   "snapshots": []
+   "status": "graded",
+   "snapshots": [],
+   "score": "St Louis Blues 4 - Minnesota Wild 5",
+   "graded_at_ct": "2026-10-16T09:58:57-05:00",
+   "winner": "St Louis Blues +1.5",
+   "model_brier": 0.1176,
+   "model_side_won": true,
+   "novig_brier": 0.119,
+   "novig_side_won": true
   },
   {
    "id": "nhl-401892514-total",
@@ -1971,8 +2021,13 @@
      "model_pct": null
     }
    ],
-   "status": "open",
-   "snapshots": []
+   "status": "graded",
+   "snapshots": [],
+   "score": "St Louis Blues 4 - Minnesota Wild 5",
+   "graded_at_ct": "2026-10-16T09:58:57-05:00",
+   "winner": "Over 6",
+   "novig_brier": 0.254,
+   "novig_side_won": false
   },
   {
    "id": "nhl-401892512-ml",
@@ -2009,8 +2064,15 @@
      "model_pct": 44.9
     }
    ],
-   "status": "open",
-   "snapshots": []
+   "status": "graded",
+   "snapshots": [],
+   "score": "Winnipeg Jets 3 - Chicago Blackhawks 4",
+   "graded_at_ct": "2026-10-16T09:58:57-05:00",
+   "winner": "Chicago Blackhawks ML",
+   "model_brier": 0.3036,
+   "model_side_won": false,
+   "novig_brier": 0.3036,
+   "novig_side_won": false
   },
   {
    "id": "nhl-401892512-spread",
@@ -2047,8 +2109,15 @@
      "model_pct": 66.9
     }
    ],
-   "status": "open",
-   "snapshots": []
+   "status": "graded",
+   "snapshots": [],
+   "score": "Winnipeg Jets 3 - Chicago Blackhawks 4",
+   "graded_at_ct": "2026-10-16T09:58:57-05:00",
+   "winner": "Chicago Blackhawks +1.5",
+   "model_brier": 0.1096,
+   "model_side_won": true,
+   "novig_brier": 0.1102,
+   "novig_side_won": true
   },
   {
    "id": "nhl-401892512-total",
@@ -2085,8 +2154,13 @@
      "model_pct": null
     }
    ],
-   "status": "open",
-   "snapshots": []
+   "status": "graded",
+   "snapshots": [],
+   "score": "Winnipeg Jets 3 - Chicago Blackhawks 4",
+   "graded_at_ct": "2026-10-16T09:58:57-05:00",
+   "winner": "Over 6",
+   "novig_brier": 0.2391,
+   "novig_side_won": true
   },
   {
    "id": "nhl-401892515-ml",
@@ -2123,8 +2197,15 @@
      "model_pct": 52.6
     }
    ],
-   "status": "open",
-   "snapshots": []
+   "status": "graded",
+   "snapshots": [],
+   "score": "Utah Mammoth 4 - Edmonton Oilers 2",
+   "graded_at_ct": "2026-10-16T09:58:57-05:00",
+   "winner": "Utah Mammoth ML",
+   "model_brier": 0.2767,
+   "model_side_won": false,
+   "novig_brier": 0.2725,
+   "novig_side_won": false
   },
   {
    "id": "nhl-401892515-spread",
@@ -2161,8 +2242,15 @@
      "model_pct": 32.5
     }
    ],
-   "status": "open",
-   "snapshots": []
+   "status": "graded",
+   "snapshots": [],
+   "score": "Utah Mammoth 4 - Edmonton Oilers 2",
+   "graded_at_ct": "2026-10-16T09:58:57-05:00",
+   "winner": "Utah Mammoth +1.5",
+   "model_brier": 0.1056,
+   "model_side_won": true,
+   "novig_brier": 0.1043,
+   "novig_side_won": true
   },
   {
    "id": "nhl-401892515-total",
@@ -2199,8 +2287,15 @@
      "model_pct": 48.3
     }
    ],
-   "status": "open",
-   "snapshots": []
+   "status": "graded",
+   "snapshots": [],
+   "score": "Utah Mammoth 4 - Edmonton Oilers 2",
+   "graded_at_ct": "2026-10-16T09:58:57-05:00",
+   "winner": "Under 6.5",
+   "model_brier": 0.2673,
+   "model_side_won": false,
+   "novig_brier": 0.2673,
+   "novig_side_won": false
   },
   {
    "id": "nhl-401892516-ml",
@@ -2237,8 +2332,15 @@
      "model_pct": 72.6
     }
    ],
-   "status": "open",
-   "snapshots": []
+   "status": "graded",
+   "snapshots": [],
+   "score": "Calgary Flames 2 - Vegas Golden Knights 6",
+   "graded_at_ct": "2026-10-16T09:58:57-05:00",
+   "winner": "Vegas Golden Knights ML",
+   "model_brier": 0.0751,
+   "model_side_won": true,
+   "novig_brier": 0.0724,
+   "novig_side_won": true
   },
   {
    "id": "nhl-401892516-spread",
@@ -2275,8 +2377,15 @@
      "model_pct": 53.2
     }
    ],
-   "status": "open",
-   "snapshots": []
+   "status": "graded",
+   "snapshots": [],
+   "score": "Calgary Flames 2 - Vegas Golden Knights 6",
+   "graded_at_ct": "2026-10-16T09:58:57-05:00",
+   "winner": "Vegas Golden Knights -1.5",
+   "model_brier": 0.219,
+   "model_side_won": true,
+   "novig_brier": 0.219,
+   "novig_side_won": true
   },
   {
    "id": "nhl-401892516-total",
@@ -2313,18 +2422,25 @@
      "model_pct": 53.2
     }
    ],
-   "status": "open",
-   "snapshots": []
+   "status": "graded",
+   "snapshots": [],
+   "score": "Calgary Flames 2 - Vegas Golden Knights 6",
+   "graded_at_ct": "2026-10-16T09:58:57-05:00",
+   "winner": "Over 6.5",
+   "model_brier": 0.283,
+   "model_side_won": false,
+   "novig_brier": 0.283,
+   "novig_side_won": false
   },
   {
    "id": "mlb-401908026-ml",
    "sport": "MLB",
    "market": "ml",
    "logged_at_ct": "2026-10-15T21:22:27-05:00",
-   "snapshot_at_ct": "2026-10-15T21:22:27-05:00",
+   "snapshot_at_ct": "2026-10-16T09:58:58-05:00",
    "source": "paper.json board",
    "slate_date_ct": "2026-10-16",
-   "kick_utc": "2026-10-16T22:00:00Z",
+   "kick_utc": "2026-10-17T00:00:00Z",
    "matchup": "Tampa Bay Rays at Cleveland Guardians",
    "away": "Tampa Bay Rays",
    "home": "Cleveland Guardians",
@@ -2336,33 +2452,57 @@
      "side": "away",
      "label": "Tampa Bay Rays ML",
      "line": null,
-     "price_american": -110,
+     "price_american": -112,
      "book": "DraftKings (via ESPN)",
-     "novig_pct": 50.0,
-     "model_pct": null
+     "novig_pct": 50.4,
+     "model_pct": 54.2
     },
     {
      "side": "home",
      "label": "Cleveland Guardians ML",
      "line": null,
-     "price_american": -110,
+     "price_american": -108,
      "book": "DraftKings (via ESPN)",
-     "novig_pct": 50.0,
-     "model_pct": null
+     "novig_pct": 49.6,
+     "model_pct": 45.8
     }
    ],
    "status": "open",
-   "snapshots": []
+   "snapshots": [
+    {
+     "snapshot_at_ct": "2026-10-15T21:22:27-05:00",
+     "sides": [
+      {
+       "side": "away",
+       "label": "Tampa Bay Rays ML",
+       "line": null,
+       "price_american": -110,
+       "book": "DraftKings (via ESPN)",
+       "novig_pct": 50.0,
+       "model_pct": null
+      },
+      {
+       "side": "home",
+       "label": "Cleveland Guardians ML",
+       "line": null,
+       "price_american": -110,
+       "book": "DraftKings (via ESPN)",
+       "novig_pct": 50.0,
+       "model_pct": null
+      }
+     ]
+    }
+   ]
   },
   {
    "id": "mlb-401908026-spread",
    "sport": "MLB",
    "market": "spread",
    "logged_at_ct": "2026-10-15T21:22:27-05:00",
-   "snapshot_at_ct": "2026-10-15T21:22:27-05:00",
+   "snapshot_at_ct": "2026-10-16T09:58:58-05:00",
    "source": "paper.json board",
    "slate_date_ct": "2026-10-16",
-   "kick_utc": "2026-10-16T22:00:00Z",
+   "kick_utc": "2026-10-17T00:00:00Z",
    "matchup": "Tampa Bay Rays at Cleveland Guardians",
    "away": "Tampa Bay Rays",
    "home": "Cleveland Guardians",
@@ -2374,10 +2514,10 @@
      "side": "away",
      "label": "Tampa Bay Rays -1.5",
      "line": -1.5,
-     "price_american": 163,
+     "price_american": 162,
      "book": "DraftKings (via ESPN)",
-     "novig_pct": 36.4,
-     "model_pct": null
+     "novig_pct": 36.5,
+     "model_pct": 33.4
     },
     {
      "side": "home",
@@ -2385,22 +2525,46 @@
      "line": 1.5,
      "price_american": -198,
      "book": "DraftKings (via ESPN)",
-     "novig_pct": 63.6,
-     "model_pct": null
+     "novig_pct": 63.5,
+     "model_pct": 66.6
     }
    ],
    "status": "open",
-   "snapshots": []
+   "snapshots": [
+    {
+     "snapshot_at_ct": "2026-10-15T21:22:27-05:00",
+     "sides": [
+      {
+       "side": "away",
+       "label": "Tampa Bay Rays -1.5",
+       "line": -1.5,
+       "price_american": 163,
+       "book": "DraftKings (via ESPN)",
+       "novig_pct": 36.4,
+       "model_pct": null
+      },
+      {
+       "side": "home",
+       "label": "Cleveland Guardians +1.5",
+       "line": 1.5,
+       "price_american": -198,
+       "book": "DraftKings (via ESPN)",
+       "novig_pct": 63.6,
+       "model_pct": null
+      }
+     ]
+    }
+   ]
   },
   {
    "id": "mlb-401908026-total",
    "sport": "MLB",
    "market": "total",
    "logged_at_ct": "2026-10-15T21:22:27-05:00",
-   "snapshot_at_ct": "2026-10-15T21:22:27-05:00",
+   "snapshot_at_ct": "2026-10-16T09:58:58-05:00",
    "source": "paper.json board",
    "slate_date_ct": "2026-10-16",
-   "kick_utc": "2026-10-16T22:00:00Z",
+   "kick_utc": "2026-10-17T00:00:00Z",
    "matchup": "Tampa Bay Rays at Cleveland Guardians",
    "away": "Tampa Bay Rays",
    "home": "Cleveland Guardians",
@@ -2412,30 +2576,54 @@
      "side": "over",
      "label": "Over 6.5",
      "line": 6.5,
-     "price_american": -110,
+     "price_american": -114,
      "book": "DraftKings (via ESPN)",
-     "novig_pct": 50.0,
-     "model_pct": null
+     "novig_pct": 50.9,
+     "model_pct": 73.9
     },
     {
      "side": "under",
      "label": "Under 6.5",
      "line": 6.5,
-     "price_american": -110,
+     "price_american": -106,
      "book": "DraftKings (via ESPN)",
-     "novig_pct": 50.0,
-     "model_pct": null
+     "novig_pct": 49.1,
+     "model_pct": 26.1
     }
    ],
    "status": "open",
-   "snapshots": []
+   "snapshots": [
+    {
+     "snapshot_at_ct": "2026-10-15T21:22:27-05:00",
+     "sides": [
+      {
+       "side": "over",
+       "label": "Over 6.5",
+       "line": 6.5,
+       "price_american": -110,
+       "book": "DraftKings (via ESPN)",
+       "novig_pct": 50.0,
+       "model_pct": null
+      },
+      {
+       "side": "under",
+       "label": "Under 6.5",
+       "line": 6.5,
+       "price_american": -110,
+       "book": "DraftKings (via ESPN)",
+       "novig_pct": 50.0,
+       "model_pct": null
+      }
+     ]
+    }
+   ]
   },
   {
    "id": "nhl-401892517-ml",
    "sport": "NHL",
    "market": "ml",
    "logged_at_ct": "2026-10-15T21:22:27-05:00",
-   "snapshot_at_ct": "2026-10-15T21:22:27-05:00",
+   "snapshot_at_ct": "2026-10-16T09:58:58-05:00",
    "source": "paper.json board",
    "slate_date_ct": "2026-10-16",
    "kick_utc": "2026-10-17T01:10:00Z",
@@ -2450,30 +2638,54 @@
      "side": "away",
      "label": "Pittsburgh Penguins ML",
      "line": null,
-     "price_american": 180,
-     "book": "DraftKings",
-     "novig_pct": 34.3,
-     "model_pct": 34.3
+     "price_american": 178,
+     "book": "Bovada",
+     "novig_pct": 34.9,
+     "model_pct": 34.5
     },
     {
      "side": "home",
      "label": "Colorado Avalanche ML",
      "line": null,
-     "price_american": -215,
-     "book": "Bovada",
-     "novig_pct": 65.7,
-     "model_pct": 65.7
+     "price_american": -192,
+     "book": "DraftKings",
+     "novig_pct": 65.1,
+     "model_pct": 65.5
     }
    ],
    "status": "open",
-   "snapshots": []
+   "snapshots": [
+    {
+     "snapshot_at_ct": "2026-10-15T21:22:27-05:00",
+     "sides": [
+      {
+       "side": "away",
+       "label": "Pittsburgh Penguins ML",
+       "line": null,
+       "price_american": 180,
+       "book": "DraftKings",
+       "novig_pct": 34.3,
+       "model_pct": 34.3
+      },
+      {
+       "side": "home",
+       "label": "Colorado Avalanche ML",
+       "line": null,
+       "price_american": -215,
+       "book": "Bovada",
+       "novig_pct": 65.7,
+       "model_pct": 65.7
+      }
+     ]
+    }
+   ]
   },
   {
    "id": "nhl-401892517-spread",
    "sport": "NHL",
    "market": "spread",
    "logged_at_ct": "2026-10-15T21:22:27-05:00",
-   "snapshot_at_ct": "2026-10-15T21:22:27-05:00",
+   "snapshot_at_ct": "2026-10-16T09:58:58-05:00",
    "source": "paper.json board",
    "slate_date_ct": "2026-10-16",
    "kick_utc": "2026-10-17T01:10:00Z",
@@ -2490,8 +2702,8 @@
      "line": 1.5,
      "price_american": -140,
      "book": "Bovada",
-     "novig_pct": 56.0,
-     "model_pct": 56.3
+     "novig_pct": 56.2,
+     "model_pct": 56.1
     },
     {
      "side": "home",
@@ -2499,19 +2711,43 @@
      "line": -1.5,
      "price_american": 120,
      "book": "DraftKings",
-     "novig_pct": 44.0,
-     "model_pct": 43.7
+     "novig_pct": 43.8,
+     "model_pct": 43.9
     }
    ],
    "status": "open",
-   "snapshots": []
+   "snapshots": [
+    {
+     "snapshot_at_ct": "2026-10-15T21:22:27-05:00",
+     "sides": [
+      {
+       "side": "away",
+       "label": "Pittsburgh Penguins +1.5",
+       "line": 1.5,
+       "price_american": -140,
+       "book": "Bovada",
+       "novig_pct": 56.0,
+       "model_pct": 56.3
+      },
+      {
+       "side": "home",
+       "label": "Colorado Avalanche -1.5",
+       "line": -1.5,
+       "price_american": 120,
+       "book": "DraftKings",
+       "novig_pct": 44.0,
+       "model_pct": 43.7
+      }
+     ]
+    }
+   ]
   },
   {
    "id": "nhl-401892517-total",
    "sport": "NHL",
    "market": "total",
    "logged_at_ct": "2026-10-15T21:22:27-05:00",
-   "snapshot_at_ct": "2026-10-15T21:22:27-05:00",
+   "snapshot_at_ct": "2026-10-16T09:58:58-05:00",
    "source": "paper.json board",
    "slate_date_ct": "2026-10-16",
    "kick_utc": "2026-10-17T01:10:00Z",
@@ -2528,28 +2764,52 @@
      "line": 6.5,
      "price_american": -118,
      "book": "DraftKings",
-     "novig_pct": 52.2,
-     "model_pct": 51.7
+     "novig_pct": 52.3,
+     "model_pct": 52.6
     },
     {
      "side": "under",
      "label": "Under 6.5",
      "line": 6.5,
-     "price_american": 105,
+     "price_american": 100,
      "book": "Bovada",
-     "novig_pct": 47.8,
-     "model_pct": 48.3
+     "novig_pct": 47.7,
+     "model_pct": 47.4
     }
    ],
    "status": "open",
-   "snapshots": []
+   "snapshots": [
+    {
+     "snapshot_at_ct": "2026-10-15T21:22:27-05:00",
+     "sides": [
+      {
+       "side": "over",
+       "label": "Over 6.5",
+       "line": 6.5,
+       "price_american": -118,
+       "book": "DraftKings",
+       "novig_pct": 52.2,
+       "model_pct": 51.7
+      },
+      {
+       "side": "under",
+       "label": "Under 6.5",
+       "line": 6.5,
+       "price_american": 105,
+       "book": "Bovada",
+       "novig_pct": 47.8,
+       "model_pct": 48.3
+      }
+     ]
+    }
+   ]
   },
   {
    "id": "nhl-401892518-ml",
    "sport": "NHL",
    "market": "ml",
    "logged_at_ct": "2026-10-15T21:22:27-05:00",
-   "snapshot_at_ct": "2026-10-15T21:22:27-05:00",
+   "snapshot_at_ct": "2026-10-16T09:58:58-05:00",
    "source": "paper.json board",
    "slate_date_ct": "2026-10-16",
    "kick_utc": "2026-10-17T02:10:00Z",
@@ -2564,30 +2824,54 @@
      "side": "away",
      "label": "Boston Bruins ML",
      "line": null,
-     "price_american": -115,
-     "book": "Bovada",
-     "novig_pct": 51.7,
-     "model_pct": 52.2
+     "price_american": -112,
+     "book": "DraftKings",
+     "novig_pct": 51.2,
+     "model_pct": 51.4
     },
     {
      "side": "home",
      "label": "Anaheim Ducks ML",
      "line": null,
-     "price_american": 100,
-     "book": "DraftKings",
-     "novig_pct": 48.3,
-     "model_pct": 47.8
+     "price_american": -103,
+     "book": "Bovada",
+     "novig_pct": 48.8,
+     "model_pct": 48.6
     }
    ],
    "status": "open",
-   "snapshots": []
+   "snapshots": [
+    {
+     "snapshot_at_ct": "2026-10-15T21:22:27-05:00",
+     "sides": [
+      {
+       "side": "away",
+       "label": "Boston Bruins ML",
+       "line": null,
+       "price_american": -115,
+       "book": "Bovada",
+       "novig_pct": 51.7,
+       "model_pct": 52.2
+      },
+      {
+       "side": "home",
+       "label": "Anaheim Ducks ML",
+       "line": null,
+       "price_american": 100,
+       "book": "DraftKings",
+       "novig_pct": 48.3,
+       "model_pct": 47.8
+      }
+     ]
+    }
+   ]
   },
   {
    "id": "nhl-401892518-spread",
    "sport": "NHL",
    "market": "spread",
    "logged_at_ct": "2026-10-15T21:22:27-05:00",
-   "snapshot_at_ct": "2026-10-15T21:22:27-05:00",
+   "snapshot_at_ct": "2026-10-16T09:58:58-05:00",
    "source": "paper.json board",
    "slate_date_ct": "2026-10-16",
    "kick_utc": "2026-10-17T02:10:00Z",
@@ -2604,28 +2888,52 @@
      "line": -1.5,
      "price_american": 220,
      "book": "Bovada",
-     "novig_pct": 31.8,
-     "model_pct": 31.5
+     "novig_pct": 30.5,
+     "model_pct": 29.9
     },
     {
      "side": "home",
      "label": "Anaheim Ducks +1.5",
      "line": 1.5,
-     "price_american": -250,
+     "price_american": -258,
      "book": "DraftKings",
-     "novig_pct": 68.2,
-     "model_pct": 68.5
+     "novig_pct": 69.5,
+     "model_pct": 70.1
     }
    ],
    "status": "open",
-   "snapshots": []
+   "snapshots": [
+    {
+     "snapshot_at_ct": "2026-10-15T21:22:27-05:00",
+     "sides": [
+      {
+       "side": "away",
+       "label": "Boston Bruins -1.5",
+       "line": -1.5,
+       "price_american": 220,
+       "book": "Bovada",
+       "novig_pct": 31.8,
+       "model_pct": 31.5
+      },
+      {
+       "side": "home",
+       "label": "Anaheim Ducks +1.5",
+       "line": 1.5,
+       "price_american": -250,
+       "book": "DraftKings",
+       "novig_pct": 68.2,
+       "model_pct": 68.5
+      }
+     ]
+    }
+   ]
   },
   {
    "id": "nhl-401892518-total",
    "sport": "NHL",
    "market": "total",
    "logged_at_ct": "2026-10-15T21:22:27-05:00",
-   "snapshot_at_ct": "2026-10-15T21:22:27-05:00",
+   "snapshot_at_ct": "2026-10-16T09:58:58-05:00",
    "source": "paper.json board",
    "slate_date_ct": "2026-10-16",
    "kick_utc": "2026-10-17T02:10:00Z",
@@ -2642,7 +2950,7 @@
      "line": 6.0,
      "price_american": -120,
      "book": "Bovada",
-     "novig_pct": 52.2,
+     "novig_pct": 52.7,
      "model_pct": null
     },
     {
@@ -2651,38 +2959,62 @@
      "line": 6.0,
      "price_american": 100,
      "book": "Bovada",
-     "novig_pct": 47.8,
+     "novig_pct": 47.3,
      "model_pct": null
     }
    ],
    "status": "open",
-   "snapshots": []
+   "snapshots": [
+    {
+     "snapshot_at_ct": "2026-10-15T21:22:27-05:00",
+     "sides": [
+      {
+       "side": "over",
+       "label": "Over 6",
+       "line": 6.0,
+       "price_american": -120,
+       "book": "Bovada",
+       "novig_pct": 52.2,
+       "model_pct": null
+      },
+      {
+       "side": "under",
+       "label": "Under 6",
+       "line": 6.0,
+       "price_american": 100,
+       "book": "Bovada",
+       "novig_pct": 47.8,
+       "model_pct": null
+      }
+     ]
+    }
+   ]
   }
  ],
  "summary": {
   "NHL ml": {
-   "n": 8,
-   "model_fav_side_W_L": "6-2",
-   "brier_model": 0.1915,
-   "brier_market": 0.1904,
+   "n": 13,
+   "model_fav_side_W_L": "8-5",
+   "brier_model": 0.2073,
+   "brier_market": 0.2056,
    "shown_basis": "novig",
-   "shown_side_W_L": "6-2"
+   "shown_side_W_L": "8-5"
   },
   "NHL spread": {
-   "n": 8,
-   "model_fav_side_W_L": "6-2",
-   "brier_model": 0.1892,
-   "brier_market": 0.1872,
+   "n": 13,
+   "model_fav_side_W_L": "11-2",
+   "brier_model": 0.1679,
+   "brier_market": 0.1669,
    "shown_basis": "novig",
-   "shown_side_W_L": "6-2"
+   "shown_side_W_L": "11-2"
   },
   "NHL total": {
-   "n": 4,
-   "model_fav_side_W_L": "2-2",
-   "brier_model": 0.2579,
-   "brier_market": 0.2432,
+   "n": 7,
+   "model_fav_side_W_L": "3-4",
+   "brier_model": 0.2581,
+   "brier_market": 0.2495,
    "shown_basis": "novig",
-   "shown_side_W_L": "3-1"
+   "shown_side_W_L": "4-3"
   },
   "MLB ml": {
    "n": 2,
