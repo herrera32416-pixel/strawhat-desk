@@ -1,0 +1,114 @@
+{
+ "schema": "desk-model-gate-cs/v1",
+ "registered": "2026-10-15 9:33pm CT",
+ "alpha": 0.1,
+ "min_n": 100,
+ "statistic": "clipped logloss(no-vig) - logloss(model)",
+ "results": {
+  "NFL ml": {
+   "n": 0,
+   "mean_d": null,
+   "cs_lower_90": -1.0,
+   "eligible": false,
+   "gate_flag": false
+  },
+  "NFL spread": {
+   "n": 0,
+   "mean_d": null,
+   "cs_lower_90": -1.0,
+   "eligible": false,
+   "gate_flag": false
+  },
+  "NFL total": {
+   "n": 0,
+   "mean_d": null,
+   "cs_lower_90": -1.0,
+   "eligible": false,
+   "gate_flag": false
+  },
+  "CFB ml": {
+   "n": 0,
+   "mean_d": null,
+   "cs_lower_90": -1.0,
+   "eligible": false,
+   "gate_flag": false
+  },
+  "CFB spread": {
+   "n": 0,
+   "mean_d": null,
+   "cs_lower_90": -1.0,
+   "eligible": false,
+   "gate_flag": false
+  },
+  "CFB total": {
+   "n": 0,
+   "mean_d": null,
+   "cs_lower_90": -1.0,
+   "eligible": false,
+   "gate_flag": false
+  },
+  "NHL ml": {
+   "n": 2,
+   "mean_d": -0.01729,
+   "cs_lower_90": -0.82,
+   "eligible": false,
+   "gate_flag": false
+  },
+  "NHL spread": {
+   "n": 2,
+   "mean_d": -0.01303,
+   "cs_lower_90": -0.815,
+   "eligible": false,
+   "gate_flag": false
+  },
+  "NHL total": {
+   "n": 1,
+   "mean_d": -0.09864,
+   "cs_lower_90": -1.0,
+   "eligible": false,
+   "gate_flag": false
+  },
+  "MLB ml": {
+   "n": 1,
+   "mean_d": -0.147,
+   "cs_lower_90": -1.0,
+   "eligible": false,
+   "gate_flag": false
+  },
+  "MLB spread": {
+   "n": 1,
+   "mean_d": -0.04578,
+   "cs_lower_90": -1.0,
+   "eligible": false,
+   "gate_flag": false
+  },
+  "MLB total": {
+   "n": 1,
+   "mean_d": 0.03659,
+   "cs_lower_90": -1.0,
+   "eligible": false,
+   "gate_flag": false
+  },
+  "NBA ml": {
+   "n": 0,
+   "mean_d": null,
+   "cs_lower_90": -1.0,
+   "eligible": false,
+   "gate_flag": false
+  },
+  "NBA spread": {
+   "n": 0,
+   "mean_d": null,
+   "cs_lower_90": -1.0,
+   "eligible": false,
+   "gate_flag": false
+  },
+  "NBA total": {
+   "n": 0,
+   "mean_d": null,
+   "cs_lower_90": -1.0,
+   "eligible": false,
+   "gate_flag": false
+  }
+ }
+}

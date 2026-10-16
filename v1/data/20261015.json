@@ -474,10 +474,12 @@
                 "side": "home",
                 "label": "Cleveland Guardians +1.5",
                 "pct": 63.6,
-                "play": true,
+                "play": false,
                 "basis": "shown_pct",
-                "strong": true,
-                "why": ">= 52%"
+                "breakeven_pct": 66.44,
+                "edge_vs_price_pp": -2.8,
+                "strong": false,
+                "why": "no edge, pass"
               }
             },
             "total": {
@@ -934,10 +936,12 @@
                 "side": "away",
                 "label": "Memphis Tigers ML",
                 "pct": 70.0,
-                "play": true,
+                "play": false,
                 "basis": "shown_pct",
-                "strong": true,
-                "why": ">= 52%"
+                "breakeven_pct": 72.97,
+                "edge_vs_price_pp": -3.0,
+                "strong": false,
+                "why": "no edge, pass"
               }
             },
             "spread": {
@@ -992,8 +996,10 @@
                 "pct": 51.1,
                 "play": false,
                 "basis": "shown_pct",
+                "breakeven_pct": 53.49,
+                "edge_vs_price_pp": -2.4,
                 "strong": false,
-                "why": "< 52% = coin flip, no play"
+                "why": "no edge, pass"
               }
             },
             "total": {
@@ -1044,8 +1050,10 @@
                 "pct": 50.4,
                 "play": false,
                 "basis": "shown_pct",
+                "breakeven_pct": 52.83,
+                "edge_vs_price_pp": -2.4,
                 "strong": false,
-                "why": "< 52% = coin flip, no play"
+                "why": "no edge, pass"
               }
             }
           },
@@ -1475,8 +1483,10 @@
                 "pct": 51.7,
                 "play": false,
                 "basis": "shown_pct",
+                "breakeven_pct": 54.13,
+                "edge_vs_price_pp": -2.4,
                 "strong": false,
-                "why": "< 52% = coin flip, no play"
+                "why": "no edge, pass"
               }
             },
             "spread": {
@@ -1531,8 +1541,10 @@
                 "pct": 51.1,
                 "play": false,
                 "basis": "shown_pct",
+                "breakeven_pct": 53.49,
+                "edge_vs_price_pp": -2.4,
                 "strong": false,
-                "why": "< 52% = coin flip, no play"
+                "why": "no edge, pass"
               }
             },
             "total": {
@@ -2010,10 +2022,12 @@
                 "side": "home",
                 "label": "Purdue Boilermakers ML",
                 "pct": 60.4,
-                "play": true,
+                "play": false,
                 "basis": "shown_pct",
-                "strong": true,
-                "why": ">= 52%"
+                "breakeven_pct": 62.96,
+                "edge_vs_price_pp": -2.6,
+                "strong": false,
+                "why": "no edge, pass"
               }
             },
             "spread": {
@@ -2068,8 +2082,10 @@
                 "pct": 51.1,
                 "play": false,
                 "basis": "shown_pct",
+                "breakeven_pct": 53.49,
+                "edge_vs_price_pp": -2.4,
                 "strong": false,
-                "why": "< 52% = coin flip, no play"
+                "why": "no edge, pass"
               }
             },
             "total": {
@@ -2120,8 +2136,10 @@
                 "pct": 50.4,
                 "play": false,
                 "basis": "shown_pct",
+                "breakeven_pct": 52.83,
+                "edge_vs_price_pp": -2.4,
                 "strong": false,
-                "why": "< 52% = coin flip, no play"
+                "why": "no edge, pass"
               }
             }
           },
@@ -2526,10 +2544,12 @@
                 "side": "home",
                 "label": "Colorado Avalanche ML",
                 "pct": 65.7,
-                "play": true,
+                "play": false,
                 "basis": "shown_pct",
-                "strong": true,
-                "why": ">= 52%"
+                "breakeven_pct": 68.55,
+                "edge_vs_price_pp": -2.9,
+                "strong": false,
+                "why": "no edge, pass"
               }
             },
             "spread": {
@@ -2589,10 +2609,12 @@
                 "side": "away",
                 "label": "Pittsburgh Penguins +1.5",
                 "pct": 56.3,
-                "play": true,
+                "play": false,
                 "basis": "shown_pct",
-                "strong": true,
-                "why": ">= 52%"
+                "breakeven_pct": 58.68,
+                "edge_vs_price_pp": -2.4,
+                "strong": false,
+                "why": "no edge, pass"
               }
             },
             "total": {
@@ -2654,8 +2676,10 @@
                 "pct": 51.7,
                 "play": false,
                 "basis": "shown_pct",
+                "breakeven_pct": 54.13,
+                "edge_vs_price_pp": -2.4,
                 "strong": false,
-                "why": "< 52% = coin flip, no play"
+                "why": "no edge, pass"
               }
             }
           }
@@ -3039,10 +3063,12 @@
                 "side": "away",
                 "label": "Boston Bruins ML",
                 "pct": 52.2,
-                "play": true,
+                "play": false,
                 "basis": "shown_pct",
+                "breakeven_pct": 54.55,
+                "edge_vs_price_pp": -2.3,
                 "strong": false,
-                "why": ">= 52%"
+                "why": "no edge, pass"
               }
             },
             "spread": {
@@ -3102,10 +3128,12 @@
                 "side": "home",
                 "label": "Anaheim Ducks +1.5",
                 "pct": 68.5,
-                "play": true,
+                "play": false,
                 "basis": "shown_pct",
-                "strong": true,
-                "why": ">= 52%"
+                "breakeven_pct": 71.43,
+                "edge_vs_price_pp": -2.9,
+                "strong": false,
+                "why": "no edge, pass"
               }
             },
             "total": {
@@ -3165,10 +3193,12 @@
                 "side": "under",
                 "label": "Under 6.5",
                 "pct": 53.2,
-                "play": true,
+                "play": false,
                 "basis": "shown_pct",
+                "breakeven_pct": 55.56,
+                "edge_vs_price_pp": -2.4,
                 "strong": false,
-                "why": ">= 52%"
+                "why": "no edge, pass"
               }
             }
           }
@@ -3575,10 +3605,12 @@
                 "side": "away",
                 "label": "Pittsburgh Panthers ML",
                 "pct": 67.5,
-                "play": true,
+                "play": false,
                 "basis": "shown_pct",
-                "strong": true,
-                "why": ">= 52%"
+                "breakeven_pct": 70.41,
+                "edge_vs_price_pp": -2.9,
+                "strong": false,
+                "why": "no edge, pass"
               }
             },
             "spread": {
@@ -3683,8 +3715,10 @@
                 "pct": 50.4,
                 "play": false,
                 "basis": "shown_pct",
+                "breakeven_pct": 52.83,
+                "edge_vs_price_pp": -2.4,
                 "strong": false,
-                "why": "< 52% = coin flip, no play"
+                "why": "no edge, pass"
               }
             }
           },
@@ -4094,10 +4128,12 @@
                 "side": "home",
                 "label": "LSU Tigers ML",
                 "pct": 84.0,
-                "play": true,
+                "play": false,
                 "basis": "shown_pct",
-                "strong": true,
-                "why": ">= 52%"
+                "breakeven_pct": 87.5,
+                "edge_vs_price_pp": -3.5,
+                "strong": false,
+                "why": "no edge, pass"
               }
             },
             "spread": {
@@ -4152,8 +4188,10 @@
                 "pct": 50.4,
                 "play": false,
                 "basis": "shown_pct",
+                "breakeven_pct": 52.83,
+                "edge_vs_price_pp": -2.4,
                 "strong": false,
-                "why": "< 52% = coin flip, no play"
+                "why": "no edge, pass"
               }
             },
             "total": {
@@ -4204,8 +4242,10 @@
                 "pct": 51.1,
                 "play": false,
                 "basis": "shown_pct",
+                "breakeven_pct": 53.49,
+                "edge_vs_price_pp": -2.4,
                 "strong": false,
-                "why": "< 52% = coin flip, no play"
+                "why": "no edge, pass"
               }
             }
           },
@@ -4633,10 +4673,12 @@
                 "side": "home",
                 "label": "SMU Mustangs ML",
                 "pct": 74.1,
-                "play": true,
+                "play": false,
                 "basis": "shown_pct",
-                "strong": true,
-                "why": ">= 52%"
+                "breakeven_pct": 77.27,
+                "edge_vs_price_pp": -3.2,
+                "strong": false,
+                "why": "no edge, pass"
               }
             },
             "spread": {
@@ -4741,8 +4783,10 @@
                 "pct": 51.1,
                 "play": false,
                 "basis": "shown_pct",
+                "breakeven_pct": 53.49,
+                "edge_vs_price_pp": -2.4,
                 "strong": false,
-                "why": "< 52% = coin flip, no play"
+                "why": "no edge, pass"
               }
             }
           },
@@ -5170,10 +5214,12 @@
                 "side": "home",
                 "label": "Texas Longhorns ML",
                 "pct": 78.2,
-                "play": true,
+                "play": false,
                 "basis": "shown_pct",
-                "strong": true,
-                "why": ">= 52%"
+                "breakeven_pct": 81.48,
+                "edge_vs_price_pp": -3.3,
+                "strong": false,
+                "why": "no edge, pass"
               }
             },
             "spread": {
@@ -5228,8 +5274,10 @@
                 "pct": 50.4,
                 "play": false,
                 "basis": "shown_pct",
+                "breakeven_pct": 52.83,
+                "edge_vs_price_pp": -2.4,
                 "strong": false,
-                "why": "< 52% = coin flip, no play"
+                "why": "no edge, pass"
               }
             },
             "total": {
@@ -5707,10 +5755,12 @@
                 "side": "away",
                 "label": "Ohio State Buckeyes ML",
                 "pct": 61.6,
-                "play": true,
+                "play": false,
                 "basis": "shown_pct",
-                "strong": true,
-                "why": ">= 52%"
+                "breakeven_pct": 64.29,
+                "edge_vs_price_pp": -2.7,
+                "strong": false,
+                "why": "no edge, pass"
               }
             },
             "spread": {
@@ -5765,8 +5815,10 @@
                 "pct": 50.4,
                 "play": false,
                 "basis": "shown_pct",
+                "breakeven_pct": 52.83,
+                "edge_vs_price_pp": -2.4,
                 "strong": false,
-                "why": "< 52% = coin flip, no play"
+                "why": "no edge, pass"
               }
             },
             "total": {
@@ -6244,10 +6296,12 @@
                 "side": "home",
                 "label": "Kansas State Wildcats ML",
                 "pct": 63.7,
-                "play": true,
+                "play": false,
                 "basis": "shown_pct",
-                "strong": true,
-                "why": ">= 52%"
+                "breakeven_pct": 66.44,
+                "edge_vs_price_pp": -2.7,
+                "strong": false,
+                "why": "no edge, pass"
               }
             },
             "spread": {
@@ -6352,8 +6406,10 @@
                 "pct": 51.1,
                 "play": false,
                 "basis": "shown_pct",
+                "breakeven_pct": 53.49,
+                "edge_vs_price_pp": -2.4,
                 "strong": false,
-                "why": "< 52% = coin flip, no play"
+                "why": "no edge, pass"
               }
             }
           },
@@ -6781,10 +6837,12 @@
                 "side": "home",
                 "label": "Bowling Green Falcons ML",
                 "pct": 69.1,
-                "play": true,
+                "play": false,
                 "basis": "shown_pct",
-                "strong": true,
-                "why": ">= 52%"
+                "breakeven_pct": 72.07,
+                "edge_vs_price_pp": -3.0,
+                "strong": false,
+                "why": "no edge, pass"
               }
             },
             "spread": {
@@ -6839,8 +6897,10 @@
                 "pct": 51.1,
                 "play": false,
                 "basis": "shown_pct",
+                "breakeven_pct": 53.49,
+                "edge_vs_price_pp": -2.4,
                 "strong": false,
-                "why": "< 52% = coin flip, no play"
+                "why": "no edge, pass"
               }
             },
             "total": {
@@ -6891,8 +6951,10 @@
                 "pct": 51.1,
                 "play": false,
                 "basis": "shown_pct",
+                "breakeven_pct": 53.49,
+                "edge_vs_price_pp": -2.4,
                 "strong": false,
-                "why": "< 52% = coin flip, no play"
+                "why": "no edge, pass"
               }
             }
           },
@@ -7724,10 +7786,12 @@
                 "side": "home",
                 "label": "West Virginia Mountaineers ML",
                 "pct": 52.6,
-                "play": true,
+                "play": false,
                 "basis": "shown_pct",
+                "breakeven_pct": 54.95,
+                "edge_vs_price_pp": -2.4,
                 "strong": false,
-                "why": ">= 52%"
+                "why": "no edge, pass"
               }
             },
             "spread": {
@@ -7782,8 +7846,10 @@
                 "pct": 50.4,
                 "play": false,
                 "basis": "shown_pct",
+                "breakeven_pct": 52.83,
+                "edge_vs_price_pp": -2.4,
                 "strong": false,
-                "why": "< 52% = coin flip, no play"
+                "why": "no edge, pass"
               }
             },
             "total": {
@@ -7834,8 +7900,10 @@
                 "pct": 50.4,
                 "play": false,
                 "basis": "shown_pct",
+                "breakeven_pct": 52.83,
+                "edge_vs_price_pp": -2.4,
                 "strong": false,
-                "why": "< 52% = coin flip, no play"
+                "why": "no edge, pass"
               }
             }
           },
@@ -8263,10 +8331,12 @@
                 "side": "home",
                 "label": "Army Black Knights ML",
                 "pct": 55.1,
-                "play": true,
+                "play": false,
                 "basis": "shown_pct",
-                "strong": true,
-                "why": ">= 52%"
+                "breakeven_pct": 57.45,
+                "edge_vs_price_pp": -2.3,
+                "strong": false,
+                "why": "no edge, pass"
               }
             },
             "spread": {
@@ -8321,8 +8391,10 @@
                 "pct": 51.1,
                 "play": false,
                 "basis": "shown_pct",
+                "breakeven_pct": 53.49,
+                "edge_vs_price_pp": -2.4,
                 "strong": false,
-                "why": "< 52% = coin flip, no play"
+                "why": "no edge, pass"
               }
             },
             "total": {
@@ -8373,8 +8445,10 @@
                 "pct": 50.4,
                 "play": false,
                 "basis": "shown_pct",
+                "breakeven_pct": 52.83,
+                "edge_vs_price_pp": -2.4,
                 "strong": false,
-                "why": "< 52% = coin flip, no play"
+                "why": "no edge, pass"
               }
             }
           },
@@ -8802,10 +8876,12 @@
                 "side": "home",
                 "label": "James Madison Dukes ML",
                 "pct": 77.2,
-                "play": true,
+                "play": false,
                 "basis": "shown_pct",
-                "strong": true,
-                "why": ">= 52%"
+                "breakeven_pct": 80.39,
+                "edge_vs_price_pp": -3.2,
+                "strong": false,
+                "why": "no edge, pass"
               }
             },
             "spread": {
@@ -8910,8 +8986,10 @@
                 "pct": 50.4,
                 "play": false,
                 "basis": "shown_pct",
+                "breakeven_pct": 52.83,
+                "edge_vs_price_pp": -2.4,
                 "strong": false,
-                "why": "< 52% = coin flip, no play"
+                "why": "no edge, pass"
               }
             }
           },
@@ -9339,10 +9417,12 @@
                 "side": "away",
                 "label": "Northwestern Wildcats ML",
                 "pct": 71.8,
-                "play": true,
+                "play": false,
                 "basis": "shown_pct",
-                "strong": true,
-                "why": ">= 52%"
+                "breakeven_pct": 74.87,
+                "edge_vs_price_pp": -3.1,
+                "strong": false,
+                "why": "no edge, pass"
               }
             },
             "spread": {
@@ -9397,8 +9477,10 @@
                 "pct": 50.4,
                 "play": false,
                 "basis": "shown_pct",
+                "breakeven_pct": 52.83,
+                "edge_vs_price_pp": -2.4,
                 "strong": false,
-                "why": "< 52% = coin flip, no play"
+                "why": "no edge, pass"
               }
             },
             "total": {
@@ -9449,8 +9531,10 @@
                 "pct": 50.4,
                 "play": false,
                 "basis": "shown_pct",
+                "breakeven_pct": 52.83,
+                "edge_vs_price_pp": -2.4,
                 "strong": false,
-                "why": "< 52% = coin flip, no play"
+                "why": "no edge, pass"
               }
             }
           },
@@ -9878,10 +9962,12 @@
                 "side": "home",
                 "label": "Maryland Terrapins ML",
                 "pct": 63.7,
-                "play": true,
+                "play": false,
                 "basis": "shown_pct",
-                "strong": true,
-                "why": ">= 52%"
+                "breakeven_pct": 66.44,
+                "edge_vs_price_pp": -2.7,
+                "strong": false,
+                "why": "no edge, pass"
               }
             },
             "spread": {
@@ -9936,8 +10022,10 @@
                 "pct": 51.1,
                 "play": false,
                 "basis": "shown_pct",
+                "breakeven_pct": 53.49,
+                "edge_vs_price_pp": -2.4,
                 "strong": false,
-                "why": "< 52% = coin flip, no play"
+                "why": "no edge, pass"
               }
             },
             "total": {
@@ -9988,8 +10076,10 @@
                 "pct": 50.4,
                 "play": false,
                 "basis": "shown_pct",
+                "breakeven_pct": 52.83,
+                "edge_vs_price_pp": -2.4,
                 "strong": false,
-                "why": "< 52% = coin flip, no play"
+                "why": "no edge, pass"
               }
             }
           },
@@ -10417,10 +10507,12 @@
                 "side": "home",
                 "label": "Buffalo Bulls ML",
                 "pct": 70.0,
-                "play": true,
+                "play": false,
                 "basis": "shown_pct",
-                "strong": true,
-                "why": ">= 52%"
+                "breakeven_pct": 72.97,
+                "edge_vs_price_pp": -3.0,
+                "strong": false,
+                "why": "no edge, pass"
               }
             },
             "spread": {
@@ -10475,8 +10567,10 @@
                 "pct": 50.4,
                 "play": false,
                 "basis": "shown_pct",
+                "breakeven_pct": 52.83,
+                "edge_vs_price_pp": -2.4,
                 "strong": false,
-                "why": "< 52% = coin flip, no play"
+                "why": "no edge, pass"
               }
             },
             "total": {
@@ -10527,8 +10621,10 @@
                 "pct": 51.1,
                 "play": false,
                 "basis": "shown_pct",
+                "breakeven_pct": 53.49,
+                "edge_vs_price_pp": -2.4,
                 "strong": false,
-                "why": "< 52% = coin flip, no play"
+                "why": "no edge, pass"
               }
             }
           },
@@ -11342,10 +11438,12 @@
                 "side": "home",
                 "label": "Temple Owls ML",
                 "pct": 91.2,
-                "play": true,
+                "play": false,
                 "basis": "shown_pct",
-                "strong": true,
-                "why": ">= 52%"
+                "breakeven_pct": 94.74,
+                "edge_vs_price_pp": -3.5,
+                "strong": false,
+                "why": "no edge, pass"
               }
             },
             "spread": {
@@ -11400,8 +11498,10 @@
                 "pct": 50.4,
                 "play": false,
                 "basis": "shown_pct",
+                "breakeven_pct": 52.83,
+                "edge_vs_price_pp": -2.4,
                 "strong": false,
-                "why": "< 52% = coin flip, no play"
+                "why": "no edge, pass"
               }
             },
             "total": {
@@ -11452,8 +11552,10 @@
                 "pct": 51.1,
                 "play": false,
                 "basis": "shown_pct",
+                "breakeven_pct": 53.49,
+                "edge_vs_price_pp": -2.4,
                 "strong": false,
-                "why": "< 52% = coin flip, no play"
+                "why": "no edge, pass"
               }
             }
           },
@@ -11881,10 +11983,12 @@
                 "side": "away",
                 "label": "Western Michigan Broncos ML",
                 "pct": 69.1,
-                "play": true,
+                "play": false,
                 "basis": "shown_pct",
-                "strong": true,
-                "why": ">= 52%"
+                "breakeven_pct": 72.07,
+                "edge_vs_price_pp": -3.0,
+                "strong": false,
+                "why": "no edge, pass"
               }
             },
             "spread": {
@@ -11939,8 +12043,10 @@
                 "pct": 51.7,
                 "play": false,
                 "basis": "shown_pct",
+                "breakeven_pct": 54.13,
+                "edge_vs_price_pp": -2.4,
                 "strong": false,
-                "why": "< 52% = coin flip, no play"
+                "why": "no edge, pass"
               }
             },
             "total": {
@@ -11991,8 +12097,10 @@
                 "pct": 51.1,
                 "play": false,
                 "basis": "shown_pct",
+                "breakeven_pct": 53.49,
+                "edge_vs_price_pp": -2.4,
                 "strong": false,
-                "why": "< 52% = coin flip, no play"
+                "why": "no edge, pass"
               }
             }
           },
@@ -12420,10 +12528,12 @@
                 "side": "away",
                 "label": "Toledo Rockets ML",
                 "pct": 68.1,
-                "play": true,
+                "play": false,
                 "basis": "shown_pct",
-                "strong": true,
-                "why": ">= 52%"
+                "breakeven_pct": 71.01,
+                "edge_vs_price_pp": -2.9,
+                "strong": false,
+                "why": "no edge, pass"
               }
             },
             "spread": {
@@ -12528,8 +12638,10 @@
                 "pct": 50.4,
                 "play": false,
                 "basis": "shown_pct",
+                "breakeven_pct": 52.83,
+                "edge_vs_price_pp": -2.4,
                 "strong": false,
-                "why": "< 52% = coin flip, no play"
+                "why": "no edge, pass"
               }
             }
           },
@@ -12939,10 +13051,12 @@
                 "side": "home",
                 "label": "Georgia Bulldogs ML",
                 "pct": 89.3,
-                "play": true,
+                "play": false,
                 "basis": "shown_pct",
-                "strong": true,
-                "why": ">= 52%"
+                "breakeven_pct": 93.1,
+                "edge_vs_price_pp": -3.8,
+                "strong": false,
+                "why": "no edge, pass"
               }
             },
             "spread": {
@@ -13047,8 +13161,10 @@
                 "pct": 50.4,
                 "play": false,
                 "basis": "shown_pct",
+                "breakeven_pct": 52.83,
+                "edge_vs_price_pp": -2.4,
                 "strong": false,
-                "why": "< 52% = coin flip, no play"
+                "why": "no edge, pass"
               }
             }
           },
@@ -13476,10 +13592,12 @@
                 "side": "home",
                 "label": "Air Force Falcons ML",
                 "pct": 52.2,
-                "play": true,
+                "play": false,
                 "basis": "shown_pct",
+                "breakeven_pct": 54.55,
+                "edge_vs_price_pp": -2.3,
                 "strong": false,
-                "why": ">= 52%"
+                "why": "no edge, pass"
               }
             },
             "spread": {
@@ -13534,8 +13652,10 @@
                 "pct": 50.4,
                 "play": false,
                 "basis": "shown_pct",
+                "breakeven_pct": 52.83,
+                "edge_vs_price_pp": -2.4,
                 "strong": false,
-                "why": "< 52% = coin flip, no play"
+                "why": "no edge, pass"
               }
             },
             "total": {
@@ -13586,8 +13706,10 @@
                 "pct": 51.1,
                 "play": false,
                 "basis": "shown_pct",
+                "breakeven_pct": 53.49,
+                "edge_vs_price_pp": -2.4,
                 "strong": false,
-                "why": "< 52% = coin flip, no play"
+                "why": "no edge, pass"
               }
             }
           },
@@ -14015,10 +14137,12 @@
                 "side": "home",
                 "label": "Ole Miss Rebels ML",
                 "pct": 66.4,
-                "play": true,
+                "play": false,
                 "basis": "shown_pct",
-                "strong": true,
-                "why": ">= 52%"
+                "breakeven_pct": 69.23,
+                "edge_vs_price_pp": -2.8,
+                "strong": false,
+                "why": "no edge, pass"
               }
             },
             "spread": {
@@ -14123,8 +14247,10 @@
                 "pct": 50.4,
                 "play": false,
                 "basis": "shown_pct",
+                "breakeven_pct": 52.83,
+                "edge_vs_price_pp": -2.4,
                 "strong": false,
-                "why": "< 52% = coin flip, no play"
+                "why": "no edge, pass"
               }
             }
           },
@@ -14552,10 +14678,12 @@
                 "side": "home",
                 "label": "Miami (OH) RedHawks ML",
                 "pct": 75.1,
-                "play": true,
+                "play": false,
                 "basis": "shown_pct",
-                "strong": true,
-                "why": ">= 52%"
+                "breakeven_pct": 78.26,
+                "edge_vs_price_pp": -3.2,
+                "strong": false,
+                "why": "no edge, pass"
               }
             },
             "spread": {
@@ -14610,8 +14738,10 @@
                 "pct": 50.4,
                 "play": false,
                 "basis": "shown_pct",
+                "breakeven_pct": 52.83,
+                "edge_vs_price_pp": -2.4,
                 "strong": false,
-                "why": "< 52% = coin flip, no play"
+                "why": "no edge, pass"
               }
             },
             "total": {
@@ -14662,8 +14792,10 @@
                 "pct": 50.4,
                 "play": false,
                 "basis": "shown_pct",
+                "breakeven_pct": 52.83,
+                "edge_vs_price_pp": -2.4,
                 "strong": false,
-                "why": "< 52% = coin flip, no play"
+                "why": "no edge, pass"
               }
             }
           },
@@ -15091,10 +15223,12 @@
                 "side": "home",
                 "label": "Wyoming Cowboys ML",
                 "pct": 72.2,
-                "play": true,
+                "play": false,
                 "basis": "shown_pct",
-                "strong": true,
-                "why": ">= 52%"
+                "breakeven_pct": 75.31,
+                "edge_vs_price_pp": -3.1,
+                "strong": false,
+                "why": "no edge, pass"
               }
             },
             "spread": {
@@ -15149,8 +15283,10 @@
                 "pct": 51.1,
                 "play": false,
                 "basis": "shown_pct",
+                "breakeven_pct": 53.49,
+                "edge_vs_price_pp": -2.4,
                 "strong": false,
-                "why": "< 52% = coin flip, no play"
+                "why": "no edge, pass"
               }
             },
             "total": {
@@ -15201,8 +15337,10 @@
                 "pct": 51.1,
                 "play": false,
                 "basis": "shown_pct",
+                "breakeven_pct": 53.49,
+                "edge_vs_price_pp": -2.4,
                 "strong": false,
-                "why": "< 52% = coin flip, no play"
+                "why": "no edge, pass"
               }
             }
           },
@@ -15612,10 +15750,12 @@
                 "side": "home",
                 "label": "Texas Tech Red Raiders ML",
                 "pct": 84.0,
-                "play": true,
+                "play": false,
                 "basis": "shown_pct",
-                "strong": true,
-                "why": ">= 52%"
+                "breakeven_pct": 87.5,
+                "edge_vs_price_pp": -3.5,
+                "strong": false,
+                "why": "no edge, pass"
               }
             },
             "spread": {
@@ -15720,8 +15860,10 @@
                 "pct": 50.4,
                 "play": false,
                 "basis": "shown_pct",
+                "breakeven_pct": 52.83,
+                "edge_vs_price_pp": -2.4,
                 "strong": false,
-                "why": "< 52% = coin flip, no play"
+                "why": "no edge, pass"
               }
             }
           },
@@ -16149,10 +16291,12 @@
                 "side": "home",
                 "label": "Duke Blue Devils ML",
                 "pct": 58.3,
-                "play": true,
+                "play": false,
                 "basis": "shown_pct",
-                "strong": true,
-                "why": ">= 52%"
+                "breakeven_pct": 60.78,
+                "edge_vs_price_pp": -2.5,
+                "strong": false,
+                "why": "no edge, pass"
               }
             },
             "spread": {
@@ -16257,8 +16401,10 @@
                 "pct": 51.1,
                 "play": false,
                 "basis": "shown_pct",
+                "breakeven_pct": 53.49,
+                "edge_vs_price_pp": -2.4,
                 "strong": false,
-                "why": "< 52% = coin flip, no play"
+                "why": "no edge, pass"
               }
             }
           },
@@ -16686,10 +16832,12 @@
                 "side": "away",
                 "label": "Alabama Crimson Tide ML",
                 "pct": 74.1,
-                "play": true,
+                "play": false,
                 "basis": "shown_pct",
-                "strong": true,
-                "why": ">= 52%"
+                "breakeven_pct": 77.27,
+                "edge_vs_price_pp": -3.2,
+                "strong": false,
+                "why": "no edge, pass"
               }
             },
             "spread": {
@@ -16744,8 +16892,10 @@
                 "pct": 50.4,
                 "play": false,
                 "basis": "shown_pct",
+                "breakeven_pct": 52.83,
+                "edge_vs_price_pp": -2.4,
                 "strong": false,
-                "why": "< 52% = coin flip, no play"
+                "why": "no edge, pass"
               }
             },
             "total": {
@@ -16796,8 +16946,10 @@
                 "pct": 51.1,
                 "play": false,
                 "basis": "shown_pct",
+                "breakeven_pct": 53.49,
+                "edge_vs_price_pp": -2.4,
                 "strong": false,
-                "why": "< 52% = coin flip, no play"
+                "why": "no edge, pass"
               }
             }
           },
@@ -17225,10 +17377,12 @@
                 "side": "home",
                 "label": "Virginia Tech Hokies ML",
                 "pct": 75.7,
-                "play": true,
+                "play": false,
                 "basis": "shown_pct",
-                "strong": true,
-                "why": ">= 52%"
+                "breakeven_pct": 78.95,
+                "edge_vs_price_pp": -3.2,
+                "strong": false,
+                "why": "no edge, pass"
               }
             },
             "spread": {
@@ -17283,8 +17437,10 @@
                 "pct": 50.4,
                 "play": false,
                 "basis": "shown_pct",
+                "breakeven_pct": 52.83,
+                "edge_vs_price_pp": -2.4,
                 "strong": false,
-                "why": "< 52% = coin flip, no play"
+                "why": "no edge, pass"
               }
             },
             "total": {
@@ -17335,8 +17491,10 @@
                 "pct": 50.4,
                 "play": false,
                 "basis": "shown_pct",
+                "breakeven_pct": 52.83,
+                "edge_vs_price_pp": -2.4,
                 "strong": false,
-                "why": "< 52% = coin flip, no play"
+                "why": "no edge, pass"
               }
             }
           },
@@ -17764,10 +17922,12 @@
                 "side": "home",
                 "label": "Michigan Wolverines ML",
                 "pct": 69.1,
-                "play": true,
+                "play": false,
                 "basis": "shown_pct",
-                "strong": true,
-                "why": ">= 52%"
+                "breakeven_pct": 72.07,
+                "edge_vs_price_pp": -3.0,
+                "strong": false,
+                "why": "no edge, pass"
               }
             },
             "spread": {
@@ -17822,8 +17982,10 @@
                 "pct": 51.1,
                 "play": false,
                 "basis": "shown_pct",
+                "breakeven_pct": 53.49,
+                "edge_vs_price_pp": -2.4,
                 "strong": false,
-                "why": "< 52% = coin flip, no play"
+                "why": "no edge, pass"
               }
             },
             "total": {
@@ -17874,8 +18036,10 @@
                 "pct": 50.4,
                 "play": false,
                 "basis": "shown_pct",
+                "breakeven_pct": 52.83,
+                "edge_vs_price_pp": -2.4,
                 "strong": false,
-                "why": "< 52% = coin flip, no play"
+                "why": "no edge, pass"
               }
             }
           },
@@ -18303,10 +18467,12 @@
                 "side": "away",
                 "label": "Tulsa Golden Hurricane ML",
                 "pct": 63.1,
-                "play": true,
+                "play": false,
                 "basis": "shown_pct",
-                "strong": true,
-                "why": ">= 52%"
+                "breakeven_pct": 65.75,
+                "edge_vs_price_pp": -2.7,
+                "strong": false,
+                "why": "no edge, pass"
               }
             },
             "spread": {
@@ -18361,8 +18527,10 @@
                 "pct": 50.4,
                 "play": false,
                 "basis": "shown_pct",
+                "breakeven_pct": 52.83,
+                "edge_vs_price_pp": -2.4,
                 "strong": false,
-                "why": "< 52% = coin flip, no play"
+                "why": "no edge, pass"
               }
             },
             "total": {
@@ -18413,8 +18581,10 @@
                 "pct": 50.4,
                 "play": false,
                 "basis": "shown_pct",
+                "breakeven_pct": 52.83,
+                "edge_vs_price_pp": -2.4,
                 "strong": false,
-                "why": "< 52% = coin flip, no play"
+                "why": "no edge, pass"
               }
             }
           },
@@ -18842,10 +19012,12 @@
                 "side": "home",
                 "label": "Louisiana Ragin Cajuns ML",
                 "pct": 58.3,
-                "play": true,
+                "play": false,
                 "basis": "shown_pct",
-                "strong": true,
-                "why": ">= 52%"
+                "breakeven_pct": 60.78,
+                "edge_vs_price_pp": -2.5,
+                "strong": false,
+                "why": "no edge, pass"
               }
             },
             "spread": {
@@ -18900,8 +19072,10 @@
                 "pct": 50.4,
                 "play": false,
                 "basis": "shown_pct",
+                "breakeven_pct": 52.83,
+                "edge_vs_price_pp": -2.4,
                 "strong": false,
-                "why": "< 52% = coin flip, no play"
+                "why": "no edge, pass"
               }
             },
             "total": {
@@ -18952,8 +19126,10 @@
                 "pct": 51.1,
                 "play": false,
                 "basis": "shown_pct",
+                "breakeven_pct": 53.49,
+                "edge_vs_price_pp": -2.4,
                 "strong": false,
-                "why": "< 52% = coin flip, no play"
+                "why": "no edge, pass"
               }
             }
           },
@@ -19363,10 +19539,12 @@
                 "side": "home",
                 "label": "Oregon State Beavers ML",
                 "pct": 87.6,
-                "play": true,
+                "play": false,
                 "basis": "shown_pct",
-                "strong": true,
-                "why": ">= 52%"
+                "breakeven_pct": 91.3,
+                "edge_vs_price_pp": -3.7,
+                "strong": false,
+                "why": "no edge, pass"
               }
             },
             "spread": {
@@ -19421,8 +19599,10 @@
                 "pct": 51.1,
                 "play": false,
                 "basis": "shown_pct",
+                "breakeven_pct": 53.49,
+                "edge_vs_price_pp": -2.4,
                 "strong": false,
-                "why": "< 52% = coin flip, no play"
+                "why": "no edge, pass"
               }
             },
             "total": {
@@ -19473,8 +19653,10 @@
                 "pct": 51.1,
                 "play": false,
                 "basis": "shown_pct",
+                "breakeven_pct": 53.49,
+                "edge_vs_price_pp": -2.4,
                 "strong": false,
-                "why": "< 52% = coin flip, no play"
+                "why": "no edge, pass"
               }
             }
           },
@@ -19884,10 +20066,12 @@
                 "side": "home",
                 "label": "North Dakota State Bison ML",
                 "pct": 84.0,
-                "play": true,
+                "play": false,
                 "basis": "shown_pct",
-                "strong": true,
-                "why": ">= 52%"
+                "breakeven_pct": 87.5,
+                "edge_vs_price_pp": -3.5,
+                "strong": false,
+                "why": "no edge, pass"
               }
             },
             "spread": {
@@ -19942,8 +20126,10 @@
                 "pct": 50.4,
                 "play": false,
                 "basis": "shown_pct",
+                "breakeven_pct": 52.83,
+                "edge_vs_price_pp": -2.4,
                 "strong": false,
-                "why": "< 52% = coin flip, no play"
+                "why": "no edge, pass"
               }
             },
             "total": {
@@ -20403,10 +20589,12 @@
                 "side": "home",
                 "label": "Miami Hurricanes ML",
                 "pct": 91.2,
-                "play": true,
+                "play": false,
                 "basis": "shown_pct",
-                "strong": true,
-                "why": ">= 52%"
+                "breakeven_pct": 94.74,
+                "edge_vs_price_pp": -3.5,
+                "strong": false,
+                "why": "no edge, pass"
               }
             },
             "spread": {
@@ -20461,8 +20649,10 @@
                 "pct": 51.1,
                 "play": false,
                 "basis": "shown_pct",
+                "breakeven_pct": 53.49,
+                "edge_vs_price_pp": -2.4,
                 "strong": false,
-                "why": "< 52% = coin flip, no play"
+                "why": "no edge, pass"
               }
             },
             "total": {
@@ -20922,10 +21112,12 @@
                 "side": "home",
                 "label": "South Florida Bulls ML",
                 "pct": 89.9,
-                "play": true,
+                "play": false,
                 "basis": "shown_pct",
-                "strong": true,
-                "why": ">= 52%"
+                "breakeven_pct": 93.55,
+                "edge_vs_price_pp": -3.6,
+                "strong": false,
+                "why": "no edge, pass"
               }
             },
             "spread": {
@@ -20980,8 +21172,10 @@
                 "pct": 50.4,
                 "play": false,
                 "basis": "shown_pct",
+                "breakeven_pct": 52.83,
+                "edge_vs_price_pp": -2.4,
                 "strong": false,
-                "why": "< 52% = coin flip, no play"
+                "why": "no edge, pass"
               }
             },
             "total": {
@@ -21032,8 +21226,10 @@
                 "pct": 51.7,
                 "play": false,
                 "basis": "shown_pct",
+                "breakeven_pct": 54.13,
+                "edge_vs_price_pp": -2.4,
                 "strong": false,
-                "why": "< 52% = coin flip, no play"
+                "why": "no edge, pass"
               }
             }
           },
@@ -21461,10 +21657,12 @@
                 "side": "home",
                 "label": "Vanderbilt Commodores ML",
                 "pct": 66.4,
-                "play": true,
+                "play": false,
                 "basis": "shown_pct",
-                "strong": true,
-                "why": ">= 52%"
+                "breakeven_pct": 69.23,
+                "edge_vs_price_pp": -2.8,
+                "strong": false,
+                "why": "no edge, pass"
               }
             },
             "spread": {
@@ -21569,8 +21767,10 @@
                 "pct": 50.4,
                 "play": false,
                 "basis": "shown_pct",
+                "breakeven_pct": 52.83,
+                "edge_vs_price_pp": -2.4,
                 "strong": false,
-                "why": "< 52% = coin flip, no play"
+                "why": "no edge, pass"
               }
             }
           },
@@ -21998,10 +22198,12 @@
                 "side": "home",
                 "label": "Baylor Bears ML",
                 "pct": 65.7,
-                "play": true,
+                "play": false,
                 "basis": "shown_pct",
-                "strong": true,
-                "why": ">= 52%"
+                "breakeven_pct": 68.55,
+                "edge_vs_price_pp": -2.9,
+                "strong": false,
+                "why": "no edge, pass"
               }
             },
             "spread": {
@@ -22106,8 +22308,10 @@
                 "pct": 50.4,
                 "play": false,
                 "basis": "shown_pct",
+                "breakeven_pct": 52.83,
+                "edge_vs_price_pp": -2.4,
                 "strong": false,
-                "why": "< 52% = coin flip, no play"
+                "why": "no edge, pass"
               }
             }
           },
@@ -22535,10 +22739,12 @@
                 "side": "away",
                 "label": "Arkansas State Red Wolves ML",
                 "pct": 69.6,
-                "play": true,
+                "play": false,
                 "basis": "shown_pct",
-                "strong": true,
-                "why": ">= 52%"
+                "breakeven_pct": 72.6,
+                "edge_vs_price_pp": -3.0,
+                "strong": false,
+                "why": "no edge, pass"
               }
             },
             "spread": {
@@ -22593,8 +22799,10 @@
                 "pct": 51.1,
                 "play": false,
                 "basis": "shown_pct",
+                "breakeven_pct": 53.49,
+                "edge_vs_price_pp": -2.4,
                 "strong": false,
-                "why": "< 52% = coin flip, no play"
+                "why": "no edge, pass"
               }
             },
             "total": {
@@ -23072,10 +23280,12 @@
                 "side": "home",
                 "label": "UCLA Bruins ML",
                 "pct": 56.3,
-                "play": true,
+                "play": false,
                 "basis": "shown_pct",
-                "strong": true,
-                "why": ">= 52%"
+                "breakeven_pct": 58.68,
+                "edge_vs_price_pp": -2.4,
+                "strong": false,
+                "why": "no edge, pass"
               }
             },
             "spread": {
@@ -23130,8 +23340,10 @@
                 "pct": 51.1,
                 "play": false,
                 "basis": "shown_pct",
+                "breakeven_pct": 53.49,
+                "edge_vs_price_pp": -2.4,
                 "strong": false,
-                "why": "< 52% = coin flip, no play"
+                "why": "no edge, pass"
               }
             },
             "total": {
@@ -23182,8 +23394,10 @@
                 "pct": 51.1,
                 "play": false,
                 "basis": "shown_pct",
+                "breakeven_pct": 53.49,
+                "edge_vs_price_pp": -2.4,
                 "strong": false,
-                "why": "< 52% = coin flip, no play"
+                "why": "no edge, pass"
               }
             }
           },
@@ -23611,10 +23825,12 @@
                 "side": "home",
                 "label": "Oklahoma Sooners ML",
                 "pct": 67.5,
-                "play": true,
+                "play": false,
                 "basis": "shown_pct",
-                "strong": true,
-                "why": ">= 52%"
+                "breakeven_pct": 70.41,
+                "edge_vs_price_pp": -2.9,
+                "strong": false,
+                "why": "no edge, pass"
               }
             },
             "spread": {
@@ -23669,8 +23885,10 @@
                 "pct": 50.4,
                 "play": false,
                 "basis": "shown_pct",
+                "breakeven_pct": 52.83,
+                "edge_vs_price_pp": -2.4,
                 "strong": false,
-                "why": "< 52% = coin flip, no play"
+                "why": "no edge, pass"
               }
             },
             "total": {
@@ -23721,8 +23939,10 @@
                 "pct": 50.4,
                 "play": false,
                 "basis": "shown_pct",
+                "breakeven_pct": 52.83,
+                "edge_vs_price_pp": -2.4,
                 "strong": false,
-                "why": "< 52% = coin flip, no play"
+                "why": "no edge, pass"
               }
             }
           },
@@ -24150,10 +24370,12 @@
                 "side": "home",
                 "label": "Houston Cougars ML",
                 "pct": 63.1,
-                "play": true,
+                "play": false,
                 "basis": "shown_pct",
-                "strong": true,
-                "why": ">= 52%"
+                "breakeven_pct": 65.75,
+                "edge_vs_price_pp": -2.7,
+                "strong": false,
+                "why": "no edge, pass"
               }
             },
             "spread": {
@@ -24685,10 +24907,12 @@
                 "side": "away",
                 "label": "Notre Dame Fighting Irish ML",
                 "pct": 76.6,
-                "play": true,
+                "play": false,
                 "basis": "shown_pct",
-                "strong": true,
-                "why": ">= 52%"
+                "breakeven_pct": 79.8,
+                "edge_vs_price_pp": -3.2,
+                "strong": false,
+                "why": "no edge, pass"
               }
             },
             "spread": {
@@ -24793,8 +25017,10 @@
                 "pct": 50.4,
                 "play": false,
                 "basis": "shown_pct",
+                "breakeven_pct": 52.83,
+                "edge_vs_price_pp": -2.4,
                 "strong": false,
-                "why": "< 52% = coin flip, no play"
+                "why": "no edge, pass"
               }
             }
           },
@@ -25204,10 +25430,12 @@
                 "side": "home",
                 "label": "Stanford Cardinal ML",
                 "pct": 96.8,
-                "play": true,
+                "play": false,
                 "basis": "shown_pct",
-                "strong": true,
-                "why": ">= 52%"
+                "breakeven_pct": 99.01,
+                "edge_vs_price_pp": -2.2,
+                "strong": false,
+                "why": "no edge, pass"
               }
             },
             "spread": {
@@ -25721,10 +25949,12 @@
                 "side": "away",
                 "label": "Louisville Cardinals ML",
                 "pct": 83.7,
-                "play": true,
+                "play": false,
                 "basis": "shown_pct",
-                "strong": true,
-                "why": ">= 52%"
+                "breakeven_pct": 87.1,
+                "edge_vs_price_pp": -3.4,
+                "strong": false,
+                "why": "no edge, pass"
               }
             },
             "spread": {
@@ -25829,8 +26059,10 @@
                 "pct": 50.4,
                 "play": false,
                 "basis": "shown_pct",
+                "breakeven_pct": 52.83,
+                "edge_vs_price_pp": -2.4,
                 "strong": false,
-                "why": "< 52% = coin flip, no play"
+                "why": "no edge, pass"
               }
             }
           },
@@ -26258,10 +26490,12 @@
                 "side": "home",
                 "label": "UTSA Roadrunners ML",
                 "pct": 69.1,
-                "play": true,
+                "play": false,
                 "basis": "shown_pct",
-                "strong": true,
-                "why": ">= 52%"
+                "breakeven_pct": 72.07,
+                "edge_vs_price_pp": -3.0,
+                "strong": false,
+                "why": "no edge, pass"
               }
             },
             "spread": {
@@ -26314,10 +26548,12 @@
                 "side": "home",
                 "label": "UTSA Roadrunners -6.5",
                 "pct": 52.6,
-                "play": true,
+                "play": false,
                 "basis": "shown_pct",
+                "breakeven_pct": 54.95,
+                "edge_vs_price_pp": -2.4,
                 "strong": false,
-                "why": ">= 52%"
+                "why": "no edge, pass"
               }
             },
             "total": {
@@ -26777,10 +27013,12 @@
                 "side": "away",
                 "label": "Louisiana Tech Bulldogs ML",
                 "pct": 84.7,
-                "play": true,
+                "play": false,
                 "basis": "shown_pct",
-                "strong": true,
-                "why": ">= 52%"
+                "breakeven_pct": 88.24,
+                "edge_vs_price_pp": -3.5,
+                "strong": false,
+                "why": "no edge, pass"
               }
             },
             "spread": {
@@ -26885,8 +27123,10 @@
                 "pct": 50.4,
                 "play": false,
                 "basis": "shown_pct",
+                "breakeven_pct": 52.83,
+                "edge_vs_price_pp": -2.4,
                 "strong": false,
-                "why": "< 52% = coin flip, no play"
+                "why": "no edge, pass"
               }
             }
           },
@@ -27314,10 +27554,12 @@
                 "side": "away",
                 "label": "San Jose State Spartans ML",
                 "pct": 70.0,
-                "play": true,
+                "play": false,
                 "basis": "shown_pct",
-                "strong": true,
-                "why": ">= 52%"
+                "breakeven_pct": 72.97,
+                "edge_vs_price_pp": -3.0,
+                "strong": false,
+                "why": "no edge, pass"
               }
             },
             "spread": {
@@ -27372,8 +27614,10 @@
                 "pct": 51.7,
                 "play": false,
                 "basis": "shown_pct",
+                "breakeven_pct": 54.13,
+                "edge_vs_price_pp": -2.4,
                 "strong": false,
-                "why": "< 52% = coin flip, no play"
+                "why": "no edge, pass"
               }
             },
             "total": {
@@ -27424,8 +27668,10 @@
                 "pct": 50.4,
                 "play": false,
                 "basis": "shown_pct",
+                "breakeven_pct": 52.83,
+                "edge_vs_price_pp": -2.4,
                 "strong": false,
-                "why": "< 52% = coin flip, no play"
+                "why": "no edge, pass"
               }
             }
           },
@@ -27835,10 +28081,12 @@
                 "side": "away",
                 "label": "Ohio Bobcats ML",
                 "pct": 83.7,
-                "play": true,
+                "play": false,
                 "basis": "shown_pct",
-                "strong": true,
-                "why": ">= 52%"
+                "breakeven_pct": 87.1,
+                "edge_vs_price_pp": -3.4,
+                "strong": false,
+                "why": "no edge, pass"
               }
             },
             "spread": {
@@ -27893,8 +28141,10 @@
                 "pct": 50.4,
                 "play": false,
                 "basis": "shown_pct",
+                "breakeven_pct": 52.83,
+                "edge_vs_price_pp": -2.4,
                 "strong": false,
-                "why": "< 52% = coin flip, no play"
+                "why": "no edge, pass"
               }
             },
             "total": {
@@ -28354,10 +28604,12 @@
                 "side": "away",
                 "label": "Utah Utes ML",
                 "pct": 84.7,
-                "play": true,
+                "play": false,
                 "basis": "shown_pct",
-                "strong": true,
-                "why": ">= 52%"
+                "breakeven_pct": 88.24,
+                "edge_vs_price_pp": -3.5,
+                "strong": false,
+                "why": "no edge, pass"
               }
             },
             "spread": {
@@ -28412,8 +28664,10 @@
                 "pct": 50.4,
                 "play": false,
                 "basis": "shown_pct",
+                "breakeven_pct": 52.83,
+                "edge_vs_price_pp": -2.4,
                 "strong": false,
-                "why": "< 52% = coin flip, no play"
+                "why": "no edge, pass"
               }
             },
             "total": {
@@ -28891,10 +29145,12 @@
                 "side": "away",
                 "label": "Fresno State Bulldogs ML",
                 "pct": 72.2,
-                "play": true,
+                "play": false,
                 "basis": "shown_pct",
-                "strong": true,
-                "why": ">= 52%"
+                "breakeven_pct": 75.31,
+                "edge_vs_price_pp": -3.1,
+                "strong": false,
+                "why": "no edge, pass"
               }
             },
             "spread": {
@@ -28949,8 +29205,10 @@
                 "pct": 51.1,
                 "play": false,
                 "basis": "shown_pct",
+                "breakeven_pct": 53.49,
+                "edge_vs_price_pp": -2.4,
                 "strong": false,
-                "why": "< 52% = coin flip, no play"
+                "why": "no edge, pass"
               }
             },
             "total": {
@@ -29001,8 +29259,10 @@
                 "pct": 50.4,
                 "play": false,
                 "basis": "shown_pct",
+                "breakeven_pct": 52.83,
+                "edge_vs_price_pp": -2.4,
                 "strong": false,
-                "why": "< 52% = coin flip, no play"
+                "why": "no edge, pass"
               }
             }
           },
@@ -29430,10 +29690,12 @@
                 "side": "away",
                 "label": "Wake Forest Demon Deacons ML",
                 "pct": 75.7,
-                "play": true,
+                "play": false,
                 "basis": "shown_pct",
-                "strong": true,
-                "why": ">= 52%"
+                "breakeven_pct": 78.95,
+                "edge_vs_price_pp": -3.2,
+                "strong": false,
+                "why": "no edge, pass"
               }
             },
             "spread": {
@@ -29488,8 +29750,10 @@
                 "pct": 50.4,
                 "play": false,
                 "basis": "shown_pct",
+                "breakeven_pct": 52.83,
+                "edge_vs_price_pp": -2.4,
                 "strong": false,
-                "why": "< 52% = coin flip, no play"
+                "why": "no edge, pass"
               }
             },
             "total": {
@@ -29949,10 +30213,12 @@
                 "side": "away",
                 "label": "New Mexico Lobos ML",
                 "pct": 84.0,
-                "play": true,
+                "play": false,
                 "basis": "shown_pct",
-                "strong": true,
-                "why": ">= 52%"
+                "breakeven_pct": 87.5,
+                "edge_vs_price_pp": -3.5,
+                "strong": false,
+                "why": "no edge, pass"
               }
             },
             "spread": {
@@ -30057,8 +30323,10 @@
                 "pct": 50.4,
                 "play": false,
                 "basis": "shown_pct",
+                "breakeven_pct": 52.83,
+                "edge_vs_price_pp": -2.4,
                 "strong": false,
-                "why": "< 52% = coin flip, no play"
+                "why": "no edge, pass"
               }
             }
           },
@@ -30486,10 +30754,12 @@
                 "side": "home",
                 "label": "Oregon Ducks ML",
                 "pct": 70.0,
-                "play": true,
+                "play": false,
                 "basis": "shown_pct",
-                "strong": true,
-                "why": ">= 52%"
+                "breakeven_pct": 72.97,
+                "edge_vs_price_pp": -3.0,
+                "strong": false,
+                "why": "no edge, pass"
               }
             },
             "spread": {
@@ -30544,8 +30814,10 @@
                 "pct": 51.1,
                 "play": false,
                 "basis": "shown_pct",
+                "breakeven_pct": 53.49,
+                "edge_vs_price_pp": -2.4,
                 "strong": false,
-                "why": "< 52% = coin flip, no play"
+                "why": "no edge, pass"
               }
             },
             "total": {
@@ -30596,8 +30868,10 @@
                 "pct": 51.1,
                 "play": false,
                 "basis": "shown_pct",
+                "breakeven_pct": 53.49,
+                "edge_vs_price_pp": -2.4,
                 "strong": false,
-                "why": "< 52% = coin flip, no play"
+                "why": "no edge, pass"
               }
             }
           },
@@ -30972,10 +31246,12 @@
                 "side": "home",
                 "label": "Jacksonville Jaguars ML",
                 "pct": 56.3,
-                "play": true,
+                "play": false,
                 "basis": "shown_pct",
-                "strong": true,
-                "why": ">= 52%"
+                "breakeven_pct": 58.68,
+                "edge_vs_price_pp": -2.4,
+                "strong": false,
+                "why": "no edge, pass"
               }
             },
             "spread": {
@@ -31030,8 +31306,10 @@
                 "pct": 51.1,
                 "play": false,
                 "basis": "shown_pct",
+                "breakeven_pct": 53.49,
+                "edge_vs_price_pp": -2.4,
                 "strong": false,
-                "why": "< 52% = coin flip, no play"
+                "why": "no edge, pass"
               }
             },
             "total": {
@@ -31082,8 +31360,10 @@
                 "pct": 50.4,
                 "play": false,
                 "basis": "shown_pct",
+                "breakeven_pct": 52.83,
+                "edge_vs_price_pp": -2.4,
                 "strong": false,
-                "why": "< 52% = coin flip, no play"
+                "why": "no edge, pass"
               }
             }
           },
@@ -31458,10 +31738,12 @@
                 "side": "away",
                 "label": "Baltimore Ravens ML",
                 "pct": 64.5,
-                "play": true,
+                "play": false,
                 "basis": "shown_pct",
-                "strong": true,
-                "why": ">= 52%"
+                "breakeven_pct": 67.21,
+                "edge_vs_price_pp": -2.7,
+                "strong": false,
+                "why": "no edge, pass"
               }
             },
             "spread": {
@@ -31516,8 +31798,10 @@
                 "pct": 51.1,
                 "play": false,
                 "basis": "shown_pct",
+                "breakeven_pct": 53.49,
+                "edge_vs_price_pp": -2.4,
                 "strong": false,
-                "why": "< 52% = coin flip, no play"
+                "why": "no edge, pass"
               }
             },
             "total": {
@@ -31568,8 +31852,10 @@
                 "pct": 51.7,
                 "play": false,
                 "basis": "shown_pct",
+                "breakeven_pct": 54.13,
+                "edge_vs_price_pp": -2.4,
                 "strong": false,
-                "why": "< 52% = coin flip, no play"
+                "why": "no edge, pass"
               }
             }
           },
@@ -31944,10 +32230,12 @@
                 "side": "away",
                 "label": "Carolina Panthers ML",
                 "pct": 62.2,
-                "play": true,
+                "play": false,
                 "basis": "shown_pct",
-                "strong": true,
-                "why": ">= 52%"
+                "breakeven_pct": 64.91,
+                "edge_vs_price_pp": -2.7,
+                "strong": false,
+                "why": "no edge, pass"
               }
             },
             "spread": {
@@ -32052,8 +32340,10 @@
                 "pct": 51.1,
                 "play": false,
                 "basis": "shown_pct",
+                "breakeven_pct": 53.49,
+                "edge_vs_price_pp": -2.4,
                 "strong": false,
-                "why": "< 52% = coin flip, no play"
+                "why": "no edge, pass"
               }
             }
           },
@@ -32430,8 +32720,10 @@
                 "pct": 51.1,
                 "play": false,
                 "basis": "shown_pct",
+                "breakeven_pct": 53.49,
+                "edge_vs_price_pp": -2.4,
                 "strong": false,
-                "why": "< 52% = coin flip, no play"
+                "why": "no edge, pass"
               }
             },
             "spread": {
@@ -32486,8 +32778,10 @@
                 "pct": 51.7,
                 "play": false,
                 "basis": "shown_pct",
+                "breakeven_pct": 54.13,
+                "edge_vs_price_pp": -2.4,
                 "strong": false,
-                "why": "< 52% = coin flip, no play"
+                "why": "no edge, pass"
               }
             },
             "total": {
@@ -32538,8 +32832,10 @@
                 "pct": 50.4,
                 "play": false,
                 "basis": "shown_pct",
+                "breakeven_pct": 52.83,
+                "edge_vs_price_pp": -2.4,
                 "strong": false,
-                "why": "< 52% = coin flip, no play"
+                "why": "no edge, pass"
               }
             }
           },
@@ -32914,10 +33210,12 @@
                 "side": "home",
                 "label": "New England Patriots ML",
                 "pct": 73.4,
-                "play": true,
+                "play": false,
                 "basis": "shown_pct",
-                "strong": true,
-                "why": ">= 52%"
+                "breakeven_pct": 76.47,
+                "edge_vs_price_pp": -3.1,
+                "strong": false,
+                "why": "no edge, pass"
               }
             },
             "spread": {
@@ -32972,8 +33270,10 @@
                 "pct": 51.1,
                 "play": false,
                 "basis": "shown_pct",
+                "breakeven_pct": 53.49,
+                "edge_vs_price_pp": -2.4,
                 "strong": false,
-                "why": "< 52% = coin flip, no play"
+                "why": "no edge, pass"
               }
             },
             "total": {
@@ -33024,8 +33324,10 @@
                 "pct": 50.4,
                 "play": false,
                 "basis": "shown_pct",
+                "breakeven_pct": 52.83,
+                "edge_vs_price_pp": -2.4,
                 "strong": false,
-                "why": "< 52% = coin flip, no play"
+                "why": "no edge, pass"
               }
             }
           },
@@ -33400,10 +33702,12 @@
                 "side": "away",
                 "label": "Pittsburgh Steelers ML",
                 "pct": 57.2,
-                "play": true,
+                "play": false,
                 "basis": "shown_pct",
-                "strong": true,
-                "why": ">= 52%"
+                "breakeven_pct": 59.68,
+                "edge_vs_price_pp": -2.5,
+                "strong": false,
+                "why": "no edge, pass"
               }
             },
             "spread": {
@@ -33458,8 +33762,10 @@
                 "pct": 51.1,
                 "play": false,
                 "basis": "shown_pct",
+                "breakeven_pct": 53.49,
+                "edge_vs_price_pp": -2.4,
                 "strong": false,
-                "why": "< 52% = coin flip, no play"
+                "why": "no edge, pass"
               }
             },
             "total": {
@@ -33510,8 +33816,10 @@
                 "pct": 50.4,
                 "play": false,
                 "basis": "shown_pct",
+                "breakeven_pct": 52.83,
+                "edge_vs_price_pp": -2.4,
                 "strong": false,
-                "why": "< 52% = coin flip, no play"
+                "why": "no edge, pass"
               }
             }
           },
@@ -33886,10 +34194,12 @@
                 "side": "home",
                 "label": "Indianapolis Colts ML",
                 "pct": 74.1,
-                "play": true,
+                "play": false,
                 "basis": "shown_pct",
-                "strong": true,
-                "why": ">= 52%"
+                "breakeven_pct": 77.27,
+                "edge_vs_price_pp": -3.2,
+                "strong": false,
+                "why": "no edge, pass"
               }
             },
             "spread": {
@@ -33944,8 +34254,10 @@
                 "pct": 51.1,
                 "play": false,
                 "basis": "shown_pct",
+                "breakeven_pct": 53.49,
+                "edge_vs_price_pp": -2.4,
                 "strong": false,
-                "why": "< 52% = coin flip, no play"
+                "why": "no edge, pass"
               }
             },
             "total": {
@@ -33996,8 +34308,10 @@
                 "pct": 50.4,
                 "play": false,
                 "basis": "shown_pct",
+                "breakeven_pct": 52.83,
+                "edge_vs_price_pp": -2.4,
                 "strong": false,
-                "why": "< 52% = coin flip, no play"
+                "why": "no edge, pass"
               }
             }
           },
@@ -34372,10 +34686,12 @@
                 "side": "home",
                 "label": "Los Angeles Rams ML",
                 "pct": 86.3,
-                "play": true,
+                "play": false,
                 "basis": "shown_pct",
-                "strong": true,
-                "why": ">= 52%"
+                "breakeven_pct": 90.0,
+                "edge_vs_price_pp": -3.7,
+                "strong": false,
+                "why": "no edge, pass"
               }
             },
             "spread": {
@@ -34430,8 +34746,10 @@
                 "pct": 50.4,
                 "play": false,
                 "basis": "shown_pct",
+                "breakeven_pct": 52.83,
+                "edge_vs_price_pp": -2.4,
                 "strong": false,
-                "why": "< 52% = coin flip, no play"
+                "why": "no edge, pass"
               }
             },
             "total": {
@@ -34482,8 +34800,10 @@
                 "pct": 50.4,
                 "play": false,
                 "basis": "shown_pct",
+                "breakeven_pct": 52.83,
+                "edge_vs_price_pp": -2.4,
                 "strong": false,
-                "why": "< 52% = coin flip, no play"
+                "why": "no edge, pass"
               }
             }
           },
@@ -34858,10 +35178,12 @@
                 "side": "away",
                 "label": "Buffalo Bills ML",
                 "pct": 65.7,
-                "play": true,
+                "play": false,
                 "basis": "shown_pct",
-                "strong": true,
-                "why": ">= 52%"
+                "breakeven_pct": 68.55,
+                "edge_vs_price_pp": -2.9,
+                "strong": false,
+                "why": "no edge, pass"
               }
             },
             "spread": {
@@ -34916,8 +35238,10 @@
                 "pct": 50.4,
                 "play": false,
                 "basis": "shown_pct",
+                "breakeven_pct": 52.83,
+                "edge_vs_price_pp": -2.4,
                 "strong": false,
-                "why": "< 52% = coin flip, no play"
+                "why": "no edge, pass"
               }
             },
             "total": {
@@ -35342,10 +35666,12 @@
                 "side": "home",
                 "label": "Kansas City Chiefs ML",
                 "pct": 79.6,
-                "play": true,
+                "play": false,
                 "basis": "shown_pct",
-                "strong": true,
-                "why": ">= 52%"
+                "breakeven_pct": 82.91,
+                "edge_vs_price_pp": -3.3,
+                "strong": false,
+                "why": "no edge, pass"
               }
             },
             "spread": {
@@ -35400,8 +35726,10 @@
                 "pct": 51.1,
                 "play": false,
                 "basis": "shown_pct",
+                "breakeven_pct": 53.49,
+                "edge_vs_price_pp": -2.4,
                 "strong": false,
-                "why": "< 52% = coin flip, no play"
+                "why": "no edge, pass"
               }
             },
             "total": {
@@ -35452,8 +35780,10 @@
                 "pct": 51.1,
                 "play": false,
                 "basis": "shown_pct",
+                "breakeven_pct": 53.49,
+                "edge_vs_price_pp": -2.4,
                 "strong": false,
-                "why": "< 52% = coin flip, no play"
+                "why": "no edge, pass"
               }
             }
           },
@@ -35828,10 +36158,12 @@
                 "side": "home",
                 "label": "Green Bay Packers ML",
                 "pct": 52.2,
-                "play": true,
+                "play": false,
                 "basis": "shown_pct",
+                "breakeven_pct": 54.55,
+                "edge_vs_price_pp": -2.3,
                 "strong": false,
-                "why": ">= 52%"
+                "why": "no edge, pass"
               }
             },
             "spread": {
@@ -35886,8 +36218,10 @@
                 "pct": 51.1,
                 "play": false,
                 "basis": "shown_pct",
+                "breakeven_pct": 53.49,
+                "edge_vs_price_pp": -2.4,
                 "strong": false,
-                "why": "< 52% = coin flip, no play"
+                "why": "no edge, pass"
               }
             },
             "total": {
@@ -35938,8 +36272,10 @@
                 "pct": 51.1,
                 "play": false,
                 "basis": "shown_pct",
+                "breakeven_pct": 53.49,
+                "edge_vs_price_pp": -2.4,
                 "strong": false,
-                "why": "< 52% = coin flip, no play"
+                "why": "no edge, pass"
               }
             }
           },
@@ -36314,10 +36650,12 @@
                 "side": "home",
                 "label": "San Francisco 49ers ML",
                 "pct": 77.7,
-                "play": true,
+                "play": false,
                 "basis": "shown_pct",
-                "strong": true,
-                "why": ">= 52%"
+                "breakeven_pct": 80.95,
+                "edge_vs_price_pp": -3.3,
+                "strong": false,
+                "why": "no edge, pass"
               }
             },
             "spread": {
@@ -36372,8 +36710,10 @@
                 "pct": 50.4,
                 "play": false,
                 "basis": "shown_pct",
+                "breakeven_pct": 52.83,
+                "edge_vs_price_pp": -2.4,
                 "strong": false,
-                "why": "< 52% = coin flip, no play"
+                "why": "no edge, pass"
               }
             },
             "total": {
@@ -36424,8 +36764,10 @@
                 "pct": 50.4,
                 "play": false,
                 "basis": "shown_pct",
+                "breakeven_pct": 52.83,
+                "edge_vs_price_pp": -2.4,
                 "strong": false,
-                "why": "< 52% = coin flip, no play"
+                "why": "no edge, pass"
               }
             }
           },
@@ -36800,10 +37142,12 @@
                 "side": "home",
                 "label": "Florida International Panthers ML",
                 "pct": 75.7,
-                "play": true,
+                "play": false,
                 "basis": "shown_pct",
-                "strong": true,
-                "why": ">= 52%"
+                "breakeven_pct": 79.38,
+                "edge_vs_price_pp": -3.7,
+                "strong": false,
+                "why": "no edge, pass"
               }
             },
             "spread": {
@@ -36858,8 +37202,10 @@
                 "pct": 50.5,
                 "play": false,
                 "basis": "shown_pct",
+                "breakeven_pct": 52.38,
+                "edge_vs_price_pp": -1.9,
                 "strong": false,
-                "why": "< 52% = coin flip, no play"
+                "why": "no edge, pass"
               }
             },
             "total": {
@@ -37284,10 +37630,12 @@
                 "side": "away",
                 "label": "South Alabama Jaguars ML",
                 "pct": 55.3,
-                "play": true,
+                "play": false,
                 "basis": "shown_pct",
-                "strong": true,
-                "why": ">= 52%"
+                "breakeven_pct": 57.81,
+                "edge_vs_price_pp": -2.5,
+                "strong": false,
+                "why": "no edge, pass"
               }
             },
             "spread": {
@@ -37392,8 +37740,10 @@
                 "pct": 51.1,
                 "play": false,
                 "basis": "shown_pct",
+                "breakeven_pct": 53.49,
+                "edge_vs_price_pp": -2.4,
                 "strong": false,
-                "why": "< 52% = coin flip, no play"
+                "why": "no edge, pass"
               }
             }
           },
@@ -37768,10 +38118,12 @@
                 "side": "away",
                 "label": "New Mexico State Aggies ML",
                 "pct": 56.1,
-                "play": true,
+                "play": false,
                 "basis": "shown_pct",
-                "strong": true,
-                "why": ">= 52%"
+                "breakeven_pct": 58.68,
+                "edge_vs_price_pp": -2.6,
+                "strong": false,
+                "why": "no edge, pass"
               }
             },
             "spread": {
@@ -37826,8 +38178,10 @@
                 "pct": 51.2,
                 "play": false,
                 "basis": "shown_pct",
+                "breakeven_pct": 52.38,
+                "edge_vs_price_pp": -1.2,
                 "strong": false,
-                "why": "< 52% = coin flip, no play"
+                "why": "no edge, pass"
               }
             },
             "total": {
@@ -37878,8 +38232,10 @@
                 "pct": 51.1,
                 "play": false,
                 "basis": "shown_pct",
+                "breakeven_pct": 53.49,
+                "edge_vs_price_pp": -2.4,
                 "strong": false,
-                "why": "< 52% = coin flip, no play"
+                "why": "no edge, pass"
               }
             }
           },

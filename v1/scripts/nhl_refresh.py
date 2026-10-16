@@ -38,6 +38,11 @@ def main():
             model_calib.calibrate_markets("NHL", (r.get("paper") or {}).get("markets"))
     except Exception as e:  # noqa: BLE001
         print(f"[nhl_refresh] model_calib error: {type(e).__name__}: {e}", file=sys.stderr)
+    try:  # 2026-10-15: append-only bet-time log
+        import bettime_log
+        bettime_log.append("NHL", rows, now, "nhl_refresh")
+    except Exception as e:  # noqa: BLE001
+        print(f"[nhl_refresh] bettime_log error: {type(e).__name__}: {e}", file=sys.stderr)
     for r in rows:
         r["paper"]["refreshed_ct"] = now.isoformat(timespec="seconds")
     blob = json.dumps(doc, indent=2, ensure_ascii=False)

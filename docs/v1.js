@@ -20,6 +20,19 @@
     const ok = isFinite(pr) && pr !== 0 && imp < p;
     return ` <small style="color:${ok ? '#1a7f37' : '#888'}" title="break-even price at shown ${SH(s)}%; listed ${pr > 0 ? '+' : ''}${pr} is ${ok ? 'better' : 'not better'}">BE ${be > 0 ? '+' : ''}${be}</small>`;
   }
+  // 2026-10-15 (Luis approved Lines/Main proposal): star only when shown (fair) % beats the break-even of the SHOWN price
+  // by >= 1pp (★); >= 3pp = ★★. Otherwise the lean side reads "no edge, pass".
+  const STAR_PP = 1, STRONG_PP = 3;
+  function edgeVsPrice(s) { const p = Number(SH(s)), pr = Number(s.price_american);
+    if (!(p > 0 && p < 100) || !isFinite(pr) || pr === 0 || s.price_american == null || s.price_american === '') return null;
+    const be = pr < 0 ? -pr / (100 - pr) : 100 / (pr + 100); return Math.round((p - 100 * be) * 10) / 10; }
+  function starCell(s, m) {
+    if (!(m && m.lean && m.lean.label === s.label)) return '';
+    const e = edgeVsPrice(s);
+    if (e != null && e >= STRONG_PP) return ` <b title="fair % beats break-even of listed price by ${e}pp (≥${STRONG_PP}pp)">★★</b>` + BE(s);
+    if (e != null && e >= STAR_PP) return ` <b title="fair % beats break-even of listed price by ${e}pp (≥${STAR_PP}pp)">★</b>` + BE(s);
+    return ` <small class="mut" title="fair % vs break-even of listed price: ${e == null ? 'no price' : (e >= 0 ? '+' : '') + e + 'pp'} (needs ≥ +${STAR_PP}pp)">no edge, pass</small>`;
+  }
   function mktRows(g) {
     const pm = (g.paper && g.paper.markets) || {}, bm = (g.paper && g.paper.by_market) || {};
     let out = '';
@@ -35,7 +48,7 @@
       sides.slice(0, 2).forEach((s, i) => {
         const nm = String(s.label || '').replace(g.away, last(g.away)).replace(g.home, last(g.home)).replace(/^Over /, 'O ').replace(/^Under /, 'U ');
         const pick = st === 'PAPER' && g.paper.best && g.paper.best.label === s.label;
-        out += `<tr class="${pick ? 'pk' : ''}">${i === 0 ? `<td rowspan=2>${lab}</td>` : ''}<td>${nm}</td><td>${A(s.price_american)} <small>${s.book || ''}</small></td><td>${P(s.novig_pct)}</td><td title="${s.shown_source || ''}">${P(SH(s))}${m && m.lean && m.lean.label === s.label ? (m.lean.strong ? ' <b title="strong: higher shown %, ≥55%">★★</b>' + BE(s) : m.lean.play ? ' <b title="higher shown %, ≥52%">★</b>' + BE(s) : ' <small class="mut" title="${m.lean.why}">~</small>') : ''}</td><td class="mut" title="raw model %, not proven vs the no-vig market — info only">${P(s.shown_pct !== undefined ? s.model_unproven_pct : null)}</td>${g.sport === 'NFL' ? `<td class="mut" title="info only: unweighted ESPN FPI line as a probability; picks use w=0">${P(s.fpi_pct)}</td>` : ''}<td>${s.model_pct == null ? '—' : E(s.edge_pp)}</td>${i === 0 ? `<td rowspan=2><span class="dec ${st === 'PAPER' ? 'PICK' : st}" title="${note}">${st}</span>${gr ? ` <span class="grade g${gr}" title="${note}">${gr}</span>` : ''}</td>` : ''}</tr>`;
+        out += `<tr class="${pick ? 'pk' : ''}">${i === 0 ? `<td rowspan=2>${lab}</td>` : ''}<td>${nm}</td><td>${A(s.price_american)} <small>${s.book || ''}</small></td><td>${P(s.novig_pct)}</td><td title="${s.shown_source || ''}">${P(SH(s))}${starCell(s, m)}</td><td class="mut" title="raw model %, not proven vs the no-vig market — info only">${P(s.shown_pct !== undefined ? s.model_unproven_pct : null)}</td>${g.sport === 'NFL' ? `<td class="mut" title="info only: unweighted ESPN FPI line as a probability; picks use w=0">${P(s.fpi_pct)}</td>` : ''}<td>${s.model_pct == null ? '—' : E(s.edge_pp)}</td>${i === 0 ? `<td rowspan=2><span class="dec ${st === 'PAPER' ? 'PICK' : st}" title="${note}">${st}</span>${gr ? ` <span class="grade g${gr}" title="${note}">${gr}</span>` : ''}</td>` : ''}</tr>`;
       });
     }
     return out;
@@ -61,7 +74,7 @@
     const el = $('#board'), R = rows(d), s = pl.summary || {};
     const nP = R.filter(g => g.paper && g.paper.status === 'PAPER').length;
     let h = `<div class="hl"><b>PAPER ONLY</b> · straight bets only (no teasers, no parlays) · ${R.length} games · ${nP} paper play(s) · <span class="grade gA">A</span> = bettable card (2-5/day) · <span class="grade gB">B</span> misses one rule · <span class="grade gC">C</span> lean, board only<span class="sub">1u = $20 · updated ${String(d.generated_at_ct || '').replace('T', ' ').slice(0, 16)} CT</span></div>`;
-    h += `<p class="note">One desk: lines from The Odds API free tier (only when a game is within ~36h) with ESPN filling gaps, tagged per line. Every game shows ML / spread / total, each with market no-vig % and its own model % (blank stays blank = no model). Sorted by start time (CT). A play needs ≥ 3pp edge at a real DraftKings / Betr / Bovada price.</p>`;
+    h += `<p class="note">One desk: lines from The Odds API free tier (only when a game is within ~36h) with ESPN filling gaps, tagged per line. Every game shows ML / spread / total, each with market no-vig % and its own model % (blank stays blank = no model). Sorted by start time (CT). A play needs ≥ 3pp edge at a real DraftKings / Betr / Bovada price.<br><b>Stars:</b> ★ = the shown fair % beats the break-even % of the listed price by ≥ 1pp · ★★ = by ≥ 3pp · otherwise the side reads <i>no edge, pass</i> (a 52% side at −110 is below the 52.38% break-even = no star).</p>`;
     h += `<div class="filters"><label><input type="checkbox" id="v1only"> paper plays only (${nP})</label> <select id="v1sp"><option value="">All sports</option>${[...new Set(R.map(g => g.sport))].map(x => `<option>${x}</option>`).join('')}</select></div><div id="v1games"></div>`;
     el.innerHTML = h;
     const draw = () => { const o = $('#v1only').checked, sp = $('#v1sp').value;

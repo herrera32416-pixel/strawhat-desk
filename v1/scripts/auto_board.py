@@ -545,6 +545,11 @@ def main(argv: list[str] | None = None) -> int:
                 model_calib.calibrate_markets(sport, (r.get("paper") or {}).get("markets"))
         except Exception as e:  # noqa: BLE001
             print(f"[auto_board] {sport} model_calib error: {type(e).__name__}: {e}", file=sys.stderr)
+        try:  # 2026-10-15: append-only bet-time log (one locked line per board row x market)
+            import bettime_log
+            print(f"[auto_board] {sport} bet-time log +{bettime_log.append(sport, rows, now_ct, 'auto_board')}")
+        except Exception as e:  # noqa: BLE001
+            print(f"[auto_board] {sport} bettime_log error: {type(e).__name__}: {e}", file=sys.stderr)
         for r in rows:  # MARKET-ONLY edge source for the A/B/C grader (paper_model weights are 0)
             try:
                 r["market_edge"] = paper_model.market_edge(sport, r, by_toa.get(r.get("toa_event_id") or ""))

@@ -79,14 +79,32 @@ def calibrate_markets(sport: str, markets: dict | None, gate: dict | None = None
         m["lean"] = lean(sides)
 
 
+STAR_EDGE_PP = 1.0     # Luis OK 2026-10-15 9:33pm CT: ★ only if shown % beats the break-even of the listed price by >= 1pp
+STRONG_EDGE_PP = 3.0   # ★★ tier: >= 3pp over break-even
+
+
+def breakeven_pct(price) -> float | None:
+    try:
+        pr = float(price)
+    except (TypeError, ValueError):
+        return None
+    if pr == 0:
+        return None
+    return 100 * (-pr / (100 - pr) if pr < 0 else 100 / (pr + 100))
+
+
 def lean(sides: list, key: str = "shown_pct") -> dict | None:
+    """Higher shown-% side; play (★) only when shown % - break-even(listed price) >= STAR_EDGE_PP, strong (★★) >= STRONG_EDGE_PP."""
     if len(sides) != 2 or any(s.get(key) is None for s in sides):
         return None
     a, b = sides
     if a[key] == b[key]:
         return {"side": None, "pct": a[key], "play": False, "why": "tie", "basis": key}
     hi = a if a[key] > b[key] else b
-    ok = hi[key] >= PLAY_MIN_PCT
+    be = breakeven_pct(hi.get("price_american"))
+    edge = None if be is None else round(hi[key] - be, 1)
+    ok = edge is not None and edge >= STAR_EDGE_PP
     return {"side": hi.get("side"), "label": hi.get("label"), "pct": hi[key], "play": ok, "basis": key,
-            "strong": hi[key] >= STRONG_MIN_PCT,
-            "why": f">= {PLAY_MIN_PCT:g}%" if ok else f"< {PLAY_MIN_PCT:g}% = coin flip, no play"}
+            "breakeven_pct": None if be is None else round(be, 2), "edge_vs_price_pp": edge,
+            "strong": edge is not None and edge >= STRONG_EDGE_PP,
+            "why": f"beats break-even by {edge}pp" if ok else "no edge, pass"}

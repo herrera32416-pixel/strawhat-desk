@@ -2,15 +2,43 @@
   "schema": "desk-model-gate/v1",
   "approved": "Luis 2026-10-15 9:19pm CT: board headline % = market no-vig fair % until the model proves itself",
   "devig_method": "margin-proportional (each side's implied % / sum of both sides' implied %)",
-  "rule": "A sport/market shows the model % only after the model beats the no-vig market out of sample on >= min_graded_games graded games with the lower bound of the ci_level CI on (model - market) above 0 (Colab Backtest gate). Flip a flag to true only with that evidence and Luis's OK.",
+  "rule": "Pre-registered 2026-10-15 9:33pm CT (Luis approved Colab Backtest #1): a sport/market may be proposed for the model % only when v1/scripts/model_gate_cs.py shows n >= 100 graded games AND the always-valid 90% lower bound (betting confidence sequence, alpha 0.10) on the per-game clipped log-loss difference (no-vig minus model) is above 0. Checking weekly cannot inflate false passes. Even then a flag flips to true only with Luis's OK. Replaces the old fixed-n 90% CI check.",
   "min_graded_games": 100,
-  "ci_level": 0.90,
+  "ci_level": 0.9,
   "gate": {
-    "NFL": {"ml": false, "spread": false, "total": false},
-    "CFB": {"ml": false, "spread": false, "total": false},
-    "NHL": {"ml": false, "spread": false, "total": false},
-    "MLB": {"ml": false, "spread": false, "total": false},
-    "NBA": {"ml": false, "spread": false, "total": false}
+    "NFL": {
+      "ml": false,
+      "spread": false,
+      "total": false
+    },
+    "CFB": {
+      "ml": false,
+      "spread": false,
+      "total": false
+    },
+    "NHL": {
+      "ml": false,
+      "spread": false,
+      "total": false
+    },
+    "MLB": {
+      "ml": false,
+      "spread": false,
+      "total": false
+    },
+    "NBA": {
+      "ml": false,
+      "spread": false,
+      "total": false
+    }
   },
-  "evidence": {}
+  "evidence": {},
+  "test": {
+    "statistic": "logloss(no-vig) - logloss(model), side 0, clipped [-1,1]",
+    "method": "one-sided betting confidence sequence (Waudby-Smith & Ramdas 2023)",
+    "alpha": 0.1,
+    "min_graded_games": 100,
+    "start_graded_on_or_after": "2026-10-15",
+    "script": "v1/scripts/model_gate_cs.py"
+  }
 }
