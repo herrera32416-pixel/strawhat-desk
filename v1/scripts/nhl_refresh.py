@@ -33,8 +33,9 @@ def main():
         print("[nhl_refresh] no upcoming NHL rows"); return 0
     stats = paper_model.attach_paper("NHL", rows, by_id, now, 2)
     try:  # 2026-10-15: keep the headline % = market no-vig (model gate) + ★ lean after the refresh
-        import model_calib
-        for r in rows:
+        import model_calib, sharp_fair
+        for r in rows:  # 2026-10-15 9:51pm CT: Pinnacle -> LowVig -> DK fair % before calibration
+            sharp_fair.apply((r.get("paper") or {}).get("markets"), by_id.get(r.get("toa_event_id") or ""))
             model_calib.calibrate_markets("NHL", (r.get("paper") or {}).get("markets"))
     except Exception as e:  # noqa: BLE001
         print(f"[nhl_refresh] model_calib error: {type(e).__name__}: {e}", file=sys.stderr)

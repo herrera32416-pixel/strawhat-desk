@@ -147,9 +147,14 @@ def kick_fields(iso: str) -> tuple[str, str, datetime]:
 
 
 # ---------------------------------------------------------------- API call
+BOOKMAKERS = "draftkings,bovada,pinnacle,lowvig,fanduel,betmgm,williamhill_us,betrivers,fanatics,betonlineag"
+
+
 def fetch_odds(api_key: str, sport_key: str, timeout: int = 30) -> tuple[list[dict], dict]:
     qs = urllib.parse.urlencode({
-        "apiKey": api_key, "regions": "us", "markets": "h2h,spreads,totals",
+        # 2026-10-15 (Luis 9:51pm CT): named books instead of regions=us so Pinnacle/LowVig come back on the SAME call.
+        # TOA bills up to 10 bookmakers as 1 region -> still 3 credits (verified football_snap 2026-10-15 9:40pm CT).
+        "apiKey": api_key, "bookmakers": BOOKMAKERS, "markets": "h2h,spreads,totals",
         "oddsFormat": "american", "dateFormat": "iso",
     })
     req = urllib.request.Request(f"{API_URL.format(sport=sport_key)}?{qs}", headers={"User-Agent": "desk-v1-auto-board"})
@@ -539,6 +544,12 @@ def main(argv: list[str] | None = None) -> int:
                 print(f"[auto_board] {sport} QB flags: {qb_status.attach(sport, pre, now_ct, data_dir / 'qb_log.jsonl')}")
             except Exception as e:  # noqa: BLE001
                 print(f"[auto_board] {sport} qb_status error: {type(e).__name__}: {e}", file=sys.stderr)
+        try:  # 2026-10-15 9:51pm CT: fair % = Pinnacle -> LowVig -> DK no-vig at the board's line (before calibration)
+            import sharp_fair
+            for r in rows:
+                sharp_fair.apply((r.get("paper") or {}).get("markets"), by_toa.get(r.get("toa_event_id") or ""))
+        except Exception as e:  # noqa: BLE001
+            print(f"[auto_board] {sport} sharp_fair error: {type(e).__name__}: {e}", file=sys.stderr)
         try:  # display-only calibration + higher-% lean flag (never used by stamps/grades)
             import model_calib
             for r in rows:
