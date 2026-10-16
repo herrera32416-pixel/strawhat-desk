@@ -114,9 +114,11 @@
    "side": "under",
    "lean": -2.26,
    "price": -110,
-   "status": "open",
+   "status": "L",
    "updated_ct": "2026-10-15T13:20-05:00",
-   "logged_ct": "2026-10-10T13:31-05:00"
+   "logged_ct": "2026-10-10T13:31-05:00",
+   "final_total": 93.0,
+   "units": -1.0
   },
   {
    "espn_id": "401858488",
@@ -128,7 +130,7 @@
    "lean": -1.53,
    "price": -110,
    "status": "open",
-   "updated_ct": "2026-10-15T13:20-05:00",
+   "updated_ct": "2026-10-16T13:06-05:00",
    "logged_ct": "2026-10-11T08:02-05:00"
   },
   {
@@ -136,12 +138,12 @@
    "game": "Georgia Tech @ Virginia Tech",
    "kick_iso": "2026-10-17T14:30:00-05:00",
    "gameday": "2026-10-17",
-   "line": 55.5,
+   "line": 56.5,
    "side": "under",
    "lean": -1.81,
    "price": -110,
    "status": "open",
-   "updated_ct": "2026-10-15T13:20-05:00",
+   "updated_ct": "2026-10-16T13:06-05:00",
    "logged_ct": "2026-10-12T17:09-05:00"
   },
   {
@@ -149,12 +151,12 @@
    "game": "Northern Illinois @ Wyoming",
    "kick_iso": "2026-10-17T14:30:00-05:00",
    "gameday": "2026-10-17",
-   "line": 40.5,
+   "line": 41.5,
    "side": "over",
    "lean": 1.97,
    "price": -110,
    "status": "open",
-   "updated_ct": "2026-10-15T13:20-05:00",
+   "updated_ct": "2026-10-16T13:06-05:00",
    "logged_ct": "2026-10-12T17:09-05:00"
   },
   {
@@ -167,7 +169,7 @@
    "lean": -1.82,
    "price": -110,
    "status": "open",
-   "updated_ct": "2026-10-15T13:20-05:00",
+   "updated_ct": "2026-10-16T13:06-05:00",
    "logged_ct": "2026-10-12T17:09-05:00"
   },
   {
@@ -175,12 +177,12 @@
    "game": "Wisconsin @ UCLA",
    "kick_iso": "2026-10-17T18:30:00-05:00",
    "gameday": "2026-10-17",
-   "line": 42.5,
+   "line": 43.5,
    "side": "over",
    "lean": 1.57,
    "price": -110,
    "status": "open",
-   "updated_ct": "2026-10-15T13:20-05:00",
+   "updated_ct": "2026-10-16T13:06-05:00",
    "logged_ct": "2026-10-12T17:09-05:00"
   }
  ]
