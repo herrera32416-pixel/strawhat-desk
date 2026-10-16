@@ -7484,14 +7484,14 @@
               "goalie": "Devon Levi",
               "status": "Confirmed",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-10-15T19:30:50-05:00",
+              "seen_time_ct": "2026-10-15T19:46:37-05:00",
               "file": "nhl_goalie_log.jsonl"
             },
             "away": {
               "goalie": "Karel Vejmelka",
               "status": "Confirmed",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-10-15T19:30:50-05:00",
+              "seen_time_ct": "2026-10-15T19:46:37-05:00",
               "file": "nhl_goalie_log.jsonl"
             }
           },
@@ -7646,7 +7646,7 @@
               ]
             }
           },
-          "refreshed_ct": "2026-10-15T19:30:50-05:00"
+          "refreshed_ct": "2026-10-15T19:46:37-05:00"
         },
         "market_edge": {
           "ml": {
@@ -7953,14 +7953,14 @@
               "goalie": "Carter Hart",
               "status": "Confirmed",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-10-15T19:30:50-05:00",
+              "seen_time_ct": "2026-10-15T19:46:37-05:00",
               "file": "nhl_goalie_log.jsonl"
             },
             "away": {
               "goalie": "Dustin Wolf",
               "status": "Confirmed",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-10-15T19:30:50-05:00",
+              "seen_time_ct": "2026-10-15T19:46:37-05:00",
               "file": "nhl_goalie_log.jsonl"
             }
           },
@@ -8115,7 +8115,7 @@
               ]
             }
           },
-          "refreshed_ct": "2026-10-15T19:30:50-05:00"
+          "refreshed_ct": "2026-10-15T19:46:37-05:00"
         },
         "market_edge": {
           "ml": {
