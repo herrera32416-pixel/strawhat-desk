@@ -647,5 +647,22 @@ def main(argv: list[str] | None = None) -> int:
     return 0
 
 
+def _checkin(rc: int) -> None:
+    """2026-10-15 9:51pm CT: when the board is built on the Grok Bot box, end with a check-in line.
+    On GitHub Actions /workspace/ops/checkin.py does not exist, so this is a no-op there (the box's
+    run_due_jobs.sh checks the published board instead). Offline/test runs (--from-file*) never check in."""
+    ck = Path("/workspace/ops/checkin.py")
+    if not ck.exists() or any(a.startswith("--from-file") for a in sys.argv[1:]):
+        return
+    import subprocess
+    try:
+        subprocess.run(["/usr/bin/python3", str(ck), "v1_board", "done" if rc == 0 else "failed",
+                        f"auto_board.py exit {rc} (box build)"], timeout=20, check=False)
+    except Exception as e:  # noqa: BLE001
+        print(f"[auto_board] checkin error: {e}", file=sys.stderr)
+
+
 if __name__ == "__main__":
-    raise SystemExit(main())
+    _rc = main()
+    _checkin(_rc)
+    raise SystemExit(_rc)
