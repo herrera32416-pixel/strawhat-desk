@@ -1,0 +1,16 @@
+{
+  "schema": "desk-model-gate/v1",
+  "approved": "Luis 2026-10-15 9:19pm CT: board headline % = market no-vig fair % until the model proves itself",
+  "devig_method": "margin-proportional (each side's implied % / sum of both sides' implied %)",
+  "rule": "A sport/market shows the model % only after the model beats the no-vig market out of sample on >= min_graded_games graded games with the lower bound of the ci_level CI on (model - market) above 0 (Colab Backtest gate). Flip a flag to true only with that evidence and Luis's OK.",
+  "min_graded_games": 100,
+  "ci_level": 0.90,
+  "gate": {
+    "NFL": {"ml": false, "spread": false, "total": false},
+    "CFB": {"ml": false, "spread": false, "total": false},
+    "NHL": {"ml": false, "spread": false, "total": false},
+    "MLB": {"ml": false, "spread": false, "total": false},
+    "NBA": {"ml": false, "spread": false, "total": false}
+  },
+  "evidence": {}
+}

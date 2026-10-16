@@ -8,14 +8,48 @@ Walk-forward evidence (2026-10-14, /workspace/acc, research/accuracy-2026-10/REP
 - MLB Colab v1.1 / NFL / CFB: unchanged (NFL/CFB are already w=0; Colab has no walk-forward history, 9 live games).
 - Spreads/totals priced 50-52%: higher no-vig side hit 50.1% (NHL tot, n=1818), 50.7% (MLB tot, n=5587),
   49.3% (CFB spread, n=3056). So a side under 52% is shown as 'no play (coin flip)'.
+
+2026-10-15 (Luis, 9:19pm CT): the board's HEADLINE % (shown_pct) is the market's no-vig fair % for every
+sport/market until that sport/market passes the model gate in v1/data/model_gate.json (all OFF). The raw model %
+stays on each side as model_unproven_pct ('model (unproven)'). The ★ / ★★ lean and the board's higher-% grading
+use shown_pct. model_pct itself is left untouched so model_log keeps grading the model for the gate.
 """
 from __future__ import annotations
+import json
 import math
+from pathlib import Path
 
 W_MODEL = {"NHL": 0.0}          # logit-space weight on (model - market); sport missing = leave model % as is
 MARKET_ONLY = ("NFL", "CFB")
 PLAY_MIN_PCT = 52.0
-STRONG_MIN_PCT = 55.0   # Luis OK 2026-10-14: strong tier (★★); live .661 on 274, history .55-.65
+STRONG_MIN_PCT = 55.0   # Luis OK 2026-10-14: strong tier (★★); applies to the SHOWN % since 2026-10-15
+GATE_PATH = Path(__file__).resolve().parents[1] / "data" / "model_gate.json"
+
+
+def load_gate(path: Path = GATE_PATH) -> dict:
+    try:
+        return json.loads(path.read_text(encoding="utf-8"))
+    except Exception:  # missing/broken config = every gate OFF (market % shown)
+        return {"gate": {}}
+
+
+def model_proven(sport: str, mkt: str, gate: dict | None = None) -> bool:
+    g = (gate or load_gate()).get("gate") or {}
+    return bool((g.get(sport) or {}).get(mkt, False))
+
+
+def apply_shown(sport: str, mkt: str, m: dict, gate: dict | None = None) -> None:
+    """Headline % per side: model % if this sport/market passed the gate, else the market no-vig fair %."""
+    proven = model_proven(sport, mkt, gate)
+    for s in m.get("sides") or []:
+        raw = s.get("model_raw_pct", s.get("model_pct"))
+        s["model_unproven_pct"] = None if s.get("model_source", "").startswith("market no-vig") else raw
+        if proven and s.get("model_pct") is not None:
+            s["shown_pct"], s["shown_source"] = s["model_pct"], "model (passed gate)"
+        else:
+            s["shown_pct"] = s.get("novig_pct")
+            s["shown_source"] = "market no-vig fair % (model unproven)"
+    m["shown_basis"] = "model" if proven else "market_novig"
 
 
 def _lg(p: float) -> float:
@@ -23,10 +57,11 @@ def _lg(p: float) -> float:
     return math.log(p / (1 - p))
 
 
-def calibrate_markets(sport: str, markets: dict | None) -> None:
-    """In place: model_pct -> calibrated %, raw kept in model_raw_pct; adds market['lean']."""
+def calibrate_markets(sport: str, markets: dict | None, gate: dict | None = None) -> None:
+    """In place: model_pct -> calibrated %, raw kept in model_raw_pct; adds shown_pct + market['lean']."""
     w = W_MODEL.get(sport)
-    for m in (markets or {}).values():
+    gate = gate or load_gate()
+    for mk, m in (markets or {}).items():
         sides = m.get("sides") or []
         if sport in MARKET_ONLY:  # FPI weight 0: model % = market no-vig % (fills blank spreads/totals)
             for s in sides:
@@ -40,17 +75,18 @@ def calibrate_markets(sport: str, markets: dict | None) -> None:
                 s["model_raw_pct"] = s["model_pct"]
                 s["model_pct"] = round(100 / (1 + math.exp(-(_lg(q) + w * (_lg(raw) - _lg(q))))), 1)
             m["calibration"] = f"{sport} model weight {w} vs market (walk-forward 2026-10-14)"
+        apply_shown(sport, mk, m, gate)
         m["lean"] = lean(sides)
 
 
-def lean(sides: list) -> dict | None:
-    if len(sides) != 2 or any(s.get("model_pct") is None for s in sides):
+def lean(sides: list, key: str = "shown_pct") -> dict | None:
+    if len(sides) != 2 or any(s.get(key) is None for s in sides):
         return None
     a, b = sides
-    if a["model_pct"] == b["model_pct"]:
-        return {"side": None, "pct": a["model_pct"], "play": False, "why": "tie"}
-    hi = a if a["model_pct"] > b["model_pct"] else b
-    ok = hi["model_pct"] >= PLAY_MIN_PCT
-    return {"side": hi.get("side"), "label": hi.get("label"), "pct": hi["model_pct"], "play": ok,
-            "strong": hi["model_pct"] >= STRONG_MIN_PCT,
+    if a[key] == b[key]:
+        return {"side": None, "pct": a[key], "play": False, "why": "tie", "basis": key}
+    hi = a if a[key] > b[key] else b
+    ok = hi[key] >= PLAY_MIN_PCT
+    return {"side": hi.get("side"), "label": hi.get("label"), "pct": hi[key], "play": ok, "basis": key,
+            "strong": hi[key] >= STRONG_MIN_PCT,
             "why": f">= {PLAY_MIN_PCT:g}%" if ok else f"< {PLAY_MIN_PCT:g}% = coin flip, no play"}

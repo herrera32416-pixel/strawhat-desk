@@ -32,6 +32,12 @@ def main():
     if not rows:
         print("[nhl_refresh] no upcoming NHL rows"); return 0
     stats = paper_model.attach_paper("NHL", rows, by_id, now, 2)
+    try:  # 2026-10-15: keep the headline % = market no-vig (model gate) + ★ lean after the refresh
+        import model_calib
+        for r in rows:
+            model_calib.calibrate_markets("NHL", (r.get("paper") or {}).get("markets"))
+    except Exception as e:  # noqa: BLE001
+        print(f"[nhl_refresh] model_calib error: {type(e).__name__}: {e}", file=sys.stderr)
     for r in rows:
         r["paper"]["refreshed_ct"] = now.isoformat(timespec="seconds")
     blob = json.dumps(doc, indent=2, ensure_ascii=False)

@@ -226,6 +226,13 @@ def grade(now_ct: datetime, path: Path = PATH) -> int:
 
 
 def summarize(d: dict) -> dict:
+    """Per sport x market. shown_side_W_L grades the board's SHOWN higher-% side (2026-10-15: market no-vig side
+    unless model_gate.json marks that sport/market proven, then the model side)."""
+    try:
+        import model_calib
+        gate = model_calib.load_gate()
+    except Exception:  # noqa: BLE001
+        model_calib, gate = None, {"gate": {}}
     out = {}
     for sport in SPORTS:
         for mk in ("ml", "spread", "total"):
@@ -239,6 +246,10 @@ def summarize(d: dict) -> dict:
                                     "brier_model": round(sum(e["model_brier"] for e in g) / len(g), 4),
                                     "brier_market": round(sum(e["novig_brier"] for e in g if e.get("novig_brier") is not None)
                                                           / max(1, sum(1 for e in g if e.get("novig_brier") is not None)), 4)}
+            src = "model" if (model_calib and model_calib.model_proven(sport, mk, gate)) else "novig"
+            sw = sum(1 for e in g if e.get(f"{src}_side_won") is True)
+            sl = sum(1 for e in g if e.get(f"{src}_side_won") is False)
+            out[f"{sport} {mk}"].update(shown_basis=src, shown_side_W_L=f"{sw}-{sl}")
     return out
 
 
