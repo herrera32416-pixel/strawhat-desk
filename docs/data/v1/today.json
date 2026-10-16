@@ -2570,12 +2570,12 @@
                   "fair_pct": 34.3,
                   "blend_pct": 34.3,
                   "_bedge": -1.4618083338462484,
-                  "model_unproven_pct": 39.7,
-                  "shown_pct": 34.3,
-                  "shown_source": "market no-vig fair % (model unproven)",
                   "novig_prev_pct": 34.3,
                   "fair_book": "LowVig no-vig",
-                  "model_raw_pct": 39.7
+                  "model_raw_pct": 39.7,
+                  "model_unproven_pct": 39.7,
+                  "shown_pct": 34.3,
+                  "shown_source": "market no-vig fair % (model unproven)"
                 },
                 {
                   "side": "home",
@@ -2594,14 +2594,15 @@
                   "fair_pct": 65.7,
                   "blend_pct": 65.7,
                   "_bedge": -2.8059364999363123,
-                  "model_unproven_pct": 60.3,
-                  "shown_pct": 65.7,
-                  "shown_source": "market no-vig fair % (model unproven)",
                   "novig_prev_pct": 65.7,
                   "fair_book": "LowVig no-vig",
-                  "model_raw_pct": 60.3
+                  "model_raw_pct": 60.3,
+                  "model_unproven_pct": 60.3,
+                  "shown_pct": 65.7,
+                  "shown_source": "market no-vig fair % (model unproven)"
                 }
               ],
+              "fair_source": "LowVig no-vig",
               "calibration": "NHL model weight 0.0 vs market (walk-forward 2026-10-14)",
               "shown_basis": "market_novig",
               "lean": {
@@ -2614,8 +2615,7 @@
                 "edge_vs_price_pp": -2.9,
                 "strong": false,
                 "why": "no edge, pass"
-              },
-              "fair_source": "LowVig no-vig"
+              }
             },
             "spread": {
               "novig_source": "DraftKings pair",
@@ -2640,12 +2640,12 @@
                   "fair_pct": 53.3,
                   "blend_pct": 56.3,
                   "_bedge": -2.3284796012068787,
-                  "model_unproven_pct": 58.9,
-                  "shown_pct": 56.0,
-                  "shown_source": "market no-vig fair % (model unproven)",
                   "novig_prev_pct": 56.3,
                   "fair_book": "LowVig no-vig",
-                  "model_raw_pct": 58.9
+                  "model_raw_pct": 58.9,
+                  "model_unproven_pct": 58.9,
+                  "shown_pct": 56.0,
+                  "shown_source": "market no-vig fair % (model unproven)"
                 },
                 {
                   "side": "home",
@@ -2664,14 +2664,15 @@
                   "fair_pct": 46.7,
                   "blend_pct": 43.7,
                   "_bedge": -1.8037518037518019,
-                  "model_unproven_pct": 41.1,
-                  "shown_pct": 44.0,
-                  "shown_source": "market no-vig fair % (model unproven)",
                   "novig_prev_pct": 43.7,
                   "fair_book": "LowVig no-vig",
-                  "model_raw_pct": 41.1
+                  "model_raw_pct": 41.1,
+                  "model_unproven_pct": 41.1,
+                  "shown_pct": 44.0,
+                  "shown_source": "market no-vig fair % (model unproven)"
                 }
               ],
+              "fair_source": "LowVig no-vig",
               "calibration": "NHL model weight 0.0 vs market (walk-forward 2026-10-14)",
               "shown_basis": "market_novig",
               "lean": {
@@ -2684,8 +2685,7 @@
                 "edge_vs_price_pp": -2.7,
                 "strong": false,
                 "why": "no edge, pass"
-              },
-              "fair_source": "LowVig no-vig"
+              }
             },
             "total": {
               "novig_source": "DraftKings pair",
@@ -2710,12 +2710,12 @@
                   "fair_pct": 51.7,
                   "blend_pct": 51.7,
                   "_bedge": -2.392027795345475,
-                  "model_unproven_pct": 54.9,
-                  "shown_pct": 53.7,
-                  "shown_source": "market no-vig fair % (model unproven)",
                   "novig_prev_pct": 51.7,
                   "fair_book": "LowVig no-vig",
-                  "model_raw_pct": 54.9
+                  "model_raw_pct": 54.9,
+                  "model_unproven_pct": 54.9,
+                  "shown_pct": 53.7,
+                  "shown_source": "market no-vig fair % (model unproven)"
                 },
                 {
                   "side": "under",
@@ -2734,14 +2734,15 @@
                   "fair_pct": 48.3,
                   "blend_pct": 48.3,
                   "_bedge": -2.231462076577506,
-                  "model_unproven_pct": 45.1,
-                  "shown_pct": 46.3,
-                  "shown_source": "market no-vig fair % (model unproven)",
                   "novig_prev_pct": 48.3,
                   "fair_book": "LowVig no-vig",
-                  "model_raw_pct": 45.1
+                  "model_raw_pct": 45.1,
+                  "model_unproven_pct": 45.1,
+                  "shown_pct": 46.3,
+                  "shown_source": "market no-vig fair % (model unproven)"
                 }
               ],
+              "fair_source": "LowVig no-vig",
               "calibration": "NHL model weight 0.0 vs market (walk-forward 2026-10-14)",
               "shown_basis": "market_novig",
               "lean": {
@@ -2754,10 +2755,10 @@
                 "edge_vs_price_pp": -0.4,
                 "strong": false,
                 "why": "no edge, pass"
-              },
-              "fair_source": "LowVig no-vig"
+              }
             }
-          }
+          },
+          "refreshed_ct": "2026-10-15T23:34:15-05:00"
         },
         "market_edge": {
           "ml": {
@@ -3104,12 +3105,12 @@
                   "fair_pct": 52.2,
                   "blend_pct": 52.2,
                   "_bedge": -2.371541501976282,
-                  "model_unproven_pct": 54.0,
-                  "shown_pct": 51.6,
-                  "shown_source": "market no-vig fair % (model unproven)",
                   "novig_prev_pct": 52.2,
                   "fair_book": "LowVig no-vig",
-                  "model_raw_pct": 54.0
+                  "model_raw_pct": 54.0,
+                  "model_unproven_pct": 54.0,
+                  "shown_pct": 51.6,
+                  "shown_source": "market no-vig fair % (model unproven)"
                 },
                 {
                   "side": "home",
@@ -3128,14 +3129,15 @@
                   "fair_pct": 47.8,
                   "blend_pct": 47.8,
                   "_bedge": -2.1739130434782594,
-                  "model_unproven_pct": 46.0,
-                  "shown_pct": 48.4,
-                  "shown_source": "market no-vig fair % (model unproven)",
                   "novig_prev_pct": 47.8,
                   "fair_book": "LowVig no-vig",
-                  "model_raw_pct": 46.0
+                  "model_raw_pct": 46.0,
+                  "model_unproven_pct": 46.0,
+                  "shown_pct": 48.4,
+                  "shown_source": "market no-vig fair % (model unproven)"
                 }
               ],
+              "fair_source": "LowVig no-vig",
               "calibration": "NHL model weight 0.0 vs market (walk-forward 2026-10-14)",
               "shown_basis": "market_novig",
               "lean": {
@@ -3148,8 +3150,7 @@
                 "edge_vs_price_pp": -2.9,
                 "strong": false,
                 "why": "no edge, pass"
-              },
-              "fair_source": "LowVig no-vig"
+              }
             },
             "spread": {
               "novig_source": "DraftKings pair",
@@ -3174,12 +3175,12 @@
                   "fair_pct": 33.4,
                   "blend_pct": 31.5,
                   "_bedge": -1.3262110885982725,
-                  "model_unproven_pct": 35.6,
-                  "shown_pct": 32.1,
-                  "shown_source": "market no-vig fair % (model unproven)",
                   "novig_prev_pct": 31.5,
                   "fair_book": "LowVig no-vig",
-                  "model_raw_pct": 35.6
+                  "model_raw_pct": 35.6,
+                  "model_unproven_pct": 35.6,
+                  "shown_pct": 32.1,
+                  "shown_source": "market no-vig fair % (model unproven)"
                 },
                 {
                   "side": "home",
@@ -3198,14 +3199,15 @@
                   "fair_pct": 66.6,
                   "blend_pct": 68.5,
                   "_bedge": -2.889245585874778,
-                  "model_unproven_pct": 64.4,
-                  "shown_pct": 67.9,
-                  "shown_source": "market no-vig fair % (model unproven)",
                   "novig_prev_pct": 68.5,
                   "fair_book": "LowVig no-vig",
-                  "model_raw_pct": 64.4
+                  "model_raw_pct": 64.4,
+                  "model_unproven_pct": 64.4,
+                  "shown_pct": 67.9,
+                  "shown_source": "market no-vig fair % (model unproven)"
                 }
               ],
+              "fair_source": "LowVig no-vig",
               "calibration": "NHL model weight 0.0 vs market (walk-forward 2026-10-14)",
               "shown_basis": "market_novig",
               "lean": {
@@ -3218,8 +3220,7 @@
                 "edge_vs_price_pp": -3.5,
                 "strong": false,
                 "why": "no edge, pass"
-              },
-              "fair_source": "LowVig no-vig"
+              }
             },
             "total": {
               "novig_source": "DraftKings pair",
@@ -3244,12 +3245,12 @@
                   "fair_pct": 46.8,
                   "blend_pct": 46.8,
                   "_bedge": -2.027241051631301,
-                  "model_unproven_pct": 51.2,
-                  "shown_pct": 46.8,
-                  "shown_source": "market no-vig fair % (model unproven)",
                   "novig_prev_pct": 46.8,
                   "fair_book": "DraftKings no-vig",
-                  "model_raw_pct": 51.2
+                  "model_raw_pct": 51.2,
+                  "model_unproven_pct": 51.2,
+                  "shown_pct": 46.8,
+                  "shown_source": "market no-vig fair % (model unproven)"
                 },
                 {
                   "side": "under",
@@ -3268,14 +3269,15 @@
                   "fair_pct": 53.2,
                   "blend_pct": 53.2,
                   "_bedge": -2.3088023088023046,
-                  "model_unproven_pct": 48.8,
-                  "shown_pct": 53.2,
-                  "shown_source": "market no-vig fair % (model unproven)",
                   "novig_prev_pct": 53.2,
                   "fair_book": "DraftKings no-vig",
-                  "model_raw_pct": 48.8
+                  "model_raw_pct": 48.8,
+                  "model_unproven_pct": 48.8,
+                  "shown_pct": 53.2,
+                  "shown_source": "market no-vig fair % (model unproven)"
                 }
               ],
+              "fair_source": "DraftKings no-vig",
               "calibration": "NHL model weight 0.0 vs market (walk-forward 2026-10-14)",
               "shown_basis": "market_novig",
               "lean": {
@@ -3288,10 +3290,10 @@
                 "edge_vs_price_pp": -2.4,
                 "strong": false,
                 "why": "no edge, pass"
-              },
-              "fair_source": "DraftKings no-vig"
+              }
             }
-          }
+          },
+          "refreshed_ct": "2026-10-15T23:34:15-05:00"
         },
         "market_edge": {
           "ml": {
