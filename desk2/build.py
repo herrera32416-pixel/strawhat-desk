@@ -50,9 +50,9 @@ def col(r):
     def p(k): v=r.get(k); return "—" if v is None else f"{v:.0f}%"
     ag="✓ agree" if r["agree"] else "✗ split" if r["agree"] is False else ""
     return f'''<div class="col{' star' if s else ''}"><div class="mk">{ {"ml":"MONEYLINE","spread":"SPREAD","total":"TOTAL"}[m]}{res}</div>
-<div class="pk">{E(pick(r))}</div>{fair}{tag}
+<div class="pk">{E(pick(r))}</div>{tag}
 <div class="px">Bovada <b>{am(pr.get("bovada"))}</b></div><div class="ref">ref DK {am(pr.get("dk"))} · Betr {am(pr.get("betr"))}</div>
-<div class="mo"><div class="mg"><div><b>{p("strawhat_pct")}</b><span>Strawhat</span></div><div><b>{p("betsim_pct")}</b><span>Sim Bot</span></div></div>blend {p("blend_pct")} · {ag} · <i>unproven</i></div></div>'''
+<div class="mo"><div class="mg"><div><b>{p("strawhat_pct")}</b><span>Strawhat</span></div><div><b>{p("betsim_pct")}</b><span>Sim Bot</span></div></div>blend {p("blend_pct")} · {ag}</div></div>'''
 def main():
     mock=not os.path.exists(REAL); rows=json.load(open(MOCK if mock else REAL))
     if isinstance(rows,dict): rows=rows.get("games",rows.get("rows",[]))
@@ -96,7 +96,7 @@ def main():
 .px{{font-size:12px}}.ref{{font-size:9px;color:#889}}.mo{{font-size:9px;color:#889;margin-top:4px;line-height:1.3}}.mg{{display:flex;gap:6px;margin:2px 0 3px}}.mg div{{flex:1;background:#1c2430;border-radius:4px;padding:3px 0;text-align:center}}.mg b{{display:block;font-size:17px;color:#7cc4ff;font-weight:800}}.mg span{{font-size:8px;color:#9aa}}
 .n{{font-size:11px;color:#aa9;margin-top:6px}}.rW{{color:#3c3}}.rL{{color:#e44}}.rP{{color:#aaa}}</style></head><body>{banner}
 <div class="top"><div class="t">New DESK</div><div class="rec">★ plays: {w}-{l}-{p}</div>
-<div class="h">STAGING · not live · built {now} · flat $20 · big = no-vig fair % · ★ ≥1pp / ★★ ≥3pp vs Bovada · straight bets only</div></div>
+<div class="h">STAGING · not live · built {now} · flat $20 · big = our model % · ★ ≥1pp / ★★ ≥3pp vs Bovada · straight bets only</div></div>
 {"".join(cards) or '<p style="padding:14px">No games today.</p>'}</body></html>'''
     open(os.path.join(H,"index.html"),"w").write(page); print("built","MOCK" if mock else "REAL",len(rows),"rows",len(cards),"games")
 main()
