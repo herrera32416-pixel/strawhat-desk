@@ -52,7 +52,7 @@ def col(r):
     return f'''<div class="col{' star' if s else ''}"><div class="mk">{ {"ml":"MONEYLINE","spread":"SPREAD","total":"TOTAL"}[m]}{res}</div>
 <div class="pk">{E(pick(r))}</div>{fair}{tag}
 <div class="px">Bovada <b>{am(pr.get("bovada"))}</b></div><div class="ref">ref DK {am(pr.get("dk"))} · Betr {am(pr.get("betr"))}</div>
-<div class="mo">sim {p("betsim_pct")} · SH {p("strawhat_pct")} · blend {p("blend_pct")}<br>{ag} · <i>unproven</i></div></div>'''
+<div class="mo"><div class="mg"><div><b>{p("strawhat_pct")}</b><span>Strawhat</span></div><div><b>{p("betsim_pct")}</b><span>Sim Bot</span></div></div>blend {p("blend_pct")} · {ag} · <i>unproven</i></div></div>'''
 def main():
     mock=not os.path.exists(REAL); rows=json.load(open(MOCK if mock else REAL))
     if isinstance(rows,dict): rows=rows.get("games",rows.get("rows",[]))
@@ -93,7 +93,7 @@ def main():
 .mk{{font-size:9px;letter-spacing:.06em;color:#9aa;font-weight:700}}.pk{{font-size:12px;font-weight:600;margin:3px 0;line-height:1.2;min-height:2.4em}}
 .f{{font-size:22px;font-weight:800;line-height:1.1}}.f.na{{font-size:14px;color:#778;padding:4px 0}}.fs{{font-size:9px;color:#889}}
 .tag{{font-size:12px;margin:4px 0;font-weight:700}}.s{{color:#f5c518}}.s small{{font-size:10px;font-weight:400}}.pass{{color:#777;font-weight:400;font-size:11px}}
-.px{{font-size:12px}}.ref{{font-size:9px;color:#889}}.mo{{font-size:9px;color:#778;margin-top:4px;line-height:1.3}}
+.px{{font-size:12px}}.ref{{font-size:9px;color:#889}}.mo{{font-size:9px;color:#889;margin-top:4px;line-height:1.3}}.mg{{display:flex;gap:6px;margin:2px 0 3px}}.mg div{{flex:1;background:#1c2430;border-radius:4px;padding:3px 0;text-align:center}}.mg b{{display:block;font-size:17px;color:#7cc4ff;font-weight:800}}.mg span{{font-size:8px;color:#9aa}}
 .n{{font-size:11px;color:#aa9;margin-top:6px}}.rW{{color:#3c3}}.rL{{color:#e44}}.rP{{color:#aaa}}</style></head><body>{banner}
 <div class="top"><div class="t">New DESK</div><div class="rec">★ plays: {w}-{l}-{p}</div>
 <div class="h">STAGING · not live · built {now} · flat $20 · big = no-vig fair % · ★ ≥1pp / ★★ ≥3pp vs Bovada · straight bets only</div></div>
