@@ -75,9 +75,12 @@ def main():
         cols="".join(col(bym[m]) if m in bym else '<div class="col empty"><div class="mk">'+m.upper()+'</div><div class="pass">no line</div></div>' for m in ("ml","spread","total"))
         hot=any(stars(edge(r)) for r in bym.values())
         notes=" · ".join(dict.fromkeys(r["notes"] for r in rs if r.get("notes")))
-        cards.append(f'''<div class="c{' hot' if hot else ''}"><div class="h">{E(str(r0.get("sport","")))} · {t}</div>
+        sp=str(r0.get("sport","")).upper()
+        cards.append(f'''<div class="c{' hot' if hot else ''}" data-sp="{E(sp)}"><div class="h">{E(str(r0.get("sport","")))} · {t}</div>
 <div class="m">{E(r0["away"])} <span>@</span> {E(r0["home"])}</div><div class="cols">{cols}</div>
 {f'<div class="n">{E(notes)}</div>' if notes else ''}</div>''')
+    sports=sorted({c.split('data-sp="')[1].split('"')[0] for c in cards})
+    tabs='<div class="tabs"><button class="on" data-t="ALL">All</button>'+"".join(f'<button data-t="{E(x)}">{E(x)} ({sum(("data-sp=\""+x+"\"") in c for c in cards)})</button>' for x in sports)+'</div>'
     banner='<div class="mock">MOCK DATA — real feed not yet available</div>' if mock else ''
     now=dt.datetime.now(CT).strftime("%b %-d %-I:%M %p CT")
     page=f'''<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>New DESK</title><style>
@@ -94,9 +97,10 @@ def main():
 .f{{font-size:22px;font-weight:800;line-height:1.1}}.f.na{{font-size:14px;color:#778;padding:4px 0}}.fs{{font-size:9px;color:#889}}
 .tag{{font-size:12px;margin:4px 0;font-weight:700}}.s{{color:#f5c518}}.s small{{font-size:10px;font-weight:400}}.pass{{color:#777;font-weight:400;font-size:11px}}
 .px{{font-size:12px}}.ref{{font-size:9px;color:#889}}.mo{{font-size:9px;color:#889;margin-top:4px;line-height:1.3}}.mg{{display:flex;gap:6px;margin:2px 0 3px}}.mg div{{flex:1;background:#1c2430;border-radius:4px;padding:3px 0;text-align:center}}.mg b{{display:block;font-size:17px;color:#7cc4ff;font-weight:800}}.mg span{{font-size:8px;color:#9aa}}
+.tabs{{display:flex;gap:6px;overflow-x:auto;margin-top:8px}}.tabs button{{background:#232731;color:#cfd;border:0;border-radius:14px;padding:5px 11px;font-size:12px;font-weight:700;white-space:nowrap}}.tabs button.on{{background:#f5c518;color:#111}}
 .n{{font-size:11px;color:#aa9;margin-top:6px}}.rW{{color:#3c3}}.rL{{color:#e44}}.rP{{color:#aaa}}</style></head><body>{banner}
 <div class="top"><div class="t">New DESK</div><div class="rec">★ plays: {w}-{l}-{p}</div>
-<div class="h">STAGING · not live · built {now} · flat $20 · big = our model % · ★ ≥1pp / ★★ ≥3pp vs Bovada · straight bets only</div></div>
-{"".join(cards) or '<p style="padding:14px">No games today.</p>'}</body></html>'''
+<div class="h">STAGING · not live · built {now} · flat $20 · big = our model % · ★ ≥1pp / ★★ ≥3pp vs Bovada · straight bets only</div>{tabs}</div>
+{"".join(cards) or '<p style="padding:14px">No games today.</p>'}<script>document.querySelectorAll('.tabs button').forEach(b=>b.onclick=()=>{{document.querySelectorAll('.tabs button').forEach(x=>x.classList.toggle('on',x===b));const t=b.dataset.t;document.querySelectorAll('.c').forEach(c=>c.style.display=(t==='ALL'||c.dataset.sp===t)?'':'none');scrollTo(0,0)}})</script></body></html>'''
     open(os.path.join(H,"index.html"),"w").write(page); print("built","MOCK" if mock else "REAL",len(rows),"rows",len(cards),"games")
 main()
