@@ -22,8 +22,8 @@ def norm(r):
         bk=str(r.get("book") or "").lower(); k="bovada" if "bovada" in bk else "dk" if "draft" in bk else "betr" if "betr" in bk else None
         r["prices"]={k:r.get("best_price")} if k else {}
     r["prices"]={k:num(v) for k,v in r["prices"].items()}
-    for k in ("pinnacle_novig_pct","betsim_pct","strawhat_pct","blend_pct"): r[k]=pct(r.get(k))
-    a=r.get("agree"); r["agree"]=a.upper()=="AGREE" if isinstance(a,str) else bool(a) if a is not None else None
+    for k in ("pinnacle_novig_pct","betsim_pct"): r[k]=pct(r.get(k))
+    for k in ("strawhat_pct","strawhat_src","blend_pct","agree"): r.pop(k,None)   # Strawhat model dropped Oct 17
     if not r.get("game_id"): r["game_id"]=f'{r["away"]}@{r["home"]}|{r.get("kickoff_ct")}'
     return r
 def pick(r):
@@ -48,18 +48,20 @@ def col(r):
     tag=f'<div class="tag s">{s} <small>{e:+.1f}pp</small></div>' if s else '<div class="tag pass">no edge, pass</div>'
     res=f' <span class="r{r["result"]}">{r["result"]}</span>' if r.get("result") in ("W","L","P") else ""
     def p(k): v=r.get(k); return "—" if v is None else f"{v:.0f}%"
-    ag="✓ agree" if r["agree"] else "✗ split" if r["agree"] is False else ""
     return f'''<div class="col{' star' if s else ''}"><div class="mk">{ {"ml":"MONEYLINE","spread":"SPREAD","total":"TOTAL"}[m]}{res}</div>
 <div class="pk">{E(pick(r))}</div>{tag}
 <div class="px">Bovada <b>{am(pr.get("bovada"))}</b></div><div class="ref">ref DK {am(pr.get("dk"))} · Betr {am(pr.get("betr"))}</div>
-<div class="mo"><div class="mg"><div><b>{p("strawhat_pct")}</b><span>Strawhat</span></div><div><b>{p("betsim_pct")}</b><span>Sim Bot</span></div></div>blend {p("blend_pct")} · {ag}</div></div>'''
+<div class="mo"><div class="mg"><div><b>{p("betsim_pct")}</b><span>Sim Bot model</span></div></div></div></div>'''
 def main():
     mock=not os.path.exists(REAL); rows=json.load(open(MOCK if mock else REAL))
     if isinstance(rows,dict): rows=rows.get("games",rows.get("rows",[]))
     rows=[norm(r) for r in rows if r.get("market") in ("ml","spread","total")]  # straight bets only
-    w=l=p=0
+    w=l=p=0; usd=0.0
     for r in rows:
-        if stars(edge(r)): res=r.get("result"); w+=res=="W"; l+=res=="L"; p+=res=="P"
+        if stars(edge(r)):
+            res=r.get("result"); w+=res=="W"; l+=res=="L"; p+=res=="P"; o=r["prices"].get("bovada")
+            if res=="W" and o: usd+=20*(o/100 if o>0 else 100/-o)
+            elif res=="L": usd-=20
     today=dt.datetime.now(CT).date(); games={}
     for r in rows:
         k=kick(r)
@@ -99,8 +101,8 @@ def main():
 .px{{font-size:12px}}.ref{{font-size:9px;color:#889}}.mo{{font-size:9px;color:#889;margin-top:4px;line-height:1.3}}.mg{{display:flex;gap:6px;margin:2px 0 3px}}.mg div{{flex:1;background:#1c2430;border-radius:4px;padding:3px 0;text-align:center}}.mg b{{display:block;font-size:17px;color:#7cc4ff;font-weight:800}}.mg span{{font-size:8px;color:#9aa}}
 .tabs{{display:flex;gap:6px;overflow-x:auto;margin-top:8px}}.tabs button{{background:#232731;color:#cfd;border:0;border-radius:14px;padding:5px 11px;font-size:12px;font-weight:700;white-space:nowrap}}.tabs button.on{{background:#f5c518;color:#111}}
 .n{{font-size:11px;color:#aa9;margin-top:6px}}.rW{{color:#3c3}}.rL{{color:#e44}}.rP{{color:#aaa}}</style></head><body>{banner}
-<div class="top"><div class="t">New DESK</div><div class="rec">★ plays: {w}-{l}-{p}</div>
-<div class="h">STAGING · not live · built {now} · flat $20 · big = our model % · ★ ≥1pp / ★★ ≥3pp vs Bovada · straight bets only</div>{tabs}</div>
+<div class="top"><div class="t">New DESK</div><div class="rec">★ plays: {w}-{l}-{p} · {"+" if usd>=0 else "−"}${abs(usd):.0f} at $20 flat</div>
+<div class="h">STAGING · not live · built {now} · flat $20 · big = Sim Bot model % · ★ ≥1pp / ★★ ≥3pp vs Bovada · straight bets only</div>{tabs}</div>
 {"".join(cards) or '<p style="padding:14px">No games today.</p>'}<script>document.querySelectorAll('.tabs button').forEach(b=>b.onclick=()=>{{document.querySelectorAll('.tabs button').forEach(x=>x.classList.toggle('on',x===b));const t=b.dataset.t;document.querySelectorAll('.c').forEach(c=>c.style.display=(t==='ALL'||c.dataset.sp===t)?'':'none');scrollTo(0,0)}})</script></body></html>'''
     open(os.path.join(H,"index.html"),"w").write(page); print("built","MOCK" if mock else "REAL",len(rows),"rows",len(cards),"games")
 main()
