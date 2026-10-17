@@ -143,7 +143,7 @@
    "lean": -1.81,
    "price": -110,
    "status": "open",
-   "updated_ct": "2026-10-16T13:06-05:00",
+   "updated_ct": "2026-10-17T12:15-05:00",
    "logged_ct": "2026-10-12T17:09-05:00"
   },
   {
@@ -151,12 +151,12 @@
    "game": "Northern Illinois @ Wyoming",
    "kick_iso": "2026-10-17T14:30:00-05:00",
    "gameday": "2026-10-17",
-   "line": 41.5,
+   "line": 42.5,
    "side": "over",
    "lean": 1.97,
    "price": -110,
    "status": "open",
-   "updated_ct": "2026-10-16T13:06-05:00",
+   "updated_ct": "2026-10-17T12:15-05:00",
    "logged_ct": "2026-10-12T17:09-05:00"
   },
   {
@@ -164,12 +164,12 @@
    "game": "Arkansas @ Vanderbilt",
    "kick_iso": "2026-10-17T18:00:00-05:00",
    "gameday": "2026-10-17",
-   "line": 49.5,
+   "line": 48.5,
    "side": "under",
    "lean": -1.82,
    "price": -110,
    "status": "open",
-   "updated_ct": "2026-10-16T13:06-05:00",
+   "updated_ct": "2026-10-17T12:15-05:00",
    "logged_ct": "2026-10-12T17:09-05:00"
   },
   {
@@ -177,13 +177,26 @@
    "game": "Wisconsin @ UCLA",
    "kick_iso": "2026-10-17T18:30:00-05:00",
    "gameday": "2026-10-17",
-   "line": 43.5,
+   "line": 42.5,
    "side": "over",
    "lean": 1.57,
    "price": -110,
    "status": "open",
-   "updated_ct": "2026-10-16T13:06-05:00",
+   "updated_ct": "2026-10-17T12:15-05:00",
    "logged_ct": "2026-10-12T17:09-05:00"
+  },
+  {
+   "espn_id": "401871092",
+   "game": "South Alabama @ Marshall",
+   "kick_iso": "2026-10-20T18:30:00-05:00",
+   "gameday": "2026-10-20",
+   "line": 62.5,
+   "side": "under",
+   "lean": -2.42,
+   "price": -110,
+   "status": "open",
+   "updated_ct": "2026-10-17T12:15-05:00",
+   "logged_ct": "2026-10-17T12:15-05:00"
   }
  ]
 }
