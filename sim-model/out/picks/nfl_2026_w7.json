@@ -1,0 +1,879 @@
+{
+ "league": "nfl",
+ "slate": "Sun Oct 11 + Mon Oct 12 2026 (nflverse week 5)",
+ "sim_version": "v2 (less shrinkage, walk-forward margin/total stretch; Normal probs)",
+ "sim_live": false,
+ "lines": "2026-10-17T12:15:42-05:00 desk Odds API pull (no new credits spent); Bovada not in that pull, DraftKings used",
+ "note": "PAPER. v2 still loses to the closing line in walk-forward tests; tier = size of sim-vs-market gap, NOT proven edge.",
+ "games": [
+  {
+   "game_id": "2026_06_ARI_LA",
+   "kickoff_utc": "2026-10-18T20:05:00Z",
+   "away": "ARI",
+   "home": "LA",
+   "book": "bovada",
+   "qbs": {
+    "away": "Jacoby Brissett",
+    "home": "Matthew Stafford",
+    "espn_qb_injuries": {
+     "ARI": [],
+     "LA": []
+    }
+   },
+   "sim": {
+    "home_pts": 31.1,
+    "away_pts": 20.3,
+    "margin": 10.8,
+    "total": 51.3
+   },
+   "markets": [
+    {
+     "market": "ml",
+     "pick": "ARI ML",
+     "price": 575,
+     "sim_pct": 20.5,
+     "market_pct": 14.1,
+     "gap_pts": 6.4,
+     "tier": "B",
+     "status": "paper"
+    },
+    {
+     "market": "spread",
+     "pick": "ARI +12.5",
+     "price": -110,
+     "sim_pct": 55.3,
+     "market_pct": 50.0,
+     "gap_pts": 5.3,
+     "tier": "B",
+     "status": "paper"
+    },
+    {
+     "market": "total",
+     "pick": "Under 51.5",
+     "price": -110,
+     "sim_pct": 50.5,
+     "market_pct": 50.0,
+     "gap_pts": 0.5,
+     "tier": "none",
+     "status": "paper",
+     "v3_line_error_model": {
+      "over_price": -110,
+      "under_price": -110,
+      "pred_total_minus_line": 1.78,
+      "over_pct": 55.4,
+      "note": "v3.1 research model (trained with archived forecasts 2022+; forecast-weather walk-forward 2022-25: LL 0.6905 vs close 0.6932, +4.2% ROI at 4+ pts) - paper"
+     }
+    }
+   ],
+   "weather": null,
+   "news_delta_flags": [],
+   "matchup_note": "matchup note unavailable (tendency features not built in this run)"
+  },
+  {
+   "game_id": "2026_06_BAL_CLE",
+   "kickoff_utc": "2026-10-18T17:00:00Z",
+   "away": "BAL",
+   "home": "CLE",
+   "book": "bovada",
+   "qbs": {
+    "away": "Lamar Jackson",
+    "home": "Deshaun Watson",
+    "espn_qb_injuries": {
+     "BAL": [
+      "Lamar Jackson Out"
+     ],
+     "CLE": [
+      "Taylen Green Out"
+     ]
+    }
+   },
+   "sim": {
+    "home_pts": 16.5,
+    "away_pts": 29.2,
+    "margin": -12.7,
+    "total": 45.7
+   },
+   "markets": [
+    {
+     "market": "ml",
+     "pick": "BAL ML",
+     "price": -170,
+     "sim_pct": 83.4,
+     "market_pct": 60.7,
+     "gap_pts": 22.8,
+     "tier": "A",
+     "status": "paper"
+    },
+    {
+     "market": "spread",
+     "pick": "BAL -3",
+     "price": -110,
+     "sim_pct": 77.1,
+     "market_pct": 50.0,
+     "gap_pts": 27.1,
+     "tier": "A",
+     "status": "paper"
+    },
+    {
+     "market": "total",
+     "pick": "Over 40",
+     "price": -110,
+     "sim_pct": 66.4,
+     "market_pct": 50.0,
+     "gap_pts": 16.4,
+     "tier": "A",
+     "status": "paper",
+     "v3_line_error_model": {
+      "over_price": -110,
+      "under_price": -110,
+      "pred_total_minus_line": 1.12,
+      "over_pct": 53.4,
+      "note": "v3.1 research model (trained with archived forecasts 2022+; forecast-weather walk-forward 2022-25: LL 0.6905 vs close 0.6932, +4.2% ROI at 4+ pts) - paper"
+     }
+    }
+   ],
+   "weather": null,
+   "news_delta_flags": [
+    "QB-CHANGE BAL: starter Lamar Jackson vs recent starter (QB adj +0.20 EPA/db). Sim vs line on BAL's side: +9.7 pts"
+   ],
+   "matchup_note": "matchup note unavailable (tendency features not built in this run)"
+  },
+  {
+   "game_id": "2026_06_BUF_LV",
+   "kickoff_utc": "2026-10-18T20:25:00Z",
+   "away": "BUF",
+   "home": "LV",
+   "book": "bovada",
+   "qbs": {
+    "away": "Josh Allen",
+    "home": "Kirk Cousins",
+    "espn_qb_injuries": {
+     "BUF": [],
+     "LV": []
+    }
+   },
+   "sim": {
+    "home_pts": 22.6,
+    "away_pts": 30.0,
+    "margin": -7.5,
+    "total": 52.6
+   },
+   "markets": [
+    {
+     "market": "ml",
+     "pick": "BUF ML",
+     "price": -230,
+     "sim_pct": 71.6,
+     "market_pct": 66.9,
+     "gap_pts": 4.7,
+     "tier": "C",
+     "status": "paper"
+    },
+    {
+     "market": "spread",
+     "pick": "BUF -4.5",
+     "price": -110,
+     "sim_pct": 59.0,
+     "market_pct": 50.0,
+     "gap_pts": 9.0,
+     "tier": "A",
+     "status": "paper"
+    },
+    {
+     "market": "total",
+     "pick": "Under 53.5",
+     "price": -110,
+     "sim_pct": 52.7,
+     "market_pct": 50.0,
+     "gap_pts": 2.7,
+     "tier": "C",
+     "status": "paper",
+     "v3_line_error_model": {
+      "over_price": -110,
+      "under_price": -110,
+      "pred_total_minus_line": 0.94,
+      "over_pct": 52.9,
+      "note": "v3.1 research model (trained with archived forecasts 2022+; forecast-weather walk-forward 2022-25: LL 0.6905 vs close 0.6932, +4.2% ROI at 4+ pts) - paper"
+     }
+    }
+   ],
+   "weather": null,
+   "news_delta_flags": [],
+   "matchup_note": "matchup note unavailable (tendency features not built in this run)"
+  },
+  {
+   "game_id": "2026_06_CAR_PHI",
+   "kickoff_utc": "2026-10-18T17:00:00Z",
+   "away": "CAR",
+   "home": "PHI",
+   "book": "bovada",
+   "qbs": {
+    "away": "Bryce Young",
+    "home": "Tanner McKee",
+    "espn_qb_injuries": {
+     "CAR": [
+      "Haynes King Out"
+     ],
+     "PHI": [
+      "Joe Milton III Out",
+      "Jalen Hurts Injured Reserve"
+     ]
+    }
+   },
+   "sim": {
+    "home_pts": 21.0,
+    "away_pts": 23.5,
+    "margin": -2.4,
+    "total": 44.5
+   },
+   "markets": [
+    {
+     "market": "ml",
+     "pick": "PHI ML",
+     "price": 150,
+     "sim_pct": 42.6,
+     "market_pct": 38.6,
+     "gap_pts": 4.0,
+     "tier": "C",
+     "status": "paper"
+    },
+    {
+     "market": "spread",
+     "pick": "PHI +3",
+     "price": -105,
+     "sim_pct": 51.7,
+     "market_pct": 48.9,
+     "gap_pts": 2.8,
+     "tier": "C",
+     "status": "paper"
+    },
+    {
+     "market": "total",
+     "pick": "Over 39",
+     "price": -110,
+     "sim_pct": 65.8,
+     "market_pct": 50.0,
+     "gap_pts": 15.8,
+     "tier": "A",
+     "status": "paper",
+     "v3_line_error_model": {
+      "over_price": -110,
+      "under_price": -110,
+      "pred_total_minus_line": 1.11,
+      "over_pct": 53.4,
+      "note": "v3.1 research model (trained with archived forecasts 2022+; forecast-weather walk-forward 2022-25: LL 0.6905 vs close 0.6932, +4.2% ROI at 4+ pts) - paper"
+     }
+    }
+   ],
+   "weather": null,
+   "news_delta_flags": [
+    "QB-CHANGE PHI: starter Tanner McKee vs recent starter (QB adj -0.05 EPA/db). Sim vs line on PHI's side: +0.6 pts"
+   ],
+   "matchup_note": "matchup note unavailable (tendency features not built in this run)"
+  },
+  {
+   "game_id": "2026_06_CHI_ATL",
+   "kickoff_utc": "2026-10-18T17:00:00Z",
+   "away": "CHI",
+   "home": "ATL",
+   "book": "bovada",
+   "qbs": {
+    "away": "Caleb Williams",
+    "home": "Michael Penix Jr.",
+    "espn_qb_injuries": {
+     "CHI": [
+      "Case Keenum Out"
+     ],
+     "ATL": [
+      "Cooper Rush Out",
+      "Jack Strand Out"
+     ]
+    }
+   },
+   "sim": {
+    "home_pts": 22.8,
+    "away_pts": 24.1,
+    "margin": -1.3,
+    "total": 47.0
+   },
+   "markets": [
+    {
+     "market": "ml",
+     "pick": "CHI ML",
+     "price": -110,
+     "sim_pct": 53.9,
+     "market_pct": 50.0,
+     "gap_pts": 3.9,
+     "tier": "C",
+     "status": "paper"
+    },
+    {
+     "market": "spread",
+     "pick": "CHI -1",
+     "price": -105,
+     "sim_pct": 50.8,
+     "market_pct": 48.9,
+     "gap_pts": 1.9,
+     "tier": "none",
+     "status": "paper"
+    },
+    {
+     "market": "total",
+     "pick": "Under 52.5",
+     "price": -110,
+     "sim_pct": 65.9,
+     "market_pct": 50.0,
+     "gap_pts": 15.9,
+     "tier": "A",
+     "status": "paper",
+     "v3_line_error_model": {
+      "over_price": -110,
+      "under_price": -110,
+      "pred_total_minus_line": 1.85,
+      "over_pct": 55.6,
+      "note": "v3.1 research model (trained with archived forecasts 2022+; forecast-weather walk-forward 2022-25: LL 0.6905 vs close 0.6932, +4.2% ROI at 4+ pts) - paper"
+     }
+    }
+   ],
+   "weather": null,
+   "news_delta_flags": [
+    "QB-CHANGE CHI: starter Caleb Williams vs recent starter (QB adj +0.10 EPA/db). Sim vs line on CHI's side: +0.3 pts"
+   ],
+   "matchup_note": "matchup note unavailable (tendency features not built in this run)"
+  },
+  {
+   "game_id": "2026_06_DAL_GB",
+   "kickoff_utc": "2026-10-19T00:20:00Z",
+   "away": "DAL",
+   "home": "GB",
+   "book": "bovada",
+   "qbs": {
+    "away": "Dak Prescott",
+    "home": "Jordan Love",
+    "espn_qb_injuries": {
+     "DAL": [],
+     "GB": []
+    }
+   },
+   "sim": {
+    "home_pts": 26.4,
+    "away_pts": 24.4,
+    "margin": 2.1,
+    "total": 50.8
+   },
+   "markets": [
+    {
+     "market": "ml",
+     "pick": "GB ML",
+     "price": -115,
+     "sim_pct": 56.3,
+     "market_pct": 51.1,
+     "gap_pts": 5.2,
+     "tier": "B",
+     "status": "paper"
+    },
+    {
+     "market": "spread",
+     "pick": "GB -1",
+     "price": -105,
+     "sim_pct": 53.3,
+     "market_pct": 48.9,
+     "gap_pts": 4.4,
+     "tier": "C",
+     "status": "paper"
+    },
+    {
+     "market": "total",
+     "pick": "Under 53.5",
+     "price": -110,
+     "sim_pct": 57.9,
+     "market_pct": 50.0,
+     "gap_pts": 7.9,
+     "tier": "B",
+     "status": "paper",
+     "v3_line_error_model": {
+      "over_price": -110,
+      "under_price": -110,
+      "pred_total_minus_line": -0.65,
+      "over_pct": 48.0,
+      "note": "v3.1 research model (trained with archived forecasts 2022+; forecast-weather walk-forward 2022-25: LL 0.6905 vs close 0.6932, +4.2% ROI at 4+ pts) - paper"
+     }
+    }
+   ],
+   "weather": {
+    "wind_mph": 9.9,
+    "gust_mph": 20.4,
+    "temp_f": 52,
+    "precip_prob": 0
+   },
+   "news_delta_flags": [],
+   "matchup_note": "matchup note unavailable (tendency features not built in this run)"
+  },
+  {
+   "game_id": "2026_06_HOU_JAX",
+   "kickoff_utc": "2026-10-18T13:30:00Z",
+   "away": "HOU",
+   "home": "JAX",
+   "book": "bovada",
+   "qbs": {
+    "away": "C.J. Stroud",
+    "home": "Trevor Lawrence",
+    "espn_qb_injuries": {
+     "HOU": [],
+     "JAX": []
+    }
+   },
+   "sim": {
+    "home_pts": 24.6,
+    "away_pts": 19.3,
+    "margin": 5.3,
+    "total": 43.9
+   },
+   "markets": [
+    {
+     "market": "ml",
+     "pick": "JAX ML",
+     "price": -145,
+     "sim_pct": 65.6,
+     "market_pct": 57.1,
+     "gap_pts": 8.5,
+     "tier": "A",
+     "status": "paper"
+    },
+    {
+     "market": "spread",
+     "pick": "JAX -2.5",
+     "price": -115,
+     "sim_pct": 58.4,
+     "market_pct": 51.1,
+     "gap_pts": 7.3,
+     "tier": "B",
+     "status": "paper"
+    },
+    {
+     "market": "total",
+     "pick": "Over 42.5",
+     "price": -105,
+     "sim_pct": 54.1,
+     "market_pct": 48.9,
+     "gap_pts": 5.2,
+     "tier": "B",
+     "status": "paper",
+     "v3_line_error_model": {
+      "over_price": -105,
+      "under_price": -115,
+      "pred_total_minus_line": -1.82,
+      "over_pct": 44.5,
+      "note": "v3.1 research model (trained with archived forecasts 2022+; forecast-weather walk-forward 2022-25: LL 0.6905 vs close 0.6932, +4.2% ROI at 4+ pts) - paper"
+     }
+    }
+   ],
+   "weather": {
+    "wind_mph": 14.5,
+    "gust_mph": 28.0,
+    "temp_f": 63,
+    "precip_prob": 1
+   },
+   "news_delta_flags": [],
+   "matchup_note": "matchup note unavailable (tendency features not built in this run)"
+  },
+  {
+   "game_id": "2026_06_LAC_KC",
+   "kickoff_utc": "2026-10-18T20:25:00Z",
+   "away": "LAC",
+   "home": "KC",
+   "book": "bovada",
+   "qbs": {
+    "away": "Justin Herbert",
+    "home": "Patrick Mahomes",
+    "espn_qb_injuries": {
+     "LAC": [],
+     "KC": []
+    }
+   },
+   "sim": {
+    "home_pts": 27.6,
+    "away_pts": 16.4,
+    "margin": 11.2,
+    "total": 44.0
+   },
+   "markets": [
+    {
+     "market": "ml",
+     "pick": "KC ML",
+     "price": -470,
+     "sim_pct": 80.5,
+     "market_pct": 78.6,
+     "gap_pts": 1.9,
+     "tier": "none",
+     "status": "paper"
+    },
+    {
+     "market": "spread",
+     "pick": "KC -7.5",
+     "price": -105,
+     "sim_pct": 61.2,
+     "market_pct": 48.9,
+     "gap_pts": 12.3,
+     "tier": "A",
+     "status": "paper"
+    },
+    {
+     "market": "total",
+     "pick": "Over 41",
+     "price": -110,
+     "sim_pct": 58.7,
+     "market_pct": 50.0,
+     "gap_pts": 8.7,
+     "tier": "A",
+     "status": "paper",
+     "v3_line_error_model": {
+      "over_price": -110,
+      "under_price": -110,
+      "pred_total_minus_line": 2.02,
+      "over_pct": 56.1,
+      "note": "v3.1 research model (trained with archived forecasts 2022+; forecast-weather walk-forward 2022-25: LL 0.6905 vs close 0.6932, +4.2% ROI at 4+ pts) - paper"
+     }
+    }
+   ],
+   "weather": null,
+   "news_delta_flags": [],
+   "matchup_note": "matchup note unavailable (tendency features not built in this run)"
+  },
+  {
+   "game_id": "2026_06_NO_NYG",
+   "kickoff_utc": "2026-10-18T17:00:00Z",
+   "away": "NO",
+   "home": "NYG",
+   "book": "bovada",
+   "qbs": {
+    "away": "Tyler Shough",
+    "home": "Jameis Winston",
+    "espn_qb_injuries": {
+     "NO": [
+      "Zach Wilson Out"
+     ],
+     "NYG": [
+      "Jake Haener Out"
+     ]
+    }
+   },
+   "sim": {
+    "home_pts": 23.2,
+    "away_pts": 21.9,
+    "margin": 1.3,
+    "total": 45.0
+   },
+   "markets": [
+    {
+     "market": "ml",
+     "pick": "NYG ML",
+     "price": -110,
+     "sim_pct": 53.9,
+     "market_pct": 50.0,
+     "gap_pts": 3.9,
+     "tier": "C",
+     "status": "paper"
+    },
+    {
+     "market": "spread",
+     "pick": "NYG -1",
+     "price": -105,
+     "sim_pct": 50.9,
+     "market_pct": 48.9,
+     "gap_pts": 2.0,
+     "tier": "none",
+     "status": "paper"
+    },
+    {
+     "market": "total",
+     "pick": "Under 46",
+     "price": -110,
+     "sim_pct": 52.9,
+     "market_pct": 50.0,
+     "gap_pts": 2.9,
+     "tier": "C",
+     "status": "paper",
+     "v3_line_error_model": {
+      "over_price": -110,
+      "under_price": -110,
+      "pred_total_minus_line": 2.81,
+      "over_pct": 58.5,
+      "note": "v3.1 research model (trained with archived forecasts 2022+; forecast-weather walk-forward 2022-25: LL 0.6905 vs close 0.6932, +4.2% ROI at 4+ pts) - paper"
+     }
+    }
+   ],
+   "weather": null,
+   "news_delta_flags": [],
+   "matchup_note": "matchup note unavailable (tendency features not built in this run)"
+  },
+  {
+   "game_id": "2026_06_NYJ_NE",
+   "kickoff_utc": "2026-10-18T17:00:00Z",
+   "away": "NYJ",
+   "home": "NE",
+   "book": "bovada",
+   "qbs": {
+    "away": "Geno Smith",
+    "home": "Drake Maye",
+    "espn_qb_injuries": {
+     "NYJ": [],
+     "NE": [
+      "Behren Morton Out"
+     ]
+    }
+   },
+   "sim": {
+    "home_pts": 27.3,
+    "away_pts": 16.8,
+    "margin": 10.5,
+    "total": 44.2
+   },
+   "markets": [
+    {
+     "market": "ml",
+     "pick": "NE ML",
+     "price": -390,
+     "sim_pct": 78.8,
+     "market_pct": 75.9,
+     "gap_pts": 3.0,
+     "tier": "C",
+     "status": "paper"
+    },
+    {
+     "market": "spread",
+     "pick": "NE -7",
+     "price": -120,
+     "sim_pct": 60.5,
+     "market_pct": 52.2,
+     "gap_pts": 8.3,
+     "tier": "A",
+     "status": "paper"
+    },
+    {
+     "market": "total",
+     "pick": "Over 43.5",
+     "price": -110,
+     "sim_pct": 51.9,
+     "market_pct": 50.0,
+     "gap_pts": 1.9,
+     "tier": "none",
+     "status": "paper",
+     "v3_line_error_model": {
+      "over_price": -110,
+      "under_price": -110,
+      "pred_total_minus_line": 1.85,
+      "over_pct": 55.6,
+      "note": "v3.1 research model (trained with archived forecasts 2022+; forecast-weather walk-forward 2022-25: LL 0.6905 vs close 0.6932, +4.2% ROI at 4+ pts) - paper"
+     }
+    }
+   ],
+   "weather": {
+    "wind_mph": 3.7,
+    "gust_mph": 6.9,
+    "temp_f": 53,
+    "precip_prob": 0
+   },
+   "news_delta_flags": [],
+   "matchup_note": "matchup note unavailable (tendency features not built in this run)"
+  },
+  {
+   "game_id": "2026_06_PIT_TB",
+   "kickoff_utc": "2026-10-18T17:00:00Z",
+   "away": "PIT",
+   "home": "TB",
+   "book": "bovada",
+   "qbs": {
+    "away": "Aaron Rodgers",
+    "home": "Jalon Daniels",
+    "espn_qb_injuries": {
+     "PIT": [
+      "Drew Allar Out",
+      "Will Howard Out"
+     ],
+     "TB": [
+      "Baker Mayfield Out"
+     ]
+    }
+   },
+   "sim": {
+    "home_pts": 22.1,
+    "away_pts": 21.7,
+    "margin": 0.4,
+    "total": 43.8
+   },
+   "markets": [
+    {
+     "market": "ml",
+     "pick": "TB ML",
+     "price": 120,
+     "sim_pct": 51.3,
+     "market_pct": 43.8,
+     "gap_pts": 7.5,
+     "tier": "B",
+     "status": "paper"
+    },
+    {
+     "market": "spread",
+     "pick": "TB +2.5",
+     "price": -105,
+     "sim_pct": 58.9,
+     "market_pct": 48.9,
+     "gap_pts": 10.0,
+     "tier": "A",
+     "status": "paper"
+    },
+    {
+     "market": "total",
+     "pick": "Over 39",
+     "price": -105,
+     "sim_pct": 63.8,
+     "market_pct": 48.9,
+     "gap_pts": 14.9,
+     "tier": "A",
+     "status": "paper",
+     "v3_line_error_model": {
+      "over_price": -105,
+      "under_price": -115,
+      "pred_total_minus_line": 2.03,
+      "over_pct": 56.1,
+      "note": "v3.1 research model (trained with archived forecasts 2022+; forecast-weather walk-forward 2022-25: LL 0.6905 vs close 0.6932, +4.2% ROI at 4+ pts) - paper"
+     }
+    }
+   ],
+   "weather": null,
+   "news_delta_flags": [],
+   "matchup_note": "matchup note unavailable (tendency features not built in this run)"
+  },
+  {
+   "game_id": "2026_06_TEN_IND",
+   "kickoff_utc": "2026-10-18T17:00:00Z",
+   "away": "TEN",
+   "home": "IND",
+   "book": "bovada",
+   "qbs": {
+    "away": "Cam Ward",
+    "home": "Daniel Jones",
+    "espn_qb_injuries": {
+     "TEN": [],
+     "IND": [
+      "Riley Leonard Out"
+     ]
+    }
+   },
+   "sim": {
+    "home_pts": 27.4,
+    "away_pts": 17.9,
+    "margin": 9.4,
+    "total": 45.3
+   },
+   "markets": [
+    {
+     "market": "ml",
+     "pick": "IND ML",
+     "price": -350,
+     "sim_pct": 76.4,
+     "market_pct": 74.5,
+     "gap_pts": 2.0,
+     "tier": "none",
+     "status": "paper"
+    },
+    {
+     "market": "spread",
+     "pick": "IND -7",
+     "price": 100,
+     "sim_pct": 57.3,
+     "market_pct": 47.8,
+     "gap_pts": 9.5,
+     "tier": "A",
+     "status": "paper"
+    },
+    {
+     "market": "total",
+     "pick": "Over 45",
+     "price": -105,
+     "sim_pct": 50.9,
+     "market_pct": 48.9,
+     "gap_pts": 1.9,
+     "tier": "none",
+     "status": "paper",
+     "v3_line_error_model": {
+      "over_price": -105,
+      "under_price": -115,
+      "pred_total_minus_line": 2.82,
+      "over_pct": 58.5,
+      "note": "v3.1 research model (trained with archived forecasts 2022+; forecast-weather walk-forward 2022-25: LL 0.6905 vs close 0.6932, +4.2% ROI at 4+ pts) - paper"
+     }
+    }
+   ],
+   "weather": null,
+   "news_delta_flags": [],
+   "matchup_note": "matchup note unavailable (tendency features not built in this run)"
+  },
+  {
+   "game_id": "2026_06_WAS_SF",
+   "kickoff_utc": "2026-10-20T00:15:00Z",
+   "away": "WAS",
+   "home": "SF",
+   "book": "bovada",
+   "qbs": {
+    "away": "Jayden Daniels",
+    "home": "Brock Purdy",
+    "espn_qb_injuries": {
+     "WAS": [
+      "Marcus Mariota Out"
+     ],
+     "SF": []
+    }
+   },
+   "sim": {
+    "home_pts": 30.7,
+    "away_pts": 19.1,
+    "margin": 11.6,
+    "total": 49.8
+   },
+   "markets": [
+    {
+     "market": "ml",
+     "pick": "SF ML",
+     "price": -420,
+     "sim_pct": 81.3,
+     "market_pct": 77.0,
+     "gap_pts": 4.3,
+     "tier": "C",
+     "status": "paper"
+    },
+    {
+     "market": "spread",
+     "pick": "SF -7.5",
+     "price": -105,
+     "sim_pct": 62.4,
+     "market_pct": 48.9,
+     "gap_pts": 13.5,
+     "tier": "A",
+     "status": "paper"
+    },
+    {
+     "market": "total",
+     "pick": "Under 52.5",
+     "price": -110,
+     "sim_pct": 57.9,
+     "market_pct": 50.0,
+     "gap_pts": 7.9,
+     "tier": "B",
+     "status": "paper",
+     "v3_line_error_model": {
+      "over_price": -110,
+      "under_price": -110,
+      "pred_total_minus_line": 1.96,
+      "over_pct": 55.9,
+      "note": "v3.1 research model (trained with archived forecasts 2022+; forecast-weather walk-forward 2022-25: LL 0.6905 vs close 0.6932, +4.2% ROI at 4+ pts) - paper"
+     }
+    }
+   ],
+   "weather": null,
+   "news_delta_flags": [],
+   "matchup_note": "matchup note unavailable (tendency features not built in this run)"
+  }
+ ]
+}
