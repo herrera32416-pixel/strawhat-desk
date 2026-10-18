@@ -1,4 +1,4 @@
-# v3.1 NFL totals: forward paper record (updated 2026-10-18 16:49 CT)
+# v3.1 NFL totals: forward paper record (updated 2026-10-18 18:17 CT)
 
 Bets (edge >= 2 pts, $20 flat, PAPER): 11 graded, 5-6-0, P&L $-29.88, ROI -13.6%
 All logged picks (incl. <2 pt leans): 7-7
