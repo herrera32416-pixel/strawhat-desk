@@ -6457,7 +6457,7 @@
               "goalie": "Jesper Wallstedt",
               "status": "Confirmed",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-10-18T13:44:20-05:00",
+              "seen_time_ct": "2026-10-18T14:30:27-05:00",
               "file": "nhl_goalie_log.jsonl"
             },
             "away": null
@@ -6691,7 +6691,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-10-18T13:44:20-05:00"
+          "refreshed_ct": "2026-10-18T14:30:27-05:00"
         },
         "market_edge": {
           "ml": {
@@ -6998,14 +6998,14 @@
               "goalie": "Devin Cooley",
               "status": "Confirmed",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-10-18T13:44:20-05:00",
+              "seen_time_ct": "2026-10-18T14:30:27-05:00",
               "file": "nhl_goalie_log.jsonl"
             },
             "away": {
               "goalie": "Brandon Bussi",
               "status": "Confirmed",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-10-18T13:44:20-05:00",
+              "seen_time_ct": "2026-10-18T14:30:27-05:00",
               "file": "nhl_goalie_log.jsonl"
             }
           },
@@ -7238,7 +7238,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-10-18T13:44:20-05:00"
+          "refreshed_ct": "2026-10-18T14:30:27-05:00"
         },
         "market_edge": {
           "ml": {
