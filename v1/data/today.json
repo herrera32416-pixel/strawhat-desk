@@ -30983,20 +30983,20 @@
           "goalies": {
             "home": {
               "goalie": "Juuse Saros",
-              "status": "Likely",
+              "status": "Confirmed",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-10-17T18:17:59-05:00",
+              "seen_time_ct": "2026-10-17T19:06:58-05:00",
               "file": "nhl_goalie_log.jsonl"
             },
             "away": {
               "goalie": "Jordan Binnington",
               "status": "Confirmed",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-10-17T18:17:59-05:00",
+              "seen_time_ct": "2026-10-17T19:06:58-05:00",
               "file": "nhl_goalie_log.jsonl"
             }
           },
-          "goalie_flag": "GOALIE UNCONFIRMED (home) — model uses the recent-starter mix / likely starter; re-check before puck drop",
+          "goalie_flag": "",
           "fair": {
             "lam_home": 2.777,
             "lam_away": 2.886,
@@ -31009,7 +31009,7 @@
             "reg_tie_pct": 22.7,
             "b2b_home": 0,
             "b2b_away": 0,
-            "goalie_home": "Juuse Saros (Likely)",
+            "goalie_home": "Juuse Saros (Confirmed)",
             "goalie_away": "Jordan Binnington (Confirmed)",
             "gsax_pg_home": 0.01,
             "gsax_pg_away": -0.12
@@ -31225,7 +31225,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-10-17T18:17:59-05:00"
+          "refreshed_ct": "2026-10-17T19:06:58-05:00"
         },
         "market_edge": {
           "ml": {
@@ -32088,7 +32088,7 @@
               "goalie": "Anton Forsberg",
               "status": "Likely",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-10-17T18:17:59-05:00",
+              "seen_time_ct": "2026-10-17T19:06:58-05:00",
               "file": "nhl_goalie_log.jsonl"
             },
             "away": null
@@ -32322,7 +32322,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-10-17T18:17:59-05:00"
+          "refreshed_ct": "2026-10-17T19:06:58-05:00"
         },
         "market_edge": {
           "ml": {
@@ -33167,14 +33167,14 @@
               "goalie": "Karel Vejmelka",
               "status": "Likely",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-10-17T18:17:59-05:00",
+              "seen_time_ct": "2026-10-17T19:06:58-05:00",
               "file": "nhl_goalie_log.jsonl"
             },
             "away": {
               "goalie": "Tristan Jarry",
               "status": "Confirmed",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-10-17T18:17:59-05:00",
+              "seen_time_ct": "2026-10-17T19:06:58-05:00",
               "file": "nhl_goalie_log.jsonl"
             }
           },
@@ -33407,7 +33407,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-10-17T18:17:59-05:00"
+          "refreshed_ct": "2026-10-17T19:06:58-05:00"
         },
         "market_edge": {
           "ml": {
@@ -33714,7 +33714,7 @@
               "goalie": "Adin Hill",
               "status": "Confirmed",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-10-17T18:17:59-05:00",
+              "seen_time_ct": "2026-10-17T19:06:58-05:00",
               "file": "nhl_goalie_log.jsonl"
             },
             "away": null
@@ -33948,7 +33948,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-10-17T18:17:59-05:00"
+          "refreshed_ct": "2026-10-17T19:06:58-05:00"
         },
         "market_edge": {
           "ml": {
