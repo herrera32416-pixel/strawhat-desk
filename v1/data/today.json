@@ -33167,14 +33167,14 @@
               "goalie": "Karel Vejmelka",
               "status": "Likely",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-10-17T19:21:38-05:00",
+              "seen_time_ct": "2026-10-17T20:32:31-05:00",
               "file": "nhl_goalie_log.jsonl"
             },
             "away": {
               "goalie": "Tristan Jarry",
               "status": "Confirmed",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-10-17T19:21:38-05:00",
+              "seen_time_ct": "2026-10-17T20:32:31-05:00",
               "file": "nhl_goalie_log.jsonl"
             }
           },
@@ -33407,7 +33407,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-10-17T19:21:38-05:00"
+          "refreshed_ct": "2026-10-17T20:32:31-05:00"
         },
         "market_edge": {
           "ml": {
@@ -33714,7 +33714,7 @@
               "goalie": "Adin Hill",
               "status": "Confirmed",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-10-17T19:21:38-05:00",
+              "seen_time_ct": "2026-10-17T20:32:31-05:00",
               "file": "nhl_goalie_log.jsonl"
             },
             "away": null
@@ -33948,7 +33948,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-10-17T19:21:38-05:00"
+          "refreshed_ct": "2026-10-17T20:32:31-05:00"
         },
         "market_edge": {
           "ml": {
