@@ -129,9 +129,11 @@
    "side": "under",
    "lean": -1.53,
    "price": -110,
-   "status": "open",
+   "status": "W",
    "updated_ct": "2026-10-16T13:06-05:00",
-   "logged_ct": "2026-10-11T08:02-05:00"
+   "logged_ct": "2026-10-11T08:02-05:00",
+   "final_total": 34.0,
+   "units": 0.9090909090909091
   },
   {
    "espn_id": "401858264",
@@ -142,9 +144,11 @@
    "side": "under",
    "lean": -1.81,
    "price": -110,
-   "status": "open",
+   "status": "L",
    "updated_ct": "2026-10-17T12:15-05:00",
-   "logged_ct": "2026-10-12T17:09-05:00"
+   "logged_ct": "2026-10-12T17:09-05:00",
+   "final_total": 58.0,
+   "units": -1.0
   },
   {
    "espn_id": "401864522",
@@ -155,9 +159,11 @@
    "side": "over",
    "lean": 1.97,
    "price": -110,
-   "status": "open",
+   "status": "W",
    "updated_ct": "2026-10-17T12:15-05:00",
-   "logged_ct": "2026-10-12T17:09-05:00"
+   "logged_ct": "2026-10-12T17:09-05:00",
+   "final_total": 64.0,
+   "units": 0.9090909090909091
   },
   {
    "espn_id": "401856726",
@@ -168,9 +174,11 @@
    "side": "under",
    "lean": -1.82,
    "price": -110,
-   "status": "open",
+   "status": "L",
    "updated_ct": "2026-10-17T12:15-05:00",
-   "logged_ct": "2026-10-12T17:09-05:00"
+   "logged_ct": "2026-10-12T17:09-05:00",
+   "final_total": 52.0,
+   "units": -1.0
   },
   {
    "espn_id": "401858494",
@@ -181,9 +189,11 @@
    "side": "over",
    "lean": 1.57,
    "price": -110,
-   "status": "open",
+   "status": "L",
    "updated_ct": "2026-10-17T12:15-05:00",
-   "logged_ct": "2026-10-12T17:09-05:00"
+   "logged_ct": "2026-10-12T17:09-05:00",
+   "final_total": 24.0,
+   "units": -1.0
   },
   {
    "espn_id": "401871092",
@@ -192,11 +202,102 @@
    "gameday": "2026-10-20",
    "line": 62.5,
    "side": "under",
-   "lean": -2.42,
+   "lean": -2.54,
    "price": -110,
    "status": "open",
-   "updated_ct": "2026-10-17T12:15-05:00",
+   "updated_ct": "2026-10-18T12:25-05:00",
    "logged_ct": "2026-10-17T12:15-05:00"
+  },
+  {
+   "espn_id": "401871069",
+   "game": "Missouri State @ Delaware",
+   "kick_iso": "2026-10-20T18:00:00-05:00",
+   "gameday": "2026-10-20",
+   "line": 52.5,
+   "side": "under",
+   "lean": -1.79,
+   "price": -110,
+   "status": "open",
+   "updated_ct": "2026-10-18T12:25-05:00",
+   "logged_ct": "2026-10-18T12:25-05:00"
+  },
+  {
+   "espn_id": "401858272",
+   "game": "NC State @ Stanford",
+   "kick_iso": "2026-10-23T21:30:00-05:00",
+   "gameday": "2026-10-23",
+   "line": 55.5,
+   "side": "under",
+   "lean": -2.01,
+   "price": -110,
+   "status": "open",
+   "updated_ct": "2026-10-18T12:25-05:00",
+   "logged_ct": "2026-10-18T12:25-05:00"
+  },
+  {
+   "espn_id": "401858498",
+   "game": "Rutgers @ Northwestern",
+   "kick_iso": "2026-10-24T11:00:00-05:00",
+   "gameday": "2026-10-24",
+   "line": 58.5,
+   "side": "under",
+   "lean": -1.98,
+   "price": -110,
+   "status": "open",
+   "updated_ct": "2026-10-18T12:25-05:00",
+   "logged_ct": "2026-10-18T12:25-05:00"
+  },
+  {
+   "espn_id": "401862810",
+   "game": "North Texas @ Navy",
+   "kick_iso": "2026-10-24T14:30:00-05:00",
+   "gameday": "2026-10-24",
+   "line": 61.5,
+   "side": "under",
+   "lean": -2.92,
+   "price": -110,
+   "status": "open",
+   "updated_ct": "2026-10-18T12:25-05:00",
+   "logged_ct": "2026-10-18T12:25-05:00"
+  },
+  {
+   "espn_id": "401871093",
+   "game": "Old Dominion @ Louisiana Tech",
+   "kick_iso": "2026-10-24T16:00:00-05:00",
+   "gameday": "2026-10-24",
+   "line": 45.5,
+   "side": "over",
+   "lean": 1.66,
+   "price": -110,
+   "status": "open",
+   "updated_ct": "2026-10-18T12:25-05:00",
+   "logged_ct": "2026-10-18T12:25-05:00"
+  },
+  {
+   "espn_id": "401869935",
+   "game": "Georgia State @ Arkansas State",
+   "kick_iso": "2026-10-24T18:00:00-05:00",
+   "gameday": "2026-10-24",
+   "line": 55.5,
+   "side": "under",
+   "lean": -1.54,
+   "price": -110,
+   "status": "open",
+   "updated_ct": "2026-10-18T12:25-05:00",
+   "logged_ct": "2026-10-18T12:25-05:00"
+  },
+  {
+   "espn_id": "401856837",
+   "game": "Houston @ Utah",
+   "kick_iso": "2026-10-24T21:15:00-05:00",
+   "gameday": "2026-10-24",
+   "line": 56.5,
+   "side": "under",
+   "lean": -1.67,
+   "price": -110,
+   "status": "open",
+   "updated_ct": "2026-10-18T12:25-05:00",
+   "logged_ct": "2026-10-18T12:25-05:00"
   }
  ]
 }
