@@ -200,12 +200,12 @@
    "game": "South Alabama @ Marshall",
    "kick_iso": "2026-10-20T18:30:00-05:00",
    "gameday": "2026-10-20",
-   "line": 62.5,
+   "line": 64.5,
    "side": "under",
    "lean": -2.54,
    "price": -110,
    "status": "open",
-   "updated_ct": "2026-10-18T12:25-05:00",
+   "updated_ct": "2026-10-19T14:58-05:00",
    "logged_ct": "2026-10-17T12:15-05:00"
   },
   {
@@ -215,10 +215,10 @@
    "gameday": "2026-10-20",
    "line": 52.5,
    "side": "under",
-   "lean": -1.79,
+   "lean": -1.81,
    "price": -110,
    "status": "open",
-   "updated_ct": "2026-10-18T12:25-05:00",
+   "updated_ct": "2026-10-19T14:58-05:00",
    "logged_ct": "2026-10-18T12:25-05:00"
   },
   {
@@ -228,10 +228,10 @@
    "gameday": "2026-10-23",
    "line": 55.5,
    "side": "under",
-   "lean": -2.01,
+   "lean": -2.0,
    "price": -110,
    "status": "open",
-   "updated_ct": "2026-10-18T12:25-05:00",
+   "updated_ct": "2026-10-19T14:58-05:00",
    "logged_ct": "2026-10-18T12:25-05:00"
   },
   {
@@ -241,10 +241,10 @@
    "gameday": "2026-10-24",
    "line": 58.5,
    "side": "under",
-   "lean": -1.98,
+   "lean": -1.99,
    "price": -110,
    "status": "open",
-   "updated_ct": "2026-10-18T12:25-05:00",
+   "updated_ct": "2026-10-19T14:58-05:00",
    "logged_ct": "2026-10-18T12:25-05:00"
   },
   {
@@ -257,7 +257,7 @@
    "lean": -2.92,
    "price": -110,
    "status": "open",
-   "updated_ct": "2026-10-18T12:25-05:00",
+   "updated_ct": "2026-10-19T14:58-05:00",
    "logged_ct": "2026-10-18T12:25-05:00"
   },
   {
@@ -265,12 +265,12 @@
    "game": "Old Dominion @ Louisiana Tech",
    "kick_iso": "2026-10-24T16:00:00-05:00",
    "gameday": "2026-10-24",
-   "line": 45.5,
+   "line": 46.5,
    "side": "over",
-   "lean": 1.66,
+   "lean": 1.65,
    "price": -110,
    "status": "open",
-   "updated_ct": "2026-10-18T12:25-05:00",
+   "updated_ct": "2026-10-19T14:58-05:00",
    "logged_ct": "2026-10-18T12:25-05:00"
   },
   {
@@ -278,12 +278,12 @@
    "game": "Georgia State @ Arkansas State",
    "kick_iso": "2026-10-24T18:00:00-05:00",
    "gameday": "2026-10-24",
-   "line": 55.5,
+   "line": 58.5,
    "side": "under",
-   "lean": -1.54,
+   "lean": -1.64,
    "price": -110,
    "status": "open",
-   "updated_ct": "2026-10-18T12:25-05:00",
+   "updated_ct": "2026-10-19T14:58-05:00",
    "logged_ct": "2026-10-18T12:25-05:00"
   },
   {
@@ -296,7 +296,7 @@
    "lean": -1.67,
    "price": -110,
    "status": "open",
-   "updated_ct": "2026-10-18T12:25-05:00",
+   "updated_ct": "2026-10-19T14:58-05:00",
    "logged_ct": "2026-10-18T12:25-05:00"
   }
  ]
