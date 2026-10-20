@@ -15,7 +15,7 @@
 .tabs{display:flex;gap:6px;overflow-x:auto;margin-top:8px}.tabs button{background:#232731;color:#cfd;border:0;border-radius:14px;padding:5px 11px;font-size:12px;font-weight:700;white-space:nowrap}.tabs button.on{background:#f5c518;color:#111}
 .n{font-size:11px;color:#aa9;margin-top:6px}.rW{color:#3c3}.rL{color:#e44}.rP{color:#aaa}</style></head><body>
 <div class="top"><div class="t">New DESK</div><div class="rec">★ plays: 0-0-0 · +$0 at $20 flat</div>
-<div class="h">STAGING · not live · built Oct 19 11:18 PM CT · flat $20 · big = Sim Bot model % · ★ ≥1pp / ★★ ≥3pp vs Bovada · straight bets only</div><div class="tabs"><button class="on" data-t="ALL">All</button><button data-t="CFB">CFB (56)</button><button data-t="NBA">NBA (14)</button><button data-t="NFL">NFL (14)</button><button data-t="NHL">NHL (13)</button></div></div>
+<div class="h">STAGING · not live · built Oct 19 11:23 PM CT · flat $20 · big = Sim Bot model % · ★ ≥1pp / ★★ ≥3pp vs Bovada · straight bets only</div><div class="tabs"><button class="on" data-t="ALL">All</button><button data-t="CFB">CFB (56)</button><button data-t="NBA">NBA (14)</button><button data-t="NFL">NFL (14)</button><button data-t="NHL">NHL (13)</button><button data-t="NBA PROPS" id="nba-props">NBA Props (0)</button></div></div>
 <div class="c" data-sp="NBA"><div class="h">NBA · Tue 2:00 PM CT</div>
 <div class="m">Boston Celtics <span>@</span> Detroit Pistons</div><div class="cols"><div class="col"><div class="mk">MONEYLINE</div>
 <div class="pk">Boston Celtics</div><div class="tag pass">no edge, pass</div>
@@ -594,7 +594,7 @@
 <div class="mo"><div class="mg"><div><b>84%</b><span>Sim Bot model</span></div></div></div></div><div class="col"><div class="mk">SPREAD</div>
 <div class="pk">Sacramento State Hornets +14.5</div><div class="tag pass">SKIP: CFB spread/total, no official picks today (graded on paper only)</div>
 <div class="px">Bovada <b>—</b></div><div class="ref">ref DK -118 · Betr —</div>
-<div class="mo"><div class="mg"><div><b>52%</b><span>Sim Bot model</span></div></div></div></div><div class="col"><div class="mk">TOTAL</div>
+<div class="mo"><div class="mg"><div><b>51%</b><span>Sim Bot model</span></div></div></div></div><div class="col"><div class="mk">TOTAL</div>
 <div class="pk">Over 51.5</div><div class="tag pass">SKIP: CFB spread/total, no official picks today (graded on paper only)</div>
 <div class="px">Bovada <b>—</b></div><div class="ref">ref DK -102 · Betr —</div>
 <div class="mo"><div class="mg"><div><b>51%</b><span>Sim Bot model</span></div></div></div></div></div>
@@ -1071,4 +1071,4 @@
 <div class="pk">Under 44.5</div><div class="tag pass">no edge, pass</div>
 <div class="px">Bovada <b>—</b></div><div class="ref">ref DK -110 · Betr —</div>
 <div class="mo"><div class="mg"><div><b>52%</b><span>Sim Bot model</span></div></div></div></div></div>
-</div><script>document.querySelectorAll('.tabs button').forEach(b=>b.onclick=()=>{document.querySelectorAll('.tabs button').forEach(x=>x.classList.toggle('on',x===b));const t=b.dataset.t;document.querySelectorAll('.c').forEach(c=>c.style.display=(t==='ALL'||c.dataset.sp===t)?'':'none');scrollTo(0,0)})</script></body></html>
+</div><div class="c pc" data-sp="NBA PROPS"><div class="h">NBA PROPS · 2026-10-19 only · PAPER / UNPROVEN — NBA props have no graded history; not plays</div><div class="m">Paper record: 0-0-0 · +$0 at $20 flat</div></div><div class="c pc" data-sp="NBA PROPS"><p>No NBA props today.</p></div><script>document.querySelectorAll('.tabs button').forEach(b=>b.onclick=()=>{document.querySelectorAll('.tabs button').forEach(x=>x.classList.toggle('on',x===b));const t=b.dataset.t;document.querySelectorAll('.c').forEach(c=>c.style.display=((t==='ALL'&&!c.classList.contains('pc'))||c.dataset.sp===t)?'':'none');scrollTo(0,0)});document.querySelectorAll('.pc').forEach(c=>c.style.display='none');if(location.hash==='#nba-props')document.getElementById('nba-props').click()</script></body></html>
