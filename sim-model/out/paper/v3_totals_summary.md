@@ -1,6 +1,6 @@
-# v3.1 NFL totals: forward paper record (updated 2026-10-18 18:17 CT)
+# v3.1 NFL totals: forward paper record (updated 2026-10-20 19:59 CT)
 
-Bets (edge >= 2 pts, $20 flat, PAPER): 11 graded, 5-6-0, P&L $-29.88, ROI -13.6%
-All logged picks (incl. <2 pt leans): 7-7
+Bets (edge >= 2 pts, $20 flat, PAPER): 22 graded, 11-10-1, P&L $0.94, ROI 0.2%
+All logged picks (incl. <2 pt leans): 14-11
 
 Gate stays OFF until Luis approves; target = 4+ weeks forward with ROI > 0.
