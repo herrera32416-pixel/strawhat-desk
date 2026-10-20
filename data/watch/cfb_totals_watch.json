@@ -200,12 +200,12 @@
    "game": "South Alabama @ Marshall",
    "kick_iso": "2026-10-20T18:30:00-05:00",
    "gameday": "2026-10-20",
-   "line": 64.5,
+   "line": 66.5,
    "side": "under",
    "lean": -2.54,
    "price": -110,
    "status": "open",
-   "updated_ct": "2026-10-19T14:58-05:00",
+   "updated_ct": "2026-10-20T13:29-05:00",
    "logged_ct": "2026-10-17T12:15-05:00"
   },
   {
@@ -213,12 +213,12 @@
    "game": "Missouri State @ Delaware",
    "kick_iso": "2026-10-20T18:00:00-05:00",
    "gameday": "2026-10-20",
-   "line": 52.5,
+   "line": 53.5,
    "side": "under",
    "lean": -1.81,
    "price": -110,
    "status": "open",
-   "updated_ct": "2026-10-19T14:58-05:00",
+   "updated_ct": "2026-10-20T13:29-05:00",
    "logged_ct": "2026-10-18T12:25-05:00"
   },
   {
@@ -231,7 +231,7 @@
    "lean": -2.0,
    "price": -110,
    "status": "open",
-   "updated_ct": "2026-10-19T14:58-05:00",
+   "updated_ct": "2026-10-20T13:29-05:00",
    "logged_ct": "2026-10-18T12:25-05:00"
   },
   {
@@ -239,12 +239,12 @@
    "game": "Rutgers @ Northwestern",
    "kick_iso": "2026-10-24T11:00:00-05:00",
    "gameday": "2026-10-24",
-   "line": 58.5,
+   "line": 57.5,
    "side": "under",
    "lean": -1.99,
    "price": -110,
    "status": "open",
-   "updated_ct": "2026-10-19T14:58-05:00",
+   "updated_ct": "2026-10-20T13:29-05:00",
    "logged_ct": "2026-10-18T12:25-05:00"
   },
   {
@@ -257,7 +257,7 @@
    "lean": -2.92,
    "price": -110,
    "status": "open",
-   "updated_ct": "2026-10-19T14:58-05:00",
+   "updated_ct": "2026-10-20T13:29-05:00",
    "logged_ct": "2026-10-18T12:25-05:00"
   },
   {
@@ -270,7 +270,7 @@
    "lean": 1.65,
    "price": -110,
    "status": "open",
-   "updated_ct": "2026-10-19T14:58-05:00",
+   "updated_ct": "2026-10-20T13:29-05:00",
    "logged_ct": "2026-10-18T12:25-05:00"
   },
   {
@@ -283,7 +283,7 @@
    "lean": -1.64,
    "price": -110,
    "status": "open",
-   "updated_ct": "2026-10-19T14:58-05:00",
+   "updated_ct": "2026-10-20T13:29-05:00",
    "logged_ct": "2026-10-18T12:25-05:00"
   },
   {
@@ -296,7 +296,7 @@
    "lean": -1.67,
    "price": -110,
    "status": "open",
-   "updated_ct": "2026-10-19T14:58-05:00",
+   "updated_ct": "2026-10-20T13:29-05:00",
    "logged_ct": "2026-10-18T12:25-05:00"
   }
  ]
