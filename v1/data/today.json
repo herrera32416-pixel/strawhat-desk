@@ -3084,14 +3084,14 @@
               "goalie": "Sebastian Cossa",
               "status": "Confirmed",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-10-19T16:37:44-05:00",
+              "seen_time_ct": "2026-10-19T19:30:06-05:00",
               "file": "nhl_goalie_log.jsonl"
             },
             "away": {
               "goalie": "Arturs Silovs",
               "status": "Confirmed",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-10-19T16:37:44-05:00",
+              "seen_time_ct": "2026-10-19T19:30:06-05:00",
               "file": "nhl_goalie_log.jsonl"
             }
           },
@@ -3324,7 +3324,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-10-19T16:37:44-05:00"
+          "refreshed_ct": "2026-10-19T19:30:06-05:00"
         },
         "market_edge": {
           "ml": {
@@ -4975,7 +4975,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-10-19T16:37:44-05:00"
+          "refreshed_ct": "2026-10-19T19:30:06-05:00"
         },
         "market_edge": {
           "ml": {
@@ -5283,7 +5283,7 @@
               "goalie": "Alex Nedeljkovic",
               "status": "Likely",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-10-19T16:37:44-05:00",
+              "seen_time_ct": "2026-10-19T19:30:06-05:00",
               "file": "nhl_goalie_log.jsonl"
             }
           },
@@ -5516,7 +5516,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-10-19T16:37:44-05:00"
+          "refreshed_ct": "2026-10-19T19:30:06-05:00"
         },
         "market_edge": {
           "ml": {
@@ -5824,7 +5824,7 @@
               "goalie": "Lukas Dostal",
               "status": "Confirmed",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-10-19T16:37:44-05:00",
+              "seen_time_ct": "2026-10-19T19:30:06-05:00",
               "file": "nhl_goalie_log.jsonl"
             }
           },
@@ -6057,7 +6057,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-10-19T16:37:44-05:00"
+          "refreshed_ct": "2026-10-19T19:30:06-05:00"
         },
         "market_edge": {
           "ml": {
@@ -6592,7 +6592,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-10-19T16:37:44-05:00"
+          "refreshed_ct": "2026-10-19T19:30:06-05:00"
         },
         "market_edge": {
           "ml": {
@@ -6900,7 +6900,7 @@
               "goalie": "Anthony Stolarz",
               "status": "Confirmed",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-10-19T16:37:44-05:00",
+              "seen_time_ct": "2026-10-19T19:30:06-05:00",
               "file": "nhl_goalie_log.jsonl"
             }
           },
@@ -7133,7 +7133,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-10-19T16:37:44-05:00"
+          "refreshed_ct": "2026-10-19T19:30:06-05:00"
         },
         "market_edge": {
           "ml": {
@@ -8224,7 +8224,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-10-19T16:37:44-05:00"
+          "refreshed_ct": "2026-10-19T19:30:06-05:00"
         },
         "market_edge": {
           "ml": {
@@ -8759,7 +8759,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-10-19T16:37:44-05:00"
+          "refreshed_ct": "2026-10-19T19:30:06-05:00"
         },
         "market_edge": {
           "ml": {
@@ -9294,7 +9294,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-10-19T16:37:44-05:00"
+          "refreshed_ct": "2026-10-19T19:30:06-05:00"
         },
         "market_edge": {
           "ml": {
@@ -9602,7 +9602,7 @@
               "goalie": "Daniil Tarasov",
               "status": "Confirmed",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-10-19T16:37:44-05:00",
+              "seen_time_ct": "2026-10-19T19:30:06-05:00",
               "file": "nhl_goalie_log.jsonl"
             }
           },
@@ -9835,7 +9835,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-10-19T16:37:44-05:00"
+          "refreshed_ct": "2026-10-19T19:30:06-05:00"
         },
         "market_edge": {
           "ml": {
@@ -10370,7 +10370,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-10-19T16:37:44-05:00"
+          "refreshed_ct": "2026-10-19T19:30:06-05:00"
         },
         "market_edge": {
           "ml": {
@@ -10905,7 +10905,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-10-19T16:37:44-05:00"
+          "refreshed_ct": "2026-10-19T19:30:06-05:00"
         },
         "market_edge": {
           "ml": {
