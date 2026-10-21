@@ -375,14 +375,14 @@
               "goalie": "Ukko-Pekka Luukkonen",
               "status": "Confirmed",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-10-21T15:15:56-05:00",
+              "seen_time_ct": "2026-10-21T15:45:13-05:00",
               "file": "nhl_goalie_log.jsonl"
             },
             "away": {
               "goalie": "Dan Vladar",
               "status": "Confirmed",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-10-21T15:15:56-05:00",
+              "seen_time_ct": "2026-10-21T15:45:13-05:00",
               "file": "nhl_goalie_log.jsonl"
             }
           },
@@ -615,7 +615,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-10-21T15:15:56-05:00"
+          "refreshed_ct": "2026-10-21T15:45:13-05:00"
         },
         "market_edge": {
           "ml": {
@@ -922,14 +922,14 @@
               "goalie": "Linus Ullmark",
               "status": "Likely",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-10-21T15:15:56-05:00",
+              "seen_time_ct": "2026-10-21T15:45:13-05:00",
               "file": "nhl_goalie_log.jsonl"
             },
             "away": {
               "goalie": "Akira Schmid",
               "status": "Confirmed",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-10-21T15:15:56-05:00",
+              "seen_time_ct": "2026-10-21T15:45:13-05:00",
               "file": "nhl_goalie_log.jsonl"
             }
           },
@@ -1162,7 +1162,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-10-21T15:15:56-05:00"
+          "refreshed_ct": "2026-10-21T15:45:13-05:00"
         },
         "market_edge": {
           "ml": {
@@ -3373,7 +3373,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-10-21T15:15:56-05:00"
+          "refreshed_ct": "2026-10-21T15:45:13-05:00"
         },
         "market_edge": {
           "ml": {
@@ -3908,7 +3908,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-10-21T15:15:56-05:00"
+          "refreshed_ct": "2026-10-21T15:45:13-05:00"
         },
         "market_edge": {
           "ml": {
