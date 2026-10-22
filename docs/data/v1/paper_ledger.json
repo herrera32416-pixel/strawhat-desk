@@ -193,9 +193,61 @@
       "close_captured_ct": "2026-10-17T09:16:10-05:00",
       "graded_at_ct": "2026-10-18T09:16:12-05:00",
       "score_source": "ESPN scoreboard event 401892519 (STATUS_FINAL)"
+    },
+    {
+      "id": "nhl-401892557-spread",
+      "label": "TRACK C",
+      "sport": "NHL",
+      "slate_date_ct": "2026-10-22",
+      "stamped_at_ct": "2026-10-22T10:31:29-05:00",
+      "kick_utc": "2026-10-22T23:40:00Z",
+      "kick_ct": "Thu 10/22 6:40 PM CT",
+      "matchup": "Los Angeles Kings at New York Islanders",
+      "away": "Los Angeles Kings",
+      "home": "New York Islanders",
+      "espn_event_id": "401892557",
+      "espn_home_id": "12",
+      "espn_away_id": "8",
+      "toa_event_id": "bfe0cd1ca4d32c4946e6ee28e21f0619",
+      "market": "spread",
+      "side": "away",
+      "team": "Los Angeles Kings",
+      "selection": "Los Angeles Kings -1.5",
+      "line": -1.5,
+      "price_american": 240,
+      "book": "Bovada",
+      "model_pct": 29.9,
+      "novig_pct": 29.9,
+      "implied_pct": 29.4,
+      "edge_pp": 0.5,
+      "gap_pp": 0.0,
+      "fpi_home_margin": null,
+      "mkt_home_margin": null,
+      "blend_home_margin": null,
+      "w_fpi": null,
+      "sigma": null,
+      "units": 1,
+      "stake_usd": 20,
+      "status": "open",
+      "result": null,
+      "score": null,
+      "pnl_units": null,
+      "pnl_usd": null,
+      "source": "market_only",
+      "price_source": "SOP book (DraftKings/Betr/Bovada)",
+      "n_books": 8,
+      "close_price_american": 220,
+      "close_line": -1.5,
+      "clv_pp": 1.84,
+      "grade_reasons": [
+        "edge +0.5pp < 3.0pp"
+      ],
+      "grade": "C",
+      "rules_version": "2026-10-12",
+      "close_captured_ct": "2026-10-22T10:31:29-05:00"
     }
   ],
-  "updated_at_ct": "2026-10-21T10:31:34-05:00",
+  "updated_at_ct": "2026-10-22T10:31:29-05:00",
   "model": {
     "name": "market + w·(FPI − market); NFL w=0 since 2026-10-04 (FPI history may be post-game, refit pending), CFB 0",
     "source": "betbot-revamp/research/upgrades-2026-10 u3_blend open|blend:fpi mean weekly weight; FINAL_REPORT 2026-10-02: every sport stays on paper",
@@ -234,7 +286,7 @@
     "units": -0.7,
     "usd": -14.0,
     "graded": 4,
-    "open": 0,
+    "open": 1,
     "by_grade": {
       "A": {
         "record": "0-0-0",
@@ -306,7 +358,7 @@
         "units": 1.3,
         "usd": 26.0,
         "graded": 2,
-        "open": 0
+        "open": 1
       },
       "pre_grades": {
         "record": "0-2-0",
@@ -348,7 +400,7 @@
         "units": 2.3,
         "usd": 46.0,
         "graded": 1,
-        "open": 0
+        "open": 1
       },
       "MLB": {
         "record": "0-0-0",
