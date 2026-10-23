@@ -6997,14 +6997,14 @@
               "goalie": "Devin Cooley",
               "status": "Confirmed",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-10-22T19:04:09-05:00",
+              "seen_time_ct": "2026-10-22T19:45:10-05:00",
               "file": "nhl_goalie_log.jsonl"
             },
             "away": {
               "goalie": "Jesper Wallstedt",
               "status": "Confirmed",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-10-22T19:04:09-05:00",
+              "seen_time_ct": "2026-10-22T19:45:10-05:00",
               "file": "nhl_goalie_log.jsonl"
             }
           },
@@ -7237,7 +7237,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-10-22T19:04:09-05:00"
+          "refreshed_ct": "2026-10-22T19:45:10-05:00"
         },
         "market_edge": {
           "ml": {
@@ -7544,18 +7544,18 @@
               "goalie": "Devon Levi",
               "status": "Confirmed",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-10-22T19:04:09-05:00",
+              "seen_time_ct": "2026-10-22T19:45:10-05:00",
               "file": "nhl_goalie_log.jsonl"
             },
             "away": {
               "goalie": "Brandon Bussi",
-              "status": "Likely",
+              "status": "Confirmed",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-10-22T19:04:09-05:00",
+              "seen_time_ct": "2026-10-22T19:45:10-05:00",
               "file": "nhl_goalie_log.jsonl"
             }
           },
-          "goalie_flag": "GOALIE UNCONFIRMED (away) — model uses the recent-starter mix / likely starter; re-check before puck drop",
+          "goalie_flag": "",
           "fair": {
             "lam_home": 2.913,
             "lam_away": 3.065,
@@ -7569,7 +7569,7 @@
             "b2b_home": 0,
             "b2b_away": 0,
             "goalie_home": "Devon Levi (Confirmed)",
-            "goalie_away": "Brandon Bussi (Likely)",
+            "goalie_away": "Brandon Bussi (Confirmed)",
             "gsax_pg_home": -0.02,
             "gsax_pg_away": -0.06
           },
@@ -7784,7 +7784,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-10-22T19:04:09-05:00"
+          "refreshed_ct": "2026-10-22T19:45:10-05:00"
         },
         "market_edge": {
           "ml": {
@@ -8319,7 +8319,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-10-22T19:04:09-05:00"
+          "refreshed_ct": "2026-10-22T19:45:10-05:00"
         },
         "market_edge": {
           "ml": {
@@ -8854,7 +8854,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-10-22T19:04:09-05:00"
+          "refreshed_ct": "2026-10-22T19:45:10-05:00"
         },
         "market_edge": {
           "ml": {
@@ -10960,7 +10960,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-10-22T19:04:09-05:00"
+          "refreshed_ct": "2026-10-22T19:45:10-05:00"
         },
         "market_edge": {
           "ml": {
@@ -12607,7 +12607,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-10-22T19:04:09-05:00"
+          "refreshed_ct": "2026-10-22T19:45:10-05:00"
         },
         "market_edge": {
           "ml": {
