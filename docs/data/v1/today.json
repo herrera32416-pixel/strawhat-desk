@@ -5347,18 +5347,18 @@
               "goalie": "Joel Hofer",
               "status": "Confirmed",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-10-22T15:40:33-05:00",
+              "seen_time_ct": "2026-10-22T19:04:09-05:00",
               "file": "nhl_goalie_log.jsonl"
             },
             "away": {
               "goalie": "Adin Hill",
-              "status": "Likely",
+              "status": "Confirmed",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-10-22T15:40:33-05:00",
+              "seen_time_ct": "2026-10-22T19:04:09-05:00",
               "file": "nhl_goalie_log.jsonl"
             }
           },
-          "goalie_flag": "GOALIE UNCONFIRMED (away) — model uses the recent-starter mix / likely starter; re-check before puck drop",
+          "goalie_flag": "",
           "fair": {
             "lam_home": 2.708,
             "lam_away": 2.957,
@@ -5372,7 +5372,7 @@
             "b2b_home": 0,
             "b2b_away": 0,
             "goalie_home": "Joel Hofer (Confirmed)",
-            "goalie_away": "Adin Hill (Likely)",
+            "goalie_away": "Adin Hill (Confirmed)",
             "gsax_pg_home": 0.17,
             "gsax_pg_away": -0.04
           },
@@ -5587,7 +5587,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-10-22T15:40:33-05:00"
+          "refreshed_ct": "2026-10-22T19:04:09-05:00"
         },
         "market_edge": {
           "ml": {
@@ -5894,14 +5894,14 @@
               "goalie": "Jake Oettinger",
               "status": "Confirmed",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-10-22T15:40:33-05:00",
+              "seen_time_ct": "2026-10-22T19:04:09-05:00",
               "file": "nhl_goalie_log.jsonl"
             },
             "away": {
               "goalie": "Stuart Skinner",
               "status": "Confirmed",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-10-22T15:40:33-05:00",
+              "seen_time_ct": "2026-10-22T19:04:09-05:00",
               "file": "nhl_goalie_log.jsonl"
             }
           },
@@ -6134,7 +6134,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-10-22T15:40:33-05:00"
+          "refreshed_ct": "2026-10-22T19:04:09-05:00"
         },
         "market_edge": {
           "ml": {
@@ -6997,18 +6997,18 @@
               "goalie": "Devin Cooley",
               "status": "Confirmed",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-10-22T15:40:33-05:00",
+              "seen_time_ct": "2026-10-22T19:04:09-05:00",
               "file": "nhl_goalie_log.jsonl"
             },
             "away": {
               "goalie": "Jesper Wallstedt",
-              "status": "Likely",
+              "status": "Confirmed",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-10-22T15:40:33-05:00",
+              "seen_time_ct": "2026-10-22T19:04:09-05:00",
               "file": "nhl_goalie_log.jsonl"
             }
           },
-          "goalie_flag": "GOALIE UNCONFIRMED (away) — model uses the recent-starter mix / likely starter; re-check before puck drop",
+          "goalie_flag": "",
           "fair": {
             "lam_home": 2.308,
             "lam_away": 3.32,
@@ -7022,7 +7022,7 @@
             "b2b_home": 0,
             "b2b_away": 0,
             "goalie_home": "Devin Cooley (Confirmed)",
-            "goalie_away": "Jesper Wallstedt (Likely)",
+            "goalie_away": "Jesper Wallstedt (Confirmed)",
             "gsax_pg_home": 0.01,
             "gsax_pg_away": 0.16
           },
@@ -7237,7 +7237,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-10-22T15:40:33-05:00"
+          "refreshed_ct": "2026-10-22T19:04:09-05:00"
         },
         "market_edge": {
           "ml": {
@@ -7544,14 +7544,14 @@
               "goalie": "Devon Levi",
               "status": "Confirmed",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-10-22T15:40:33-05:00",
+              "seen_time_ct": "2026-10-22T19:04:09-05:00",
               "file": "nhl_goalie_log.jsonl"
             },
             "away": {
               "goalie": "Brandon Bussi",
               "status": "Likely",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-10-22T15:40:33-05:00",
+              "seen_time_ct": "2026-10-22T19:04:09-05:00",
               "file": "nhl_goalie_log.jsonl"
             }
           },
@@ -7784,7 +7784,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-10-22T15:40:33-05:00"
+          "refreshed_ct": "2026-10-22T19:04:09-05:00"
         },
         "market_edge": {
           "ml": {
@@ -8319,7 +8319,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-10-22T15:40:33-05:00"
+          "refreshed_ct": "2026-10-22T19:04:09-05:00"
         },
         "market_edge": {
           "ml": {
@@ -8854,7 +8854,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-10-22T15:40:33-05:00"
+          "refreshed_ct": "2026-10-22T19:04:09-05:00"
         },
         "market_edge": {
           "ml": {
@@ -10960,7 +10960,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-10-22T15:40:33-05:00"
+          "refreshed_ct": "2026-10-22T19:04:09-05:00"
         },
         "market_edge": {
           "ml": {
@@ -12607,7 +12607,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-10-22T15:40:33-05:00"
+          "refreshed_ct": "2026-10-22T19:04:09-05:00"
         },
         "market_edge": {
           "ml": {
