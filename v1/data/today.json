@@ -3648,14 +3648,14 @@
               "goalie": "Mackenzie Blackwood",
               "status": "Confirmed",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-10-23T19:51:09-05:00",
+              "seen_time_ct": "2026-10-23T20:08:38-05:00",
               "file": "nhl_goalie_log.jsonl"
             },
             "away": {
               "goalie": "Andrei Vasilevskiy",
               "status": "Confirmed",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-10-23T19:51:09-05:00",
+              "seen_time_ct": "2026-10-23T20:08:38-05:00",
               "file": "nhl_goalie_log.jsonl"
             }
           },
@@ -3888,7 +3888,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-10-23T19:51:09-05:00"
+          "refreshed_ct": "2026-10-23T20:08:38-05:00"
         },
         "market_edge": {
           "ml": {
@@ -11641,7 +11641,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-10-23T19:51:09-05:00"
+          "refreshed_ct": "2026-10-23T20:08:38-05:00"
         },
         "market_edge": {
           "ml": {
@@ -18822,7 +18822,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-10-23T19:51:09-05:00"
+          "refreshed_ct": "2026-10-23T20:08:38-05:00"
         },
         "market_edge": {
           "ml": {
@@ -25433,7 +25433,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-10-23T19:51:09-05:00"
+          "refreshed_ct": "2026-10-23T20:08:38-05:00"
         },
         "market_edge": {
           "ml": {
@@ -25968,7 +25968,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-10-23T19:51:09-05:00"
+          "refreshed_ct": "2026-10-23T20:08:38-05:00"
         },
         "market_edge": {
           "ml": {
@@ -26503,7 +26503,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-10-23T19:51:09-05:00"
+          "refreshed_ct": "2026-10-23T20:08:38-05:00"
         },
         "market_edge": {
           "ml": {
@@ -27038,7 +27038,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-10-23T19:51:09-05:00"
+          "refreshed_ct": "2026-10-23T20:08:38-05:00"
         },
         "market_edge": {
           "ml": {
@@ -27345,7 +27345,7 @@
               "goalie": "Tristan Jarry",
               "status": "Confirmed",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-10-23T19:51:09-05:00",
+              "seen_time_ct": "2026-10-23T20:08:38-05:00",
               "file": "nhl_goalie_log.jsonl"
             },
             "away": null
@@ -27579,7 +27579,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-10-23T19:51:09-05:00"
+          "refreshed_ct": "2026-10-23T20:08:38-05:00"
         },
         "market_edge": {
           "ml": {
@@ -28114,7 +28114,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-10-23T19:51:09-05:00"
+          "refreshed_ct": "2026-10-23T20:08:38-05:00"
         },
         "market_edge": {
           "ml": {
@@ -28649,7 +28649,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-10-23T19:51:09-05:00"
+          "refreshed_ct": "2026-10-23T20:08:38-05:00"
         },
         "market_edge": {
           "ml": {
@@ -33074,7 +33074,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-10-23T19:51:09-05:00"
+          "refreshed_ct": "2026-10-23T20:08:38-05:00"
         },
         "market_edge": {
           "ml": {
@@ -34169,7 +34169,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-10-23T19:51:09-05:00"
+          "refreshed_ct": "2026-10-23T20:08:38-05:00"
         },
         "market_edge": {
           "ml": {
@@ -34704,7 +34704,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-10-23T19:51:09-05:00"
+          "refreshed_ct": "2026-10-23T20:08:38-05:00"
         },
         "market_edge": {
           "ml": {
