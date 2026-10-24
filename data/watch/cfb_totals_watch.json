@@ -234,9 +234,11 @@
    "side": "under",
    "lean": -2.0,
    "price": -110,
-   "status": "open",
+   "status": "L",
    "updated_ct": "2026-10-23T13:24-05:00",
-   "logged_ct": "2026-10-18T12:25-05:00"
+   "logged_ct": "2026-10-18T12:25-05:00",
+   "final_total": 59.0,
+   "units": -1.0
   },
   {
    "espn_id": "401858498",
@@ -256,12 +258,12 @@
    "game": "North Texas @ Navy",
    "kick_iso": "2026-10-24T14:30:00-05:00",
    "gameday": "2026-10-24",
-   "line": 62.5,
+   "line": 60.5,
    "side": "under",
    "lean": -2.92,
    "price": -110,
    "status": "open",
-   "updated_ct": "2026-10-23T13:24-05:00",
+   "updated_ct": "2026-10-24T12:29-05:00",
    "logged_ct": "2026-10-18T12:25-05:00"
   },
   {
@@ -269,12 +271,12 @@
    "game": "Old Dominion @ Louisiana Tech",
    "kick_iso": "2026-10-24T16:00:00-05:00",
    "gameday": "2026-10-24",
-   "line": 45.5,
+   "line": 43.5,
    "side": "over",
    "lean": 1.65,
    "price": -110,
    "status": "open",
-   "updated_ct": "2026-10-23T13:24-05:00",
+   "updated_ct": "2026-10-24T12:29-05:00",
    "logged_ct": "2026-10-18T12:25-05:00"
   },
   {
@@ -282,12 +284,12 @@
    "game": "Georgia State @ Arkansas State",
    "kick_iso": "2026-10-24T18:00:00-05:00",
    "gameday": "2026-10-24",
-   "line": 57.5,
+   "line": 58.5,
    "side": "under",
    "lean": -1.64,
    "price": -110,
    "status": "open",
-   "updated_ct": "2026-10-23T13:24-05:00",
+   "updated_ct": "2026-10-24T12:29-05:00",
    "logged_ct": "2026-10-18T12:25-05:00"
   },
   {
@@ -295,13 +297,26 @@
    "game": "Houston @ Utah",
    "kick_iso": "2026-10-24T21:15:00-05:00",
    "gameday": "2026-10-24",
-   "line": 56.5,
+   "line": 57.5,
    "side": "under",
    "lean": -1.67,
    "price": -110,
    "status": "open",
-   "updated_ct": "2026-10-23T13:24-05:00",
+   "updated_ct": "2026-10-24T12:29-05:00",
    "logged_ct": "2026-10-18T12:25-05:00"
+  },
+  {
+   "espn_id": "401856734",
+   "game": "Florida @ Georgia",
+   "kick_iso": "2026-10-31T14:30:00-05:00",
+   "gameday": "2026-10-31",
+   "line": 56.5,
+   "side": "under",
+   "lean": -2.02,
+   "price": -110,
+   "status": "open",
+   "updated_ct": "2026-10-24T12:29-05:00",
+   "logged_ct": "2026-10-24T12:29-05:00"
   }
  ]
 }
