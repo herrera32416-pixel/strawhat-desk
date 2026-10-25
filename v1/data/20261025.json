@@ -6556,7 +6556,7 @@
               "goalie": "Ilya Sorokin",
               "status": "Likely",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-10-25T14:08:49-05:00",
+              "seen_time_ct": "2026-10-25T14:49:08-05:00",
               "file": "nhl_goalie_log.jsonl"
             }
           },
@@ -6789,7 +6789,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-10-25T14:08:49-05:00"
+          "refreshed_ct": "2026-10-25T14:49:08-05:00"
         },
         "market_edge": {
           "ml": {
@@ -7324,7 +7324,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-10-25T14:08:49-05:00"
+          "refreshed_ct": "2026-10-25T14:49:08-05:00"
         },
         "market_edge": {
           "ml": {
@@ -7631,14 +7631,14 @@
               "goalie": "Justus Annunen",
               "status": "Likely",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-10-25T14:08:49-05:00",
+              "seen_time_ct": "2026-10-25T14:49:08-05:00",
               "file": "nhl_goalie_log.jsonl"
             },
             "away": {
               "goalie": "Scott Wedgewood",
               "status": "Likely",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-10-25T14:08:49-05:00",
+              "seen_time_ct": "2026-10-25T14:49:08-05:00",
               "file": "nhl_goalie_log.jsonl"
             }
           },
@@ -7871,7 +7871,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-10-25T14:08:49-05:00"
+          "refreshed_ct": "2026-10-25T14:49:08-05:00"
         },
         "market_edge": {
           "ml": {
@@ -8734,14 +8734,14 @@
               "goalie": "Leevi Merilainen",
               "status": "Likely",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-10-25T14:08:49-05:00",
+              "seen_time_ct": "2026-10-25T14:49:08-05:00",
               "file": "nhl_goalie_log.jsonl"
             },
             "away": {
               "goalie": "Calvin Pickard",
               "status": "Confirmed",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-10-25T14:08:49-05:00",
+              "seen_time_ct": "2026-10-25T14:49:08-05:00",
               "file": "nhl_goalie_log.jsonl"
             }
           },
@@ -8974,7 +8974,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-10-25T14:08:49-05:00"
+          "refreshed_ct": "2026-10-25T14:49:08-05:00"
         },
         "market_edge": {
           "ml": {
