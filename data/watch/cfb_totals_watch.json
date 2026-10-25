@@ -249,9 +249,11 @@
    "side": "under",
    "lean": -1.99,
    "price": -110,
-   "status": "open",
+   "status": "W",
    "updated_ct": "2026-10-23T13:24-05:00",
-   "logged_ct": "2026-10-18T12:25-05:00"
+   "logged_ct": "2026-10-18T12:25-05:00",
+   "final_total": 56.0,
+   "units": 0.9090909090909091
   },
   {
    "espn_id": "401862810",
@@ -262,9 +264,11 @@
    "side": "under",
    "lean": -2.92,
    "price": -110,
-   "status": "open",
+   "status": "L",
    "updated_ct": "2026-10-24T12:29-05:00",
-   "logged_ct": "2026-10-18T12:25-05:00"
+   "logged_ct": "2026-10-18T12:25-05:00",
+   "final_total": 88.0,
+   "units": -1.0
   },
   {
    "espn_id": "401871093",
@@ -275,9 +279,11 @@
    "side": "over",
    "lean": 1.65,
    "price": -110,
-   "status": "open",
+   "status": "L",
    "updated_ct": "2026-10-24T12:29-05:00",
-   "logged_ct": "2026-10-18T12:25-05:00"
+   "logged_ct": "2026-10-18T12:25-05:00",
+   "final_total": 26.0,
+   "units": -1.0
   },
   {
    "espn_id": "401869935",
@@ -288,9 +294,11 @@
    "side": "under",
    "lean": -1.64,
    "price": -110,
-   "status": "open",
+   "status": "L",
    "updated_ct": "2026-10-24T12:29-05:00",
-   "logged_ct": "2026-10-18T12:25-05:00"
+   "logged_ct": "2026-10-18T12:25-05:00",
+   "final_total": 70.0,
+   "units": -1.0
   },
   {
    "espn_id": "401856837",
@@ -301,9 +309,11 @@
    "side": "under",
    "lean": -1.67,
    "price": -110,
-   "status": "open",
+   "status": "W",
    "updated_ct": "2026-10-24T12:29-05:00",
-   "logged_ct": "2026-10-18T12:25-05:00"
+   "logged_ct": "2026-10-18T12:25-05:00",
+   "final_total": 34.0,
+   "units": 0.9090909090909091
   },
   {
    "espn_id": "401856734",
@@ -312,11 +322,115 @@
    "gameday": "2026-10-31",
    "line": 56.5,
    "side": "under",
-   "lean": -2.02,
+   "lean": -2.0,
    "price": -110,
    "status": "open",
-   "updated_ct": "2026-10-24T12:29-05:00",
+   "updated_ct": "2026-10-25T12:40-05:00",
    "logged_ct": "2026-10-24T12:29-05:00"
+  },
+  {
+   "espn_id": "401862812",
+   "game": "Florida Atlantic @ North Texas",
+   "kick_iso": "2026-10-29T18:30:00-05:00",
+   "gameday": "2026-10-29",
+   "line": 72.5,
+   "side": "under",
+   "lean": -4.03,
+   "price": -110,
+   "status": "open",
+   "updated_ct": "2026-10-25T12:40-05:00",
+   "logged_ct": "2026-10-25T12:40-05:00"
+  },
+  {
+   "espn_id": "401859185",
+   "game": "Notre Dame @ Navy",
+   "kick_iso": "2026-10-31T11:00:00-05:00",
+   "gameday": "2026-10-31",
+   "line": 52.5,
+   "side": "under",
+   "lean": -1.56,
+   "price": -110,
+   "status": "open",
+   "updated_ct": "2026-10-25T12:40-05:00",
+   "logged_ct": "2026-10-25T12:40-05:00"
+  },
+  {
+   "espn_id": "401858277",
+   "game": "California @ NC State",
+   "kick_iso": "2026-10-31T11:00:00-05:00",
+   "gameday": "2026-10-31",
+   "line": 56.5,
+   "side": "under",
+   "lean": -1.85,
+   "price": -110,
+   "status": "open",
+   "updated_ct": "2026-10-25T12:40-05:00",
+   "logged_ct": "2026-10-25T12:40-05:00"
+  },
+  {
+   "espn_id": "401856848",
+   "game": "Utah @ Cincinnati",
+   "kick_iso": "2026-10-31T14:45:00-05:00",
+   "gameday": "2026-10-31",
+   "line": 55.5,
+   "side": "under",
+   "lean": -2.04,
+   "price": -110,
+   "status": "open",
+   "updated_ct": "2026-10-25T12:40-05:00",
+   "logged_ct": "2026-10-25T12:40-05:00"
+  },
+  {
+   "espn_id": "401860909",
+   "game": "Washington State @ San Diego State",
+   "kick_iso": "2026-10-31T18:00:00-05:00",
+   "gameday": "2026-10-31",
+   "line": 49.5,
+   "side": "over",
+   "lean": 1.71,
+   "price": -110,
+   "status": "open",
+   "updated_ct": "2026-10-25T12:40-05:00",
+   "logged_ct": "2026-10-25T12:40-05:00"
+  },
+  {
+   "espn_id": "401858509",
+   "game": "Ohio State @ USC",
+   "kick_iso": "2026-10-31T18:30:00-05:00",
+   "gameday": "2026-10-31",
+   "line": 50.5,
+   "side": "under",
+   "lean": -2.94,
+   "price": -110,
+   "status": "open",
+   "updated_ct": "2026-10-25T12:40-05:00",
+   "logged_ct": "2026-10-25T12:40-05:00"
+  },
+  {
+   "espn_id": "401858281",
+   "game": "Georgia Tech @ Pittsburgh",
+   "kick_iso": "2026-10-31T18:30:00-05:00",
+   "gameday": "2026-10-31",
+   "line": 52.5,
+   "side": "under",
+   "lean": -1.96,
+   "price": -110,
+   "status": "open",
+   "updated_ct": "2026-10-25T12:40-05:00",
+   "logged_ct": "2026-10-25T12:40-05:00"
+  },
+  {
+   "espn_id": "401860908",
+   "game": "Texas State @ Boise State",
+   "kick_iso": "2026-10-31T21:00:00-05:00",
+   "gameday": "2026-10-31",
+   "line": 65.5,
+   "side": "under",
+   "lean": -1.8,
+   "price": -110,
+   "status": "open",
+   "updated_ct": "2026-10-25T12:40-05:00",
+   "logged_ct": "2026-10-25T12:40-05:00"
   }
  ]
 }
