@@ -30130,14 +30130,14 @@
               "goalie": "Devin Cooley",
               "status": "Confirmed",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-10-24T19:23:50-05:00",
+              "seen_time_ct": "2026-10-24T19:32:45-05:00",
               "file": "nhl_goalie_log.jsonl"
             },
             "away": {
               "goalie": "John Gibson",
               "status": "Confirmed",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-10-24T19:23:50-05:00",
+              "seen_time_ct": "2026-10-24T19:32:45-05:00",
               "file": "nhl_goalie_log.jsonl"
             }
           },
@@ -30370,7 +30370,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-10-24T19:23:50-05:00"
+          "refreshed_ct": "2026-10-24T19:32:45-05:00"
         },
         "market_edge": {
           "ml": {
@@ -30677,14 +30677,14 @@
               "goalie": "Joey Daccord",
               "status": "Likely",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-10-24T19:23:50-05:00",
+              "seen_time_ct": "2026-10-24T19:32:45-05:00",
               "file": "nhl_goalie_log.jsonl"
             },
             "away": {
               "goalie": "Jesper Wallstedt",
               "status": "Confirmed",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-10-24T19:23:50-05:00",
+              "seen_time_ct": "2026-10-24T19:32:45-05:00",
               "file": "nhl_goalie_log.jsonl"
             }
           },
@@ -30917,7 +30917,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-10-24T19:23:50-05:00"
+          "refreshed_ct": "2026-10-24T19:32:45-05:00"
         },
         "market_edge": {
           "ml": {
