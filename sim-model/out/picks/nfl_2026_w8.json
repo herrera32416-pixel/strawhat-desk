@@ -3,15 +3,15 @@
  "slate": "Sun Oct 11 + Mon Oct 12 2026 (nflverse week 5)",
  "sim_version": "v2 (less shrinkage, walk-forward margin/total stretch; Normal probs)",
  "sim_live": false,
- "lines": "2026-10-24T12:29:12-05:00 desk Odds API pull (no new credits spent); Bovada not in that pull, DraftKings used",
+ "lines": "2026-10-25T12:40:35-05:00 desk Odds API pull (no new credits spent); Bovada not in that pull, DraftKings used",
  "note": "PAPER. v2 still loses to the closing line in walk-forward tests; tier = size of sim-vs-market gap, NOT proven edge.",
  "games": [
   {
    "game_id": "2026_07_CIN_BAL",
-   "kickoff_utc": "2026-10-25T17:00:00Z",
+   "kickoff_utc": "2026-10-25T17:02:42Z",
    "away": "CIN",
    "home": "BAL",
-   "book": "draftkings",
+   "book": "bovada",
    "qbs": {
     "away": "Joe Burrow",
     "home": "Tyler Huntley",
@@ -31,38 +31,38 @@
    "markets": [
     {
      "market": "ml",
-     "pick": "BAL ML",
-     "price": -102,
-     "sim_pct": 54.7,
-     "market_pct": 48.3,
-     "gap_pts": 6.5,
+     "pick": "CIN ML",
+     "price": 145,
+     "sim_pct": 45.3,
+     "market_pct": 38.4,
+     "gap_pts": 6.9,
      "tier": "B",
      "status": "paper"
     },
     {
      "market": "spread",
-     "pick": "BAL +1.5",
+     "pick": "CIN +3.5",
      "price": -115,
-     "sim_pct": 59.2,
-     "market_pct": 51.1,
-     "gap_pts": 8.1,
-     "tier": "A",
+     "sim_pct": 55.9,
+     "market_pct": 50.0,
+     "gap_pts": 5.9,
+     "tier": "B",
      "status": "paper"
     },
     {
      "market": "total",
-     "pick": "Over 47.5",
+     "pick": "Over 43.5",
      "price": -115,
-     "sim_pct": 51.5,
-     "market_pct": 51.1,
-     "gap_pts": 0.4,
-     "tier": "none",
+     "sim_pct": 63.1,
+     "market_pct": 50.0,
+     "gap_pts": 13.1,
+     "tier": "A",
      "status": "paper",
      "v3_line_error_model": {
       "over_price": -115,
-      "under_price": -105,
-      "pred_total_minus_line": 1.99,
-      "over_pct": 56.0,
+      "under_price": -115,
+      "pred_total_minus_line": 2.03,
+      "over_pct": 56.1,
       "note": "v3.1 research model (trained with archived forecasts 2022+; forecast-weather walk-forward 2022-25: LL 0.6905 vs close 0.6932, +4.2% ROI at 4+ pts) - paper"
      }
     }
@@ -73,10 +73,10 @@
   },
   {
    "game_id": "2026_07_CLE_TEN",
-   "kickoff_utc": "2026-10-25T17:00:00Z",
+   "kickoff_utc": "2026-10-25T17:03:28Z",
    "away": "CLE",
    "home": "TEN",
-   "book": "draftkings",
+   "book": "bovada",
    "qbs": {
     "away": "Deshaun Watson",
     "home": "Cam Ward",
@@ -97,46 +97,46 @@
    "markets": [
     {
      "market": "ml",
-     "pick": "TEN ML",
-     "price": 114,
-     "sim_pct": 47.1,
-     "market_pct": 44.9,
-     "gap_pts": 2.3,
-     "tier": "C",
+     "pick": "CLE ML",
+     "price": 145,
+     "sim_pct": 52.9,
+     "market_pct": 38.4,
+     "gap_pts": 14.5,
+     "tier": "A",
      "status": "paper"
     },
     {
      "market": "spread",
-     "pick": "TEN +2.5",
-     "price": -112,
-     "sim_pct": 54.7,
-     "market_pct": 50.4,
-     "gap_pts": 4.3,
-     "tier": "C",
+     "pick": "CLE +3.5",
+     "price": -115,
+     "sim_pct": 63.3,
+     "market_pct": 50.0,
+     "gap_pts": 13.3,
+     "tier": "A",
      "status": "paper"
     },
     {
      "market": "total",
-     "pick": "Over 36.5",
-     "price": -118,
-     "sim_pct": 54.6,
-     "market_pct": 51.7,
-     "gap_pts": 2.8,
-     "tier": "C",
+     "pick": "Under 52.5",
+     "price": -115,
+     "sim_pct": 85.7,
+     "market_pct": 50.0,
+     "gap_pts": 35.7,
+     "tier": "A",
      "status": "paper",
      "v3_line_error_model": {
-      "over_price": -118,
-      "under_price": -102,
-      "pred_total_minus_line": 1.4,
-      "over_pct": 54.2,
+      "over_price": -115,
+      "under_price": -115,
+      "pred_total_minus_line": 1.17,
+      "over_pct": 53.5,
       "note": "v3.1 research model (trained with archived forecasts 2022+; forecast-weather walk-forward 2022-25: LL 0.6905 vs close 0.6932, +4.2% ROI at 4+ pts) - paper"
      }
     }
    ],
    "weather": {
-    "wind_mph": 2.3,
-    "gust_mph": 5.8,
-    "temp_f": 73,
+    "wind_mph": 2.6,
+    "gust_mph": 5.6,
+    "temp_f": 74,
     "precip_prob": 0
    },
    "news_delta_flags": [],
@@ -147,7 +147,7 @@
    "kickoff_utc": "2026-10-27T00:15:00Z",
    "away": "DAL",
    "home": "PHI",
-   "book": "draftkings",
+   "book": "bovada",
    "qbs": {
     "away": "Dak Prescott",
     "home": "Jalen Hurts",
@@ -168,36 +168,36 @@
     {
      "market": "ml",
      "pick": "PHI ML",
-     "price": 180,
+     "price": 190,
      "sim_pct": 52.3,
-     "market_pct": 34.3,
-     "gap_pts": 18.1,
+     "market_pct": 33.1,
+     "gap_pts": 19.2,
      "tier": "A",
      "status": "paper"
     },
     {
      "market": "spread",
      "pick": "PHI +4.5",
-     "price": -108,
+     "price": -110,
      "sim_pct": 65.6,
-     "market_pct": 49.6,
-     "gap_pts": 16.0,
+     "market_pct": 50.0,
+     "gap_pts": 15.6,
      "tier": "A",
      "status": "paper"
     },
     {
      "market": "total",
-     "pick": "Over 44.5",
+     "pick": "Over 44",
      "price": -110,
-     "sim_pct": 56.8,
+     "sim_pct": 58.3,
      "market_pct": 50.0,
-     "gap_pts": 6.8,
-     "tier": "B",
+     "gap_pts": 8.3,
+     "tier": "A",
      "status": "paper",
      "v3_line_error_model": {
       "over_price": -110,
       "under_price": -110,
-      "pred_total_minus_line": 1.08,
+      "pred_total_minus_line": 1.09,
       "over_pct": 53.3,
       "note": "v3.1 research model (trained with archived forecasts 2022+; forecast-weather walk-forward 2022-25: LL 0.6905 vs close 0.6932, +4.2% ROI at 4+ pts) - paper"
      }
@@ -214,7 +214,7 @@
    "kickoff_utc": "2026-10-25T20:05:00Z",
    "away": "DEN",
    "home": "ARI",
-   "book": "draftkings",
+   "book": "bovada",
    "qbs": {
     "away": "Bo Nix",
     "home": "Jacoby Brissett",
@@ -235,10 +235,10 @@
     {
      "market": "ml",
      "pick": "ARI ML",
-     "price": 190,
+     "price": 185,
      "sim_pct": 43.6,
-     "market_pct": 33.1,
-     "gap_pts": 10.5,
+     "market_pct": 33.6,
+     "gap_pts": 10.0,
      "tier": "A",
      "status": "paper"
     },
@@ -254,17 +254,17 @@
     },
     {
      "market": "total",
-     "pick": "Over 43.5",
-     "price": -112,
-     "sim_pct": 52.7,
-     "market_pct": 50.4,
-     "gap_pts": 2.2,
+     "pick": "Over 44",
+     "price": -105,
+     "sim_pct": 51.2,
+     "market_pct": 48.9,
+     "gap_pts": 2.3,
      "tier": "C",
      "status": "paper",
      "v3_line_error_model": {
-      "over_price": -112,
-      "under_price": -108,
-      "pred_total_minus_line": 2.0,
+      "over_price": -105,
+      "under_price": -115,
+      "pred_total_minus_line": 1.99,
       "over_pct": 56.0,
       "note": "v3.1 research model (trained with archived forecasts 2022+; forecast-weather walk-forward 2022-25: LL 0.6905 vs close 0.6932, +4.2% ROI at 4+ pts) - paper"
      }
@@ -279,7 +279,7 @@
    "kickoff_utc": "2026-10-25T20:25:00Z",
    "away": "GB",
    "home": "DET",
-   "book": "draftkings",
+   "book": "bovada",
    "qbs": {
     "away": "Jordan Love",
     "home": "Jared Goff",
@@ -298,36 +298,36 @@
     {
      "market": "ml",
      "pick": "DET ML",
-     "price": -180,
+     "price": -200,
      "sim_pct": 67.5,
-     "market_pct": 61.6,
+     "market_pct": 64.3,
+     "gap_pts": 3.2,
+     "tier": "C",
+     "status": "paper"
+    },
+    {
+     "market": "spread",
+     "pick": "DET -4",
+     "price": -110,
+     "sim_pct": 55.9,
+     "market_pct": 50.0,
      "gap_pts": 5.9,
      "tier": "B",
      "status": "paper"
     },
     {
-     "market": "spread",
-     "pick": "DET -3",
-     "price": -120,
-     "sim_pct": 58.9,
-     "market_pct": 52.2,
-     "gap_pts": 6.7,
-     "tier": "B",
-     "status": "paper"
-    },
-    {
      "market": "total",
-     "pick": "Under 53.5",
-     "price": -102,
-     "sim_pct": 56.5,
-     "market_pct": 48.3,
-     "gap_pts": 8.2,
+     "pick": "Under 55.5",
+     "price": -110,
+     "sim_pct": 62.2,
+     "market_pct": 50.0,
+     "gap_pts": 12.2,
      "tier": "A",
      "status": "paper",
      "v3_line_error_model": {
-      "over_price": -118,
-      "under_price": -102,
-      "pred_total_minus_line": 1.76,
+      "over_price": -110,
+      "under_price": -110,
+      "pred_total_minus_line": 1.75,
       "over_pct": 55.3,
       "note": "v3.1 research model (trained with archived forecasts 2022+; forecast-weather walk-forward 2022-25: LL 0.6905 vs close 0.6932, +4.2% ROI at 4+ pts) - paper"
      }
@@ -339,10 +339,10 @@
   },
   {
    "game_id": "2026_07_IND_MIN",
-   "kickoff_utc": "2026-10-25T17:00:00Z",
+   "kickoff_utc": "2026-10-25T17:02:25Z",
    "away": "IND",
    "home": "MIN",
-   "book": "draftkings",
+   "book": "bovada",
    "qbs": {
     "away": "Daniel Jones",
     "home": "Kyler Murray",
@@ -364,37 +364,37 @@
    "markets": [
     {
      "market": "ml",
-     "pick": "IND ML",
-     "price": 235,
-     "sim_pct": 37.9,
-     "market_pct": 28.6,
-     "gap_pts": 9.3,
-     "tier": "A",
+     "pick": "MIN ML",
+     "price": -190,
+     "sim_pct": 62.1,
+     "market_pct": 61.6,
+     "gap_pts": 0.5,
+     "tier": "none",
      "status": "paper"
     },
     {
      "market": "spread",
-     "pick": "IND +6.5",
-     "price": -112,
-     "sim_pct": 57.5,
-     "market_pct": 50.4,
-     "gap_pts": 7.1,
-     "tier": "B",
+     "pick": "MIN -3.5",
+     "price": 100,
+     "sim_pct": 51.6,
+     "market_pct": 46.9,
+     "gap_pts": 4.6,
+     "tier": "C",
      "status": "paper"
     },
     {
      "market": "total",
-     "pick": "Over 41.5",
-     "price": -110,
-     "sim_pct": 52.2,
-     "market_pct": 50.0,
-     "gap_pts": 2.2,
+     "pick": "Under 43.5",
+     "price": -120,
+     "sim_pct": 53.7,
+     "market_pct": 51.0,
+     "gap_pts": 2.7,
      "tier": "C",
      "status": "paper",
      "v3_line_error_model": {
       "over_price": -110,
-      "under_price": -110,
-      "pred_total_minus_line": 1.79,
+      "under_price": -120,
+      "pred_total_minus_line": 1.77,
       "over_pct": 55.4,
       "note": "v3.1 research model (trained with archived forecasts 2022+; forecast-weather walk-forward 2022-25: LL 0.6905 vs close 0.6932, +4.2% ROI at 4+ pts) - paper"
      }
@@ -409,7 +409,7 @@
    "kickoff_utc": "2026-10-26T00:20:00Z",
    "away": "KC",
    "home": "SEA",
-   "book": "draftkings",
+   "book": "bovada",
    "qbs": {
     "away": "Patrick Mahomes",
     "home": "Sam Darnold",
@@ -430,10 +430,10 @@
     {
      "market": "ml",
      "pick": "KC ML",
-     "price": 124,
+     "price": 130,
      "sim_pct": 49.8,
-     "market_pct": 42.8,
-     "gap_pts": 7.0,
+     "market_pct": 42.0,
+     "gap_pts": 7.8,
      "tier": "B",
      "status": "paper"
     },
@@ -459,17 +459,17 @@
      "v3_line_error_model": {
       "over_price": -110,
       "under_price": -110,
-      "pred_total_minus_line": 1.14,
-      "over_pct": 53.5,
+      "pred_total_minus_line": 1.11,
+      "over_pct": 53.4,
       "note": "v3.1 research model (trained with archived forecasts 2022+; forecast-weather walk-forward 2022-25: LL 0.6905 vs close 0.6932, +4.2% ROI at 4+ pts) - paper"
      }
     }
    ],
    "weather": {
-    "wind_mph": 6.5,
-    "gust_mph": 19.2,
-    "temp_f": 52,
-    "precip_prob": 20
+    "wind_mph": 6.6,
+    "gust_mph": 17.2,
+    "temp_f": 51,
+    "precip_prob": 16
    },
    "news_delta_flags": [],
    "matchup_note": "matchup note unavailable (tendency features not built in this run)"
@@ -479,7 +479,7 @@
    "kickoff_utc": "2026-10-25T20:25:00Z",
    "away": "LA",
    "home": "LV",
-   "book": "draftkings",
+   "book": "bovada",
    "qbs": {
     "away": "Matthew Stafford",
     "home": "Kirk Cousins",
@@ -498,35 +498,35 @@
     {
      "market": "ml",
      "pick": "LA ML",
-     "price": -180,
+     "price": -175,
      "sim_pct": 63.2,
-     "market_pct": 61.6,
-     "gap_pts": 1.6,
+     "market_pct": 61.4,
+     "gap_pts": 1.8,
      "tier": "none",
      "status": "paper"
     },
     {
      "market": "spread",
      "pick": "LA -3",
-     "price": -118,
+     "price": -120,
      "sim_pct": 54.3,
-     "market_pct": 51.7,
-     "gap_pts": 2.6,
+     "market_pct": 52.2,
+     "gap_pts": 2.1,
      "tier": "C",
      "status": "paper"
     },
     {
      "market": "total",
-     "pick": "Under 48.5",
-     "price": -110,
-     "sim_pct": 50.1,
-     "market_pct": 50.0,
-     "gap_pts": 0.1,
+     "pick": "Under 49",
+     "price": -115,
+     "sim_pct": 51.6,
+     "market_pct": 51.1,
+     "gap_pts": 0.5,
      "tier": "none",
      "status": "paper",
      "v3_line_error_model": {
-      "over_price": -110,
-      "under_price": -110,
+      "over_price": -105,
+      "under_price": -115,
       "pred_total_minus_line": 0.95,
       "over_pct": 52.9,
       "note": "v3.1 research model (trained with archived forecasts 2022+; forecast-weather walk-forward 2022-25: LL 0.6905 vs close 0.6932, +4.2% ROI at 4+ pts) - paper"
@@ -539,10 +539,10 @@
   },
   {
    "game_id": "2026_07_MIA_NYJ",
-   "kickoff_utc": "2026-10-25T17:00:00Z",
+   "kickoff_utc": "2026-10-25T17:03:17Z",
    "away": "MIA",
    "home": "NYJ",
-   "book": "draftkings",
+   "book": "bovada",
    "qbs": {
     "away": "Malik Willis",
     "home": "Geno Smith",
@@ -560,45 +560,45 @@
    "markets": [
     {
      "market": "ml",
-     "pick": "MIA ML",
-     "price": 190,
-     "sim_pct": 39.2,
-     "market_pct": 33.1,
-     "gap_pts": 6.1,
+     "pick": "NYJ ML",
+     "price": -130,
+     "sim_pct": 60.8,
+     "market_pct": 53.1,
+     "gap_pts": 7.7,
      "tier": "B",
      "status": "paper"
     },
     {
      "market": "spread",
-     "pick": "MIA +4.5",
-     "price": -105,
-     "sim_pct": 52.8,
-     "market_pct": 48.9,
-     "gap_pts": 3.9,
-     "tier": "C",
+     "pick": "NYJ -1.5",
+     "price": -115,
+     "sim_pct": 56.3,
+     "market_pct": 50.0,
+     "gap_pts": 6.3,
+     "tier": "B",
      "status": "paper"
     },
     {
      "market": "total",
-     "pick": "Over 39.5",
-     "price": -108,
-     "sim_pct": 61.8,
-     "market_pct": 49.6,
-     "gap_pts": 12.3,
+     "pick": "Under 53.5",
+     "price": -110,
+     "sim_pct": 76.8,
+     "market_pct": 49.0,
+     "gap_pts": 27.8,
      "tier": "A",
      "status": "paper",
      "v3_line_error_model": {
-      "over_price": -108,
-      "under_price": -112,
-      "pred_total_minus_line": 2.02,
-      "over_pct": 56.1,
+      "over_price": -120,
+      "under_price": -110,
+      "pred_total_minus_line": 2.2,
+      "over_pct": 56.7,
       "note": "v3.1 research model (trained with archived forecasts 2022+; forecast-weather walk-forward 2022-25: LL 0.6905 vs close 0.6932, +4.2% ROI at 4+ pts) - paper"
      }
     }
    ],
    "weather": {
-    "wind_mph": 3.2,
-    "gust_mph": 5.6,
+    "wind_mph": 2.0,
+    "gust_mph": 3.6,
     "temp_f": 68,
     "precip_prob": 0
    },
@@ -607,10 +607,10 @@
   },
   {
    "game_id": "2026_07_NYG_HOU",
-   "kickoff_utc": "2026-10-25T17:00:00Z",
+   "kickoff_utc": "2026-10-25T17:02:57Z",
    "away": "NYG",
    "home": "HOU",
-   "book": "draftkings",
+   "book": "bovada",
    "qbs": {
     "away": "J.J. McCarthy",
     "home": "C.J. Stroud",
@@ -630,122 +630,54 @@
    "markets": [
     {
      "market": "ml",
-     "pick": "NYG ML",
-     "price": 380,
-     "sim_pct": 24.0,
-     "market_pct": 20.0,
-     "gap_pts": 4.0,
-     "tier": "C",
+     "pick": "HOU ML",
+     "price": -250,
+     "sim_pct": 76.0,
+     "market_pct": 67.1,
+     "gap_pts": 9.0,
+     "tier": "A",
      "status": "paper"
     },
     {
      "market": "spread",
-     "pick": "NYG +10",
-     "price": -105,
-     "sim_pct": 52.3,
-     "market_pct": 48.9,
-     "gap_pts": 3.4,
-     "tier": "C",
+     "pick": "HOU -5.5",
+     "price": -115,
+     "sim_pct": 61.3,
+     "market_pct": 50.0,
+     "gap_pts": 11.3,
+     "tier": "A",
      "status": "paper"
     },
     {
      "market": "total",
-     "pick": "Over 42.5",
-     "price": -112,
-     "sim_pct": 55.1,
-     "market_pct": 50.4,
-     "gap_pts": 4.7,
-     "tier": "C",
+     "pick": "Under 44.5",
+     "price": -115,
+     "sim_pct": 50.7,
+     "market_pct": 50.0,
+     "gap_pts": 0.7,
+     "tier": "none",
      "status": "paper",
      "v3_line_error_model": {
-      "over_price": -112,
-      "under_price": -108,
-      "pred_total_minus_line": 1.91,
-      "over_pct": 55.8,
+      "over_price": -115,
+      "under_price": -115,
+      "pred_total_minus_line": 1.89,
+      "over_pct": 55.7,
       "note": "v3.1 research model (trained with archived forecasts 2022+; forecast-weather walk-forward 2022-25: LL 0.6905 vs close 0.6932, +4.2% ROI at 4+ pts) - paper"
      }
     }
    ],
    "weather": null,
    "news_delta_flags": [
-    "QB-CHANGE NYG: starter J.J. McCarthy vs recent starter (QB adj -0.05 EPA/db). Sim vs line on NYG's side: +0.8 pts"
+    "QB-CHANGE NYG: starter J.J. McCarthy vs recent starter (QB adj -0.05 EPA/db). Sim vs line on NYG's side: -3.7 pts -> line may not fully reflect it"
    ],
-   "matchup_note": "matchup note unavailable (tendency features not built in this run)"
-  },
-  {
-   "game_id": "2026_07_PIT_NO",
-   "kickoff_utc": "2026-10-25T13:30:00Z",
-   "away": "PIT",
-   "home": "NO",
-   "book": "draftkings",
-   "qbs": {
-    "away": "Aaron Rodgers",
-    "home": "Tyler Shough",
-    "espn_qb_injuries": {
-     "PIT": [
-      "Will Howard Out",
-      "Drew Allar Out"
-     ],
-     "NO": [
-      "Zach Wilson Out"
-     ]
-    }
-   },
-   "sim": {
-    "home_pts": 21.8,
-    "away_pts": 25.2,
-    "margin": -3.4,
-    "total": 46.9
-   },
-   "markets": [
-    {
-     "market": "ml",
-     "pick": "PIT ML",
-     "price": -166,
-     "sim_pct": 60.2,
-     "market_pct": 60.0,
-     "gap_pts": 0.3,
-     "tier": "none",
-     "status": "paper"
-    },
-    {
-     "market": "spread",
-     "pick": "PIT -3",
-     "price": -110,
-     "sim_pct": 51.2,
-     "market_pct": 50.0,
-     "gap_pts": 1.2,
-     "tier": "none",
-     "status": "paper"
-    },
-    {
-     "market": "total",
-     "pick": "Over 44.5",
-     "price": -112,
-     "sim_pct": 57.1,
-     "market_pct": 50.4,
-     "gap_pts": 6.7,
-     "tier": "B",
-     "status": "paper",
-     "v3_line_error_model": {
-      "over_price": -112,
-      "under_price": -108,
-      "pred_total_minus_line": 0.97,
-      "over_pct": 52.9,
-      "note": "v3.1 research model (trained with archived forecasts 2022+; forecast-weather walk-forward 2022-25: LL 0.6905 vs close 0.6932, +4.2% ROI at 4+ pts) - paper"
-     }
-    }
-   ],
-   "weather": null,
-   "news_delta_flags": [],
    "matchup_note": "matchup note unavailable (tendency features not built in this run)"
   },
   {
    "game_id": "2026_07_SF_ATL",
-   "kickoff_utc": "2026-10-25T17:00:00Z",
+   "kickoff_utc": "2026-10-25T17:02:44Z",
    "away": "SF",
    "home": "ATL",
-   "book": "draftkings",
+   "book": "bovada",
    "qbs": {
     "away": "Brock Purdy",
     "home": "Michael Penix Jr.",
@@ -768,37 +700,37 @@
    "markets": [
     {
      "market": "ml",
-     "pick": "SF ML",
-     "price": -148,
-     "sim_pct": 68.5,
-     "market_pct": 57.2,
-     "gap_pts": 11.3,
-     "tier": "A",
+     "pick": "ATL ML",
+     "price": 240,
+     "sim_pct": 31.5,
+     "market_pct": 27.6,
+     "gap_pts": 3.9,
+     "tier": "C",
      "status": "paper"
     },
     {
      "market": "spread",
-     "pick": "SF -2.5",
+     "pick": "ATL +6.5",
      "price": -115,
-     "sim_pct": 61.4,
-     "market_pct": 51.1,
-     "gap_pts": 10.3,
-     "tier": "A",
+     "sim_pct": 50.6,
+     "market_pct": 50.0,
+     "gap_pts": 0.6,
+     "tier": "none",
      "status": "paper"
     },
     {
      "market": "total",
-     "pick": "Under 49.5",
-     "price": -110,
-     "sim_pct": 55.4,
-     "market_pct": 50.0,
-     "gap_pts": 5.4,
-     "tier": "B",
+     "pick": "Under 50.5",
+     "price": 100,
+     "sim_pct": 58.3,
+     "market_pct": 46.9,
+     "gap_pts": 11.4,
+     "tier": "A",
      "status": "paper",
      "v3_line_error_model": {
-      "over_price": -110,
-      "under_price": -110,
-      "pred_total_minus_line": 2.81,
+      "over_price": -130,
+      "under_price": 100,
+      "pred_total_minus_line": 2.8,
       "over_pct": 58.4,
       "note": "v3.1 research model (trained with archived forecasts 2022+; forecast-weather walk-forward 2022-25: LL 0.6905 vs close 0.6932, +4.2% ROI at 4+ pts) - paper"
      }
@@ -810,10 +742,10 @@
   },
   {
    "game_id": "2026_07_TB_CAR",
-   "kickoff_utc": "2026-10-25T17:00:00Z",
+   "kickoff_utc": "2026-10-25T17:02:50Z",
    "away": "TB",
    "home": "CAR",
-   "book": "draftkings",
+   "book": "bovada",
    "qbs": {
     "away": "Baker Mayfield",
     "home": "Bryce Young",
@@ -834,44 +766,44 @@
     {
      "market": "ml",
      "pick": "CAR ML",
-     "price": -155,
+     "price": 160,
      "sim_pct": 60.1,
-     "market_pct": 58.3,
-     "gap_pts": 1.8,
-     "tier": "none",
+     "market_pct": 36.2,
+     "gap_pts": 23.8,
+     "tier": "A",
      "status": "paper"
     },
     {
      "market": "spread",
-     "pick": "CAR -3",
-     "price": -105,
-     "sim_pct": 51.0,
-     "market_pct": 48.9,
-     "gap_pts": 2.1,
-     "tier": "C",
+     "pick": "CAR +4.5",
+     "price": -120,
+     "sim_pct": 72.5,
+     "market_pct": 51.0,
+     "gap_pts": 21.5,
+     "tier": "A",
      "status": "paper"
     },
     {
      "market": "total",
-     "pick": "Over 44.5",
-     "price": -108,
-     "sim_pct": 52.7,
-     "market_pct": 49.6,
-     "gap_pts": 3.1,
-     "tier": "C",
+     "pick": "Over 42.5",
+     "price": -120,
+     "sim_pct": 58.5,
+     "market_pct": 51.0,
+     "gap_pts": 7.5,
+     "tier": "B",
      "status": "paper",
      "v3_line_error_model": {
-      "over_price": -108,
-      "under_price": -112,
-      "pred_total_minus_line": 1.07,
-      "over_pct": 53.2,
+      "over_price": -120,
+      "under_price": -110,
+      "pred_total_minus_line": 1.09,
+      "over_pct": 53.3,
       "note": "v3.1 research model (trained with archived forecasts 2022+; forecast-weather walk-forward 2022-25: LL 0.6905 vs close 0.6932, +4.2% ROI at 4+ pts) - paper"
      }
     }
    ],
    "weather": null,
    "news_delta_flags": [
-    "QB-CHANGE TB: starter Baker Mayfield vs recent starter (QB adj +0.13 EPA/db). Sim vs line on TB's side: -0.3 pts"
+    "QB-CHANGE TB: starter Baker Mayfield vs recent starter (QB adj +0.13 EPA/db). Sim vs line on TB's side: -7.8 pts -> line may not fully reflect it"
    ],
    "matchup_note": "matchup note unavailable (tendency features not built in this run)"
   }
