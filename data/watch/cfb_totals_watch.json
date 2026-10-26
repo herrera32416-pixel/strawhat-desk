@@ -320,12 +320,12 @@
    "game": "Florida @ Georgia",
    "kick_iso": "2026-10-31T14:30:00-05:00",
    "gameday": "2026-10-31",
-   "line": 56.5,
+   "line": 55.5,
    "side": "under",
-   "lean": -2.0,
+   "lean": -2.03,
    "price": -110,
    "status": "open",
-   "updated_ct": "2026-10-25T12:40-05:00",
+   "updated_ct": "2026-10-26T14:58-05:00",
    "logged_ct": "2026-10-24T12:29-05:00"
   },
   {
@@ -333,12 +333,12 @@
    "game": "Florida Atlantic @ North Texas",
    "kick_iso": "2026-10-29T18:30:00-05:00",
    "gameday": "2026-10-29",
-   "line": 72.5,
+   "line": 76.5,
    "side": "under",
-   "lean": -4.03,
+   "lean": -4.04,
    "price": -110,
    "status": "open",
-   "updated_ct": "2026-10-25T12:40-05:00",
+   "updated_ct": "2026-10-26T14:58-05:00",
    "logged_ct": "2026-10-25T12:40-05:00"
   },
   {
@@ -346,12 +346,12 @@
    "game": "Notre Dame @ Navy",
    "kick_iso": "2026-10-31T11:00:00-05:00",
    "gameday": "2026-10-31",
-   "line": 52.5,
+   "line": 55.5,
    "side": "under",
    "lean": -1.56,
    "price": -110,
    "status": "open",
-   "updated_ct": "2026-10-25T12:40-05:00",
+   "updated_ct": "2026-10-26T14:58-05:00",
    "logged_ct": "2026-10-25T12:40-05:00"
   },
   {
@@ -361,10 +361,10 @@
    "gameday": "2026-10-31",
    "line": 56.5,
    "side": "under",
-   "lean": -1.85,
+   "lean": -1.86,
    "price": -110,
    "status": "open",
-   "updated_ct": "2026-10-25T12:40-05:00",
+   "updated_ct": "2026-10-26T14:58-05:00",
    "logged_ct": "2026-10-25T12:40-05:00"
   },
   {
@@ -372,12 +372,12 @@
    "game": "Utah @ Cincinnati",
    "kick_iso": "2026-10-31T14:45:00-05:00",
    "gameday": "2026-10-31",
-   "line": 55.5,
+   "line": 57.5,
    "side": "under",
-   "lean": -2.04,
+   "lean": -1.93,
    "price": -110,
    "status": "open",
-   "updated_ct": "2026-10-25T12:40-05:00",
+   "updated_ct": "2026-10-26T14:58-05:00",
    "logged_ct": "2026-10-25T12:40-05:00"
   },
   {
@@ -387,10 +387,10 @@
    "gameday": "2026-10-31",
    "line": 49.5,
    "side": "over",
-   "lean": 1.71,
+   "lean": 1.33,
    "price": -110,
-   "status": "open",
-   "updated_ct": "2026-10-25T12:40-05:00",
+   "status": "WITHDRAWN",
+   "updated_ct": "2026-10-26T14:58-05:00",
    "logged_ct": "2026-10-25T12:40-05:00"
   },
   {
@@ -398,12 +398,12 @@
    "game": "Ohio State @ USC",
    "kick_iso": "2026-10-31T18:30:00-05:00",
    "gameday": "2026-10-31",
-   "line": 50.5,
+   "line": 51.5,
    "side": "under",
-   "lean": -2.94,
+   "lean": -2.85,
    "price": -110,
    "status": "open",
-   "updated_ct": "2026-10-25T12:40-05:00",
+   "updated_ct": "2026-10-26T14:58-05:00",
    "logged_ct": "2026-10-25T12:40-05:00"
   },
   {
@@ -411,12 +411,12 @@
    "game": "Georgia Tech @ Pittsburgh",
    "kick_iso": "2026-10-31T18:30:00-05:00",
    "gameday": "2026-10-31",
-   "line": 52.5,
+   "line": 53.5,
    "side": "under",
    "lean": -1.96,
    "price": -110,
    "status": "open",
-   "updated_ct": "2026-10-25T12:40-05:00",
+   "updated_ct": "2026-10-26T14:58-05:00",
    "logged_ct": "2026-10-25T12:40-05:00"
   },
   {
@@ -424,13 +424,39 @@
    "game": "Texas State @ Boise State",
    "kick_iso": "2026-10-31T21:00:00-05:00",
    "gameday": "2026-10-31",
-   "line": 65.5,
+   "line": 63.5,
    "side": "under",
-   "lean": -1.8,
+   "lean": -1.6,
    "price": -110,
    "status": "open",
-   "updated_ct": "2026-10-25T12:40-05:00",
+   "updated_ct": "2026-10-26T14:58-05:00",
    "logged_ct": "2026-10-25T12:40-05:00"
+  },
+  {
+   "espn_id": "401858502",
+   "game": "Wisconsin @ Iowa",
+   "kick_iso": "2026-10-31T11:00:00-05:00",
+   "gameday": "2026-10-31",
+   "line": 36.5,
+   "side": "over",
+   "lean": 1.53,
+   "price": -110,
+   "status": "open",
+   "updated_ct": "2026-10-26T14:58-05:00",
+   "logged_ct": "2026-10-26T14:58-05:00"
+  },
+  {
+   "espn_id": "401858508",
+   "game": "Nevada @ UCLA",
+   "kick_iso": "2026-10-31T15:15:00-05:00",
+   "gameday": "2026-10-31",
+   "line": 44.5,
+   "side": "over",
+   "lean": 1.72,
+   "price": -110,
+   "status": "open",
+   "updated_ct": "2026-10-26T14:58-05:00",
+   "logged_ct": "2026-10-26T14:58-05:00"
   }
  ]
 }
