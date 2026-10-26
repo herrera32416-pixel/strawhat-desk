@@ -8732,20 +8732,20 @@
           "goalies": {
             "home": {
               "goalie": "Leevi Merilainen",
-              "status": "Likely",
+              "status": "Confirmed",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-10-25T19:43:51-05:00",
+              "seen_time_ct": "2026-10-25T20:44:01-05:00",
               "file": "nhl_goalie_log.jsonl"
             },
             "away": {
               "goalie": "Calvin Pickard",
               "status": "Confirmed",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-10-25T19:43:51-05:00",
+              "seen_time_ct": "2026-10-25T20:44:01-05:00",
               "file": "nhl_goalie_log.jsonl"
             }
           },
-          "goalie_flag": "GOALIE UNCONFIRMED (home) — model uses the recent-starter mix / likely starter; re-check before puck drop",
+          "goalie_flag": "",
           "fair": {
             "lam_home": 2.504,
             "lam_away": 3.441,
@@ -8758,7 +8758,7 @@
             "reg_tie_pct": 21.2,
             "b2b_home": 0,
             "b2b_away": 1,
-            "goalie_home": "Leevi Merilainen (Likely)",
+            "goalie_home": "Leevi Merilainen (Confirmed)",
             "goalie_away": "Calvin Pickard (Confirmed)",
             "gsax_pg_home": -0.05,
             "gsax_pg_away": -0.09
@@ -8974,7 +8974,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-10-25T19:43:51-05:00"
+          "refreshed_ct": "2026-10-25T20:44:01-05:00"
         },
         "market_edge": {
           "ml": {
