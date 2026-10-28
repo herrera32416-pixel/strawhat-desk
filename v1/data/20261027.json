@@ -7444,18 +7444,18 @@
               "goalie": "Yaroslav Askarov",
               "status": "Confirmed",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-10-27T20:44:19-05:00",
+              "seen_time_ct": "2026-10-27T21:35:09-05:00",
               "file": "nhl_goalie_log.jsonl"
             },
             "away": {
               "goalie": "Colten Ellis",
-              "status": "Likely",
+              "status": "Confirmed",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-10-27T20:44:19-05:00",
+              "seen_time_ct": "2026-10-27T21:35:09-05:00",
               "file": "nhl_goalie_log.jsonl"
             }
           },
-          "goalie_flag": "GOALIE UNCONFIRMED (away) — model uses the recent-starter mix / likely starter; re-check before puck drop",
+          "goalie_flag": "",
           "fair": {
             "lam_home": 2.859,
             "lam_away": 3.331,
@@ -7469,7 +7469,7 @@
             "b2b_home": 0,
             "b2b_away": 0,
             "goalie_home": "Yaroslav Askarov (Confirmed)",
-            "goalie_away": "Colten Ellis (Likely)",
+            "goalie_away": "Colten Ellis (Confirmed)",
             "gsax_pg_home": -0.17,
             "gsax_pg_away": -0.0
           },
@@ -7684,7 +7684,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-10-27T20:44:19-05:00"
+          "refreshed_ct": "2026-10-27T21:35:09-05:00"
         },
         "market_edge": {
           "ml": {
@@ -8779,7 +8779,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-10-27T20:44:19-05:00"
+          "refreshed_ct": "2026-10-27T21:35:09-05:00"
         },
         "market_edge": {
           "ml": {
@@ -9874,7 +9874,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-10-27T20:44:19-05:00"
+          "refreshed_ct": "2026-10-27T21:35:09-05:00"
         },
         "market_edge": {
           "ml": {
@@ -10409,7 +10409,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-10-27T20:44:19-05:00"
+          "refreshed_ct": "2026-10-27T21:35:09-05:00"
         },
         "market_edge": {
           "ml": {
@@ -10940,7 +10940,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-10-27T20:44:19-05:00"
+          "refreshed_ct": "2026-10-27T21:35:09-05:00"
         },
         "market_edge": {
           "ml": {
