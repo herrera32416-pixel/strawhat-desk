@@ -5803,14 +5803,14 @@
               "goalie": "Karel Vejmelka",
               "status": "Confirmed",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-10-27T16:25:03-05:00",
+              "seen_time_ct": "2026-10-27T19:38:26-05:00",
               "file": "nhl_goalie_log.jsonl"
             },
             "away": {
               "goalie": "Jesper Wallstedt",
               "status": "Confirmed",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-10-27T16:25:03-05:00",
+              "seen_time_ct": "2026-10-27T19:38:26-05:00",
               "file": "nhl_goalie_log.jsonl"
             }
           },
@@ -6043,7 +6043,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-10-27T16:25:03-05:00"
+          "refreshed_ct": "2026-10-27T19:38:26-05:00"
         },
         "market_edge": {
           "ml": {
@@ -6350,7 +6350,7 @@
               "goalie": "Lukas Dostal",
               "status": "Confirmed",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-10-27T16:25:03-05:00",
+              "seen_time_ct": "2026-10-27T19:38:26-05:00",
               "file": "nhl_goalie_log.jsonl"
             },
             "away": null
@@ -6584,7 +6584,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-10-27T16:25:03-05:00"
+          "refreshed_ct": "2026-10-27T19:38:26-05:00"
         },
         "market_edge": {
           "ml": {
@@ -6891,14 +6891,14 @@
               "goalie": "Adin Hill",
               "status": "Confirmed",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-10-27T16:25:03-05:00",
+              "seen_time_ct": "2026-10-27T19:38:26-05:00",
               "file": "nhl_goalie_log.jsonl"
             },
             "away": {
               "goalie": "Jonas Johansson",
               "status": "Confirmed",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-10-27T16:25:03-05:00",
+              "seen_time_ct": "2026-10-27T19:38:26-05:00",
               "file": "nhl_goalie_log.jsonl"
             }
           },
@@ -7131,7 +7131,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-10-27T16:25:03-05:00"
+          "refreshed_ct": "2026-10-27T19:38:26-05:00"
         },
         "market_edge": {
           "ml": {
@@ -7438,14 +7438,14 @@
               "goalie": "Yaroslav Askarov",
               "status": "Confirmed",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-10-27T16:25:03-05:00",
+              "seen_time_ct": "2026-10-27T19:38:26-05:00",
               "file": "nhl_goalie_log.jsonl"
             },
             "away": {
               "goalie": "Colten Ellis",
               "status": "Likely",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-10-27T16:25:03-05:00",
+              "seen_time_ct": "2026-10-27T19:38:26-05:00",
               "file": "nhl_goalie_log.jsonl"
             }
           },
@@ -7678,7 +7678,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-10-27T16:25:03-05:00"
+          "refreshed_ct": "2026-10-27T19:38:26-05:00"
         },
         "market_edge": {
           "ml": {
@@ -8773,7 +8773,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-10-27T16:25:03-05:00"
+          "refreshed_ct": "2026-10-27T19:38:26-05:00"
         },
         "market_edge": {
           "ml": {
@@ -9868,7 +9868,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-10-27T16:25:03-05:00"
+          "refreshed_ct": "2026-10-27T19:38:26-05:00"
         },
         "market_edge": {
           "ml": {
@@ -10403,7 +10403,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-10-27T16:25:03-05:00"
+          "refreshed_ct": "2026-10-27T19:38:26-05:00"
         },
         "market_edge": {
           "ml": {
@@ -10934,7 +10934,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-10-27T16:25:03-05:00"
+          "refreshed_ct": "2026-10-27T19:38:26-05:00"
         },
         "market_edge": {
           "ml": {
