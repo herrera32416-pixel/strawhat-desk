@@ -3056,14 +3056,14 @@
               "goalie": "Mackenzie Blackwood",
               "status": "Confirmed",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-10-28T16:47:31-05:00",
+              "seen_time_ct": "2026-10-28T20:08:18-05:00",
               "file": "nhl_goalie_log.jsonl"
             },
             "away": {
               "goalie": "Jake Allen",
               "status": "Confirmed",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-10-28T16:47:31-05:00",
+              "seen_time_ct": "2026-10-28T20:08:18-05:00",
               "file": "nhl_goalie_log.jsonl"
             }
           },
@@ -3296,7 +3296,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-10-28T16:47:31-05:00"
+          "refreshed_ct": "2026-10-28T20:08:18-05:00"
         },
         "market_edge": {
           "ml": {
@@ -3603,14 +3603,14 @@
               "goalie": "Philipp Grubauer",
               "status": "Likely",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-10-28T16:47:31-05:00",
+              "seen_time_ct": "2026-10-28T20:08:18-05:00",
               "file": "nhl_goalie_log.jsonl"
             },
             "away": {
               "goalie": "Sergei Bobrovsky",
               "status": "Confirmed",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-10-28T16:47:31-05:00",
+              "seen_time_ct": "2026-10-28T20:08:18-05:00",
               "file": "nhl_goalie_log.jsonl"
             }
           },
@@ -3843,7 +3843,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-10-28T16:47:31-05:00"
+          "refreshed_ct": "2026-10-28T20:08:18-05:00"
         },
         "market_edge": {
           "ml": {
@@ -4378,7 +4378,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-10-28T16:47:31-05:00"
+          "refreshed_ct": "2026-10-28T20:08:18-05:00"
         },
         "market_edge": {
           "ml": {
@@ -4913,7 +4913,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-10-28T16:47:31-05:00"
+          "refreshed_ct": "2026-10-28T20:08:18-05:00"
         },
         "market_edge": {
           "ml": {
@@ -5448,7 +5448,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-10-28T16:47:31-05:00"
+          "refreshed_ct": "2026-10-28T20:08:18-05:00"
         },
         "market_edge": {
           "ml": {
@@ -7063,7 +7063,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-10-28T16:47:31-05:00"
+          "refreshed_ct": "2026-10-28T20:08:18-05:00"
         },
         "market_edge": {
           "ml": {
@@ -7598,7 +7598,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-10-28T16:47:31-05:00"
+          "refreshed_ct": "2026-10-28T20:08:18-05:00"
         },
         "market_edge": {
           "ml": {
@@ -7906,7 +7906,7 @@
               "goalie": "Jakub Dobes",
               "status": "Confirmed",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-10-28T16:47:31-05:00",
+              "seen_time_ct": "2026-10-28T20:08:18-05:00",
               "file": "nhl_goalie_log.jsonl"
             }
           },
@@ -8139,7 +8139,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-10-28T16:47:31-05:00"
+          "refreshed_ct": "2026-10-28T20:08:18-05:00"
         },
         "market_edge": {
           "ml": {
@@ -8674,7 +8674,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-10-28T16:47:31-05:00"
+          "refreshed_ct": "2026-10-28T20:08:18-05:00"
         },
         "market_edge": {
           "ml": {
@@ -9209,7 +9209,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-10-28T16:47:31-05:00"
+          "refreshed_ct": "2026-10-28T20:08:18-05:00"
         },
         "market_edge": {
           "ml": {
@@ -10300,7 +10300,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-10-28T16:47:31-05:00"
+          "refreshed_ct": "2026-10-28T20:08:18-05:00"
         },
         "market_edge": {
           "ml": {
@@ -10831,7 +10831,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-10-28T16:47:31-05:00"
+          "refreshed_ct": "2026-10-28T20:08:18-05:00"
         },
         "market_edge": {
           "ml": {
@@ -11366,7 +11366,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-10-28T16:47:31-05:00"
+          "refreshed_ct": "2026-10-28T20:08:18-05:00"
         },
         "market_edge": {
           "ml": {
