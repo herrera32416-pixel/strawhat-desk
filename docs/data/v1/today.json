@@ -6383,14 +6383,14 @@
               "goalie": "Yaroslav Askarov",
               "status": "Confirmed",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-10-29T21:02:23-05:00",
+              "seen_time_ct": "2026-10-29T21:09:26-05:00",
               "file": "nhl_goalie_log.jsonl"
             },
             "away": {
               "goalie": "Leevi Merilainen",
               "status": "Confirmed",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-10-29T21:02:23-05:00",
+              "seen_time_ct": "2026-10-29T21:09:26-05:00",
               "file": "nhl_goalie_log.jsonl"
             }
           },
@@ -6623,7 +6623,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-10-29T21:02:23-05:00"
+          "refreshed_ct": "2026-10-29T21:09:26-05:00"
         },
         "market_edge": {
           "ml": {
@@ -6930,14 +6930,14 @@
               "goalie": "Ville Husso",
               "status": "Confirmed",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-10-29T21:02:23-05:00",
+              "seen_time_ct": "2026-10-29T21:09:26-05:00",
               "file": "nhl_goalie_log.jsonl"
             },
             "away": {
               "goalie": "Colten Ellis",
               "status": "Confirmed",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-10-29T21:02:23-05:00",
+              "seen_time_ct": "2026-10-29T21:09:26-05:00",
               "file": "nhl_goalie_log.jsonl"
             }
           },
@@ -7170,7 +7170,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-10-29T21:02:23-05:00"
+          "refreshed_ct": "2026-10-29T21:09:26-05:00"
         },
         "market_edge": {
           "ml": {
@@ -7477,14 +7477,14 @@
               "goalie": "Darcy Kuemper",
               "status": "Confirmed",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-10-29T21:02:23-05:00",
+              "seen_time_ct": "2026-10-29T21:09:26-05:00",
               "file": "nhl_goalie_log.jsonl"
             },
             "away": {
               "goalie": "Jonas Johansson",
               "status": "Confirmed",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-10-29T21:02:23-05:00",
+              "seen_time_ct": "2026-10-29T21:09:26-05:00",
               "file": "nhl_goalie_log.jsonl"
             }
           },
@@ -7717,7 +7717,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-10-29T21:02:23-05:00"
+          "refreshed_ct": "2026-10-29T21:09:26-05:00"
         },
         "market_edge": {
           "ml": {
@@ -8252,7 +8252,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-10-29T21:02:23-05:00"
+          "refreshed_ct": "2026-10-29T21:09:26-05:00"
         },
         "market_edge": {
           "ml": {
@@ -9347,7 +9347,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-10-29T21:02:23-05:00"
+          "refreshed_ct": "2026-10-29T21:09:26-05:00"
         },
         "market_edge": {
           "ml": {
@@ -10442,7 +10442,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-10-29T21:02:23-05:00"
+          "refreshed_ct": "2026-10-29T21:09:26-05:00"
         },
         "market_edge": {
           "ml": {
