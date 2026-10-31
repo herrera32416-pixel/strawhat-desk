@@ -412,9 +412,62 @@
       "close_captured_ct": "2026-10-26T11:54:40-05:00",
       "graded_at_ct": "2026-10-27T10:59:19-05:00",
       "score_source": "ESPN scoreboard event 401873009 (STATUS_FINAL)"
+    },
+    {
+      "id": "cfb-401858283-ml",
+      "label": "TRACK C",
+      "sport": "CFB",
+      "slate_date_ct": "2026-10-31",
+      "stamped_at_ct": "2026-10-31T10:50:35-05:00",
+      "kick_utc": "2026-10-31T19:15:00Z",
+      "kick_ct": "Sat 10/31 2:15 PM CT",
+      "matchup": "Stanford Cardinal at Louisville Cardinals",
+      "away": "Stanford Cardinal",
+      "home": "Louisville Cardinals",
+      "espn_event_id": "401858283",
+      "espn_home_id": "97",
+      "espn_away_id": "24",
+      "toa_event_id": "183676bbb63b1716e2248ec6c6d205a9",
+      "market": "ml",
+      "side": "away",
+      "team": "Stanford Cardinal",
+      "selection": "Stanford Cardinal ML",
+      "line": null,
+      "price_american": 1100,
+      "book": "DraftKings",
+      "model_pct": 8.4,
+      "novig_pct": 8.4,
+      "implied_pct": 8.3,
+      "edge_pp": 0.1,
+      "gap_pp": 0.0,
+      "fpi_home_margin": 30.18,
+      "mkt_home_margin": 22.5,
+      "blend_home_margin": 22.5,
+      "w_fpi": 0.0,
+      "sigma": 15.14,
+      "units": 1,
+      "stake_usd": 20,
+      "status": "open",
+      "result": null,
+      "score": null,
+      "pnl_units": null,
+      "pnl_usd": null,
+      "source": "market_only",
+      "price_source": "SOP book (DraftKings/Betr/Bovada)",
+      "n_books": 10,
+      "close_price_american": 1100,
+      "close_line": null,
+      "clv_pp": 0.0,
+      "grade_reasons": [
+        "edge +0.1pp < 3.0pp",
+        "long-shot ML +1100 > +250"
+      ],
+      "grade": "C",
+      "rules_version": "2026-10-12",
+      "close_captured_ct": "2026-10-31T10:50:35-05:00"
     }
   ],
-  "updated_at_ct": "2026-10-30T11:48:39-05:00",
+  "updated_at_ct": "2026-10-31T10:50:35-05:00",
   "model": {
     "name": "market + w·(FPI − market); NFL w=0 since 2026-10-04 (FPI history may be post-game, refit pending), CFB 0",
     "source": "betbot-revamp/research/upgrades-2026-10 u3_blend open|blend:fpi mean weekly weight; FINAL_REPORT 2026-10-02: every sport stays on paper",
@@ -453,7 +506,7 @@
     "units": 2.7,
     "usd": 54.0,
     "graded": 8,
-    "open": 0,
+    "open": 1,
     "by_grade": {
       "A": {
         "record": "0-0-0",
@@ -525,7 +578,7 @@
         "units": 4.7,
         "usd": 94.0,
         "graded": 6,
-        "open": 0
+        "open": 1
       },
       "pre_grades": {
         "record": "0-2-0",
@@ -557,7 +610,7 @@
         "units": -1.0,
         "usd": -20.0,
         "graded": 1,
-        "open": 0
+        "open": 1
       },
       "NHL": {
         "record": "1-1-0",
