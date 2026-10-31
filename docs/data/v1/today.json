@@ -24094,7 +24094,7 @@
               "goalie": "Anthony Stolarz",
               "status": "Confirmed",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-10-31T15:08:34-05:00",
+              "seen_time_ct": "2026-10-31T15:31:41-05:00",
               "file": "nhl_goalie_log.jsonl"
             }
           },
@@ -24327,7 +24327,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-10-31T15:08:34-05:00"
+          "refreshed_ct": "2026-10-31T15:31:41-05:00"
         },
         "market_edge": {
           "ml": {
@@ -24634,14 +24634,14 @@
               "goalie": "Jacob Fowler",
               "status": "Confirmed",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-10-31T15:08:34-05:00",
+              "seen_time_ct": "2026-10-31T15:31:41-05:00",
               "file": "nhl_goalie_log.jsonl"
             },
             "away": {
               "goalie": "Sergei Murashov",
               "status": "Confirmed",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-10-31T15:08:34-05:00",
+              "seen_time_ct": "2026-10-31T15:31:41-05:00",
               "file": "nhl_goalie_log.jsonl"
             }
           },
@@ -24874,7 +24874,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-10-31T15:08:34-05:00"
+          "refreshed_ct": "2026-10-31T15:31:41-05:00"
         },
         "market_edge": {
           "ml": {
@@ -29061,14 +29061,14 @@
               "goalie": "Jake Oettinger",
               "status": "Confirmed",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-10-31T15:08:34-05:00",
+              "seen_time_ct": "2026-10-31T15:31:41-05:00",
               "file": "nhl_goalie_log.jsonl"
             },
             "away": {
               "goalie": "Jet Greaves",
               "status": "Confirmed",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-10-31T15:08:34-05:00",
+              "seen_time_ct": "2026-10-31T15:31:41-05:00",
               "file": "nhl_goalie_log.jsonl"
             }
           },
@@ -29301,7 +29301,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-10-31T15:08:34-05:00"
+          "refreshed_ct": "2026-10-31T15:31:41-05:00"
         },
         "market_edge": {
           "ml": {
@@ -30160,14 +30160,14 @@
               "goalie": "Mackenzie Blackwood",
               "status": "Confirmed",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-10-31T15:08:34-05:00",
+              "seen_time_ct": "2026-10-31T15:31:41-05:00",
               "file": "nhl_goalie_log.jsonl"
             },
             "away": {
               "goalie": "Arsenii Sergeev",
               "status": "Confirmed",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-10-31T15:08:34-05:00",
+              "seen_time_ct": "2026-10-31T15:31:41-05:00",
               "file": "nhl_goalie_log.jsonl"
             }
           },
@@ -30400,7 +30400,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-10-31T15:08:34-05:00"
+          "refreshed_ct": "2026-10-31T15:31:41-05:00"
         },
         "market_edge": {
           "ml": {
@@ -35933,7 +35933,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-10-31T15:08:34-05:00"
+          "refreshed_ct": "2026-10-31T15:31:41-05:00"
         },
         "market_edge": {
           "ml": {
@@ -36779,7 +36779,7 @@
               "goalie": "Jesper Wallstedt",
               "status": "Confirmed",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-10-31T15:08:34-05:00",
+              "seen_time_ct": "2026-10-31T15:31:41-05:00",
               "file": "nhl_goalie_log.jsonl"
             }
           },
@@ -37012,7 +37012,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-10-31T15:08:34-05:00"
+          "refreshed_ct": "2026-10-31T15:31:41-05:00"
         },
         "market_edge": {
           "ml": {
@@ -37547,7 +37547,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-10-31T15:08:34-05:00"
+          "refreshed_ct": "2026-10-31T15:31:41-05:00"
         },
         "market_edge": {
           "ml": {
@@ -39762,7 +39762,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-10-31T15:08:34-05:00"
+          "refreshed_ct": "2026-10-31T15:31:41-05:00"
         },
         "market_edge": {
           "ml": {
@@ -40069,7 +40069,7 @@
               "goalie": "Laurent Brossoit",
               "status": "Confirmed",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-10-31T15:08:34-05:00",
+              "seen_time_ct": "2026-10-31T15:31:41-05:00",
               "file": "nhl_goalie_log.jsonl"
             },
             "away": null
@@ -40303,7 +40303,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-10-31T15:08:34-05:00"
+          "refreshed_ct": "2026-10-31T15:31:41-05:00"
         },
         "market_edge": {
           "ml": {
