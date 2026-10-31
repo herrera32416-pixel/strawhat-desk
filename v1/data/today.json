@@ -10326,7 +10326,7 @@
               "goalie": "John Gibson",
               "status": "Confirmed",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-10-30T20:41:37-05:00",
+              "seen_time_ct": "2026-10-30T20:50:35-05:00",
               "file": "nhl_goalie_log.jsonl"
             },
             "away": null
@@ -10560,7 +10560,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-10-30T20:41:37-05:00"
+          "refreshed_ct": "2026-10-30T20:50:35-05:00"
         },
         "market_edge": {
           "ml": {
@@ -11095,7 +11095,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-10-30T20:41:37-05:00"
+          "refreshed_ct": "2026-10-30T20:50:35-05:00"
         },
         "market_edge": {
           "ml": {
@@ -12746,7 +12746,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-10-30T20:41:37-05:00"
+          "refreshed_ct": "2026-10-30T20:50:35-05:00"
         },
         "market_edge": {
           "ml": {
@@ -13054,7 +13054,7 @@
               "goalie": "Tristan Jarry",
               "status": "Confirmed",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-10-30T20:41:37-05:00",
+              "seen_time_ct": "2026-10-30T20:50:35-05:00",
               "file": "nhl_goalie_log.jsonl"
             }
           },
@@ -13287,7 +13287,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-10-30T20:41:37-05:00"
+          "refreshed_ct": "2026-10-30T20:50:35-05:00"
         },
         "market_edge": {
           "ml": {
@@ -22632,7 +22632,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-10-30T20:41:37-05:00"
+          "refreshed_ct": "2026-10-30T20:50:35-05:00"
         },
         "market_edge": {
           "ml": {
@@ -23167,7 +23167,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-10-30T20:41:37-05:00"
+          "refreshed_ct": "2026-10-30T20:50:35-05:00"
         },
         "market_edge": {
           "ml": {
@@ -27365,7 +27365,7 @@
               "goalie": "Anthony Stolarz",
               "status": "Confirmed",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-10-30T20:41:37-05:00",
+              "seen_time_ct": "2026-10-30T20:50:35-05:00",
               "file": "nhl_goalie_log.jsonl"
             }
           },
@@ -27598,7 +27598,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-10-30T20:41:37-05:00"
+          "refreshed_ct": "2026-10-30T20:50:35-05:00"
         },
         "market_edge": {
           "ml": {
@@ -28133,7 +28133,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-10-30T20:41:37-05:00"
+          "refreshed_ct": "2026-10-30T20:50:35-05:00"
         },
         "market_edge": {
           "ml": {
@@ -32528,7 +32528,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-10-30T20:41:37-05:00"
+          "refreshed_ct": "2026-10-30T20:50:35-05:00"
         },
         "market_edge": {
           "ml": {
@@ -33623,7 +33623,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-10-30T20:41:37-05:00"
+          "refreshed_ct": "2026-10-30T20:50:35-05:00"
         },
         "market_edge": {
           "ml": {
