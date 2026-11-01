@@ -8132,14 +8132,14 @@
               "goalie": "Dylan Garand",
               "status": "Confirmed",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-11-01T14:40:09-06:00",
+              "seen_time_ct": "2026-11-01T15:17:23-06:00",
               "file": "nhl_goalie_log.jsonl"
             },
             "away": {
               "goalie": "Matt Tomkins",
               "status": "Confirmed",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-11-01T14:40:09-06:00",
+              "seen_time_ct": "2026-11-01T15:17:23-06:00",
               "file": "nhl_goalie_log.jsonl"
             }
           },
@@ -8372,7 +8372,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-11-01T14:40:09-06:00"
+          "refreshed_ct": "2026-11-01T15:17:23-06:00"
         },
         "market_edge": {
           "ml": {
@@ -8679,7 +8679,7 @@
               "goalie": "Laurent Brossoit",
               "status": "Confirmed",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-11-01T14:40:09-06:00",
+              "seen_time_ct": "2026-11-01T15:17:23-06:00",
               "file": "nhl_goalie_log.jsonl"
             },
             "away": null
@@ -8913,7 +8913,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-11-01T14:40:09-06:00"
+          "refreshed_ct": "2026-11-01T15:17:23-06:00"
         },
         "market_edge": {
           "ml": {
