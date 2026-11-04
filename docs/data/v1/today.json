@@ -2049,14 +2049,14 @@
               "goalie": "Colten Ellis",
               "status": "Likely",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-11-04T16:00:39-06:00",
+              "seen_time_ct": "2026-11-04T16:43:21-06:00",
               "file": "nhl_goalie_log.jsonl"
             },
             "away": {
               "goalie": "Samuel Ersson",
               "status": "Confirmed",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-11-04T16:00:39-06:00",
+              "seen_time_ct": "2026-11-04T16:43:21-06:00",
               "file": "nhl_goalie_log.jsonl"
             }
           },
@@ -2289,7 +2289,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-11-04T16:00:39-06:00"
+          "refreshed_ct": "2026-11-04T16:43:21-06:00"
         },
         "market_edge": {
           "ml": {
@@ -2596,14 +2596,14 @@
               "goalie": "Jacob Markstrom",
               "status": "Confirmed",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-11-04T16:00:39-06:00",
+              "seen_time_ct": "2026-11-04T16:43:21-06:00",
               "file": "nhl_goalie_log.jsonl"
             },
             "away": {
               "goalie": "Spencer Knight",
               "status": "Likely",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-11-04T16:00:39-06:00",
+              "seen_time_ct": "2026-11-04T16:43:21-06:00",
               "file": "nhl_goalie_log.jsonl"
             }
           },
@@ -2836,7 +2836,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-11-04T16:00:39-06:00"
+          "refreshed_ct": "2026-11-04T16:43:21-06:00"
         },
         "market_edge": {
           "ml": {
@@ -3143,14 +3143,14 @@
               "goalie": "Joey Daccord",
               "status": "Likely",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-11-04T16:00:39-06:00",
+              "seen_time_ct": "2026-11-04T16:43:21-06:00",
               "file": "nhl_goalie_log.jsonl"
             },
             "away": {
               "goalie": "Dustin Wolf",
               "status": "Confirmed",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-11-04T16:00:39-06:00",
+              "seen_time_ct": "2026-11-04T16:43:21-06:00",
               "file": "nhl_goalie_log.jsonl"
             }
           },
@@ -3383,7 +3383,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-11-04T16:00:39-06:00"
+          "refreshed_ct": "2026-11-04T16:43:21-06:00"
         },
         "market_edge": {
           "ml": {
@@ -3690,14 +3690,14 @@
               "goalie": "Darcy Kuemper",
               "status": "Likely",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-11-04T16:00:39-06:00",
+              "seen_time_ct": "2026-11-04T16:43:21-06:00",
               "file": "nhl_goalie_log.jsonl"
             },
             "away": {
               "goalie": "Yaroslav Askarov",
               "status": "Confirmed",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-11-04T16:00:39-06:00",
+              "seen_time_ct": "2026-11-04T16:43:21-06:00",
               "file": "nhl_goalie_log.jsonl"
             }
           },
@@ -3930,7 +3930,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-11-04T16:00:39-06:00"
+          "refreshed_ct": "2026-11-04T16:43:21-06:00"
         },
         "market_edge": {
           "ml": {
@@ -4465,7 +4465,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-11-04T16:00:39-06:00"
+          "refreshed_ct": "2026-11-04T16:43:21-06:00"
         },
         "market_edge": {
           "ml": {
@@ -5000,7 +5000,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-11-04T16:00:39-06:00"
+          "refreshed_ct": "2026-11-04T16:43:21-06:00"
         },
         "market_edge": {
           "ml": {
@@ -5535,7 +5535,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-11-04T16:00:39-06:00"
+          "refreshed_ct": "2026-11-04T16:43:21-06:00"
         },
         "market_edge": {
           "ml": {
@@ -6066,7 +6066,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-11-04T16:00:39-06:00"
+          "refreshed_ct": "2026-11-04T16:43:21-06:00"
         },
         "market_edge": {
           "ml": {
@@ -6601,7 +6601,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-11-04T16:00:39-06:00"
+          "refreshed_ct": "2026-11-04T16:43:21-06:00"
         },
         "market_edge": {
           "ml": {
@@ -7136,7 +7136,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-11-04T16:00:39-06:00"
+          "refreshed_ct": "2026-11-04T16:43:21-06:00"
         },
         "market_edge": {
           "ml": {
@@ -7671,7 +7671,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-11-04T16:00:39-06:00"
+          "refreshed_ct": "2026-11-04T16:43:21-06:00"
         },
         "market_edge": {
           "ml": {
@@ -8206,7 +8206,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-11-04T16:00:39-06:00"
+          "refreshed_ct": "2026-11-04T16:43:21-06:00"
         },
         "market_edge": {
           "ml": {
@@ -8741,7 +8741,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-11-04T16:00:39-06:00"
+          "refreshed_ct": "2026-11-04T16:43:21-06:00"
         },
         "market_edge": {
           "ml": {
@@ -10374,7 +10374,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-11-04T16:00:39-06:00"
+          "refreshed_ct": "2026-11-04T16:43:21-06:00"
         },
         "market_edge": {
           "ml": {
@@ -11451,7 +11451,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-11-04T16:00:39-06:00"
+          "refreshed_ct": "2026-11-04T16:43:21-06:00"
         },
         "market_edge": {
           "ml": {
