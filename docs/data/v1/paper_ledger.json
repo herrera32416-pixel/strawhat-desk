@@ -556,11 +556,11 @@
       "sigma": 15.14,
       "units": 1,
       "stake_usd": 20,
-      "status": "open",
-      "result": null,
-      "score": null,
-      "pnl_units": null,
-      "pnl_usd": null,
+      "status": "graded",
+      "result": "L",
+      "score": "Toledo Rockets 20 - Sacramento State Hornets 17",
+      "pnl_units": -1.0,
+      "pnl_usd": -20.0,
       "source": "market_only",
       "price_source": "SOP book (DraftKings/Betr/Bovada)",
       "n_books": 9,
@@ -573,10 +573,12 @@
       ],
       "grade": "C",
       "rules_version": "2026-10-12",
-      "close_captured_ct": "2026-11-04T12:12:22-06:00"
+      "close_captured_ct": "2026-11-04T12:12:22-06:00",
+      "graded_at_ct": "2026-11-05T12:13:41-06:00",
+      "score_source": "ESPN scoreboard event 401866457 (STATUS_FINAL)"
     }
   ],
-  "updated_at_ct": "2026-11-04T12:12:22-06:00",
+  "updated_at_ct": "2026-11-05T12:13:42-06:00",
   "model": {
     "name": "market + w·(FPI − market); NFL w=0 since 2026-10-04 (FPI history may be post-game, refit pending), CFB 0",
     "source": "betbot-revamp/research/upgrades-2026-10 u3_blend open|blend:fpi mean weekly weight; FINAL_REPORT 2026-10-02: every sport stays on paper",
@@ -608,14 +610,14 @@
     }
   },
   "summary": {
-    "record": "3-7-0",
+    "record": "3-8-0",
     "w": 3,
-    "l": 7,
+    "l": 8,
     "p": 0,
-    "units": 0.7,
-    "usd": 14.0,
-    "graded": 10,
-    "open": 1,
+    "units": -0.3,
+    "usd": -6.0,
+    "graded": 11,
+    "open": 0,
     "by_grade": {
       "A": {
         "record": "0-0-0",
@@ -680,14 +682,14 @@
         "open": 0
       },
       "C": {
-        "record": "3-5-0",
+        "record": "3-6-0",
         "w": 3,
-        "l": 5,
+        "l": 6,
         "p": 0,
-        "units": 2.7,
-        "usd": 54.0,
-        "graded": 8,
-        "open": 1
+        "units": 1.7,
+        "usd": 34.0,
+        "graded": 9,
+        "open": 0
       },
       "pre_grades": {
         "record": "0-2-0",
@@ -712,14 +714,14 @@
         "open": 0
       },
       "CFB": {
-        "record": "0-2-0",
+        "record": "0-3-0",
         "w": 0,
-        "l": 2,
+        "l": 3,
         "p": 0,
-        "units": -2.0,
-        "usd": -40.0,
-        "graded": 2,
-        "open": 1
+        "units": -3.0,
+        "usd": -60.0,
+        "graded": 3,
+        "open": 0
       },
       "NHL": {
         "record": "1-2-0",
