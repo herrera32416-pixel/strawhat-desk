@@ -578,7 +578,7 @@
       "score_source": "ESPN scoreboard event 401866457 (STATUS_FINAL)"
     }
   ],
-  "updated_at_ct": "2026-11-05T12:13:42-06:00",
+  "updated_at_ct": "2026-11-06T11:40:10-06:00",
   "model": {
     "name": "market + w·(FPI − market); NFL w=0 since 2026-10-04 (FPI history may be post-game, refit pending), CFB 0",
     "source": "betbot-revamp/research/upgrades-2026-10 u3_blend open|blend:fpi mean weekly weight; FINAL_REPORT 2026-10-02: every sport stays on paper",
