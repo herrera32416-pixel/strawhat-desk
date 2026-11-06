@@ -7491,7 +7491,7 @@
               "goalie": "Mackenzie Blackwood",
               "status": "Confirmed",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-11-05T16:44:15-06:00",
+              "seen_time_ct": "2026-11-05T19:42:19-06:00",
               "file": "nhl_goalie_log.jsonl"
             },
             "away": null
@@ -7721,7 +7721,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-11-05T16:44:15-06:00"
+          "refreshed_ct": "2026-11-05T19:42:19-06:00"
         },
         "market_edge": {
           "ml": {
@@ -8808,7 +8808,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-11-05T16:44:15-06:00"
+          "refreshed_ct": "2026-11-05T19:42:19-06:00"
         },
         "market_edge": {
           "ml": {
@@ -10463,7 +10463,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-11-05T16:44:15-06:00"
+          "refreshed_ct": "2026-11-05T19:42:19-06:00"
         },
         "market_edge": {
           "ml": {
@@ -10998,7 +10998,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-11-05T16:44:15-06:00"
+          "refreshed_ct": "2026-11-05T19:42:19-06:00"
         },
         "market_edge": {
           "ml": {
