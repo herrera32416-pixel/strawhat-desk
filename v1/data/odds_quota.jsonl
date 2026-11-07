@@ -74,3 +74,6 @@
 {"time_ct": "2026-11-05T12:13:42-06:00", "repo": "desk-v1", "sport": "NHL", "last": "3", "used": "872", "remaining": "19128"}
 {"time_ct": "2026-11-06T11:40:10-06:00", "repo": "desk-v1", "sport": "CFB", "last": "3", "used": "1055", "remaining": "18945"}
 {"time_ct": "2026-11-06T11:40:10-06:00", "repo": "desk-v1", "sport": "NHL", "last": "3", "used": "1058", "remaining": "18942"}
+{"time_ct": "2026-11-07T10:36:08-06:00", "repo": "desk-v1", "sport": "NFL", "last": "3", "used": "1299", "remaining": "18701"}
+{"time_ct": "2026-11-07T10:36:08-06:00", "repo": "desk-v1", "sport": "CFB", "last": "3", "used": "1302", "remaining": "18698"}
+{"time_ct": "2026-11-07T10:36:08-06:00", "repo": "desk-v1", "sport": "NHL", "last": "3", "used": "1305", "remaining": "18695"}
