@@ -7641,7 +7641,7 @@
               "goalie": "Stuart Skinner",
               "status": "Likely",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-11-08T14:39:21-06:00",
+              "seen_time_ct": "2026-11-08T15:15:51-06:00",
               "file": "nhl_goalie_log.jsonl"
             },
             "away": null
@@ -7875,7 +7875,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-11-08T14:39:21-06:00"
+          "refreshed_ct": "2026-11-08T15:15:51-06:00"
         },
         "market_edge": {
           "ml": {
@@ -8182,14 +8182,14 @@
               "goalie": "Devin Cooley",
               "status": "Confirmed",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-11-08T14:39:21-06:00",
+              "seen_time_ct": "2026-11-08T15:15:51-06:00",
               "file": "nhl_goalie_log.jsonl"
             },
             "away": {
               "goalie": "Dan Vladar",
               "status": "Likely",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-11-08T14:39:21-06:00",
+              "seen_time_ct": "2026-11-08T15:15:51-06:00",
               "file": "nhl_goalie_log.jsonl"
             }
           },
@@ -8422,7 +8422,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-11-08T14:39:21-06:00"
+          "refreshed_ct": "2026-11-08T15:15:51-06:00"
         },
         "market_edge": {
           "ml": {
@@ -8729,7 +8729,7 @@
               "goalie": "Anthony Stolarz",
               "status": "Likely",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-11-08T14:39:21-06:00",
+              "seen_time_ct": "2026-11-08T15:15:51-06:00",
               "file": "nhl_goalie_log.jsonl"
             },
             "away": null
@@ -8963,7 +8963,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-11-08T14:39:21-06:00"
+          "refreshed_ct": "2026-11-08T15:15:51-06:00"
         },
         "market_edge": {
           "ml": {
@@ -9498,7 +9498,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-11-08T14:39:21-06:00"
+          "refreshed_ct": "2026-11-08T15:15:51-06:00"
         },
         "market_edge": {
           "ml": {
@@ -10593,7 +10593,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-11-08T14:39:21-06:00"
+          "refreshed_ct": "2026-11-08T15:15:51-06:00"
         },
         "market_edge": {
           "ml": {
@@ -11688,7 +11688,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-11-08T14:39:21-06:00"
+          "refreshed_ct": "2026-11-08T15:15:51-06:00"
         },
         "market_edge": {
           "ml": {
@@ -12223,7 +12223,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-11-08T14:39:21-06:00"
+          "refreshed_ct": "2026-11-08T15:15:51-06:00"
         },
         "market_edge": {
           "ml": {
