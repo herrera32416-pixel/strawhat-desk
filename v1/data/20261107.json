@@ -30697,7 +30697,7 @@
               "goalie": "Mackenzie Blackwood",
               "status": "Confirmed",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-11-07T18:50:05-06:00",
+              "seen_time_ct": "2026-11-07T19:35:56-06:00",
               "file": "nhl_goalie_log.jsonl"
             },
             "away": null
@@ -30931,7 +30931,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-11-07T18:50:05-06:00"
+          "refreshed_ct": "2026-11-07T19:35:56-06:00"
         },
         "market_edge": {
           "ml": {
@@ -31236,20 +31236,20 @@
           "goalies": {
             "home": {
               "goalie": "Darcy Kuemper",
-              "status": "Likely",
+              "status": "Confirmed",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-11-07T18:50:05-06:00",
+              "seen_time_ct": "2026-11-07T19:35:56-06:00",
               "file": "nhl_goalie_log.jsonl"
             },
             "away": {
               "goalie": "Sergei Murashov",
               "status": "Confirmed",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-11-07T18:50:05-06:00",
+              "seen_time_ct": "2026-11-07T19:35:56-06:00",
               "file": "nhl_goalie_log.jsonl"
             }
           },
-          "goalie_flag": "GOALIE UNCONFIRMED (home) — model uses the recent-starter mix / likely starter; re-check before puck drop",
+          "goalie_flag": "",
           "fair": {
             "lam_home": 2.998,
             "lam_away": 2.819,
@@ -31262,7 +31262,7 @@
             "reg_tie_pct": 22.2,
             "b2b_home": 0,
             "b2b_away": 0,
-            "goalie_home": "Darcy Kuemper (Likely)",
+            "goalie_home": "Darcy Kuemper (Confirmed)",
             "goalie_away": "Sergei Murashov (Confirmed)",
             "gsax_pg_home": 0.02,
             "gsax_pg_away": -0.07
@@ -31478,7 +31478,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-11-07T18:50:05-06:00"
+          "refreshed_ct": "2026-11-07T19:35:56-06:00"
         },
         "market_edge": {
           "ml": {
@@ -33453,14 +33453,14 @@
               "goalie": "Devon Levi",
               "status": "Confirmed",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-11-07T18:50:05-06:00",
+              "seen_time_ct": "2026-11-07T19:35:56-06:00",
               "file": "nhl_goalie_log.jsonl"
             },
             "away": {
               "goalie": "Leevi Merilainen",
               "status": "Likely",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-11-07T18:50:05-06:00",
+              "seen_time_ct": "2026-11-07T19:35:56-06:00",
               "file": "nhl_goalie_log.jsonl"
             }
           },
@@ -33693,7 +33693,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-11-07T18:50:05-06:00"
+          "refreshed_ct": "2026-11-07T19:35:56-06:00"
         },
         "market_edge": {
           "ml": {
@@ -39812,7 +39812,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-11-07T18:50:05-06:00"
+          "refreshed_ct": "2026-11-07T19:35:56-06:00"
         },
         "market_edge": {
           "ml": {
@@ -40347,7 +40347,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-11-07T18:50:05-06:00"
+          "refreshed_ct": "2026-11-07T19:35:56-06:00"
         },
         "market_edge": {
           "ml": {
@@ -43110,7 +43110,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-11-07T18:50:05-06:00"
+          "refreshed_ct": "2026-11-07T19:35:56-06:00"
         },
         "market_edge": {
           "ml": {
@@ -43645,7 +43645,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-11-07T18:50:05-06:00"
+          "refreshed_ct": "2026-11-07T19:35:56-06:00"
         },
         "market_edge": {
           "ml": {
@@ -44180,7 +44180,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-11-07T18:50:05-06:00"
+          "refreshed_ct": "2026-11-07T19:35:56-06:00"
         },
         "market_edge": {
           "ml": {
@@ -44715,7 +44715,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-11-07T18:50:05-06:00"
+          "refreshed_ct": "2026-11-07T19:35:56-06:00"
         },
         "market_edge": {
           "ml": {
