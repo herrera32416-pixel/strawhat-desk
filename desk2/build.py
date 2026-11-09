@@ -59,6 +59,45 @@ def col(r):
 <div class="pk">{E(pick(r))}</div>{tag}
 <div class="px">Bovada <b>{am(pr.get("bovada"))}</b></div><div class="ref">ref DK {am(pr.get("dk"))} · Betr {am(pr.get("betr"))}</div>
 <div class="mo"><div class="mg"><div><b>{p("betsim_model_pct") if r.get("pct_label") else p("betsim_pct")}</b><span>Sim Bot model</span></div>{f'<div><b>{p("strawhat_pct")}</b><span>Strawhat model</span></div>' if r.get("strawhat_pct") is not None else ""}</div></div></div>'''
+
+def tier_pill(tag, reason=""):
+    if not tag: return ""
+    t=str(tag).upper()
+    tip=E(reason) if reason else t
+    return f'<div class="tag"><span class="pill {t.lower()}" title="{tip}">{t}</span></div>'
+
+def lookup_tier(P, away, home, market):
+    by=(P.get("tiers") or {}).get("by_game") or {}
+    if not by: return "", ""
+    mk=str(market or "").upper()
+    NFL={"Cardinals":"ARI","Falcons":"ATL","Ravens":"BAL","Bills":"BUF","Panthers":"CAR","Bears":"CHI","Bengals":"CIN","Browns":"CLE","Cowboys":"DAL","Broncos":"DEN","Lions":"DET","Packers":"GB","Texans":"HOU","Colts":"IND","Jaguars":"JAX","Chiefs":"KC","Raiders":"LV","Chargers":"LAC","Rams":"LAR","Dolphins":"MIA","Vikings":"MIN","Patriots":"NE","Saints":"NO","Giants":"NYG","Jets":"NYJ","Eagles":"PHI","Steelers":"PIT","49ers":"SF","Seahawks":"SEA","Buccaneers":"TB","Titans":"TEN","Commanders":"WSH"}
+    NBA={"Hawks":"ATL","Celtics":"BOS","Nets":"BKN","Hornets":"CHA","Bulls":"CHI","Cavaliers":"CLE","Mavericks":"DAL","Nuggets":"DEN","Pistons":"DET","Warriors":"GSW","Rockets":"HOU","Pacers":"IND","Clippers":"LAC","Lakers":"LAL","Grizzlies":"MEM","Heat":"MIA","Bucks":"MIL","Timberwolves":"MIN","Pelicans":"NOP","Knicks":"NYK","Thunder":"OKC","Magic":"ORL","76ers":"PHI","Suns":"PHX","Blazers":"POR","Kings":"SAC","Spurs":"SAS","Raptors":"TOR","Jazz":"UTA","Wizards":"WSH"}
+    NHL={"Ducks":"ANA","Bruins":"BOS","Sabres":"BUF","Flames":"CGY","Hurricanes":"CAR","Blackhawks":"CHI","Avalanche":"COL","Stars":"DAL","Wings":"DET","Oilers":"EDM","Panthers":"FLA","Kings":"LA","Wild":"MIN","Canadiens":"MTL","Predators":"NSH","Devils":"NJ","Islanders":"NYI","Rangers":"NYR","Senators":"OTT","Flyers":"PHI","Penguins":"PIT","Kraken":"SEA","Blues":"STL","Lightning":"TB","Leafs":"TOR","Canucks":"VAN","Knights":"VGK","Capitals":"WSH","Jets":"WPG","Sharks":"SJ"}
+    def ab(n):
+        n=(n or "").strip()
+        if not n: return ""
+        if " " not in n and len(n)<=4: return n.upper()
+        nu=n.upper()
+        for M in (NFL,NBA,NHL):
+            for nick,a in sorted(M.items(), key=lambda kv:-len(kv[0])):
+                if nu.endswith(nick.upper()): return a
+        return n.split()[-1].upper()[:4]
+    cands=[
+        f"{ab(away)}@{ab(home)}|{mk}",
+        f"{(away or '').replace(' ','').upper()}@{(home or '').replace(' ','').upper()}|{mk}",
+        f"{(away or '').split()[-1].upper() if away else ''}@{(home or '').split()[-1].upper() if home else ''}|{mk}",
+    ]
+    for c in cands:
+        if c in by:
+            return by[c].get("tag") or "", by[c].get("reason") or ""
+    au,hu=(away or "").upper(),(home or "").upper()
+    for k,v in by.items():
+        if not k.endswith("|"+mk) or "@" not in k: continue
+        g=k.split("|",1)[0]; a,h=g.split("@",1)
+        if (a in au.replace(" ","") or au.endswith(a)) and (h in hu.replace(" ","") or hu.endswith(h)):
+            return v.get("tag") or "", v.get("reason") or ""
+    return "", ""
+
 def load_picks_panel():
     """Picks Desk panels for LIVE CARD / RECORD tabs. Empty live is fine before ~11 AM CT."""
     for path in (os.path.join(os.path.dirname(REAL),"picks_panel.json"),
@@ -88,6 +127,9 @@ def picks_panels(P):
     upd=E(P.get('upd') or '')
     head=f'<div class="c panel" data-sp="LIVE CARD"><div class="h">LIVE CARD · Filtered + agree3 · updated {upd}</div>'
     head+=f'<div class="m">Filtered {E(" ".join(frec))} · Agree3 {E(" ".join(a3))}</div>'
+    _T=P.get('tiers') or {}; _br=( _T.get('records') or {}).get('BET') or {}
+    if _br:
+        head+=f'<div class="recstrip"><span class="pill bet">BET</span> {E(str(_br.get("rec") or ""))} {E(str(_br.get("usd") or ""))} · $20 flat</div>'
     head+=f'<div class="warn">{note}</div>'
     if rows:
         head+=_tbl(live.get('cols') or [], rows)
@@ -138,6 +180,55 @@ def picks_panels(P):
         +_tbl(bd.get('cols') or [], bd.get('rows') or [])
         +'</div>'
     )
+
+    # BET / LEAN / FADE (Luis Nov 8 2026)
+    T=P.get('tiers') or {}
+    defs=T.get('defs') or {}
+    recs=T.get('records') or {}
+    counts=T.get('today_counts') or {}
+    since=T.get('since') or {}
+    bf=E(str(T.get('backfill_start') or '2026-11-01'))
+    def _tier_rec(tag):
+        r=recs.get(tag) or {}
+        return f'{E(tag)} {E(str(r.get("rec") or "—"))} {E(str(r.get("usd") or ""))}'
+    strip=' · '.join(_tier_rec(t) for t in ('BET','LEAN','FADE'))
+    today_c=' · '.join(f'{E(k)} {v}' for k,v in counts.items()) if counts else 'none yet'
+    def_lines=''.join(
+        f'<div class="n"><span class="pill {E(k.lower())}">{E(k)}</span> {E(v)}</div>'
+        for k,v in defs.items()
+    )
+    tcols=T.get('cols') or []
+    trows=[]
+    for row in (T.get('rows') or []):
+        row=list(row)
+        if row:
+            tag=str(row[0]).upper()
+            row[0]=f'<span class="pill {tag.lower()}">{E(tag)}</span>'
+        trows.append(row)
+    if trows:
+        h=''.join(f'<th>{E(c)}</th>' for c in tcols)
+        body=[]
+        for r in trows:
+            cells=[]
+            for i,x in enumerate(r):
+                if i==0: cells.append(f'<td>{x}</td>')
+                else: cells.append(f'<td>{E(str(x if x is not None else ""))}</td>')
+            body.append(f'<tr>{"".join(cells)}</tr>')
+        ttbl=f'<table><thead><tr>{h}</tr></thead><tbody>{"".join(body)}</tbody></table>'
+    else:
+        ttbl='<p class="pass" style="padding:4px 0">No tagged markets today.</p>'
+    out.append(
+        f'<div class="c panel" data-sp="BET LEAN FADE"><div class="h">BET · LEAN · FADE · updated {E(T.get("upd") or "")}</div>'
+        f'<div class="m">Today: {today_c}</div>'
+        f'<div class="recstrip">{strip}</div>'
+        f'<div class="n">Records at $20 flat · backfill from {bf}'
+        f' · BET since {E(str(since.get("BET") or bf))} · LEAN since {E(str(since.get("LEAN") or bf))} · FADE since {E(str(since.get("FADE") or bf))}</div>'
+        + def_lines
+        + f'<div class="warn">{E(T.get("note") or "")}</div>'
+        + ttbl
+        + '</div>'
+    )
+
     return out
 
 def main():
@@ -153,8 +244,9 @@ def main():
     today=dt.datetime.now(CT).date(); games={}
     for r in rows:
         k=kick(r)
-        if k is None or k.date()<today: continue
+        if k is None or k.date()!=today: continue  # current CT day only (Nov 6 2026)
         games.setdefault(r["game_id"],[]).append(r)
+    P=load_picks_panel()
     cards=[]
     for gid,rs in sorted(games.items(),key=lambda kv:min(kick(r) for r in kv[1])):
         r0=rs[0]; t=kick(r0).strftime("%a %-I:%M %p CT")
@@ -162,11 +254,29 @@ def main():
         for r in rs:   # one row per market: prefer the starred / higher-edge side
             c=bym.get(r["market"])
             if c is None or ((edge(r) or -99) if r.get("playable") is not False else -99)>((edge(c) or -99) if c.get("playable") is not False else -99): bym[r["market"]]=r
-        cols="".join(col(bym[m]) if m in bym else '<div class="col empty"><div class="mk">'+m.upper()+'</div><div class="pass">no line</div></div>' for m in ("ml","spread","total"))
+        def _col_with_tier(m):
+            if m not in bym:
+                return '<div class="col empty"><div class="mk">'+m.upper()+'</div><div class="pass">no line</div></div>'
+            base=col(bym[m])
+            mk={"ml":"ML","spread":"SPREAD","total":"TOTAL"}[m]
+            tag,reason=lookup_tier(P, r0.get("away"), r0.get("home"), mk)
+            if tag:
+                pill=tier_pill(tag, reason)
+                if '</div><div class="px">' in base:
+                    base=base.replace('</div><div class="px">', '</div>'+pill+'<div class="px">', 1)
+                else:
+                    base=base+pill
+            return base
+        cols="".join(_col_with_tier(m) for m in ("ml","spread","total"))
         hot=any(stars(edge(r),r) for r in bym.values())
         notes=" · ".join(dict.fromkeys(r["notes"] for r in rs if r.get("notes")))
         sp=str(r0.get("sport","")).upper()
-        cards.append(f'''<div class="c{' hot' if hot else ''}" data-sp="{E(sp)}"><div class="h">{E(str(r0.get("sport","")))} · {t}</div>
+        gtags=[]
+        for mk in ("ML","SPREAD","TOTAL"):
+            tg,_=lookup_tier(P, r0.get("away"), r0.get("home"), mk)
+            if tg and tg not in gtags: gtags.append(tg)
+        gpills="".join(tier_pill(t) for t in gtags)
+        cards.append(f'''<div class="c{' hot' if hot else ''}" data-sp="{E(sp)}"><div class="h">{E(str(r0.get("sport","")))} · {t}{gpills}</div>
 <div class="m">{E(r0["away"])} <span>@</span> {E(r0["home"])}</div><div class="cols">{cols}</div>
 {f'<div class="n">{E(notes)}</div>' if notes else ''}</div>''')
     sports=sorted({c.split('data-sp="')[1].split('"')[0] for c in cards})
@@ -192,12 +302,12 @@ def main():
     phead=f'<div class="c pc" data-sp="NBA PROPS"><div class="h">NBA PROPS · {E(str(today))} only · PAPER / UNPROVEN — NBA props have no graded history; not plays</div><div class="m">Paper record: {pw}-{pl}-{pp} · {"+" if pu>=0 else "−"}${abs(pu):.0f} at $20 flat</div></div>'
     if not pcards: pcards=['<div class="c pc" data-sp="NBA PROPS"><p>No NBA props today.</p></div>']
     cards=cards+[phead]+pcards
-    P=load_picks_panel()
+    if not P: P=load_picks_panel()
     cards=cards+picks_panels(P)
-    tabs='<div class="tabs"><button class="on" data-t="ALL">All</button>'+"".join(f'<button data-t="{E(x)}">{E(x)} ({sum(("data-sp=\""+x+"\"") in c for c in cards)})</button>' for x in sports)+f'<button data-t="NBA PROPS" id="nba-props">NBA Props ({len(props)})</button><button data-t="LIVE CARD">Live Card ({len((P.get("live") or {}).get("rows") or [])})</button><button data-t="BOARD AGREE">Board Agree ({len((P.get("board") or {}).get("rows") or [])})</button><button data-t="RECORD">Record / Paper</button></div>'
+    tabs='<div class="tabs"><button class="on" data-t="ALL">All</button>'+"".join(f'<button data-t="{E(x)}">{E(x)} ({sum(("data-sp=\""+x+"\"") in c for c in cards)})</button>' for x in sports)+f'<button data-t="NBA PROPS" id="nba-props">NBA Props ({len(props)})</button><button data-t="LIVE CARD">Live Card ({len((P.get("live") or {}).get("rows") or [])})</button><button data-t="BOARD AGREE">Board Agree ({len((P.get("board") or {}).get("rows") or [])})</button><button data-t="BET LEAN FADE">Bet / Lean / Fade ({len((P.get("tiers") or {}).get("rows") or [])})</button><button data-t="RECORD">Record / Paper</button></div>'
     banner='<div class="mock">MOCK DATA — real feed not yet available</div>' if mock else ''
     now=dt.datetime.now(CT).strftime("%b %-d %-I:%M %p CT")
-    page=f'''<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>New DESK</title><style>
+    page=f'''<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Grand Line Picks</title><link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png"><link rel="icon" type="image/png" sizes="48x48" href="assets/favicon-48.png"><link rel="apple-touch-icon" href="assets/apple-touch-icon.png"><meta property="og:title" content="Grand Line Picks"><meta property="og:image" content="assets/og-image.jpg"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Grand Line Picks"><meta name="twitter:image" content="assets/og-image.jpg"><style>
 *{{box-sizing:border-box}}body{{font-family:system-ui,sans-serif;margin:0;background:#0f1115;color:#e8e8e8}}
 .top{{padding:12px 14px;background:#1a1d24;position:sticky;top:0;z-index:2;border-bottom:1px solid #2a2e38}}
 .t{{font-size:22px;font-weight:800}}.rec{{font-size:18px;font-weight:700;color:#f5c518;margin:2px 0}}
@@ -212,9 +322,17 @@ def main():
 .tag{{font-size:12px;margin:4px 0;font-weight:700}}.s{{color:#f5c518}}.s small{{font-size:10px;font-weight:400}}.pass{{color:#777;font-weight:400;font-size:11px}}
 .px{{font-size:12px}}.ref{{font-size:9px;color:#889}}.mo{{font-size:9px;color:#889;margin-top:4px;line-height:1.3}}.mg{{display:flex;gap:6px;margin:2px 0 3px}}.mg div{{flex:1;background:#1c2430;border-radius:4px;padding:3px 0;text-align:center}}.mg b{{display:block;font-size:17px;color:#7cc4ff;font-weight:800}}.mg span{{font-size:8px;color:#9aa}}
 .tabs{{display:flex;gap:6px;overflow-x:auto;margin-top:8px}}.tabs button{{background:#232731;color:#cfd;border:0;border-radius:14px;padding:5px 11px;font-size:12px;font-weight:700;white-space:nowrap}}.tabs button.on{{background:#f5c518;color:#111}}
-.n{{font-size:11px;color:#aa9;margin-top:6px}}.rW{{color:#3c3}}.rL{{color:#e44}}.rP{{color:#aaa}}.panel table{{width:100%;border-collapse:collapse;font-size:12px;margin-top:6px}}.panel th,.panel td{{text-align:left;padding:4px 6px;border-bottom:1px solid #2a2e38;vertical-align:top}}.panel th{{color:#9aa;font-size:10px;letter-spacing:.04em}}.warn{{color:#f5c518;font-size:11px;margin:4px 0;line-height:1.35}}</style></head><body>{banner}
-<div class="top"><div class="t">New DESK</div><div class="rec">★ plays: {w}-{l}-{p} · {"+" if usd>=0 else "−"}${abs(usd):.0f} at $20 flat</div>
-<div class="h">STAGING · not live · built {now} · flat $20 · big = Sim Bot model % · ★ ≥1pp / ★★ ≥3pp vs Bovada · straight bets only</div>{tabs}</div>
+.n{{font-size:11px;color:#aa9;margin-top:6px}}.rW{{color:#3c3}}.rL{{color:#e44}}.rP{{color:#aaa}}.panel table{{width:100%;border-collapse:collapse;font-size:12px;margin-top:6px}}.panel th,.panel td{{text-align:left;padding:4px 6px;border-bottom:1px solid #2a2e38;vertical-align:top}}.panel th{{color:#9aa;font-size:10px;letter-spacing:.04em}}.warn{{color:#f5c518;font-size:11px;margin:4px 0;line-height:1.35}}.pill{{display:inline-block;font-size:10px;font-weight:800;letter-spacing:.04em;padding:2px 7px;border-radius:999px;margin:0 4px 0 0;vertical-align:middle;color:#111}}.pill.bet{{background:#3ddc97;color:#062}}.pill.lean{{background:#f5c518;color:#221}}.pill.fade{{background:#ff6b6b;color:#400}}.recstrip{{font-size:13px;font-weight:700;margin:4px 0 6px;color:#e8e8e8}}.brand{{display:flex;align-items:center;gap:10px}}.brand img{{width:48px;height:48px;border-radius:10px;object-fit:cover;background:#111;border:1px solid #2a2e38}}.brand .t{{font-size:22px;font-weight:800;line-height:1.1}}.brand .sub{{font-size:11px;color:#9aa;font-weight:600}}</style></head><body>{banner}
+<div class="top"><div class="brand"><img src="assets/glp_logo_256.png" width="48" height="48" alt="Grand Line Picks logo"><div><div class="t">Grand Line Picks</div><div class="sub">desk2 · model % only · $20 flat</div></div></div><div class="rec">★ plays: {w}-{l}-{p} · {"+" if usd>=0 else "−"}${abs(usd):.0f} at $20 flat</div>
+<div class="h">built {now} · flat $20 · big = Sim Bot model % · ★ ≥1pp / ★★ ≥3pp vs Bovada · Bet / Lean / Fade · straight bets only</div>{tabs}</div>
 {"".join(cards) or '<p style="padding:14px">No games today.</p>'}<script>document.querySelectorAll('.tabs button').forEach(b=>b.onclick=()=>{{document.querySelectorAll('.tabs button').forEach(x=>x.classList.toggle('on',x===b));const t=b.dataset.t;document.querySelectorAll('.c').forEach(c=>c.style.display=((t==='ALL'&&!c.classList.contains('pc')&&!c.classList.contains('panel'))||c.dataset.sp===t)?'':'none');scrollTo(0,0)}});document.querySelectorAll('.pc,.panel').forEach(c=>c.style.display='none');if(location.hash==='#nba-props')document.getElementById('nba-props').click()</script></body></html>'''
+    # Nov 6 2026 (Luis): page-side rollover at midnight CT: hide stale day's games/card/board until the next rebuild
+    _bd=str(dt.datetime.now(CT).date())
+    _roll=('<script>(function(){var bd="'+_bd+'";function td(){return new Intl.DateTimeFormat("en-CA",{timeZone:"America/Chicago"}).format(new Date())}'
+      'function chk(){if(td()===bd)return;document.querySelectorAll(".c").forEach(function(c){var sp=c.dataset.sp||"";'
+      'if(sp==="RECORD"||sp==="BET LEAN FADE")return;if(sp==="LIVE CARD"||sp==="BOARD AGREE"||sp==="NBA PROPS"||!c.classList.contains("panel")){'
+      'c.querySelectorAll("table,.cols,.mo").forEach(function(t){t.remove()});if(!c.querySelector(".stale")){var p=document.createElement("p");p.className="pass stale";'
+      'p.textContent="New CT day: yesterday\u2019s games hidden. Today\u2019s board fills on the next refresh.";c.appendChild(p)}}})}chk();setInterval(chk,60000)})();</script>')
+    page=page.replace("</body>",_roll+"</body>") if "</body>" in page else page+_roll
     open(os.path.join(H,"index.html"),"w").write(page); print("built","MOCK" if mock else "REAL",len(rows),"rows",len(cards),"games")
 main()
