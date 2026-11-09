@@ -710,10 +710,10 @@
    "gameday": "2026-11-14",
    "line": 49.5,
    "side": "under",
-   "lean": -2.47,
+   "lean": -2.51,
    "price": -110,
    "status": "open",
-   "updated_ct": "2026-11-08T12:51-06:00",
+   "updated_ct": "2026-11-09T17:27-06:00",
    "logged_ct": "2026-11-07T12:50-06:00"
   },
   {
@@ -721,12 +721,12 @@
    "game": "Sacramento State @ Central Michigan",
    "kick_iso": "2026-11-11T18:30:00-06:00",
    "gameday": "2026-11-11",
-   "line": 44.5,
+   "line": 43.5,
    "side": "over",
-   "lean": 1.81,
+   "lean": 1.78,
    "price": -110,
    "status": "open",
-   "updated_ct": "2026-11-08T12:51-06:00",
+   "updated_ct": "2026-11-09T17:27-06:00",
    "logged_ct": "2026-11-08T12:51-06:00"
   },
   {
@@ -734,12 +734,12 @@
    "game": "Florida State @ Pittsburgh",
    "kick_iso": "2026-11-13T18:00:00-06:00",
    "gameday": "2026-11-13",
-   "line": 53.5,
+   "line": 54.5,
    "side": "under",
-   "lean": -1.71,
+   "lean": -1.69,
    "price": -110,
    "status": "open",
-   "updated_ct": "2026-11-08T12:51-06:00",
+   "updated_ct": "2026-11-09T17:27-06:00",
    "logged_ct": "2026-11-08T12:51-06:00"
   },
   {
@@ -749,10 +749,10 @@
    "gameday": "2026-11-14",
    "line": 54.5,
    "side": "under",
-   "lean": -2.38,
+   "lean": -2.3,
    "price": -110,
    "status": "open",
-   "updated_ct": "2026-11-08T12:51-06:00",
+   "updated_ct": "2026-11-09T17:27-06:00",
    "logged_ct": "2026-11-08T12:51-06:00"
   },
   {
@@ -762,10 +762,10 @@
    "gameday": "2026-11-14",
    "line": 61.5,
    "side": "under",
-   "lean": -1.81,
+   "lean": -1.84,
    "price": -110,
    "status": "open",
-   "updated_ct": "2026-11-08T12:51-06:00",
+   "updated_ct": "2026-11-09T17:27-06:00",
    "logged_ct": "2026-11-08T12:51-06:00"
   },
   {
@@ -775,10 +775,10 @@
    "gameday": "2026-11-14",
    "line": 60.5,
    "side": "under",
-   "lean": -2.06,
+   "lean": -2.13,
    "price": -110,
    "status": "open",
-   "updated_ct": "2026-11-08T12:51-06:00",
+   "updated_ct": "2026-11-09T17:27-06:00",
    "logged_ct": "2026-11-08T12:51-06:00"
   },
   {
@@ -786,12 +786,12 @@
    "game": "Nebraska @ Rutgers",
    "kick_iso": "2026-11-14T11:30:00-06:00",
    "gameday": "2026-11-14",
-   "line": 53.5,
+   "line": 52.5,
    "side": "under",
-   "lean": -1.89,
+   "lean": -1.87,
    "price": -110,
    "status": "open",
-   "updated_ct": "2026-11-08T12:51-06:00",
+   "updated_ct": "2026-11-09T17:27-06:00",
    "logged_ct": "2026-11-08T12:51-06:00"
   },
   {
@@ -799,12 +799,12 @@
    "game": "Alabama @ Vanderbilt",
    "kick_iso": "2026-11-14T11:45:00-06:00",
    "gameday": "2026-11-14",
-   "line": 54.5,
+   "line": 50.5,
    "side": "under",
-   "lean": -2.1,
+   "lean": -2.05,
    "price": -110,
    "status": "open",
-   "updated_ct": "2026-11-08T12:51-06:00",
+   "updated_ct": "2026-11-09T17:27-06:00",
    "logged_ct": "2026-11-08T12:51-06:00"
   },
   {
@@ -812,12 +812,12 @@
    "game": "Florida Atlantic @ Tulsa",
    "kick_iso": "2026-11-14T14:30:00-06:00",
    "gameday": "2026-11-14",
-   "line": 70.5,
+   "line": 74.5,
    "side": "under",
-   "lean": -2.67,
+   "lean": -2.82,
    "price": -110,
    "status": "open",
-   "updated_ct": "2026-11-08T12:51-06:00",
+   "updated_ct": "2026-11-09T17:27-06:00",
    "logged_ct": "2026-11-08T12:51-06:00"
   },
   {
@@ -825,12 +825,12 @@
    "game": "Georgia Southern @ Georgia State",
    "kick_iso": "2026-11-14T14:30:00-06:00",
    "gameday": "2026-11-14",
-   "line": 55.5,
+   "line": 56.5,
    "side": "under",
-   "lean": -1.66,
+   "lean": -1.65,
    "price": -110,
    "status": "open",
-   "updated_ct": "2026-11-08T12:51-06:00",
+   "updated_ct": "2026-11-09T17:27-06:00",
    "logged_ct": "2026-11-08T12:51-06:00"
   },
   {
@@ -838,12 +838,12 @@
    "game": "Fresno State @ Texas State",
    "kick_iso": "2026-11-14T15:00:00-06:00",
    "gameday": "2026-11-14",
-   "line": 58.5,
+   "line": 60.5,
    "side": "under",
-   "lean": -1.55,
+   "lean": -1.57,
    "price": -110,
    "status": "open",
-   "updated_ct": "2026-11-08T12:51-06:00",
+   "updated_ct": "2026-11-09T17:27-06:00",
    "logged_ct": "2026-11-08T12:51-06:00"
   },
   {
@@ -851,12 +851,12 @@
    "game": "Oregon State @ Boise State",
    "kick_iso": "2026-11-14T17:00:00-06:00",
    "gameday": "2026-11-14",
-   "line": 64.5,
+   "line": 65.5,
    "side": "under",
-   "lean": -2.29,
+   "lean": -2.33,
    "price": -110,
    "status": "open",
-   "updated_ct": "2026-11-08T12:51-06:00",
+   "updated_ct": "2026-11-09T17:27-06:00",
    "logged_ct": "2026-11-08T12:51-06:00"
   },
   {
@@ -864,12 +864,12 @@
    "game": "Stanford @ Virginia Tech",
    "kick_iso": "2026-11-14T18:30:00-06:00",
    "gameday": "2026-11-14",
-   "line": 59.5,
+   "line": 58.5,
    "side": "under",
-   "lean": -2.21,
+   "lean": -2.17,
    "price": -110,
    "status": "open",
-   "updated_ct": "2026-11-08T12:51-06:00",
+   "updated_ct": "2026-11-09T17:27-06:00",
    "logged_ct": "2026-11-08T12:51-06:00"
   },
   {
@@ -877,12 +877,12 @@
    "game": "North Texas @ UTSA",
    "kick_iso": "2026-11-14T20:00:00-06:00",
    "gameday": "2026-11-14",
-   "line": 76.5,
+   "line": 77.5,
    "side": "under",
-   "lean": -3.63,
+   "lean": -3.6,
    "price": -110,
    "status": "open",
-   "updated_ct": "2026-11-08T12:51-06:00",
+   "updated_ct": "2026-11-09T17:27-06:00",
    "logged_ct": "2026-11-08T12:51-06:00"
   },
   {
@@ -890,12 +890,12 @@
    "game": "Colorado State @ Washington State",
    "kick_iso": "2026-11-14T21:30:00-06:00",
    "gameday": "2026-11-14",
-   "line": 63.5,
+   "line": 67.5,
    "side": "under",
-   "lean": -1.8,
+   "lean": -1.81,
    "price": -110,
    "status": "open",
-   "updated_ct": "2026-11-08T12:51-06:00",
+   "updated_ct": "2026-11-09T17:27-06:00",
    "logged_ct": "2026-11-08T12:51-06:00"
   }
  ]
