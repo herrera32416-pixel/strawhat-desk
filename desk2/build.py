@@ -49,6 +49,49 @@ def _stars(e): return "★★" if e is not None and e>=3 else "★" if e is not 
 def kick(r):
     try: return dt.datetime.fromisoformat(r["kickoff_ct"]).astimezone(CT)
     except Exception: return None
+
+def nick(name):
+    """Short team label for proj line (Flyers, Flames, Leafs, …)."""
+    n=(name or "").strip()
+    if not n: return "?"
+    # multi-word nicknames that shouldn't be truncated to the last token alone
+    specials=(
+        ("Maple Leafs","Leafs"),("Blue Jackets","Jackets"),("Golden Knights","Knights"),
+        ("Red Wings","Wings"),("Blue Jays","Jays"),("White Sox","Sox"),
+        ("Trail Blazers","Blazers"),("Timberwolves","Wolves"),("SuperSonics","Sonics"),
+        ("76ers","76ers"),("Football Team","WFT"),
+    )
+    nu=n
+    for full,short in specials:
+        if nu.endswith(full): return short
+    # city + nick: take last word (Bears, Flyers, Celtics, …)
+    parts=nu.split()
+    return parts[-1] if parts else n
+
+def proj_line(rs):
+    """One Sim Bot projected-score line from feed proj_* fields. Omit if missing."""
+    r0=rs[0] if rs else {}
+    # prefer any row that actually carries projections
+    ph=pa=None
+    for r in rs:
+        ph=num(r.get("proj_home_score")); pa=num(r.get("proj_away_score"))
+        if ph is not None and pa is not None: break
+    if ph is None or pa is None: return ""
+    ha,aa=r0.get("home") or "?", r0.get("away") or "?"
+    hn,an=nick(ha),nick(aa)
+    tot=ph+pa; marg=ph-pa  # home minus away
+    # one decimal for hockey-ish totals (<20), one for others too (matches board)
+    def s(x):
+        return f"{x:.1f}"
+    if marg>0.05:
+        by=f"{hn} by {s(marg)}"
+    elif marg<-0.05:
+        by=f"{an} by {s(-marg)}"
+    else:
+        by="pick'em"
+    return (f'<div class="proj">Sim: {E(an)} {s(pa)} – {E(hn)} {s(ph)}'
+            f' · total {s(tot)} · {E(by)}</div>')
+
 def col(r):
     m=r["market"]; e=edge(r); s=stars(e,r); f=r["pinnacle_novig_pct"]; pr=r["prices"]
     fair=f'<div class="f">{f:.1f}%</div><div class="fs">fair · {E(str(r.get("novig_source") or "no-vig"))}</div>' if f is not None else '<div class="f na">fair n/a</div><div class="fs">&nbsp;</div>'
@@ -301,8 +344,9 @@ def main():
         hot=any(stars(edge(r),r) for r in bym.values())
         notes=" · ".join(dict.fromkeys(r["notes"] for r in rs if r.get("notes")))
         sp=str(r0.get("sport","")).upper()
+        pl=proj_line(rs)
         cards.append(f'''<div class="c{' hot' if hot else ''}" data-sp="{E(sp)}"><div class="h">{E(str(r0.get("sport","")))} · {t}</div>
-<div class="m">{E(r0["away"])} <span>@</span> {E(r0["home"])}</div><div class="cols">{cols}</div>
+<div class="m">{E(r0["away"])} <span>@</span> {E(r0["home"])}</div>{pl}<div class="cols">{cols}</div>
 {f'<div class="n">{E(notes)}</div>' if notes else ''}</div>''')
     sports=sorted({c.split('data-sp="')[1].split('"')[0] for c in cards})
     # 2026-10-19 (Luis via Strawhat): NBA Props tab, today's CT date only, PAPER / UNPROVEN
@@ -348,7 +392,7 @@ def main():
 .tag{{font-size:9px;margin:2px 0;font-weight:700;line-height:1.2;max-height:2.4em;overflow:hidden}}.s{{color:#f5c518}}.s small{{font-size:9px;font-weight:400}}.pass{{color:#777;font-weight:400;font-size:9px}}
 .px{{font-size:10px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}}.ref{{font-size:8px;color:#889;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}}.mo{{font-size:8px;color:#889;margin-top:auto;padding-top:3px;line-height:1.2}}.mg{{display:flex;gap:3px;margin:1px 0 2px}}.mg div{{flex:1;background:#1c2430;border-radius:4px;padding:2px 0;text-align:center;min-width:0}}.mg b{{display:block;font-size:15px;color:#7cc4ff;font-weight:800}}.mg span{{font-size:7px;color:#9aa}}
 .tabs{{display:flex;gap:6px;overflow-x:auto;margin-top:8px}}.tabs button{{background:#232731;color:#cfd;border:0;border-radius:14px;padding:5px 11px;font-size:12px;font-weight:700;white-space:nowrap}}.tabs button.on{{background:#f5c518;color:#111}}
-.n{{font-size:11px;color:#aa9;margin-top:6px}}.rW{{color:#3c3}}.rL{{color:#e44}}.rP{{color:#aaa}}.panel table{{width:100%;border-collapse:collapse;font-size:12px;margin-top:6px}}.panel th,.panel td{{text-align:left;padding:4px 6px;border-bottom:1px solid #2a2e38;vertical-align:top}}.panel th{{color:#9aa;font-size:10px;letter-spacing:.04em}}.warn{{color:#f5c518;font-size:11px;margin:4px 0;line-height:1.35}}.pill{{display:inline-block;font-size:10px;font-weight:800;letter-spacing:.04em;padding:2px 7px;border-radius:999px;margin:0 4px 0 0;vertical-align:middle;color:#111}}.pill.bet{{background:#3ddc97;color:#062}}.pill.lean{{background:#f5c518;color:#221}}.pill.fade{{background:#ff6b6b;color:#400}}.recstrip{{font-size:13px;font-weight:700;margin:4px 0 6px;color:#e8e8e8}}.brand{{display:flex;align-items:center;gap:10px}}.brand img{{width:48px;height:48px;border-radius:10px;object-fit:cover;background:#111;border:1px solid #2a2e38}}.brand .t{{font-size:22px;font-weight:800;line-height:1.1}}.brand .sub{{font-size:11px;color:#9aa;font-weight:600}}.tier-under{{margin-top:3px;text-align:center;line-height:1.15;flex-shrink:0}}.tier-under .pill{{margin:0;font-size:9px;padding:2px 5px;max-width:100%;box-sizing:border-box}}.tier-under .paper{{display:block;font-size:7px;color:#9aa;font-weight:600;letter-spacing:.02em;margin-top:1px}}.pill.pass{{background:#3a3f4a;color:#9aa}}</style></head><body>{banner}
+.n{{font-size:11px;color:#aa9;margin-top:6px}}.proj{{font-size:11px;color:#9ec1e6;margin:0 0 6px;font-weight:600;letter-spacing:.01em;line-height:1.3}}.rW{{color:#3c3}}.rL{{color:#e44}}.rP{{color:#aaa}}.panel table{{width:100%;border-collapse:collapse;font-size:12px;margin-top:6px}}.panel th,.panel td{{text-align:left;padding:4px 6px;border-bottom:1px solid #2a2e38;vertical-align:top}}.panel th{{color:#9aa;font-size:10px;letter-spacing:.04em}}.warn{{color:#f5c518;font-size:11px;margin:4px 0;line-height:1.35}}.pill{{display:inline-block;font-size:10px;font-weight:800;letter-spacing:.04em;padding:2px 7px;border-radius:999px;margin:0 4px 0 0;vertical-align:middle;color:#111}}.pill.bet{{background:#3ddc97;color:#062}}.pill.lean{{background:#f5c518;color:#221}}.pill.fade{{background:#ff6b6b;color:#400}}.recstrip{{font-size:13px;font-weight:700;margin:4px 0 6px;color:#e8e8e8}}.brand{{display:flex;align-items:center;gap:10px}}.brand img{{width:48px;height:48px;border-radius:10px;object-fit:cover;background:#111;border:1px solid #2a2e38}}.brand .t{{font-size:22px;font-weight:800;line-height:1.1}}.brand .sub{{font-size:11px;color:#9aa;font-weight:600}}.tier-under{{margin-top:3px;text-align:center;line-height:1.15;flex-shrink:0}}.tier-under .pill{{margin:0;font-size:9px;padding:2px 5px;max-width:100%;box-sizing:border-box}}.tier-under .paper{{display:block;font-size:7px;color:#9aa;font-weight:600;letter-spacing:.02em;margin-top:1px}}.pill.pass{{background:#3a3f4a;color:#9aa}}</style></head><body>{banner}
 <div class="top"><div class="brand"><img src="assets/glp_logo_256.png" width="48" height="48" alt="Grand Line Picks logo"><div><div class="t">Grand Line Picks</div><div class="sub">desk2 · model % only · $20 flat</div></div></div><div class="rec">★ plays: {w}-{l}-{p} · {"+" if usd>=0 else "−"}${abs(usd):.0f} at $20 flat</div>
 <div class="h">built {now} · flat $20 · big = Sim Bot model % · ★ ≥1pp / ★★ ≥3pp vs Bovada · Bet / Lean / Fade · straight bets only</div>{tabs}</div>
 {"".join(cards) or '<p style="padding:14px">No games today.</p>'}<script>document.querySelectorAll('.tabs button').forEach(b=>b.onclick=()=>{{document.querySelectorAll('.tabs button').forEach(x=>x.classList.toggle('on',x===b));const t=b.dataset.t;document.querySelectorAll('.c').forEach(c=>c.style.display=((t==='ALL'&&!c.classList.contains('pc')&&!c.classList.contains('panel'))||c.dataset.sp===t)?'':'none');scrollTo(0,0)}});document.querySelectorAll('.pc,.panel').forEach(c=>c.style.display='none');if(location.hash==='#nba-props')document.getElementById('nba-props').click()</script></body></html>'''
