@@ -60,11 +60,18 @@ def col(r):
 <div class="px">Bovada <b>{am(pr.get("bovada"))}</b></div><div class="ref">ref DK {am(pr.get("dk"))} · Betr {am(pr.get("betr"))}</div>
 <div class="mo"><div class="mg"><div><b>{p("betsim_model_pct") if r.get("pct_label") else p("betsim_pct")}</b><span>Sim Bot model</span></div>{f'<div><b>{p("strawhat_pct")}</b><span>Strawhat model</span></div>' if r.get("strawhat_pct") is not None else ""}</div></div></div>'''
 
-def tier_pill(tag, reason=""):
+def tier_pill(tag, reason="", under_pct=False):
     if not tag: return ""
     t=str(tag).upper()
     tip=E(reason) if reason else t
-    return f'<div class="tag"><span class="pill {t.lower()}" title="{tip}">{t}</span></div>'
+    extra = ""
+    if t == "FADE":
+        extra = ' <small class="paper">paper</small>'
+    elif t == "LEAN":
+        extra = ' <small class="paper">unproven</small>'
+    cls = "tier-under" if under_pct else "tag"
+    return f'<div class="{cls}"><span class="pill {t.lower()}" title="{tip}">{t}</span>{extra}</div>'
+
 
 def lookup_tier(P, away, home, market):
     by=(P.get("tiers") or {}).get("by_game") or {}
@@ -261,22 +268,24 @@ def main():
             mk={"ml":"ML","spread":"SPREAD","total":"TOTAL"}[m]
             tag,reason=lookup_tier(P, r0.get("away"), r0.get("home"), mk)
             if tag:
-                pill=tier_pill(tag, reason)
-                if '</div><div class="px">' in base:
-                    base=base.replace('</div><div class="px">', '</div>'+pill+'<div class="px">', 1)
+                pill=tier_pill(tag, reason, under_pct=True)
+                # Place directly under the model % block (.mo), inside the market box
+                i = base.find('<div class="mo">')
+                if i != -1:
+                    j = base.find('</div></div>', i)
+                    if j != -1:
+                        j += len('</div></div>')
+                        base = base[:j] + pill + base[j:]
+                    else:
+                        base = base + pill
                 else:
-                    base=base+pill
+                    base = base + pill
             return base
         cols="".join(_col_with_tier(m) for m in ("ml","spread","total"))
         hot=any(stars(edge(r),r) for r in bym.values())
         notes=" · ".join(dict.fromkeys(r["notes"] for r in rs if r.get("notes")))
         sp=str(r0.get("sport","")).upper()
-        gtags=[]
-        for mk in ("ML","SPREAD","TOTAL"):
-            tg,_=lookup_tier(P, r0.get("away"), r0.get("home"), mk)
-            if tg and tg not in gtags: gtags.append(tg)
-        gpills="".join(tier_pill(t) for t in gtags)
-        cards.append(f'''<div class="c{' hot' if hot else ''}" data-sp="{E(sp)}"><div class="h">{E(str(r0.get("sport","")))} · {t}{gpills}</div>
+        cards.append(f'''<div class="c{' hot' if hot else ''}" data-sp="{E(sp)}"><div class="h">{E(str(r0.get("sport","")))} · {t}</div>
 <div class="m">{E(r0["away"])} <span>@</span> {E(r0["home"])}</div><div class="cols">{cols}</div>
 {f'<div class="n">{E(notes)}</div>' if notes else ''}</div>''')
     sports=sorted({c.split('data-sp="')[1].split('"')[0] for c in cards})
@@ -322,7 +331,7 @@ def main():
 .tag{{font-size:12px;margin:4px 0;font-weight:700}}.s{{color:#f5c518}}.s small{{font-size:10px;font-weight:400}}.pass{{color:#777;font-weight:400;font-size:11px}}
 .px{{font-size:12px}}.ref{{font-size:9px;color:#889}}.mo{{font-size:9px;color:#889;margin-top:4px;line-height:1.3}}.mg{{display:flex;gap:6px;margin:2px 0 3px}}.mg div{{flex:1;background:#1c2430;border-radius:4px;padding:3px 0;text-align:center}}.mg b{{display:block;font-size:17px;color:#7cc4ff;font-weight:800}}.mg span{{font-size:8px;color:#9aa}}
 .tabs{{display:flex;gap:6px;overflow-x:auto;margin-top:8px}}.tabs button{{background:#232731;color:#cfd;border:0;border-radius:14px;padding:5px 11px;font-size:12px;font-weight:700;white-space:nowrap}}.tabs button.on{{background:#f5c518;color:#111}}
-.n{{font-size:11px;color:#aa9;margin-top:6px}}.rW{{color:#3c3}}.rL{{color:#e44}}.rP{{color:#aaa}}.panel table{{width:100%;border-collapse:collapse;font-size:12px;margin-top:6px}}.panel th,.panel td{{text-align:left;padding:4px 6px;border-bottom:1px solid #2a2e38;vertical-align:top}}.panel th{{color:#9aa;font-size:10px;letter-spacing:.04em}}.warn{{color:#f5c518;font-size:11px;margin:4px 0;line-height:1.35}}.pill{{display:inline-block;font-size:10px;font-weight:800;letter-spacing:.04em;padding:2px 7px;border-radius:999px;margin:0 4px 0 0;vertical-align:middle;color:#111}}.pill.bet{{background:#3ddc97;color:#062}}.pill.lean{{background:#f5c518;color:#221}}.pill.fade{{background:#ff6b6b;color:#400}}.recstrip{{font-size:13px;font-weight:700;margin:4px 0 6px;color:#e8e8e8}}.brand{{display:flex;align-items:center;gap:10px}}.brand img{{width:48px;height:48px;border-radius:10px;object-fit:cover;background:#111;border:1px solid #2a2e38}}.brand .t{{font-size:22px;font-weight:800;line-height:1.1}}.brand .sub{{font-size:11px;color:#9aa;font-weight:600}}</style></head><body>{banner}
+.n{{font-size:11px;color:#aa9;margin-top:6px}}.rW{{color:#3c3}}.rL{{color:#e44}}.rP{{color:#aaa}}.panel table{{width:100%;border-collapse:collapse;font-size:12px;margin-top:6px}}.panel th,.panel td{{text-align:left;padding:4px 6px;border-bottom:1px solid #2a2e38;vertical-align:top}}.panel th{{color:#9aa;font-size:10px;letter-spacing:.04em}}.warn{{color:#f5c518;font-size:11px;margin:4px 0;line-height:1.35}}.pill{{display:inline-block;font-size:10px;font-weight:800;letter-spacing:.04em;padding:2px 7px;border-radius:999px;margin:0 4px 0 0;vertical-align:middle;color:#111}}.pill.bet{{background:#3ddc97;color:#062}}.pill.lean{{background:#f5c518;color:#221}}.pill.fade{{background:#ff6b6b;color:#400}}.recstrip{{font-size:13px;font-weight:700;margin:4px 0 6px;color:#e8e8e8}}.brand{{display:flex;align-items:center;gap:10px}}.brand img{{width:48px;height:48px;border-radius:10px;object-fit:cover;background:#111;border:1px solid #2a2e38}}.brand .t{{font-size:22px;font-weight:800;line-height:1.1}}.brand .sub{{font-size:11px;color:#9aa;font-weight:600}}.tier-under{{margin-top:4px;text-align:center;line-height:1.2}}.tier-under .pill{{margin:0}}.tier-under .paper{{font-size:8px;color:#9aa;font-weight:600;letter-spacing:.02em}}</style></head><body>{banner}
 <div class="top"><div class="brand"><img src="assets/glp_logo_256.png" width="48" height="48" alt="Grand Line Picks logo"><div><div class="t">Grand Line Picks</div><div class="sub">desk2 · model % only · $20 flat</div></div></div><div class="rec">★ plays: {w}-{l}-{p} · {"+" if usd>=0 else "−"}${abs(usd):.0f} at $20 flat</div>
 <div class="h">built {now} · flat $20 · big = Sim Bot model % · ★ ≥1pp / ★★ ≥3pp vs Bovada · Bet / Lean / Fade · straight bets only</div>{tabs}</div>
 {"".join(cards) or '<p style="padding:14px">No games today.</p>'}<script>document.querySelectorAll('.tabs button').forEach(b=>b.onclick=()=>{{document.querySelectorAll('.tabs button').forEach(x=>x.classList.toggle('on',x===b));const t=b.dataset.t;document.querySelectorAll('.c').forEach(c=>c.style.display=((t==='ALL'&&!c.classList.contains('pc')&&!c.classList.contains('panel'))||c.dataset.sp===t)?'':'none');scrollTo(0,0)}});document.querySelectorAll('.pc,.panel').forEach(c=>c.style.display='none');if(location.hash==='#nba-props')document.getElementById('nba-props').click()</script></body></html>'''
