@@ -219,23 +219,7 @@ def picks_panels(P):
     out.append('<div class="c panel" data-sp="RECORD"><div class="h">THREE-WAY · shared picks only</div>'
                +_tbl(['Column','W-L-P','$'], sh_rows)
                +f'<div class="n">Only the {E(str(sh.get("n") or ""))} graded picks all three made.</div></div>')
-    # BOARD AGREE · every game/market (Luis OK Nov 6 2026 11:17 AM CT)
-    bd=P.get('board') or {}
-    bd_note=E(bd.get('note') or '')
-    bd_fade=E(bd.get('fade_note') or '')
-    bd_gap=E(bd.get('gap') or '')
-    bd_upd=E(bd.get('upd') or '')
-    cnt=bd.get('counts') or {}
-    cnt_s=' · '.join(f'{E(str(k))} {v}' for k,v in cnt.items()) if cnt else ''
-    out.append(
-        f'<div class="c panel" data-sp="BOARD AGREE"><div class="h">BOARD AGREE · every market · updated {bd_upd}</div>'
-        f'<div class="m">{E(str(bd.get("n") or 0))} markets · {cnt_s}</div>'
-        f'<div class="warn">{bd_note}</div>'
-        f'<div class="warn">Fade lean source: {bd_fade}</div>'
-        +(f'<div class="n">{bd_gap}</div>' if bd_gap else '')
-        +_tbl(bd.get('cols') or [], bd.get('rows') or [])
-        +'</div>'
-    )
+    # BOARD AGREE panel removed from the desk (Luis Nov 9 2026). Data still lives in picks_panel.json.
 
     # BET / LEAN / FADE (Luis Nov 8 2026)
     T=P.get('tiers') or {}
@@ -370,10 +354,10 @@ def main():
     pcards=[pcard(x) for x in props]
     phead=f'<div class="c pc" data-sp="NBA PROPS"><div class="h">NBA PROPS · {E(str(today))} only · PAPER / UNPROVEN — NBA props have no graded history; not plays</div><div class="m">Paper record: {pw}-{pl}-{pp} · {"+" if pu>=0 else "−"}${abs(pu):.0f} at $20 flat</div></div>'
     if not pcards: pcards=['<div class="c pc" data-sp="NBA PROPS"><p>No NBA props today.</p></div>']
-    cards=cards+[phead]+pcards
+    # NBA Props tab removed from the desk (Luis Nov 9 2026); do not append prop cards.
     if not P: P=load_picks_panel()
     cards=cards+picks_panels(P)
-    tabs='<div class="tabs"><button class="on" data-t="ALL">All</button>'+"".join(f'<button data-t="{E(x)}">{E(x)} ({sum(("data-sp=\""+x+"\"") in c for c in cards)})</button>' for x in sports)+f'<button data-t="NBA PROPS" id="nba-props">NBA Props ({len(props)})</button><button data-t="LIVE CARD">Live Card ({len((P.get("live") or {}).get("rows") or [])})</button><button data-t="BOARD AGREE">Board Agree ({len((P.get("board") or {}).get("rows") or [])})</button><button data-t="BET LEAN FADE">Bet / Lean / Fade ({len((P.get("tiers") or {}).get("rows") or [])})</button><button data-t="RECORD">Record / Paper</button></div>'
+    tabs='<div class="tabs"><button class="on" data-t="ALL">All</button>'+"".join(f'<button data-t="{E(x)}">{E(x)} ({sum(("data-sp=\""+x+"\"") in c for c in cards)})</button>' for x in sports)+f'<button data-t="LIVE CARD">Live Card ({len((P.get("live") or {}).get("rows") or [])})</button><button data-t="BET LEAN FADE">Bet / Lean / Fade ({len((P.get("tiers") or {}).get("rows") or [])})</button><button data-t="RECORD">Record / Paper</button></div>'
     banner='<div class="mock">MOCK DATA — real feed not yet available</div>' if mock else ''
     now=dt.datetime.now(CT).strftime("%b %-d %-I:%M %p CT")
     page=f'''<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Grand Line Picks</title><link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png"><link rel="icon" type="image/png" sizes="48x48" href="assets/favicon-48.png"><link rel="apple-touch-icon" href="assets/apple-touch-icon.png"><meta property="og:title" content="Grand Line Picks"><meta property="og:image" content="assets/og-image.jpg"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Grand Line Picks"><meta name="twitter:image" content="assets/og-image.jpg"><style>
@@ -391,11 +375,11 @@ def main():
 .f{{font-size:22px;font-weight:800;line-height:1.1}}.f.na{{font-size:14px;color:#778;padding:4px 0}}.fs{{font-size:9px;color:#889}}
 .tag{{font-size:9px;margin:2px 0;font-weight:700;line-height:1.2;max-height:2.4em;overflow:hidden}}.s{{color:#f5c518}}.s small{{font-size:9px;font-weight:400}}.pass{{color:#777;font-weight:400;font-size:9px}}
 .px{{font-size:10px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}}.ref{{font-size:8px;color:#889;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}}.mo{{font-size:8px;color:#889;margin-top:auto;padding-top:3px;line-height:1.2}}.mg{{display:flex;gap:3px;margin:1px 0 2px}}.mg div{{flex:1;background:#1c2430;border-radius:4px;padding:2px 0;text-align:center;min-width:0}}.mg b{{display:block;font-size:15px;color:#7cc4ff;font-weight:800}}.mg span{{font-size:7px;color:#9aa}}
-.tabs{{display:flex;gap:6px;overflow-x:auto;margin-top:8px}}.tabs button{{background:#232731;color:#cfd;border:0;border-radius:14px;padding:5px 11px;font-size:12px;font-weight:700;white-space:nowrap}}.tabs button.on{{background:#f5c518;color:#111}}
+.tabs{{display:flex;gap:8px;overflow-x:auto;margin-top:8px}}.tabs button{{background:#232731;color:#cfd;border:0;border-radius:14px;padding:7px 14px;font-size:15px;font-weight:700;white-space:nowrap}}.tabs button.on{{background:#f5c518;color:#111}}
 .n{{font-size:11px;color:#aa9;margin-top:6px}}.proj{{font-size:11px;color:#9ec1e6;margin:0 0 6px;font-weight:600;letter-spacing:.01em;line-height:1.3}}.rW{{color:#3c3}}.rL{{color:#e44}}.rP{{color:#aaa}}.panel table{{width:100%;border-collapse:collapse;font-size:12px;margin-top:6px}}.panel th,.panel td{{text-align:left;padding:4px 6px;border-bottom:1px solid #2a2e38;vertical-align:top}}.panel th{{color:#9aa;font-size:10px;letter-spacing:.04em}}.warn{{color:#f5c518;font-size:11px;margin:4px 0;line-height:1.35}}.pill{{display:inline-block;font-size:10px;font-weight:800;letter-spacing:.04em;padding:2px 7px;border-radius:999px;margin:0 4px 0 0;vertical-align:middle;color:#111}}.pill.bet{{background:#3ddc97;color:#062}}.pill.lean{{background:#f5c518;color:#221}}.pill.fade{{background:#ff6b6b;color:#400}}.recstrip{{font-size:13px;font-weight:700;margin:4px 0 6px;color:#e8e8e8}}.brand{{display:flex;align-items:center;gap:10px}}.brand img{{width:48px;height:48px;border-radius:10px;object-fit:cover;background:#111;border:1px solid #2a2e38}}.brand .t{{font-size:22px;font-weight:800;line-height:1.1}}.brand .sub{{font-size:11px;color:#9aa;font-weight:600}}.tier-under{{margin-top:3px;text-align:center;line-height:1.15;flex-shrink:0}}.tier-under .pill{{margin:0;font-size:9px;padding:2px 5px;max-width:100%;box-sizing:border-box}}.tier-under .paper{{display:block;font-size:7px;color:#9aa;font-weight:600;letter-spacing:.02em;margin-top:1px}}.pill.pass{{background:#3a3f4a;color:#9aa}}</style></head><body>{banner}
 <div class="top"><div class="brand"><img src="assets/glp_logo_256.png" width="48" height="48" alt="Grand Line Picks logo"><div><div class="t">Grand Line Picks</div><div class="sub">desk2 · model % only · $20 flat</div></div></div><div class="rec">★ plays: {w}-{l}-{p} · {"+" if usd>=0 else "−"}${abs(usd):.0f} at $20 flat</div>
 <div class="h">built {now} · flat $20 · big = Sim Bot model % · ★ ≥1pp / ★★ ≥3pp vs Bovada · Bet / Lean / Fade · straight bets only</div>{tabs}</div>
-{"".join(cards) or '<p style="padding:14px">No games today.</p>'}<script>document.querySelectorAll('.tabs button').forEach(b=>b.onclick=()=>{{document.querySelectorAll('.tabs button').forEach(x=>x.classList.toggle('on',x===b));const t=b.dataset.t;document.querySelectorAll('.c').forEach(c=>c.style.display=((t==='ALL'&&!c.classList.contains('pc')&&!c.classList.contains('panel'))||c.dataset.sp===t)?'':'none');scrollTo(0,0)}});document.querySelectorAll('.pc,.panel').forEach(c=>c.style.display='none');if(location.hash==='#nba-props')document.getElementById('nba-props').click()</script></body></html>'''
+{"".join(cards) or '<p style="padding:14px">No games today.</p>'}<script>document.querySelectorAll('.tabs button').forEach(b=>b.onclick=()=>{{document.querySelectorAll('.tabs button').forEach(x=>x.classList.toggle('on',x===b));const t=b.dataset.t;document.querySelectorAll('.c').forEach(c=>c.style.display=((t==='ALL'&&!c.classList.contains('pc')&&!c.classList.contains('panel'))||c.dataset.sp===t)?'':'none');scrollTo(0,0)}});document.querySelectorAll('.pc,.panel').forEach(c=>c.style.display='none')</script></body></html>'''
     # Nov 6 2026 (Luis): page-side rollover at midnight CT: hide stale day's games/card/board until the next rebuild
     _bd=str(dt.datetime.now(CT).date())
     _roll=('<script>(function(){var bd="'+_bd+'";function td(){return new Intl.DateTimeFormat("en-CA",{timeZone:"America/Chicago"}).format(new Date())}'
