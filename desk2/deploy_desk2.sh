@@ -10,9 +10,9 @@ mkdir -p docs/desk2/assets
 cp -a desk2/assets/. docs/desk2/assets/ 2>/dev/null || true
 git add docs/desk2/index.html docs/desk2/assets
 # Also track source assets + build.py so branding survives clones
-git add desk2/assets desk2/build.py 2>/dev/null || true
+git add desk2/assets desk2/build.py desk2/data/espn_logos.json 2>/dev/null || true
 git diff --cached --quiet && { echo "desk2: no changes $(date)"; exit 0; }
-git commit -qm "desk2 auto rebuild $(date '+%F %H:%M') CT" -- docs/desk2/index.html docs/desk2/assets desk2/assets desk2/build.py 2>/dev/null \
+git commit -qm "desk2 auto rebuild $(date '+%F %H:%M') CT" -- docs/desk2/index.html docs/desk2/assets desk2/assets desk2/build.py desk2/data/espn_logos.json 2>/dev/null \
   || git commit -qm "desk2 auto rebuild $(date '+%F %H:%M') CT"
 st=0; git stash -u -q && st=1
 git pull --rebase -q || { git rebase --abort 2>/dev/null; echo "desk2: pull failed"; }
