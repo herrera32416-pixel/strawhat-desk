@@ -713,7 +713,7 @@
    "lean": -2.51,
    "price": -110,
    "status": "open",
-   "updated_ct": "2026-11-11T15:27-06:00",
+   "updated_ct": "2026-11-12T15:29-06:00",
    "logged_ct": "2026-11-07T12:50-06:00"
   },
   {
@@ -725,21 +725,23 @@
    "side": "over",
    "lean": 1.78,
    "price": -110,
-   "status": "open",
+   "status": "L",
    "updated_ct": "2026-11-11T15:27-06:00",
-   "logged_ct": "2026-11-08T12:51-06:00"
+   "logged_ct": "2026-11-08T12:51-06:00",
+   "final_total": 35.0,
+   "units": -1.0
   },
   {
    "espn_id": "401858293",
    "game": "Florida State @ Pittsburgh",
    "kick_iso": "2026-11-13T18:00:00-06:00",
    "gameday": "2026-11-13",
-   "line": 53.5,
+   "line": 52.5,
    "side": "under",
    "lean": -1.69,
    "price": -110,
    "status": "open",
-   "updated_ct": "2026-11-11T15:27-06:00",
+   "updated_ct": "2026-11-12T15:29-06:00",
    "logged_ct": "2026-11-08T12:51-06:00"
   },
   {
@@ -752,7 +754,7 @@
    "lean": -2.3,
    "price": -110,
    "status": "open",
-   "updated_ct": "2026-11-11T15:27-06:00",
+   "updated_ct": "2026-11-12T15:29-06:00",
    "logged_ct": "2026-11-08T12:51-06:00"
   },
   {
@@ -760,12 +762,12 @@
    "game": "Wake Forest @ SMU",
    "kick_iso": "2026-11-14T11:00:00-06:00",
    "gameday": "2026-11-14",
-   "line": 61.5,
+   "line": 60.5,
    "side": "under",
    "lean": -1.84,
    "price": -110,
    "status": "open",
-   "updated_ct": "2026-11-11T15:27-06:00",
+   "updated_ct": "2026-11-12T15:29-06:00",
    "logged_ct": "2026-11-08T12:51-06:00"
   },
   {
@@ -778,7 +780,7 @@
    "lean": -2.13,
    "price": -110,
    "status": "open",
-   "updated_ct": "2026-11-11T15:27-06:00",
+   "updated_ct": "2026-11-12T15:29-06:00",
    "logged_ct": "2026-11-08T12:51-06:00"
   },
   {
@@ -786,12 +788,12 @@
    "game": "Nebraska @ Rutgers",
    "kick_iso": "2026-11-14T11:30:00-06:00",
    "gameday": "2026-11-14",
-   "line": 52.5,
+   "line": 51.5,
    "side": "under",
    "lean": -1.87,
    "price": -110,
    "status": "open",
-   "updated_ct": "2026-11-11T15:27-06:00",
+   "updated_ct": "2026-11-12T15:29-06:00",
    "logged_ct": "2026-11-08T12:51-06:00"
   },
   {
@@ -804,7 +806,7 @@
    "lean": -2.05,
    "price": -110,
    "status": "open",
-   "updated_ct": "2026-11-11T15:27-06:00",
+   "updated_ct": "2026-11-12T15:29-06:00",
    "logged_ct": "2026-11-08T12:51-06:00"
   },
   {
@@ -812,12 +814,12 @@
    "game": "Florida Atlantic @ Tulsa",
    "kick_iso": "2026-11-14T14:30:00-06:00",
    "gameday": "2026-11-14",
-   "line": 74.5,
+   "line": 73.5,
    "side": "under",
    "lean": -2.82,
    "price": -110,
    "status": "open",
-   "updated_ct": "2026-11-11T15:27-06:00",
+   "updated_ct": "2026-11-12T15:29-06:00",
    "logged_ct": "2026-11-08T12:51-06:00"
   },
   {
@@ -830,7 +832,7 @@
    "lean": -1.65,
    "price": -110,
    "status": "open",
-   "updated_ct": "2026-11-11T15:27-06:00",
+   "updated_ct": "2026-11-12T15:29-06:00",
    "logged_ct": "2026-11-08T12:51-06:00"
   },
   {
@@ -843,7 +845,7 @@
    "lean": -1.57,
    "price": -110,
    "status": "open",
-   "updated_ct": "2026-11-11T15:27-06:00",
+   "updated_ct": "2026-11-12T15:29-06:00",
    "logged_ct": "2026-11-08T12:51-06:00"
   },
   {
@@ -851,12 +853,12 @@
    "game": "Oregon State @ Boise State",
    "kick_iso": "2026-11-14T17:00:00-06:00",
    "gameday": "2026-11-14",
-   "line": 65.5,
+   "line": 63.5,
    "side": "under",
    "lean": -2.33,
    "price": -110,
    "status": "open",
-   "updated_ct": "2026-11-11T15:27-06:00",
+   "updated_ct": "2026-11-12T15:29-06:00",
    "logged_ct": "2026-11-08T12:51-06:00"
   },
   {
@@ -869,7 +871,7 @@
    "lean": -2.17,
    "price": -110,
    "status": "open",
-   "updated_ct": "2026-11-11T15:27-06:00",
+   "updated_ct": "2026-11-12T15:29-06:00",
    "logged_ct": "2026-11-08T12:51-06:00"
   },
   {
@@ -877,12 +879,12 @@
    "game": "North Texas @ UTSA",
    "kick_iso": "2026-11-14T20:00:00-06:00",
    "gameday": "2026-11-14",
-   "line": 75.5,
+   "line": 76.5,
    "side": "under",
    "lean": -3.6,
    "price": -110,
    "status": "open",
-   "updated_ct": "2026-11-11T15:27-06:00",
+   "updated_ct": "2026-11-12T15:29-06:00",
    "logged_ct": "2026-11-08T12:51-06:00"
   },
   {
@@ -895,7 +897,7 @@
    "lean": -1.81,
    "price": -110,
    "status": "open",
-   "updated_ct": "2026-11-11T15:27-06:00",
+   "updated_ct": "2026-11-12T15:29-06:00",
    "logged_ct": "2026-11-08T12:51-06:00"
   }
  ]
