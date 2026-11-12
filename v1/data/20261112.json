@@ -375,14 +375,14 @@
               "goalie": "Linus Ullmark",
               "status": "Confirmed",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-11-12T16:21:14-06:00",
+              "seen_time_ct": "2026-11-12T16:48:40-06:00",
               "file": "nhl_goalie_log.jsonl"
             },
             "away": {
               "goalie": "Scott Wedgewood",
               "status": "Confirmed",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-11-12T16:21:14-06:00",
+              "seen_time_ct": "2026-11-12T16:48:40-06:00",
               "file": "nhl_goalie_log.jsonl"
             }
           },
@@ -615,7 +615,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-11-12T16:21:14-06:00"
+          "refreshed_ct": "2026-11-12T16:48:40-06:00"
         },
         "market_edge": {
           "ml": {
@@ -922,7 +922,7 @@
               "goalie": "Connor Hellebuyck",
               "status": "Confirmed",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-11-12T16:21:14-06:00",
+              "seen_time_ct": "2026-11-12T16:48:40-06:00",
               "file": "nhl_goalie_log.jsonl"
             },
             "away": null
@@ -1156,7 +1156,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-11-12T16:21:14-06:00"
+          "refreshed_ct": "2026-11-12T16:48:40-06:00"
         },
         "market_edge": {
           "ml": {
@@ -1463,14 +1463,14 @@
               "goalie": "Jeremy Swayman",
               "status": "Confirmed",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-11-12T16:21:14-06:00",
+              "seen_time_ct": "2026-11-12T16:48:40-06:00",
               "file": "nhl_goalie_log.jsonl"
             },
             "away": {
               "goalie": "Jacob Fowler",
               "status": "Confirmed",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-11-12T16:21:14-06:00",
+              "seen_time_ct": "2026-11-12T16:48:40-06:00",
               "file": "nhl_goalie_log.jsonl"
             }
           },
@@ -1703,7 +1703,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-11-12T16:21:14-06:00"
+          "refreshed_ct": "2026-11-12T16:48:40-06:00"
         },
         "market_edge": {
           "ml": {
@@ -2010,12 +2010,18 @@
               "goalie": "Jet Greaves",
               "status": "Confirmed",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-11-12T16:21:14-06:00",
+              "seen_time_ct": "2026-11-12T16:48:40-06:00",
               "file": "nhl_goalie_log.jsonl"
             },
-            "away": null
+            "away": {
+              "goalie": "Dennis Hildeby",
+              "status": "Confirmed",
+              "source": "dailyfaceoff",
+              "seen_time_ct": "2026-11-12T16:48:40-06:00",
+              "file": "nhl_goalie_log.jsonl"
+            }
           },
-          "goalie_flag": "GOALIE UNCONFIRMED (away) — model uses the recent-starter mix / likely starter; re-check before puck drop",
+          "goalie_flag": "",
           "fair": {
             "lam_home": 2.899,
             "lam_away": 3.01,
@@ -2023,15 +2029,15 @@
             "source": "Poisson + draw inflation 1.50 + empty-net overlay + OT/SO (P home 0.524), solved to the market no-vig ML and total"
           },
           "nhl_model": {
-            "reg_goals_home": 2.85,
+            "reg_goals_home": 2.91,
             "reg_goals_away": 3.11,
-            "reg_tie_pct": 22.6,
+            "reg_tie_pct": 22.5,
             "b2b_home": 0,
             "b2b_away": 1,
             "goalie_home": "Jet Greaves (Confirmed)",
-            "goalie_away": "recent-starter mix (no log entry)",
+            "goalie_away": "Dennis Hildeby (Confirmed)",
             "gsax_pg_home": 0.1,
-            "gsax_pg_away": 0.16
+            "gsax_pg_away": 0.04
           },
           "markets": {
             "ml": {
@@ -2048,18 +2054,18 @@
                   "novig_pct": 51.2,
                   "model_pct": 51.2,
                   "implied_pct": 53.5,
-                  "edge_pp": -0.4,
-                  "gap_pp": 2.0,
+                  "edge_pp": -1.2,
+                  "gap_pp": 1.2,
                   "strong": false,
-                  "_edge": -0.4075970627893333,
-                  "_gap": 1.9973514115990354,
+                  "_edge": -1.1955639087220749,
+                  "_gap": 1.2093845656662938,
                   "fair_pct": 51.1,
                   "blend_pct": 51.1,
                   "_bedge": -2.4049484743883687,
                   "novig_prev_pct": 51.1,
                   "fair_book": "Pinnacle no-vig",
-                  "model_raw_pct": 53.1,
-                  "model_unproven_pct": 53.1,
+                  "model_raw_pct": 52.3,
+                  "model_unproven_pct": 52.3,
                   "shown_pct": 51.2,
                   "shown_source": "market no-vig fair % (model unproven)"
                 },
@@ -2072,18 +2078,18 @@
                   "novig_pct": 48.8,
                   "model_pct": 48.8,
                   "implied_pct": 51.2,
-                  "edge_pp": -4.3,
-                  "gap_pp": -2.0,
+                  "edge_pp": -3.5,
+                  "gap_pp": -1.2,
                   "strong": false,
-                  "_edge": -4.30028722535587,
-                  "_gap": -1.9973514115990354,
+                  "_edge": -3.5123203794231284,
+                  "_gap": -1.2093845656662938,
                   "fair_pct": 48.9,
                   "blend_pct": 48.9,
                   "_bedge": -2.3029358137568288,
                   "novig_prev_pct": 48.9,
                   "fair_book": "Pinnacle no-vig",
-                  "model_raw_pct": 46.9,
-                  "model_unproven_pct": 46.9,
+                  "model_raw_pct": 47.7,
+                  "model_unproven_pct": 47.7,
                   "shown_pct": 48.8,
                   "shown_source": "market no-vig fair % (model unproven)"
                 }
@@ -2118,18 +2124,18 @@
                   "novig_pct": 30.6,
                   "model_pct": 30.6,
                   "implied_pct": 32.8,
-                  "edge_pp": 1.3,
-                  "gap_pp": 2.6,
+                  "edge_pp": 0.6,
+                  "gap_pp": 1.9,
                   "strong": false,
-                  "_edge": 1.2613235832085012,
-                  "_gap": 2.5875346718067735,
+                  "_edge": 0.5968207203743858,
+                  "_gap": 1.9230318089726584,
                   "fair_pct": 32.6,
                   "blend_pct": 31.5,
                   "_bedge": -1.3262110885982725,
                   "novig_prev_pct": 31.5,
                   "fair_book": "Pinnacle no-vig",
-                  "model_raw_pct": 34.0,
-                  "model_unproven_pct": 34.0,
+                  "model_raw_pct": 33.4,
+                  "model_unproven_pct": 33.4,
                   "shown_pct": 30.6,
                   "shown_source": "market no-vig fair % (model unproven)"
                 },
@@ -2142,18 +2148,18 @@
                   "novig_pct": 69.4,
                   "model_pct": 69.4,
                   "implied_pct": 71.4,
-                  "edge_pp": -5.5,
-                  "gap_pp": -2.6,
+                  "edge_pp": -4.8,
+                  "gap_pp": -1.9,
                   "strong": false,
-                  "_edge": -5.476780257681568,
-                  "_gap": -2.5875346718067793,
+                  "_edge": -4.812277394847452,
+                  "_gap": -1.923031808972664,
                   "fair_pct": 67.4,
                   "blend_pct": 68.5,
                   "_bedge": -2.889245585874778,
                   "novig_prev_pct": 68.5,
                   "fair_book": "Pinnacle no-vig",
-                  "model_raw_pct": 66.0,
-                  "model_unproven_pct": 66.0,
+                  "model_raw_pct": 66.6,
+                  "model_unproven_pct": 66.6,
                   "shown_pct": 69.4,
                   "shown_source": "market no-vig fair % (model unproven)"
                 }
@@ -2188,18 +2194,18 @@
                   "novig_pct": 49.1,
                   "model_pct": 49.1,
                   "implied_pct": 51.2,
-                  "edge_pp": -6.5,
-                  "gap_pp": -4.2,
+                  "edge_pp": -5.6,
+                  "gap_pp": -3.3,
                   "strong": false,
-                  "_edge": -6.528905118954947,
-                  "_gap": -4.225969305198108,
+                  "_edge": -5.611529812307031,
+                  "_gap": -3.308593998550191,
                   "fair_pct": 48.9,
                   "blend_pct": 48.9,
                   "_bedge": -2.3029358137568403,
                   "novig_prev_pct": 48.9,
                   "fair_book": "Pinnacle no-vig",
-                  "model_raw_pct": 44.7,
-                  "model_unproven_pct": 44.7,
+                  "model_raw_pct": 45.6,
+                  "model_unproven_pct": 45.6,
                   "shown_pct": 49.1,
                   "shown_source": "market no-vig fair % (model unproven)"
                 },
@@ -2212,18 +2218,18 @@
                   "novig_pct": 50.9,
                   "model_pct": 50.9,
                   "implied_pct": 53.5,
-                  "edge_pp": 1.8,
-                  "gap_pp": 4.2,
+                  "edge_pp": 0.9,
+                  "gap_pp": 3.3,
                   "strong": false,
-                  "_edge": 1.8210208308097386,
-                  "_gap": 4.225969305198096,
+                  "_edge": 0.9036455241618335,
+                  "_gap": 3.308593998550191,
                   "fair_pct": 51.1,
                   "blend_pct": 51.1,
                   "_bedge": -2.4049484743883576,
                   "novig_prev_pct": 51.1,
                   "fair_book": "Pinnacle no-vig",
-                  "model_raw_pct": 55.3,
-                  "model_unproven_pct": 55.3,
+                  "model_raw_pct": 54.4,
+                  "model_unproven_pct": 54.4,
                   "shown_pct": 50.9,
                   "shown_source": "market no-vig fair % (model unproven)"
                 }
@@ -2244,7 +2250,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-11-12T16:21:14-06:00"
+          "refreshed_ct": "2026-11-12T16:48:40-06:00"
         },
         "market_edge": {
           "ml": {
@@ -2551,14 +2557,14 @@
               "goalie": "Anthony Stolarz",
               "status": "Confirmed",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-11-12T16:21:14-06:00",
+              "seen_time_ct": "2026-11-12T16:48:40-06:00",
               "file": "nhl_goalie_log.jsonl"
             },
             "away": {
               "goalie": "Jesper Wallstedt",
               "status": "Confirmed",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-11-12T16:21:14-06:00",
+              "seen_time_ct": "2026-11-12T16:48:40-06:00",
               "file": "nhl_goalie_log.jsonl"
             }
           },
@@ -2791,7 +2797,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-11-12T16:21:14-06:00"
+          "refreshed_ct": "2026-11-12T16:48:40-06:00"
         },
         "market_edge": {
           "ml": {
@@ -3098,14 +3104,14 @@
               "goalie": "Akira Schmid",
               "status": "Confirmed",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-11-12T16:21:14-06:00",
+              "seen_time_ct": "2026-11-12T16:48:40-06:00",
               "file": "nhl_goalie_log.jsonl"
             },
             "away": {
               "goalie": "John Gibson",
               "status": "Confirmed",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-11-12T16:21:14-06:00",
+              "seen_time_ct": "2026-11-12T16:48:40-06:00",
               "file": "nhl_goalie_log.jsonl"
             }
           },
@@ -3338,7 +3344,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-11-12T16:21:14-06:00"
+          "refreshed_ct": "2026-11-12T16:48:40-06:00"
         },
         "market_edge": {
           "ml": {
@@ -4240,8 +4246,8 @@
                   "edge_pp": -5.1,
                   "gap_pp": -2.7,
                   "strong": false,
-                  "_edge": -5.139539435763895,
-                  "_gap": -2.6544898149343688,
+                  "_edge": -5.139257861214174,
+                  "_gap": -2.654208240384648,
                   "fair_pct": 58.3,
                   "blend_pct": 58.3,
                   "_bedge": -2.485049620829527,
@@ -4264,8 +4270,8 @@
                   "edge_pp": 0.9,
                   "gap_pp": 2.7,
                   "strong": false,
-                  "_edge": 0.8769648407084885,
-                  "_gap": 2.6544898149343688,
+                  "_edge": 0.8766832661587676,
+                  "_gap": 2.654208240384648,
                   "fair_pct": 41.7,
                   "blend_pct": 41.7,
                   "_bedge": -1.7775249742258803,
@@ -4310,8 +4316,8 @@
                   "edge_pp": -1.9,
                   "gap_pp": -0.3,
                   "strong": false,
-                  "_edge": -1.860254944431955,
-                  "_gap": -0.3046821047337389,
+                  "_edge": -1.8593232859282327,
+                  "_gap": -0.3037504462300167,
                   "fair_pct": 39.7,
                   "blend_pct": 36.9,
                   "_bedge": -1.5555728396982105,
@@ -4334,8 +4340,8 @@
                   "edge_pp": -2.4,
                   "gap_pp": 0.3,
                   "strong": false,
-                  "_edge": -2.3547081746407517,
-                  "_gap": 0.30468210473374446,
+                  "_edge": -2.355639833144474,
+                  "_gap": 0.30375044623002223,
                   "fair_pct": 60.3,
                   "blend_pct": 63.1,
                   "_bedge": -2.659390279374496,
@@ -4380,8 +4386,8 @@
                   "edge_pp": -6.5,
                   "gap_pp": -4.2,
                   "strong": false,
-                  "_edge": -6.5361395437115615,
-                  "_gap": -4.180087213637751,
+                  "_edge": -6.529119857045424,
+                  "_gap": -4.1730675269716135,
                   "fair_pct": 49.6,
                   "blend_pct": 49.6,
                   "_bedge": -2.35605233007381,
@@ -4404,8 +4410,8 @@
                   "edge_pp": 1.8,
                   "gap_pp": 4.2,
                   "strong": false,
-                  "_edge": 1.7828739413893513,
-                  "_gap": 4.180087213637751,
+                  "_edge": 1.7758542547232081,
+                  "_gap": 4.173067526971607,
                   "fair_pct": 50.4,
                   "blend_pct": 50.4,
                   "_bedge": -2.3972132722483996,
@@ -4433,7 +4439,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-11-12T16:21:14-06:00"
+          "refreshed_ct": "2026-11-12T16:48:40-06:00"
         },
         "market_edge": {
           "ml": {
@@ -4740,14 +4746,14 @@
               "goalie": "Jake Oettinger",
               "status": "Confirmed",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-11-12T16:21:14-06:00",
+              "seen_time_ct": "2026-11-12T16:48:40-06:00",
               "file": "nhl_goalie_log.jsonl"
             },
             "away": {
               "goalie": "Stuart Skinner",
               "status": "Confirmed",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-11-12T16:21:14-06:00",
+              "seen_time_ct": "2026-11-12T16:48:40-06:00",
               "file": "nhl_goalie_log.jsonl"
             }
           },
@@ -4980,7 +4986,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-11-12T16:21:14-06:00"
+          "refreshed_ct": "2026-11-12T16:48:40-06:00"
         },
         "market_edge": {
           "ml": {
@@ -6407,14 +6413,14 @@
               "goalie": "Karel Vejmelka",
               "status": "Likely",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-11-12T16:21:14-06:00",
+              "seen_time_ct": "2026-11-12T16:48:40-06:00",
               "file": "nhl_goalie_log.jsonl"
             },
             "away": {
               "goalie": "Joel Hofer",
               "status": "Confirmed",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-11-12T16:21:14-06:00",
+              "seen_time_ct": "2026-11-12T16:48:40-06:00",
               "file": "nhl_goalie_log.jsonl"
             }
           },
@@ -6647,7 +6653,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-11-12T16:21:14-06:00"
+          "refreshed_ct": "2026-11-12T16:48:40-06:00"
         },
         "market_edge": {
           "ml": {
@@ -6954,14 +6960,14 @@
               "goalie": "Darcy Kuemper",
               "status": "Likely",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-11-12T16:21:14-06:00",
+              "seen_time_ct": "2026-11-12T16:48:40-06:00",
               "file": "nhl_goalie_log.jsonl"
             },
             "away": {
               "goalie": "Ilya Sorokin",
               "status": "Likely",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-11-12T16:21:14-06:00",
+              "seen_time_ct": "2026-11-12T16:48:40-06:00",
               "file": "nhl_goalie_log.jsonl"
             }
           },
@@ -7194,7 +7200,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-11-12T16:21:14-06:00"
+          "refreshed_ct": "2026-11-12T16:48:40-06:00"
         },
         "market_edge": {
           "ml": {
@@ -8845,7 +8851,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-11-12T16:21:14-06:00"
+          "refreshed_ct": "2026-11-12T16:48:40-06:00"
         },
         "market_edge": {
           "ml": {
@@ -9380,7 +9386,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-11-12T16:21:14-06:00"
+          "refreshed_ct": "2026-11-12T16:48:40-06:00"
         },
         "market_edge": {
           "ml": {
