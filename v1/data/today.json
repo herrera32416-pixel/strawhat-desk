@@ -6958,20 +6958,20 @@
           "goalies": {
             "home": {
               "goalie": "Darcy Kuemper",
-              "status": "Likely",
+              "status": "Confirmed",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-11-12T20:00:25-06:00",
+              "seen_time_ct": "2026-11-12T20:43:13-06:00",
               "file": "nhl_goalie_log.jsonl"
             },
             "away": {
               "goalie": "Ilya Sorokin",
-              "status": "Likely",
+              "status": "Confirmed",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-11-12T20:00:25-06:00",
+              "seen_time_ct": "2026-11-12T20:43:13-06:00",
               "file": "nhl_goalie_log.jsonl"
             }
           },
-          "goalie_flag": "GOALIE UNCONFIRMED (away, home) — model uses the recent-starter mix / likely starter; re-check before puck drop",
+          "goalie_flag": "",
           "fair": {
             "lam_home": 2.868,
             "lam_away": 2.694,
@@ -6984,8 +6984,8 @@
             "reg_tie_pct": 23.2,
             "b2b_home": 0,
             "b2b_away": 0,
-            "goalie_home": "Darcy Kuemper (Likely)",
-            "goalie_away": "Ilya Sorokin (Likely)",
+            "goalie_home": "Darcy Kuemper (Confirmed)",
+            "goalie_away": "Ilya Sorokin (Confirmed)",
             "gsax_pg_home": 0.0,
             "gsax_pg_away": 0.19
           },
@@ -7200,7 +7200,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-11-12T20:00:25-06:00"
+          "refreshed_ct": "2026-11-12T20:43:13-06:00"
         },
         "market_edge": {
           "ml": {
@@ -8851,7 +8851,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-11-12T20:00:25-06:00"
+          "refreshed_ct": "2026-11-12T20:43:13-06:00"
         },
         "market_edge": {
           "ml": {
@@ -9386,7 +9386,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-11-12T20:00:25-06:00"
+          "refreshed_ct": "2026-11-12T20:43:13-06:00"
         },
         "market_edge": {
           "ml": {
