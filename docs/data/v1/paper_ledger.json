@@ -904,9 +904,62 @@
       "close_captured_ct": "2026-11-08T10:46:03-06:00",
       "graded_at_ct": "2026-11-09T14:59:52-06:00",
       "score_source": "ESPN scoreboard event 401873043 (STATUS_FINAL)"
+    },
+    {
+      "id": "cfb-401858526-ml",
+      "label": "TRACK C",
+      "sport": "CFB",
+      "slate_date_ct": "2026-11-13",
+      "stamped_at_ct": "2026-11-13T11:59:27-06:00",
+      "kick_utc": "2026-11-14T02:00:00Z",
+      "kick_ct": "Fri 11/13 8:00 PM CT",
+      "matchup": "Illinois Fighting Illini at UCLA Bruins",
+      "away": "Illinois Fighting Illini",
+      "home": "UCLA Bruins",
+      "espn_event_id": "401858526",
+      "espn_home_id": "26",
+      "espn_away_id": "356",
+      "toa_event_id": "bc528be865b10cd4a63a9e642c90d554",
+      "market": "ml",
+      "side": "away",
+      "team": "Illinois Fighting Illini",
+      "selection": "Illinois Fighting Illini ML",
+      "line": null,
+      "price_american": 340,
+      "book": "Bovada",
+      "model_pct": 23.1,
+      "novig_pct": 23.1,
+      "implied_pct": 22.7,
+      "edge_pp": 0.4,
+      "gap_pp": 0.0,
+      "fpi_home_margin": 8.84,
+      "mkt_home_margin": 10.0,
+      "blend_home_margin": 10.0,
+      "w_fpi": 0.0,
+      "sigma": 15.14,
+      "units": 1,
+      "stake_usd": 20,
+      "status": "open",
+      "result": null,
+      "score": null,
+      "pnl_units": null,
+      "pnl_usd": null,
+      "source": "market_only",
+      "price_source": "SOP book (DraftKings/Betr/Bovada)",
+      "n_books": 10,
+      "close_price_american": 310,
+      "close_line": null,
+      "clv_pp": 1.66,
+      "grade_reasons": [
+        "edge +0.4pp < 3.0pp",
+        "long-shot ML +340 > +250"
+      ],
+      "grade": "C",
+      "rules_version": "2026-10-12",
+      "close_captured_ct": "2026-11-13T11:59:27-06:00"
     }
   ],
-  "updated_at_ct": "2026-11-12T12:32:44-06:00",
+  "updated_at_ct": "2026-11-13T11:59:27-06:00",
   "model": {
     "name": "market + w·(FPI − market); NFL w=0 since 2026-10-04 (FPI history may be post-game, refit pending), CFB 0",
     "source": "betbot-revamp/research/upgrades-2026-10 u3_blend open|blend:fpi mean weekly weight; FINAL_REPORT 2026-10-02: every sport stays on paper",
@@ -945,7 +998,7 @@
     "units": -4.29,
     "usd": -85.8,
     "graded": 17,
-    "open": 0,
+    "open": 1,
     "by_grade": {
       "A": {
         "record": "0-0-0",
@@ -1017,7 +1070,7 @@
         "units": -2.29,
         "usd": -45.8,
         "graded": 15,
-        "open": 0
+        "open": 1
       },
       "pre_grades": {
         "record": "0-2-0",
@@ -1049,7 +1102,7 @@
         "units": -7.0,
         "usd": -140.0,
         "graded": 7,
-        "open": 0
+        "open": 1
       },
       "NHL": {
         "record": "1-2-0",
