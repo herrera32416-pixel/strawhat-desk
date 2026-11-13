@@ -6411,20 +6411,20 @@
           "goalies": {
             "home": {
               "goalie": "Karel Vejmelka",
-              "status": "Likely",
+              "status": "Confirmed",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-11-12T16:48:40-06:00",
+              "seen_time_ct": "2026-11-12T20:00:25-06:00",
               "file": "nhl_goalie_log.jsonl"
             },
             "away": {
               "goalie": "Joel Hofer",
               "status": "Confirmed",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-11-12T16:48:40-06:00",
+              "seen_time_ct": "2026-11-12T20:00:25-06:00",
               "file": "nhl_goalie_log.jsonl"
             }
           },
-          "goalie_flag": "GOALIE UNCONFIRMED (home) — model uses the recent-starter mix / likely starter; re-check before puck drop",
+          "goalie_flag": "",
           "fair": {
             "lam_home": 2.823,
             "lam_away": 2.787,
@@ -6437,7 +6437,7 @@
             "reg_tie_pct": 22.8,
             "b2b_home": 1,
             "b2b_away": 0,
-            "goalie_home": "Karel Vejmelka (Likely)",
+            "goalie_home": "Karel Vejmelka (Confirmed)",
             "goalie_away": "Joel Hofer (Confirmed)",
             "gsax_pg_home": -0.06,
             "gsax_pg_away": 0.21
@@ -6653,7 +6653,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-11-12T16:48:40-06:00"
+          "refreshed_ct": "2026-11-12T20:00:25-06:00"
         },
         "market_edge": {
           "ml": {
@@ -6960,14 +6960,14 @@
               "goalie": "Darcy Kuemper",
               "status": "Likely",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-11-12T16:48:40-06:00",
+              "seen_time_ct": "2026-11-12T20:00:25-06:00",
               "file": "nhl_goalie_log.jsonl"
             },
             "away": {
               "goalie": "Ilya Sorokin",
               "status": "Likely",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-11-12T16:48:40-06:00",
+              "seen_time_ct": "2026-11-12T20:00:25-06:00",
               "file": "nhl_goalie_log.jsonl"
             }
           },
@@ -7200,7 +7200,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-11-12T16:48:40-06:00"
+          "refreshed_ct": "2026-11-12T20:00:25-06:00"
         },
         "market_edge": {
           "ml": {
@@ -8851,7 +8851,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-11-12T16:48:40-06:00"
+          "refreshed_ct": "2026-11-12T20:00:25-06:00"
         },
         "market_edge": {
           "ml": {
@@ -9386,7 +9386,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-11-12T16:48:40-06:00"
+          "refreshed_ct": "2026-11-12T20:00:25-06:00"
         },
         "market_edge": {
           "ml": {
