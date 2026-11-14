@@ -2054,14 +2054,14 @@
               "goalie": "Adin Hill",
               "status": "Confirmed",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-11-13T20:31:50-06:00",
+              "seen_time_ct": "2026-11-13T20:41:41-06:00",
               "file": "nhl_goalie_log.jsonl"
             },
             "away": {
               "goalie": "Juuse Saros",
               "status": "Confirmed",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-11-13T20:31:50-06:00",
+              "seen_time_ct": "2026-11-13T20:41:41-06:00",
               "file": "nhl_goalie_log.jsonl"
             }
           },
@@ -2294,7 +2294,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-11-13T20:31:50-06:00"
+          "refreshed_ct": "2026-11-13T20:41:41-06:00"
         },
         "market_edge": {
           "ml": {
@@ -11107,7 +11107,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-11-13T20:31:50-06:00"
+          "refreshed_ct": "2026-11-13T20:41:41-06:00"
         },
         "market_edge": {
           "ml": {
@@ -21632,7 +21632,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-11-13T20:31:50-06:00"
+          "refreshed_ct": "2026-11-13T20:41:41-06:00"
         },
         "market_edge": {
           "ml": {
@@ -28843,7 +28843,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-11-13T20:31:50-06:00"
+          "refreshed_ct": "2026-11-13T20:41:41-06:00"
         },
         "market_edge": {
           "ml": {
@@ -29378,7 +29378,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-11-13T20:31:50-06:00"
+          "refreshed_ct": "2026-11-13T20:41:41-06:00"
         },
         "market_edge": {
           "ml": {
@@ -29913,7 +29913,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-11-13T20:31:50-06:00"
+          "refreshed_ct": "2026-11-13T20:41:41-06:00"
         },
         "market_edge": {
           "ml": {
@@ -30448,7 +30448,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-11-13T20:31:50-06:00"
+          "refreshed_ct": "2026-11-13T20:41:41-06:00"
         },
         "market_edge": {
           "ml": {
@@ -30983,7 +30983,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-11-13T20:31:50-06:00"
+          "refreshed_ct": "2026-11-13T20:41:41-06:00"
         },
         "market_edge": {
           "ml": {
@@ -31291,7 +31291,7 @@
               "goalie": "Daniil Tarasov",
               "status": "Likely",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-11-13T20:31:50-06:00",
+              "seen_time_ct": "2026-11-13T20:41:41-06:00",
               "file": "nhl_goalie_log.jsonl"
             }
           },
@@ -31524,7 +31524,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-11-13T20:31:50-06:00"
+          "refreshed_ct": "2026-11-13T20:41:41-06:00"
         },
         "market_edge": {
           "ml": {
@@ -32059,7 +32059,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-11-13T20:31:50-06:00"
+          "refreshed_ct": "2026-11-13T20:41:41-06:00"
         },
         "market_edge": {
           "ml": {
@@ -32367,7 +32367,7 @@
               "goalie": "Connor Hellebuyck",
               "status": "Confirmed",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-11-13T20:31:50-06:00",
+              "seen_time_ct": "2026-11-13T20:41:41-06:00",
               "file": "nhl_goalie_log.jsonl"
             }
           },
@@ -32600,7 +32600,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-11-13T20:31:50-06:00"
+          "refreshed_ct": "2026-11-13T20:41:41-06:00"
         },
         "market_edge": {
           "ml": {
@@ -36429,7 +36429,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-11-13T20:31:50-06:00"
+          "refreshed_ct": "2026-11-13T20:41:41-06:00"
         },
         "market_edge": {
           "ml": {
@@ -37524,7 +37524,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-11-13T20:31:50-06:00"
+          "refreshed_ct": "2026-11-13T20:41:41-06:00"
         },
         "market_edge": {
           "ml": {
@@ -39739,7 +39739,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-11-13T20:31:50-06:00"
+          "refreshed_ct": "2026-11-13T20:41:41-06:00"
         },
         "market_edge": {
           "ml": {
@@ -40274,7 +40274,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-11-13T20:31:50-06:00"
+          "refreshed_ct": "2026-11-13T20:41:41-06:00"
         },
         "market_edge": {
           "ml": {
