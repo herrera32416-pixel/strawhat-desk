@@ -939,11 +939,11 @@
       "sigma": 15.14,
       "units": 1,
       "stake_usd": 20,
-      "status": "open",
-      "result": null,
-      "score": null,
-      "pnl_units": null,
-      "pnl_usd": null,
+      "status": "graded",
+      "result": "L",
+      "score": "Illinois Fighting Illini 14 - UCLA Bruins 22",
+      "pnl_units": -1.0,
+      "pnl_usd": -20.0,
       "source": "market_only",
       "price_source": "SOP book (DraftKings/Betr/Bovada)",
       "n_books": 10,
@@ -956,10 +956,12 @@
       ],
       "grade": "C",
       "rules_version": "2026-10-12",
-      "close_captured_ct": "2026-11-13T11:59:27-06:00"
+      "close_captured_ct": "2026-11-13T11:59:27-06:00",
+      "graded_at_ct": "2026-11-14T10:41:52-06:00",
+      "score_source": "ESPN scoreboard event 401858526 (STATUS_FINAL)"
     }
   ],
-  "updated_at_ct": "2026-11-13T11:59:27-06:00",
+  "updated_at_ct": "2026-11-14T10:41:53-06:00",
   "model": {
     "name": "market + w·(FPI − market); NFL w=0 since 2026-10-04 (FPI history may be post-game, refit pending), CFB 0",
     "source": "betbot-revamp/research/upgrades-2026-10 u3_blend open|blend:fpi mean weekly weight; FINAL_REPORT 2026-10-02: every sport stays on paper",
@@ -991,14 +993,14 @@
     }
   },
   "summary": {
-    "record": "4-13-0",
+    "record": "4-14-0",
     "w": 4,
-    "l": 13,
+    "l": 14,
     "p": 0,
-    "units": -4.29,
-    "usd": -85.8,
-    "graded": 17,
-    "open": 1,
+    "units": -5.29,
+    "usd": -105.8,
+    "graded": 18,
+    "open": 0,
     "by_grade": {
       "A": {
         "record": "0-0-0",
@@ -1063,14 +1065,14 @@
         "open": 0
       },
       "C": {
-        "record": "4-11-0",
+        "record": "4-12-0",
         "w": 4,
-        "l": 11,
+        "l": 12,
         "p": 0,
-        "units": -2.29,
-        "usd": -45.8,
-        "graded": 15,
-        "open": 1
+        "units": -3.29,
+        "usd": -65.8,
+        "graded": 16,
+        "open": 0
       },
       "pre_grades": {
         "record": "0-2-0",
@@ -1095,14 +1097,14 @@
         "open": 0
       },
       "CFB": {
-        "record": "0-7-0",
+        "record": "0-8-0",
         "w": 0,
-        "l": 7,
+        "l": 8,
         "p": 0,
-        "units": -7.0,
-        "usd": -140.0,
-        "graded": 7,
-        "open": 1
+        "units": -8.0,
+        "usd": -160.0,
+        "graded": 8,
+        "open": 0
       },
       "NHL": {
         "record": "1-2-0",
