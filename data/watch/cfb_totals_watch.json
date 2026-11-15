@@ -712,9 +712,11 @@
    "side": "under",
    "lean": -2.51,
    "price": -110,
-   "status": "open",
+   "status": "W",
    "updated_ct": "2026-11-14T13:12-06:00",
-   "logged_ct": "2026-11-07T12:50-06:00"
+   "logged_ct": "2026-11-07T12:50-06:00",
+   "final_total": 40.0,
+   "units": 0.9090909090909091
   },
   {
    "espn_id": "401866462",
@@ -755,9 +757,11 @@
    "side": "under",
    "lean": -2.3,
    "price": -110,
-   "status": "open",
+   "status": "L",
    "updated_ct": "2026-11-13T14:55-06:00",
-   "logged_ct": "2026-11-08T12:51-06:00"
+   "logged_ct": "2026-11-08T12:51-06:00",
+   "final_total": 61.0,
+   "units": -1.0
   },
   {
    "espn_id": "401858301",
@@ -768,9 +772,11 @@
    "side": "under",
    "lean": -1.84,
    "price": -110,
-   "status": "open",
+   "status": "W",
    "updated_ct": "2026-11-13T14:55-06:00",
-   "logged_ct": "2026-11-08T12:51-06:00"
+   "logged_ct": "2026-11-08T12:51-06:00",
+   "final_total": 56.0,
+   "units": 0.9090909090909091
   },
   {
    "espn_id": "401856859",
@@ -781,9 +787,11 @@
    "side": "under",
    "lean": -2.13,
    "price": -110,
-   "status": "open",
+   "status": "W",
    "updated_ct": "2026-11-13T14:55-06:00",
-   "logged_ct": "2026-11-08T12:51-06:00"
+   "logged_ct": "2026-11-08T12:51-06:00",
+   "final_total": 54.0,
+   "units": 0.9090909090909091
   },
   {
    "espn_id": "401858525",
@@ -794,9 +802,11 @@
    "side": "under",
    "lean": -1.87,
    "price": -110,
-   "status": "open",
+   "status": "W",
    "updated_ct": "2026-11-13T14:55-06:00",
-   "logged_ct": "2026-11-08T12:51-06:00"
+   "logged_ct": "2026-11-08T12:51-06:00",
+   "final_total": 31.0,
+   "units": 0.9090909090909091
   },
   {
    "espn_id": "401856889",
@@ -807,9 +817,11 @@
    "side": "under",
    "lean": -2.05,
    "price": -110,
-   "status": "open",
+   "status": "W",
    "updated_ct": "2026-11-13T14:55-06:00",
-   "logged_ct": "2026-11-08T12:51-06:00"
+   "logged_ct": "2026-11-08T12:51-06:00",
+   "final_total": 27.0,
+   "units": 0.9090909090909091
   },
   {
    "espn_id": "401862826",
@@ -820,9 +832,11 @@
    "side": "under",
    "lean": -2.82,
    "price": -110,
-   "status": "open",
+   "status": "W",
    "updated_ct": "2026-11-14T13:12-06:00",
-   "logged_ct": "2026-11-08T12:51-06:00"
+   "logged_ct": "2026-11-08T12:51-06:00",
+   "final_total": 59.0,
+   "units": 0.9090909090909091
   },
   {
    "espn_id": "401869952",
@@ -833,9 +847,11 @@
    "side": "under",
    "lean": -1.65,
    "price": -110,
-   "status": "open",
+   "status": "W",
    "updated_ct": "2026-11-14T13:12-06:00",
-   "logged_ct": "2026-11-08T12:51-06:00"
+   "logged_ct": "2026-11-08T12:51-06:00",
+   "final_total": 51.0,
+   "units": 0.9090909090909091
   },
   {
    "espn_id": "401860916",
@@ -846,9 +862,11 @@
    "side": "under",
    "lean": -1.57,
    "price": -110,
-   "status": "open",
+   "status": "L",
    "updated_ct": "2026-11-14T13:12-06:00",
-   "logged_ct": "2026-11-08T12:51-06:00"
+   "logged_ct": "2026-11-08T12:51-06:00",
+   "final_total": 72.0,
+   "units": -1.0
   },
   {
    "espn_id": "401860914",
@@ -859,9 +877,11 @@
    "side": "under",
    "lean": -2.33,
    "price": -110,
-   "status": "open",
+   "status": "L",
    "updated_ct": "2026-11-14T13:12-06:00",
-   "logged_ct": "2026-11-08T12:51-06:00"
+   "logged_ct": "2026-11-08T12:51-06:00",
+   "final_total": 87.0,
+   "units": -1.0
   },
   {
    "espn_id": "401858299",
@@ -872,9 +892,11 @@
    "side": "under",
    "lean": -2.17,
    "price": -110,
-   "status": "open",
+   "status": "L",
    "updated_ct": "2026-11-14T13:12-06:00",
-   "logged_ct": "2026-11-08T12:51-06:00"
+   "logged_ct": "2026-11-08T12:51-06:00",
+   "final_total": 62.0,
+   "units": -1.0
   },
   {
    "espn_id": "401862827",
@@ -885,9 +907,11 @@
    "side": "under",
    "lean": -3.6,
    "price": -110,
-   "status": "open",
+   "status": "W",
    "updated_ct": "2026-11-14T13:12-06:00",
-   "logged_ct": "2026-11-08T12:51-06:00"
+   "logged_ct": "2026-11-08T12:51-06:00",
+   "final_total": 51.0,
+   "units": 0.9090909090909091
   },
   {
    "espn_id": "401860917",
@@ -898,9 +922,206 @@
    "side": "under",
    "lean": -1.81,
    "price": -110,
-   "status": "open",
+   "status": "L",
    "updated_ct": "2026-11-14T13:12-06:00",
-   "logged_ct": "2026-11-08T12:51-06:00"
+   "logged_ct": "2026-11-08T12:51-06:00",
+   "final_total": 80.0,
+   "units": -1.0
+  },
+  {
+   "espn_id": "401864542",
+   "game": "New Mexico @ Wyoming",
+   "kick_iso": "2026-11-20T20:00:00-06:00",
+   "gameday": "2026-11-20",
+   "line": 38.5,
+   "side": "over",
+   "lean": 1.54,
+   "price": -110,
+   "status": "open",
+   "updated_ct": "2026-11-15T13:49-06:00",
+   "logged_ct": "2026-11-15T13:49-06:00"
+  },
+  {
+   "espn_id": "401858302",
+   "game": "Virginia Tech @ Miami",
+   "kick_iso": "2026-11-20T23:00:00-06:00",
+   "gameday": "2026-11-20",
+   "line": 60.5,
+   "side": "under",
+   "lean": -3.02,
+   "price": -110,
+   "status": "open",
+   "updated_ct": "2026-11-15T13:49-06:00",
+   "logged_ct": "2026-11-15T13:49-06:00"
+  },
+  {
+   "espn_id": "401862835",
+   "game": "North Texas @ Tulane",
+   "kick_iso": "2026-11-20T23:00:00-06:00",
+   "gameday": "2026-11-20",
+   "line": 57.5,
+   "side": "under",
+   "lean": -2.63,
+   "price": -110,
+   "status": "open",
+   "updated_ct": "2026-11-15T13:49-06:00",
+   "logged_ct": "2026-11-15T13:49-06:00"
+  },
+  {
+   "espn_id": "401856748",
+   "game": "Vanderbilt @ Florida",
+   "kick_iso": "2026-11-21T11:00:00-06:00",
+   "gameday": "2026-11-21",
+   "line": 48.5,
+   "side": "under",
+   "lean": -1.64,
+   "price": -110,
+   "status": "open",
+   "updated_ct": "2026-11-15T13:49-06:00",
+   "logged_ct": "2026-11-15T13:49-06:00"
+  },
+  {
+   "espn_id": "401856867",
+   "game": "Colorado @ Cincinnati",
+   "kick_iso": "2026-11-21T11:00:00-06:00",
+   "gameday": "2026-11-21",
+   "line": 60.5,
+   "side": "under",
+   "lean": -2.01,
+   "price": -110,
+   "status": "open",
+   "updated_ct": "2026-11-15T13:49-06:00",
+   "logged_ct": "2026-11-15T13:49-06:00"
+  },
+  {
+   "espn_id": "401862834",
+   "game": "Memphis @ Navy",
+   "kick_iso": "2026-11-21T11:00:00-06:00",
+   "gameday": "2026-11-21",
+   "line": 65.5,
+   "side": "under",
+   "lean": -2.46,
+   "price": -110,
+   "status": "open",
+   "updated_ct": "2026-11-15T13:49-06:00",
+   "logged_ct": "2026-11-15T13:49-06:00"
+  },
+  {
+   "espn_id": "401856868",
+   "game": "Houston @ West Virginia",
+   "kick_iso": "2026-11-21T12:00:00-06:00",
+   "gameday": "2026-11-21",
+   "line": 71.5,
+   "side": "under",
+   "lean": -2.44,
+   "price": -110,
+   "status": "open",
+   "updated_ct": "2026-11-15T13:49-06:00",
+   "logged_ct": "2026-11-15T13:49-06:00"
+  },
+  {
+   "espn_id": "401871079",
+   "game": "Missouri State @ Jacksonville State",
+   "kick_iso": "2026-11-21T13:00:00-06:00",
+   "gameday": "2026-11-21",
+   "line": 51.5,
+   "side": "under",
+   "lean": -1.56,
+   "price": -110,
+   "status": "open",
+   "updated_ct": "2026-11-15T13:49-06:00",
+   "logged_ct": "2026-11-15T13:49-06:00"
+  },
+  {
+   "espn_id": "401862833",
+   "game": "South Florida @ Florida Atlantic",
+   "kick_iso": "2026-11-21T13:30:00-06:00",
+   "gameday": "2026-11-21",
+   "line": 67.5,
+   "side": "under",
+   "lean": -2.29,
+   "price": -110,
+   "status": "open",
+   "updated_ct": "2026-11-15T13:49-06:00",
+   "logged_ct": "2026-11-15T13:49-06:00"
+  },
+  {
+   "espn_id": "401858304",
+   "game": "NC State @ Florida State",
+   "kick_iso": "2026-11-21T14:30:00-06:00",
+   "gameday": "2026-11-21",
+   "line": 54.5,
+   "side": "under",
+   "lean": -2.7,
+   "price": -110,
+   "status": "open",
+   "updated_ct": "2026-11-15T13:49-06:00",
+   "logged_ct": "2026-11-15T13:49-06:00"
+  },
+  {
+   "espn_id": "401858532",
+   "game": "Rutgers @ Penn State",
+   "kick_iso": "2026-11-21T14:30:00-06:00",
+   "gameday": "2026-11-21",
+   "line": 49.5,
+   "side": "under",
+   "lean": -1.95,
+   "price": -110,
+   "status": "open",
+   "updated_ct": "2026-11-15T13:49-06:00",
+   "logged_ct": "2026-11-15T13:49-06:00"
+  },
+  {
+   "espn_id": "401871101",
+   "game": "South Alabama @ Southern Miss",
+   "kick_iso": "2026-11-21T15:00:00-06:00",
+   "gameday": "2026-11-21",
+   "line": 63.5,
+   "side": "under",
+   "lean": -1.88,
+   "price": -110,
+   "status": "open",
+   "updated_ct": "2026-11-15T13:49-06:00",
+   "logged_ct": "2026-11-15T13:49-06:00"
+  },
+  {
+   "espn_id": "401858534",
+   "game": "Maryland @ USC",
+   "kick_iso": "2026-11-21T17:15:00-06:00",
+   "gameday": "2026-11-21",
+   "line": 56.5,
+   "side": "under",
+   "lean": -1.85,
+   "price": -110,
+   "status": "open",
+   "updated_ct": "2026-11-15T13:49-06:00",
+   "logged_ct": "2026-11-15T13:49-06:00"
+  },
+  {
+   "espn_id": "401858307",
+   "game": "SMU @ Notre Dame",
+   "kick_iso": "2026-11-21T18:30:00-06:00",
+   "gameday": "2026-11-21",
+   "line": 57.5,
+   "side": "under",
+   "lean": -1.76,
+   "price": -110,
+   "status": "open",
+   "updated_ct": "2026-11-15T13:49-06:00",
+   "logged_ct": "2026-11-15T13:49-06:00"
+  },
+  {
+   "espn_id": "401860918",
+   "game": "Colorado State @ Fresno State",
+   "kick_iso": "2026-11-21T18:30:00-06:00",
+   "gameday": "2026-11-21",
+   "line": 63.5,
+   "side": "under",
+   "lean": -2.53,
+   "price": -110,
+   "status": "open",
+   "updated_ct": "2026-11-15T13:49-06:00",
+   "logged_ct": "2026-11-15T13:49-06:00"
   }
  ]
 }
