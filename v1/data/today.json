@@ -6528,7 +6528,7 @@
               "goalie": "Dan Vladar",
               "status": "Confirmed",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-11-15T15:08:03-06:00",
+              "seen_time_ct": "2026-11-15T15:55:42-06:00",
               "file": "nhl_goalie_log.jsonl"
             },
             "away": null
@@ -6762,7 +6762,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-11-15T15:08:03-06:00"
+          "refreshed_ct": "2026-11-15T15:55:42-06:00"
         },
         "market_edge": {
           "ml": {
@@ -7070,7 +7070,7 @@
               "goalie": "Devin Cooley",
               "status": "Confirmed",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-11-15T15:08:03-06:00",
+              "seen_time_ct": "2026-11-15T15:55:42-06:00",
               "file": "nhl_goalie_log.jsonl"
             }
           },
@@ -7303,7 +7303,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-11-15T15:08:03-06:00"
+          "refreshed_ct": "2026-11-15T15:55:42-06:00"
         },
         "market_edge": {
           "ml": {
@@ -7838,7 +7838,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-11-15T15:08:03-06:00"
+          "refreshed_ct": "2026-11-15T15:55:42-06:00"
         },
         "market_edge": {
           "ml": {
@@ -8929,7 +8929,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-11-15T15:08:03-06:00"
+          "refreshed_ct": "2026-11-15T15:55:42-06:00"
         },
         "market_edge": {
           "ml": {
@@ -9237,7 +9237,7 @@
               "goalie": "Juuse Saros",
               "status": "Likely",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-11-15T15:08:03-06:00",
+              "seen_time_ct": "2026-11-15T15:55:42-06:00",
               "file": "nhl_goalie_log.jsonl"
             }
           },
@@ -9470,7 +9470,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-11-15T15:08:03-06:00"
+          "refreshed_ct": "2026-11-15T15:55:42-06:00"
         },
         "market_edge": {
           "ml": {
@@ -10005,7 +10005,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-11-15T15:08:03-06:00"
+          "refreshed_ct": "2026-11-15T15:55:42-06:00"
         },
         "market_edge": {
           "ml": {
@@ -11092,7 +11092,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-11-15T15:08:03-06:00"
+          "refreshed_ct": "2026-11-15T15:55:42-06:00"
         },
         "market_edge": {
           "ml": {
