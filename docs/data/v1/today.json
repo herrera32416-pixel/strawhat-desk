@@ -33438,14 +33438,14 @@
               "goalie": "Karel Vejmelka",
               "status": "Likely",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-11-14T15:37:16-06:00",
+              "seen_time_ct": "2026-11-14T19:10:28-06:00",
               "file": "nhl_goalie_log.jsonl"
             },
             "away": {
               "goalie": "Yaroslav Askarov",
               "status": "Confirmed",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-11-14T15:37:16-06:00",
+              "seen_time_ct": "2026-11-14T19:10:28-06:00",
               "file": "nhl_goalie_log.jsonl"
             }
           },
@@ -33678,7 +33678,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-11-14T15:37:16-06:00"
+          "refreshed_ct": "2026-11-14T19:10:28-06:00"
         },
         "market_edge": {
           "ml": {
@@ -35661,14 +35661,14 @@
               "goalie": "Anton Forsberg",
               "status": "Confirmed",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-11-14T15:37:16-06:00",
+              "seen_time_ct": "2026-11-14T19:10:28-06:00",
               "file": "nhl_goalie_log.jsonl"
             },
             "away": {
               "goalie": "Dustin Wolf",
               "status": "Confirmed",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-11-14T15:37:16-06:00",
+              "seen_time_ct": "2026-11-14T19:10:28-06:00",
               "file": "nhl_goalie_log.jsonl"
             }
           },
@@ -35901,7 +35901,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-11-14T15:37:16-06:00"
+          "refreshed_ct": "2026-11-14T19:10:28-06:00"
         },
         "market_edge": {
           "ml": {
@@ -36209,7 +36209,7 @@
               "goalie": "Semyon Varlamov",
               "status": "Likely",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-11-14T15:37:16-06:00",
+              "seen_time_ct": "2026-11-14T19:10:28-06:00",
               "file": "nhl_goalie_log.jsonl"
             }
           },
@@ -36442,7 +36442,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-11-14T15:37:16-06:00"
+          "refreshed_ct": "2026-11-14T19:10:28-06:00"
         },
         "market_edge": {
           "ml": {
@@ -45115,7 +45115,7 @@
               "goalie": "Dan Vladar",
               "status": "Confirmed",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-11-14T15:37:16-06:00",
+              "seen_time_ct": "2026-11-14T19:10:28-06:00",
               "file": "nhl_goalie_log.jsonl"
             },
             "away": null
@@ -45349,7 +45349,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-11-14T15:37:16-06:00"
+          "refreshed_ct": "2026-11-14T19:10:28-06:00"
         },
         "market_edge": {
           "ml": {
@@ -45884,7 +45884,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-11-14T15:37:16-06:00"
+          "refreshed_ct": "2026-11-14T19:10:28-06:00"
         },
         "market_edge": {
           "ml": {
@@ -46419,7 +46419,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-11-14T15:37:16-06:00"
+          "refreshed_ct": "2026-11-14T19:10:28-06:00"
         },
         "market_edge": {
           "ml": {
@@ -47510,7 +47510,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-11-14T15:37:16-06:00"
+          "refreshed_ct": "2026-11-14T19:10:28-06:00"
         },
         "market_edge": {
           "ml": {
@@ -48045,7 +48045,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-11-14T15:37:16-06:00"
+          "refreshed_ct": "2026-11-14T19:10:28-06:00"
         },
         "market_edge": {
           "ml": {
