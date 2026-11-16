@@ -994,11 +994,11 @@
       "sigma": 12.7,
       "units": 1,
       "stake_usd": 20,
-      "status": "open",
-      "result": null,
-      "score": null,
-      "pnl_units": null,
-      "pnl_usd": null,
+      "status": "graded",
+      "result": "L",
+      "score": "Jacksonville Jaguars 40 - Tennessee Titans 23",
+      "pnl_units": -1.0,
+      "pnl_usd": -20.0,
       "source": "market_only",
       "price_source": "SOP book (DraftKings/Betr/Bovada)",
       "n_books": 10,
@@ -1011,7 +1011,9 @@
       ],
       "grade": "C",
       "rules_version": "2026-10-12",
-      "close_captured_ct": "2026-11-15T11:22:20-06:00"
+      "close_captured_ct": "2026-11-15T11:22:20-06:00",
+      "graded_at_ct": "2026-11-16T14:39:15-06:00",
+      "score_source": "ESPN scoreboard event 401873057 (STATUS_FINAL)"
     },
     {
       "id": "nfl-401873058-ml",
@@ -1047,11 +1049,11 @@
       "sigma": 12.7,
       "units": 1,
       "stake_usd": 20,
-      "status": "open",
-      "result": null,
-      "score": null,
-      "pnl_units": null,
-      "pnl_usd": null,
+      "status": "graded",
+      "result": "L",
+      "score": "Kansas City Chiefs 35 - Atlanta Falcons 13",
+      "pnl_units": -1.0,
+      "pnl_usd": -20.0,
       "source": "market_only",
       "price_source": "SOP book (DraftKings/Betr/Bovada)",
       "n_books": 10,
@@ -1064,10 +1066,12 @@
       ],
       "grade": "C",
       "rules_version": "2026-10-12",
-      "close_captured_ct": "2026-11-15T11:22:20-06:00"
+      "close_captured_ct": "2026-11-15T11:22:20-06:00",
+      "graded_at_ct": "2026-11-16T14:39:15-06:00",
+      "score_source": "ESPN scoreboard event 401873058 (STATUS_FINAL)"
     }
   ],
-  "updated_at_ct": "2026-11-15T11:22:20-06:00",
+  "updated_at_ct": "2026-11-16T14:39:17-06:00",
   "model": {
     "name": "market + w·(FPI − market); NFL w=0 since 2026-10-04 (FPI history may be post-game, refit pending), CFB 0",
     "source": "betbot-revamp/research/upgrades-2026-10 u3_blend open|blend:fpi mean weekly weight; FINAL_REPORT 2026-10-02: every sport stays on paper",
@@ -1099,14 +1103,14 @@
     }
   },
   "summary": {
-    "record": "4-14-0",
+    "record": "4-16-0",
     "w": 4,
-    "l": 14,
+    "l": 16,
     "p": 0,
-    "units": -5.29,
-    "usd": -105.8,
-    "graded": 18,
-    "open": 2,
+    "units": -7.29,
+    "usd": -145.8,
+    "graded": 20,
+    "open": 0,
     "by_grade": {
       "A": {
         "record": "0-0-0",
@@ -1171,14 +1175,14 @@
         "open": 0
       },
       "C": {
-        "record": "4-12-0",
+        "record": "4-14-0",
         "w": 4,
-        "l": 12,
+        "l": 14,
         "p": 0,
-        "units": -3.29,
-        "usd": -65.8,
-        "graded": 16,
-        "open": 2
+        "units": -5.29,
+        "usd": -105.8,
+        "graded": 18,
+        "open": 0
       },
       "pre_grades": {
         "record": "0-2-0",
@@ -1193,14 +1197,14 @@
     },
     "by_sport": {
       "NFL": {
-        "record": "3-4-0",
+        "record": "3-6-0",
         "w": 3,
-        "l": 4,
+        "l": 6,
         "p": 0,
-        "units": 2.41,
-        "usd": 48.2,
-        "graded": 7,
-        "open": 2
+        "units": 0.41,
+        "usd": 8.2,
+        "graded": 9,
+        "open": 0
       },
       "CFB": {
         "record": "0-8-0",
