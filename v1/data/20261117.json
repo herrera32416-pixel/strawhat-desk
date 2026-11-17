@@ -2033,14 +2033,14 @@
               "goalie": "Ilya Sorokin",
               "status": "Confirmed",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-11-17T17:35:48-06:00",
+              "seen_time_ct": "2026-11-17T17:54:12-06:00",
               "file": "nhl_goalie_log.jsonl"
             },
             "away": {
               "goalie": "Cam Talbot",
               "status": "Confirmed",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-11-17T17:35:48-06:00",
+              "seen_time_ct": "2026-11-17T17:54:12-06:00",
               "file": "nhl_goalie_log.jsonl"
             }
           },
@@ -2273,7 +2273,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-11-17T17:35:48-06:00"
+          "refreshed_ct": "2026-11-17T17:54:12-06:00"
         },
         "market_edge": {
           "ml": {
@@ -2580,14 +2580,14 @@
               "goalie": "Jacob Markstrom",
               "status": "Confirmed",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-11-17T17:35:48-06:00",
+              "seen_time_ct": "2026-11-17T17:54:12-06:00",
               "file": "nhl_goalie_log.jsonl"
             },
             "away": {
               "goalie": "Devon Levi",
               "status": "Confirmed",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-11-17T17:35:48-06:00",
+              "seen_time_ct": "2026-11-17T17:54:12-06:00",
               "file": "nhl_goalie_log.jsonl"
             }
           },
@@ -2820,7 +2820,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-11-17T17:35:48-06:00"
+          "refreshed_ct": "2026-11-17T17:54:12-06:00"
         },
         "market_edge": {
           "ml": {
@@ -3127,14 +3127,14 @@
               "goalie": "Stuart Skinner",
               "status": "Confirmed",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-11-17T17:35:48-06:00",
+              "seen_time_ct": "2026-11-17T17:54:12-06:00",
               "file": "nhl_goalie_log.jsonl"
             },
             "away": {
               "goalie": "Linus Ullmark",
               "status": "Confirmed",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-11-17T17:35:48-06:00",
+              "seen_time_ct": "2026-11-17T17:54:12-06:00",
               "file": "nhl_goalie_log.jsonl"
             }
           },
@@ -3367,7 +3367,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-11-17T17:35:48-06:00"
+          "refreshed_ct": "2026-11-17T17:54:12-06:00"
         },
         "market_edge": {
           "ml": {
@@ -3674,14 +3674,14 @@
               "goalie": "Michael DiPietro",
               "status": "Confirmed",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-11-17T17:35:48-06:00",
+              "seen_time_ct": "2026-11-17T17:54:12-06:00",
               "file": "nhl_goalie_log.jsonl"
             },
             "away": {
               "goalie": "Darcy Kuemper",
               "status": "Confirmed",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-11-17T17:35:48-06:00",
+              "seen_time_ct": "2026-11-17T17:54:12-06:00",
               "file": "nhl_goalie_log.jsonl"
             }
           },
@@ -3914,7 +3914,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-11-17T17:35:48-06:00"
+          "refreshed_ct": "2026-11-17T17:54:12-06:00"
         },
         "market_edge": {
           "ml": {
@@ -4221,14 +4221,14 @@
               "goalie": "Joseph Woll",
               "status": "Confirmed",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-11-17T17:35:48-06:00",
+              "seen_time_ct": "2026-11-17T17:54:12-06:00",
               "file": "nhl_goalie_log.jsonl"
             },
             "away": {
               "goalie": "Alex Lyon",
               "status": "Confirmed",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-11-17T17:35:48-06:00",
+              "seen_time_ct": "2026-11-17T17:54:12-06:00",
               "file": "nhl_goalie_log.jsonl"
             }
           },
@@ -4461,7 +4461,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-11-17T17:35:48-06:00"
+          "refreshed_ct": "2026-11-17T17:54:12-06:00"
         },
         "market_edge": {
           "ml": {
@@ -4768,14 +4768,14 @@
               "goalie": "Andrei Vasilevskiy",
               "status": "Confirmed",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-11-17T17:35:48-06:00",
+              "seen_time_ct": "2026-11-17T17:54:12-06:00",
               "file": "nhl_goalie_log.jsonl"
             },
             "away": {
               "goalie": "Logan Thompson",
               "status": "Confirmed",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-11-17T17:35:48-06:00",
+              "seen_time_ct": "2026-11-17T17:54:12-06:00",
               "file": "nhl_goalie_log.jsonl"
             }
           },
@@ -5008,7 +5008,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-11-17T17:35:48-06:00"
+          "refreshed_ct": "2026-11-17T17:54:12-06:00"
         },
         "market_edge": {
           "ml": {
@@ -5315,14 +5315,14 @@
               "goalie": "Spencer Knight",
               "status": "Confirmed",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-11-17T17:35:48-06:00",
+              "seen_time_ct": "2026-11-17T17:54:12-06:00",
               "file": "nhl_goalie_log.jsonl"
             },
             "away": {
               "goalie": "Sergei Bobrovsky",
               "status": "Confirmed",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-11-17T17:35:48-06:00",
+              "seen_time_ct": "2026-11-17T17:54:12-06:00",
               "file": "nhl_goalie_log.jsonl"
             }
           },
@@ -5555,7 +5555,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-11-17T17:35:48-06:00"
+          "refreshed_ct": "2026-11-17T17:54:12-06:00"
         },
         "market_edge": {
           "ml": {
@@ -5862,7 +5862,7 @@
               "goalie": "Jesper Wallstedt",
               "status": "Confirmed",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-11-17T17:35:48-06:00",
+              "seen_time_ct": "2026-11-17T17:54:12-06:00",
               "file": "nhl_goalie_log.jsonl"
             },
             "away": null
@@ -6096,7 +6096,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-11-17T17:35:48-06:00"
+          "refreshed_ct": "2026-11-17T17:54:12-06:00"
         },
         "market_edge": {
           "ml": {
@@ -6403,7 +6403,7 @@
               "goalie": "Jordan Binnington",
               "status": "Confirmed",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-11-17T17:35:48-06:00",
+              "seen_time_ct": "2026-11-17T17:54:12-06:00",
               "file": "nhl_goalie_log.jsonl"
             },
             "away": null
@@ -6637,7 +6637,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-11-17T17:35:48-06:00"
+          "refreshed_ct": "2026-11-17T17:54:12-06:00"
         },
         "market_edge": {
           "ml": {
@@ -6944,14 +6944,14 @@
               "goalie": "Adin Hill",
               "status": "Confirmed",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-11-17T17:35:48-06:00",
+              "seen_time_ct": "2026-11-17T17:54:12-06:00",
               "file": "nhl_goalie_log.jsonl"
             },
             "away": {
               "goalie": "Jake Oettinger",
               "status": "Confirmed",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-11-17T17:35:48-06:00",
+              "seen_time_ct": "2026-11-17T17:54:12-06:00",
               "file": "nhl_goalie_log.jsonl"
             }
           },
@@ -7184,7 +7184,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-11-17T17:35:48-06:00"
+          "refreshed_ct": "2026-11-17T17:54:12-06:00"
         },
         "market_edge": {
           "ml": {
@@ -7491,14 +7491,14 @@
               "goalie": "Yaroslav Askarov",
               "status": "Confirmed",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-11-17T17:35:48-06:00",
+              "seen_time_ct": "2026-11-17T17:54:12-06:00",
               "file": "nhl_goalie_log.jsonl"
             },
             "away": {
               "goalie": "Dustin Wolf",
               "status": "Confirmed",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-11-17T17:35:48-06:00",
+              "seen_time_ct": "2026-11-17T17:54:12-06:00",
               "file": "nhl_goalie_log.jsonl"
             }
           },
@@ -7731,7 +7731,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-11-17T17:35:48-06:00"
+          "refreshed_ct": "2026-11-17T17:54:12-06:00"
         },
         "market_edge": {
           "ml": {
@@ -9154,7 +9154,7 @@
               "goalie": "Daniil Tarasov",
               "status": "Confirmed",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-11-17T17:35:48-06:00",
+              "seen_time_ct": "2026-11-17T17:54:12-06:00",
               "file": "nhl_goalie_log.jsonl"
             },
             "away": null
@@ -9388,7 +9388,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-11-17T17:35:48-06:00"
+          "refreshed_ct": "2026-11-17T17:54:12-06:00"
         },
         "market_edge": {
           "ml": {
@@ -9923,7 +9923,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-11-17T17:35:48-06:00"
+          "refreshed_ct": "2026-11-17T17:54:12-06:00"
         },
         "market_edge": {
           "ml": {
@@ -10454,7 +10454,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-11-17T17:35:48-06:00"
+          "refreshed_ct": "2026-11-17T17:54:12-06:00"
         },
         "market_edge": {
           "ml": {
