@@ -9154,7 +9154,7 @@
               "goalie": "Daniil Tarasov",
               "status": "Confirmed",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-11-17T21:52:33-06:00",
+              "seen_time_ct": "2026-11-17T22:43:07-06:00",
               "file": "nhl_goalie_log.jsonl"
             },
             "away": null
@@ -9388,7 +9388,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-11-17T21:52:33-06:00"
+          "refreshed_ct": "2026-11-17T22:43:07-06:00"
         },
         "market_edge": {
           "ml": {
@@ -9923,7 +9923,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-11-17T21:52:33-06:00"
+          "refreshed_ct": "2026-11-17T22:43:07-06:00"
         },
         "market_edge": {
           "ml": {
@@ -10454,7 +10454,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-11-17T21:52:33-06:00"
+          "refreshed_ct": "2026-11-17T22:43:07-06:00"
         },
         "market_edge": {
           "ml": {
