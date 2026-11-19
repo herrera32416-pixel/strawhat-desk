@@ -938,7 +938,7 @@
    "lean": 1.55,
    "price": -110,
    "status": "open",
-   "updated_ct": "2026-11-18T16:00-06:00",
+   "updated_ct": "2026-11-19T16:12-06:00",
    "logged_ct": "2026-11-15T13:49-06:00"
   },
   {
@@ -951,7 +951,7 @@
    "lean": -3.01,
    "price": -110,
    "status": "open",
-   "updated_ct": "2026-11-18T16:00-06:00",
+   "updated_ct": "2026-11-19T16:12-06:00",
    "logged_ct": "2026-11-15T13:49-06:00"
   },
   {
@@ -964,7 +964,7 @@
    "lean": -2.63,
    "price": -110,
    "status": "open",
-   "updated_ct": "2026-11-18T16:00-06:00",
+   "updated_ct": "2026-11-19T16:12-06:00",
    "logged_ct": "2026-11-15T13:49-06:00"
   },
   {
@@ -972,12 +972,12 @@
    "game": "Vanderbilt @ Florida",
    "kick_iso": "2026-11-21T11:00:00-06:00",
    "gameday": "2026-11-21",
-   "line": 46.5,
+   "line": 45.5,
    "side": "under",
    "lean": -1.65,
    "price": -110,
    "status": "open",
-   "updated_ct": "2026-11-18T16:00-06:00",
+   "updated_ct": "2026-11-19T16:12-06:00",
    "logged_ct": "2026-11-15T13:49-06:00"
   },
   {
@@ -985,12 +985,12 @@
    "game": "Colorado @ Cincinnati",
    "kick_iso": "2026-11-21T11:00:00-06:00",
    "gameday": "2026-11-21",
-   "line": 58.5,
+   "line": 57.5,
    "side": "under",
    "lean": -2.02,
    "price": -110,
    "status": "open",
-   "updated_ct": "2026-11-18T16:00-06:00",
+   "updated_ct": "2026-11-19T16:12-06:00",
    "logged_ct": "2026-11-15T13:49-06:00"
   },
   {
@@ -1003,7 +1003,7 @@
    "lean": -2.46,
    "price": -110,
    "status": "open",
-   "updated_ct": "2026-11-18T16:00-06:00",
+   "updated_ct": "2026-11-19T16:12-06:00",
    "logged_ct": "2026-11-15T13:49-06:00"
   },
   {
@@ -1016,7 +1016,7 @@
    "lean": -2.39,
    "price": -110,
    "status": "open",
-   "updated_ct": "2026-11-18T16:00-06:00",
+   "updated_ct": "2026-11-19T16:12-06:00",
    "logged_ct": "2026-11-15T13:49-06:00"
   },
   {
@@ -1024,12 +1024,12 @@
    "game": "Missouri State @ Jacksonville State",
    "kick_iso": "2026-11-21T13:00:00-06:00",
    "gameday": "2026-11-21",
-   "line": 53.5,
+   "line": 52.5,
    "side": "under",
    "lean": -1.52,
    "price": -110,
    "status": "open",
-   "updated_ct": "2026-11-18T16:00-06:00",
+   "updated_ct": "2026-11-19T16:12-06:00",
    "logged_ct": "2026-11-15T13:49-06:00"
   },
   {
@@ -1042,7 +1042,7 @@
    "lean": -2.29,
    "price": -110,
    "status": "open",
-   "updated_ct": "2026-11-18T16:00-06:00",
+   "updated_ct": "2026-11-19T16:12-06:00",
    "logged_ct": "2026-11-15T13:49-06:00"
   },
   {
@@ -1055,7 +1055,7 @@
    "lean": -2.65,
    "price": -110,
    "status": "open",
-   "updated_ct": "2026-11-18T16:00-06:00",
+   "updated_ct": "2026-11-19T16:12-06:00",
    "logged_ct": "2026-11-15T13:49-06:00"
   },
   {
@@ -1063,12 +1063,12 @@
    "game": "Rutgers @ Penn State",
    "kick_iso": "2026-11-21T14:30:00-06:00",
    "gameday": "2026-11-21",
-   "line": 50.5,
+   "line": 49.5,
    "side": "under",
    "lean": -1.95,
    "price": -110,
    "status": "open",
-   "updated_ct": "2026-11-18T16:00-06:00",
+   "updated_ct": "2026-11-19T16:12-06:00",
    "logged_ct": "2026-11-15T13:49-06:00"
   },
   {
@@ -1076,12 +1076,12 @@
    "game": "South Alabama @ Southern Miss",
    "kick_iso": "2026-11-21T15:00:00-06:00",
    "gameday": "2026-11-21",
-   "line": 65.5,
+   "line": 66.5,
    "side": "under",
    "lean": -1.87,
    "price": -110,
    "status": "open",
-   "updated_ct": "2026-11-18T16:00-06:00",
+   "updated_ct": "2026-11-19T16:12-06:00",
    "logged_ct": "2026-11-15T13:49-06:00"
   },
   {
@@ -1094,7 +1094,7 @@
    "lean": -1.85,
    "price": -110,
    "status": "open",
-   "updated_ct": "2026-11-18T16:00-06:00",
+   "updated_ct": "2026-11-19T16:12-06:00",
    "logged_ct": "2026-11-15T13:49-06:00"
   },
   {
@@ -1107,7 +1107,7 @@
    "lean": -1.71,
    "price": -110,
    "status": "open",
-   "updated_ct": "2026-11-18T16:00-06:00",
+   "updated_ct": "2026-11-19T16:12-06:00",
    "logged_ct": "2026-11-15T13:49-06:00"
   },
   {
@@ -1120,7 +1120,7 @@
    "lean": -2.54,
    "price": -110,
    "status": "open",
-   "updated_ct": "2026-11-18T16:00-06:00",
+   "updated_ct": "2026-11-19T16:12-06:00",
    "logged_ct": "2026-11-15T13:49-06:00"
   },
   {
@@ -1133,7 +1133,7 @@
    "lean": 1.97,
    "price": -110,
    "status": "open",
-   "updated_ct": "2026-11-18T16:00-06:00",
+   "updated_ct": "2026-11-19T16:12-06:00",
    "logged_ct": "2026-11-16T17:25-06:00"
   }
  ]
