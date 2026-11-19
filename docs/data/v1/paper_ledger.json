@@ -1069,9 +1069,61 @@
       "close_captured_ct": "2026-11-15T11:22:20-06:00",
       "graded_at_ct": "2026-11-16T14:39:15-06:00",
       "score_source": "ESPN scoreboard event 401873058 (STATUS_FINAL)"
+    },
+    {
+      "id": "nhl-401892750-ml",
+      "label": "TRACK C",
+      "sport": "NHL",
+      "slate_date_ct": "2026-11-19",
+      "stamped_at_ct": "2026-11-19T13:08:16-06:00",
+      "kick_utc": "2026-11-20T01:10:00Z",
+      "kick_ct": "Thu 11/19 7:10 PM CT",
+      "matchup": "Minnesota Wild at Calgary Flames",
+      "away": "Minnesota Wild",
+      "home": "Calgary Flames",
+      "espn_event_id": "401892750",
+      "espn_home_id": "3",
+      "espn_away_id": "30",
+      "toa_event_id": "3e6894e350f62db024db622aedba4507",
+      "market": "ml",
+      "side": "home",
+      "team": "Calgary Flames",
+      "selection": "Calgary Flames ML",
+      "line": null,
+      "price_american": 210,
+      "book": "Bovada",
+      "model_pct": 32.5,
+      "novig_pct": 32.5,
+      "implied_pct": 32.3,
+      "edge_pp": 0.2,
+      "gap_pp": 0.0,
+      "fpi_home_margin": null,
+      "mkt_home_margin": null,
+      "blend_home_margin": null,
+      "w_fpi": null,
+      "sigma": null,
+      "units": 1,
+      "stake_usd": 20,
+      "status": "open",
+      "result": null,
+      "score": null,
+      "pnl_units": null,
+      "pnl_usd": null,
+      "source": "market_only",
+      "price_source": "SOP book (DraftKings/Betr/Bovada)",
+      "n_books": 10,
+      "close_price_american": 195,
+      "close_line": null,
+      "clv_pp": 1.64,
+      "grade_reasons": [
+        "edge +0.2pp < 3.0pp"
+      ],
+      "grade": "C",
+      "rules_version": "2026-10-12",
+      "close_captured_ct": "2026-11-19T13:08:16-06:00"
     }
   ],
-  "updated_at_ct": "2026-11-18T13:00:01-06:00",
+  "updated_at_ct": "2026-11-19T13:08:16-06:00",
   "model": {
     "name": "market + w·(FPI − market); NFL w=0 since 2026-10-04 (FPI history may be post-game, refit pending), CFB 0",
     "source": "betbot-revamp/research/upgrades-2026-10 u3_blend open|blend:fpi mean weekly weight; FINAL_REPORT 2026-10-02: every sport stays on paper",
@@ -1110,7 +1162,7 @@
     "units": -7.29,
     "usd": -145.8,
     "graded": 20,
-    "open": 0,
+    "open": 1,
     "by_grade": {
       "A": {
         "record": "0-0-0",
@@ -1182,7 +1234,7 @@
         "units": -5.29,
         "usd": -105.8,
         "graded": 18,
-        "open": 0
+        "open": 1
       },
       "pre_grades": {
         "record": "0-2-0",
@@ -1224,7 +1276,7 @@
         "units": 0.3,
         "usd": 6.0,
         "graded": 3,
-        "open": 0
+        "open": 1
       },
       "MLB": {
         "record": "0-0-0",
