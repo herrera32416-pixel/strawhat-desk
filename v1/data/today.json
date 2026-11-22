@@ -29813,7 +29813,7 @@
               "goalie": "Alex Nedeljkovic",
               "status": "Confirmed",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-11-21T19:28:49-06:00",
+              "seen_time_ct": "2026-11-21T20:24:03-06:00",
               "file": "nhl_goalie_log.jsonl"
             },
             "away": null
@@ -30047,7 +30047,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-11-21T19:28:49-06:00"
+          "refreshed_ct": "2026-11-21T20:24:03-06:00"
         },
         "market_edge": {
           "ml": {
@@ -30354,14 +30354,14 @@
               "goalie": "Leevi Merilainen",
               "status": "Likely",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-11-21T19:28:49-06:00",
+              "seen_time_ct": "2026-11-21T20:24:03-06:00",
               "file": "nhl_goalie_log.jsonl"
             },
             "away": {
               "goalie": "Jesper Wallstedt",
               "status": "Confirmed",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-11-21T19:28:49-06:00",
+              "seen_time_ct": "2026-11-21T20:24:03-06:00",
               "file": "nhl_goalie_log.jsonl"
             }
           },
@@ -30594,7 +30594,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-11-21T19:28:49-06:00"
+          "refreshed_ct": "2026-11-21T20:24:03-06:00"
         },
         "market_edge": {
           "ml": {
@@ -32809,7 +32809,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-11-21T19:28:49-06:00"
+          "refreshed_ct": "2026-11-21T20:24:03-06:00"
         },
         "market_edge": {
           "ml": {
@@ -38864,7 +38864,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-11-21T19:28:49-06:00"
+          "refreshed_ct": "2026-11-21T20:24:03-06:00"
         },
         "market_edge": {
           "ml": {
@@ -39399,7 +39399,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-11-21T19:28:49-06:00"
+          "refreshed_ct": "2026-11-21T20:24:03-06:00"
         },
         "market_edge": {
           "ml": {
@@ -39934,7 +39934,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-11-21T19:28:49-06:00"
+          "refreshed_ct": "2026-11-21T20:24:03-06:00"
         },
         "market_edge": {
           "ml": {
@@ -40241,14 +40241,14 @@
               "goalie": "Nikita Tolopilo",
               "status": "Likely",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-11-21T19:28:49-06:00",
+              "seen_time_ct": "2026-11-21T20:24:03-06:00",
               "file": "nhl_goalie_log.jsonl"
             },
             "away": {
               "goalie": "Drew Commesso",
               "status": "Likely",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-11-21T19:28:49-06:00",
+              "seen_time_ct": "2026-11-21T20:24:03-06:00",
               "file": "nhl_goalie_log.jsonl"
             }
           },
@@ -40481,7 +40481,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-11-21T19:28:49-06:00"
+          "refreshed_ct": "2026-11-21T20:24:03-06:00"
         },
         "market_edge": {
           "ml": {
