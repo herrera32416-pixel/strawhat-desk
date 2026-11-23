@@ -1178,9 +1178,61 @@
       "close_captured_ct": "2026-11-21T11:45:08-06:00",
       "graded_at_ct": "2026-11-22T11:59:58-06:00",
       "score_source": "ESPN scoreboard event 401858302 (STATUS_FINAL)"
+    },
+    {
+      "id": "nhl-401892777-spread",
+      "label": "TRACK C",
+      "sport": "NHL",
+      "slate_date_ct": "2026-11-23",
+      "stamped_at_ct": "2026-11-23T16:11:58-06:00",
+      "kick_utc": "2026-11-24T00:40:00Z",
+      "kick_ct": "Mon 11/23 6:40 PM CT",
+      "matchup": "Utah Mammoth at Winnipeg Jets",
+      "away": "Utah Mammoth",
+      "home": "Winnipeg Jets",
+      "espn_event_id": "401892777",
+      "espn_home_id": "28",
+      "espn_away_id": "129764",
+      "toa_event_id": "e2efcb24b2d9689232946057b7e43d23",
+      "market": "spread",
+      "side": "away",
+      "team": "Utah Mammoth",
+      "selection": "Utah Mammoth -1.5",
+      "line": -1.5,
+      "price_american": 230,
+      "book": "Bovada",
+      "model_pct": 30.5,
+      "novig_pct": 30.5,
+      "implied_pct": 30.3,
+      "edge_pp": 0.2,
+      "gap_pp": 0.0,
+      "fpi_home_margin": null,
+      "mkt_home_margin": null,
+      "blend_home_margin": null,
+      "w_fpi": null,
+      "sigma": null,
+      "units": 1,
+      "stake_usd": 20,
+      "status": "open",
+      "result": null,
+      "score": null,
+      "pnl_units": null,
+      "pnl_usd": null,
+      "source": "market_only",
+      "price_source": "SOP book (DraftKings/Betr/Bovada)",
+      "n_books": 8,
+      "close_price_american": 220,
+      "close_line": -1.5,
+      "clv_pp": 0.95,
+      "grade_reasons": [
+        "edge +0.2pp < 3.0pp"
+      ],
+      "grade": "C",
+      "rules_version": "2026-10-12",
+      "close_captured_ct": "2026-11-23T16:11:58-06:00"
     }
   ],
-  "updated_at_ct": "2026-11-22T12:00:00-06:00",
+  "updated_at_ct": "2026-11-23T16:11:58-06:00",
   "model": {
     "name": "market + w·(FPI − market); NFL w=0 since 2026-10-04 (FPI history may be post-game, refit pending), CFB 0",
     "source": "betbot-revamp/research/upgrades-2026-10 u3_blend open|blend:fpi mean weekly weight; FINAL_REPORT 2026-10-02: every sport stays on paper",
@@ -1219,7 +1271,7 @@
     "units": -9.29,
     "usd": -185.8,
     "graded": 22,
-    "open": 0,
+    "open": 1,
     "by_grade": {
       "A": {
         "record": "0-0-0",
@@ -1291,7 +1343,7 @@
         "units": -7.29,
         "usd": -145.8,
         "graded": 20,
-        "open": 0
+        "open": 1
       },
       "pre_grades": {
         "record": "0-2-0",
@@ -1333,7 +1385,7 @@
         "units": -0.7,
         "usd": -14.0,
         "graded": 4,
-        "open": 0
+        "open": 1
       },
       "MLB": {
         "record": "0-0-0",
