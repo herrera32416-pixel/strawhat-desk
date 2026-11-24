@@ -1173,12 +1173,12 @@
    "game": "Texas @ Texas A&M",
    "kick_iso": "2026-11-27T18:30:00-06:00",
    "gameday": "2026-11-27",
-   "line": 39.5,
+   "line": 40.5,
    "side": "over",
-   "lean": 1.65,
+   "lean": 1.63,
    "price": -110,
    "status": "open",
-   "updated_ct": "2026-11-22T14:45-06:00",
+   "updated_ct": "2026-11-23T20:37-06:00",
    "logged_ct": "2026-11-20T15:51-06:00"
   },
   {
@@ -1186,12 +1186,12 @@
    "game": "NC State @ North Carolina",
    "kick_iso": "2026-11-28T11:00:00-06:00",
    "gameday": "2026-11-28",
-   "line": 55.5,
+   "line": 53.5,
    "side": "under",
-   "lean": -2.22,
+   "lean": -2.25,
    "price": -110,
    "status": "open",
-   "updated_ct": "2026-11-22T14:45-06:00",
+   "updated_ct": "2026-11-23T20:37-06:00",
    "logged_ct": "2026-11-21T14:33-06:00"
   },
   {
@@ -1201,10 +1201,10 @@
    "gameday": "2026-11-27",
    "line": 56.5,
    "side": "under",
-   "lean": -1.82,
+   "lean": -1.9,
    "price": -110,
    "status": "open",
-   "updated_ct": "2026-11-22T14:45-06:00",
+   "updated_ct": "2026-11-23T20:37-06:00",
    "logged_ct": "2026-11-22T14:45-06:00"
   },
   {
@@ -1214,10 +1214,10 @@
    "gameday": "2026-11-27",
    "line": 56.5,
    "side": "under",
-   "lean": -2.17,
+   "lean": -2.15,
    "price": -110,
    "status": "open",
-   "updated_ct": "2026-11-22T14:45-06:00",
+   "updated_ct": "2026-11-23T20:37-06:00",
    "logged_ct": "2026-11-22T14:45-06:00"
   },
   {
@@ -1230,7 +1230,7 @@
    "lean": -1.71,
    "price": -110,
    "status": "open",
-   "updated_ct": "2026-11-22T14:45-06:00",
+   "updated_ct": "2026-11-23T20:37-06:00",
    "logged_ct": "2026-11-22T14:45-06:00"
   },
   {
@@ -1238,12 +1238,12 @@
    "game": "Temple @ Memphis",
    "kick_iso": "2026-11-27T14:30:00-06:00",
    "gameday": "2026-11-27",
-   "line": 64.5,
+   "line": 66.5,
    "side": "under",
-   "lean": -1.9,
+   "lean": -1.86,
    "price": -110,
    "status": "open",
-   "updated_ct": "2026-11-22T14:45-06:00",
+   "updated_ct": "2026-11-23T20:37-06:00",
    "logged_ct": "2026-11-22T14:45-06:00"
   },
   {
@@ -1253,10 +1253,10 @@
    "gameday": "2026-11-27",
    "line": 68.5,
    "side": "under",
-   "lean": -1.64,
+   "lean": -1.61,
    "price": -110,
    "status": "open",
-   "updated_ct": "2026-11-22T14:45-06:00",
+   "updated_ct": "2026-11-23T20:37-06:00",
    "logged_ct": "2026-11-22T14:45-06:00"
   },
   {
@@ -1269,7 +1269,7 @@
    "lean": -1.64,
    "price": -110,
    "status": "open",
-   "updated_ct": "2026-11-22T14:45-06:00",
+   "updated_ct": "2026-11-23T20:37-06:00",
    "logged_ct": "2026-11-22T14:45-06:00"
   },
   {
@@ -1282,7 +1282,7 @@
    "lean": -1.57,
    "price": -110,
    "status": "open",
-   "updated_ct": "2026-11-22T14:45-06:00",
+   "updated_ct": "2026-11-23T20:37-06:00",
    "logged_ct": "2026-11-22T14:45-06:00"
   },
   {
@@ -1292,10 +1292,10 @@
    "gameday": "2026-11-28",
    "line": 60.5,
    "side": "under",
-   "lean": -1.99,
+   "lean": -1.98,
    "price": -110,
    "status": "open",
-   "updated_ct": "2026-11-22T14:45-06:00",
+   "updated_ct": "2026-11-23T20:37-06:00",
    "logged_ct": "2026-11-22T14:45-06:00"
   },
   {
@@ -1305,10 +1305,10 @@
    "gameday": "2026-11-28",
    "line": 57.5,
    "side": "under",
-   "lean": -2.2,
+   "lean": -2.24,
    "price": -110,
    "status": "open",
-   "updated_ct": "2026-11-22T14:45-06:00",
+   "updated_ct": "2026-11-23T20:37-06:00",
    "logged_ct": "2026-11-22T14:45-06:00"
   },
   {
@@ -1316,12 +1316,12 @@
    "game": "UAB @ North Texas",
    "kick_iso": "2026-11-28T15:00:00-06:00",
    "gameday": "2026-11-28",
-   "line": 48.5,
+   "line": 46.5,
    "side": "under",
-   "lean": -1.64,
+   "lean": -1.54,
    "price": -110,
    "status": "open",
-   "updated_ct": "2026-11-22T14:45-06:00",
+   "updated_ct": "2026-11-23T20:37-06:00",
    "logged_ct": "2026-11-22T14:45-06:00"
   },
   {
@@ -1329,12 +1329,12 @@
    "game": "Michigan State @ Rutgers",
    "kick_iso": "2026-11-28T15:15:00-06:00",
    "gameday": "2026-11-28",
-   "line": 48.5,
+   "line": 47.5,
    "side": "under",
-   "lean": -2.29,
+   "lean": -2.32,
    "price": -110,
    "status": "open",
-   "updated_ct": "2026-11-22T14:45-06:00",
+   "updated_ct": "2026-11-23T20:37-06:00",
    "logged_ct": "2026-11-22T14:45-06:00"
   },
   {
@@ -1342,12 +1342,12 @@
    "game": "Boise State @ Colorado State",
    "kick_iso": "2026-11-28T17:00:00-06:00",
    "gameday": "2026-11-28",
-   "line": 75.5,
+   "line": 76.5,
    "side": "under",
-   "lean": -3.71,
+   "lean": -4.01,
    "price": -110,
    "status": "open",
-   "updated_ct": "2026-11-22T14:45-06:00",
+   "updated_ct": "2026-11-23T20:37-06:00",
    "logged_ct": "2026-11-22T14:45-06:00"
   },
   {
@@ -1357,10 +1357,10 @@
    "gameday": "2026-11-28",
    "line": 52.5,
    "side": "under",
-   "lean": -1.69,
+   "lean": -1.67,
    "price": -110,
    "status": "open",
-   "updated_ct": "2026-11-22T14:45-06:00",
+   "updated_ct": "2026-11-23T20:37-06:00",
    "logged_ct": "2026-11-22T14:45-06:00"
   },
   {
@@ -1370,10 +1370,10 @@
    "gameday": "2026-11-28",
    "line": 52.5,
    "side": "under",
-   "lean": -1.62,
+   "lean": -1.57,
    "price": -110,
    "status": "open",
-   "updated_ct": "2026-11-22T14:45-06:00",
+   "updated_ct": "2026-11-23T20:37-06:00",
    "logged_ct": "2026-11-22T14:45-06:00"
   },
   {
@@ -1381,13 +1381,39 @@
    "game": "Oregon State @ Fresno State",
    "kick_iso": "2026-11-28T21:00:00-06:00",
    "gameday": "2026-11-28",
-   "line": 55.5,
+   "line": 56.5,
    "side": "under",
-   "lean": -2.08,
+   "lean": -2.41,
    "price": -110,
    "status": "open",
-   "updated_ct": "2026-11-22T14:45-06:00",
+   "updated_ct": "2026-11-23T20:37-06:00",
    "logged_ct": "2026-11-22T14:45-06:00"
+  },
+  {
+   "espn_id": "401862837",
+   "game": "Florida Atlantic @ East Carolina",
+   "kick_iso": "2026-11-28T12:00:00-06:00",
+   "gameday": "2026-11-28",
+   "line": 55.5,
+   "side": "under",
+   "lean": -1.6,
+   "price": -110,
+   "status": "open",
+   "updated_ct": "2026-11-23T20:37-06:00",
+   "logged_ct": "2026-11-23T20:37-06:00"
+  },
+  {
+   "espn_id": "401856877",
+   "game": "Kansas @ Oklahoma State",
+   "kick_iso": "2026-11-28T17:15:00-06:00",
+   "gameday": "2026-11-28",
+   "line": 66.5,
+   "side": "under",
+   "lean": -1.6,
+   "price": -110,
+   "status": "open",
+   "updated_ct": "2026-11-23T20:37-06:00",
+   "logged_ct": "2026-11-23T20:37-06:00"
   }
  ]
 }
