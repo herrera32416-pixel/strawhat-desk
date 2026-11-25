@@ -1232,9 +1232,61 @@
       "close_captured_ct": "2026-11-23T16:11:58-06:00",
       "graded_at_ct": "2026-11-24T14:48:53-06:00",
       "score_source": "ESPN scoreboard event 401892777 (STATUS_FINAL)"
+    },
+    {
+      "id": "nhl-401892783-spread",
+      "label": "TRACK C",
+      "sport": "NHL",
+      "slate_date_ct": "2026-11-25",
+      "stamped_at_ct": "2026-11-25T09:36:16-06:00",
+      "kick_utc": "2026-11-26T00:00:00Z",
+      "kick_ct": "Wed 11/25 6:00 PM CT",
+      "matchup": "Carolina Hurricanes at Tampa Bay Lightning",
+      "away": "Carolina Hurricanes",
+      "home": "Tampa Bay Lightning",
+      "espn_event_id": "401892783",
+      "espn_home_id": "20",
+      "espn_away_id": "7",
+      "toa_event_id": "b8dd63eeebfa6db1cdb18fb101d4a323",
+      "market": "spread",
+      "side": "away",
+      "team": "Carolina Hurricanes",
+      "selection": "Carolina Hurricanes -1.5",
+      "line": -1.5,
+      "price_american": 205,
+      "book": "Bovada",
+      "model_pct": 32.9,
+      "novig_pct": 32.9,
+      "implied_pct": 32.8,
+      "edge_pp": 0.1,
+      "gap_pp": 0.0,
+      "fpi_home_margin": null,
+      "mkt_home_margin": null,
+      "blend_home_margin": null,
+      "w_fpi": null,
+      "sigma": null,
+      "units": 1,
+      "stake_usd": 20,
+      "status": "open",
+      "result": null,
+      "score": null,
+      "pnl_units": null,
+      "pnl_usd": null,
+      "source": "market_only",
+      "price_source": "SOP book (DraftKings/Betr/Bovada)",
+      "n_books": 10,
+      "close_price_american": 190,
+      "close_line": -1.5,
+      "clv_pp": 1.7,
+      "grade_reasons": [
+        "edge +0.1pp < 3.0pp"
+      ],
+      "grade": "C",
+      "rules_version": "2026-10-12",
+      "close_captured_ct": "2026-11-25T09:36:16-06:00"
     }
   ],
-  "updated_at_ct": "2026-11-24T14:48:55-06:00",
+  "updated_at_ct": "2026-11-25T09:36:16-06:00",
   "model": {
     "name": "market + w·(FPI − market); NFL w=0 since 2026-10-04 (FPI history may be post-game, refit pending), CFB 0",
     "source": "betbot-revamp/research/upgrades-2026-10 u3_blend open|blend:fpi mean weekly weight; FINAL_REPORT 2026-10-02: every sport stays on paper",
@@ -1273,7 +1325,7 @@
     "units": -10.29,
     "usd": -205.8,
     "graded": 23,
-    "open": 0,
+    "open": 1,
     "by_grade": {
       "A": {
         "record": "0-0-0",
@@ -1345,7 +1397,7 @@
         "units": -8.29,
         "usd": -165.8,
         "graded": 21,
-        "open": 0
+        "open": 1
       },
       "pre_grades": {
         "record": "0-2-0",
@@ -1387,7 +1439,7 @@
         "units": -1.7,
         "usd": -34.0,
         "graded": 5,
-        "open": 0
+        "open": 1
       },
       "MLB": {
         "record": "0-0-0",
