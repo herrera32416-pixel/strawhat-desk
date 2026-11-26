@@ -6310,12 +6310,18 @@
               "goalie": "Jesper Wallstedt",
               "status": "Confirmed",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-11-25T18:33:27-06:00",
+              "seen_time_ct": "2026-11-25T19:03:55-06:00",
               "file": "nhl_goalie_log.jsonl"
             },
-            "away": null
+            "away": {
+              "goalie": "Karel Vejmelka",
+              "status": "Confirmed",
+              "source": "dailyfaceoff",
+              "seen_time_ct": "2026-11-25T19:03:55-06:00",
+              "file": "nhl_goalie_log.jsonl"
+            }
           },
-          "goalie_flag": "GOALIE UNCONFIRMED (away) — model uses the recent-starter mix / likely starter; re-check before puck drop",
+          "goalie_flag": "",
           "fair": {
             "lam_home": 3.118,
             "lam_away": 2.67,
@@ -6323,13 +6329,13 @@
             "source": "Poisson + draw inflation 1.50 + empty-net overlay + OT/SO (P home 0.524), solved to the market no-vig ML and total"
           },
           "nhl_model": {
-            "reg_goals_home": 3.35,
+            "reg_goals_home": 3.34,
             "reg_goals_away": 2.65,
             "reg_tie_pct": 21.9,
             "b2b_home": 0,
             "b2b_away": 0,
             "goalie_home": "Jesper Wallstedt (Confirmed)",
-            "goalie_away": "recent-starter mix (no log entry)",
+            "goalie_away": "Karel Vejmelka (Confirmed)",
             "gsax_pg_home": 0.26,
             "gsax_pg_away": -0.06
           },
@@ -6351,8 +6357,8 @@
                   "edge_pp": -5.1,
                   "gap_pp": -3.2,
                   "strong": false,
-                  "_edge": -5.090173648184032,
-                  "_gap": -3.2413529492805013,
+                  "_edge": -5.053974587150606,
+                  "_gap": -3.205153888247075,
                   "fair_pct": 42.8,
                   "blend_pct": 42.8,
                   "_bedge": -1.8488206989035305,
@@ -6372,11 +6378,11 @@
                   "novig_pct": 57.2,
                   "model_pct": 57.2,
                   "implied_pct": 59.7,
-                  "edge_pp": 0.8,
+                  "edge_pp": 0.7,
                   "gap_pp": 3.2,
                   "strong": false,
-                  "_edge": 0.7698971504881746,
-                  "_gap": 3.241352949280496,
+                  "_edge": 0.7336980894547485,
+                  "_gap": 3.20515388824707,
                   "fair_pct": 57.2,
                   "blend_pct": 57.2,
                   "_bedge": -2.4714557987923214,
@@ -6421,8 +6427,8 @@
                   "edge_pp": -7.5,
                   "gap_pp": -4.8,
                   "strong": false,
-                  "_edge": -7.549084253837335,
-                  "_gap": -4.808887379762272,
+                  "_edge": -7.507024117460503,
+                  "_gap": -4.766827243385441,
                   "fair_pct": 62.8,
                   "blend_pct": 64.5,
                   "_bedge": -2.7401968740750626,
@@ -6445,8 +6451,8 @@
                   "edge_pp": 3.3,
                   "gap_pp": 4.8,
                   "strong": false,
-                  "_edge": 3.2989324627019423,
-                  "_gap": 4.808887379762272,
+                  "_edge": 3.256872326325111,
+                  "_gap": 4.766827243385441,
                   "fair_pct": 37.2,
                   "blend_pct": 35.5,
                   "_bedge": -1.50995491706033,
@@ -6489,10 +6495,10 @@
                   "model_pct": 46.9,
                   "implied_pct": 48.8,
                   "edge_pp": -3.9,
-                  "gap_pp": -1.8,
+                  "gap_pp": -1.9,
                   "strong": false,
-                  "_edge": -3.8536004021378023,
-                  "_gap": -1.8263593505065068,
+                  "_edge": -3.896604748439625,
+                  "_gap": -1.8693636968083294,
                   "fair_pct": 46.8,
                   "blend_pct": 46.8,
                   "_bedge": -2.027241051631301,
@@ -6512,11 +6518,11 @@
                   "novig_pct": 53.1,
                   "model_pct": 53.1,
                   "implied_pct": 55.6,
-                  "edge_pp": -0.5,
-                  "gap_pp": 1.8,
+                  "edge_pp": -0.4,
+                  "gap_pp": 1.9,
                   "strong": false,
-                  "_edge": -0.4824429582958034,
-                  "_gap": 1.8263593505065012,
+                  "_edge": -0.4394386119939808,
+                  "_gap": 1.8693636968083238,
                   "fair_pct": 53.2,
                   "blend_pct": 53.2,
                   "_bedge": -2.3088023088023046,
@@ -6544,7 +6550,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-11-25T18:33:27-06:00"
+          "refreshed_ct": "2026-11-25T19:03:55-06:00"
         },
         "market_edge": {
           "ml": {
@@ -6851,14 +6857,14 @@
               "goalie": "Mackenzie Blackwood",
               "status": "Confirmed",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-11-25T18:33:27-06:00",
+              "seen_time_ct": "2026-11-25T19:03:55-06:00",
               "file": "nhl_goalie_log.jsonl"
             },
             "away": {
               "goalie": "Jacob Fowler",
               "status": "Confirmed",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-11-25T18:33:27-06:00",
+              "seen_time_ct": "2026-11-25T19:03:55-06:00",
               "file": "nhl_goalie_log.jsonl"
             }
           },
@@ -7091,7 +7097,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-11-25T18:33:27-06:00"
+          "refreshed_ct": "2026-11-25T19:03:55-06:00"
         },
         "market_edge": {
           "ml": {
@@ -7398,7 +7404,7 @@
               "goalie": "Joey Daccord",
               "status": "Likely",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-11-25T18:33:27-06:00",
+              "seen_time_ct": "2026-11-25T19:03:55-06:00",
               "file": "nhl_goalie_log.jsonl"
             },
             "away": null
@@ -7632,7 +7638,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-11-25T18:33:27-06:00"
+          "refreshed_ct": "2026-11-25T19:03:55-06:00"
         },
         "market_edge": {
           "ml": {
@@ -7939,14 +7945,14 @@
               "goalie": "Laurent Brossoit",
               "status": "Confirmed",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-11-25T18:33:27-06:00",
+              "seen_time_ct": "2026-11-25T19:03:55-06:00",
               "file": "nhl_goalie_log.jsonl"
             },
             "away": {
               "goalie": "Alex Nedeljkovic",
               "status": "Confirmed",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-11-25T18:33:27-06:00",
+              "seen_time_ct": "2026-11-25T19:03:55-06:00",
               "file": "nhl_goalie_log.jsonl"
             }
           },
@@ -8179,7 +8185,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-11-25T18:33:27-06:00"
+          "refreshed_ct": "2026-11-25T19:03:55-06:00"
         },
         "market_edge": {
           "ml": {
