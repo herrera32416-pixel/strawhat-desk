@@ -1267,11 +1267,11 @@
       "sigma": null,
       "units": 1,
       "stake_usd": 20,
-      "status": "open",
-      "result": null,
-      "score": null,
-      "pnl_units": null,
-      "pnl_usd": null,
+      "status": "graded",
+      "result": "W",
+      "score": "Carolina Hurricanes 3 - Tampa Bay Lightning 1",
+      "pnl_units": 2.05,
+      "pnl_usd": 41.0,
       "source": "market_only",
       "price_source": "SOP book (DraftKings/Betr/Bovada)",
       "n_books": 10,
@@ -1283,10 +1283,12 @@
       ],
       "grade": "C",
       "rules_version": "2026-10-12",
-      "close_captured_ct": "2026-11-25T09:36:16-06:00"
+      "close_captured_ct": "2026-11-25T09:36:16-06:00",
+      "graded_at_ct": "2026-11-26T09:35:20-06:00",
+      "score_source": "ESPN scoreboard event 401892783 (STATUS_FINAL)"
     }
   ],
-  "updated_at_ct": "2026-11-25T09:36:16-06:00",
+  "updated_at_ct": "2026-11-26T09:35:22-06:00",
   "model": {
     "name": "market + w·(FPI − market); NFL w=0 since 2026-10-04 (FPI history may be post-game, refit pending), CFB 0",
     "source": "betbot-revamp/research/upgrades-2026-10 u3_blend open|blend:fpi mean weekly weight; FINAL_REPORT 2026-10-02: every sport stays on paper",
@@ -1318,14 +1320,14 @@
     }
   },
   "summary": {
-    "record": "4-19-0",
-    "w": 4,
+    "record": "5-19-0",
+    "w": 5,
     "l": 19,
     "p": 0,
-    "units": -10.29,
-    "usd": -205.8,
-    "graded": 23,
-    "open": 1,
+    "units": -8.24,
+    "usd": -164.8,
+    "graded": 24,
+    "open": 0,
     "by_grade": {
       "A": {
         "record": "0-0-0",
@@ -1390,14 +1392,14 @@
         "open": 0
       },
       "C": {
-        "record": "4-17-0",
-        "w": 4,
+        "record": "5-17-0",
+        "w": 5,
         "l": 17,
         "p": 0,
-        "units": -8.29,
-        "usd": -165.8,
-        "graded": 21,
-        "open": 1
+        "units": -6.24,
+        "usd": -124.8,
+        "graded": 22,
+        "open": 0
       },
       "pre_grades": {
         "record": "0-2-0",
@@ -1432,14 +1434,14 @@
         "open": 0
       },
       "NHL": {
-        "record": "1-4-0",
-        "w": 1,
+        "record": "2-4-0",
+        "w": 2,
         "l": 4,
         "p": 0,
-        "units": -1.7,
-        "usd": -34.0,
-        "graded": 5,
-        "open": 1
+        "units": 0.35,
+        "usd": 7.0,
+        "graded": 6,
+        "open": 0
       },
       "MLB": {
         "record": "0-0-0",
