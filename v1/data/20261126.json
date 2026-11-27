@@ -5372,7 +5372,7 @@
               "goalie": "Anthony Stolarz",
               "status": "Confirmed",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-11-26T09:35:22-06:00",
+              "seen_time_ct": "2026-11-26T18:42:11-06:00",
               "file": "nhl_goalie_log.jsonl"
             }
           },
@@ -5604,7 +5604,8 @@
                 "why": "no edge, pass"
               }
             }
-          }
+          },
+          "refreshed_ct": "2026-11-26T18:42:11-06:00"
         },
         "market_edge": {
           "ml": {
@@ -6138,7 +6139,8 @@
                 "why": "no edge, pass"
               }
             }
-          }
+          },
+          "refreshed_ct": "2026-11-26T18:42:11-06:00"
         },
         "market_edge": {
           "ml": {
@@ -6672,7 +6674,8 @@
                 "why": "no edge, pass"
               }
             }
-          }
+          },
+          "refreshed_ct": "2026-11-26T18:42:11-06:00"
         },
         "market_edge": {
           "ml": {
@@ -7206,7 +7209,8 @@
                 "why": "no edge, pass"
               }
             }
-          }
+          },
+          "refreshed_ct": "2026-11-26T18:42:11-06:00"
         },
         "market_edge": {
           "ml": {
@@ -8860,7 +8864,8 @@
                 "why": "no edge, pass"
               }
             }
-          }
+          },
+          "refreshed_ct": "2026-11-26T18:42:11-06:00"
         },
         "market_edge": {
           "ml": {
@@ -9394,7 +9399,8 @@
                 "why": "no edge, pass"
               }
             }
-          }
+          },
+          "refreshed_ct": "2026-11-26T18:42:11-06:00"
         },
         "market_edge": {
           "ml": {
@@ -9928,7 +9934,8 @@
                 "why": "no edge, pass"
               }
             }
-          }
+          },
+          "refreshed_ct": "2026-11-26T18:42:11-06:00"
         },
         "market_edge": {
           "ml": {
@@ -10458,7 +10465,8 @@
                 "why": "no edge, pass"
               }
             }
-          }
+          },
+          "refreshed_ct": "2026-11-26T18:42:11-06:00"
         },
         "market_edge": {
           "ml": {
@@ -12415,10 +12423,16 @@
           },
           "note": "raw NHL model shown; w=0 on every market (walk-forward CI includes 0) — market only, no stamps",
           "goalies": {
-            "home": null,
+            "home": {
+              "goalie": "Laurent Brossoit",
+              "status": "Confirmed",
+              "source": "dailyfaceoff",
+              "seen_time_ct": "2026-11-26T18:42:11-06:00",
+              "file": "nhl_goalie_log.jsonl"
+            },
             "away": null
           },
-          "goalie_flag": "GOALIE UNCONFIRMED (away, home) — model uses the recent-starter mix / likely starter; re-check before puck drop",
+          "goalie_flag": "GOALIE UNCONFIRMED (away) — model uses the recent-starter mix / likely starter; re-check before puck drop",
           "fair": {
             "lam_home": 2.931,
             "lam_away": 3.117,
@@ -12427,13 +12441,13 @@
           },
           "nhl_model": {
             "reg_goals_home": 3.12,
-            "reg_goals_away": 3.16,
-            "reg_tie_pct": 22.1,
+            "reg_goals_away": 3.09,
+            "reg_tie_pct": 22.2,
             "b2b_home": 0,
             "b2b_away": 0,
-            "goalie_home": "recent-starter mix (no log entry)",
+            "goalie_home": "Laurent Brossoit (Confirmed)",
             "goalie_away": "recent-starter mix (no log entry)",
-            "gsax_pg_home": -0.11,
+            "gsax_pg_home": 0.01,
             "gsax_pg_away": 0.06
           },
           "markets": {
@@ -12451,18 +12465,18 @@
                   "novig_pct": 51.7,
                   "model_pct": 51.7,
                   "implied_pct": 54.5,
-                  "edge_pp": -4.5,
-                  "gap_pp": -2.2,
+                  "edge_pp": -5.5,
+                  "gap_pp": -3.2,
                   "strong": false,
-                  "_edge": -4.527523586171012,
-                  "_gap": -2.1559820841947297,
+                  "_edge": -5.535740919691934,
+                  "_gap": -3.164199417715652,
                   "fair_pct": 52.2,
                   "blend_pct": 52.2,
                   "_bedge": -2.371541501976282,
                   "novig_prev_pct": 52.2,
                   "fair_book": "Pinnacle no-vig",
-                  "model_raw_pct": 50.0,
-                  "model_unproven_pct": 50.0,
+                  "model_raw_pct": 49.0,
+                  "model_unproven_pct": 49.0,
                   "shown_pct": 51.7,
                   "shown_source": "market no-vig fair % (model unproven)"
                 },
@@ -12475,18 +12489,18 @@
                   "novig_pct": 48.3,
                   "model_pct": 48.3,
                   "implied_pct": 50.0,
-                  "edge_pp": -0.0,
-                  "gap_pp": 2.2,
+                  "edge_pp": 1.0,
+                  "gap_pp": 3.2,
                   "strong": false,
-                  "_edge": -0.017930959283529724,
-                  "_gap": 2.1559820841947297,
+                  "_edge": 0.9902863742373924,
+                  "_gap": 3.164199417715652,
                   "fair_pct": 47.8,
                   "blend_pct": 47.8,
                   "_bedge": -2.1739130434782594,
                   "novig_prev_pct": 47.8,
                   "fair_book": "Pinnacle no-vig",
-                  "model_raw_pct": 50.0,
-                  "model_unproven_pct": 50.0,
+                  "model_raw_pct": 51.0,
+                  "model_unproven_pct": 51.0,
                   "shown_pct": 48.3,
                   "shown_source": "market no-vig fair % (model unproven)"
                 }
@@ -12521,18 +12535,18 @@
                   "novig_pct": 30.8,
                   "model_pct": 30.8,
                   "implied_pct": 32.3,
-                  "edge_pp": -0.6,
-                  "gap_pp": 0.7,
+                  "edge_pp": -1.6,
+                  "gap_pp": -0.3,
                   "strong": false,
-                  "_edge": -0.6230099618892593,
-                  "_gap": 0.7143428596465773,
+                  "_edge": -1.644338053916078,
+                  "_gap": -0.30698523238024134,
                   "fair_pct": 33.8,
                   "blend_pct": 30.9,
                   "_bedge": -1.3373528215358366,
                   "novig_prev_pct": 30.9,
                   "fair_book": "Pinnacle no-vig",
-                  "model_raw_pct": 31.6,
-                  "model_unproven_pct": 31.6,
+                  "model_raw_pct": 30.6,
+                  "model_unproven_pct": 30.6,
                   "shown_pct": 30.8,
                   "shown_source": "market no-vig fair % (model unproven)"
                 },
@@ -12545,18 +12559,18 @@
                   "novig_pct": 69.2,
                   "model_pct": 69.2,
                   "implied_pct": 72.1,
-                  "edge_pp": -3.7,
-                  "gap_pp": -0.7,
+                  "edge_pp": -2.7,
+                  "gap_pp": 0.3,
                   "strong": false,
-                  "_edge": -3.7020936603850196,
-                  "_gap": -0.7143428596465773,
+                  "_edge": -2.680765568358201,
+                  "_gap": 0.30698523238024134,
                   "fair_pct": 66.2,
                   "blend_pct": 69.1,
                   "_bedge": -2.9877508007384423,
                   "novig_prev_pct": 69.1,
                   "fair_book": "Pinnacle no-vig",
-                  "model_raw_pct": 68.4,
-                  "model_unproven_pct": 68.4,
+                  "model_raw_pct": 69.4,
+                  "model_unproven_pct": 69.4,
                   "shown_pct": 69.2,
                   "shown_source": "market no-vig fair % (model unproven)"
                 }
@@ -12591,18 +12605,18 @@
                   "novig_pct": 50.9,
                   "model_pct": 50.9,
                   "implied_pct": 53.5,
-                  "edge_pp": -3.6,
-                  "gap_pp": -1.2,
+                  "edge_pp": -4.8,
+                  "gap_pp": -2.4,
                   "strong": false,
-                  "_edge": -3.634482584966392,
-                  "_gap": -1.2295341105780233,
+                  "_edge": -4.782284985165059,
+                  "_gap": -2.37733651077669,
                   "fair_pct": 51.1,
                   "blend_pct": 51.1,
                   "_bedge": -2.4049484743883687,
                   "novig_prev_pct": 51.1,
                   "fair_book": "Pinnacle no-vig",
-                  "model_raw_pct": 49.9,
-                  "model_unproven_pct": 49.9,
+                  "model_raw_pct": 48.7,
+                  "model_unproven_pct": 48.7,
                   "shown_pct": 50.9,
                   "shown_source": "market no-vig fair % (model unproven)"
                 },
@@ -12615,18 +12629,18 @@
                   "novig_pct": 49.1,
                   "model_pct": 49.1,
                   "implied_pct": 51.2,
-                  "edge_pp": -1.1,
-                  "gap_pp": 1.2,
+                  "edge_pp": 0.1,
+                  "gap_pp": 2.4,
                   "strong": false,
-                  "_edge": -1.0734017031788112,
-                  "_gap": 1.2295341105780233,
+                  "_edge": 0.07440069701984964,
+                  "_gap": 2.377336510776684,
                   "fair_pct": 48.9,
                   "blend_pct": 48.9,
                   "_bedge": -2.3029358137568288,
                   "novig_prev_pct": 48.9,
                   "fair_book": "Pinnacle no-vig",
-                  "model_raw_pct": 50.1,
-                  "model_unproven_pct": 50.1,
+                  "model_raw_pct": 51.3,
+                  "model_unproven_pct": 51.3,
                   "shown_pct": 49.1,
                   "shown_source": "market no-vig fair % (model unproven)"
                 }
@@ -12646,7 +12660,8 @@
                 "why": "no edge, pass"
               }
             }
-          }
+          },
+          "refreshed_ct": "2026-11-26T18:42:11-06:00"
         },
         "market_edge": {
           "ml": {
@@ -13180,7 +13195,8 @@
                 "why": "no edge, pass"
               }
             }
-          }
+          },
+          "refreshed_ct": "2026-11-26T18:42:11-06:00"
         },
         "market_edge": {
           "ml": {
@@ -13714,7 +13730,8 @@
                 "why": "no edge, pass"
               }
             }
-          }
+          },
+          "refreshed_ct": "2026-11-26T18:42:11-06:00"
         },
         "market_edge": {
           "ml": {
@@ -14808,7 +14825,8 @@
                 "why": "no edge, pass"
               }
             }
-          }
+          },
+          "refreshed_ct": "2026-11-26T18:42:11-06:00"
         },
         "market_edge": {
           "ml": {
@@ -16462,7 +16480,8 @@
                 "why": "no edge, pass"
               }
             }
-          }
+          },
+          "refreshed_ct": "2026-11-26T18:42:11-06:00"
         },
         "market_edge": {
           "ml": {
@@ -16996,7 +17015,8 @@
                 "why": "no edge, pass"
               }
             }
-          }
+          },
+          "refreshed_ct": "2026-11-26T18:42:11-06:00"
         },
         "market_edge": {
           "ml": {
@@ -17530,7 +17550,8 @@
                 "why": "no edge, pass"
               }
             }
-          }
+          },
+          "refreshed_ct": "2026-11-26T18:42:11-06:00"
         },
         "market_edge": {
           "ml": {
