@@ -1286,9 +1286,62 @@
       "close_captured_ct": "2026-11-25T09:36:16-06:00",
       "graded_at_ct": "2026-11-26T09:35:20-06:00",
       "score_source": "ESPN scoreboard event 401892783 (STATUS_FINAL)"
+    },
+    {
+      "id": "cfb-401856880-ml",
+      "label": "TRACK C",
+      "sport": "CFB",
+      "slate_date_ct": "2026-11-27",
+      "stamped_at_ct": "2026-11-27T09:42:10-06:00",
+      "kick_utc": "2026-11-28T02:00:00Z",
+      "kick_ct": "Fri 11/27 8:00 PM CT",
+      "matchup": "West Virginia Mountaineers at Utah Utes",
+      "away": "West Virginia Mountaineers",
+      "home": "Utah Utes",
+      "espn_event_id": "401856880",
+      "espn_home_id": "254",
+      "espn_away_id": "277",
+      "toa_event_id": "bee4ea7a231be77b1ee52ddf3755592f",
+      "market": "ml",
+      "side": "away",
+      "team": "West Virginia Mountaineers",
+      "selection": "West Virginia Mountaineers ML",
+      "line": null,
+      "price_american": 1300,
+      "book": "DraftKings",
+      "model_pct": 7.3,
+      "novig_pct": 7.3,
+      "implied_pct": 7.1,
+      "edge_pp": 0.2,
+      "gap_pp": 0.0,
+      "fpi_home_margin": 22.9,
+      "mkt_home_margin": 26.0,
+      "blend_home_margin": 26.0,
+      "w_fpi": 0.0,
+      "sigma": 15.14,
+      "units": 1,
+      "stake_usd": 20,
+      "status": "open",
+      "result": null,
+      "score": null,
+      "pnl_units": null,
+      "pnl_usd": null,
+      "source": "market_only",
+      "price_source": "SOP book (DraftKings/Betr/Bovada)",
+      "n_books": 9,
+      "close_price_american": 1300,
+      "close_line": null,
+      "clv_pp": 0.0,
+      "grade_reasons": [
+        "edge +0.2pp < 3.0pp",
+        "long-shot ML +1300 > +250"
+      ],
+      "grade": "C",
+      "rules_version": "2026-10-12",
+      "close_captured_ct": "2026-11-27T09:42:10-06:00"
     }
   ],
-  "updated_at_ct": "2026-11-26T09:35:22-06:00",
+  "updated_at_ct": "2026-11-27T09:42:10-06:00",
   "model": {
     "name": "market + w·(FPI − market); NFL w=0 since 2026-10-04 (FPI history may be post-game, refit pending), CFB 0",
     "source": "betbot-revamp/research/upgrades-2026-10 u3_blend open|blend:fpi mean weekly weight; FINAL_REPORT 2026-10-02: every sport stays on paper",
@@ -1327,7 +1380,7 @@
     "units": -8.24,
     "usd": -164.8,
     "graded": 24,
-    "open": 0,
+    "open": 1,
     "by_grade": {
       "A": {
         "record": "0-0-0",
@@ -1399,7 +1452,7 @@
         "units": -6.24,
         "usd": -124.8,
         "graded": 22,
-        "open": 0
+        "open": 1
       },
       "pre_grades": {
         "record": "0-2-0",
@@ -1431,7 +1484,7 @@
         "units": -9.0,
         "usd": -180.0,
         "graded": 9,
-        "open": 0
+        "open": 1
       },
       "NHL": {
         "record": "2-4-0",
