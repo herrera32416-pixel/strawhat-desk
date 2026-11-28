@@ -36729,7 +36729,7 @@
               "goalie": "Jakub Dobes",
               "status": "Confirmed",
               "source": "dailyfaceoff",
-              "seen_time_ct": "2026-11-27T18:36:51-06:00",
+              "seen_time_ct": "2026-11-27T21:25:33-06:00",
               "file": "nhl_goalie_log.jsonl"
             }
           },
@@ -36962,7 +36962,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-11-27T18:36:51-06:00"
+          "refreshed_ct": "2026-11-27T21:25:33-06:00"
         },
         "market_edge": {
           "ml": {
@@ -39155,7 +39155,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-11-27T18:36:51-06:00"
+          "refreshed_ct": "2026-11-27T21:25:33-06:00"
         },
         "market_edge": {
           "ml": {
@@ -41886,7 +41886,7 @@
               }
             }
           },
-          "refreshed_ct": "2026-11-27T18:36:51-06:00"
+          "refreshed_ct": "2026-11-27T21:25:33-06:00"
         },
         "market_edge": {
           "ml": {
